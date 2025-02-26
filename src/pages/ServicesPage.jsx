@@ -104,20 +104,20 @@ const ServicesPage = () => {
                         </p>
                         <div className="flex flex-wrap justify-center gap-4 mt-10">
                             <a
-                                href="/contact"
+                                href="/rendez-vous"
                                 className="font-inter-medium bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg"
                                 data-aos="fade-up"
                                 data-aos-delay="100"
                             >
-                                Discuter de votre projet
+                                Prendre rendez-vous
                             </a>
                             <a
-                                href="/portfolio"
+                                href="/contact"
                                 className="font-inter-medium bg-white text-blue-600 border border-blue-200 px-8 py-3 rounded-lg hover:bg-blue-50 transition-all shadow-md hover:shadow-lg"
                                 data-aos="fade-up"
                                 data-aos-delay="200"
                             >
-                                Voir nos réalisations
+                                Nous contacter
                             </a>
                         </div>
                     </div>
@@ -154,7 +154,7 @@ const ServicesPage = () => {
                             </div>
 
                             <a
-                                href="/contact"
+                                href="/rendez-vous"
                                 className="font-inter-medium bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg inline-flex items-center"
                                 data-aos="fade-up"
                                 data-aos-delay="200"

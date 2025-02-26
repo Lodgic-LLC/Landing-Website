@@ -292,7 +292,7 @@ const DetailedServices = () => {
                   {/* Bouton */}
                   <div className="text-center">
                     <Link
-                      to={`/services/${service.id}`}
+                      to={`/services`}
                       className={`inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r ${service.color} text-white font-inter-medium shadow-md hover:shadow-lg transition-shadow`}
                     >
                       En savoir plus
@@ -350,7 +350,7 @@ const DetailedServices = () => {
                         Nous contacter
                       </Link>
                       <Link
-                        to="/devis"
+                        to="/rendez-vous"
                         className="px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 font-inter-medium rounded-lg hover:border-blue-500 hover:text-blue-600 transition-all duration-300 flex items-center justify-center"
                       >
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -361,7 +361,7 @@ const DetailedServices = () => {
                             d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
                           ></path>
                         </svg>
-                        Demander un devis
+                        Prendre rendez-vous
                       </Link>
                     </div>
                   </div>

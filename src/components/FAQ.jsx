@@ -162,9 +162,8 @@ const FAQ = () => {
                     <span className="font-inter-medium text-gray-900 text-lg">{item.question}</span>
                   </div>
                   <svg
-                    className={`w-5 h-5 text-blue-600 transform transition-transform duration-500 ease-in-out ${
-                      openQuestion === item.id ? 'rotate-180' : ''
-                    }`}
+                    className={`w-5 h-5 text-blue-600 transform transition-transform duration-500 ease-in-out ${openQuestion === item.id ? 'rotate-180' : ''
+                      }`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -175,9 +174,8 @@ const FAQ = () => {
 
                 {/* Réponse (visible uniquement si la question est ouverte) */}
                 <div
-                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                    openQuestion === item.id ? 'max-h-96 opacity-100 border-t border-gray-100' : 'max-h-0 opacity-0'
-                  }`}
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${openQuestion === item.id ? 'max-h-96 opacity-100 border-t border-gray-100' : 'max-h-0 opacity-0'
+                    }`}
                 >
                   <p className="text-gray-600 px-6 py-5 pl-16 leading-relaxed">{item.answer}</p>
                 </div>
@@ -189,7 +187,7 @@ const FAQ = () => {
           <div className="mt-16 text-center" data-aos="fade-up">
             <p className="text-gray-700 mb-6 text-lg">Vous avez une question spécifique concernant votre projet ?</p>
             <a
-              href="/contact"
+              href="/rendez-vous"
               className="inline-flex items-center justify-center bg-[#2563EB] text-white font-inter-medium px-8 py-4 rounded-lg hover:bg-[#1d4ed8] transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1"
               aria-label="Contactez-nous pour plus d'informations"
             >

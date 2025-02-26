@@ -25,7 +25,7 @@ const Hero = () => {
 
           <div className="flex flex-wrap gap-4">
             <Link
-              to="/devis"
+              to="/rendez-vous"
               className="font-inter-medium bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl hover:shadow-blue-200 transform hover:-translate-y-1 duration-300 flex items-center"
               data-aos="fade-up"
               data-aos-delay="200"
@@ -39,7 +39,7 @@ const Hero = () => {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
               </svg>
-              Demander un devis
+              Prendre rendez-vous
             </Link>
             <Link
               to="/services"

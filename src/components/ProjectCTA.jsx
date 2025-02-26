@@ -31,14 +31,14 @@ const ProjectCTA = () => {
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8" data-aos="fade-up" data-aos-delay="100">
             <a
-              href="/contact"
+              href="/rendez-vous"
               className="inline-block bg-white text-blue-600 font-medium px-6 sm:px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
               aria-label="Obtenir un devis gratuit"
             >
-              Obtenir un devis gratuit
+              Prendre rendez-vous
             </a>
             <a
-              href="/portfolio"
+              href="/services"
               className="inline-block bg-blue-600 text-white font-medium px-6 sm:px-8 py-3 rounded-full border border-white/30 hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
               aria-label="Découvrir nos réalisations"
             >

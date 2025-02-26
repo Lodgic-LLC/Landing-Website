@@ -161,20 +161,6 @@ const SuccessStories = () => {
               </div>
             ))}
           </div>
-
-          {/* CTA */}
-          <div className="mt-16 text-center" data-aos="fade-up">
-            <a
-              href="/case-studies"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-inter-medium rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
-              aria-label="Voir tous nos cas clients"
-            >
-              Voir tous nos cas clients
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
         </div>
       </div>
     </section>
