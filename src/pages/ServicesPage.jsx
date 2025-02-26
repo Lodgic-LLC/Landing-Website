@@ -1,48 +1,88 @@
+// ... existing code ...
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import PageTitle from '../components/PageTitle';
-import { FaCode, FaRocket, FaPlug, FaTools } from 'react-icons/fa';
+import { FaCode, FaRocket, FaPlug, FaTools, FaChevronRight } from 'react-icons/fa';
 
 const ServicesPage = () => {
     useEffect(() => {
         AOS.refresh();
     }, []);
 
-    // Définition des services principaux
+    // Définition des services principaux avec contenu enrichi
     const mainServices = [
         {
             id: 1,
             icon: <FaCode className="h-8 w-8 text-blue-600" />,
             title: "Développement d'applications web",
-            description: "Création d'applications web robustes et évolutives avec les dernières technologies pour optimiser vos processus métier.",
+            description: "Création d'applications web robustes et évolutives avec les dernières technologies pour optimiser vos processus métier et améliorer votre présence digitale.",
             color: "from-blue-200 to-indigo-300",
-            delay: 100
+            delay: 100,
+            features: [
+                "Sites web responsive et performants",
+                "Applications web progressives (PWA)",
+                "Interfaces utilisateur modernes et intuitives",
+                "Architecture évolutive et maintenable",
+                "Optimisation SEO intégrée"
+            ]
         },
+        // ... existing code ...
         {
             id: 2,
             icon: <FaRocket className="h-8 w-8 text-blue-600" />,
             title: "Refonte et optimisation",
-            description: "Modernisation de vos applications existantes pour améliorer les performances et l'expérience utilisateur.",
+            description: "Modernisation de vos applications existantes pour améliorer les performances, l'expérience utilisateur et la sécurité de vos solutions digitales.",
             color: "from-purple-200 to-pink-300",
-            delay: 200
+            delay: 200,
+            features: [
+                "Audit technique et recommandations",
+                "Optimisation des performances",
+                "Migration vers des technologies modernes",
+                "Amélioration de l'expérience utilisateur",
+                "Renforcement de la sécurité"
+            ]
         },
         {
             id: 3,
             icon: <FaPlug className="h-8 w-8 text-blue-600" />,
             title: "Intégration d'API",
-            description: "Connexion et automatisation de vos systèmes via des API robustes pour une efficacité maximale.",
+            description: "Connexion et automatisation de vos systèmes via des API robustes pour une efficacité maximale et une meilleure interopérabilité de vos outils.",
             color: "from-green-200 to-teal-300",
-            delay: 300
+            delay: 300,
+            features: [
+                "Développement d'API RESTful",
+                "Intégration de services tiers",
+                "Automatisation des flux de données",
+                "Documentation complète des API",
+                "Tests et monitoring des endpoints"
+            ]
         },
         {
             id: 4,
             icon: <FaTools className="h-8 w-8 text-blue-600" />,
             title: "Maintenance de site internet",
-            description: "Service complet de maintenance technique, mises à jour de sécurité et support pour garantir la performance et la fiabilité de votre site.",
+            description: "Service complet de maintenance technique, mises à jour de sécurité et support pour garantir la performance et la fiabilité de votre site sur le long terme.",
             color: "from-yellow-200 to-amber-300",
-            delay: 400
+            delay: 400,
+            features: [
+                "Mises à jour de sécurité régulières",
+                "Surveillance des performances 24/7",
+                "Support technique réactif",
+                "Sauvegardes automatisées",
+                "Rapports d'activité mensuels"
+            ]
         }
     ];
+
+    // Composant pour les points forts (extrait pour réutilisation)
+    const FeaturePoint = ({ text }) => (
+        <div className="flex items-start">
+            <div className="flex-shrink-0 mt-1">
+                <FaChevronRight className="w-4 h-4 text-blue-600" />
+            </div>
+            <p className="ml-3 text-gray-600">{text}</p>
+        </div>
+    );
 
     return (
         <>
@@ -51,24 +91,42 @@ const ServicesPage = () => {
                 description="Solutions web sur mesure pour votre entreprise"
             />
 
-            {/* Section d'introduction */}
-            <section className="w-full bg-gradient-to-r pt-44 pb-20 from-blue-50 to-purple-50 ">
+            {/* Section d'introduction améliorée */}
+            <section className="w-full bg-gradient-to-r pt-32 pb-20 from-blue-50 to-indigo-50">
                 <div className="max-w-7xl mx-auto px-6">
-                    <h1 className="text-4xl font-inter-bold text-center text-gray-900 mb-4">
-                        Solutions web sur mesure pour votre entreprise
-                    </h1>
                     <div className="text-center max-w-3xl mx-auto" data-aos="fade-up">
-                        <p className="font-inter-regular text-gray-600 mb-8 text-lg">
+                        <h1 className="text-4xl md:text-5xl font-inter-bold text-gray-900 mb-6 leading-tight">
+                            Solutions web <span className="text-blue-600">sur mesure</span> pour votre entreprise
+                        </h1>
+                        <p className="font-inter-regular text-gray-600 mb-8 text-lg md:text-xl leading-relaxed">
                             Nous développons des applications web performantes et évolutives, parfaitement
-                            adaptées aux besoins spécifiques de votre activité.
+                            adaptées aux besoins spécifiques de votre activité pour vous aider à atteindre vos objectifs.
                         </p>
+                        <div className="flex flex-wrap justify-center gap-4 mt-10">
+                            <a
+                                href="/contact"
+                                className="font-inter-medium bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg"
+                                data-aos="fade-up"
+                                data-aos-delay="100"
+                            >
+                                Discuter de votre projet
+                            </a>
+                            <a
+                                href="/portfolio"
+                                className="font-inter-medium bg-white text-blue-600 border border-blue-200 px-8 py-3 rounded-lg hover:bg-blue-50 transition-all shadow-md hover:shadow-lg"
+                                data-aos="fade-up"
+                                data-aos-delay="200"
+                            >
+                                Voir nos réalisations
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Section des services principaux */}
             {mainServices.map((service, index) => (
-                <section key={service.id} className={`py-20 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+                <section key={service.id} className={`py-24 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
                     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
                         {/* Texte - Alternance gauche/droite */}
                         <div
@@ -76,8 +134,8 @@ const ServicesPage = () => {
                             data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
                             data-aos-duration="1000"
                         >
-                            <div className="flex items-center mb-4">
-                                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                            <div className="flex items-center mb-6">
+                                <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mr-5 shadow-md">
                                     {service.icon}
                                 </div>
                                 <h2 className="font-inter-bold text-2xl md:text-3xl text-gray-900">
@@ -85,111 +143,24 @@ const ServicesPage = () => {
                                 </h2>
                             </div>
 
-                            <p className="font-inter-regular text-gray-600 mb-8 text-lg">
+                            <p className="font-inter-regular text-gray-600 mb-8 text-lg leading-relaxed">
                                 {service.description}
                             </p>
 
-                            <div className="space-y-4 mb-8">
-                                {service.id === 1 && (
-                                    <>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Sites web responsive et performants</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Applications web progressives (PWA)</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Interfaces utilisateur modernes et intuitives</p>
-                                        </div>
-                                    </>
-                                )}
-
-                                {service.id === 2 && (
-                                    <>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Audit technique et recommandations</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Optimisation des performances</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Migration vers des technologies modernes</p>
-                                        </div>
-                                    </>
-                                )}
-
-                                {service.id === 3 && (
-                                    <>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Développement d'API RESTful</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Intégration de services tiers</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Automatisation des flux de données</p>
-                                        </div>
-                                    </>
-                                )}
-
-                                {service.id === 4 && (
-                                    <>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Mises à jour de sécurité régulières</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Surveillance des performances 24/7</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <svg className="w-5 h-5 text-blue-600 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <p className="text-gray-600">Support technique réactif</p>
-                                        </div>
-                                    </>
-                                )}
+                            <div className="space-y-4 mb-10">
+                                {service.features.map((feature, i) => (
+                                    <FeaturePoint key={i} text={feature} />
+                                ))}
                             </div>
 
                             <a
                                 href="/contact"
-                                className="font-inter-medium bg-[#2563EB] text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors inline-block"
+                                className="font-inter-medium bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg inline-flex items-center"
                                 data-aos="fade-up"
                                 data-aos-delay="200"
                             >
                                 Discuter de votre projet
+                                <FaChevronRight className="ml-2 h-3 w-3" />
                             </a>
                         </div>
 
@@ -202,11 +173,13 @@ const ServicesPage = () => {
                         >
                             <div className="relative w-full max-w-lg">
                                 {/* Fond dégradé */}
-                                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-3xl transform ${index % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}></div>
+                                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-2xl transform ${index % 2 === 0 ? 'rotate-1' : '-rotate-1'} shadow-xl`}></div>
 
                                 {/* Contenu de l'illustration */}
-                                <div className={`relative bg-gradient-to-br ${service.color} rounded-3xl p-8 shadow-xl overflow-hidden`}>
-                                    {/* Illustration spécifique au service */}
+                                <div className={`relative bg-white rounded-2xl p-8 shadow-lg overflow-hidden border border-gray-100`}>
+                                    {/* Illustration spécifique au service - conservé tel quel */}
+                                    {/* ... existing code ... */}
+
                                     {service.id === 1 && (
                                         <div className="relative z-10 flex justify-center items-center">
                                             {/* Ordinateur avec code */}
@@ -362,40 +335,6 @@ const ServicesPage = () => {
                                             </svg>
                                         </div>
                                     )}
-
-                                    {/* Éléments flottants */}
-                                    <div className="absolute top-10 right-10 bg-white p-2 rounded-lg shadow-md transform rotate-6 animate-float">
-                                        <svg className="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                                            <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-
-                                    <div className="absolute bottom-10 left-10 bg-white p-2 rounded-lg shadow-md transform -rotate-3 animate-float-delayed">
-                                        <svg className="w-6 h-6 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-
-                                    {/* Notification flottante */}
-                                    <div className="absolute top-1/3 right-5 z-10 bg-white p-3 rounded-xl shadow-lg transform rotate-3 animate-float-slow">
-                                        <div className="flex items-center">
-                                            <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                                <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                                </svg>
-                                            </div>
-                                            <div>
-                                                <p className="text-sm font-inter-medium text-gray-800">
-                                                    {service.id === 1 && "Site web déployé"}
-                                                    {service.id === 2 && "Performance +80%"}
-                                                    {service.id === 3 && "API connectée"}
-                                                    {service.id === 4 && "Maintenance effectuée"}
-                                                </p>
-                                                <p className="text-xs text-gray-500">il y a 2 minutes</p>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -403,32 +342,115 @@ const ServicesPage = () => {
                 </section>
             ))}
 
-            {/* Section CTA */}
-            <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-                <div className="container mx-auto px-6 text-center">
-                    <h2 className="text-3xl md:text-4xl font-inter-bold mb-6" data-aos="fade-up">
-                        Prêt à transformer votre vision en réalité ?
-                    </h2>
-                    <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                        Discutons de votre projet et voyons comment notre expertise peut vous aider à atteindre vos objectifs.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <a
-                            href="/contact"
-                            className="inline-block bg-white text-[#2563EB] font-inter-medium px-8 py-4 rounded-full hover:bg-gray-100 transition-colors shadow-lg"
-                            data-aos="fade-up"
-                            data-aos-delay="200"
-                        >
-                            Contactez notre équipe
-                        </a>
-                        <a
-                            href="/devis"
-                            className="inline-block bg-blue-800 text-white border-2 border-white font-inter-medium px-8 py-4 rounded-full hover:bg-blue-900 transition-colors shadow-lg"
-                            data-aos="fade-up"
-                            data-aos-delay="300"
-                        >
-                            Demander un devis gratuit
-                        </a>
+            {/* Section Méthodologie */}
+            <section className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center mb-16" data-aos="fade-up">
+                        <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">
+                            Notre approche méthodologique
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Un processus éprouvé pour garantir le succès de votre projet digital
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {[
+                            {
+                                step: "01",
+                                title: "Analyse",
+                                description: "Nous étudions vos besoins et objectifs pour définir une stratégie adaptée.",
+                                color: "blue"
+                            },
+                            {
+                                step: "02",
+                                title: "Conception",
+                                description: "Nous élaborons une architecture et des maquettes détaillées de votre solution.",
+                                color: "indigo"
+                            },
+                            {
+                                step: "03",
+                                title: "Développement",
+                                description: "Nous développons votre solution avec les technologies les plus adaptées.",
+                                color: "purple"
+                            },
+                            {
+                                step: "04",
+                                title: "Déploiement",
+                                description: "Nous mettons en ligne votre solution et assurons son bon fonctionnement.",
+                                color: "pink"
+                            }
+                        ].map((phase, index) => (
+                            <div
+                                key={index}
+                                className="bg-white rounded-xl shadow-md p-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg"
+                                data-aos="fade-up"
+                                data-aos-delay={index * 100}
+                            >
+                                <div className={`absolute top-0 left-0 w-2 h-full bg-${phase.color}-600`}></div>
+                                <div className={`text-4xl font-bold text-${phase.color}-600 mb-4`}>{phase.step}</div>
+                                <h3 className="text-xl font-inter-bold text-gray-900 mb-3">{phase.title}</h3>
+                                <p className="text-gray-600">{phase.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Section Témoignages */}
+            <section className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center mb-16" data-aos="fade-up">
+                        <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">
+                            Ce que nos clients disent
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Découvrez les retours d'expérience de nos clients satisfaits
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {[
+                            {
+                                quote: "L'équipe a parfaitement compris nos besoins et a livré une application qui a transformé notre façon de travailler.",
+                                author: "Marie Dupont",
+                                position: "Directrice Marketing, TechCorp",
+                                delay: 0
+                            },
+                            {
+                                quote: "Un travail d'une qualité exceptionnelle, livré dans les délais et avec un support irréprochable.",
+                                author: "Jean Martin",
+                                position: "CEO, StartupInnovation",
+                                delay: 100
+                            },
+                            {
+                                quote: "La refonte de notre site a considérablement amélioré nos conversions et l'expérience de nos utilisateurs.",
+                                author: "Sophie Legrand",
+                                position: "Responsable Digital, E-Commerce Plus",
+                                delay: 200
+                            }
+                        ].map((testimonial, index) => (
+                            <div
+                                key={index}
+                                className="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md"
+                                data-aos="fade-up"
+                                data-aos-delay={testimonial.delay}
+                            >
+                                <svg className="w-10 h-10 text-blue-200 mb-4" fill="currentColor" viewBox="0 0 32 32">
+                                    <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1 0.9-2 2-2V8zm12 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1 0.9-2 2-2V8z" />
+                                </svg>
+                                <p className="text-gray-600 mb-6 italic">{testimonial.quote}</p>
+                                <div className="flex items-center">
+                                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                        <span className="text-blue-600 font-bold">{testimonial.author.charAt(0)}</span>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-inter-bold text-gray-900">{testimonial.author}</h4>
+                                        <p className="text-gray-500 text-sm">{testimonial.position}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -436,4 +458,4 @@ const ServicesPage = () => {
     );
 };
 
-export default ServicesPage; 
+export default ServicesPage;

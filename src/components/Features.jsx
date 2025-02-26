@@ -31,18 +31,16 @@ const Features = () => {
       icon: (
         <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
-            d="M17.6569 16.2427L19.0711 14.8285C20.6332 13.2664 20.6332 10.7336 19.0711 9.17152C17.509 7.60942 14.9762 7.60942 13.4141 9.17152L12 10.5858"
+            d="M15 7C16.1046 7 17 7.89543 17 9M21 9C21 12.3137 18.3137 15 15 15C14.3938 15 13.8087 14.9101 13.2571 14.7429L11 17H9V19H7V21H4C3.44772 21 3 20.5523 3 20V17.4142C3 17.149 3.10536 16.8946 3.29289 16.7071L9.25707 10.7429C9.08989 10.1914 9 9.60617 9 9C9 5.68629 11.6863 3 15 3C18.3137 3 21 5.68629 21 9Z"
             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
-            d="M6.34315 7.75732L4.92893 9.17154C3.36683 10.7336 3.36683 13.2664 4.92893 14.8285C6.49104 16.3906 9.0238 16.3906 10.5859 14.8285L12 13.4142"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
+            d="M17 9C17 10.1046 16.1046 11 15 11C13.8954 11 13 10.1046 13 9C13 7.89543 13.8954 7 15 7C16.1046 7 17 7.89543 17 9Z"
+            fill="currentColor"
           />
-          <path d="M14.1213 12.1213L9.87868 7.87868" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       ),
       color: 'from-purple-500 to-indigo-500',
@@ -176,7 +174,7 @@ const Features = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-20 flex justify-center" data-aos="zoom-in" data-aos-delay="600">
+        <div className="mt-20 flex justify-center" data-aos="zoom-in" data-aos-delay="300">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
             <div className="relative bg-white border border-gray-200 rounded-lg px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
