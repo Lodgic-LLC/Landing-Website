@@ -10,29 +10,28 @@ const AboutPage = () => {
 
     return (
         <>
-            <PageTitle title="À propos de nous" description="Découvrez notre entreprise et notre équipe" />
+            <PageTitle title="À propos de Lodgic" description="Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale" />
             <div className="pt-16">
                 {/* Section Hero À Propos */}
-                <section className="w-full bg-gradient-to-r from-blue-50 to-purple-50 py-24 md:py-32">
+                <section className="w-full bg-gradient-to-r from-blue-50 to-indigo-50 py-24 md:py-32">
                     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
                         {/* Texte - Côté gauche */}
                         <div className="w-full md:w-1/2 mb-12 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
                             <h1 className="font-inter-bold text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-6">
-                                Innovons ensemble pour<br />
-                                votre succès digital
+                                Experts en transformation<br />
+                                <span className="text-blue-600">digitale</span> depuis 2020
                             </h1>
 
-                            <p className="font-inter-regular text-gray-600 mb-8 max-w-lg text-lg">
-                                Depuis 2020, Lodgic accompagne les entreprises dans leur
-                                transformation numérique. Notre expertise en développement web et
-                                mobile nous permet de créer des solutions sur mesure qui propulsent
-                                votre croissance.
+                            <p className="font-inter-regular text-gray-700 mb-8 max-w-lg text-lg leading-relaxed">
+                                Lodgic accompagne les entreprises dans leur évolution numérique avec une approche
+                                stratégique et personnalisée. Notre expertise en développement web et
+                                mobile nous permet de créer des solutions sur mesure qui génèrent des résultats concrets.
                             </p>
 
                             <div className="flex flex-wrap gap-4">
                                 <a
                                     href="/contact"
-                                    className="font-inter-medium bg-[#2563EB] text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
+                                    className="font-inter-medium bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                                     data-aos="fade-up"
                                     data-aos-delay="200"
                                 >
@@ -40,7 +39,7 @@ const AboutPage = () => {
                                 </a>
                                 <a
                                     href="/services"
-                                    className="font-inter-medium border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full hover:border-[#2563EB] hover:text-[#2563EB] transition-colors"
+                                    className="font-inter-medium border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all"
                                     data-aos="fade-up"
                                     data-aos-delay="300"
                                 >
@@ -58,10 +57,10 @@ const AboutPage = () => {
                         >
                             <div className="relative w-full max-w-lg">
                                 {/* Fond dégradé */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-3xl transform rotate-2"></div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl transform rotate-2 shadow-xl"></div>
 
                                 {/* Contenu de l'illustration */}
-                                <div className="relative bg-gradient-to-br from-indigo-400 to-purple-600 rounded-3xl p-8 shadow-xl overflow-hidden">
+                                <div className="relative bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl p-8 shadow-xl overflow-hidden">
                                     {/* SVG d'appareils connectés */}
                                     <div className="relative z-10 flex justify-center items-center">
                                         <svg className="w-full h-auto max-w-md" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +79,6 @@ const AboutPage = () => {
                                             <circle cx="400" cy="275" r="5" fill="#E5E7EB" />
 
                                             {/* Éléments de connexion */}
-
                                             <line x1="350" y1="160" x2="370" y2="180" stroke="#E5E7EB" strokeWidth="2" strokeDasharray="4 4" />
 
                                             {/* Cubes flottants */}
@@ -96,15 +94,15 @@ const AboutPage = () => {
                                         </svg>
                                     </div>
 
-                                    {/* Éléments flottants */}
+                                    {/* Éléments flottants avec animation améliorée */}
                                     <div className="absolute top-10 right-10 bg-white p-2 rounded-lg shadow-md transform rotate-6 animate-float">
-                                        <svg className="w-6 h-6 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                                             <path fillRule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clipRule="evenodd" />
                                         </svg>
                                     </div>
 
                                     <div className="absolute bottom-10 left-10 bg-white p-2 rounded-lg shadow-md transform -rotate-3 animate-float-delayed">
-                                        <svg className="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <svg className="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
                                             <path fillRule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
                                         </svg>
                                     </div>
@@ -121,11 +119,11 @@ const AboutPage = () => {
                                         </svg>
                                     </div>
 
-                                    {/* Notification flottante */}
+                                    {/* Notification flottante améliorée */}
                                     <div className="absolute top-1/3 right-5 z-10 bg-white p-3 rounded-xl shadow-lg transform rotate-3 animate-float-slow">
                                         <div className="flex items-center">
-                                            <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                                                <svg className="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                                <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                                                     <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
                                                 </svg>
                                             </div>
@@ -144,54 +142,67 @@ const AboutPage = () => {
                 {/* Section Nos Valeurs */}
                 <section className="py-20 bg-white">
                     <div className="container mx-auto px-6">
-                        <h2 className="text-3xl md:text-4xl font-inter-bold text-center text-gray-900 mb-4" data-aos="fade-up">
-                            Nos valeurs
-                        </h2>
-                        <div className="w-24 h-1 bg-[#2563EB] mx-auto rounded-full mb-16" data-aos="fade-up" data-aos-delay="100"></div>
+                        <div className="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                            <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">
+                                Nos valeurs fondamentales
+                            </h2>
+                            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
+                            <p className="text-gray-600 text-lg">
+                                Ces principes guident chacune de nos actions et façonnent notre approche pour vous offrir un service d'excellence.
+                            </p>
+                        </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
                             {/* Valeur 1 */}
-                            <div className="flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200">
-                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                                    <svg className="w-8 h-8 text-[#2563EB]" fill="currentColor" viewBox="0 0 20 20">
+                            <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto transform transition-transform duration-300 hover:scale-110">
+                                    <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                                     </svg>
                                 </div>
-                                <h3 className="text-xl font-inter-bold text-gray-900 mb-2">Innovation</h3>
-                                <p className="text-gray-600">Toujours à la pointe des nouvelles technologies</p>
+                                <h3 className="text-xl font-inter-bold text-gray-900 mb-3 text-center">Innovation</h3>
+                                <p className="text-gray-600 text-center">
+                                    Nous explorons constamment les nouvelles technologies pour vous offrir des solutions à la pointe de l'innovation, adaptées aux défis de demain.
+                                </p>
                             </div>
 
                             {/* Valeur 2 */}
-                            <div className="flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="300">
-                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                                    <svg className="w-8 h-8 text-[#2563EB]" fill="currentColor" viewBox="0 0 20 20">
+                            <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto transform transition-transform duration-300 hover:scale-110">
+                                    <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                                     </svg>
                                 </div>
-                                <h3 className="text-xl font-inter-bold text-gray-900 mb-2">Transparence</h3>
-                                <p className="text-gray-600">Une communication claire et honnête</p>
+                                <h3 className="text-xl font-inter-bold text-gray-900 mb-3 text-center">Transparence</h3>
+                                <p className="text-gray-600 text-center">
+                                    Nous privilégions une communication claire et honnête à chaque étape de votre projet, garantissant une collaboration basée sur la confiance.
+                                </p>
                             </div>
 
                             {/* Valeur 3 */}
-                            <div className="flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="400">
-                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                                    <svg className="w-8 h-8 text-[#2563EB]" fill="currentColor" viewBox="0 0 20 20">
+                            <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto transform transition-transform duration-300 hover:scale-110">
+                                    <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                     </svg>
                                 </div>
-                                <h3 className="text-xl font-inter-bold text-gray-900 mb-2">Qualité</h3>
-                                <p className="text-gray-600">L'excellence dans chaque projet</p>
+                                <h3 className="text-xl font-inter-bold text-gray-900 mb-3 text-center">Excellence</h3>
+                                <p className="text-gray-600 text-center">
+                                    Nous nous engageons à maintenir les plus hauts standards de qualité dans chaque ligne de code et chaque aspect de nos solutions.
+                                </p>
                             </div>
 
                             {/* Valeur 4 */}
-                            <div className="flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="500">
-                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                                    <svg className="w-8 h-8 text-[#2563EB]" fill="currentColor" viewBox="0 0 20 20">
+                            <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="500">
+                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto transform transition-transform duration-300 hover:scale-110">
+                                    <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
                                     </svg>
                                 </div>
-                                <h3 className="text-xl font-inter-bold text-gray-900 mb-2">Engagement</h3>
-                                <p className="text-gray-600">Dévoués à votre réussite</p>
+                                <h3 className="text-xl font-inter-bold text-gray-900 mb-3 text-center">Engagement</h3>
+                                <p className="text-gray-600 text-center">
+                                    Nous sommes pleinement investis dans la réussite de votre projet, avec une approche personnalisée qui va au-delà de vos attentes.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -201,118 +212,86 @@ const AboutPage = () => {
                 <section className="py-20 bg-gray-50">
                     <div className="container mx-auto px-6">
                         <div className="max-w-4xl mx-auto">
-                            <h2 className="text-3xl md:text-4xl font-inter-bold text-center text-gray-900 mb-4" data-aos="fade-up">
-                                Notre histoire
-                            </h2>
-                            <div className="w-24 h-1 bg-[#2563EB] mx-auto rounded-full mb-16" data-aos="fade-up" data-aos-delay="100"></div>
+                            <div className="text-center mb-16" data-aos="fade-up">
+                                <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">
+                                    Notre parcours d'innovation
+                                </h2>
+                                <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
+                                <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                                    Depuis notre création, nous avons constamment évolué pour répondre aux besoins changeants du marché digital.
+                                </p>
+                            </div>
 
-                            <div className="space-y-12">
+                            <div className="space-y-12 relative">
+                                {/* Ligne verticale de timeline */}
+                                <div className="absolute left-1/3 top-0 bottom-0 w-0.5 bg-blue-200 hidden md:block"></div>
+
                                 {/* Étape 1 */}
-                                <div className="flex flex-col md:flex-row gap-8" data-aos="fade-up" data-aos-delay="200">
-                                    <div className="md:w-1/3">
-                                        <div className="bg-[#2563EB] text-white text-xl font-inter-bold rounded-lg p-4 text-center">
+                                <div className="flex flex-col md:flex-row gap-8 relative" data-aos="fade-up" data-aos-delay="200">
+                                    <div className="md:w-1/3 relative">
+                                        {/* Point sur la timeline */}
+                                        <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-600 rounded-full hidden md:block"></div>
+                                        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xl font-inter-bold rounded-lg p-4 text-center shadow-md">
                                             2020
                                         </div>
                                     </div>
-                                    <div className="md:w-2/3">
-                                        <h3 className="text-xl font-inter-bold text-gray-900 mb-2">Création de Lodgic</h3>
+                                    <div className="md:w-2/3 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                        <h3 className="text-xl font-inter-bold text-gray-900 mb-3">Fondation de Lodgic</h3>
                                         <p className="text-gray-600">
-                                            Fondée par une équipe de développeurs passionnés, Lodgic naît avec l'ambition de rendre les technologies web accessibles à toutes les entreprises.
+                                            Fondée par une équipe de développeurs passionnés et visionnaires, Lodgic est née avec l'ambition de démocratiser l'accès aux technologies web avancées pour les entreprises de toutes tailles. Notre mission initiale : transformer des idées innovantes en solutions digitales concrètes.
                                         </p>
                                     </div>
                                 </div>
 
                                 {/* Étape 2 */}
-                                <div className="flex flex-col md:flex-row gap-8" data-aos="fade-up" data-aos-delay="300">
-                                    <div className="md:w-1/3">
-                                        <div className="bg-[#2563EB] text-white text-xl font-inter-bold rounded-lg p-4 text-center">
+                                <div className="flex flex-col md:flex-row gap-8 relative" data-aos="fade-up" data-aos-delay="300">
+                                    <div className="md:w-1/3 relative">
+                                        {/* Point sur la timeline */}
+                                        <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-600 rounded-full hidden md:block"></div>
+                                        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xl font-inter-bold rounded-lg p-4 text-center shadow-md">
                                             2021
                                         </div>
                                     </div>
-                                    <div className="md:w-2/3">
-                                        <h3 className="text-xl font-inter-bold text-gray-900 mb-2">Expansion de l'équipe</h3>
+                                    <div className="md:w-2/3 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                        <h3 className="text-xl font-inter-bold text-gray-900 mb-3">Croissance et diversification</h3>
                                         <p className="text-gray-600">
-                                            Face à une demande croissante, notre équipe s'agrandit et diversifie ses compétences pour offrir des solutions toujours plus complètes.
+                                            Face à une demande croissante, notre équipe s'est agrandie avec l'intégration de talents spécialisés en UX/UI, développement mobile et stratégie digitale. Cette expansion nous a permis d'élargir notre offre et de répondre à des projets de plus grande envergure, tout en maintenant notre engagement envers l'excellence.
                                         </p>
                                     </div>
                                 </div>
 
                                 {/* Étape 3 */}
-                                <div className="flex flex-col md:flex-row gap-8" data-aos="fade-up" data-aos-delay="400">
-                                    <div className="md:w-1/3">
-                                        <div className="bg-[#2563EB] text-white text-xl font-inter-bold rounded-lg p-4 text-center">
+                                <div className="flex flex-col md:flex-row gap-8 relative" data-aos="fade-up" data-aos-delay="400">
+                                    <div className="md:w-1/3 relative">
+                                        {/* Point sur la timeline */}
+                                        <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-600 rounded-full hidden md:block"></div>
+                                        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xl font-inter-bold rounded-lg p-4 text-center shadow-md">
                                             2022
                                         </div>
                                     </div>
-                                    <div className="md:w-2/3">
-                                        <h3 className="text-xl font-inter-bold text-gray-900 mb-2">Nouveaux services</h3>
+                                    <div className="md:w-2/3 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                        <h3 className="text-xl font-inter-bold text-gray-900 mb-3">Innovation et nouveaux services</h3>
                                         <p className="text-gray-600">
-                                            Lancement de notre offre d'applications mobiles et de services d'optimisation pour répondre aux besoins évolutifs du marché.
+                                            L'année 2022 a marqué un tournant avec le lancement de notre offre complète d'applications mobiles et de services d'optimisation des performances. Nous avons également développé notre propre framework interne pour accélérer le développement tout en garantissant une qualité constante, permettant à nos clients de bénéficier de solutions plus rapides et plus robustes.
                                         </p>
                                     </div>
                                 </div>
 
                                 {/* Étape 4 */}
-                                <div className="flex flex-col md:flex-row gap-8" data-aos="fade-up" data-aos-delay="500">
-                                    <div className="md:w-1/3">
-                                        <div className="bg-[#2563EB] text-white text-xl font-inter-bold rounded-lg p-4 text-center">
+                                <div className="flex flex-col md:flex-row gap-8 relative" data-aos="fade-up" data-aos-delay="500">
+                                    <div className="md:w-1/3 relative">
+                                        {/* Point sur la timeline */}
+                                        <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-600 rounded-full hidden md:block"></div>
+                                        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xl font-inter-bold rounded-lg p-4 text-center shadow-md">
                                             Aujourd'hui
                                         </div>
                                     </div>
-                                    <div className="md:w-2/3">
-                                        <h3 className="text-xl font-inter-bold text-gray-900 mb-2">Leader du développement web</h3>
+                                    <div className="md:w-2/3 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                        <h3 className="text-xl font-inter-bold text-gray-900 mb-3">Leader de la transformation digitale</h3>
                                         <p className="text-gray-600">
-                                            Avec plus de 100 projets réalisés et une équipe de 25 experts, Lodgic s'impose comme un partenaire de confiance pour la transformation digitale des entreprises.
+                                            Avec plus de 100 projets réussis et une équipe de 25 experts passionnés, Lodgic s'est imposée comme un partenaire stratégique de confiance pour les entreprises en quête d'excellence digitale. Notre approche centrée sur les résultats et notre expertise technique nous permettent d'accompagner nos clients dans leur croissance numérique avec des solutions sur mesure qui génèrent un impact mesurable.
                                         </p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Section Notre Équipe */}
-                <section className="py-20 bg-white">
-                    <div className="container mx-auto px-6">
-                        <h2 className="text-3xl md:text-4xl font-inter-bold text-center text-gray-900 mb-4" data-aos="fade-up">
-                            Notre équipe
-                        </h2>
-                        <div className="w-24 h-1 bg-[#2563EB] mx-auto rounded-full mb-16" data-aos="fade-up" data-aos-delay="100"></div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {/* Membre 1 */}
-                            <div className="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                                <div className="h-64 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-inter-bold text-gray-900 mb-1">Thomas Martin</h3>
-                                    <p className="text-[#2563EB] font-inter-medium mb-4">Fondateur & CEO</p>
-                                    <p className="text-gray-600">
-                                        Expert en développement web avec plus de 15 ans d'expérience dans la création d'applications innovantes.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Membre 2 */}
-                            <div className="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                                <div className="h-64 bg-gradient-to-r from-purple-400 to-pink-500"></div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-inter-bold text-gray-900 mb-1">Sophie Dubois</h3>
-                                    <p className="text-[#2563EB] font-inter-medium mb-4">Directrice Technique</p>
-                                    <p className="text-gray-600">
-                                        Spécialiste en architecture logicielle et en optimisation des performances des applications web.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Membre 3 */}
-                            <div className="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="400">
-                                <div className="h-64 bg-gradient-to-r from-green-400 to-cyan-500"></div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-inter-bold text-gray-900 mb-1">Alexandre Chen</h3>
-                                    <p className="text-[#2563EB] font-inter-medium mb-4">Lead Designer UX/UI</p>
-                                    <p className="text-gray-600">
-                                        Créateur d'interfaces utilisateur intuitives et esthétiques qui transforment l'expérience utilisateur.
-                                    </p>
                                 </div>
                             </div>
                         </div>
