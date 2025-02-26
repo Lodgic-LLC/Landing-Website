@@ -33,6 +33,8 @@ const SuccessStories = () => {
       id: 1,
       title: 'SaaS pour Startups',
       description: 'Transformation digitale complète pour une startup en pleine croissance',
+      image: '/assets/saas-project.jpg',
+      link: '#',
       items: [
         {
           id: 'saas-1',
@@ -70,24 +72,22 @@ const SuccessStories = () => {
     },
     {
       id: 2,
-      title: 'Site e-commerce optimisé',
-      description: 'Refonte complète pour une expérience client exceptionnelle',
+      title: 'CoinFinder - Plateforme Crypto',
+      description: 'Application web de suivi et d\'analyse de cryptomonnaies en temps réel',
+      image: '/public/images/coinfinder.png',
+      link: 'https://coinfinder.fr',
       items: [
         {
-          id: 'ecom-1',
+          id: 'coin-1',
           icon: (
             <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fillRule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9a1 1 0 00-1-1z"
-                clipRule="evenodd"
-              />
+              <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
             </svg>
           ),
-          text: 'Refonte complète du site pour une meilleure UX',
+          text: 'Interface intuitive pour suivre plus de 10 000 cryptomonnaies en temps réel',
         },
         {
-          id: 'ecom-2',
+          id: 'coin-2',
           icon: (
             <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
               <path
@@ -97,20 +97,17 @@ const SuccessStories = () => {
               />
             </svg>
           ),
-          text: "Augmentation de 25% du chiffre d'affaires",
+          text: 'Augmentation de 65% du temps passé sur la plateforme',
         },
         {
-          id: 'ecom-3',
+          id: 'coin-3',
           icon: (
             <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fillRule="evenodd"
-                d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
-                clipRule="evenodd"
-              />
+              <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
+              <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
             </svg>
           ),
-          text: 'Taux de panier abandonné réduit de 45%',
+          text: 'Croissance de 120% de la base utilisateurs en 6 mois',
         },
       ],
     },
@@ -141,24 +138,55 @@ const SuccessStories = () => {
           {/* Grille des cas de succès */}
           <div className="grid md:grid-cols-2 gap-10">
             {successCases.map((caseItem) => (
-              <div
+              <a
                 key={caseItem.id}
-                className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"
+                href={caseItem.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group rounded-xl overflow-hidden shadow-lg h-80 block cursor-pointer transition-transform hover:-translate-y-1 duration-300"
                 data-aos="fade-up"
                 data-aos-delay={(caseItem.id - 1) * 100}
               >
-                <h3 className="text-xl font-inter-bold text-gray-900 mb-2">{caseItem.title}</h3>
-                <p className="text-gray-500 mb-6 text-sm">{caseItem.description}</p>
+                {/* Image d'arrière-plan */}
+                <img
+                  src={caseItem.image}
+                  alt={caseItem.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
 
-                <div className="space-y-5">
-                  {caseItem.items.map((item) => (
-                    <div key={item.id} className="flex items-start">
-                      <div className="flex-shrink-0 p-1.5 bg-blue-50 rounded-full mt-0.5">{item.icon}</div>
-                      <p className="ml-4 text-gray-700">{item.text}</p>
-                    </div>
-                  ))}
+                {/* Overlay avec dégradé */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-70 transition-opacity duration-300"></div>
+
+                {/* Titre visible uniquement quand pas de survol */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10 transition-opacity duration-300 group-hover:opacity-0">
+                  <h3 className="text-2xl font-inter-bold mb-2">{caseItem.title}</h3>
                 </div>
-              </div>
+
+                {/* Contenu qui apparaît au survol */}
+                <div className="absolute inset-0 flex flex-col justify-center p-6 bg-blue-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-2xl font-inter-bold text-white mb-3">{caseItem.title}</h3>
+                  <p className="text-white/90 mb-4">{caseItem.description}</p>
+
+                  <div className="space-y-3">
+                    {caseItem.items.map((item) => (
+                      <div key={item.id} className="flex items-start">
+                        <div className="flex-shrink-0 p-1 bg-blue-500/30 rounded-full mt-0.5">
+                          {React.cloneElement(item.icon, { className: "w-4 h-4 text-white" })}
+                        </div>
+                        <p className="ml-3 text-white/90 text-sm">{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-4 flex items-center text-white/90">
+                    <span className="text-sm font-medium">Voir le projet</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </div>
+                </div>
+              </a>
             ))}
           </div>
         </div>

@@ -329,8 +329,11 @@ const DetailedServices = () => {
                         Besoin d'un service sur mesure ?
                       </h3>
                       <p className="text-gray-600 mb-6 md:mb-0">
-                        Nous adaptons nos services à vos besoins spécifiques. Contactez-nous pour discuter de votre
-                        projet et obtenir une proposition personnalisée.
+                        Nous adaptons nos services à vos besoins spécifiques. Consultez nos{' '}
+                        <Link to="/services" className="text-blue-600 hover:underline">
+                          services détaillés
+                        </Link>{' '}
+                        ou découvrez nos réalisations précédentes pour vous inspirer.
                       </p>
                     </div>
 

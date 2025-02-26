@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Empêcher l'indexation des pages d'administration ou temporaires
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /dev/
+
+# Sitemap
+Sitemap: https://lodgic-dev.com/sitemap.xml
