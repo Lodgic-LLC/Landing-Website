@@ -7,7 +7,7 @@ const ProjectCTA = () => {
       <div className="absolute inset-0 z-0">
         <img
           src="/assets/images/footer-img.png"
-          alt="Background"
+          alt=""
           className="w-full h-full object-cover"
           loading="lazy"
         />

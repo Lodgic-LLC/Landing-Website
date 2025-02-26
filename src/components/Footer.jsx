@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -10,6 +11,7 @@ const Footer = () => {
           {/* Logo et description */}
           <div className="space-y-4">
             <div className="flex items-center">
+              <img src="/favicon.ico" alt="Logo Lodgic" className="w-8 h-8 mr-2" />
               <h2 className="text-xl font-bold tracking-tight">Lodgic</h2>
             </div>
             <p className="text-gray-400 text-sm max-w-xs">
@@ -53,80 +55,41 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Pages */}
           <div className="space-y-4">
-            <h3 className="text-sm font-medium uppercase tracking-wider text-gray-300">Services</h3>
+            <h3 className="text-sm font-medium uppercase tracking-wider text-gray-300">Pages</h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="/services/web"
-                  className="text-gray-400 hover:text-white transition-colors inline-block"
+                <Link to="/" className="text-gray-400 hover:text-white transition-colors inline-block" tabIndex="0">
+                  Accueil
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-gray-400 hover:text-white transition-colors inline-block" tabIndex="0">
+                  À propos
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-gray-400 hover:text-white transition-colors inline-block" tabIndex="0">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors inline-block" tabIndex="0">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/rendez-vous"
+                  className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors mt-2"
                   tabIndex="0"
                 >
-                  Applications Web
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/services/refonte"
-                  className="text-gray-400 hover:text-white transition-colors inline-block"
-                  tabIndex="0"
-                >
-                  Refonte & Optimisation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/services/api"
-                  className="text-gray-400 hover:text-white transition-colors inline-block"
-                  tabIndex="0"
-                >
-                  Intégration API
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/services/mobile"
-                  className="text-gray-400 hover:text-white transition-colors inline-block"
-                  tabIndex="0"
-                >
-                  Applications Mobiles
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Ressources */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-medium uppercase tracking-wider text-gray-300">Ressources</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="/blog" className="text-gray-400 hover:text-white transition-colors inline-block" tabIndex="0">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/documentation"
-                  className="text-gray-400 hover:text-white transition-colors inline-block"
-                  tabIndex="0"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/support"
-                  className="text-gray-400 hover:text-white transition-colors inline-block"
-                  tabIndex="0"
-                >
-                  Support
-                </a>
-              </li>
-              <li>
-                <a href="/faq" className="text-gray-400 hover:text-white transition-colors inline-block" tabIndex="0">
-                  FAQ
-                </a>
+                  <span>Prendre RDV</span>
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
               </li>
             </ul>
           </div>
@@ -174,15 +137,15 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">© {currentYear} Lodgic. Tous droits réservés.</p>
           <div className="mt-4 md:mt-0 flex space-x-6">
-            <a href="/mentions-legales" className="text-gray-500 hover:text-gray-300 text-sm" tabIndex="0">
+            <Link to="/mentions-legales" className="text-gray-500 hover:text-gray-300 text-sm" tabIndex="0">
               Mentions légales
-            </a>
-            <a href="/politique-confidentialite" className="text-gray-500 hover:text-gray-300 text-sm" tabIndex="0">
+            </Link>
+            <Link to="/politique-confidentialite" className="text-gray-500 hover:text-gray-300 text-sm" tabIndex="0">
               Politique de confidentialité
-            </a>
-            <a href="/cgv" className="text-gray-500 hover:text-gray-300 text-sm" tabIndex="0">
+            </Link>
+            <Link to="/cgv" className="text-gray-500 hover:text-gray-300 text-sm" tabIndex="0">
               CGV
-            </a>
+            </Link>
           </div>
         </div>
       </div>

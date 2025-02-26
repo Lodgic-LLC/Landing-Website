@@ -10,6 +10,9 @@ import 'aos/dist/aos.css'
 import ContactPage from './pages/ContactPage'
 import ServicesPage from './pages/ServicesPage'
 import Appointment from './pages/Appointment'
+import MentionsLegales from './pages/MentionsLegales'
+import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite'
+import CGV from './pages/CGV'
 
 function App() {
   useEffect(() => {
@@ -29,6 +32,9 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/rendez-vous" element={<Appointment />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+          <Route path="/cgv" element={<CGV />} />
         </Routes>
         <Footer />
       </div>
