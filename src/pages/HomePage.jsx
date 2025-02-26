@@ -17,7 +17,10 @@ const HomePage = () => {
 
     return (
         <>
-            <PageTitle title="Accueil" description="Bienvenue sur le site de Lodgic" />
+            <PageTitle
+                title="Accueil | Lodgic - Solutions Digitales Innovantes"
+                description="Lodgic vous accompagne dans votre transformation digitale avec des solutions sur mesure. Experts en développement web, applications mobiles et stratégie digitale pour propulser votre entreprise vers le succès. Découvrez nos services, notre processus et nos réalisations."
+            />
             <div className="pt-16">
                 <Hero />
                 <Features />
