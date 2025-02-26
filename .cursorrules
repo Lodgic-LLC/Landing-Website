@@ -15,6 +15,7 @@ Le projet est développé avec les technologies suivantes :
 
 L'Email de contact est lodgic@outlook.fr
 Quand je te demande de modifier un fichier, tu n'as pas besoin de réécrire le fichier entier, tu peux modifier les parties nécessaires.
+Quand tu fais du code, tu dois toujours chercher à optimiser le code et à le rendre plus lisible et maintenable et également le rendre le plus sécurisé possible.
 
 React.js (Vite.js pour le bundling rapide).
 TailwindCSS pour le design et la mise en page.
