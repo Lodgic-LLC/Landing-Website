@@ -1,6 +1,7 @@
 // ... existing code ...
 import React, { useEffect } from 'react';
 import AOS from 'aos';
+import { Link } from 'react-router-dom';
 import PageTitle from '../components/PageTitle';
 import { FaCode, FaRocket, FaPlug, FaTools, FaChevronRight } from 'react-icons/fa';
 
@@ -103,22 +104,22 @@ const ServicesPage = () => {
                             adaptées aux besoins spécifiques de votre activité pour vous aider à atteindre vos objectifs.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4 mt-10">
-                            <a
-                                href="/rendez-vous"
+                            <Link
+                                to="/rendez-vous"
                                 className="font-inter-medium bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg"
                                 data-aos="fade-up"
                                 data-aos-delay="100"
                             >
                                 Prendre rendez-vous
-                            </a>
-                            <a
-                                href="/contact"
+                            </Link>
+                            <Link
+                                to="/contact"
                                 className="font-inter-medium bg-white text-blue-600 border border-blue-200 px-8 py-3 rounded-lg hover:bg-blue-50 transition-all shadow-md hover:shadow-lg"
                                 data-aos="fade-up"
                                 data-aos-delay="200"
                             >
                                 Nous contacter
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -153,15 +154,15 @@ const ServicesPage = () => {
                                 ))}
                             </div>
 
-                            <a
-                                href="/rendez-vous"
+                            <Link
+                                to="/rendez-vous"
                                 className="font-inter-medium bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg inline-flex items-center"
                                 data-aos="fade-up"
                                 data-aos-delay="200"
                             >
                                 Discuter de votre projet
                                 <FaChevronRight className="ml-2 h-3 w-3" />
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Illustration - Alternance droite/gauche */}
@@ -397,60 +398,76 @@ const ServicesPage = () => {
                 </div>
             </section>
 
-            {/* Section Témoignages */}
-            <section className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center mb-16" data-aos="fade-up">
-                        <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">
-                            Ce que nos clients disent
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Découvrez les retours d'expérience de nos clients satisfaits
-                        </p>
-                    </div>
+            {/* Section CTA */}
+            <section className="py-24 bg-gradient-to-r from-blue-600 to-indigo-700 relative overflow-hidden">
+                {/* Éléments décoratifs */}
+                <div className="absolute top-0 left-0 w-full h-full">
+                    <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white opacity-10"></div>
+                    <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-white opacity-10"></div>
+                    <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-white opacity-5"></div>
+                </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {[
-                            {
-                                quote: "L'équipe a parfaitement compris nos besoins et a livré une application qui a transformé notre façon de travailler.",
-                                author: "Marie Dupont",
-                                position: "Directrice Marketing, TechCorp",
-                                delay: 0
-                            },
-                            {
-                                quote: "Un travail d'une qualité exceptionnelle, livré dans les délais et avec un support irréprochable.",
-                                author: "Jean Martin",
-                                position: "CEO, StartupInnovation",
-                                delay: 100
-                            },
-                            {
-                                quote: "La refonte de notre site a considérablement amélioré nos conversions et l'expérience de nos utilisateurs.",
-                                author: "Sophie Legrand",
-                                position: "Responsable Digital, E-Commerce Plus",
-                                delay: 200
-                            }
-                        ].map((testimonial, index) => (
-                            <div
-                                key={index}
-                                className="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md"
-                                data-aos="fade-up"
-                                data-aos-delay={testimonial.delay}
-                            >
-                                <svg className="w-10 h-10 text-blue-200 mb-4" fill="currentColor" viewBox="0 0 32 32">
-                                    <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1 0.9-2 2-2V8zm12 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1 0.9-2 2-2V8z" />
-                                </svg>
-                                <p className="text-gray-600 mb-6 italic">{testimonial.quote}</p>
-                                <div className="flex items-center">
-                                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-blue-600 font-bold">{testimonial.author.charAt(0)}</span>
-                                    </div>
-                                    <div>
-                                        <h4 className="font-inter-bold text-gray-900">{testimonial.author}</h4>
-                                        <p className="text-gray-500 text-sm">{testimonial.position}</p>
-                                    </div>
-                                </div>
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="flex flex-col md:flex-row items-center justify-between">
+                        <div className="w-full md:w-3/5 mb-10 md:mb-0" data-aos="fade-right">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-white mb-6 leading-tight">
+                                Prêt à concrétiser votre <span className="text-yellow-300">projet digital</span> ?
+                            </h2>
+                            <p className="text-xl text-blue-100 mb-8 max-w-2xl">
+                                Discutons ensemble de vos besoins et objectifs pour créer une solution web sur mesure qui propulsera votre entreprise vers de nouveaux sommets.
+                            </p>
+                            <div className="flex flex-wrap gap-4">
+                                <Link
+                                    to="/rendez-vous"
+                                    className="bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-lg font-inter-medium shadow-lg hover:shadow-xl transition-all flex items-center"
+                                    data-aos="fade-up"
+                                    data-aos-delay="100"
+                                >
+                                    Prendre rendez-vous
+                                    <FaChevronRight className="ml-2 h-3 w-3" />
+                                </Link>
+                                <Link
+                                    to="/contact"
+                                    className="bg-transparent text-white border-2 border-white hover:bg-white/10 px-8 py-4 rounded-lg font-inter-medium transition-all"
+                                    data-aos="fade-up"
+                                    data-aos-delay="200"
+                                >
+                                    Nous contacter
+                                </Link>
                             </div>
-                        ))}
+                        </div>
+
+                        <div className="w-full md:w-2/5 flex justify-center" data-aos="fade-left">
+                            <div className="relative">
+                                {/* Illustration */}
+                                <div className="w-64 h-64 md:w-80 md:h-80 bg-white/20 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center shadow-2xl">
+                                    <svg className="w-full h-auto" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        {/* Écran d'ordinateur stylisé */}
+                                        <rect x="40" y="40" width="120" height="80" rx="4" fill="white" />
+                                        <rect x="50" y="50" width="100" height="60" rx="2" fill="#60A5FA" />
+
+                                        {/* Éléments d'interface */}
+                                        <rect x="60" y="60" width="80" height="5" rx="1" fill="white" opacity="0.8" />
+                                        <rect x="60" y="70" width="60" height="5" rx="1" fill="white" opacity="0.8" />
+                                        <rect x="60" y="80" width="70" height="5" rx="1" fill="white" opacity="0.8" />
+                                        <rect x="60" y="90" width="40" height="10" rx="2" fill="#FBBF24" />
+
+                                        {/* Base de l'ordinateur */}
+                                        <rect x="70" y="120" width="60" height="5" rx="2" fill="white" />
+                                        <path d="M65 120 L135 120 L125 140 L75 140 L65 120 Z" fill="white" opacity="0.8" />
+
+                                        {/* Éléments décoratifs */}
+                                        <circle cx="150" cy="60" r="15" fill="#F472B6" opacity="0.8" />
+                                        <circle cx="50" cy="130" r="10" fill="#34D399" opacity="0.8" />
+                                        <circle cx="160" cy="140" r="12" fill="#FBBF24" opacity="0.8" />
+                                    </svg>
+                                </div>
+
+                                {/* Éléments flottants */}
+                                <div className="absolute -top-6 -right-6 w-12 h-12 bg-yellow-300 rounded-lg rotate-12 shadow-lg"></div>
+                                <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-blue-300 rounded-full shadow-lg"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
