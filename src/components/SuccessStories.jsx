@@ -1,7 +1,9 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 
 const SuccessStories = () => {
   const progressLineRef = useRef(null)
+  const [selectedCase, setSelectedCase] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,25 +30,60 @@ const SuccessStories = () => {
     }
   }, [])
 
+  // Fermer le modal quand on clique sur Escape
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.keyCode === 27) {
+        setIsModalOpen(false)
+      }
+    }
+    window.addEventListener('keydown', handleEsc)
+    return () => {
+      window.removeEventListener('keydown', handleEsc)
+    }
+  }, [])
+
+  // Empêcher le scroll quand le modal est ouvert
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isModalOpen])
+
+  const handleCaseClick = (caseItem) => {
+
+    if (caseItem.id === 2) {
+      window.open('https://coinfinder.fr', '_blank')
+    } else {
+      setSelectedCase(caseItem)
+      setIsModalOpen(true)
+    }
+  }
+
   const successCases = [
     {
       id: 1,
-      title: 'SaaS pour Startups',
-      description: 'Transformation digitale complète pour une startup en pleine croissance',
-      image: '/assets/saas-project.jpg',
+      title: 'Forge AI - Marketplace NFT',
+      description: 'Plateforme de génération et vente de NFT propulsée par l\'intelligence artificielle',
+      image: '/images/forge-main.png',
       link: '#',
       items: [
         {
-          id: 'saas-1',
+          id: 'forge-1',
           icon: (
             <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
               <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H5.5zm9.364-9.5A5.48 5.48 0 0010 7.32a5.403 5.403 0 00-4.864-3.32A4.5 4.5 0 000 8.5c0 2.485 2.015 4.5 4.5 4.5h11c2.485 0 4.5-2.015 4.5-4.5s-2.015-4.5-4.5-4.5a4.5 4.5 0 00-.636.045z" />
             </svg>
           ),
-          text: "Développement d'une plateforme SaaS en 3 mois",
+          text: "Développement d'une marketplace NFT complète en 4 mois",
         },
         {
-          id: 'saas-2',
+          id: 'forge-2',
           icon: (
             <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
               <path
@@ -56,25 +93,53 @@ const SuccessStories = () => {
               />
             </svg>
           ),
-          text: 'Augmentation de 40% du taux de conversion',
+          text: 'Plus de 50 000 NFT générés par IA en 3 mois',
         },
         {
-          id: 'saas-3',
+          id: 'forge-3',
           icon: (
             <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
               <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
             </svg>
           ),
-          text: 'Réduction des coûts opérationnels de 30%',
+          text: 'Volume de transactions de 2.5M$ depuis le lancement',
         },
       ],
+      detailedInfo: {
+        challenge: "Forge AI avait besoin d'une plateforme permettant aux utilisateurs de créer des NFT uniques à partir de simples descriptions textuelles, puis de les vendre sur une marketplace intégrée. Le défi était de combiner l'IA générative, la technologie blockchain et une expérience utilisateur intuitive.",
+        solution: "Nous avons développé une plateforme complète intégrant des modèles d'IA avancés pour la génération d'images, une infrastructure blockchain sécurisée pour le minting des NFT, et une marketplace fluide pour l'achat et la vente. L'interface utilisateur a été conçue pour être accessible même aux utilisateurs novices en matière de NFT et de crypto-monnaies.",
+        results: "Depuis son lancement, Forge AI a attiré plus de 25 000 créateurs actifs, généré plus de 50 000 NFT uniques et facilité des transactions d'une valeur totale de 2,5 millions de dollars. La plateforme a également établi des partenariats avec plusieurs artistes et marques de renom pour des collections exclusives.",
+        technologies: ["React.js", "Node.js", "Python", "IPFS", "xAI", "Solana"],
+        images: [
+          {
+            src: "/images/forge-main.png",
+            alt: "Page d'accueil de Forge AI",
+            caption: "Interface principale de la plateforme Forge AI"
+          },
+          {
+            src: "/images/forge-generation.png",
+            alt: "Interface de génération de NFT",
+            caption: "Outil de génération de NFT par IA avec prompt textuel"
+          },
+          {
+            src: "/images/forge-marketplace.png",
+            alt: "Marketplace Forge AI",
+            caption: "Marketplace permettant l'achat et la vente des NFT générés"
+          },
+          {
+            src: "/images/forge-mint.png",
+            alt: "Processus de minting",
+            caption: "Interface de minting des NFT sur la blockchain"
+          }
+        ]
+      }
     },
     {
       id: 2,
       title: 'CoinFinder - Plateforme Crypto',
       description: 'Application web de suivi et d\'analyse de cryptomonnaies en temps réel',
-      image: '/public/images/coinfinder.png',
+      image: '/images/coinfinder.png',
       link: 'https://coinfinder.fr',
       items: [
         {
@@ -138,11 +203,9 @@ const SuccessStories = () => {
           {/* Grille des cas de succès */}
           <div className="grid md:grid-cols-2 gap-10">
             {successCases.map((caseItem) => (
-              <a
+              <div
                 key={caseItem.id}
-                href={caseItem.link}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => handleCaseClick(caseItem)}
                 className="relative group rounded-xl overflow-hidden shadow-lg h-80 block cursor-pointer transition-transform hover:-translate-y-1 duration-300"
                 data-aos="fade-up"
                 data-aos-delay={(caseItem.id - 1) * 100}
@@ -186,11 +249,96 @@ const SuccessStories = () => {
                     </svg>
                   </div>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Modal détaillé du projet */}
+      {isModalOpen && selectedCase && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-opacity duration-300">
+          <div
+            className="bg-white rounded-xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header du modal avec bouton de fermeture */}
+            <div className="sticky top-0 bg-white z-10 flex justify-between items-center p-6 border-b border-gray-100">
+              <h3 className="text-2xl font-inter-bold text-gray-900">{selectedCase.title}</h3>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+              >
+                <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Contenu du modal */}
+            <div className="p-6">
+              {selectedCase.detailedInfo ? (
+                <div className="space-y-8">
+                  {/* Galerie d'images */}
+                  <div className="grid grid-cols-2 gap-4">
+                    {selectedCase.detailedInfo.images.map((image, index) => (
+                      <div key={index} className="rounded-lg overflow-hidden shadow-md">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-64 object-cover"
+                        />
+                        <p className="text-sm text-gray-600 p-3 bg-gray-50">{image.caption}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Défi */}
+                  <div>
+                    <h4 className="text-xl font-inter-bold text-gray-900 mb-3">Le défi</h4>
+                    <p className="text-gray-700">{selectedCase.detailedInfo.challenge}</p>
+                  </div>
+
+                  {/* Solution */}
+                  <div>
+                    <h4 className="text-xl font-inter-bold text-gray-900 mb-3">Notre solution</h4>
+                    <p className="text-gray-700">{selectedCase.detailedInfo.solution}</p>
+                  </div>
+
+                  {/* Technologies utilisées */}
+                  <div>
+                    <h4 className="text-xl font-inter-bold text-gray-900 mb-3">Technologies utilisées</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedCase.detailedInfo.technologies.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center py-12">
+                  <p className="text-gray-500">Détails du projet non disponibles</p>
+                </div>
+              )}
+            </div>
+
+            {/* Footer du modal */}
+            <div className="border-t border-gray-100 p-6 flex justify-end">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="px-6 py-3 cursor-pointer bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors mr-3"
+              >
+                Fermer
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

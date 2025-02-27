@@ -13,7 +13,7 @@ const Hero = () => {
         {/* Texte et CTA - Côté gauche */}
         <div className="w-full md:w-1/2 mb-16 md:mb-0 z-10" data-aos="fade-up" data-aos-duration="1000">
           <h1 className="font-inter-bold text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight mb-6">
-            Développement d'applications web sur mesure pour votre entreprise
+            Développement d'<span className='gradient-text from-blue-500 to-indigo-600'>applications web</span> et <span className='gradient-text from-blue-500 to-indigo-600'>mobile</span> sur mesure
           </h1>
 
           <p className="font-inter-regular text-gray-600 mb-8 max-w-lg text-lg md:text-xl leading-relaxed">

@@ -125,8 +125,7 @@ const Features = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Lodgic</span> ?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Nous combinons expertise technique et vision stratégique pour transformer vos idées en solutions digitales
-            performantes.
+            Nous allions expertise technique, accompagnement sur mesure et vision stratégique pour transformer vos idées en solutions digitales innovantes et performantes.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mt-8"></div>
         </div>
@@ -198,7 +197,7 @@ const Features = () => {
                   to="/contact"
                   className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-inter-medium rounded-lg shadow-md hover:shadow-lg transition-shadow"
                 >
-                  Contactez-nous
+                  Discutons de vos besoins
                 </Link>
                 <Link
                   to="/rendez-vous"
