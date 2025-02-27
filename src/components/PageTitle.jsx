@@ -29,7 +29,7 @@ const PageTitle = ({ title, description }) => {
         <>
             <Helmet>
                 <title>{getFullTitle()}</title>
-                <meta name="description" content={description || "Lodgic Dev - Agence de développement d'applications web sur mesure pour les entreprises et startups."} />
+                <meta name="description" content={description || "Lodgic - Agence de développement d'applications web et mobile sur mesure pour les entreprises et startups."} />
             </Helmet>
         </>
     );
