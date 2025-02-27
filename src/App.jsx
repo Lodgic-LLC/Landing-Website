@@ -24,7 +24,7 @@ function App() {
 
   return (
     <Router>
-      <div className="font-inter min-h-screen bg-white">
+      <div className="font-inter min-h-screen bg-white overflow-x-hidden">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

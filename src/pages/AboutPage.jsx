@@ -15,9 +15,8 @@ const AboutPage = () => {
         description="Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale"
       />
       <div className="pt-16">
-        {/* Section Hero À Propos */}
         <section className="w-full bg-gradient-to-r from-blue-50 to-indigo-50 py-24 md:py-32">
-          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
+          <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center">
             {/* Texte - Côté gauche */}
             <div className="w-full md:w-1/2 mb-12 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
               <h1 className="font-inter-bold text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-6">
@@ -170,7 +169,7 @@ const AboutPage = () => {
 
         {/* Section Nos Valeurs */}
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
               <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">Nos valeurs fondamentales</h2>
               <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
@@ -274,7 +273,7 @@ const AboutPage = () => {
 
         {/* Section Notre Approche */}
         <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-7xl mx-auto">
               <div className="flex flex-col lg:flex-row items-center gap-12">
                 {/* Contenu texte */}
@@ -455,7 +454,7 @@ const AboutPage = () => {
 
         {/* Section CTA */}
         <section className="py-20 bg-gradient-to-r  from-blue-600 to-indigo-700 text-white">
-          <div className="container mx-auto px-6 text-center">
+          <div className="container mx-auto px-4 sm:px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-inter-bold mb-6" data-aos="fade-up">
               Prêt à transformer votre vision en réalité ?
             </h2>
@@ -475,7 +474,7 @@ const AboutPage = () => {
 
         {/* Section Notre Équipe */}
         <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
               <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">Notre Équipe</h2>
               <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
