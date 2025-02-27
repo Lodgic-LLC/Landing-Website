@@ -56,7 +56,6 @@ const SuccessStories = () => {
   }, [isModalOpen])
 
   const handleCaseClick = (caseItem) => {
-
     if (caseItem.id === 2) {
       window.open('https://coinfinder.fr', '_blank')
     } else {
@@ -69,7 +68,7 @@ const SuccessStories = () => {
     {
       id: 1,
       title: 'Forge AI - Marketplace NFT',
-      description: 'Plateforme de génération et vente de NFT propulsée par l\'intelligence artificielle',
+      description: "Plateforme de génération et vente de NFT propulsée par l'intelligence artificielle",
       image: '/images/forge-main.png',
       link: '#',
       items: [
@@ -107,38 +106,41 @@ const SuccessStories = () => {
         },
       ],
       detailedInfo: {
-        challenge: "Forge AI avait besoin d'une plateforme permettant aux utilisateurs de créer des NFT uniques à partir de simples descriptions textuelles, puis de les vendre sur une marketplace intégrée. Le défi était de combiner l'IA générative, la technologie blockchain et une expérience utilisateur intuitive.",
-        solution: "Nous avons développé une plateforme complète intégrant des modèles d'IA avancés pour la génération d'images, une infrastructure blockchain sécurisée pour le minting des NFT, et une marketplace fluide pour l'achat et la vente. L'interface utilisateur a été conçue pour être accessible même aux utilisateurs novices en matière de NFT et de crypto-monnaies.",
-        results: "Depuis son lancement, Forge AI a attiré plus de 25 000 créateurs actifs, généré plus de 50 000 NFT uniques et facilité des transactions d'une valeur totale de 2,5 millions de dollars. La plateforme a également établi des partenariats avec plusieurs artistes et marques de renom pour des collections exclusives.",
-        technologies: ["React.js", "Node.js", "Python", "IPFS", "xAI", "Solana"],
+        challenge:
+          "Forge AI avait besoin d'une plateforme permettant aux utilisateurs de créer des NFT uniques à partir de simples descriptions textuelles, puis de les vendre sur une marketplace intégrée. Le défi était de combiner l'IA générative, la technologie blockchain et une expérience utilisateur intuitive.",
+        solution:
+          "Nous avons développé une plateforme complète intégrant des modèles d'IA avancés pour la génération d'images, une infrastructure blockchain sécurisée pour le minting des NFT, et une marketplace fluide pour l'achat et la vente. L'interface utilisateur a été conçue pour être accessible même aux utilisateurs novices en matière de NFT et de crypto-monnaies.",
+        results:
+          "Depuis son lancement, Forge AI a attiré plus de 25 000 créateurs actifs, généré plus de 50 000 NFT uniques et facilité des transactions d'une valeur totale de 2,5 millions de dollars. La plateforme a également établi des partenariats avec plusieurs artistes et marques de renom pour des collections exclusives.",
+        technologies: ['React.js', 'Node.js', 'Python', 'IPFS', 'xAI', 'Solana'],
         images: [
           {
-            src: "/images/forge-main.png",
+            src: '/images/forge-main.png',
             alt: "Page d'accueil de Forge AI",
-            caption: "Interface principale de la plateforme Forge AI"
+            caption: 'Interface principale de la plateforme Forge AI',
           },
           {
-            src: "/images/forge-generation.png",
-            alt: "Interface de génération de NFT",
-            caption: "Outil de génération de NFT par IA avec prompt textuel"
+            src: '/images/forge-generation.png',
+            alt: 'Interface de génération de NFT',
+            caption: 'Outil de génération de NFT par IA avec prompt textuel',
           },
           {
-            src: "/images/forge-marketplace.png",
-            alt: "Marketplace Forge AI",
-            caption: "Marketplace permettant l'achat et la vente des NFT générés"
+            src: '/images/forge-marketplace.png',
+            alt: 'Marketplace Forge AI',
+            caption: "Marketplace permettant l'achat et la vente des NFT générés",
           },
           {
-            src: "/images/forge-mint.png",
-            alt: "Processus de minting",
-            caption: "Interface de minting des NFT sur la blockchain"
-          }
-        ]
-      }
+            src: '/images/forge-mint.png',
+            alt: 'Processus de minting',
+            caption: 'Interface de minting des NFT sur la blockchain',
+          },
+        ],
+      },
     },
     {
       id: 2,
       title: 'CoinFinder - Plateforme Crypto',
-      description: 'Application web de suivi et d\'analyse de cryptomonnaies en temps réel',
+      description: "Application web de suivi et d'analyse de cryptomonnaies en temps réel",
       image: '/images/coinfinder.png',
       link: 'https://coinfinder.fr',
       items: [
@@ -184,7 +186,7 @@ const SuccessStories = () => {
         <div className="max-w-5xl mx-auto">
           {/* Titre et sous-titre */}
           <div className="text-center mb-20" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">Découvrez nos success stories</h2>
+            <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">Ils nous font confiance </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
               Des résultats concrets qui témoignent de notre expertise et de notre engagement envers la réussite de nos
               clients
@@ -235,7 +237,7 @@ const SuccessStories = () => {
                     {caseItem.items.map((item) => (
                       <div key={item.id} className="flex items-start">
                         <div className="flex-shrink-0 p-1 bg-blue-500/30 rounded-full mt-0.5">
-                          {React.cloneElement(item.icon, { className: "w-4 h-4 text-white" })}
+                          {React.cloneElement(item.icon, { className: 'w-4 h-4 text-white' })}
                         </div>
                         <p className="ml-3 text-white/90 text-sm">{item.text}</p>
                       </div>
@@ -244,8 +246,19 @@ const SuccessStories = () => {
 
                   <div className="mt-4 flex items-center text-white/90">
                     <span className="text-sm font-medium">Voir le projet</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    <svg
+                      className="w-4 h-4 ml-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      ></path>
                     </svg>
                   </div>
                 </div>
@@ -283,11 +296,7 @@ const SuccessStories = () => {
                   <div className="grid grid-cols-2 gap-4">
                     {selectedCase.detailedInfo.images.map((image, index) => (
                       <div key={index} className="rounded-lg overflow-hidden shadow-md">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-full h-64 object-cover"
-                        />
+                        <img src={image.src} alt={image.alt} className="w-full h-64 object-cover" />
                         <p className="text-sm text-gray-600 p-3 bg-gray-50">{image.caption}</p>
                       </div>
                     ))}
@@ -310,10 +319,7 @@ const SuccessStories = () => {
                     <h4 className="text-xl font-inter-bold text-gray-900 mb-3">Technologies utilisées</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedCase.detailedInfo.technologies.map((tech, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm"
-                        >
+                        <span key={index} className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm">
                           {tech}
                         </span>
                       ))}
