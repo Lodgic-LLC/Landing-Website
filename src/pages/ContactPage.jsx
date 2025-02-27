@@ -68,7 +68,7 @@ const ContactPage = () => {
         description="Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions et vous accompagner dans vos projets."
       />
 
-      <div className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+      <div className=" bg-gradient-to-r from-blue-50 to-indigo-50 py-32 md:py-32 px-4 sm:px-16 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">

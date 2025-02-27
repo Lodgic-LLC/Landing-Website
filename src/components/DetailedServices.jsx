@@ -227,12 +227,11 @@ const DetailedServices = () => {
           {/* Badge et Titre */}
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">
-              Des services complets pour vos projets digitaux
+              Un service sur mesure pour votre projet clé en main
             </h2>
 
             <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-              Nous proposons une gamme complète de services pour vous accompagner dans la réalisation de vos projets
-              web, de la conception à la maintenance.
+              Nous vous accompagnons de A à Z avec une gamme de services sur mesure, de la conception à la maintenance.
             </p>
 
             {/* Trait horizontal sous le titre avec animation */}

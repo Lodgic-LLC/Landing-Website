@@ -238,15 +238,14 @@ const Process = () => {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                   <div className="text-center md:text-left max-w-lg">
                     <h3 className="text-2xl md:text-3xl font-inter-bold text-gray-900 mb-4">
-                      Prêt à concrétiser votre{' '}
+                      Envie de concrétiser votre{' '}
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                         projet digital
                       </span>{' '}
                       ?
                     </h3>
                     <p className="text-gray-600 mb-6 md:mb-0">
-                      Discutons ensemble de vos objectifs et de la façon dont nous pouvons vous aider à les atteindre.
-                      Notre équipe est à votre écoute pour transformer vos idées en solutions concrètes.
+                      Échangeons sur vos ambitions et concrétisons-les ensemble. Nous mettons notre expertise à votre service pour transformer vos idées en solutions innovantes et sur mesure.
                     </p>
                   </div>
 
