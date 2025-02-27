@@ -11,15 +11,17 @@ const PageTitle = ({ title, description }) => {
     const getFullTitle = () => {
         switch (title) {
             case 'Accueil':
-                return 'Lodgic Dev | Développement d\'applications web sur mesure';
+                return 'Lodgic  | Développement d\'applications web sur mesure';
             case 'Services':
-                return 'Services de développement web professionnel | Lodgic Dev';
+                return 'Lodgic | Services de développement web professionnel  ';
             case 'À propos':
-                return 'À propos de Lodgic Dev | Experts en développement d\'applications';
+                return 'Lodgic | Experts en développement d\'applications';
             case 'Contact':
-                return 'Contactez Lodgic Dev | Demandez un devis pour votre projet web';
+                return ' Lodgic | Demandez un devis pour votre projet web';
+            case 'Contactez-nous':
+                return 'Lodgic | Contactez-nous';
             default:
-                return `${title} | Lodgic Dev`;
+                return `${title} | Lodgic `;
         }
     };
 

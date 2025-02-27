@@ -11,7 +11,7 @@ const Appointment = () => {
   return (
     <>
       <Helmet>
-        <title>Prendre rendez-vous | Lodgic</title>
+        <title>Lodgic |Prendre rendez-vous </title>
         <meta
           name="description"
           content="Réservez facilement un rendez-vous avec notre équipe d'experts pour discuter de vos objectifs et élaborer une stratégie personnalisée."
