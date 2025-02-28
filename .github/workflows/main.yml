@@ -1,16 +1,16 @@
-name: Deploy to VPS
-
 on:
   push:
     branches:
-      - main
+      - main  
   pull_request:
     types:
       - closed
+    branches:
+      - main  
 
 jobs:
   deploy:
-    if: github.event.pull_request.merged == true || github.event_name == 'push'
+    if: github.event.pull_request.merged == true || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -37,7 +37,7 @@ jobs:
           # Ajouter le serveur à known_hosts pour éviter les prompts
           ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
           
-          # Copier les fichiers build vers le serveur
+          # Copier les fichiers dist vers le serveur
           scp -r dist/* ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.DEPLOY_PATH }}
           
           # Exécuter le script de redémarrage sur le serveur
