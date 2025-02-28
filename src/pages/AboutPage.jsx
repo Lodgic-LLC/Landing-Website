@@ -179,30 +179,8 @@ const AboutPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-              {/* Valeur 1 */}
-              <div
-                className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-8 border border-gray-100"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto transform transition-transform duration-300 hover:scale-110">
-                  <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-inter-bold text-gray-900 mb-3 text-center">Innovation</h3>
-                <p className="text-gray-600 text-center">
-                  Nous explorons constamment les nouvelles technologies pour vous offrir des solutions à la pointe de
-                  l'innovation, adaptées aux défis de demain.
-                </p>
-              </div>
-
-              {/* Valeur 2 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              {/* Valeur 1 - Transparence */}
               <div
                 className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-8 border border-gray-100"
                 data-aos="fade-up"
@@ -224,7 +202,7 @@ const AboutPage = () => {
                 </p>
               </div>
 
-              {/* Valeur 3 */}
+              {/* Valeur 2 - Excellence */}
               <div
                 className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-8 border border-gray-100"
                 data-aos="fade-up"
@@ -246,7 +224,7 @@ const AboutPage = () => {
                 </p>
               </div>
 
-              {/* Valeur 4 */}
+              {/* Valeur 3 - Engagement */}
               <div
                 className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-8 border border-gray-100"
                 data-aos="fade-up"
