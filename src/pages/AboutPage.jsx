@@ -22,7 +22,7 @@ const AboutPage = () => {
               <h1 className="font-inter-bold text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-6">
                 Experts en transformation
                 <br />
-                <span className="text-blue-600">digitale</span> depuis 2020
+                <span className="text-blue-600">digitale</span>
               </h1>
 
               <p className="font-inter-regular text-gray-700 mb-8 max-w-lg text-lg leading-relaxed">

@@ -8,7 +8,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="w-full bg-gradient-to-br from-blue-50 via-indigo-50 to-white py-24 md:py-32 lg:py-36 overflow-hidden relative">
+    <section className="w-full bg-gradient-to-br from-blue-50 via-indigo-50 to-white py-18 md:py-18 lg:py-18 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
         {/* Texte et CTA - Côté gauche */}
         <div className="w-full md:w-1/2 mb-16 md:mb-0 z-10" data-aos="fade-up" data-aos-duration="1000">
