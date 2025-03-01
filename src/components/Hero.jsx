@@ -69,7 +69,7 @@ const Hero = () => {
 
         {/* Illustration - Côté droit */}
         <div
-          className="w-full md:w-1/2 flex justify-center relative"
+          className="w-full md:w-1/2 flex justify-center relative scale-90"
           data-aos="fade-left"
           data-aos-duration="1000"
           data-aos-delay="200"
