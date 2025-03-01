@@ -117,7 +117,7 @@ const Hero = () => {
                         <div className="w-2 h-2 rounded-full bg-green-400"></div>
                       </div>
                       <div className="text-xs text-gray-300 font-mono flex-grow text-center">
-                        www.lodgic.fr
+                        www.lodgic-dev.com
                       </div>
                     </div>
 
