@@ -1234,11 +1234,10 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">
-              Notre façon de travailler avec vous
+              Notre méthode de travail 
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Une méthode simple et efficace pour réaliser votre projet en toute
-              tranquillité
+              Une méthode simple et efficace pour réaliser votre projet 
             </p>
           </div>
 
