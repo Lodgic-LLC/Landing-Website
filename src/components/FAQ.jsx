@@ -57,7 +57,7 @@ const FAQ = () => {
       id: 2,
       question: "Quel est le délai moyen de développement ?",
       answer:
-        "Entre 4 à 12 semaines selon la complexité du projet. Les applications simples peuvent être livrées en un mois, tandis que les projets plus complexes avec des intégrations multiples peuvent prendre jusqu'à 3 mois.",
+        "Entre 2 à 12 semaines selon la complexité du projet. Les applications simples peuvent être livrées en quelques semaines, tandis que les projets plus complexes avec des intégrations multiples peuvent prendre jusqu'à 3 mois.",
       icon: (
         <svg
           className="w-5 h-5 text-[#2563EB]"
@@ -74,28 +74,9 @@ const FAQ = () => {
     },
     {
       id: 3,
-      question: "Travaillez-vous avec des clients internationaux ?",
-      answer:
-        "Oui, nous collaborons régulièrement avec des clients du monde entier. Notre équipe est habituée au travail à distance et nous utilisons des outils de communication efficaces pour assurer une collaboration fluide malgré les fuseaux horaires.",
-      icon: (
-        <svg
-          className="w-5 h-5 text-[#2563EB]"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fillRule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-    {
-      id: 4,
       question: "Proposez-vous un support après la livraison du projet ?",
       answer:
-        "Absolument. Nous offrons différentes formules de maintenance et de support technique après la mise en production. Cela inclut les corrections de bugs, les mises à jour de sécurité et l'assistance technique selon vos besoins.",
+        "Absolument. Nous offrons différentes formules de maintenance et de support technique après la mise en production. Cela inclut les corrections de bugs, l'ajout de nouvelles fonctionnalités, les mises à jour de sécurité et l'assistance technique selon vos besoins.",
       icon: (
         <svg
           className="w-5 h-5 text-[#2563EB]"
@@ -111,7 +92,7 @@ const FAQ = () => {
       ),
     },
     {
-      id: 5,
+      id: 4,
       question: "Quelles technologies utilisez-vous pour le développement ?",
       answer:
         "Nous utilisons principalement React.js, Next.js et TailwindCSS pour le front-end, et Node.js ou Python pour le back-end. Nous adaptons notre stack technologique en fonction des besoins spécifiques de chaque projet pour garantir les meilleures performances.",
@@ -130,7 +111,7 @@ const FAQ = () => {
       ),
     },
     {
-      id: 6,
+      id: 5,
       question: "Je ne suis pas sur d'avoir le budget",
       answer:
         "Vous n'avez rien à perdre à prendre contact avec nous. Nous pouvons discuter de votre projet et de vos besoins pour trouver une solution adaptée à votre budget.",
