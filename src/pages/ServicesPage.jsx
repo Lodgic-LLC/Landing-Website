@@ -125,12 +125,12 @@ const ServicesPage = () => {
                 Discuter de mon projet
               </Link>
               <Link
-                to="/services"
+                to="/a-propos"
                 className="font-inter-medium bg-white text-blue-600 border border-blue-200 px-6 md:px-8 py-3 rounded-lg hover:bg-blue-50 transition-all shadow-md hover:shadow-lg text-sm md:text-base"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                Voir tous nos services
+                En savoir plus sur Lodgic
               </Link>
             </div>
           </div>
@@ -173,15 +173,90 @@ const ServicesPage = () => {
                 ))}
               </div>
 
-              <Link
-                to="/rendez-vous"
-                className="font-inter-medium bg-blue-600 text-white px-6 md:px-8 py-3 rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg inline-flex items-center"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                Discuter de votre projet
-                <FaChevronRight className="ml-2 h-3 w-3" />
-              </Link>
+              {/* Section Technologies utilisées */}
+              <div className="mb-8 md:mb-10">
+                <h4 className="font-inter-semibold text-gray-800 mb-3 flex items-center">
+                  <svg
+                    className="w-5 h-5 mr-2 text-blue-600"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                  Technologies utilisées
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {service.id === 1 && (
+                    <>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        React Native
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        JavaScript
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Swift
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Kotlin
+                      </span>
+                    </>
+                  )}
+                  {service.id === 2 && (
+                    <>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        React.js
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Next.js
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Tailwind CSS
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        JavaScript
+                      </span>
+                    </>
+                  )}
+                  {service.id === 3 && (
+                    <>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        NestJS
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Stripe
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        API REST
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Prisma
+                      </span>
+                    </>
+                  )}
+                  {service.id === 4 && (
+                    <>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        GitHub
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        CI/CD
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Docker
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        AWS
+                      </span>
+                    </>
+                  )}
+                </div>
+              </div>
             </div>
 
             {/* Illustration - Alternance droite/gauche */}
@@ -1159,11 +1234,10 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">
-              Notre façon de travailler avec vous
+              Notre méthode de travail 
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Une méthode simple et efficace pour réaliser votre projet en toute
-              tranquillité
+              Une méthode simple et efficace pour réaliser votre projet 
             </p>
           </div>
 
@@ -1173,29 +1247,29 @@ const ServicesPage = () => {
                 step: "01",
                 title: "Écoute",
                 description:
-                  "Nous prenons le temps de comprendre vos besoins, vos objectifs et vos contraintes pour vous proposer la meilleure solution.",
-                color: "blue",
+                  "Nous prennons ensemble le temps de comprendre vos besoins, vos objectifs et vos contraintes pour vous proposer la solution la plus adaptée a votre projet.",
+                color: "#2563EB", // Bleu
               },
               {
                 step: "02",
                 title: "Proposition",
                 description:
-                  "Nous vous présentons des maquettes et des exemples concrets pour que vous puissiez visualiser votre futur outil.",
-                color: "indigo",
+                  "Nous vous présentons un cahier des charges complet ainsi qu'une maquette de votre futur outil.",
+                color: "#4361EE", // Bleu-indigo
               },
               {
                 step: "03",
                 title: "Création",
                 description:
-                  "Nous réalisons votre projet étape par étape, en vous tenant informé et en vous impliquant dans les choix importants.",
-                color: "purple",
+                  "Nous réalisons ensemble votre projet étape par étape, en vous impliquant dans les choix importants de votre projet.",
+                color: "#5E60CE", // Indigo-violet
               },
               {
                 step: "04",
                 title: "Accompagnement",
                 description:
                   "Nous vous formons à l'utilisation de votre nouvel outil et restons disponibles pour vous aider au quotidien.",
-                color: "pink",
+                color: "#7B2CBF", // Violet
               },
             ].map((phase, index) => (
               <div
@@ -1205,10 +1279,12 @@ const ServicesPage = () => {
                 data-aos-delay={index * 100}
               >
                 <div
-                  className={`absolute top-0 left-0 w-2 h-full bg-${phase.color}-600`}
+                  className="absolute top-0 left-0 w-2 h-full"
+                  style={{ backgroundColor: phase.color }}
                 ></div>
                 <div
-                  className={`text-4xl font-bold text-${phase.color}-600 mb-4`}
+                  className="text-4xl font-bold mb-4"
+                  style={{ color: phase.color }}
                 >
                   {phase.step}
                 </div>
@@ -1223,161 +1299,146 @@ const ServicesPage = () => {
       </section>
 
       {/* Section CTA */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-indigo-700 relative overflow-hidden">
-        {/* Éléments décoratifs */}
+      <section className="py-16 bg-gradient-to-r from-blue-700 to-indigo-800 relative overflow-hidden">
+        {/* Éléments décoratifs subtils */}
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white opacity-10"></div>
-          <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-white opacity-10"></div>
-          <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-white opacity-5"></div>
+          <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-white opacity-5"></div>
+          <div className="absolute bottom-20 left-20 w-40 h-40 rounded-full bg-white opacity-5"></div>
+          <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full bg-white opacity-5"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div
-              className="w-full md:w-3/5 mb-10 md:mb-0"
-              data-aos="fade-right"
-            >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-white mb-6 leading-tight">
-                Vous avez une idée pour votre{" "}
-                <span className="text-yellow-300">entreprise</span> ?
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="w-full md:w-3/5" data-aos="fade-right">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-inter-bold text-white mb-4 leading-tight">
+                Besoin d'une solution numérique pour votre entreprise ?
               </h2>
-              <p className="text-xl text-blue-100 mb-8 max-w-2xl">
-                Parlons-en simplement, sans termes techniques compliqués. Nous
-                vous aiderons à transformer votre idée en solution concrète,
-                adaptée à vos besoins et à votre budget.
+              <p className="text-base md:text-lg text-blue-100 mb-6 max-w-2xl">
+                Nous créons des outils numériques adaptés à vos besoins
+                spécifiques. Discutons ensemble de votre projet pour trouver la
+                solution la plus efficace et la plus simple à utiliser.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/contact"
-                  className="bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-lg font-inter-medium shadow-lg hover:shadow-xl transition-all flex items-center"
+                  className="bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-lg font-inter-medium shadow-md hover:shadow-lg transition-all flex items-center text-sm md:text-base"
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  Contactez-nous
+                  Prendre rendez-vous
                   <FaChevronRight className="ml-2 h-3 w-3" />
                 </Link>
                 <Link
-                  to="/services"
-                  className="bg-transparent text-white border-2 border-white hover:bg-white/10 px-8 py-4 rounded-lg font-inter-medium transition-all"
+                  to="/a-propos"
+                  className="bg-transparent text-white border border-white/30 hover:bg-white/10 px-6 py-3 rounded-lg font-inter-medium transition-all text-sm md:text-base"
                   data-aos="fade-up"
-                  data-aos-delay="200"
+                  data-aos-delay="150"
                 >
-                  Nos services
+                  Notre approche
                 </Link>
               </div>
             </div>
 
-            <div
-              className="w-full md:w-2/5 flex justify-center"
-              data-aos="fade-left"
-            >
-              <div className="relative">
-                {/* Illustration */}
-                <div className="w-64 h-64 md:w-80 md:h-80 bg-white/20 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center shadow-2xl">
-                  <svg
-                    className="w-full h-auto"
-                    viewBox="0 0 200 200"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    {/* Écran d'ordinateur stylisé */}
-                    <rect
-                      x="40"
-                      y="40"
-                      width="120"
-                      height="80"
-                      rx="4"
-                      fill="white"
-                    />
-                    <rect
-                      x="50"
-                      y="50"
-                      width="100"
-                      height="60"
-                      rx="2"
-                      fill="#60A5FA"
-                    />
-
-                    {/* Éléments d'interface */}
-                    <rect
-                      x="60"
-                      y="60"
-                      width="80"
-                      height="5"
-                      rx="1"
-                      fill="white"
-                      opacity="0.8"
-                    />
-                    <rect
-                      x="60"
-                      y="70"
-                      width="60"
-                      height="5"
-                      rx="1"
-                      fill="white"
-                      opacity="0.8"
-                    />
-                    <rect
-                      x="60"
-                      y="80"
-                      width="70"
-                      height="5"
-                      rx="1"
-                      fill="white"
-                      opacity="0.8"
-                    />
-                    <rect
-                      x="60"
-                      y="90"
-                      width="40"
-                      height="10"
-                      rx="2"
-                      fill="#FBBF24"
-                    />
-
-                    {/* Base de l'ordinateur */}
-                    <rect
-                      x="70"
-                      y="120"
-                      width="60"
-                      height="5"
-                      rx="2"
-                      fill="white"
-                    />
-                    <path
-                      d="M65 120 L135 120 L125 140 L75 140 L65 120 Z"
-                      fill="white"
-                      opacity="0.8"
-                    />
-
-                    {/* Éléments décoratifs */}
-                    <circle
-                      cx="150"
-                      cy="60"
-                      r="15"
-                      fill="#F472B6"
-                      opacity="0.8"
-                    />
-                    <circle
-                      cx="50"
-                      cy="130"
-                      r="10"
-                      fill="#34D399"
-                      opacity="0.8"
-                    />
-                    <circle
-                      cx="160"
-                      cy="140"
-                      r="12"
-                      fill="#FBBF24"
-                      opacity="0.8"
-                    />
-                  </svg>
+            <div className="w-full md:w-2/5" data-aos="fade-left">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 shadow-xl">
+                <div className="flex items-start mb-4">
+                  <div className="bg-blue-100 rounded-full p-3 mr-4">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20 6H16V4C16 2.89 15.11 2 14 2H10C8.89 2 8 2.89 8 4V6H4C2.89 6 2 6.89 2 8V19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V8C22 6.89 21.11 6 20 6ZM10 4H14V6H10V4ZM20 19H4V8H20V19Z"
+                        fill="#2563EB"
+                      />
+                      <path
+                        d="M13 10H11V12H9V14H11V16H13V14H15V12H13V10Z"
+                        fill="#2563EB"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-white font-inter-bold text-lg mb-1">
+                      Assistance technique
+                    </h3>
+                    <p className="text-blue-100 text-sm">
+                      Support réactif et maintenance régulière de vos
+                      applications
+                    </p>
+                  </div>
                 </div>
 
-                {/* Éléments flottants */}
-                <div className="absolute -top-6 -right-6 w-12 h-12 bg-yellow-300 rounded-lg rotate-12 shadow-lg"></div>
-                <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-blue-300 rounded-full shadow-lg"></div>
+                <div className="flex items-start mb-4">
+                  <div className="bg-blue-100 rounded-full p-3 mr-4">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                        fill="#2563EB"
+                      />
+                      <path
+                        d="M12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z"
+                        fill="#2563EB"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-white font-inter-bold text-lg mb-1">
+                      Délais maîtrisés
+                    </h3>
+                    <p className="text-blue-100 text-sm">
+                      Livraison de votre projet dans les temps convenus ensemble
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-blue-100 rounded-full p-3 mr-4">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM19 11C19 15.52 16.02 19.69 12 20.93C7.98 19.69 5 15.52 5 11V6.3L12 3.19L19 6.3V11Z"
+                        fill="#2563EB"
+                      />
+                      <path
+                        d="M7.41 11.59L6 13L10 17L18 9L16.59 7.58L10 14.17L7.41 11.59Z"
+                        fill="#2563EB"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-white font-inter-bold text-lg mb-1">
+                      Sécurité garantie
+                    </h3>
+                    <p className="text-blue-100 text-sm">
+                      Protection de vos données et mises à jour de sécurité
+                      régulières
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <Link
+                    to="/contact"
+                    className="w-full bg-white text-blue-700 hover:bg-blue-50 py-3 rounded-lg font-inter-medium shadow-md hover:shadow-lg transition-all flex items-center justify-center"
+                  >
+                    Contactez-nous
+                    <FaChevronRight className="ml-2 h-3 w-3" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

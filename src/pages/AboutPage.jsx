@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import PageTitle from "../components/PageTitle";
+import { Link } from "react-router-dom";
 
 const AboutPage = () => {
   useEffect(() => {
@@ -43,14 +44,14 @@ const AboutPage = () => {
                 >
                   Contactez-nous
                 </a>
-                <a
-                  href="/services"
+                <Link
+                  to="/services"
                   className="font-inter-medium border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all"
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
                   Nos services
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -146,15 +147,11 @@ const AboutPage = () => {
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
-                      <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                      <path
-                        fillRule="evenodd"
-                        d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                        clipRule="evenodd"
-                      />
+                      <path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" />
+                      <path d="M8 11a1 1 0 100 2h4a1 1 0 100-2H8zM8 7a1 1 0 000 2h2a1 1 0 000-2H8z" />
                     </svg>
                     <span className="text-sm font-medium text-gray-800">
-                      Devis détaillé gratuit
+                      Cahier des charges gratuit
                     </span>
                   </div>
                 </div>
@@ -524,19 +521,6 @@ const AboutPage = () => {
                   traduit vos besoins en solutions concrètes et reste votre
                   interlocuteur privilégié.
                 </p>
-                <a
-                  href="mailto:yann@lodgic.fr"
-                  className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  <svg
-                    className="w-4 h-4 mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                  <span>yann@lodgic.fr</span>
-                </a>
               </div>
 
               {/* Mathéo Katbie - Version améliorée */}
@@ -575,19 +559,6 @@ const AboutPage = () => {
                   robustes et intuitives. Il veille à ce que votre application
                   soit à la fois performante et facile à utiliser.
                 </p>
-                <a
-                  href="mailto:matheo@lodgic.fr"
-                  className="inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 transition-colors"
-                >
-                  <svg
-                    className="w-4 h-4 mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                  <span>matheo@lodgic.fr</span>
-                </a>
               </div>
             </div>
 
@@ -600,8 +571,8 @@ const AboutPage = () => {
               <p className="text-gray-600 mb-4">
                 Envie d'en savoir plus sur notre façon de travailler ?
               </p>
-              <a
-                href="/services"
+              <Link
+                to="/services"
                 className="inline-flex items-center text-blue-600 hover:text-blue-800 font-inter-medium"
               >
                 <span>Découvrir nos services</span>
@@ -618,7 +589,7 @@ const AboutPage = () => {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
