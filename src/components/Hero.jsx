@@ -457,9 +457,6 @@ const Hero = () => {
                         De l'idée à la réalisation
                       </span>
                     </div>
-                    <span className="text-xs font-bold bg-white bg-opacity-20 px-2 py-1 rounded-full">
-                      Multi-plateformes
-                    </span>
                   </div>
                   <p className="text-xs text-white text-opacity-90 mb-2">
                     Applications sur mesure pour tous les appareils

@@ -173,15 +173,90 @@ const ServicesPage = () => {
                 ))}
               </div>
 
-              <Link
-                to="/rendez-vous"
-                className="font-inter-medium bg-blue-600 text-white px-6 md:px-8 py-3 rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg inline-flex items-center"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                Discuter de votre projet
-                <FaChevronRight className="ml-2 h-3 w-3" />
-              </Link>
+              {/* Section Technologies utilisées */}
+              <div className="mb-8 md:mb-10">
+                <h4 className="font-inter-semibold text-gray-800 mb-3 flex items-center">
+                  <svg
+                    className="w-5 h-5 mr-2 text-blue-600"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                  Technologies utilisées
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {service.id === 1 && (
+                    <>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        React Native
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        JavaScript
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Swift
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Kotlin
+                      </span>
+                    </>
+                  )}
+                  {service.id === 2 && (
+                    <>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        React.js
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Next.js
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Tailwind CSS
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        JavaScript
+                      </span>
+                    </>
+                  )}
+                  {service.id === 3 && (
+                    <>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        NestJS
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Stripe
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        API REST
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Prisma
+                      </span>
+                    </>
+                  )}
+                  {service.id === 4 && (
+                    <>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        GitHub
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        CI/CD
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        Docker
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                        AWS
+                      </span>
+                    </>
+                  )}
+                </div>
+              </div>
             </div>
 
             {/* Illustration - Alternance droite/gauche */}
