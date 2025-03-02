@@ -56,12 +56,8 @@ const SuccessStories = () => {
   }, [isModalOpen])
 
   const handleCaseClick = (caseItem) => {
-    if (caseItem.id === 2) {
-      window.open('https://coinfinder.fr', '_blank')
-    } else {
-      setSelectedCase(caseItem)
-      setIsModalOpen(true)
-    }
+    setSelectedCase(caseItem)
+    setIsModalOpen(true)
   }
 
   const successCases = [
@@ -177,6 +173,37 @@ const SuccessStories = () => {
           text: 'Croissance de 120% de la base utilisateurs en 6 mois',
         },
       ],
+      detailedInfo: {
+        challenge:
+          "CoinFinder avait besoin d'une plateforme complète permettant aux utilisateurs de suivre, d'analyser et d'investir dans les cryptomonnaies. Le défi était de créer une interface intuitive qui présente des données complexes de manière accessible, tout en intégrant des fonctionnalités de trading sécurisées et un système d'authentification robuste.",
+        solution:
+          "Nous avons développé une application web responsive avec un tableau de bord personnalisable, des graphiques interactifs en temps réel et un système d'alertes personnalisées. L'authentification multi-facteurs garantit la sécurité des comptes utilisateurs, tandis que l'intégration avec plusieurs exchanges permet d'exécuter des transactions directement depuis la plateforme.",
+        results:
+          "Depuis son lancement, CoinFinder a attiré plus de 85 000 utilisateurs actifs et traite quotidiennement plus de 200 000 requêtes d'analyse. Le volume de transactions mensuel a dépassé 30 millions d'euros, avec un taux de satisfaction utilisateur de 94%. La plateforme est devenue une référence dans l'écosystème crypto francophone.",
+        technologies: ['React.js', 'Express', 'AWS', 'Supabase', 'TradingView API', 'WebSockets'],
+        images: [
+          {
+            src: '/images/coinfinder-login.png',
+            alt: "Page d'authentification CoinFinder",
+            caption: "Interface d'authentification sécurisée avec validation en deux étapes",
+          },
+          {
+            src: '/images/coinfinder-signup.png',
+            alt: "Page d'inscription CoinFinder",
+            caption: "Processus d'inscription simplifié avec vérification d'identité",
+          },
+          {
+            src: '/images/coinfinder-paiement.png',
+            alt: 'Interface de paiement CoinFinder',
+            caption: 'Système de paiement sécurisé avec multiples options de cryptomonnaies',
+          },
+          {
+            src: '/images/coinfinder.png',
+            alt: 'Dashboard principal CoinFinder',
+            caption: 'Tableau de bord personnalisable avec suivi en temps réel des cours',
+          },
+        ],
+      },
     },
     {
       id: 3,
@@ -264,11 +291,10 @@ const SuccessStories = () => {
         <div className="max-w-6xl mx-auto">
           {/* En-tête */}
           <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-4xl md:text-5xl font-inter-bold text-gray-900 mb-6">
-              Ils nous font confiance
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-inter-bold text-gray-900 mb-6">Ils nous font confiance</h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Des résultats concrets qui témoignent de notre expertise et de notre engagement envers la réussite de nos clients
+              Des résultats concrets qui témoignent de notre expertise et de notre engagement envers la réussite de nos
+              clients
             </p>
             <div className="relative h-0.5 w-24 mx-auto bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
           </div>
@@ -292,7 +318,7 @@ const SuccessStories = () => {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  
+
                   {/* Badge */}
                   <div className="absolute top-4 left-4 flex items-center space-x-2">
                     <span className="px-3 py-1.5 bg-white shadow-sm rounded-full text-xs font-semibold text-gray-800">
@@ -324,7 +350,12 @@ const SuccessStories = () => {
                   <div className="mt-4 flex justify-end">
                     <div className="flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-700">
                       En savoir plus
-                      <svg className="w-4 h-4 ml-1 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg
+                        className="w-4 h-4 ml-1 transform transition-transform group-hover:translate-x-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
@@ -379,17 +410,15 @@ const SuccessStories = () => {
                   <div className="flex flex-wrap justify-center gap-8">
                     {selectedCase.detailedInfo.images.map((image, index) => (
                       <div key={index} className="relative group">
-                        <div className="relative w-56 h-[450px] rounded-[2.5rem] border-[8px] border-gray-900 overflow-hidden shadow-xl bg-gray-900 transition-transform duration-300 group-hover:scale-[1.02]">
+                        <div className="relative w-56 h-[500px] transition-transform duration-300 ">
                           <img
                             src={image.src}
                             alt={image.alt}
-                            className="w-full h-full object-cover rounded-[2rem]"
+                            className="w-full h-full object-cover rounded-[1.5rem]"
                           />
-                          <div className="absolute inset-0 rounded-[2rem] ring-1 ring-gray-900/10"></div>
+                          <div className="absolute inset-0 rounded-[2rem]"></div>
                         </div>
-                        <p className="text-sm text-gray-600 mt-4 text-center max-w-[200px] mx-auto">
-                          {image.caption}
-                        </p>
+                        <p className="text-sm text-gray-600 mt-4 text-center max-w-[200px] mx-auto">{image.caption}</p>
                       </div>
                     ))}
                   </div>
@@ -401,30 +430,38 @@ const SuccessStories = () => {
                         <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                           <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                            <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                            <path
+                              fillRule="evenodd"
+                              d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                              clipRule="evenodd"
+                            />
                           </svg>
                           Le défi
                         </h4>
-                        <p className="text-gray-600 leading-relaxed">
-                          {selectedCase.detailedInfo.challenge}
-                        </p>
+                        <p className="text-gray-600 leading-relaxed">{selectedCase.detailedInfo.challenge}</p>
                       </div>
                       <div>
                         <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                           <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z" clipRule="evenodd" />
+                            <path
+                              fillRule="evenodd"
+                              d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
+                              clipRule="evenodd"
+                            />
                           </svg>
                           Notre solution
                         </h4>
-                        <p className="text-gray-600 leading-relaxed">
-                          {selectedCase.detailedInfo.solution}
-                        </p>
+                        <p className="text-gray-600 leading-relaxed">{selectedCase.detailedInfo.solution}</p>
                       </div>
                     </div>
                     <div>
                       <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                         <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                          <path
+                            fillRule="evenodd"
+                            d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                         Technologies utilisées
                       </h4>
@@ -442,7 +479,6 @@ const SuccessStories = () => {
                   </div>
                 </div>
               ) : selectedCase?.detailedInfo ? (
-                // ... existing code for other project types ...
                 <div className="space-y-12">
                   {/* Galerie standard */}
                   <div className="grid grid-cols-2 gap-6">
@@ -468,30 +504,38 @@ const SuccessStories = () => {
                         <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                           <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                            <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                            <path
+                              fillRule="evenodd"
+                              d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                              clipRule="evenodd"
+                            />
                           </svg>
                           Le défi
                         </h4>
-                        <p className="text-gray-600 leading-relaxed">
-                          {selectedCase.detailedInfo.challenge}
-                        </p>
+                        <p className="text-gray-600 leading-relaxed">{selectedCase.detailedInfo.challenge}</p>
                       </div>
                       <div>
                         <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                           <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z" clipRule="evenodd" />
+                            <path
+                              fillRule="evenodd"
+                              d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
+                              clipRule="evenodd"
+                            />
                           </svg>
                           Notre solution
                         </h4>
-                        <p className="text-gray-600 leading-relaxed">
-                          {selectedCase.detailedInfo.solution}
-                        </p>
+                        <p className="text-gray-600 leading-relaxed">{selectedCase.detailedInfo.solution}</p>
                       </div>
                     </div>
                     <div>
                       <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                         <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                          <path
+                            fillRule="evenodd"
+                            d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                         Technologies utilisées
                       </h4>

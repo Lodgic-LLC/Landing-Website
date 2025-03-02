@@ -974,7 +974,7 @@ const ServicesPage = () => {
         </div>
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+          <div className="flex flex-col lg:flex-row md:flex-row items-center justify-between gap-10">
             <div className="w-full md:w-3/5" data-aos="fade-right">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-inter-bold text-white mb-4 leading-tight">
                 Besoin d'une solution numérique pour votre entreprise ?
@@ -1002,72 +1002,69 @@ const ServicesPage = () => {
                   Notre approche
                 </Link>
               </div>
-
-              <div className="w-full md:w-2/5" data-aos="fade-left">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 shadow-xl">
-                  <div className="flex items-start mb-4">
-                    <div className="bg-blue-100 rounded-full p-3 mr-4">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M20 6H16V4C16 2.89 15.11 2 14 2H10C8.89 2 8 2.89 8 4V6H4C2.89 6 2 6.89 2 8V19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V8C22 6.89 21.11 6 20 6ZM10 4H14V6H10V4ZM20 19H4V8H20V19Z"
-                          fill="#2563EB"
-                        />
-                        <path d="M13 10H11V12H9V14H11V16H13V14H15V12H13V10Z" fill="#2563EB" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-white font-inter-bold text-lg mb-1">Assistance technique</h3>
-                      <p className="text-blue-100 text-sm">
-                        Support réactif et maintenance régulière de vos applications
-                      </p>
-                    </div>
+            </div>
+            <div className="w-full md:w-2/5" data-aos="fade-left">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 shadow-xl">
+                <div className="flex items-start mb-4">
+                  <div className="bg-blue-100 rounded-full p-3 mr-4">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M20 6H16V4C16 2.89 15.11 2 14 2H10C8.89 2 8 2.89 8 4V6H4C2.89 6 2 6.89 2 8V19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V8C22 6.89 21.11 6 20 6ZM10 4H14V6H10V4ZM20 19H4V8H20V19Z"
+                        fill="#2563EB"
+                      />
+                      <path d="M13 10H11V12H9V14H11V16H13V14H15V12H13V10Z" fill="#2563EB" />
+                    </svg>
                   </div>
-
-                  <div className="flex items-start mb-4">
-                    <div className="bg-blue-100 rounded-full p-3 mr-4">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
-                          fill="#2563EB"
-                        />
-                        <path d="M12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z" fill="#2563EB" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-white font-inter-bold text-lg mb-1">Délais maîtrisés</h3>
-                      <p className="text-blue-100 text-sm">
-                        Livraison de votre projet dans les temps convenus ensemble
-                      </p>
-                    </div>
+                  <div>
+                    <h3 className="text-white font-inter-bold text-lg mb-1">Assistance technique</h3>
+                    <p className="text-blue-100 text-sm">
+                      Support réactif et maintenance régulière de vos applications
+                    </p>
                   </div>
+                </div>
 
-                  <div className="flex items-start">
-                    <div className="bg-blue-100 rounded-full p-3 mr-4">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM19 11C19 15.52 16.02 19.69 12 20.93C7.98 19.69 5 15.52 5 11V6.3L12 3.19L19 6.3V11Z"
-                          fill="#2563EB"
-                        />
-                        <path d="M7.41 11.59L6 13L10 17L18 9L16.59 7.58L10 14.17L7.41 11.59Z" fill="#2563EB" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-white font-inter-bold text-lg mb-1">Sécurité garantie</h3>
-                      <p className="text-blue-100 text-sm">
-                        Protection de vos données et mises à jour de sécurité régulières
-                      </p>
-                    </div>
+                <div className="flex items-start mb-4">
+                  <div className="bg-blue-100 rounded-full p-3 mr-4">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                        fill="#2563EB"
+                      />
+                      <path d="M12.5 7H11V13L16.2 16.2L17 14.9L12.5 12.2V7Z" fill="#2563EB" />
+                    </svg>
                   </div>
+                  <div>
+                    <h3 className="text-white font-inter-bold text-lg mb-1">Délais maîtrisés</h3>
+                    <p className="text-blue-100 text-sm">Livraison de votre projet dans les temps convenus ensemble</p>
+                  </div>
+                </div>
 
-                  <div className="mt-6 pt-6 border-t border-white/10">
-                    <Link
-                      to="/contact"
-                      className="w-full bg-white text-blue-700 hover:bg-blue-50 py-3 rounded-lg font-inter-medium shadow-md hover:shadow-lg transition-all flex items-center justify-center"
-                    >
-                      Contactez-nous
-                      <FaChevronRight className="ml-2 h-3 w-3" />
-                    </Link>
+                <div className="flex items-start">
+                  <div className="bg-blue-100 rounded-full p-3 mr-4">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM19 11C19 15.52 16.02 19.69 12 20.93C7.98 19.69 5 15.52 5 11V6.3L12 3.19L19 6.3V11Z"
+                        fill="#2563EB"
+                      />
+                      <path d="M7.41 11.59L6 13L10 17L18 9L16.59 7.58L10 14.17L7.41 11.59Z" fill="#2563EB" />
+                    </svg>
                   </div>
+                  <div>
+                    <h3 className="text-white font-inter-bold text-lg mb-1">Sécurité garantie</h3>
+                    <p className="text-blue-100 text-sm">
+                      Protection de vos données et mises à jour de sécurité régulières
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <Link
+                    to="/contact"
+                    className="w-full bg-white text-blue-700 hover:bg-blue-50 py-3 rounded-lg font-inter-medium shadow-md hover:shadow-lg transition-all flex items-center justify-center"
+                  >
+                    Contactez-nous
+                    <FaChevronRight className="ml-2 h-3 w-3" />
+                  </Link>
                 </div>
               </div>
             </div>
