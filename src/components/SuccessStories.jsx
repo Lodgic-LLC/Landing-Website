@@ -178,6 +178,84 @@ const SuccessStories = () => {
         },
       ],
     },
+    {
+      id: 3,
+      title: 'NexusPay - Application Bancaire Mobile',
+      description:
+        'Application mobile de gestion financière et de paiement sécurisée pour particuliers et professionnels',
+      image: '/images/banking-1.png',
+      link: '#',
+      items: [
+        {
+          id: 'nexus-1',
+          icon: (
+            <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+            </svg>
+          ),
+          text: 'Plus de 75 000 utilisateurs actifs mensuels',
+        },
+        {
+          id: 'nexus-2',
+          icon: (
+            <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fillRule="evenodd"
+                d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"
+                clipRule="evenodd"
+              />
+            </svg>
+          ),
+          text: 'Réduction de 40% du temps de traitement des transactions',
+        },
+        {
+          id: 'nexus-3',
+          icon: (
+            <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
+              <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
+            </svg>
+          ),
+          text: "Note moyenne de 4.8/5 sur les stores d'applications",
+        },
+      ],
+      detailedInfo: {
+        challenge:
+          'NexusPay souhaitait développer une application bancaire mobile permettant de gérer les finances personnelles et professionnelles de ses utilisateurs. Il souhaitait également permettre aux utilisateurs de gérer leurs comptes bancaires, et de recevoir des notifications pour leurs transactions.',
+        solution:
+          "Nous avons développé une application native multi-plateforme qui répond précisément à ces besoins : un tableau de bord unifié pour la gestion des finances personnelles et professionnelles, un système de gestion de comptes bancaires avec synchronisation en temps réel, et un moteur de notifications intelligent et personnalisable pour les transactions. L'interface a été conçue selon les principes du design centré utilisateur, avec des tests d'utilisabilité à chaque étape du développement.",
+        results:
+          "L'application NexusPay a été téléchargée plus de 150 000 fois depuis son lancement, avec un taux de rétention de 68% après 3 mois. Elle a permis de traiter plus de 2 millions de transactions pour un volume total dépassant 500 millions d'euros. La satisfaction client a atteint 92%, et l'application a reçu plusieurs distinctions dans le secteur fintech.",
+        technologies: ['React Native', 'TypeScript', 'Node.js', 'AWS', 'Supabase'],
+        images: [
+          {
+            src: '/images/banking-1.png',
+            alt: "Écran d'accueil de NexusPay",
+            caption: 'Dashboard principal avec aperçu des comptes et transactions récentes',
+          },
+          {
+            src: '/images/banking-2.png',
+            alt: 'Fonctionnalité de gestion des budgets',
+            caption: 'Page de gestion des budgets',
+          },
+          {
+            src: '/images/banking-3.png',
+            alt: 'Page de paramètres du compte',
+            caption: 'Page de paramètres du compte',
+          },
+          {
+            src: '/images/banking-4.png',
+            alt: 'Analyse des dépenses',
+            caption: 'Analyse des dépenses',
+          },
+          {
+            src: '/images/banking-5.png',
+            alt: "Page d'ajout de dépenses",
+            caption: "Page d'ajout de dépenses",
+          },
+        ],
+      },
+    },
   ]
 
   return (
@@ -203,7 +281,7 @@ const SuccessStories = () => {
           </div>
 
           {/* Grille des cas de succès */}
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-3 gap-8">
             {successCases.map((caseItem) => (
               <div
                 key={caseItem.id}
@@ -290,9 +368,52 @@ const SuccessStories = () => {
 
             {/* Contenu du modal */}
             <div className="p-6">
-              {selectedCase.detailedInfo ? (
+              {selectedCase && selectedCase.id === 3 ? (
                 <div className="space-y-8">
-                  {/* Galerie d'images */}
+                  {/* Galerie d'images spéciale pour les applications mobiles */}
+                  <div className="flex flex-wrap justify-center gap-6">
+                    {selectedCase.detailedInfo.images.map((image, index) => (
+                      <div key={index} className="relative">
+                        {/* Cadre de téléphone */}
+                        <div
+                          className="relative w-56 h-[450px] rounded-[36px] border-[6px]
+                         border-gray-900 overflow-hidden shadow-xl bg-gray-800"
+                        >
+                          {/* Écran */}
+                          <img src={image.src} alt={image.alt} className="w-full h-full object-cover rounded-[22px] " />
+                        </div>
+                        <p className="text-sm text-gray-600 mt-3 text-center max-w-[200px] mx-auto">{image.caption}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Défi */}
+                  <div>
+                    <h4 className="text-xl font-inter-bold text-gray-900 mb-3">Le défi</h4>
+                    <p className="text-gray-700">{selectedCase.detailedInfo.challenge}</p>
+                  </div>
+
+                  {/* Solution */}
+                  <div>
+                    <h4 className="text-xl font-inter-bold text-gray-900 mb-3">Notre solution</h4>
+                    <p className="text-gray-700">{selectedCase.detailedInfo.solution}</p>
+                  </div>
+
+                  {/* Technologies utilisées */}
+                  <div>
+                    <h4 className="text-xl font-inter-bold text-gray-900 mb-3">Technologies utilisées</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedCase.detailedInfo.technologies.map((tech, index) => (
+                        <span key={index} className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : selectedCase?.detailedInfo ? (
+                <div className="space-y-8">
+                  {/* Galerie d'images standard pour les autres projets */}
                   <div className="grid grid-cols-2 gap-4">
                     {selectedCase.detailedInfo.images.map((image, index) => (
                       <div key={index} className="rounded-lg overflow-hidden shadow-md">
