@@ -480,29 +480,40 @@ const SuccessStories = () => {
                 </div>
               ) : selectedCase?.detailedInfo ? (
                 <div className="space-y-12">
-                  {/* Galerie standard */}
-                  <div className="grid grid-cols-2 gap-6">
+                  {/* Galerie standard - améliorée pour le responsive */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                     {selectedCase.detailedInfo.images.map((image, index) => (
-                      <div key={index} className="group relative rounded-xl overflow-hidden shadow-lg">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <p className="absolute bottom-0 left-0 right-0 p-4 text-white text-sm transform translate-y-full group-hover:translate-y-0 transition-transform">
-                          {image.caption}
-                        </p>
+                      <div key={index} className="group relative rounded-xl overflow-hidden shadow-lg h-auto">
+                        {/* Container avec ratio d'aspect fixe */}
+                        <div className="relative pb-[65%] overflow-hidden">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="absolute inset-0 w-full h-full transform transition-transform duration-300"
+                            loading="lazy"
+                          />
+                          {/* Overlay avec dégradé */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                          {/* Caption toujours visible sur mobile, apparaît au survol sur desktop */}
+                          <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 bg-black/50 md:bg-transparent md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300 md:bg-gradient-to-t md:from-black/80 md:to-black/0">
+                            <p className="text-white text-xs sm:text-sm">{image.caption}</p>
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </div>
 
-                  {/* Sections d'information */}
-                  <div className="grid md:grid-cols-2 gap-8">
+                  {/* Sections d'information - optimisées pour mobile */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-6">
                       <div>
-                        <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                          <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 flex items-center">
+                          <svg
+                            className="w-5 h-5 text-blue-600 mr-2 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
                             <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                             <path
                               fillRule="evenodd"
@@ -512,11 +523,17 @@ const SuccessStories = () => {
                           </svg>
                           Le défi
                         </h4>
-                        <p className="text-gray-600 leading-relaxed">{selectedCase.detailedInfo.challenge}</p>
+                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                          {selectedCase.detailedInfo.challenge}
+                        </p>
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                          <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 flex items-center">
+                          <svg
+                            className="w-5 h-5 text-blue-600 mr-2 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
                             <path
                               fillRule="evenodd"
                               d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
@@ -525,29 +542,37 @@ const SuccessStories = () => {
                           </svg>
                           Notre solution
                         </h4>
-                        <p className="text-gray-600 leading-relaxed">{selectedCase.detailedInfo.solution}</p>
+                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                          {selectedCase.detailedInfo.solution}
+                        </p>
                       </div>
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                        <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                          <path
-                            fillRule="evenodd"
-                            d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        Technologies utilisées
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedCase.detailedInfo.technologies.map((tech, index) => (
-                          <span
-                            key={index}
-                            className="px-4 py-2 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium border border-gray-100 hover:border-blue-100 transition-colors"
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 flex items-center">
+                          <svg
+                            className="w-5 h-5 text-blue-600 mr-2 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
                           >
-                            {tech}
-                          </span>
-                        ))}
+                            <path
+                              fillRule="evenodd"
+                              d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                          Technologies utilisées
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedCase.detailedInfo.technologies.map((tech, index) => (
+                            <span
+                              key={index}
+                              className="px-3 py-1.5 bg-gray-50 text-gray-700 rounded-lg text-xs sm:text-sm font-medium border border-gray-100 hover:border-blue-100 transition-colors"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
