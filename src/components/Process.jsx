@@ -111,7 +111,7 @@ const Process = () => {
       number: "04",
       title: "Tests",
       description:
-        "Vérification du bon fonctionnement de votre application et ajustements pour garantir une qualité optimale.",
+        "Vérification du bon fonctionnement de votre application.",
       icon: (
         <svg
           className="w-7 h-7"
@@ -135,7 +135,7 @@ const Process = () => {
       number: "05",
       title: "Déploiement",
       description:
-        "Lancement de votre application et mise en place des outils de suivi pour assurer sa performance.",
+        "Lancement officiel de votre application.",
       icon: (
         <svg
           className="w-7 h-7"
@@ -173,8 +173,8 @@ const Process = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Une approche structurée et transparente pour transformer votre
-            vision en réalité digitale.
+            Une approche structurée et transparente pour vous accompagner dans
+            votre projet.
           </p>
 
           {/* Trait horizontal sous le titre avec animation */}

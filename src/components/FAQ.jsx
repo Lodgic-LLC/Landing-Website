@@ -213,7 +213,7 @@ const FAQ = () => {
               Vous avez une question spécifique concernant votre projet ?
             </p>
             <a
-              href="/rendez-vous"
+              href="/contact"
               className="inline-flex items-center justify-center bg-[#2563EB] text-white font-inter-medium px-8 py-4 rounded-lg hover:bg-[#1d4ed8] transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1"
               aria-label="Contactez-nous pour plus d'informations"
             >
