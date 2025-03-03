@@ -1,26 +1,26 @@
-import './App.css'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import HomePage from './pages/HomePage'
-import AboutPage from './pages/AboutPage'
-import { useEffect } from 'react'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import ContactPage from './pages/ContactPage'
-import ServicesPage from './pages/ServicesPage'
-import Appointment from './pages/Appointment'
-import MentionsLegales from './pages/MentionsLegales'
-import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite'
-import CGV from './pages/CGV'
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import ContactPage from "./pages/ContactPage";
+import ServicesPage from "./pages/ServicesPage";
+import Appointment from "./pages/Appointment";
+import MentionsLegales from "./pages/MentionsLegales";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
+import CGV from "./pages/CGV";
 
 function App() {
   useEffect(() => {
     AOS.init({
       duration: 800,
       once: false,
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <Router>
@@ -33,13 +33,16 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/rendez-vous" element={<Appointment />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
-          <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+          <Route
+            path="/politique-confidentialite"
+            element={<PolitiqueConfidentialite />}
+          />
           <Route path="/cgv" element={<CGV />} />
         </Routes>
         <Footer />
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const ProjectCTA = () => {
   return (
@@ -17,7 +17,10 @@ const ProjectCTA = () => {
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8" data-aos="fade-up">
+          <h2
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8"
+            data-aos="fade-up"
+          >
             Vous avez un projet ? Parlons-en dès aujourd'hui !
           </h2>
 
@@ -26,30 +29,34 @@ const ProjectCTA = () => {
             data-aos="fade-up"
             data-aos-delay="50"
           >
-            Transformez vos idées en solutions digitales performantes. Notre équipe est prête à vous accompagner à
-            chaque étape.
+            Passez a la vitesse supérieure avec votre projet. Notre équipe est
+            la pour vous conseiller et vous accompagner.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8" data-aos="fade-up" data-aos-delay="100">
+          <div
+            className="flex flex-col sm:flex-row justify-center gap-4 mt-8"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <a
-              href="/rendez-vous"
+              href="/contact"
               className="inline-block bg-white text-blue-600 font-medium px-6 sm:px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
               aria-label="Prendre rendez-vous pour discuter de votre projet"
             >
-              Prendre rendez-vous
+              Discuter de votre projet
             </a>
             <a
-              href="/realisations"
+              href="/services"
               className="inline-block bg-blue-600 text-white font-medium px-6 sm:px-8 py-3 rounded-full border border-white/30 hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
-              aria-label="Découvrir nos réalisations précédentes"
+              aria-label="Découvrir nos services proposés"
             >
-              Découvrir nos réalisations
+              Découvrir nos services
             </a>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectCTA
+export default ProjectCTA;
