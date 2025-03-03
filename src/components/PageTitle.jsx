@@ -11,7 +11,7 @@ const PageTitle = ({ title, description }) => {
     const getFullTitle = () => {
         switch (title) {
             case 'Accueil':
-                return 'Lodgic | Solutions Digitales';
+                return 'Lodgic | Solutions Web et Mobile';
             case 'Services':
                 return 'Lodgic | Services de développement web et mobile professionnel';
             case 'À propos':
