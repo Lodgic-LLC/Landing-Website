@@ -67,9 +67,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      } ${scrollPosition > 50 ? 'py-3 shadow-lg bg-white/95 backdrop-blur-sm' : 'py-5 bg-white shadow-sm'}`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+        } ${scrollPosition > 50 ? 'py-3 shadow-lg bg-white/95 backdrop-blur-sm' : 'py-5 bg-white shadow-sm'}`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-down" data-aos-duration="600">
         <div className="flex items-center justify-between">
@@ -89,11 +88,10 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`px-3 py-2 rounded-md text-sm lg:text-base font-inter-medium transition-all duration-200 ${
-                  isActive(item.path)
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                }`}
+                className={`px-3 py-2 rounded-md text-sm lg:text-base font-inter-medium transition-all duration-200 ${isActive(item.path)
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                  }`}
                 data-aos="fade-down"
                 data-aos-delay={100 + index * 50}
               >
@@ -164,18 +162,16 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-          isMenuOpen ? 'max-h-[320px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
+        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-[320px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
       >
         <div className="container mx-auto px-4 sm:px-6 bg-white border-t border-gray-100 shadow-inner">
           {navigationItems.map((item) => (
             <Link
               key={item.name}
               to={item.path}
-              className={`block px-4 py-3 rounded-md text-base font-inter-medium transition-all duration-200 ${
-                isActive(item.path) ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-              }`}
+              className={`block px-4 py-3 rounded-md text-base font-inter-medium transition-all duration-200 ${isActive(item.path) ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                }`}
             >
               {item.name}
             </Link>
