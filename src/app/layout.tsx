@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" className="overflow-x-hidden">
       <head>
         {/* Scripts Iubenda pour la gestion des cookies */}
         <Script id="iubenda-config" strategy="beforeInteractive">
