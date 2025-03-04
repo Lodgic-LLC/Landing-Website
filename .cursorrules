@@ -18,7 +18,7 @@ Quand je te demande de modifier un fichier, tu n'as pas besoin de réécrire le 
 Quand tu fais du code, tu dois toujours chercher à optimiser le code et à le rendre plus lisible et maintenable et également le rendre le plus sécurisé possible.
 Quand tu fais du code, tu dois toujous optimiser pour le SEO.
 
-React.js (Vite.js pour le bundling rapide).
+React.js (Nextjs pour le bundling rapide).
 TailwindCSS pour le design et la mise en page.
 TypeScript (optionnel, mais recommandé).
 ESLint + Prettier pour le linting et la mise en forme automatique.
