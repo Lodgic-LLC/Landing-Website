@@ -1,0 +1,210 @@
+import Link from "next/link"
+
+export default function Features() {
+    const features = [
+        {
+            id: 1,
+            title: 'Conseil stratégique',
+            description:
+                'Nous vous accompagnons de la conception à la mise en production, en apportant expertise technique et stratégies adaptées à vos besoins.',
+            icon: (
+                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 16V21M12 16L19 21M12 16L5 21M5 3L12 7L19 3V14.5C19 15.8807 17.8807 17 16.5 17H7.5C6.11929 17 5 15.8807 5 14.5V3Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                </svg>
+            ),
+            color: 'from-amber-500 to-orange-500',
+            shadowColor: 'shadow-amber-200',
+            link: '/services/conseil',
+        },
+        {
+            id: 2,
+            title: 'Solutions sur mesure',
+            description:
+                'Nous développons pour votre projet une solution sur mesure, parfaitement adaptées à vos besoins et conçues pour évoluer avec votre entreprise.',
+            icon: (
+                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10.3246 4.31731C10.751 2.5609 13.249 2.5609 13.6754 4.31731C13.9508 5.45193 15.2507 5.99038 16.2478 5.38285C17.7913 4.44239 19.5576 6.2087 18.6172 7.75218C18.0096 8.74925 18.5481 10.0492 19.6827 10.3246C21.4391 10.751 21.4391 13.249 19.6827 13.6754C18.5481 13.9508 18.0096 15.2507 18.6172 16.2478C19.5576 17.7913 17.7913 19.5576 16.2478 18.6172C15.2507 18.0096 13.9508 18.5481 13.6754 19.6827C13.249 21.4391 10.751 21.4391 10.3246 19.6827C10.0492 18.5481 8.74926 18.0096 7.75219 18.6172C6.2087 19.5576 4.44239 17.7913 5.38285 16.2478C5.99038 15.2507 5.45193 13.9508 4.31731 13.6754C2.5609 13.249 2.5609 10.751 4.31731 10.3246C5.45193 10.0492 5.99037 8.74926 5.38285 7.75218C4.44239 6.2087 6.2087 4.44239 7.75219 5.38285C8.74926 5.99037 10.0492 5.45193 10.3246 4.31731Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                    <path
+                        d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                </svg>
+            ),
+            color: 'from-blue-500 to-cyan-500',
+            shadowColor: 'shadow-blue-200',
+            link: '/services/custom-solutions',
+        },
+        {
+            id: 3,
+            title: 'Performance & Sécurité',
+            description:
+                'Nous allions performance et sécurité pour des applications fiables, conformes aux standards, garantissant fluidité et protection de vos données.',
+            icon: (
+                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 10V3L4 14H11V21L20 10H13Z" fill="currentColor" />
+                </svg>
+            ),
+            color: 'from-indigo-500 to-blue-500',
+            shadowColor: 'shadow-indigo-200',
+            link: '/services/performance',
+        },
+        {
+            id: 4,
+            title: 'Expérience utilisateur',
+            description:
+                'Nous concevons des interfaces intuitives avec un design soigné pour offrir une expérience utilisateur fluide et engageante.',
+            icon: (
+                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15 7C16.1046 7 17 7.89543 17 9M21 9C21 12.3137 18.3137 15 15 15C14.3938 15 13.8087 14.9101 13.2571 14.7429L11 17H9V19H7V21H4C3.44772 21 3 20.5523 3 20V17.4142C3 17.149 3.10536 16.8946 3.29289 16.7071L9.25707 10.7429C9.08989 10.1914 9 9.60617 9 9C9 5.68629 11.6863 3 15 3C18.3137 3 21 5.68629 21 9Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                    <path
+                        d="M17 9C17 10.1046 16.1046 11 15 11C13.8954 11 13 10.1046 13 9C13 7.89543 13.8954 7 15 7C16.1046 7 17 7.89543 17 9Z"
+                        fill="currentColor"
+                    />
+                </svg>
+            ),
+            color: 'from-purple-500 to-indigo-500',
+            shadowColor: 'shadow-purple-200',
+            link: '/services/ux-design',
+        },
+        {
+            id: 5,
+            title: 'Accompagnement post production',
+            description:
+                'Nous établissons un partenariat durable avec nos clients, offrant un suivi constant, un support réactif et des évolutions constantes.',
+            icon: (
+                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4 5C4 4.44772 4.44772 4 5 4H19C19.5523 4 20 4.44772 20 5V7C20 7.55228 19.5523 8 19 8H5C4.44772 8 4 7.55228 4 7V5Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                    <path
+                        d="M4 13C4 12.4477 4.44772 12 5 12H11C11.5523 12 12 12.4477 12 13V19C12 19.5523 11.5523 20 11 20H5C4.44772 20 4 19.5523 4 19V13Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                    <path
+                        d="M16 13C16 12.4477 16.4477 12 17 12H19C19.5523 12 20 12.4477 20 13V19C20 19.5523 19.5523 20 19 20H17C16.4477 20 16 19.5523 16 19V13Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                </svg>
+            ),
+            color: 'from-cyan-500 to-teal-500',
+            shadowColor: 'shadow-cyan-200',
+            link: '/services/support',
+        },
+    ]
+
+    return (
+        <section className="w-full bg-white py-24 relative overflow-hidden">
+            {/* Éléments décoratifs d'arrière-plan */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-50 rounded-full opacity-30 blur-3xl"></div>
+                <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-50 rounded-full opacity-30 blur-3xl"></div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
+                <div className="text-center mb-20" data-aos="fade-up">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-gray-900 mb-6">
+                        Pourquoi choisir{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Lodgic</span> ?
+                    </h2>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Nous allions expertise technique, accompagnement sur mesure et vision long terme pour transformer vos idées
+                        en solutions digitales.
+                    </p>
+                    <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mt-8"></div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
+                    {features.map((feature, index) => (
+                        <div
+                            key={feature.id}
+                            className={`bg-white rounded-xl p-6 border border-gray-100 shadow-lg hover:shadow-xl ${feature.shadowColor} transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full group`}
+                            data-aos="fade-up"
+                            data-aos-delay={index * 100}
+                        >
+                            <div
+                                className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform duration-300`}
+                            >
+                                {feature.icon}
+                            </div>
+                            <h3 className="text-lg font-inter-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                {feature.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 mb-6 flex-grow">{feature.description}</p>
+
+                            <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-4 group-hover:via-blue-300 transition-colors"></div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* CTA Section */}
+                <div className="mt-20 flex justify-center" data-aos="zoom-in" data-aos-delay="300">
+                    <div className="relative group">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+                        <div className="relative bg-white border border-gray-200 rounded-lg px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+                            <div className="flex items-center">
+                                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                    <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 className="text-lg font-inter-bold text-gray-900">Prêt à démarrer votre projet ?</h4>
+                                    <p className="text-gray-600">Discutons ensemble de vos besoins et objectifs</p>
+                                </div>
+                            </div>
+                            <div className="flex space-x-4">
+                                <Link
+                                    href="/contact"
+                                    className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-inter-medium rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                                >
+                                    Discutons de vos besoins
+                                </Link>
+                                <Link
+                                    href="/rendez-vous"
+                                    className="px-6 py-3 border border-gray-300 text-gray-700 font-inter-medium rounded-lg hover:border-blue-500 hover:text-blue-600 transition-colors"
+                                >
+                                    Prendre RDV
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
