@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(6deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(6deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(6deg);
+  }
+}
+
+@keyframes float-delayed {
+  0% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translateY(0px) rotate(3deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(3deg);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Animation pour la ligne de progression */
+.transition-all {
+  transition-property: all;
+}
+
+.duration-1500 {
+  transition-duration: 1500ms;
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  /* Pour iOS */
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-inter-light {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+  }
+
+  .font-inter-regular {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+
+  .font-inter-medium {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  }
+
+  .font-inter-semibold {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-inter-bold {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+}

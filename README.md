@@ -1,57 +1,36 @@
-# Projet React Front-End
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## 📋 Description
-Ce projet est une application front-end moderne développée avec React et TailwindCSS. Il propose une interface utilisateur responsive, intuitive et performante, adaptée à tous les appareils (mobile, tablette, desktop).
+## Getting Started
 
-## 🚀 Technologies utilisées
-- **React.js** - Bibliothèque JavaScript pour construire des interfaces utilisateur
-- **Vite.js** - Outil de build ultra-rapide pour le développement moderne
-- **TailwindCSS** - Framework CSS utilitaire pour un design rapide et responsive
-- **TypeScript** (optionnel) - Superset JavaScript typé pour une meilleure maintenabilité
-- **ESLint & Prettier** - Outils de linting et formatage de code
+First, run the development server:
 
-## 🏗️ Structure du projet
-src/
-├── assets/ # Images, fichiers statiques
-├── components/ # Composants UI réutilisables
-├── hooks/ # Hooks personnalisés
-├── pages/ # Pages principales de l'application
-└── utils/ # Fonctions utilitaires
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## 🛠️ Installation
-1. Clonez le dépôt
-2. Installez les dépendances
-3. Lancez le serveur de développement
-4. Ouvrez votre navigateur à l'adresse http://localhost:5173
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 📱 Responsive Design
-L'application est entièrement responsive et s'adapte à toutes les tailles d'écran :
-- **Mobile** (< 640px)
-- **Tablette** (640px - 1024px)
-- **Desktop** (> 1024px)
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Chaque composant a été conçu en suivant l'approche "mobile-first" avec TailwindCSS.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🧩 Composants
-Le projet utilise une architecture basée sur des composants réutilisables, chacun ayant une responsabilité unique et clairement définie. Les composants suivent les meilleures pratiques React et sont optimisés pour éviter les re-rendus inutiles.
+## Learn More
 
-## 🔍 Bonnes pratiques
-- Utilisation des hooks React (useState, useEffect, useCallback, useMemo)
-- Gestion efficace des états et du cycle de vie des composants
-- Accessibilité (a11y) intégrée à tous les composants interactifs
-- Code propre et maintenable avec ESLint et Prettier
-- Optimisation des performances (lazy loading, code splitting)
+To learn more about Next.js, take a look at the following resources:
 
-## 🔧 Scripts disponibles
-- `npm run dev` - Lance le serveur de développement
-- `npm run build` - Compile l'application pour la production
-- `npm run preview` - Prévisualise la version de production localement
-- `npm run lint` - Vérifie le code avec ESLint
-- `npm run format` - Formate le code avec Prettier
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 📞 Contact
-Pour toute question ou suggestion concernant ce projet, veuillez contacter :
-- Email: lodgic@outlook.fr
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## 📄 Licence
-Ce projet est sous licence MIT.
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
