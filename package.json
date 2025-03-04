@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "critters": "^0.0.23",
     "next": "15.2.1",
     "react": "^19.0.0",
     "react-calendly": "^4.3.1",
