@@ -9,7 +9,7 @@ export default function Features() {
         "On prend le temps de vous écouter et de comprendre votre projet. Ensemble, on définit ce que votre application doit faire, on établit un calendrier qui vous convient et on identifie tout ce dont on aura besoin pour réussir.",
       icon: (
         <svg
-          className="w-8 h-8 text-white"
+          className="w-6 h-6 text-white"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -24,6 +24,7 @@ export default function Features() {
         </svg>
       ),
       color: "from-amber-500 to-orange-500",
+      bgColor: "bg-amber-50",
       shadowColor: "shadow-amber-200",
       link: "/services/conseil",
     },
@@ -34,7 +35,7 @@ export default function Features() {
         "Nos designers créent l'apparence de votre application pour qu'elle soit à la fois belle et facile à utiliser. Vous pourrez tester des maquettes interactives avant même que le développement ne commence.",
       icon: (
         <svg
-          className="w-8 h-8 text-white"
+          className="w-6 h-6 text-white"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +50,7 @@ export default function Features() {
         </svg>
       ),
       color: "from-purple-500 to-indigo-500",
+      bgColor: "bg-purple-50",
       shadowColor: "shadow-purple-200",
       link: "/services/ux-design",
     },
@@ -59,7 +61,7 @@ export default function Features() {
         "C'est là que la magie opère ! Notre équipe code votre application avec soin, en restant flexible pour s'adapter à vos retours. On travaille par étapes pour vous montrer régulièrement les avancées.",
       icon: (
         <svg
-          className="w-8 h-8 text-white"
+          className="w-6 h-6 text-white"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -81,6 +83,7 @@ export default function Features() {
         </svg>
       ),
       color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-50",
       shadowColor: "shadow-blue-200",
       link: "/services/custom-solutions",
     },
@@ -91,7 +94,7 @@ export default function Features() {
         "Votre application est prête à conquérir le monde ! On s'occupe de la mise en ligne et on reste à vos côtés pour l'améliorer en fonction des retours de vos utilisateurs et de vos nouvelles idées.",
       icon: (
         <svg
-          className="w-8 h-8 text-white"
+          className="w-6 h-6 text-white"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -120,6 +123,7 @@ export default function Features() {
         </svg>
       ),
       color: "from-cyan-500 to-teal-500",
+      bgColor: "bg-cyan-50",
       shadowColor: "shadow-cyan-200",
       link: "/services/support",
     },
@@ -150,26 +154,33 @@ export default function Features() {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mt-8"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {features.map((feature, index) => (
             <div
               key={feature.id}
-              className={`bg-white rounded-xl p-6 border border-gray-100 shadow-lg hover:shadow-xl ${feature.shadowColor} transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full group relative`}
+              className={`${feature.bgColor} rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full group`}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md">
-                {feature.id}
+              <div className="p-6 flex-grow">
+                <div className="flex items-center justify-between mb-6">
+                  <div
+                    className={`w-12 h-12 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-md transform group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    {feature.icon}
+                  </div>
+                  <div className="w-7 h-7 bg-white text-gray-800 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border border-gray-100">
+                    {feature.id}
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-700">{feature.description}</p>
               </div>
               <div
-                className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform duration-300`}
-              >
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600">{feature.description}</p>
+                className={`h-1 w-full bg-gradient-to-r ${feature.color}`}
+              ></div>
             </div>
           ))}
         </div>
