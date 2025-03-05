@@ -337,7 +337,8 @@ export default function Process() {
             à votre service
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Découvrez les fonctionnalités que nous avons déjà développées
+            Découvrez quelques-unes des fonctionnalités que nous avons déjà
+            développées
           </p>
           <div className="relative h-1 w-24 mx-auto">
             <div className="absolute inset-0 bg-[#2563EB] rounded-full"></div>
@@ -369,33 +370,13 @@ export default function Process() {
         </div>
 
         <div className="mt-16 text-center" data-aos="fade-up">
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
-            Créez l'application qui vous ressemble, tout en répondant à
-            l'ensemble des besoins de vos clients !
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+            Chaque application est unique, nous personnalisons vos
+            fonctionnalités pour correspondre à vos besoins.
             <br />
             Toutes ces fonctionnalités et bien d'autres sont possibles pour
             votre projet.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-          >
-            Discutons de votre projet
-            <svg
-              className="w-5 h-5 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              ></path>
-            </svg>
-          </Link>
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@ export default function Features() {
       id: 1,
       title: "Conseil & Stratégie",
       description:
-        "On prend le temps de vous écouter et de comprendre votre projet. Ensemble, on définit ce que votre application doit faire, on établit un calendrier qui vous convient et on identifie tout ce dont on aura besoin pour réussir.",
+        "Ensemble, on définit ce que votre application doit faire, on établit un cahier des charges et on identifie tout ce dont on aura besoin pour votre application.",
       icon: (
         <svg
           className="w-6 h-6 text-white"
@@ -32,7 +32,7 @@ export default function Features() {
       id: 2,
       title: "Design & Prototypage",
       description:
-        "Nos designers créent l'apparence de votre application pour qu'elle soit à la fois belle et facile à utiliser. Vous pourrez tester des maquettes interactives avant même que le développement ne commence.",
+        "Nous soignons l'apparence de votre application pour qu'elle soit à la fois professionnelle et intuitive. Nous vous présentons des maquettes afin que vous puissiez visualiser son design avant la réalisation.",
       icon: (
         <svg
           className="w-6 h-6 text-white"
@@ -91,7 +91,7 @@ export default function Features() {
       id: 4,
       title: "Lancement & Évolution",
       description:
-        "Votre application est prête à conquérir le monde ! On s'occupe de la mise en ligne et on reste à vos côtés pour l'améliorer en fonction des retours de vos utilisateurs et de vos nouvelles idées.",
+        "Votre application est prête à décoller !Nous assurons sa mise en ligne et restons à vos côtés pour l'optimiser selon les retours des utilisateurs et vos nouvelles idées.",
       icon: (
         <svg
           className="w-6 h-6 text-white"
@@ -147,9 +147,7 @@ export default function Features() {
             à chaque étape de la réalisation de votre application
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            De la conception à la mise en production, notre équipe d'experts
-            vous guide à chaque étape pour transformer votre vision en une
-            solution digitale performante.
+          De la conception à la livraison, nous vous accompagnons à chaque étape pour concrétiser votre application.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mt-8"></div>
         </div>
