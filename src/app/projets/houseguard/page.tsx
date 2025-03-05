@@ -250,35 +250,35 @@ export default function HouseGuardProject() {
             <div className="flex flex-wrap justify-center gap-8">
               <div className="w-56 rounded-xl overflow-hidden shadow-lg">
                 <img src="/images/house-biens.png" alt="Liste des biens immobiliers" className="w-full h-auto" />
-                <div className="p-4 bg-white">
+                <div className="p-4">
                   <p className="text-gray-700 font-medium">Liste des biens immobiliers</p>
                 </div>
               </div>
 
               <div className="w-56 rounded-xl overflow-hidden shadow-lg">
                 <img src="/images/house-proprietaire.png" alt="Dashboard propriétaire" className="w-full h-auto" />
-                <div className="p-4 bg-white">
+                <div className="p-4">
                   <p className="text-gray-700 font-medium">Dashboard propriétaire</p>
                 </div>
               </div>
 
               <div className="w-56 rounded-xl overflow-hidden shadow-lg">
                 <img src="/images/house-parametres.png" alt="Paramètres du compte" className="w-full h-auto" />
-                <div className="p-4 bg-white">
+                <div className="p-4">
                   <p className="text-gray-700 font-medium">Paramètres du compte</p>
                 </div>
               </div>
 
               <div className="w-56 rounded-xl overflow-hidden shadow-lg">
                 <img src="/images/house-locataire.png" alt="Interface locataire" className="w-full h-auto" />
-                <div className="p-4 bg-white">
+                <div className="p-4 ">
                   <p className="text-gray-700 font-medium">Interface locataire</p>
                 </div>
               </div>
 
               <div className="w-56 rounded-xl overflow-hidden shadow-lg">
                 <img src="/images/house-notif-locataire.png" alt="Notifications locataire" className="w-full h-auto" />
-                <div className="p-4 bg-white">
+                <div className="p-4">
                   <p className="text-gray-700 font-medium">Notifications locataire</p>
                 </div>
               </div>
@@ -289,7 +289,7 @@ export default function HouseGuardProject() {
                   alt="Déclaration de sinistre"
                   className="w-full h-auto"
                 />
-                <div className="p-4 bg-white">
+                <div className="p-4 ">
                   <p className="text-gray-700 font-medium">Déclaration de sinistre</p>
                 </div>
               </div>

@@ -134,91 +134,148 @@ export default function SuccessStories() {
   ]
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+    <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
+      <div className="absolute top-40 right-20 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-indigo-500/5 rounded-full filter blur-3xl"></div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-8xl mx-auto">
           {/* En-tête */}
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-4xl md:text-5xl font-inter-bold text-gray-900 mb-6">Ils nous font confiance</h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <div className="text-center mb-20" data-aos="fade-up">
+            <h2 className="text-4xl md:text-5xl font-inter-bold text-gray-900 mb-6">
+              Ils nous font{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                confiance
+              </span>
+            </h2>
+            <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
               Des résultats concrets qui témoignent de notre expertise et de notre engagement envers la réussite de nos
               clients
             </p>
-            <div className="relative h-0.5 w-24 mx-auto bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
+            <div className="relative h-1 w-32 mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full animate-pulse opacity-70"></div>
+            </div>
           </div>
 
           {/* Projets en format magazine professionnel */}
-          <div className="space-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {successCases.map((caseItem, index) => (
               <div key={caseItem.id} className="group" data-aos="fade-up" data-aos-delay={index * 100}>
-                <Link href={caseItem.link} className="block">
-                  <div
-                    className={`flex flex-col ${
-                      index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                    } bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100`}
-                  >
+                <Link href={caseItem.link} className="block h-full">
+                  <div className="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100/80 hover:border-blue-100/80 transform hover:-translate-y-1">
                     {/* Image du projet */}
-                    <div className="lg:w-1/2 relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative overflow-hidden h-64">
+                      <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 opacity-40 z-10"></div>
+
                       {caseItem.id === 3 ? (
-                        <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-indigo-50 to-blue-50 p-6">
-                          <div className="relative max-w-xs mx-auto">
-                            {/* iPhone frame overlay */}
-                            <div className="absolute inset-0 w-full h-full bg-black rounded-[3rem] shadow-2xl -z-10 transform scale-[1.02]"></div>
-                            {/* iPhone inner frame */}
-                            <div className="absolute inset-[3px] w-[calc(100%-6px)] h-[calc(100%-6px)] bg-black rounded-[2.9rem] overflow-hidden -z-5">
-                              {/* iPhone notch */}
-                              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-xl z-10"></div>
+                        // Affichage de 3 images pour HouseGuard
+                        <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 p-4">
+                          <div className="flex justify-center items-center gap-2 w-full h-full">
+                            {/* Première image - interface propriétaire */}
+                            <div className="relative h-[85%] w-auto max-w-[110px] transform -rotate-6">
+                              <div className="absolute shadow-lg"></div>
+                              <img
+                                src="/images/house-proprietaire.png"
+                                alt="Interface propriétaire"
+                                className="relative z-10 h-full w-full object-cover rounded-[16px] p-[2px]"
+                              />
                             </div>
-                            {/* App screenshot */}
-                            <img
-                              src={caseItem.image}
-                              alt={caseItem.title}
-                              className="w-full h-full object-cover object-center rounded-[2.5rem] transform transition-transform duration-700 group-hover:scale-105 relative z-0"
-                            />
+
+                            {/* Deuxième image - interface principale (au centre et plus grande) */}
+                            <div className="relative h-full w-auto max-w-[130px] z-20 shadow-xl">
+                              <div className="absolute shadow-lg"></div>
+                              <img
+                                src="/images/house-biens.png"
+                                alt="Interface principale"
+                                className="relative z-10 h-full w-full object-cover rounded-[20px] p-[2px]"
+                              />
+                            </div>
+
+                            {/* Troisième image - interface locataire */}
+                            <div className="relative h-[85%] w-auto max-w-[110px] transform rotate-6">
+                              <div className="absoluteshadow-lg"></div>
+                              <img
+                                src="/images/house-locataire.png"
+                                alt="Interface locataire"
+                                className="relative z-10 h-full w-full object-cover rounded-[16px] p-[2px]"
+                              />
+                            </div>
                           </div>
                         </div>
                       ) : (
-                        <div className="relative w-full h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden">
+                        // Affichage standard pour les autres projets
+                        <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
                           <img
                             src={caseItem.image}
                             alt={caseItem.title}
-                            className="w-full h-full object-contain md:object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
+                            className="w-full h-full object-contain md:object-cover object-center transform transition-transform duration-700 group-hover:scale-105 mix-blend-normal"
                           />
                         </div>
                       )}
-                      <div className="absolute top-4 left-4 z-10">
-                        <span className="px-3 py-1.5 bg-white shadow-md rounded-full text-xs font-semibold text-gray-800">
+
+                      <div className="absolute top-4 left-4 z-20">
+                        <span className="px-3 py-1.5 bg-white/90 backdrop-blur-sm shadow-md rounded-full text-xs font-semibold text-gray-800 border border-gray-100">
                           {caseItem.id === 1 ? 'Web3' : caseItem.id === 2 ? 'Finance' : 'Mobile'}
+                        </span>
+                      </div>
+                      <div className="absolute bottom-4 right-4 z-20">
+                        <span className="px-4 py-2 bg-blue-600/90 backdrop-blur-sm shadow-md rounded-lg text-sm font-medium text-white flex items-center">
+                          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                            />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                            />
+                          </svg>
+                          Voir le projet
                         </span>
                       </div>
                     </div>
 
                     {/* Contenu du projet */}
-                    <div className="lg:w-1/2 p-8 flex flex-col justify-between">
+                    <div className="p-6 flex flex-col flex-grow justify-between bg-gradient-to-br from-white to-gray-50/80">
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                        <div className="flex items-center mb-2">
+                          <div className="h-1 w-8 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full mr-3"></div>
+                          <span className="text-sm font-medium text-blue-600 uppercase tracking-wider">
+                            {caseItem.id === 1 ? 'Web3' : caseItem.id === 2 ? 'Finance' : 'Mobile'}
+                          </span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                           {caseItem.title}
                         </h3>
-                        <p className="text-gray-600 mb-6 text-lg">{caseItem.description}</p>
+                        <p className="text-gray-600 mb-6 text-sm leading-relaxed">{caseItem.description}</p>
 
-                        {/* Points clés */}
-                        <div className="space-y-4 mb-8">
+                        {/* Points clés - version simplifiée */}
+                        <div className="space-y-3 mb-6">
                           {caseItem.items.map((item) => (
-                            <div key={item.id} className="flex items-start">
-                              <div className="flex-shrink-0 p-1.5 bg-blue-50 rounded-lg mr-3">{item.icon}</div>
-                              <p className="text-gray-700">{item.text}</p>
+                            <div key={item.id} className="flex items-start rounded-lg">
+                              <div className="flex-shrink-0 p-1.5 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-lg mr-3 shadow-sm">
+                                {item.icon}
+                              </div>
+                              <div>
+                                <p className="text-gray-700 text-sm">{item.text}</p>
+                              </div>
                             </div>
                           ))}
                         </div>
                       </div>
 
                       {/* CTA */}
-                      <div className="mt-auto">
-                        <div className="inline-flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors">
+                      <div className="mt-auto pt-4 border-t border-gray-100">
+                        <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-600 text-sm font-medium rounded-lg group-hover:from-blue-100 group-hover:to-indigo-100 transition-all duration-300">
                           Découvrir ce projet
                           <svg
-                            className="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1"
+                            className="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -237,19 +294,6 @@ export default function SuccessStories() {
                 </Link>
               </div>
             ))}
-          </div>
-
-          {/* CTA global */}
-          <div className="mt-16 text-center" data-aos="fade-up">
-            <Link
-              href="/projets"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors shadow-md hover:shadow-lg"
-            >
-              Voir tous nos projets
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
           </div>
         </div>
       </div>
