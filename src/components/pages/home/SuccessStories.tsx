@@ -220,25 +220,6 @@ export default function SuccessStories() {
                           {caseItem.id === 1 ? 'Web3' : caseItem.id === 2 ? 'Finance' : 'Mobile'}
                         </span>
                       </div>
-                      <div className="absolute bottom-4 right-4 z-20">
-                        <span className="px-4 py-2 bg-blue-600/90 backdrop-blur-sm shadow-md rounded-lg text-sm font-medium text-white flex items-center">
-                          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                            />
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                            />
-                          </svg>
-                          Voir le projet
-                        </span>
-                      </div>
                     </div>
 
                     {/* Contenu du projet */}
