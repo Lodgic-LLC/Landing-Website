@@ -8,6 +8,10 @@ interface SubmitStatusType {
   message: string
 }
 
+interface FormErrorsType {
+  email?: string
+}
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,6 +22,13 @@ export default function ContactForm() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<SubmitStatusType | null>(null)
+  const [formErrors, setFormErrors] = useState<FormErrorsType>({})
+
+  const validateEmail = (email: string): boolean => {
+    // Regex pour validation d'email
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    return emailRegex.test(email)
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -25,11 +36,24 @@ export default function ContactForm() {
       ...prev,
       [name]: value,
     }))
+
+    // Effacer l'erreur d'email lorsque l'utilisateur modifie le champ
+    if (name === 'email' && formErrors.email) {
+      setFormErrors((prev) => ({ ...prev, email: undefined }))
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    // Valider l'email avant de soumettre
+    if (!validateEmail(formData.email)) {
+      setFormErrors({ email: "L'adresse email n'est pas valide" })
+      return
+    }
+
     setIsSubmitting(true)
+    setFormErrors({})
 
     try {
       // Créer un objet FormData à partir du formulaire
@@ -129,15 +153,18 @@ export default function ContactForm() {
                         Email <span className="text-red-500">*</span>
                       </label>
                       <input
-                        type="email"
+                        type="text"
                         id="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-colors ${
+                          formErrors.email ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                        }`}
                         placeholder="Votre adresse email"
                       />
+                      {formErrors.email && <p className="mt-1 text-sm text-red-600">{formErrors.email}</p>}
                     </div>
                   </div>
 

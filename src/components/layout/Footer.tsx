@@ -138,13 +138,22 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 mb-1 font-medium">Email</p>
-                  <a
-                    href="mailto:contact.lodgic@gmail.com"
-                    className="text-gray-400 hover:text-white transition-colors"
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
                     tabIndex={0}
                   >
-                    contact.lodgic@gmail.com
-                  </a>
+                    <span>Nous contacter</span>
+                    <svg
+                      className="w-3.5 h-3.5 ml-1.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
                 </div>
               </li>
               <li className="flex items-start group">
@@ -191,7 +200,7 @@ export default function Footer() {
         {/* Barre horizontale et copyright */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {currentYear} <span className="text-gray-400">Lodgic SAS</span>. Tous droits réservés.
+            © {currentYear} <span className="text-gray-400">Lodgic</span>. Tous droits réservés.
           </p>
           <div className="mt-4 md:mt-0 flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link
