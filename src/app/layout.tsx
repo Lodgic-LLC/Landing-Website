@@ -14,7 +14,21 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Lodgic - Conception d\'applications web et mobiles',
-  description: 'Lodgic est une agence de développement web et mobile',
+  description: 'Agence de développement web spécialisée dans la création de sites et applications web modernes, réactifs et performants.',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: 'Lodgic - Conception d\'applications web et mobiles',
+    description: 'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
+    images: '/favicon.ico',
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://lodgic-dev.com',
+    siteName: 'Lodgic',
+  },
 }
 
 export default function RootLayout({
