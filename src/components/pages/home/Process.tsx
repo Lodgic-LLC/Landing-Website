@@ -380,7 +380,7 @@ export default function Process() {
 
         <div className="mt-16 text-center" data-aos="fade-up">
           <p className="text-xl text-gray-700 max-w-4xl mx-auto">
-            Chaque application est unique, nous réalisons vos fonctionnalités pour correspondre à vos besoins.
+            Chaque application est unique, nous réalisons votre application pour correspondre à vos besoins.
             <br />
           </p>
         </div>
