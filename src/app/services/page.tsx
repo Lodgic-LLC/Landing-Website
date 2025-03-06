@@ -902,7 +902,7 @@ export default function Services() {
       <section className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">Notre approche duo</h2>
+            <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">Notre approche complète</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Nous combinons nos expertises complémentaires pour donner vie à votre vision
             </p>
