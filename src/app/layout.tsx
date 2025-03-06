@@ -52,6 +52,7 @@ export const metadata: Metadata = {
     'whatsapp:description':
       'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
     'whatsapp:image': '/FullLogo_Transparent.png',
+    'og:logo': '/FullLogo_Transparent.png',
   },
 }
 
