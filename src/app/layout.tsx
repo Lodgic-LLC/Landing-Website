@@ -13,7 +13,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Lodgic',
+  title: 'Lodgic - Conception d\'applications web et mobiles',
   description: 'Lodgic est une agence de développement web et mobile',
 }
 
