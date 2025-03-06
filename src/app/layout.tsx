@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Lodgic - Conception d'applications web et mobiles",
     description:
       'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
-    images: '/favicon.ico',
+    images: '/FullLogo_Transparent.png',
     type: 'website',
     locale: 'fr_FR',
     url: 'https://lodgic-dev.com',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Lodgic - Conception d'applications web et mobiles",
     description:
       'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
-    images: '/favicon.ico',
+    images: '/FullLogo_Transparent.png',
     creator: '@lodgic',
     site: '@lodgic',
   },
@@ -46,12 +46,12 @@ export const metadata: Metadata = {
     'instagram:title': "Lodgic - Conception d'applications web et mobiles",
     'instagram:description':
       'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
-    'instagram:image': '/favicon.ico',
+    'instagram:image': '/FullLogo_Transparent.png',
     'whatsapp:card': 'summary_large_image',
     'whatsapp:title': "Lodgic - Conception d'applications web et mobiles",
     'whatsapp:description':
       'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
-    'whatsapp:image': '/favicon.ico',
+    'whatsapp:image': '/FullLogo_Transparent.png',
   },
 }
 
