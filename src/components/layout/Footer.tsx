@@ -200,7 +200,7 @@ export default function Footer() {
         {/* Barre horizontale et copyright */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {currentYear} <span className="text-gray-400">Lodgic SAS</span>. Tous droits réservés.
+            © {currentYear} <span className="text-gray-400">Lodgic</span>. Tous droits réservés.
           </p>
           <div className="mt-4 md:mt-0 flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link
