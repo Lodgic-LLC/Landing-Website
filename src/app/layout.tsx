@@ -29,6 +29,24 @@ export const metadata: Metadata = {
     url: 'https://lodgic-dev.com',
     siteName: 'Lodgic',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lodgic - Conception d\'applications web et mobiles',
+    description: 'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
+    images: '/favicon.ico',
+    creator: '@lodgic',
+    site: '@lodgic',
+  },
+  other: {
+    'instagram:card': 'summary_large_image',
+    'instagram:title': 'Lodgic - Conception d\'applications web et mobiles',
+    'instagram:description': 'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
+    'instagram:image': '/favicon.ico',
+    'whatsapp:card': 'summary_large_image',
+    'whatsapp:title': 'Lodgic - Conception d\'applications web et mobiles',
+    'whatsapp:description': 'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
+    'whatsapp:image': '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
