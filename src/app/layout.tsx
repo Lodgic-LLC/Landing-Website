@@ -13,16 +13,19 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Lodgic - Conception d\'applications web et mobiles',
-  description: 'Agence de développement web spécialisée dans la création de sites et applications web modernes, réactifs et performants.',
+  metadataBase: new URL('https://lodgic-dev.com'),
+  title: "Lodgic - Conception d'applications web et mobiles",
+  description:
+    'Agence de développement web spécialisée dans la création de sites et applications web modernes, réactifs et performants.',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'Lodgic - Conception d\'applications web et mobiles',
-    description: 'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
+    title: "Lodgic - Conception d'applications web et mobiles",
+    description:
+      'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
     images: '/favicon.ico',
     type: 'website',
     locale: 'fr_FR',
@@ -31,20 +34,23 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lodgic - Conception d\'applications web et mobiles',
-    description: 'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
+    title: "Lodgic - Conception d'applications web et mobiles",
+    description:
+      'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
     images: '/favicon.ico',
     creator: '@lodgic',
     site: '@lodgic',
   },
   other: {
     'instagram:card': 'summary_large_image',
-    'instagram:title': 'Lodgic - Conception d\'applications web et mobiles',
-    'instagram:description': 'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
+    'instagram:title': "Lodgic - Conception d'applications web et mobiles",
+    'instagram:description':
+      'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
     'instagram:image': '/favicon.ico',
     'whatsapp:card': 'summary_large_image',
-    'whatsapp:title': 'Lodgic - Conception d\'applications web et mobiles',
-    'whatsapp:description': 'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
+    'whatsapp:title': "Lodgic - Conception d'applications web et mobiles",
+    'whatsapp:description':
+      'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
     'whatsapp:image': '/favicon.ico',
   },
 }

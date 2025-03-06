@@ -1,10 +1,10 @@
-"use client";
+'use client'
 
-import { useEffect, useRef } from "react";
-import Link from "next/link";
+import { useEffect, useRef } from 'react'
+import Link from 'next/link'
 
 export default function Process() {
-  const titleUnderlineRef = useRef(null);
+  const titleUnderlineRef = useRef(null)
 
   useEffect(() => {
     // Animation de la ligne sous le titre
@@ -12,24 +12,24 @@ export default function Process() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("w-full");
-            entry.target.classList.remove("w-0");
+            entry.target.classList.add('w-full')
+            entry.target.classList.remove('w-0')
           }
-        });
+        })
       },
       { threshold: 0.3 }
-    );
+    )
 
     if (titleUnderlineRef.current) {
-      observer.observe(titleUnderlineRef.current);
+      observer.observe(titleUnderlineRef.current)
     }
 
     return () => {
       if (titleUnderlineRef.current) {
-        observer.unobserve(titleUnderlineRef.current);
+        observer.unobserve(titleUnderlineRef.current)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   const features = [
     {
@@ -49,7 +49,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Catalogue produits",
+      title: 'Catalogue produits',
     },
     {
       icon: (
@@ -87,7 +87,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Intégration Blockchain",
+      title: 'Intégration Blockchain',
     },
     {
       icon: (
@@ -106,7 +106,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Intégration IA",
+      title: 'Intégration IA',
     },
     {
       icon: (
@@ -125,7 +125,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Graphiques en temps réel",
+      title: 'Graphiques en temps réel',
     },
     {
       icon: (
@@ -144,7 +144,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Système de paiement sécurisé",
+      title: 'Système de paiement sécurisé',
     },
     {
       icon: (
@@ -163,7 +163,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Alertes personnalisées",
+      title: 'Alertes personnalisées',
     },
     {
       icon: (
@@ -182,7 +182,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Dashboard de suivi",
+      title: 'Dashboard de suivi',
     },
     {
       icon: (
@@ -201,7 +201,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Gestion des stocks",
+      title: 'Gestion des stocks',
     },
     {
       icon: (
@@ -220,7 +220,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Messagerie en temps réel",
+      title: 'Messagerie en temps réel',
     },
     {
       icon: (
@@ -239,7 +239,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Notifications automatiques",
+      title: 'Notifications automatiques',
     },
     {
       icon: (
@@ -258,7 +258,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Interfaces personnalisées",
+      title: 'Interfaces personnalisées',
     },
     {
       icon: (
@@ -277,7 +277,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Authentification sécurisée",
+      title: 'Authentification sécurisée',
     },
     {
       icon: (
@@ -296,7 +296,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Système de Notifications",
+      title: 'Système de Notifications',
     },
     {
       icon: (
@@ -315,9 +315,28 @@ export default function Process() {
           />
         </svg>
       ),
-      title: "Système de chatbot IA",
+      title: 'Système de chatbot IA',
     },
-  ];
+    {
+      icon: (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+          />
+        </svg>
+      ),
+      title: 'Carte et Géolocalisation',
+    },
+  ]
 
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 to-white py-24 relative overflow-hidden">
@@ -330,15 +349,14 @@ export default function Process() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-gray-900 mb-6">
-            Notre{" "}
+            Notre{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
               expertise
-            </span>{" "}
+            </span>{' '}
             à votre service
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Découvrez quelques-unes des fonctionnalités que nous avons déjà
-            développées
+            Découvrez quelques-unes des fonctionnalités que nous avons déjà développées
           </p>
           <div className="relative h-1 w-24 mx-auto">
             <div className="absolute inset-0 bg-[#2563EB] rounded-full"></div>
@@ -352,18 +370,9 @@ export default function Process() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6">
             {features.map((feature, index) => (
-              <div
-                key={index}
-                className="flex items-center"
-                data-aos="fade-up"
-                data-aos-delay={index * 50}
-              >
-                <div className="flex-shrink-0 text-blue-600 mr-3">
-                  {feature.icon}
-                </div>
-                <span className="text-base font-medium text-gray-800">
-                  {feature.title}
-                </span>
+              <div key={index} className="flex items-center" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="flex-shrink-0 text-blue-600 mr-3">{feature.icon}</div>
+                <span className="text-base font-medium text-gray-800">{feature.title}</span>
               </div>
             ))}
           </div>
@@ -371,14 +380,12 @@ export default function Process() {
 
         <div className="mt-16 text-center" data-aos="fade-up">
           <p className="text-xl text-gray-700 max-w-4xl mx-auto">
-            Chaque application est unique, nous personnalisons vos
-            fonctionnalités pour correspondre à vos besoins.
+            Chaque application est unique, nous personnalisons vos fonctionnalités pour correspondre à vos besoins.
             <br />
-            Toutes ces fonctionnalités et bien d'autres sont possibles pour
-            votre projet.
+            Toutes ces fonctionnalités et bien d'autres sont possibles pour votre projet.
           </p>
         </div>
       </div>
     </section>
-  );
+  )
 }
