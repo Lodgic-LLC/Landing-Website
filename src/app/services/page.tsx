@@ -902,22 +902,22 @@ export default function Services() {
       <section className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">Notre approche duo</h2>
+            <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">Notre approche complète</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Nous combinons nos expertises complémentaires pour donner vie à votre vision
             </p>
           </div>
 
-          {/* Première rangée - 3 cartes */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {/* Les 4 cartes en ligne */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {/* Stratégie / Conseils */}
             <div
-              className="bg-white rounded-xl shadow-md p-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
+              className="bg-white rounded-xl shadow-md p-6 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
               data-aos="fade-up"
             >
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex justify-center mb-5">
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
+                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -927,23 +927,23 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-xl font-inter-bold text-gray-900 mb-3 text-center group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-inter-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
                 Stratégie / Conseils
               </h3>
-              <p className="text-gray-600 text-center">
-                Nous prenons le temps de comprendre votre projet et définir ensemble une stratégie adaptée à votre cible
+              <p className="text-gray-600 text-center text-sm">
+                Nous prenons le temps de comprendre votre projet et définir ensemble une stratégie adaptée
               </p>
             </div>
 
             {/* Design */}
             <div
-              className="bg-white rounded-xl shadow-md p-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
+              className="bg-white rounded-xl shadow-md p-6 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex justify-center mb-5">
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
+                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -953,52 +953,23 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-xl font-inter-bold text-gray-900 mb-3 text-center group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-inter-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
                 Design
               </h3>
-              <p className="text-gray-600 text-center">
-                Nous créons une identité visuelle unique pour votre site web ou application qui vous ressemble
+              <p className="text-gray-600 text-center text-sm">
+                Nous créons une identité visuelle unique pour votre site web ou application
               </p>
             </div>
 
-            {/* Gestion de projet */}
+            {/* Développement */}
             <div
-              className="bg-white rounded-xl shadow-md p-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
+              className="bg-white rounded-xl shadow-md p-6 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.5"
-                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <h3 className="text-xl font-inter-bold text-gray-900 mb-3 text-center group-hover:text-blue-600 transition-colors">
-                Gestion de projet
-              </h3>
-              <p className="text-gray-600 text-center">
-                Nous restons disponibles pour répondre à vos questions et anticiper vos besoins
-              </p>
-            </div>
-          </div>
-
-          {/* Deuxième rangée - 2 cartes centrées */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Développement */}
-            <div
-              className="bg-white rounded-xl shadow-md p-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex justify-center mb-5">
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
+                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -1008,24 +979,23 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-xl font-inter-bold text-gray-900 mb-3 text-center group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-inter-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
                 Développement
               </h3>
-              <p className="text-gray-600 text-center">
-                Nous développons votre projet avec passion, en utilisant les technologies les plus adaptées à vos
-                besoins
+              <p className="text-gray-600 text-center text-sm">
+                Nous développons votre projet avec passion, en utilisant les technologies les plus adaptées
               </p>
             </div>
 
             {/* Maintenance */}
             <div
-              className="bg-white rounded-xl shadow-md p-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
+              className="bg-white rounded-xl shadow-md p-6 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
               data-aos="fade-up"
-              data-aos-delay="400"
+              data-aos-delay="300"
             >
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex justify-center mb-5">
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
+                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -1035,17 +1005,17 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-xl font-inter-bold text-gray-900 mb-3 text-center group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-inter-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
                 Maintenance
               </h3>
-              <p className="text-gray-600 text-center">
+              <p className="text-gray-600 text-center text-sm">
                 Nous assurons le suivi et le bon fonctionnement de votre produit avec un support personnalisé
               </p>
             </div>
           </div>
 
           {/* CTA */}
-          <div className="mt-16 text-center" data-aos="fade-up" data-aos-delay="500">
+          <div className="text-center" data-aos="fade-up" data-aos-delay="400">
             <a
               href="/rendez-vous"
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-lg font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-lg"
