@@ -14,7 +14,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lodgic-dev.com'),
-  title: "Lodgic - Conception d'applications web et mobiles",
+  title: {
+    default: "Lodgic - Conception d'applications web et mobiles",
+    template: '%s | Lodgic',
+  },
   keywords: [
     'lodgic',
     'dev',
