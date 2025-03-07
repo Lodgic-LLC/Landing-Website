@@ -10,6 +10,7 @@ interface SubmitStatusType {
 
 interface FormErrorsType {
   email?: string
+  phone?: string
 }
 
 export default function ContactForm() {
@@ -30,6 +31,16 @@ export default function ContactForm() {
     return emailRegex.test(email)
   }
 
+  const validatePhone = (phone: string): boolean => {
+    // Si le champ est vide, c'est valide (car optionnel)
+    if (!phone.trim()) return true
+
+    // Regex pour valider les numéros de téléphone français
+    // Accepte les formats: 06 12 34 56 78, 0612345678, +33 6 12 34 56 78, +33612345678
+    const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/
+    return phoneRegex.test(phone)
+  }
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
@@ -37,18 +48,34 @@ export default function ContactForm() {
       [name]: value,
     }))
 
-    // Effacer l'erreur d'email lorsque l'utilisateur modifie le champ
+    // Effacer les erreurs lorsque l'utilisateur modifie les champs
     if (name === 'email' && formErrors.email) {
       setFormErrors((prev) => ({ ...prev, email: undefined }))
+    }
+    if (name === 'phone' && formErrors.phone) {
+      setFormErrors((prev) => ({ ...prev, phone: undefined }))
     }
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    // Valider l'email avant de soumettre
+    // Réinitialiser les erreurs
+    const errors: FormErrorsType = {}
+
+    // Valider l'email
     if (!validateEmail(formData.email)) {
-      setFormErrors({ email: "L'adresse email n'est pas valide" })
+      errors.email = "L'adresse email n'est pas valide"
+    }
+
+    // Valider le téléphone (si renseigné)
+    if (formData.phone && !validatePhone(formData.phone)) {
+      errors.phone = "Le numéro de téléphone n'est pas valide (format français attendu)"
+    }
+
+    // S'il y a des erreurs, les afficher et arrêter la soumission
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors)
       return
     }
 
@@ -178,9 +205,12 @@ export default function ContactForm() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
-                      placeholder="Votre numéro de téléphone"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-colors ${
+                        formErrors.phone ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                      }`}
+                      placeholder="Votre numéro de téléphone (optionnel)"
                     />
+                    {formErrors.phone && <p className="mt-1 text-sm text-red-600">{formErrors.phone}</p>}
                   </div>
 
                   <div>
