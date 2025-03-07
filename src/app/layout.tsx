@@ -14,7 +14,34 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lodgic-dev.com'),
-  title: "Lodgic - Conception d'applications web et mobiles",
+  title: {
+    default: "Lodgic - Conception d'applications web et mobiles",
+    template: '%s | Lodgic',
+  },
+  keywords: [
+    'lodgic',
+    'dev',
+    'lodgic-dev',
+    'application mobile',
+    'application web',
+    'application web moderne',
+    'application mobile moderne',
+    'application web réactive',
+    'application mobile réactive',
+    'application web performante',
+    'application mobile performante',
+    'application web et mobile',
+    'application web et mobile modernes',
+    'application web et mobile réactifs',
+    'application web et mobile performants',
+    'application web et mobile modernes, réactifs et performants',
+    'développement web',
+    'développement mobile',
+    'développement web moderne',
+    'développement mobile moderne',
+    'développement web réactif',
+    'développement mobile réactif',
+  ],
   description:
     'Agence de développement web spécialisée dans la création de sites et applications web modernes, réactifs et performants.',
   icons: {
