@@ -204,21 +204,11 @@ export default function Footer() {
           </p>
           <div className="mt-4 md:mt-0 flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link
-              href="/mentions-legales"
-              className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
-              tabIndex={0}
-            >
-              Mentions légales
-            </Link>
-            <Link
               href="/politique-confidentialite"
               className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
               tabIndex={0}
             >
               Politique de confidentialité
-            </Link>
-            <Link href="/cgv" className="text-gray-500 hover:text-gray-300 text-sm transition-colors" tabIndex={0}>
-              CGV
             </Link>
           </div>
         </div>
