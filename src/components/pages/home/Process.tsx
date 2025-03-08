@@ -368,21 +368,44 @@ export default function Process() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-center" data-aos="fade-up" data-aos-delay={index * 50}>
-                <div className="flex-shrink-0 text-blue-600 mr-3">{feature.icon}</div>
-                <span className="text-base font-medium text-gray-800">{feature.title}</span>
+              <div
+                key={index}
+                className="bg-white/50 rounded-lg p-2 border border-gray-100"
+                data-aos="fade-up"
+                data-aos-delay={index * 30}
+              >
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-md bg-blue-50 text-blue-600 flex items-center justify-center mr-2">
+                    <div className="w-5 h-5">{feature.icon}</div>
+                  </div>
+                  <span className="text-sm font-medium text-gray-800 truncate">{feature.title}</span>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         <div className="mt-16 text-center" data-aos="fade-up">
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
             Chaque application est unique, nous réalisons votre application pour correspondre à vos besoins.
-            <br />
           </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+          >
+            Discuter de votre projet
+            <svg
+              className="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
