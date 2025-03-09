@@ -104,111 +104,159 @@ export default function FAQ() {
     ];
 
     return (
-        <section id="faq" className="py-24 bg-gradient-to-b from-blue-50 to-white">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="max-w-4xl mx-auto">
-                    {/* Titre et sous-titre */}
-                    <div className="text-center mb-16" data-aos="fade-up">
-                        <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">
-                            Questions fréquemment posées
-                        </h2>
-                        <p className="text-gray-600 text-lg mb-6">
-                            Tout ce que vous devez savoir avant de démarrer votre projet
-                        </p>
+        <section className="relative py-24 bg-white overflow-hidden">
+            {/* Vague en haut pour transition */}
+            <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
+                <svg
+                    className="absolute top-0 w-full h-full"
+                    viewBox="0 0 1440 80"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none"
+                >
+                    <path d="M0,80 C240,0 480,0 720,40 C960,80 1200,80 1440,40 L1440,0 L0,0 Z" fill="white" />
+                </svg>
+            </div>
 
-                        {/* Trait horizontal sous le titre avec animation */}
-                        <div className="relative h-1 w-32 mx-auto">
-                            <div className="absolute inset-0 bg-[#2563EB] rounded-full"></div>
-                            <div
-                                className="absolute inset-0 bg-[#2563EB] w-0 transition-all duration-1500 ease-out rounded-full"
-                            ></div>
-                        </div>
-                    </div>
+            {/* Formes SVG en arrière-plan */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                {/* Cercles et formes abstraites */}
+                <svg
+                    className="absolute top-0 left-0 w-full h-full opacity-30"
+                    viewBox="0 0 1440 800"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid slice"
+                >
+                    {/* Grand cercle central */}
+                    <circle cx="720" cy="400" r="300" fill="url(#gradient1)" fillOpacity="0.1" />
 
-                    {/* Questions et réponses */}
-                    <div className="space-y-5">
-                        {faqItems.map((item, index) => (
-                            <div
-                                key={item.id}
-                                className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300"
-                                data-aos="fade-up"
-                                data-aos-delay={index * 100}
-                            >
-                                {/* Question (toujours visible) */}
-                                <button
-                                    className="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 cursor-pointer hover:bg-blue-50 transition-colors duration-300"
-                                    onClick={() => toggleQuestion(item.id)}
-                                    aria-expanded={openQuestion === item.id}
-                                    tabIndex={0}
-                                >
-                                    <div className="flex items-center">
-                                        <span className="mr-4 flex-shrink-0 bg-blue-50 p-2 rounded-lg">
-                                            {item.icon}
-                                        </span>
-                                        <span className="font-inter-medium text-gray-900 text-lg">
-                                            {item.question}
-                                        </span>
-                                    </div>
-                                    <svg
-                                        className={`w-5 h-5 text-blue-600 transform transition-transform duration-500 ease-in-out ${openQuestion === item.id ? "rotate-180" : ""
-                                            }`}
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M19 9l-7 7-7-7"
-                                        />
-                                    </svg>
-                                </button>
+                    {/* Cercle supérieur droit */}
+                    <circle cx="1100" cy="150" r="150" fill="url(#gradient2)" fillOpacity="0.1" />
 
-                                {/* Réponse (visible uniquement si la question est ouverte) */}
-                                <div
-                                    className={`transition-all duration-500 ease-in-out overflow-hidden ${openQuestion === item.id
-                                        ? "max-h-96 opacity-100 border-t border-gray-100"
-                                        : "max-h-0 opacity-0"
-                                        }`}
-                                >
-                                    <p className="text-gray-600 px-6 py-5 pl-16 leading-relaxed">
-                                        {item.answer}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    {/* Cercle inférieur gauche */}
+                    <circle cx="300" cy="650" r="200" fill="url(#gradient3)" fillOpacity="0.1" />
 
-                    {/* CTA */}
-                    <div className="mt-16 text-center" data-aos="fade-up">
-                        <p className="text-gray-700 mb-6 text-lg">
-                            Vous avez une question spécifique concernant votre projet ?
-                        </p>
-                        <a
-                            href="/contact"
-                            className="inline-flex items-center justify-center bg-[#2563EB] text-white font-inter-medium px-8 py-4 rounded-lg hover:bg-[#1d4ed8] transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1"
-                            aria-label="Contactez-nous pour plus d'informations"
+                    {/* Forme abstraite 1 */}
+                    <path
+                        d="M-100,300 C100,200 300,600 500,500 C700,400 900,700 1100,600 C1300,500 1500,300 1700,400 L1700,800 L-100,800 Z"
+                        fill="url(#gradient4)"
+                        fillOpacity="0.05"
+                    />
+
+                    {/* Définition des dégradés */}
+                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#4F46E5" />
+                            <stop offset="100%" stopColor="#2563EB" />
+                        </linearGradient>
+                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#6366F1" />
+                            <stop offset="100%" stopColor="#4F46E5" />
+                        </linearGradient>
+                        <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#3B82F6" />
+                            <stop offset="100%" stopColor="#2563EB" />
+                        </linearGradient>
+                        <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#4F46E5" />
+                            <stop offset="100%" stopColor="#2563EB" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                        Questions{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                            fréquentes
+                        </span>
+                    </h2>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                        Vous avez des questions ? Nous avons les réponses. Voici les questions les plus fréquemment posées par nos clients.
+                    </p>
+                    <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
+                </div>
+
+                <div className="max-w-3xl mx-auto">
+                    {faqItems.map((item) => (
+                        <div
+                            key={item.id}
+                            className="mb-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
                         >
-                            <span>Discutons de votre projet</span>
-                            <svg
-                                className="ml-2 w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
+                            <button
+                                className="flex justify-between items-center w-full px-6 py-5 text-left focus:outline-none cursor-pointer"
+                                onClick={() => toggleQuestion(item.id)}
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                ></path>
-                            </svg>
-                        </a>
-                    </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 p-2 rounded-lg bg-blue-50">
+                                        {item.icon}
+                                    </div>
+                                    <span className="font-medium text-lg text-gray-900">
+                                        {item.question}
+                                    </span>
+                                </div>
+                                <svg
+                                    className={`w-5 h-5 text-gray-500 transform transition-transform duration-300 ${
+                                        openQuestion === item.id ? "rotate-180" : ""
+                                    }`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M19 9l-7 7-7-7"
+                                    ></path>
+                                </svg>
+                            </button>
+                            <div
+                                className={`px-6 transition-all duration-500 ease-in-out overflow-hidden border-t border-gray-100 ${
+                                    openQuestion === item.id
+                                        ? "max-h-96 opacity-100"
+                                        : "max-h-0 opacity-0 border-t-0"
+                                }`}
+                                style={{ minHeight: openQuestion === item.id ? "auto" : "0" }}
+                            >
+                                <p className="text-gray-600 py-4">
+                                    {item.answer}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="text-center mt-16">
+                    <p className="text-gray-600 mb-6">
+                        Vous avez d'autres questions ? N'hésitez pas à nous contacter.
+                    </p>
+                    <a
+                        href="/contact"
+                        className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-1 duration-300"
+                    >
+                        Contactez-nous
+                        <svg
+                            className="w-5 h-5 ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            ></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
-    )
+    );
 }

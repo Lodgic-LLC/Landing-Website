@@ -91,7 +91,7 @@ export default function Features() {
       id: 4,
       title: "Lancement & Évolution",
       description:
-        "Votre application est prête à décoller !Nous assurons sa mise en ligne et restons à vos côtés pour l'optimiser selon les retours des utilisateurs et vos nouvelles idées.",
+        "Votre application est prête à décoller ! Nous assurons sa mise en ligne et restons à vos côtés pour l'optimiser selon les retours des utilisateurs et vos nouvelles idées.",
       icon: (
         <svg
           className="w-6 h-6 text-white"
@@ -131,10 +131,65 @@ export default function Features() {
 
   return (
     <section className="w-full bg-white py-24 relative overflow-hidden">
-      {/* Éléments décoratifs d'arrière-plan */}
+      {/* Vague en haut pour transition */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
+        <svg
+          className="absolute top-0 w-full h-full"
+          viewBox="0 0 1440 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,80 C240,0 480,0 720,40 C960,80 1200,80 1440,40 L1440,0 L0,0 Z" fill="white" />
+        </svg>
+      </div>
+
+      {/* Formes SVG en arrière-plan */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-50 rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-50 rounded-full opacity-30 blur-3xl"></div>
+        {/* Cercles et formes abstraites */}
+        <svg
+          className="absolute top-0 left-0 w-full h-full opacity-30"
+          viewBox="0 0 1440 800"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          {/* Grand cercle central */}
+          <circle cx="720" cy="400" r="300" fill="url(#gradient1)" fillOpacity="0.1" />
+
+          {/* Cercle supérieur droit */}
+          <circle cx="1100" cy="150" r="150" fill="url(#gradient2)" fillOpacity="0.1" />
+
+          {/* Cercle inférieur gauche */}
+          <circle cx="300" cy="650" r="200" fill="url(#gradient3)" fillOpacity="0.1" />
+
+          {/* Forme abstraite 1 */}
+          <path
+            d="M-100,300 C100,200 300,600 500,500 C700,400 900,700 1100,600 C1300,500 1500,300 1700,400 L1700,800 L-100,800 Z"
+            fill="url(#gradient4)"
+            fillOpacity="0.05"
+          />
+
+          {/* Définition des dégradés */}
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#4F46E5" />
+              <stop offset="100%" stopColor="#2563EB" />
+            </linearGradient>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#6366F1" />
+              <stop offset="100%" stopColor="#4F46E5" />
+            </linearGradient>
+            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#2563EB" />
+            </linearGradient>
+            <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#4F46E5" />
+              <stop offset="100%" stopColor="#2563EB" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -147,7 +202,7 @@ export default function Features() {
             à chaque étape de la réalisation de votre application
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          De la conception à la livraison, nous vous accompagnons à chaque étape pour concrétiser votre application.
+            De la conception à la livraison, nous vous accompagnons à chaque étape pour concrétiser votre application.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mt-8"></div>
         </div>
@@ -156,7 +211,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={feature.id}
-              className={`${feature.bgColor} rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full group`}
+              className={`${feature.bgColor} rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full group`}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
@@ -182,6 +237,19 @@ export default function Features() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Vague en bas pour transition */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
+        <svg
+          className="absolute bottom-0 w-full h-full"
+          viewBox="0 0 1440 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,80 L0,80 Z" fill="white" />
+        </svg>
       </div>
     </section>
   );

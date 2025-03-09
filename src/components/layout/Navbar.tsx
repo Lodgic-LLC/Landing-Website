@@ -71,7 +71,7 @@ export default function Navbar() {
         isVisible ? 'translate-y-0' : '-translate-y-full'
       } ${shouldBeTransparent ? 'py-5 bg-transparent' : 'py-3 shadow-lg bg-white/95 backdrop-blur-sm'}`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-down" data-aos-duration="600">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -105,8 +105,6 @@ export default function Navbar() {
                       ? 'text-white hover:bg-white/10'
                       : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                   }`}
-                  data-aos="fade-down"
-                  data-aos-delay={100 + index * 50}
                 >
                   {item.name}
                 </Link>
@@ -123,8 +121,6 @@ export default function Navbar() {
                   ? 'bg-white text-blue-600 hover:bg-gray-100'
                   : 'bg-blue-600 text-white hover:bg-blue-700'
               }`}
-              data-aos="fade-down"
-              data-aos-delay="300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
