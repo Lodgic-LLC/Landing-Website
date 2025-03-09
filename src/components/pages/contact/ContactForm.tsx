@@ -133,17 +133,15 @@ export default function ContactForm() {
       <div className=" bg-gradient-to-r from-blue-50 to-indigo-50 py-32 md:py-32 px-4 sm:px-16 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-aos="fade-up">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                 Contactez-nous
               </span>
             </h1>
             <div
               className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"
-              data-aos="fade-up"
-              data-aos-delay="100"
             ></div>
-            <p className="max-w-2xl mx-auto text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="200">
+            <p className="max-w-2xl mx-auto text-gray-600 text-lg">
               Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions et vous accompagner
               dans vos projets digitaux.
             </p>
@@ -152,7 +150,7 @@ export default function ContactForm() {
           <div className="flex justify-center">
             {/* Formulaire de contact */}
             <div className="w-full max-w-3xl">
-              <div className="bg-white rounded-xl shadow-lg p-8" data-aos="fade-up">
+              <div className="bg-white rounded-xl shadow-lg p-8">
                 <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
                   <span className="w-8 h-1 bg-blue-600 mr-3 rounded-full"></span>
                   Envoyez-nous un message

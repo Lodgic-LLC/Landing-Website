@@ -370,8 +370,11 @@ export default function Process() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-center" data-aos="fade-up" data-aos-delay={index * 50}>
-                <div className="flex-shrink-0 text-blue-600 mr-3">{feature.icon}</div>
+              <div 
+                key={index} 
+                className="flex items-center p-4 rounded-lg border border-gray-200 hover:border-blue-300 bg-white shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                <div className="flex-shrink-0 text-blue-600 bg-blue-50 p-3 rounded-lg mr-4">{feature.icon}</div>
                 <span className="text-base font-medium text-gray-800">{feature.title}</span>
               </div>
             ))}

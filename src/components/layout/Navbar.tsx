@@ -19,7 +19,7 @@ export default function Navbar() {
   ]
 
   const handleScroll = useCallback(() => {
-    const currentScrollPos = window.pageYOffset
+    const currentScrollPos = window.scrollY || document.documentElement.scrollTop
     const scrollingDown = currentScrollPos > lastScrollTop
     const scrollThreshold = 10
 
@@ -36,8 +36,15 @@ export default function Navbar() {
     setLastScrollTop(currentScrollPos)
   }, [lastScrollTop])
 
+  // Initialiser la position de défilement au chargement
   useEffect(() => {
+    // Définir la position de défilement initiale
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop)
+
+    // Ajouter l'écouteur d'événement
     window.addEventListener('scroll', handleScroll)
+
+    // Nettoyer l'écouteur d'événement
     return () => window.removeEventListener('scroll', handleScroll)
   }, [handleScroll])
 
@@ -54,46 +61,66 @@ export default function Navbar() {
     return pathname === path
   }
 
+  // Forcer la transparence sur la page d'accueil en haut de page
+  const isHomePage = pathname === '/'
+  const shouldBeTransparent = isHomePage && scrollPosition <= 50
+
   return (
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
-      } ${scrollPosition > 50 ? 'py-3 shadow-lg bg-white/95 backdrop-blur-sm' : 'py-5 bg-white shadow-sm'}`}
+      } ${shouldBeTransparent ? 'py-5 bg-transparent' : 'py-3 shadow-lg bg-white/95 backdrop-blur-sm'}`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-down" data-aos-duration="600">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center" aria-label="Accueil Lodgic">
               <img src="/favicon.ico" alt="Logo Lodgic" className="w-8 h-8 mr-2" />
-              <span className="font-inter-bold text-2xl bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+              <span
+                className={`font-inter-bold text-2xl ${
+                  shouldBeTransparent
+                    ? 'text-white'
+                    : 'bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent'
+                }`}
+              >
                 Lodgic
               </span>
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
-            {navigationItems.map((item, index) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                className={`px-3 py-2 rounded-md text-sm lg:text-base font-inter-medium transition-all duration-200 ${
-                  isActive(item.path)
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                }`}
-                data-aos="fade-down"
-                data-aos-delay={100 + index * 50}
-              >
-                {item.name}
-              </Link>
-            ))}
+          {/* Desktop Navigation - Centré */}
+          <div className="hidden md:flex items-center justify-center flex-grow">
+            <div className="flex items-center space-x-1 lg:space-x-4">
+              {navigationItems.map((item, index) => (
+                <Link
+                  key={item.name}
+                  href={item.path}
+                  className={`px-3 py-2 rounded-md text-sm lg:text-base font-inter-medium transition-all duration-200 ${
+                    isActive(item.path)
+                      ? shouldBeTransparent
+                        ? 'text-white bg-white/20 backdrop-blur-sm'
+                        : 'text-blue-600 bg-blue-50'
+                      : shouldBeTransparent
+                      ? 'text-white hover:bg-white/10'
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Bouton Prendre RDV - À droite */}
+          <div className="hidden md:block">
             <Link
               href="/rendez-vous"
-              className="ml-2 px-5 py-2 bg-blue-600 text-white rounded-md shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-200 text-sm lg:text-base font-inter-medium flex items-center"
-              data-aos="fade-down"
-              data-aos-delay="300"
+              className={`px-5 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-200 text-sm lg:text-base font-inter-medium flex items-center ${
+                shouldBeTransparent
+                  ? 'bg-white text-blue-600 hover:bg-gray-100'
+                  : 'bg-blue-600 text-white hover:bg-blue-700'
+              }`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +144,11 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors"
+              className={`inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors ${
+                shouldBeTransparent
+                  ? 'text-white hover:bg-white/10'
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
+              }`}
               aria-expanded={isMenuOpen}
               onClick={handleToggleMenu}
               aria-label="Menu principal"
@@ -157,22 +188,36 @@ export default function Navbar() {
           isMenuOpen ? 'max-h-[320px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 bg-white border-t border-gray-100 shadow-inner">
+        <div
+          className={`container mx-auto px-4 sm:px-6 border-t shadow-inner ${
+            shouldBeTransparent ? 'bg-blue-600/90 backdrop-blur-md border-blue-500' : 'bg-white border-gray-100'
+          }`}
+        >
           {navigationItems.map((item) => (
             <Link
               key={item.name}
               href={item.path}
               className={`block px-4 py-3 rounded-md text-base font-inter-medium transition-all duration-200 ${
-                isActive(item.path) ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                isActive(item.path)
+                  ? shouldBeTransparent
+                    ? 'text-white bg-white/10'
+                    : 'text-blue-600 bg-blue-50'
+                  : shouldBeTransparent
+                  ? 'text-white hover:bg-white/10'
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
               }`}
             >
               {item.name}
             </Link>
           ))}
-          <div className="pt-2">
+          <div className="pt-2 pb-4">
             <Link
               href="/rendez-vous"
-              className="flex items-center justify-center w-full px-4 py-3 bg-blue-600 text-white rounded-md shadow-sm hover:bg-blue-700 transition-colors font-inter-medium"
+              className={`flex items-center justify-center w-full px-4 py-3 rounded-md shadow-sm transition-colors font-inter-medium ${
+                shouldBeTransparent
+                  ? 'bg-white text-blue-600 hover:bg-gray-100'
+                  : 'bg-blue-600 text-white hover:bg-blue-700'
+              }`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
