@@ -6,7 +6,7 @@ export default function Features() {
       id: 1,
       title: "Conseil & Stratégie",
       description:
-        "Ensemble, on définit ce que votre application doit faire, on établit un cahier des charges et on identifie tout ce dont on aura besoin pour votre application.",
+        "Ensemble, on définit l'utilisation de votre application, on établit un cahier des charges pour cadrer son développement.",
       icon: (
         <svg
           className="w-6 h-6 text-white"
@@ -32,7 +32,7 @@ export default function Features() {
       id: 2,
       title: "Design & Prototypage",
       description:
-        "Nous soignons l'apparence de votre application pour qu'elle soit à la fois professionnelle et intuitive. Nous vous présentons des maquettes afin que vous puissiez visualiser son design avant la réalisation.",
+        "Nous vous présentons des maquettes afin que vous puissiez visualiser son design avant la réalisation.",
       icon: (
         <svg
           className="w-6 h-6 text-white"
@@ -58,7 +58,7 @@ export default function Features() {
       id: 3,
       title: "Développement de l'application",
       description:
-        "C'est là que la magie opère ! Notre équipe code votre application avec soin, en restant flexible pour s'adapter à vos retours. On travaille par étapes pour vous montrer régulièrement les avancées.",
+        "C'est là que la magie opère ! On code votre application, en restant flexible pour s'adapter à vos retours. ",
       icon: (
         <svg
           className="w-6 h-6 text-white"
@@ -91,7 +91,7 @@ export default function Features() {
       id: 4,
       title: "Lancement & Évolution",
       description:
-        "Votre application est prête à décoller ! Nous assurons sa mise en ligne et restons à vos côtés pour l'optimiser selon les retours des utilisateurs et vos nouvelles idées.",
+        "Votre application est prête ! On la met en ligne et reste à vos côtés pour l’optimiser selon les retours et vos idées.",
       icon: (
         <svg
           className="w-6 h-6 text-white"

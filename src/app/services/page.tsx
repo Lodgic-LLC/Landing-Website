@@ -13,14 +13,12 @@ export default function Services() {
       icon: <FaMobile className="h-8 w-8 text-blue-600" />,
       title: "Création d'applications IOS et Android",
       description:
-        'Nous concevons des applications pour iPhone et Android qui répondent parfaitement à vos besoins, simples à utiliser et adaptées à tous les téléphones mobiles.',
+        'Nous concevons des applications pour IOS et Android adaptées à vos besoins.',
       color: 'from-blue-200 to-indigo-300',
-      delay: 100,
+      delay: 100, 
       features: [
-        'Applications pour iPhone (iOS)',
-        'Applications pour Android',
-        'Interface intuitive et agréable à utiliser',
-        'Utilisation des fonctionnalités de votre téléphone (appareil photo, localisation)',
+        'Applications pour iPhone (iOS) et Android',
+        'Intégration de services externes (paiement, réservation, etc.) et ajout de vos fonctionnalités',
         "Publication sur l'App Store et Google Play",
       ],
     },
@@ -29,47 +27,41 @@ export default function Services() {
       icon: <FaCode className="h-8 w-8 text-blue-600" />,
       title: 'Création de sites web interactifs',
       description:
-        "Nous développons des sites web modernes qui s'adaptent à tous les écrans (ordinateur, tablette, téléphone) et qui permettent à vos utilisateurs d'interagir facilement avec votre entreprise.",
+        "Nous développons des sites web qui s'adaptent à tous les écrans (ordinateur, tablette, téléphone).",
       color: 'from-purple-200 to-pink-300',
       delay: 200,
       features: [
-        "Sites web qui s'adaptent à tous les appareils",
-        'Sites rapides et fluides à utiliser',
-        'Design moderne et attrayant',
-        'Facile à mettre à jour et à faire évoluer',
-        'Optimisé pour être bien référencé sur Google',
+        'Optimisé pour le référencement naturel (SEO) sur Google',
+        'Intégration de services externes (paiement, réservation, etc.) et ajout de vos fonctionnalités',
+      
       ],
     },
     {
       id: 3,
       icon: <FaPlug className="h-8 w-8 text-blue-600" />,
-      title: 'Connexion de vos outils numériques',
+      title: 'Connexion de vos outils et services numériques',
       description:
-        "Nous relions vos différents logiciels et services pour qu'ils communiquent entre eux, automatisant ainsi vos tâches quotidiennes et rendant votre travail plus efficace.",
+        "Nous relions vos différents logiciels et services pour qu'ils communiquent entre eux, automatisation de l'échange d'informations.",
       color: 'from-green-200 to-teal-300',
       delay: 300,
       features: [
         'Connexion entre vos différents logiciels',
         'Intégration avec des services externes (paiement, réservation, etc.)',
         "Automatisation de l'échange d'informations",
-        'Documentation claire pour comprendre les connexions',
-        'Vérification régulière du bon fonctionnement',
-      ],
+            ],
     },
     {
       id: 4,
       icon: <FaTools className="h-8 w-8 text-blue-600" />,
       title: 'Assistance et amélioration continue',
       description:
-        'Nous prenons soin de vos applications et sites web après leur création, en assurant leur bon fonctionnement, leur sécurité et en les faisant évoluer selon vos besoins.',
+        'Aprés la réalisation de votre applicaiton, nous vous accompagnons dans l\'amélioration de votre application.',
       color: 'from-yellow-200 to-amber-300',
       delay: 400,
       features: [
         'Protection contre les risques de sécurité',
-        'Surveillance permanente du bon fonctionnement',
-        'Assistance rapide en cas de problème',
+        'Assistance en cas de problème',
         'Sauvegarde régulière de vos données',
-        "Rapports mensuels sur l'état de vos outils numériques",
       ],
     },
   ]
@@ -1041,7 +1033,7 @@ export default function Services() {
                 Stratégie / Conseils
               </h3>
               <p className="text-gray-600 text-center text-sm">
-                Nous prenons le temps de comprendre votre projet et définir ensemble une stratégie adaptée
+                Nous développons une stratégie adaptée à votre projet. De la définition du projet à la mise en place de la solution.
               </p>
             </div>
 
@@ -1067,7 +1059,7 @@ export default function Services() {
                 Design
               </h3>
               <p className="text-gray-600 text-center text-sm">
-                Nous créons une identité visuelle unique pour votre site web ou application
+                Nous créons une identité visuelle a votre image, du maquettage à la mise en place de votre site web.
               </p>
             </div>
 
@@ -1093,7 +1085,7 @@ export default function Services() {
                 Développement
               </h3>
               <p className="text-gray-600 text-center text-sm">
-                Nous développons votre projet avec passion, en utilisant les technologies les plus adaptées
+                Nous développons votre projet en utilisant les technologies les plus adaptées
               </p>
             </div>
 
@@ -1119,7 +1111,7 @@ export default function Services() {
                 Maintenance
               </h3>
               <p className="text-gray-600 text-center text-sm">
-                Nous assurons le suivi et le bon fonctionnement de votre produit avec un support personnalisé
+                Nous assurons le suivi et le bon fonctionnement de votre projet.
               </p>
             </div>
           </div>
