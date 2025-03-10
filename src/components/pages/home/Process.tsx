@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import { useEffect, useRef } from 'react'
-import Link from 'next/link'
+import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 export default function Process() {
-  const titleUnderlineRef = useRef(null)
+  const titleUnderlineRef = useRef(null);
 
   useEffect(() => {
     // Animation de la ligne sous le titre
@@ -12,24 +12,24 @@ export default function Process() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('w-full')
-            entry.target.classList.remove('w-0')
+            entry.target.classList.add("w-full");
+            entry.target.classList.remove("w-0");
           }
-        })
+        });
       },
       { threshold: 0.3 }
-    )
+    );
 
     if (titleUnderlineRef.current) {
-      observer.observe(titleUnderlineRef.current)
+      observer.observe(titleUnderlineRef.current);
     }
 
     return () => {
       if (titleUnderlineRef.current) {
-        observer.unobserve(titleUnderlineRef.current)
+        observer.unobserve(titleUnderlineRef.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   const features = [
     {
@@ -49,7 +49,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Catalogue produits',
+      title: "Catalogue produits",
     },
     {
       icon: (
@@ -87,7 +87,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Intégration Blockchain',
+      title: "Intégration Blockchain",
     },
     {
       icon: (
@@ -106,7 +106,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Intégration IA',
+      title: "Intégration IA",
     },
     {
       icon: (
@@ -125,7 +125,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Graphiques en temps réel',
+      title: "Graphiques en temps réel",
     },
     {
       icon: (
@@ -144,7 +144,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Système de paiement sécurisé',
+      title: "Système de paiement sécurisé",
     },
     {
       icon: (
@@ -163,7 +163,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Alertes personnalisées',
+      title: "Alertes personnalisées",
     },
     {
       icon: (
@@ -182,7 +182,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Dashboard de suivi',
+      title: "Dashboard de suivi",
     },
     {
       icon: (
@@ -201,7 +201,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Gestion des stocks',
+      title: "Gestion des stocks",
     },
     {
       icon: (
@@ -220,7 +220,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Messagerie en temps réel',
+      title: "Messagerie en temps réel",
     },
     {
       icon: (
@@ -239,7 +239,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Notifications automatiques',
+      title: "Notifications automatiques",
     },
     {
       icon: (
@@ -258,7 +258,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Interfaces personnalisées',
+      title: "Interfaces personnalisées",
     },
     {
       icon: (
@@ -277,7 +277,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Authentification sécurisée',
+      title: "Authentification sécurisée",
     },
     {
       icon: (
@@ -296,7 +296,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Système de Notifications',
+      title: "Système de Notifications",
     },
     {
       icon: (
@@ -315,7 +315,7 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Système de chatbot IA',
+      title: "Système de chatbot IA",
     },
     {
       icon: (
@@ -334,9 +334,9 @@ export default function Process() {
           />
         </svg>
       ),
-      title: 'Carte et Géolocalisation',
+      title: "Carte et Géolocalisation",
     },
-  ]
+  ];
 
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 to-white py-24 relative overflow-hidden">
@@ -349,14 +349,15 @@ export default function Process() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-gray-900 mb-6">
-            Notre{' '}
+            Notre{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
               expertise
-            </span>{' '}
+            </span>{" "}
             à votre service
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Découvrez quelques-unes des fonctionnalités que nous avons déjà développées
+            Découvrez quelques-unes des fonctionnalités que nous avons déjà
+            développées
           </p>
           <div className="relative h-1 w-24 mx-auto">
             <div className="absolute inset-0 bg-[#2563EB] rounded-full"></div>
@@ -368,14 +369,45 @@ export default function Process() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
             {features.map((feature, index) => (
-              <div 
-                key={index} 
-                className="flex items-center p-4 rounded-lg border border-gray-200 hover:border-blue-300 bg-white shadow-sm hover:shadow-md transition-all duration-300"
+              <div
+                key={index}
+                className="group relative bg-white rounded-lg overflow-hidden transition-all duration-300"
+                style={{
+                  boxShadow:
+                    "0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.06)",
+                }}
+                data-aos="fade-up"
+                data-aos-delay={index * 30}
               >
-                <div className="flex-shrink-0 text-blue-600 bg-blue-50 p-3 rounded-lg mr-4">{feature.icon}</div>
-                <span className="text-base font-medium text-gray-800">{feature.title}</span>
+                {/* Fond avec effet glassmorphism au hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-blue-50/80 to-indigo-50/80 backdrop-blur-[2px]  transition-opacity duration-300"></div>
+
+                {/* Contenu */}
+                <div className="relative z-10 flex items-center p-4">
+                  {/* Numéro d'index avec cercle */}
+
+                  {/* Icône avec fond */}
+                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-50 group-hover:to-indigo-50 transition-colors duration-300 border border-slate-100">
+                    <div className="text-blue-500 group-hover:text-blue-600 transition-colors duration-300">
+                      {feature.icon}
+                    </div>
+                  </div>
+
+                  {/* Titre */}
+                  <div className="ml-3 flex-1">
+                    <h4 className="text-sm font-medium text-slate-800 group-hover:text-blue-800 transition-colors duration-300">
+                      {feature.title}
+                    </h4>
+                  </div>
+                </div>
+
+                {/* Ligne de séparation subtile */}
+                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                {/* Indicateur d'interaction */}
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-blue-500 to-indigo-500 group-hover:w-1/2 transition-all duration-300 ease-out"></div>
               </div>
             ))}
           </div>
@@ -383,11 +415,12 @@ export default function Process() {
 
         <div className="mt-16 text-center" data-aos="fade-up">
           <p className="text-xl text-gray-700 max-w-4xl mx-auto">
-            Chaque application est unique, nous réalisons votre application pour correspondre à vos besoins.
+            Chaque application est unique, nous réalisons votre application pour
+            correspondre à vos besoins.
             <br />
           </p>
         </div>
       </div>
     </section>
-  )
+  );
 }

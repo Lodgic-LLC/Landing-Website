@@ -55,6 +55,30 @@ export default function Hero() {
             fillOpacity="0.1"
           />
 
+          {/* Éléments géométriques supplémentaires - Ajoutés du CTA */}
+          <circle cx="200" cy="200" r="50" fill="#4F46E5" fillOpacity="0.1" />
+          <circle cx="1300" cy="300" r="70" fill="#4F46E5" fillOpacity="0.08" />
+          <rect
+            x="600"
+            y="100"
+            width="100"
+            height="100"
+            rx="20"
+            transform="rotate(30 600 100)"
+            fill="#4F46E5"
+            fillOpacity="0.07"
+          />
+          <rect
+            x="1000"
+            y="500"
+            width="80"
+            height="80"
+            rx="15"
+            transform="rotate(-15 1000 500)"
+            fill="#4F46E5"
+            fillOpacity="0.07"
+          />
+
           {/* Définition des dégradés */}
           <defs>
             <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -79,6 +103,13 @@ export default function Hero() {
             </linearGradient>
           </defs>
         </svg>
+
+        {/* Points lumineux et particules - Ajoutés du CTA */}
+        <div className="absolute top-1/4 right-1/5 w-2 h-2 bg-white rounded-full opacity-50"></div>
+        <div className="absolute top-1/3 left-1/4 w-3 h-3 bg-white rounded-full opacity-30"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-white rounded-full opacity-40"></div>
+        <div className="absolute top-2/3 left-1/6 w-2 h-2 bg-white rounded-full opacity-60"></div>
+        <div className="absolute top-1/2 right-1/6 w-4 h-4 bg-indigo-200 rounded-full opacity-20"></div>
       </div>
 
       <div className="max-w-7xl pt-14 mx-auto px-6 relative z-10">
