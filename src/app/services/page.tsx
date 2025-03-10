@@ -1085,7 +1085,7 @@ export default function Services() {
                 Développement
               </h3>
               <p className="text-gray-600 text-center text-sm">
-                Nous développons votre projet en utilisant les technologies les plus adaptées.
+                Nous développons votre projet en utilisant les technologies les plus adaptées
               </p>
             </div>
 
