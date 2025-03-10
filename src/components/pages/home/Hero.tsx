@@ -64,7 +64,7 @@ export default function Hero() {
             <circle cx="950" cy="200" r="2" fill="white" />
             <circle cx="1150" cy="350" r="2" fill="white" />
             <circle cx="1350" cy="250" r="2" fill="white" />
-            
+
             <circle cx="250" cy="350" r="2" fill="white" />
             <circle cx="450" cy="450" r="2" fill="white" />
             <circle cx="650" cy="350" r="2" fill="white" />
@@ -111,11 +111,19 @@ export default function Hero() {
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h1 className="font-inter-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
             Développement d'
-            <span className="text-blue-200">applications web</span> et <span className="text-white">mobile</span> sur mesure
+            <span className="bg-gradient-to-r from-blue-300 to-blue-100 text-transparent bg-clip-text font-extrabold">
+              applications web
+            </span>{" "}
+            et{" "}
+            <span className="bg-gradient-to-r from-blue-300 to-blue-100 text-transparent bg-clip-text font-extrabold">
+              mobile
+            </span>{" "}
+            sur mesure
           </h1>
 
           <p className="font-inter-regular text-white text-opacity-90 mb-10 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
-            Expertise technique, design innovant et accompagnement personnalisé pour concrétiser vos projets digitaux.
+            Expertise technique, design innovant et accompagnement personnalisé
+            pour concrétiser vos projets digitaux.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -151,7 +159,12 @@ export default function Hero() {
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
               </svg>
             </Link>
           </div>

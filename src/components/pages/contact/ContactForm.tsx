@@ -1,132 +1,142 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { FaEnvelope } from 'react-icons/fa'
+import { useState } from "react";
+import { FaEnvelope } from "react-icons/fa";
 
 interface SubmitStatusType {
-  success: boolean
-  message: string
+  success: boolean;
+  message: string;
 }
 
 interface FormErrorsType {
-  email?: string
-  phone?: string
+  email?: string;
+  phone?: string;
 }
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<SubmitStatusType | null>(null)
-  const [formErrors, setFormErrors] = useState<FormErrorsType>({})
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatusType | null>(
+    null
+  );
+  const [formErrors, setFormErrors] = useState<FormErrorsType>({});
 
   const validateEmail = (email: string): boolean => {
     // Regex pour validation d'email
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-    return emailRegex.test(email)
-  }
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
 
   const validatePhone = (phone: string): boolean => {
     // Si le champ est vide, c'est valide (car optionnel)
-    if (!phone.trim()) return true
+    if (!phone.trim()) return true;
 
     // Regex pour valider les numéros de téléphone français
     // Accepte les formats: 06 12 34 56 78, 0612345678, +33 6 12 34 56 78, +33612345678
-    const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/
-    return phoneRegex.test(phone)
-  }
+    const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
+    return phoneRegex.test(phone);
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
+    }));
 
     // Effacer les erreurs lorsque l'utilisateur modifie les champs
-    if (name === 'email' && formErrors.email) {
-      setFormErrors((prev) => ({ ...prev, email: undefined }))
+    if (name === "email" && formErrors.email) {
+      setFormErrors((prev) => ({ ...prev, email: undefined }));
     }
-    if (name === 'phone' && formErrors.phone) {
-      setFormErrors((prev) => ({ ...prev, phone: undefined }))
+    if (name === "phone" && formErrors.phone) {
+      setFormErrors((prev) => ({ ...prev, phone: undefined }));
     }
-  }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
     // Réinitialiser les erreurs
-    const errors: FormErrorsType = {}
+    const errors: FormErrorsType = {};
 
     // Valider l'email
     if (!validateEmail(formData.email)) {
-      errors.email = "L'adresse email n'est pas valide"
+      errors.email = "L'adresse email n'est pas valide";
     }
 
     // Valider le téléphone (si renseigné)
     if (formData.phone && !validatePhone(formData.phone)) {
-      errors.phone = "Le numéro de téléphone n'est pas valide (format français attendu)"
+      errors.phone =
+        "Le numéro de téléphone n'est pas valide (format français attendu)";
     }
 
     // S'il y a des erreurs, les afficher et arrêter la soumission
     if (Object.keys(errors).length > 0) {
-      setFormErrors(errors)
-      return
+      setFormErrors(errors);
+      return;
     }
 
-    setIsSubmitting(true)
-    setFormErrors({})
+    setIsSubmitting(true);
+    setFormErrors({});
 
     try {
       // Créer un objet FormData à partir du formulaire
-      const form = e.target as HTMLFormElement
-      const formDataObj = new FormData(form)
+      const form = e.target as HTMLFormElement;
+      const formDataObj = new FormData(form);
 
       // Ajouter les champs cachés pour FormSubmit
-      formDataObj.append('_subject', `Nouveau message: ${formData.subject}`)
-      formDataObj.append('_captcha', 'false')
+      formDataObj.append("_subject", `Nouveau message: ${formData.subject}`);
+      formDataObj.append("_captcha", "false");
 
       // Envoyer les données à FormSubmit
-      const response = await fetch('https://formsubmit.co/ajax/contact.lodgic@gmail.com', {
-        method: 'POST',
-        body: formDataObj,
-        headers: {
-          Accept: 'application/json',
-        },
-      })
+      const response = await fetch(
+        "https://formsubmit.co/ajax/contact.lodgic@gmail.com",
+        {
+          method: "POST",
+          body: formDataObj,
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
 
-      const result = await response.json()
+      const result = await response.json();
 
       if (response.ok) {
         setSubmitStatus({
           success: true,
-          message: 'Votre message a été envoyé avec succès !',
-        })
+          message: "Votre message a été envoyé avec succès !",
+        });
         setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-        })
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
       } else {
-        throw new Error(result.message || "Erreur lors de l'envoi du formulaire")
+        throw new Error(
+          result.message || "Erreur lors de l'envoi du formulaire"
+        );
       }
     } catch (error) {
-      console.error('Erreur:', error)
+      console.error("Erreur:", error);
       setSubmitStatus({
         success: false,
         message: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
-      })
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <>
@@ -138,12 +148,9 @@ export default function ContactForm() {
                 Contactez-nous
               </span>
             </h1>
-            <div
-              className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"
-            ></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto text-gray-600 text-lg">
-              Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions et vous accompagner
-              dans vos projets digitaux.
+              Nous sommes a votre disposition pour échanger avec vous sur votre projet.
             </p>
           </div>
 
@@ -158,7 +165,10 @@ export default function ContactForm() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Nom complet <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -174,7 +184,10 @@ export default function ContactForm() {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Email <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -185,17 +198,26 @@ export default function ContactForm() {
                         onChange={handleChange}
                         required
                         className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-colors ${
-                          formErrors.email ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                          formErrors.email
+                            ? "border-red-500 bg-red-50"
+                            : "border-gray-300"
                         }`}
                         placeholder="Votre adresse email"
                       />
-                      {formErrors.email && <p className="mt-1 text-sm text-red-600">{formErrors.email}</p>}
+                      {formErrors.email && (
+                        <p className="mt-1 text-sm text-red-600">
+                          {formErrors.email}
+                        </p>
+                      )}
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Téléphone
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Téléphone <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="tel"
@@ -203,16 +225,26 @@ export default function ContactForm() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
+                      required
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-colors ${
-                        formErrors.phone ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                        formErrors.phone
+                          ? "border-red-500 bg-red-50"
+                          : "border-gray-300"
                       }`}
-                      placeholder="Votre numéro de téléphone (optionnel)"
+                      placeholder="Votre numéro de téléphone"
                     />
-                    {formErrors.phone && <p className="mt-1 text-sm text-red-600">{formErrors.phone}</p>}
+                    {formErrors.phone && (
+                      <p className="mt-1 text-sm text-red-600">
+                        {formErrors.phone}
+                      </p>
+                    )}
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Objet <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -228,7 +260,10 @@ export default function ContactForm() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
@@ -274,7 +309,7 @@ export default function ContactForm() {
                           Envoi en cours...
                         </>
                       ) : (
-                        'Envoyer le message'
+                        "Envoyer le message"
                       )}
                     </button>
                   </div>
@@ -283,8 +318,8 @@ export default function ContactForm() {
                     <div
                       className={`p-4 rounded-lg ${
                         submitStatus.success
-                          ? 'bg-green-50 text-green-800 border border-green-200'
-                          : 'bg-red-50 text-red-800 border border-red-200'
+                          ? "bg-green-50 text-green-800 border border-green-200"
+                          : "bg-red-50 text-red-800 border border-red-200"
                       }`}
                     >
                       <div className="flex">
@@ -318,7 +353,9 @@ export default function ContactForm() {
                           )}
                         </div>
                         <div className="ml-3">
-                          <p className="text-sm font-medium">{submitStatus.message}</p>
+                          <p className="text-sm font-medium">
+                            {submitStatus.message}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -330,5 +367,5 @@ export default function ContactForm() {
         </div>
       </div>
     </>
-  )
+  );
 }
