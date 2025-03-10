@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -15,13 +15,31 @@ export default function Hero() {
           preserveAspectRatio="xMidYMid slice"
         >
           {/* Grand cercle central */}
-          <circle cx="720" cy="400" r="400" fill="url(#gradient1)" fillOpacity="0.2" />
+          <circle
+            cx="720"
+            cy="400"
+            r="400"
+            fill="url(#gradient1)"
+            fillOpacity="0.2"
+          />
 
           {/* Cercle supérieur droit */}
-          <circle cx="1100" cy="150" r="200" fill="url(#gradient2)" fillOpacity="0.15" />
+          <circle
+            cx="1100"
+            cy="150"
+            r="200"
+            fill="url(#gradient2)"
+            fillOpacity="0.15"
+          />
 
           {/* Cercle inférieur gauche */}
-          <circle cx="300" cy="650" r="250" fill="url(#gradient3)" fillOpacity="0.15" />
+          <circle
+            cx="300"
+            cy="650"
+            r="250"
+            fill="url(#gradient3)"
+            fillOpacity="0.15"
+          />
 
           {/* Forme abstraite 1 */}
           <path
@@ -48,16 +66,16 @@ export default function Hero() {
               <stop offset="100%" stopColor="#4F46E5" />
             </linearGradient>
             <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#3B82F6" />
-              <stop offset="100%" stopColor="#2563EB" />
+              <stop offset="0%" stopColor="#1E293B" />
+              <stop offset="100%" stopColor="#0F172A" />
             </linearGradient>
             <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#4F46E5" />
-              <stop offset="100%" stopColor="#2563EB" />
+              <stop offset="0%" stopColor="#0F172A" />
+              <stop offset="100%" stopColor="#1E293B" />
             </linearGradient>
             <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#3B82F6" />
-              <stop offset="100%" stopColor="#6366F1" />
+              <stop offset="0%" stopColor="#1E293B" />
+              <stop offset="100%" stopColor="#334155" />
             </linearGradient>
           </defs>
         </svg>
@@ -66,19 +84,23 @@ export default function Hero() {
       <div className="max-w-7xl pt-14 mx-auto px-6 relative z-10">
         {/* Contenu centré */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <h1 className="font-inter-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-            Développement d'
-            <span>applications web</span> et <span className="text-white">mobile</span> sur mesure
+          <h1 className="font-inter-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight tracking-tight mb-8">
+            <span className="block mb-2">Développement</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-white">
+              d'applications web & mobile
+            </span>
+            <span className="block mt-2">sur mesure</span>
           </h1>
 
-          <p className="font-inter-regular text-white text-opacity-90 mb-10 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
-            Expertise technique, design innovant et accompagnement personnalisé pour concrétiser vos projets digitaux.
+          <p className="font-inter-regular text-slate-200 mb-12 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+            Expertise technique, design innovant et accompagnement personnalisé
+            pour concrétiser efficacement vos projets digitaux.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-6 mt-2">
             <Link
               href="/contact"
-              className="font-inter-medium bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center"
+              className="font-inter-medium bg-white text-slate-800 px-8 py-4 rounded-md hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -100,19 +122,24 @@ export default function Hero() {
             </Link>
             <Link
               href="/services"
-              className="font-inter-medium border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 hover:bg-opacity-10 transition-all duration-300 flex items-center group"
+              className="font-inter-medium border border-slate-300 text-white px-8 py-4 rounded-md hover:border-white transition-all duration-300 flex items-center group shadow-md"
               data-aos="fade-up"
               data-aos-delay="300"
             >
               Découvrir nos services
               <svg
-                className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
               </svg>
             </Link>
           </div>
@@ -123,7 +150,10 @@ export default function Hero() {
       </div>
 
       {/* Forme SVG en bas pour transition */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
+      <div
+        className="absolute bottom-0 left-0 w-full overflow-hidden"
+        style={{ height: "80px" }}
+      >
         <svg
           className="absolute bottom-0 w-full h-full"
           viewBox="0 0 1440 80"
@@ -131,9 +161,12 @@ export default function Hero() {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
         >
-          <path d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,80 L0,80 Z" fill="white" />
+          <path
+            d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,80 L0,80 Z"
+            fill="white"
+          />
         </svg>
       </div>
     </section>
-  )
+  );
 }
