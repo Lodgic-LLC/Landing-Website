@@ -85,7 +85,8 @@ export default function Services() {
 
   return (
     <>
-      <section className="w-full bg-blue-600 pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden relative">
+      {/* Section Hero mise à jour */}
+      <section className="w-full bg-gradient-to-br from-blue-600 to-indigo-700 pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden relative">
         {/* Formes SVG en arrière-plan */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           {/* Cercles et formes abstraites */}
@@ -119,6 +120,24 @@ export default function Services() {
               fillOpacity="0.1"
             />
 
+            {/* Points décoratifs */}
+            <g opacity="0.3">
+              <circle cx="150" cy="150" r="2" fill="white" />
+              <circle cx="350" cy="250" r="2" fill="white" />
+              <circle cx="550" cy="150" r="2" fill="white" />
+              <circle cx="750" cy="300" r="2" fill="white" />
+              <circle cx="950" cy="200" r="2" fill="white" />
+              <circle cx="1150" cy="350" r="2" fill="white" />
+              <circle cx="1350" cy="250" r="2" fill="white" />
+              
+              <circle cx="250" cy="350" r="2" fill="white" />
+              <circle cx="450" cy="450" r="2" fill="white" />
+              <circle cx="650" cy="350" r="2" fill="white" />
+              <circle cx="850" cy="500" r="2" fill="white" />
+              <circle cx="1050" cy="400" r="2" fill="white" />
+              <circle cx="1250" cy="550" r="2" fill="white" />
+            </g>
+
             {/* Définition des dégradés */}
             <defs>
               <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -146,20 +165,18 @@ export default function Services() {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto" data-aos="fade-up">
+          <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-white mb-4 md:mb-6 leading-tight">
-              Des outils numériques <span className="text-white opacity-90">sur mesure</span> pour votre entreprise
+              Des outils numériques <span className="text-blue-200">sur mesure</span> pour votre entreprise
             </h1>
-            <p className="font-inter-regular text-white text-opacity-80 mb-6 md:mb-8 text-base md:text-lg lg:text-xl leading-relaxed">
+            <p className="font-inter-regular text-white text-opacity-90 mb-6 md:mb-8 text-base md:text-lg lg:text-xl leading-relaxed">
               Nous créons des applications mobiles et des sites web adaptés à vos besoins avec un accompagnement
-              personnalisé chaque étape de votre projet.
+              personnalisé à chaque étape de votre projet.
             </p>
             <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-8 md:mt-10">
               <Link
                 href="/contact"
                 className="font-inter-medium bg-white text-blue-600 px-6 md:px-8 py-3 rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg text-sm md:text-base flex items-center"
-                data-aos="fade-up"
-                data-aos-delay="100"
               >
                 <svg
                   className="w-5 h-5 mr-2"
@@ -179,9 +196,7 @@ export default function Services() {
               </Link>
               <Link
                 href="/a-propos"
-                className="font-inter-medium border-2 border-white text-white px-6 md:px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 hover:bg-opacity-10 transition-all text-sm md:text-base flex items-center group"
-                data-aos="fade-up"
-                data-aos-delay="200"
+                className="font-inter-medium border-2 border-white text-white px-6 md:px-8 py-3 rounded-lg hover:bg-white/10 transition-all text-sm md:text-base flex items-center group"
               >
                 En savoir plus sur Lodgic
                 <svg
