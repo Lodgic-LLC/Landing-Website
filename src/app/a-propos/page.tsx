@@ -10,7 +10,7 @@ export default function APropos() {
     return (
         <div className="pt-16">
             {/* Section Hero */}
-            <section className="w-full bg-blue-600 py-24 md:py-32 overflow-hidden relative">
+            <section className="w-full bg-gradient-to-br from-blue-600 to-indigo-700 py-24 md:py-32 overflow-hidden relative">
                 {/* Formes SVG en arrière-plan */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
                     {/* Cercles et formes abstraites */}
@@ -43,6 +43,24 @@ export default function APropos() {
                             fill="url(#gradient5)"
                             fillOpacity="0.1"
                         />
+
+                        {/* Points décoratifs */}
+                        <g opacity="0.3">
+                            <circle cx="150" cy="150" r="2" fill="white" />
+                            <circle cx="350" cy="250" r="2" fill="white" />
+                            <circle cx="550" cy="150" r="2" fill="white" />
+                            <circle cx="750" cy="300" r="2" fill="white" />
+                            <circle cx="950" cy="200" r="2" fill="white" />
+                            <circle cx="1150" cy="350" r="2" fill="white" />
+                            <circle cx="1350" cy="250" r="2" fill="white" />
+                            
+                            <circle cx="250" cy="350" r="2" fill="white" />
+                            <circle cx="450" cy="450" r="2" fill="white" />
+                            <circle cx="650" cy="350" r="2" fill="white" />
+                            <circle cx="850" cy="500" r="2" fill="white" />
+                            <circle cx="1050" cy="400" r="2" fill="white" />
+                            <circle cx="1250" cy="550" r="2" fill="white" />
+                        </g>
 
                         {/* Définition des dégradés */}
                         <defs>
@@ -80,10 +98,10 @@ export default function APropos() {
                         <h1 className="font-inter-bold text-3xl md:text-4xl lg:text-5xl text-white mb-6">
                             Des solutions numériques
                             <br />
-                            <span className="text-white opacity-90">qui vous ressemblent</span>
+                            <span className="text-blue-200">qui vous ressemblent</span>
                         </h1>
 
-                        <p className="font-inter-regular text-white text-opacity-80 mb-8 max-w-lg text-lg leading-relaxed">
+                        <p className="font-inter-regular text-white text-opacity-90 mb-8 max-w-lg text-lg leading-relaxed">
                             Nous créons des applications web et mobiles simples à utiliser,
                             adaptées à vos besoins et qui évoluent avec votre entreprise.
                         </p>
@@ -113,7 +131,7 @@ export default function APropos() {
                             </a>
                             <Link
                                 href="/services"
-                                className="font-inter-medium border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 hover:bg-opacity-10 transition-all flex items-center group"
+                                className="font-inter-medium border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white/10 transition-all flex items-center group"
                                 data-aos="fade-up"
                                 data-aos-delay="300"
                             >
@@ -138,8 +156,11 @@ export default function APropos() {
                         data-aos-duration="1000"
                         data-aos-delay="200"
                     >
-                        <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md transform hover:-translate-y-2 transition-all duration-300">
-                            <div className="flex flex-col items-center text-center">
+                        <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md transform hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                            {/* Élément décoratif */}
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-bl-full -mr-16 -mt-16 opacity-80"></div>
+                            
+                            <div className="flex flex-col items-center text-center relative z-10">
                                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                                     <svg
                                         className="w-8 h-8 text-blue-600"
@@ -184,14 +205,15 @@ export default function APropos() {
                                                 fill="currentColor"
                                                 viewBox="0 0 20 20"
                                             >
+                                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
                                                 <path
                                                     fillRule="evenodd"
-                                                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                                                    d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
                                                     clipRule="evenodd"
                                                 />
                                             </svg>
                                         </div>
-                                        <span className="text-sm text-gray-600">Efficacité</span>
+                                        <span className="text-sm text-gray-600">Clarté</span>
                                     </div>
 
                                     <div className="flex flex-col items-center">
@@ -203,17 +225,12 @@ export default function APropos() {
                                             >
                                                 <path
                                                     fillRule="evenodd"
-                                                    d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z"
-                                                    clipRule="evenodd"
-                                                />
-                                                <path
-                                                    fillRule="evenodd"
-                                                    d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11z"
+                                                    d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
                                                     clipRule="evenodd"
                                                 />
                                             </svg>
                                         </div>
-                                        <span className="text-sm text-gray-600">Support</span>
+                                        <span className="text-sm text-gray-600">Réactivité</span>
                                     </div>
                                 </div>
 

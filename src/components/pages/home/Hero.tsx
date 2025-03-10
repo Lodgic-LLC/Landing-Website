@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="w-full bg-blue-600 pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden relative">
+    <section className="w-full bg-gradient-to-br from-blue-600 to-indigo-700 pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden relative">
       {/* Formes SVG en arrière-plan */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         {/* Cercles et formes abstraites */}
@@ -55,29 +55,23 @@ export default function Hero() {
             fillOpacity="0.1"
           />
 
-          {/* Éléments géométriques supplémentaires - Ajoutés du CTA */}
-          <circle cx="200" cy="200" r="50" fill="#4F46E5" fillOpacity="0.1" />
-          <circle cx="1300" cy="300" r="70" fill="#4F46E5" fillOpacity="0.08" />
-          <rect
-            x="600"
-            y="100"
-            width="100"
-            height="100"
-            rx="20"
-            transform="rotate(30 600 100)"
-            fill="#4F46E5"
-            fillOpacity="0.07"
-          />
-          <rect
-            x="1000"
-            y="500"
-            width="80"
-            height="80"
-            rx="15"
-            transform="rotate(-15 1000 500)"
-            fill="#4F46E5"
-            fillOpacity="0.07"
-          />
+          {/* Points décoratifs */}
+          <g opacity="0.3">
+            <circle cx="150" cy="150" r="2" fill="white" />
+            <circle cx="350" cy="250" r="2" fill="white" />
+            <circle cx="550" cy="150" r="2" fill="white" />
+            <circle cx="750" cy="300" r="2" fill="white" />
+            <circle cx="950" cy="200" r="2" fill="white" />
+            <circle cx="1150" cy="350" r="2" fill="white" />
+            <circle cx="1350" cy="250" r="2" fill="white" />
+            
+            <circle cx="250" cy="350" r="2" fill="white" />
+            <circle cx="450" cy="450" r="2" fill="white" />
+            <circle cx="650" cy="350" r="2" fill="white" />
+            <circle cx="850" cy="500" r="2" fill="white" />
+            <circle cx="1050" cy="400" r="2" fill="white" />
+            <circle cx="1250" cy="550" r="2" fill="white" />
+          </g>
 
           {/* Définition des dégradés */}
           <defs>
@@ -90,16 +84,16 @@ export default function Hero() {
               <stop offset="100%" stopColor="#4F46E5" />
             </linearGradient>
             <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#1E293B" />
-              <stop offset="100%" stopColor="#0F172A" />
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#2563EB" />
             </linearGradient>
             <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#0F172A" />
-              <stop offset="100%" stopColor="#1E293B" />
+              <stop offset="0%" stopColor="#4F46E5" />
+              <stop offset="100%" stopColor="#2563EB" />
             </linearGradient>
             <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#1E293B" />
-              <stop offset="100%" stopColor="#334155" />
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#6366F1" />
             </linearGradient>
           </defs>
         </svg>
@@ -115,25 +109,19 @@ export default function Hero() {
       <div className="max-w-7xl pt-14 mx-auto px-6 relative z-10">
         {/* Contenu centré */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <h1 className="font-inter-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight tracking-tight mb-8">
-            <span className="block mb-2">Développement</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-white">
-              d'applications web & mobile
-            </span>
-            <span className="block mt-2">sur mesure</span>
+          <h1 className="font-inter-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+            Développement d'
+            <span className="text-blue-200">applications web</span> et <span className="text-white">mobile</span> sur mesure
           </h1>
 
-          <p className="font-inter-regular text-slate-200 mb-12 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
-            Expertise technique, design innovant et accompagnement personnalisé
-            pour concrétiser efficacement vos projets digitaux.
+          <p className="font-inter-regular text-white text-opacity-90 mb-10 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+            Expertise technique, design innovant et accompagnement personnalisé pour concrétiser vos projets digitaux.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-6 mt-2">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="font-inter-medium bg-white text-slate-800 px-8 py-4 rounded-md hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center"
-              data-aos="fade-up"
-              data-aos-delay="200"
+              className="font-inter-medium bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center"
             >
               <svg
                 className="w-5 h-5 mr-2"
@@ -153,24 +141,17 @@ export default function Hero() {
             </Link>
             <Link
               href="/services"
-              className="font-inter-medium border border-slate-300 text-white px-8 py-4 rounded-md hover:border-white transition-all duration-300 flex items-center group shadow-md"
-              data-aos="fade-up"
-              data-aos-delay="300"
+              className="font-inter-medium border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center group"
             >
               Découvrir nos services
               <svg
-                className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </Link>
           </div>
