@@ -2,10 +2,7 @@ export default function ProjectCTA() {
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Vague en haut pour transition */}
-      <div
-        className="absolute top-0 left-0 w-full overflow-hidden"
-        style={{ height: "80px" }}
-      >
+      <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
         <svg
           className="absolute top-0 w-full h-full"
           viewBox="0 0 1440 80"
@@ -13,10 +10,7 @@ export default function ProjectCTA() {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
         >
-          <path
-            d="M0,80 C240,0 480,0 720,40 C960,80 1200,80 1440,40 L1440,0 L0,0 Z"
-            fill="white"
-          />
+          <path d="M0,80 C240,0 480,0 720,40 C960,80 1200,80 1440,40 L1440,0 L0,0 Z" fill="white" />
         </svg>
       </div>
 
@@ -34,31 +28,13 @@ export default function ProjectCTA() {
           preserveAspectRatio="xMidYMid slice"
         >
           {/* Grand cercle central */}
-          <circle
-            cx="720"
-            cy="400"
-            r="400"
-            fill="url(#gradient1)"
-            fillOpacity="0.2"
-          />
+          <circle cx="720" cy="400" r="400" fill="url(#gradient1)" fillOpacity="0.2" />
 
           {/* Cercle supérieur droit */}
-          <circle
-            cx="1100"
-            cy="150"
-            r="200"
-            fill="url(#gradient2)"
-            fillOpacity="0.15"
-          />
+          <circle cx="1100" cy="150" r="200" fill="url(#gradient2)" fillOpacity="0.15" />
 
           {/* Cercle inférieur gauche */}
-          <circle
-            cx="300"
-            cy="650"
-            r="250"
-            fill="url(#gradient3)"
-            fillOpacity="0.15"
-          />
+          <circle cx="300" cy="650" r="250" fill="url(#gradient3)" fillOpacity="0.15" />
 
           {/* Forme abstraite 1 */}
           <path
@@ -138,10 +114,10 @@ export default function ProjectCTA() {
             className="font-inter-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight tracking-tight mb-6"
             data-aos="fade-up"
           >
-            Transformez votre{" "}
+            Transformez votre{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-white">
               vision digitale
-            </span>{" "}
+            </span>{' '}
             en réalité
           </h2>
 
@@ -150,12 +126,12 @@ export default function ProjectCTA() {
             data-aos="fade-up"
             data-aos-delay="50"
           >
-            Nos experts en développement d'applications sur mesure vous
-            accompagnent de la conception au déploiement de votre solution.
+            Nos experts en développement d'applications sur mesure vous accompagnent de la conception au déploiement de
+            votre solution.
           </p>
 
           <div
-            className="flex flex-col sm:flex-row justify-center gap-4 mt-8"
+            className="flex flex-col sm:flex-row justify-center gap-4 mt-8 mb-8"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -191,12 +167,7 @@ export default function ProjectCTA() {
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </a>
           </div>
@@ -204,10 +175,7 @@ export default function ProjectCTA() {
       </div>
 
       {/* Vague en bas pour transition */}
-      <div
-        className="absolute bottom-0 left-0 w-full overflow-hidden"
-        style={{ height: "80px" }}
-      >
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
         <svg
           className="absolute bottom-0 w-full h-full"
           viewBox="0 0 1440 80"
@@ -215,12 +183,9 @@ export default function ProjectCTA() {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
         >
-          <path
-            d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,80 L0,80 Z"
-            fill="white"
-          />
+          <path d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,80 L0,80 Z" fill="white" />
         </svg>
       </div>
     </section>
-  );
+  )
 }
