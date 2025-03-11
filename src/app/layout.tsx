@@ -102,16 +102,20 @@ export default function RootLayout({
         <Script src="//cdn.iubenda.com/cs/gpp/stub.js" strategy="beforeInteractive" />
         <Script src="//cdn.iubenda.com/cs/iubenda_cs.js" strategy="afterInteractive" charSet="UTF-8" />
 
+        {/* Google Analytics */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-LV93937W8D" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
-         window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-LV93937W8D');
-        `}
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LV93937W8D');
+            gtag('config', 'AW-16908078298');
+          `}
         </Script>
+
+        {/* Google Ads */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16908078298" strategy="afterInteractive" />
       </head>
       <body className={`${inter.variable} bg-white min-h-screen overflow-x-hidden antialiased`}>
         <AOSInitializer />
