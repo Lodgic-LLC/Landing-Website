@@ -1,10 +1,13 @@
 'use client'
 
 import { InlineWidget } from 'react-calendly'
+import CalendlyConversionTracker from '@/components/layout/CalendlyConversionTracker'
 
 export default function RendezVousContent() {
   return (
     <>
+      <CalendlyConversionTracker value={1.0} currency="EUR" />
+
       <div className="bg-gradient-to-b from-blue-50 to-white pt-10">
         {/* Hero Section */}
         <div className="container mx-auto px-4 pt-16 md:py-24">
