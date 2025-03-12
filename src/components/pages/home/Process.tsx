@@ -35,7 +35,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -54,7 +54,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -73,7 +73,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -111,7 +111,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -130,7 +130,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -149,7 +149,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -168,7 +168,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -187,7 +187,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -206,7 +206,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -225,7 +225,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -244,7 +244,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -263,7 +263,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -282,7 +282,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -301,7 +301,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -320,7 +320,7 @@ export default function Process() {
     {
       icon: (
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -339,27 +339,27 @@ export default function Process() {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-24 relative overflow-hidden">
+    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-12 md:py-20 relative overflow-hidden">
       {/* Éléments décoratifs d'arrière-plan */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -right-24 w-96 h-96 bg-blue-50 rounded-full opacity-30 blur-3xl"></div>
         <div className="absolute bottom-1/4 -left-24 w-96 h-96 bg-indigo-50 rounded-full opacity-30 blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-gray-900 mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-inter-bold text-gray-900 mb-3 md:mb-6">
             Notre{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
               expertise
             </span>{" "}
             à votre service
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto mb-4 md:mb-8">
             Découvrez quelques-unes des fonctionnalités que nous avons déjà
             développées
           </p>
-          <div className="relative h-1 w-24 mx-auto">
+          <div className="relative h-1 w-16 md:w-24 mx-auto">
             <div className="absolute inset-0 bg-[#2563EB] rounded-full"></div>
             <div
               ref={titleUnderlineRef}
@@ -369,35 +369,31 @@ export default function Process() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-2 gap-y-2 sm:gap-x-4 sm:gap-y-3">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-lg overflow-hidden transition-all duration-300"
+                className="group relative bg-white rounded-md overflow-hidden transition-all duration-300 border border-gray-100"
                 style={{
                   boxShadow:
-                    "0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.06)",
+                    "0 1px 2px rgba(0,0,0,0.04), 0 1px 1px rgba(0,0,0,0.03)",
                 }}
-                data-aos="fade-up"
-                data-aos-delay={index * 30}
               >
                 {/* Fond avec effet glassmorphism au hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-blue-50/80 to-indigo-50/80 backdrop-blur-[2px]  transition-opacity duration-300"></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-blue-50/80 to-indigo-50/80 backdrop-blur-[2px] transition-opacity duration-300"></div>
 
                 {/* Contenu */}
-                <div className="relative z-10 flex items-center p-4">
-                  {/* Numéro d'index avec cercle */}
-
+                <div className="relative z-10 flex items-center p-2 sm:p-3">
                   {/* Icône avec fond */}
-                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-50 group-hover:to-indigo-50 transition-colors duration-300 border border-slate-100">
+                  <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-md bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-50 group-hover:to-indigo-50 transition-colors duration-300 border border-slate-100">
                     <div className="text-blue-500 group-hover:text-blue-600 transition-colors duration-300">
                       {feature.icon}
                     </div>
                   </div>
 
                   {/* Titre */}
-                  <div className="ml-3 flex-1">
-                    <h4 className="text-sm font-medium text-slate-800 group-hover:text-blue-800 transition-colors duration-300">
+                  <div className="ml-2 flex-1">
+                    <h4 className="text-xs sm:text-sm font-medium text-slate-800 group-hover:text-blue-800 transition-colors duration-300">
                       {feature.title}
                     </h4>
                   </div>
@@ -413,11 +409,10 @@ export default function Process() {
           </div>
         </div>
 
-        <div className="mt-16 text-center" data-aos="fade-up">
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+        <div className="mt-8 md:mt-12 text-center">
+          <p className="text-base md:text-xl text-gray-700 max-w-4xl mx-auto">
             Chaque application est unique, nous réalisons votre application pour
             correspondre à vos besoins.
-            <br />
           </p>
         </div>
       </div>
