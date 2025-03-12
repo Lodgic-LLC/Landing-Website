@@ -9,6 +9,7 @@ export default function Navbar() {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollTop, setLastScrollTop] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
   const pathname = usePathname()
 
   const navigationItems = [
@@ -17,6 +18,22 @@ export default function Navbar() {
     { name: 'À propos', path: '/a-propos' },
     { name: 'Contact', path: '/contact' },
   ]
+
+  // Vérifier si l'écran est mobile
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768) // 768px est le breakpoint md dans Tailwind
+    }
+    
+    // Vérifier au chargement
+    checkIfMobile()
+    
+    // Ajouter un écouteur pour les changements de taille d'écran
+    window.addEventListener('resize', checkIfMobile)
+    
+    // Nettoyer l'écouteur
+    return () => window.removeEventListener('resize', checkIfMobile)
+  }, [])
 
   const handleScroll = useCallback(() => {
     const currentScrollPos = window.scrollY || document.documentElement.scrollTop
@@ -61,15 +78,15 @@ export default function Navbar() {
     return pathname === path
   }
 
-  // Forcer la transparence sur la page d'accueil en haut de page
+  // Forcer la transparence sur la page d'accueil en haut de page, seulement sur desktop
   const isHomePage = pathname === '/'
-  const shouldBeTransparent = isHomePage && scrollPosition <= 50
+  const shouldBeTransparent = isHomePage && scrollPosition <= 50 && !isMobile
 
   return (
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
-      } ${shouldBeTransparent ? 'py-5 bg-transparent' : 'py-3 shadow-lg bg-white/95 backdrop-blur-sm'}`}
+      } ${shouldBeTransparent ? 'py-5 bg-transparent' : 'py-3 shadow-lg bg-white backdrop-blur-sm'}`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -144,11 +161,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               type="button"
-              className={`inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors ${
-                shouldBeTransparent
-                  ? 'text-white hover:bg-white/10'
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
-              }`}
+              className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors text-gray-700 hover:text-blue-600 hover:bg-gray-100"
               aria-expanded={isMenuOpen}
               onClick={handleToggleMenu}
               aria-label="Menu principal"
@@ -188,22 +201,14 @@ export default function Navbar() {
           isMenuOpen ? 'max-h-[320px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div
-          className={`container mx-auto px-4 sm:px-6 border-t shadow-inner ${
-            shouldBeTransparent ? 'bg-blue-600/90 backdrop-blur-md border-blue-500' : 'bg-white border-gray-100'
-          }`}
-        >
+        <div className="container mx-auto px-4 sm:px-6 border-t shadow-inner bg-white border-gray-100 pt-2">
           {navigationItems.map((item) => (
             <Link
               key={item.name}
               href={item.path}
               className={`block px-4 py-3 rounded-md text-base font-inter-medium transition-all duration-200 ${
                 isActive(item.path)
-                  ? shouldBeTransparent
-                    ? 'text-white bg-white/10'
-                    : 'text-blue-600 bg-blue-50'
-                  : shouldBeTransparent
-                  ? 'text-white hover:bg-white/10'
+                  ? 'text-blue-600 bg-blue-50'
                   : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
               }`}
             >
@@ -213,11 +218,7 @@ export default function Navbar() {
           <div className="pt-2 pb-4">
             <Link
               href="/rendez-vous"
-              className={`flex items-center justify-center w-full px-4 py-3 rounded-md shadow-sm transition-colors font-inter-medium ${
-                shouldBeTransparent
-                  ? 'bg-white text-blue-600 hover:bg-gray-100'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
-              }`}
+              className="flex items-center justify-center w-full px-4 py-3 rounded-md shadow-sm transition-colors font-inter-medium bg-blue-600 text-white hover:bg-blue-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
