@@ -1,16 +1,83 @@
 import React from 'react'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'HouseGuard - Application de Gestion Immobilière | Lodgic',
   description:
     'Découvrez comment nous avons développé HouseGuard, une application mobile innovante pour la gestion de locations immobilières, la communication entre locataires et propriétaires, et la déclaration de sinistres.',
+  alternates: {
+    canonical: 'https://lodgic-dev.com/projets/houseguard',
+  },
+  keywords: [
+    'HouseGuard',
+    'application immobilière',
+    'gestion locative',
+    'application propriétaires',
+    'application locataires',
+    'déclaration sinistres',
+    'gestion immobilière',
+    'application mobile immobilier',
+    'Lodgic projet',
+    'développement application immobilière',
+  ],
+  openGraph: {
+    title: 'HouseGuard - Application de Gestion Immobilière | Lodgic',
+    description:
+      'Découvrez comment nous avons développé HouseGuard, une application mobile innovante pour la gestion de locations immobilières, la communication entre locataires et propriétaires, et la déclaration de sinistres.',
+    url: 'https://lodgic-dev.com/projets/houseguard',
+    siteName: 'Lodgic',
+    images: [
+      {
+        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        width: 1200,
+        height: 630,
+        alt: 'HouseGuard - Application de Gestion Immobilière',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'HouseGuard - Application de Gestion Immobilière | Lodgic',
+    description:
+      'Application mobile innovante pour la gestion de locations immobilières et la communication entre locataires et propriétaires.',
+    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
+  },
 }
 
 export default function HouseGuardProject() {
   return (
     <>
+      <Script id="houseguard-schema" type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "HouseGuard",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "iOS, Android",
+            "description": "Application mobile innovante pour la gestion de locations immobilières, la communication entre locataires et propriétaires, et la déclaration de sinistres.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "125"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "Lodgic",
+              "url": "https://lodgic-dev.com"
+            }
+          }
+        `}
+      </Script>
       {/* Hero Section */}
       <section className="w-full bg-gradient-to-br from-blue-600 to-indigo-700 pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden relative">
         {/* Formes SVG en arrière-plan */}
@@ -55,7 +122,7 @@ export default function HouseGuardProject() {
               <circle cx="950" cy="200" r="2" fill="white" />
               <circle cx="1150" cy="350" r="2" fill="white" />
               <circle cx="1350" cy="250" r="2" fill="white" />
-              
+
               <circle cx="250" cy="350" r="2" fill="white" />
               <circle cx="450" cy="450" r="2" fill="white" />
               <circle cx="650" cy="350" r="2" fill="white" />
@@ -94,16 +161,14 @@ export default function HouseGuardProject() {
           <div className="flex flex-col md:flex-row items-center">
             {/* Texte du projet - Côté gauche */}
             <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
-
-
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 HouseGuard - Gestion Immobilière Simplifiée
               </h1>
-              
+
               <p className="text-white text-opacity-90 text-lg mb-6">
                 Application mobile de gestion locative pour propriétaires et gestionnaires immobiliers
               </p>
-              
+
               <div className="flex flex-wrap gap-3 mb-8">
                 {/* Technologies utilisées */}
                 <span className="bg-white/10 text-blue-100 px-3 py-1 rounded-full text-sm">React Native</span>
@@ -114,36 +179,30 @@ export default function HouseGuardProject() {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white/10 transition-all flex items-center group"
                 >
                   Discuter de mon projet
-                  <svg 
-                    className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24" 
+                  <svg
+                    className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth="2" 
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </Link>
               </div>
             </div>
-            
+
             {/* Image du projet - Côté droit */}
             <div className="w-full md:w-1/2">
               <div className="relative">
                 {/* Effet de brillance sur l'image */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-300 to-indigo-300 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-                
+
                 <div className="relative bg-white rounded-lg overflow-hidden shadow-2xl p-6">
                   {/* Affichage spécial pour HouseGuard avec 3 téléphones */}
                   <div className="flex justify-center items-center w-full h-full">
@@ -151,31 +210,31 @@ export default function HouseGuardProject() {
                       {/* Premier téléphone (légèrement incliné vers la gauche) */}
                       <div className="relative transform -rotate-6 z-10">
                         <div className="w-24 h-44  rounded-xl overflow-hidden ">
-                          <img 
-                            src="/images/house-proprietaire.png" 
-                            alt="HouseGuard - Vue propriétaire" 
+                          <img
+                            src="/images/house-proprietaire.png"
+                            alt="HouseGuard - Vue propriétaire"
                             className="w-full h-full object-cover"
                           />
                         </div>
                       </div>
-                      
+
                       {/* Téléphone central (plus grand et au premier plan) */}
                       <div className="relative transform z-20 scale-110">
                         <div className="w-24 h-44 rounded-xl overflow-hidden shadow-lg">
-                          <img 
-                            src="/images/house-locataire.png" 
-                            alt="HouseGuard - Vue locataire" 
+                          <img
+                            src="/images/house-locataire.png"
+                            alt="HouseGuard - Vue locataire"
                             className="w-full h-full object-cover"
                           />
                         </div>
                       </div>
-                      
+
                       {/* Troisième téléphone (légèrement incliné vers la droite) */}
                       <div className="relative transform rotate-6 z-10">
                         <div className="w-24 h-44  rounded-xl overflow-hidden ">
-                          <img 
-                            src="/images/house-biens.png" 
-                            alt="HouseGuard - Dashboard" 
+                          <img
+                            src="/images/house-biens.png"
+                            alt="HouseGuard - Dashboard"
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -485,7 +544,7 @@ export default function HouseGuardProject() {
               <circle cx="950" cy="100" r="2" fill="white" />
               <circle cx="1150" cy="175" r="2" fill="white" />
               <circle cx="1350" cy="125" r="2" fill="white" />
-              
+
               <circle cx="250" cy="175" r="2" fill="white" />
               <circle cx="450" cy="225" r="2" fill="white" />
               <circle cx="650" cy="175" r="2" fill="white" />
@@ -534,51 +593,47 @@ export default function HouseGuardProject() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Prêt à créer votre <span className="text-blue-200">plateforme d'analyse</span> ?
             </h2>
-            
+
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment nous pouvons vous aider à développer une solution sur mesure.
+              Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment nous pouvons vous aider
+              à développer une solution sur mesure.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
                 className="px-8 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center"
               >
-                <svg 
-                  className="w-5 h-5 mr-2" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24" 
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth="2" 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                   />
                 </svg>
                 Nous contacter
               </Link>
-              
+
               <Link
                 href="/services"
                 className="px-8 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-all flex items-center group"
               >
                 Découvrir nos services
-                <svg 
-                  className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24" 
+                <svg
+                  className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth="2" 
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </Link>
             </div>

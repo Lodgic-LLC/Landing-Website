@@ -6,6 +6,23 @@ export const metadata: Metadata = {
   title: 'Forge AI - Marketplace NFT | Lodgic',
   description:
     "Découvrez comment nous avons développé Forge AI, une plateforme de génération et d'achat/vente de NFT combinant l'IA générative et la technologie blockchain.",
+  openGraph: {
+    title: 'Forge AI - Marketplace NFT | Lodgic',
+    description:
+      "Découvrez comment nous avons développé Forge AI, une plateforme de génération et d'achat/vente de NFT combinant l'IA générative et la technologie blockchain.",
+    url: 'https://lodgic-dev.com/projets/forge-ai',
+    siteName: 'Lodgic',
+    images: [
+      {
+        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        width: 1200,
+        height: 630,
+        alt: 'Forge AI - Marketplace NFT',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'website',
+  },
 }
 
 export default function ForgeAIProject() {
@@ -55,7 +72,7 @@ export default function ForgeAIProject() {
               <circle cx="950" cy="200" r="2" fill="white" />
               <circle cx="1150" cy="350" r="2" fill="white" />
               <circle cx="1350" cy="250" r="2" fill="white" />
-              
+
               <circle cx="250" cy="350" r="2" fill="white" />
               <circle cx="450" cy="450" r="2" fill="white" />
               <circle cx="650" cy="350" r="2" fill="white" />
@@ -94,16 +111,14 @@ export default function ForgeAIProject() {
           <div className="flex flex-col md:flex-row items-center">
             {/* Texte du projet - Côté gauche */}
             <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
-          
-              
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Forge AI - <span className="text-blue-200">Marketplace NFT</span>
               </h1>
-              
+
               <p className="text-white text-opacity-90 text-lg mb-6">
                 Plateforme de génération et achat/vente de NFT utilisant l'IA générative
               </p>
-              
+
               <div className="flex flex-wrap gap-3 mb-8">
                 {/* Technologies utilisées */}
                 <span className="bg-white/10 text-blue-100 px-3 py-1 rounded-full text-sm">React.js</span>
@@ -113,53 +128,45 @@ export default function ForgeAIProject() {
                 <span className="bg-white/10 text-blue-100 px-3 py-1 rounded-full text-sm">Web3.js</span>
                 <span className="bg-white/10 text-blue-100 px-3 py-1 rounded-full text-sm">IPFS</span>
               </div>
-              
+
               <div className="flex flex-wrap gap-4">
-               
-                
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white/10 transition-all flex items-center group"
                 >
                   Discuter de mon projet
-                  <svg 
-                    className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24" 
+                  <svg
+                    className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth="2" 
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </Link>
               </div>
             </div>
-            
+
             {/* Image du projet - Côté droit */}
             <div className="w-full md:w-1/2">
               <div className="relative">
                 {/* Effet de brillance sur l'image */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-300 to-indigo-300 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-                
+
                 <div className="relative bg-white rounded-lg overflow-hidden shadow-2xl">
                   {/* Affichage spécial pour Forge AI avec effet de NFT */}
                   <div className="relative">
-                    <img 
-                      src="/images/forge-main.png" 
-                      alt="Forge AI - Marketplace NFT" 
+                    <img
+                      src="/images/forge-main.png"
+                      alt="Forge AI - Marketplace NFT"
                       className="w-full h-auto object-cover"
                     />
-                    
+
                     {/* Overlay avec effet holographique */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-blue-500/10 mix-blend-overlay"></div>
-                    
-                    {/* Badge NFT */}
 
+                    {/* Badge NFT */}
                   </div>
                 </div>
               </div>
@@ -190,10 +197,10 @@ export default function ForgeAIProject() {
               <h2 className="text-2xl font-bold text-gray-900">Aperçu du projet</h2>
             </div>
             <p className="text-lg text-gray-700 mb-6">
-              Forge AI est une plateforme qui permet aux utilisateurs de créer des NFT uniques à partir
-              de simples descriptions textuelles, puis de les vendre sur une marketplace intégrée. Notre mission était
-              de développer une solution qui démocratise la création artistique numérique en combinant l'IA générative
-              et la technologie blockchain.
+              Forge AI est une plateforme qui permet aux utilisateurs de créer des NFT uniques à partir de simples
+              descriptions textuelles, puis de les vendre sur une marketplace intégrée. Notre mission était de
+              développer une solution qui démocratise la création artistique numérique en combinant l'IA générative et
+              la technologie blockchain.
             </p>
             <p className="text-lg text-gray-700 mb-6">
               La plateforme offre une expérience utilisateur intuitive, permettant même aux novices en matière de NFT et
@@ -395,7 +402,7 @@ export default function ForgeAIProject() {
               <circle cx="950" cy="100" r="2" fill="white" />
               <circle cx="1150" cy="175" r="2" fill="white" />
               <circle cx="1350" cy="125" r="2" fill="white" />
-              
+
               <circle cx="250" cy="175" r="2" fill="white" />
               <circle cx="450" cy="225" r="2" fill="white" />
               <circle cx="650" cy="175" r="2" fill="white" />
@@ -444,51 +451,47 @@ export default function ForgeAIProject() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Prêt à créer votre <span className="text-blue-200">plateforme d'analyse</span> ?
             </h2>
-            
+
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment nous pouvons vous aider à développer une solution sur mesure.
+              Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment nous pouvons vous aider
+              à développer une solution sur mesure.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
                 className="px-8 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center"
               >
-                <svg 
-                  className="w-5 h-5 mr-2" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24" 
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth="2" 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                   />
                 </svg>
                 Nous contacter
               </Link>
-              
+
               <Link
                 href="/services"
                 className="px-8 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-all flex items-center group"
               >
                 Découvrir nos services
-                <svg 
-                  className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24" 
+                <svg
+                  className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth="2" 
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </Link>
             </div>
