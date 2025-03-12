@@ -3,6 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
+    
     <section className="w-full bg-gradient-to-br from-blue-600 to-indigo-700 pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden relative">
       {/* Formes SVG en arrière-plan */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
