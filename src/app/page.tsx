@@ -7,8 +7,9 @@ import SuccessStories from '@/components/pages/home/SuccessStories'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Lodgic - Accueil',
-  description: 'Lodgic est une agence de développement web et mobile',
+  title: "Agence de développement d'applications mobiles - Lodgic",
+  description:
+    'Lodgic est une agence de développement web et mobile spécialisée dans la création de sites et applications mobiles modernes, réactifs et performants.',
 }
 
 export default function Home() {
