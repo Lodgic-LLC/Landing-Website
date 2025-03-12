@@ -1,6 +1,6 @@
 export default function ProjectCTA() {
   return (
-    <section className="relative py-10 sm:py-12 md:py-16 lg:py-24 overflow-hidden">
+    <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Vague en haut pour transition */}
       <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
         <svg
@@ -108,10 +108,11 @@ export default function ProjectCTA() {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 pb-16 sm:pb-12">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <h2
-            className="font-inter-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight tracking-tight mb-2 sm:mb-4"
+            className="font-inter-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight tracking-tight mb-6"
+            data-aos="fade-up"
           >
             Transformez votre{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-white">
@@ -121,21 +122,25 @@ export default function ProjectCTA() {
           </h2>
 
           <p
-            className="font-inter-regular text-white text-opacity-90 mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed"
+            className="font-inter-regular text-white text-opacity-90 mb-10 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="50"
           >
             Nos experts en développement d'applications sur mesure vous accompagnent de la conception au déploiement de
             votre solution.
           </p>
 
           <div
-            className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mt-3 sm:mt-4"
+            className="flex flex-col sm:flex-row justify-center gap-4 mt-8 mb-8"
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             <a
               href="/contact"
-              className="font-inter-medium text-sm sm:text-base bg-white text-blue-600 px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
+              className="font-inter-medium bg-white text-blue-600 px-8 py-4 rounded-md hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center"
             >
               <svg
-                className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2"
+                className="w-5 h-5 mr-2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -152,11 +157,11 @@ export default function ProjectCTA() {
             </a>
             <a
               href="/services"
-              className="font-inter-medium text-sm sm:text-base border border-slate-300 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:border-white transition-all duration-300 flex items-center justify-center group shadow-md"
+              className="font-inter-medium border border-slate-300 text-white px-8 py-4 rounded-md hover:border-white transition-all duration-300 flex items-center group shadow-md"
             >
               Découvrir nos services
               <svg
-                className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1.5 sm:ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

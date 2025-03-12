@@ -205,7 +205,7 @@ export default function FAQ() {
                                     </span>
                                 </div>
                                 <svg
-                                    className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-500 transform transition-transform duration-300 flex-shrink-0 ml-2 ${
+                                    className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-500 transform transition-transform duration-200 flex-shrink-0 ml-2 ${
                                         openQuestion === item.id ? "rotate-180" : ""
                                     }`}
                                     fill="none"
@@ -222,12 +222,11 @@ export default function FAQ() {
                                 </svg>
                             </button>
                             <div
-                                className={`px-3 sm:px-6 transition-all duration-500 ease-in-out overflow-hidden border-t border-gray-100 ${
+                                className={`px-3 sm:px-6 transition-all duration-200 ease-out overflow-hidden border-t border-gray-100 ${
                                     openQuestion === item.id
                                         ? "max-h-96 opacity-100"
                                         : "max-h-0 opacity-0 border-t-0"
                                 }`}
-                                style={{ minHeight: openQuestion === item.id ? "auto" : "0" }}
                             >
                                 <p className="text-sm sm:text-base text-gray-600 py-3 sm:py-4">
                                     {item.answer}
