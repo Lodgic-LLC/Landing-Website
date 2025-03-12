@@ -89,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className="overflow-x-hidden">
+    <html lang="fr" className="overflow-x-hidden overscroll-none">
       <head>
         {/* Scripts Iubenda pour la gestion des cookies */}
         <Script id="iubenda-config" strategy="beforeInteractive">
@@ -117,11 +117,13 @@ export default function RootLayout({
         {/* Google Ads */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16908078298" strategy="afterInteractive" />
       </head>
-      <body className={`${inter.variable} bg-white min-h-screen overflow-x-hidden antialiased`}>
-        <AOSInitializer />
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={`${inter.variable} bg-white min-h-screen overflow-x-hidden overscroll-none antialiased`}>
+        <div className="relative w-full overflow-hidden">
+          <AOSInitializer />
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   )

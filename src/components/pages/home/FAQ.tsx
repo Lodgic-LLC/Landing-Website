@@ -104,7 +104,7 @@ export default function FAQ() {
     ];
 
     return (
-        <section className="relative py-24 bg-white overflow-hidden">
+        <section className="relative py-16 sm:py-20 md:py-24 bg-white overflow-hidden">
             {/* Vague en haut pour transition */}
             <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
                 <svg
@@ -167,39 +167,45 @@ export default function FAQ() {
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                <div className="text-center mb-10 sm:mb-16">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
                         Questions{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                             fréquentes
                         </span>
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8">
                         Vous avez des questions ? Nous avons les réponses. Voici les questions les plus fréquemment posées par nos clients.
                     </p>
-                    <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
+                    <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
                 </div>
 
                 <div className="max-w-3xl mx-auto">
                     {faqItems.map((item) => (
                         <div
                             key={item.id}
-                            className="mb-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+                            className="mb-4 sm:mb-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
                         >
                             <button
-                                className="flex justify-between items-center w-full px-6 py-5 text-left focus:outline-none cursor-pointer"
+                                className="flex justify-between items-center w-full px-3 sm:px-6 py-3 sm:py-5 text-left focus:outline-none cursor-pointer"
                                 onClick={() => toggleQuestion(item.id)}
                             >
                                 <div className="flex items-center">
-                                    <div className="mr-4 p-2 rounded-lg bg-blue-50">
-                                        {item.icon}
+                                    <div className="mr-2 sm:mr-4 p-1.5 sm:p-2 rounded-lg bg-blue-50">
+                                        <svg
+                                            className="w-4 h-4 sm:w-5 sm:h-5 text-[#2563EB]"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            {item.icon.props.children}
+                                        </svg>
                                     </div>
-                                    <span className="font-medium text-lg text-gray-900">
+                                    <span className="font-medium text-sm sm:text-base md:text-lg text-gray-900">
                                         {item.question}
                                     </span>
                                 </div>
                                 <svg
-                                    className={`w-5 h-5 text-gray-500 transform transition-transform duration-300 ${
+                                    className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-500 transform transition-transform duration-300 flex-shrink-0 ml-2 ${
                                         openQuestion === item.id ? "rotate-180" : ""
                                     }`}
                                     fill="none"
@@ -216,14 +222,14 @@ export default function FAQ() {
                                 </svg>
                             </button>
                             <div
-                                className={`px-6 transition-all duration-500 ease-in-out overflow-hidden border-t border-gray-100 ${
+                                className={`px-3 sm:px-6 transition-all duration-500 ease-in-out overflow-hidden border-t border-gray-100 ${
                                     openQuestion === item.id
                                         ? "max-h-96 opacity-100"
                                         : "max-h-0 opacity-0 border-t-0"
                                 }`}
                                 style={{ minHeight: openQuestion === item.id ? "auto" : "0" }}
                             >
-                                <p className="text-gray-600 py-4">
+                                <p className="text-sm sm:text-base text-gray-600 py-3 sm:py-4">
                                     {item.answer}
                                 </p>
                             </div>
@@ -231,17 +237,17 @@ export default function FAQ() {
                     ))}
                 </div>
 
-                <div className="text-center mt-16">
-                    <p className="text-gray-600 mb-6">
+                <div className="text-center mt-10 sm:mt-16">
+                    <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
                         Vous avez d'autres questions ? N'hésitez pas à nous contacter.
                     </p>
                     <a
                         href="/contact"
-                        className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-1 duration-300"
+                        className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-1 duration-300"
                     >
                         Contactez-nous
                         <svg
-                            className="w-5 h-5 ml-2"
+                            className="w-4 h-4 sm:w-5 sm:h-5 ml-1.5 sm:ml-2"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
