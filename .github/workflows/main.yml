@@ -46,8 +46,6 @@ jobs:
             cd ${{ secrets.DEPLOY_PATH }}
             # Installer toutes les dépendances, pas seulement les dépendances de production
             npm install
-            # Installer spécifiquement @tailwindcss/postcss
-            npm install --save-dev @tailwindcss/postcss
             npm run build
             pm2 restart "lodgic-dev" || pm2 start npm --name "lodgic-dev" -- start
           EOF
