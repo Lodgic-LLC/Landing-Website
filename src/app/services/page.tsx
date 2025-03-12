@@ -1,10 +1,31 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { FaMobile, FaCode, FaPlug, FaTools, FaChevronRight } from 'react-icons/fa'
+
 export const metadata: Metadata = {
   title: 'Lodgic - Services',
   description: 'Découvrez nos services et comment nous pouvons vous aider à atteindre vos objectifs numériques',
+  openGraph: {
+    title: 'Lodgic - Services',
+    description: 'Découvrez nos services et comment nous pouvons vous aider à atteindre vos objectifs numériques',
+    url: 'https://lodgic-dev.com/services',
+    siteName: 'Lodgic',
+    images: [
+      {
+        url: 'https://lodgic-dev.com/FullLogo_Transparent_NoBuffer.png',
+        width: 1200,
+        height: 630,
+        alt: 'Lodgic Services',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'website',
+  },
 }
+
+// This is the App Router equivalent of getStaticProps
+// It makes this page statically generated at build time for better SEO
+export const revalidate = 3600 // Revalidate this page every hour
 
 export default function Services() {
   const mainServices = [
@@ -12,10 +33,9 @@ export default function Services() {
       id: 1,
       icon: <FaMobile className="h-8 w-8 text-blue-600" />,
       title: "Création d'applications IOS et Android",
-      description:
-        'Nous concevons des applications pour IOS et Android adaptées à vos besoins.',
+      description: 'Nous concevons des applications pour IOS et Android adaptées à vos besoins.',
       color: 'from-blue-200 to-indigo-300',
-      delay: 100, 
+      delay: 100,
       features: [
         'Applications pour iPhone (iOS) et Android',
         'Intégration de services externes (paiement, réservation, etc.) et ajout de vos fonctionnalités',
@@ -26,14 +46,12 @@ export default function Services() {
       id: 2,
       icon: <FaCode className="h-8 w-8 text-blue-600" />,
       title: 'Création de sites web interactifs',
-      description:
-        "Nous développons des sites web qui s'adaptent à tous les écrans (ordinateur, tablette, téléphone).",
+      description: "Nous développons des sites web qui s'adaptent à tous les écrans (ordinateur, tablette, téléphone).",
       color: 'from-purple-200 to-pink-300',
       delay: 200,
       features: [
         'Optimisé pour le référencement naturel (SEO) sur Google',
         'Intégration de services externes (paiement, réservation, etc.) et ajout de vos fonctionnalités',
-      
       ],
     },
     {
@@ -48,14 +66,14 @@ export default function Services() {
         'Connexion entre vos différents logiciels',
         'Intégration avec des services externes (paiement, réservation, etc.)',
         "Automatisation de l'échange d'informations",
-            ],
+      ],
     },
     {
       id: 4,
       icon: <FaTools className="h-8 w-8 text-blue-600" />,
       title: 'Assistance et amélioration continue',
       description:
-        'Aprés la réalisation de votre applicaiton, nous vous accompagnons dans l\'amélioration de votre application.',
+        "Aprés la réalisation de votre applicaiton, nous vous accompagnons dans l'amélioration de votre application.",
       color: 'from-yellow-200 to-amber-300',
       delay: 400,
       features: [
@@ -121,7 +139,7 @@ export default function Services() {
               <circle cx="950" cy="200" r="2" fill="white" />
               <circle cx="1150" cy="350" r="2" fill="white" />
               <circle cx="1350" cy="250" r="2" fill="white" />
-              
+
               <circle cx="250" cy="350" r="2" fill="white" />
               <circle cx="450" cy="450" r="2" fill="white" />
               <circle cx="650" cy="350" r="2" fill="white" />
@@ -198,7 +216,12 @@ export default function Services() {
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
                 </svg>
               </Link>
             </div>
@@ -1033,7 +1056,8 @@ export default function Services() {
                 Stratégie / Conseils
               </h3>
               <p className="text-gray-600 text-center text-sm">
-                Nous développons une stratégie adaptée à votre projet. De la définition du projet à la mise en place de la solution.
+                Nous développons une stratégie adaptée à votre projet. De la définition du projet à la mise en place de
+                la solution.
               </p>
             </div>
 

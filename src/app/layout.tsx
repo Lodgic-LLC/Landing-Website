@@ -156,7 +156,7 @@ export const metadata: Metadata = {
     title: "Lodgic - Conception d'applications web et mobiles",
     description:
       'Agence de développement web spécialisée dans la création de site, applications web et mobiles modernes, réactifs et performants.',
-    images: '/FullLogo_Transparent.png',
+    images: '/FullLogo_Transparent_NoBuffer.png',
     type: 'website',
     locale: 'fr_FR',
     url: 'https://lodgic-dev.com',

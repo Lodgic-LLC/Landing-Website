@@ -7,7 +7,12 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
       },
+      {
+        userAgent: 'Googlebot',
+        allow: '/',
+      },
     ],
     sitemap: 'https://lodgic-dev.com/sitemap.xml',
+    host: 'https://lodgic-dev.com',
   }
 }

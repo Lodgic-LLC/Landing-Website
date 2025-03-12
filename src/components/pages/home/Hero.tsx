@@ -1,9 +1,8 @@
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
-    
     <section className="w-full bg-gradient-to-br from-blue-600 to-indigo-700 pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden relative">
       {/* Formes SVG en arrière-plan */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -16,31 +15,13 @@ export default function Hero() {
           preserveAspectRatio="xMidYMid slice"
         >
           {/* Grand cercle central */}
-          <circle
-            cx="720"
-            cy="400"
-            r="400"
-            fill="url(#gradient1)"
-            fillOpacity="0.2"
-          />
+          <circle cx="720" cy="400" r="400" fill="url(#gradient1)" fillOpacity="0.2" />
 
           {/* Cercle supérieur droit */}
-          <circle
-            cx="1100"
-            cy="150"
-            r="200"
-            fill="url(#gradient2)"
-            fillOpacity="0.15"
-          />
+          <circle cx="1100" cy="150" r="200" fill="url(#gradient2)" fillOpacity="0.15" />
 
           {/* Cercle inférieur gauche */}
-          <circle
-            cx="300"
-            cy="650"
-            r="250"
-            fill="url(#gradient3)"
-            fillOpacity="0.15"
-          />
+          <circle cx="300" cy="650" r="250" fill="url(#gradient3)" fillOpacity="0.15" />
 
           {/* Forme abstraite 1 */}
           <path
@@ -114,17 +95,16 @@ export default function Hero() {
             Développement d'
             <span className="bg-gradient-to-r from-blue-300 to-blue-100 text-transparent bg-clip-text font-extrabold">
               applications web
-            </span>{" "}
-            et{" "}
+            </span>{' '}
+            et{' '}
             <span className="bg-gradient-to-r from-blue-300 to-blue-100 text-transparent bg-clip-text font-extrabold">
               mobile
-            </span>{" "}
+            </span>{' '}
             sur mesure
           </h1>
 
           <p className="font-inter-regular text-white text-opacity-90 mb-10 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
-            Expertise technique, design innovant et accompagnement personnalisé
-            pour concrétiser vos projets digitaux.
+            Expertise technique, design innovant et accompagnement personnalisé pour concrétiser vos projets digitaux.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -160,12 +140,7 @@ export default function Hero() {
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </Link>
           </div>
@@ -176,10 +151,7 @@ export default function Hero() {
       </div>
 
       {/* Forme SVG en bas pour transition */}
-      <div
-        className="absolute bottom-0 left-0 w-full overflow-hidden"
-        style={{ height: "80px" }}
-      >
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
         <svg
           className="absolute bottom-0 w-full h-full"
           viewBox="0 0 1440 80"
@@ -187,12 +159,9 @@ export default function Hero() {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
         >
-          <path
-            d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,80 L0,80 Z"
-            fill="white"
-          />
+          <path d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,80 L0,80 Z" fill="white" />
         </svg>
       </div>
     </section>
-  );
+  )
 }
