@@ -9,7 +9,7 @@ export default function Features() {
         "Ensemble, on définit l'utilisation de votre application, on établit un cahier des charges pour cadrer son développement.",
       icon: (
         <svg
-          className="w-6 h-6 text-white"
+          className="w-5 h-5 sm:w-6 sm:h-6 text-white"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +91,7 @@ export default function Features() {
       id: 4,
       title: "Lancement & Évolution",
       description:
-        "Votre application est prête ! On la met en ligne et reste à vos côtés pour l’optimiser selon les retours et vos idées.",
+        "Votre application est prête ! On la met en ligne et reste à vos côtés pour l'optimiser selon les retours et vos idées.",
       icon: (
         <svg
           className="w-6 h-6 text-white"
@@ -130,7 +130,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="w-full bg-white py-24 relative overflow-hidden">
+    <section className="w-full bg-white py-12 sm:py-16 md:py-24 relative overflow-hidden">
       {/* Vague en haut pour transition */}
       <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
         <svg
@@ -192,30 +192,49 @@ export default function Features() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-gray-900 mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-inter-bold text-gray-900 mb-4 sm:mb-6">
             Nous vous{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
               accompagnons
             </span>{" "}
             à chaque étape de la réalisation de votre application
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             De la conception à la livraison, nous vous accompagnons à chaque étape pour concrétiser votre application.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mt-8"></div>
+          <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mt-4 sm:mt-8"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.id}
-              className={`${feature.bgColor} rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full group`}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
+              className={`${feature.bgColor} rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col h-full group`}
             >
-              <div className="p-6 flex-grow">
+              {/* Mobile layout (horizontal) */}
+              <div className="block sm:hidden">
+                <div className="p-3 flex items-center">
+                  <div
+                    className={`w-10 h-10 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-md transform group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}
+                  >
+                    {feature.icon}
+                  </div>
+                  <div className="flex-grow px-3">
+                    <h3 className="text-base font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {feature.title}
+                    </h3>
+                    <p className="text-xs text-gray-700 mt-1 line-clamp-2">{feature.description}</p>
+                  </div>
+                  <div className="w-6 h-6 bg-white text-gray-800 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border border-gray-100 flex-shrink-0">
+                    {feature.id}
+                  </div>
+                </div>
+              </div>
+
+              {/* Tablet/Desktop layout (vertical) */}
+              <div className="hidden sm:block p-6 flex-grow">
                 <div className="flex items-center justify-between mb-6">
                   <div
                     className={`w-12 h-12 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-md transform group-hover:scale-110 transition-transform duration-300`}
@@ -229,8 +248,9 @@ export default function Features() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-gray-700">{feature.description}</p>
+                <p className="text-base text-gray-700">{feature.description}</p>
               </div>
+              
               <div
                 className={`h-1 w-full bg-gradient-to-r ${feature.color}`}
               ></div>
