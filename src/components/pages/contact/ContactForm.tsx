@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { FaEnvelope } from 'react-icons/fa'
 
 interface SubmitStatusType {
@@ -24,6 +25,7 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<SubmitStatusType | null>(null)
   const [formErrors, setFormErrors] = useState<FormErrorsType>({})
+  const router = useRouter()
 
   const validateEmail = (email: string): boolean => {
     // Regex pour validation d'email
@@ -89,10 +91,11 @@ export default function ContactForm() {
 
       // Ajouter les champs cachés pour FormSubmit
       formDataObj.append('_subject', `Nouveau message: ${formData.subject}`)
+      formDataObj.append('_next', 'https://lodgic-dev.com/merci')
       formDataObj.append('_captcha', 'false')
 
       // Envoyer les données à FormSubmit
-      const response = await fetch('https://formsubmit.co/c1f6460b84bc25bfcdc7f63d038c2dfd', {
+      const response = await fetch('https://formsubmit.co/ajax/c1f6460b84bc25bfcdc7f63d038c2dfd', {
         method: 'POST',
         body: formDataObj,
         headers: {
@@ -100,22 +103,8 @@ export default function ContactForm() {
         },
       })
 
-      const result = await response.json()
-
       if (response.ok) {
-        setSubmitStatus({
-          success: true,
-          message: 'Votre message a été envoyé avec succès !',
-        })
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-        })
-      } else {
-        throw new Error(result.message || "Erreur lors de l'envoi du formulaire")
+        router.push('/merci')
       }
     } catch (error) {
       console.error('Erreur:', error)
