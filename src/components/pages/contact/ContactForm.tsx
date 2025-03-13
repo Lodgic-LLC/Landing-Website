@@ -92,7 +92,7 @@ export default function ContactForm() {
       formDataObj.append('_captcha', 'false')
 
       // Envoyer les données à FormSubmit
-      const response = await fetch('https://formsubmit.co/ajax/lodgicdev@gmail.com', {
+      const response = await fetch('https://formsubmit.co/c1f6460b84bc25bfcdc7f63d038c2dfd', {
         method: 'POST',
         body: formDataObj,
         headers: {
