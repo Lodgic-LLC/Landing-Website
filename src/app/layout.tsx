@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
-import AOSInitializer from '@/components/layout/AOSInitializer'
 import Script from 'next/script'
 
 const inter = Inter({
@@ -15,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://lodgic-dev.com'),
   title: {
-    default: "Lodgic - Conception d'applications web et mobiles",
+    default: 'Développeurs applications mobiles Toulouse - Lodgic',
     template: '%s | Lodgic',
   },
   keywords: [
@@ -222,7 +221,6 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} bg-white min-h-screen overflow-x-hidden overscroll-none antialiased`}>
         <div className="relative w-full overflow-hidden">
-          <AOSInitializer />
           <Navbar />
           {children}
           <Footer />
