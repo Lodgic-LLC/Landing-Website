@@ -8,7 +8,7 @@ import { Metadata } from 'next'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: "Agence de développement d'applications mobiles - Lodgic",
+  title: "Développeurs Application Mobile Toulouse - Lodgic",
   description:
     'Lodgic est une agence de développement web et mobile spécialisée dans la création de sites et applications mobiles modernes, réactifs et performants.',
   alternates: {
