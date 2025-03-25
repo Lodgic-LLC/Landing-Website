@@ -229,7 +229,7 @@ export default function SuccessStories() {
             >
               <div className="relative h-48 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-indigo-600/20 z-10"></div>
-                
+
                 {caseItem.id === 3 ? (
                   // Affichage spécial pour HouseGuard avec 3 téléphones
                   <div className="flex justify-center items-center w-full h-full p-2">
@@ -237,31 +237,31 @@ export default function SuccessStories() {
                       {/* Premier téléphone (légèrement incliné vers la gauche) */}
                       <div className="relative transform -rotate-6 z-10">
                         <div className="w-24 h-44 bg-transparent rounded-xl overflow-hidden ">
-                          <img 
-                            src="/images/house-proprietaire.png" 
-                            alt="HouseGuard - Vue propriétaire" 
+                          <img
+                            src="/images/house-proprietaire.png"
+                            alt="HouseGuard - Vue propriétaire"
                             className="w-full h-full object-cover"
                           />
                         </div>
                       </div>
-                      
+
                       {/* Téléphone central (plus grand et au premier plan) */}
                       <div className="relative transform z-20 scale-110">
                         <div className="w-24 h-44 bg-transparent rounded-xl overflow-hidden  shadow-lg">
-                          <img 
-                            src="/images/house-locataire.png" 
-                            alt="HouseGuard - Vue locataire" 
+                          <img
+                            src="/images/house-locataire.png"
+                            alt="HouseGuard - Vue locataire"
                             className="w-full h-full object-cover"
                           />
                         </div>
                       </div>
-                      
+
                       {/* Troisième téléphone (légèrement incliné vers la droite) */}
                       <div className="relative transform rotate-6 z-10">
                         <div className="w-24 h-44 bg-transparent rounded-xl overflow-hidden ">
-                          <img 
-                            src="/images/house-biens.png" 
-                            alt="HouseGuard - Dashboard" 
+                          <img
+                            src="/images/house-biens.png"
+                            alt="HouseGuard - Dashboard"
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -318,21 +318,21 @@ export default function SuccessStories() {
 
         <div className="text-center mt-16">
           <Link
-            href="/projets"
+            href="/rendez-vous"
             className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-1 duration-300"
           >
-            <svg 
-              className="w-4 h-4 mr-2" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24" 
+            <svg
+              className="w-4 h-4 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth="2" 
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
               />
             </svg>
             Prendre rendez-vous

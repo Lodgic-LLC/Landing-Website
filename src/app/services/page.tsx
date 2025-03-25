@@ -3,11 +3,13 @@ import Link from 'next/link'
 import { FaMobile, FaCode, FaPlug, FaTools, FaChevronRight } from 'react-icons/fa'
 
 export const metadata: Metadata = {
-  title: 'Lodgic - Services',
-  description: 'Découvrez nos services et comment nous pouvons vous aider à atteindre vos objectifs numériques',
+  title: 'Lodgic - Services de Développement Mobile',
+  description:
+    'Découvrez nos services de développement mobile natif iOS et Android pour créer des applications performantes et innovantes',
   openGraph: {
-    title: 'Lodgic - Services',
-    description: 'Découvrez nos services et comment nous pouvons vous aider à atteindre vos objectifs numériques',
+    title: 'Lodgic - Services de Développement Mobile',
+    description:
+      'Découvrez nos services de développement mobile natif iOS et Android pour créer des applications performantes et innovantes',
     url: 'https://lodgic-dev.com/services',
     siteName: 'Lodgic',
     images: [
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
         url: 'https://lodgic-dev.com/FullLogo_Transparent_NoBuffer.png',
         width: 1200,
         height: 630,
-        alt: 'Lodgic Services',
+        alt: 'Lodgic Services Mobile',
       },
     ],
     locale: 'fr_FR',
@@ -32,54 +34,58 @@ export default function Services() {
     {
       id: 1,
       icon: <FaMobile className="h-8 w-8 text-blue-600" />,
-      title: "Création d'applications IOS et Android",
-      description: 'Nous concevons des applications pour IOS et Android adaptées à vos besoins.',
+      title: 'Applications iOS natives',
+      description: 'Nous développons des applications iOS natives en Swift, optimisées pour iPhone et iPad.',
       color: 'from-blue-200 to-indigo-300',
       delay: 100,
       features: [
-        'Applications pour iPhone (iOS) et Android',
-        'Intégration de services externes (paiement, réservation, etc.) et ajout de vos fonctionnalités',
-        "Publication sur l'App Store et Google Play",
+        'Développement natif en Swift pour des performances optimales',
+        'Design suivant les guidelines Apple (Human Interface)',
+        'Publication et optimisation App Store',
+        'Support des dernières fonctionnalités iOS',
       ],
     },
     {
       id: 2,
       icon: <FaCode className="h-8 w-8 text-blue-600" />,
-      title: 'Création de sites web interactifs',
-      description: "Nous développons des sites web qui s'adaptent à tous les écrans (ordinateur, tablette, téléphone).",
+      title: 'Applications Android natives',
+      description:
+        'Nous créons des applications Android natives en Kotlin, optimisées pour tous les appareils Android.',
       color: 'from-purple-200 to-pink-300',
       delay: 200,
       features: [
-        'Optimisé pour le référencement naturel (SEO) sur Google',
-        'Intégration de services externes (paiement, réservation, etc.) et ajout de vos fonctionnalités',
+        'Développement natif en Kotlin pour des performances maximales',
+        'Design Material You et guidelines Android',
+        'Publication et optimisation Google Play',
+        'Support des dernières fonctionnalités Android',
       ],
     },
     {
       id: 3,
       icon: <FaPlug className="h-8 w-8 text-blue-600" />,
-      title: 'Connexion de vos outils et services numériques',
-      description:
-        "Nous relions vos différents logiciels et services pour qu'ils communiquent entre eux, automatisation de l'échange d'informations.",
+      title: 'Intégrations & APIs mobiles',
+      description: 'Nous intégrons des services tiers et développons des APIs dédiées pour vos applications mobiles.',
       color: 'from-green-200 to-teal-300',
       delay: 300,
       features: [
-        'Connexion entre vos différents logiciels',
-        'Intégration avec des services externes (paiement, réservation, etc.)',
-        "Automatisation de l'échange d'informations",
+        'Authentification sécurisée et gestion des utilisateurs',
+        'Paiements in-app et abonnements',
+        'Synchronisation temps réel et mode hors-ligne',
+        'APIs REST et GraphQL optimisées mobile',
       ],
     },
     {
       id: 4,
       icon: <FaTools className="h-8 w-8 text-blue-600" />,
-      title: 'Assistance et amélioration continue',
-      description:
-        "Aprés la réalisation de votre applicaiton, nous vous accompagnons dans l'amélioration de votre application.",
+      title: 'Maintenance & Évolution',
+      description: "Nous assurons le suivi, la maintenance et l'évolution de vos applications mobiles dans le temps.",
       color: 'from-yellow-200 to-amber-300',
       delay: 400,
       features: [
-        'Protection contre les risques de sécurité',
-        'Assistance en cas de problème',
-        'Sauvegarde régulière de vos données',
+        'Mises à jour régulières et correctifs',
+        'Monitoring des performances et crash reporting',
+        'Support technique réactif',
+        'Évolutions et nouvelles fonctionnalités',
       ],
     },
   ]
@@ -177,11 +183,11 @@ export default function Services() {
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-white mb-4 md:mb-6 leading-tight">
-              Des outils numériques <span className="text-blue-200">sur mesure</span> pour votre entreprise
+              Applications Mobiles <span className="text-blue-200">Natives</span> iOS & Android
             </h1>
             <p className="font-inter-regular text-white text-opacity-90 mb-6 md:mb-8 text-base md:text-lg lg:text-xl leading-relaxed">
-              Nous créons des applications mobiles et des sites web adaptés à vos besoins avec un accompagnement
-              personnalisé à chaque étape de votre projet.
+              Nous développons des applications mobiles natives performantes et innovantes, parfaitement adaptées aux
+              besoins de votre entreprise et de vos utilisateurs.
             </p>
             <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-8 md:mt-10">
               <Link
@@ -290,10 +296,10 @@ export default function Services() {
                   {service.id === 1 && (
                     <>
                       <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        React Native
+                        Swift
                       </span>
                       <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        JavaScript
+                        SwiftUI
                       </span>
                       <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">Expo</span>
                     </>
@@ -301,17 +307,15 @@ export default function Services() {
                   {service.id === 2 && (
                     <>
                       <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        React.js
+                        Kotlin
                       </span>
                       <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Next.js
+                        Android SDK
                       </span>
                       <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Tailwind CSS
+                        Jetpack Compose
                       </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        JavaScript
-                      </span>
+                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">Room</span>
                     </>
                   )}
                   {service.id === 3 && (

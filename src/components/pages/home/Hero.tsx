@@ -94,17 +94,14 @@ export default function Hero() {
           <h1 className="font-inter-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
             Développement d'
             <span className="bg-gradient-to-r from-blue-300 to-blue-100 text-transparent bg-clip-text font-extrabold">
-              applications web
-            </span>{' '}
-            et{' '}
-            <span className="bg-gradient-to-r from-blue-300 to-blue-100 text-transparent bg-clip-text font-extrabold">
-              mobile
+              applications mobiles
             </span>{' '}
             sur mesure
           </h1>
 
           <p className="font-inter-regular text-white text-opacity-90 mb-10 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
-            Expertise technique, design innovant et accompagnement personnalisé pour concrétiser vos projets digitaux.
+            Expertise technique, design innovant et accompagnement personnalisé pour concrétiser vos projets
+            d'applications mobiles.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
