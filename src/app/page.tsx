@@ -1,23 +1,24 @@
+import React from 'react'
+import type { Metadata } from 'next'
+import Script from 'next/script'
 import FAQ from '@/components/pages/home/FAQ'
 import Features from '@/components/pages/home/Features'
 import Hero from '@/components/pages/home/Hero'
 import Process from '@/components/pages/home/Process'
 import ProjectCTA from '@/components/pages/home/ProjectCTA'
 import SuccessStories from '@/components/pages/home/SuccessStories'
-import { Metadata } from 'next'
-import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: "Développeurs Application Mobile Toulouse - Lodgic",
+  title: 'Application mobile sur mesure- Lodgic',
   description:
-    'Lodgic est une agence de développement web et mobile spécialisée dans la création de sites et applications mobiles modernes, réactifs et performants.',
+    'Lodgic est une agence spécialisée dans la création de solutions numériques modernes et performantes adaptées à vos besoins.',
   alternates: {
     canonical: 'https://lodgic-dev.com',
   },
   openGraph: {
-    title: "Agence de développement d'applications mobiles - Lodgic",
+    title: 'Développeurs Application Mobile Toulouse - Lodgic',
     description:
-      'Lodgic est une agence de développement web et mobile spécialisée dans la création de sites et applications mobiles modernes, réactifs et performants.',
+      'Lodgic est une agence spécialisée dans la création de solutions numériques modernes et performantes adaptées à vos besoins.',
     url: 'https://lodgic-dev.com',
     siteName: 'Lodgic',
     images: [
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
         url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
-        alt: 'Lodgic - Agence de développement web et mobile',
+        alt: 'Lodgic - Développeurs Application Mobile Toulouse',
       },
     ],
     locale: 'fr_FR',
@@ -44,7 +45,7 @@ export default function Home() {
             "name": "Lodgic",
             "url": "https://lodgic-dev.com",
             "logo": "https://lodgic-dev.com/FullLogo_Transparent.png",
-            "description": "Agence de développement web et mobile spécialisée dans la création de sites et applications mobiles modernes, réactifs et performants.",
+            "description": "Agence spécialisée dans la création de solutions numériques modernes et performantes adaptées à vos besoins.",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Toulouse",

@@ -30,7 +30,7 @@ export default function FAQ() {
   const faqItems = [
     {
       id: 1,
-      question: "Quel est le coût d'un projet ?",
+      question: "Quel est le coût d'une application mobile ?",
       answer:
         'Le coût dépend entièrement des fonctionnalités requises et de la complexité du projet. Nous proposons un devis détaillé et gratuit après une première consultation pour comprendre vos besoins spécifiques.',
       icon: (
@@ -45,7 +45,7 @@ export default function FAQ() {
     },
     {
       id: 2,
-      question: 'Quel est le délai moyen de développement ?',
+      question: "Quel est le délai moyen de développement d'une application mobile ?",
       answer:
         "Entre 2 à 12 semaines selon la complexité du projet. Les applications simples peuvent être livrées en quelques semaines, tandis que les projets plus complexes avec des intégrations multiples peuvent prendre jusqu'à 3 mois.",
       icon: (
@@ -60,9 +60,9 @@ export default function FAQ() {
     },
     {
       id: 3,
-      question: 'Proposez-vous un support après la livraison du projet ?',
+      question: 'Proposez-vous un support après la publication sur les stores ?',
       answer:
-        "Absolument. Nous offrons différentes formules de maintenance et de support technique après la mise en production. Cela inclut les corrections de bugs, l'ajout de nouvelles fonctionnalités, les mises à jour de sécurité et l'assistance technique selon vos besoins.",
+        "Absolument. Nous offrons différentes formules de maintenance et de support technique après la publication sur l'App Store et le Play Store. Cela inclut les corrections de bugs, l'ajout de nouvelles fonctionnalités, les mises à jour de sécurité et l'assistance technique selon vos besoins.",
       icon: (
         <svg className="w-5 h-5 text-[#2563EB]" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -75,9 +75,9 @@ export default function FAQ() {
     },
     {
       id: 4,
-      question: 'Quelles technologies utilisez-vous pour le développement ?',
+      question: 'Quelles technologies utilisez-vous pour le développement mobile ?',
       answer:
-        'Nous utilisons principalement React.js, Next.js et TailwindCSS pour le front-end, et Node.js ou Python pour le back-end. Nous adaptons notre stack technologique en fonction des besoins spécifiques de chaque projet pour garantir les meilleures performances.',
+        'Nous développons des applications mobiles natives avec Swift pour iOS et Kotlin pour Android, garantissant ainsi les meilleures performances et une expérience utilisateur optimale sur chaque plateforme.',
       icon: (
         <svg className="w-5 h-5 text-[#2563EB]" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -92,7 +92,7 @@ export default function FAQ() {
       id: 5,
       question: "Je ne suis pas sur d'avoir le budget",
       answer:
-        "Vous n'avez rien à perdre à prendre contact avec nous. Nous pouvons discuter de votre projet et de vos besoins pour trouver une solution adaptée à votre budget.",
+        "Vous n'avez rien à perdre à prendre contact avec nous. Nous pouvons discuter de votre projet mobile et de vos besoins pour trouver une solution adaptée à votre budget.",
       icon: (
         <svg className="w-5 h-5 text-[#2563EB]" fill="currentColor" viewBox="0 0 20 20">
           <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
