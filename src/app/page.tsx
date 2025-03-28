@@ -9,7 +9,7 @@ import ProjectCTA from '@/components/pages/home/ProjectCTA'
 import SuccessStories from '@/components/pages/home/SuccessStories'
 
 export const metadata: Metadata = {
-  title: 'Application mobile sur mesure- Lodgic',
+  title: 'Application mobile sur mesure - Lodgic',
   description:
     'Lodgic est une agence spécialisée dans la création de solutions numériques modernes et performantes adaptées à vos besoins.',
   alternates: {

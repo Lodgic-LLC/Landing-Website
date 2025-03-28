@@ -1,13 +1,10 @@
 'use client'
 
-import { InlineWidget } from 'react-calendly'
-import CalendlyConversionTracker from '@/components/layout/CalendlyConversionTracker'
+import BookingWidget from './BookingWidget'
 
 export default function RendezVousContent() {
   return (
     <>
-      <CalendlyConversionTracker value={1.0} currency="EUR" />
-
       <div className="bg-gradient-to-b from-blue-50 to-white pt-10">
         {/* Hero Section */}
         <div className="container mx-auto px-4 pt-16 md:py-24">
@@ -112,13 +109,10 @@ export default function RendezVousContent() {
                   </div>
                 </div>
 
-                {/* Right Calendly Widget */}
-                <div className="md:col-span-3 p-4 md:p-0">
-                  <div className="h-[650px] md:h-[700px]">
-                    <InlineWidget
-                      url="https://calendly.com/d/crq8-54j-ff7"
-                      styles={{ height: '100%', width: '100%' }}
-                    />
+                {/* Right Booking Widget */}
+                <div className="md:col-span-3 h-full">
+                  <div className="h-[750px] md:h-[800px] w-full">
+                    <BookingWidget />
                   </div>
                 </div>
               </div>
