@@ -10,7 +10,7 @@ export default function MerciPage() {
     // Envoyer l'événement de conversion Google Ads
     if (typeof window.gtag !== 'undefined') {
       window.gtag('event', 'conversion', {
-        send_to: 'AW-16908078298/6Jq7CLHx-qUaENqZs_4-',
+        send_to: 'AW-16908078298/ads_conversion_Contact_Chargement_de_p_1',
         value: 1.0,
         currency: 'EUR',
       })
