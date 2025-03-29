@@ -8,13 +8,11 @@ export default function MerciPage() {
 
   useEffect(() => {
     // Envoyer l'événement de conversion Google Ads
-    if (typeof window.gtag !== 'undefined') {
-      window.gtag('event', 'conversion', {
-        send_to: 'AW-16908078298/ads_conversion_Contact_Chargement_de_p_1',
-        value: 1.0,
-        currency: 'EUR',
-      })
-    }
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-16908078298/ads_conversion_Contact_Chargement_de_p_1',
+      value: 1.0,
+      currency: 'EUR',
+    })
 
     // Redirection automatique après 5 secondes
     const timer = setTimeout(() => {
