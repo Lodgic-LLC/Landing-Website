@@ -11,14 +11,14 @@ import SuccessStories from '@/components/pages/home/SuccessStories'
 export const metadata: Metadata = {
   title: 'Application mobile sur mesure - Lodgic',
   description:
-    'Lodgic est une agence spécialisée dans la création de solutions numériques modernes et performantes adaptées à vos besoins.',
+    "Lodgic est une agence spécialisée dans la création d'applications mobiles modernes et performantes adaptées à vos besoins.",
   alternates: {
     canonical: 'https://lodgic-dev.com',
   },
   openGraph: {
-    title: 'Développeurs Application Mobile Toulouse - Lodgic',
+    title: 'Développeurs Application Mobile - Lodgic',
     description:
-      'Lodgic est une agence spécialisée dans la création de solutions numériques modernes et performantes adaptées à vos besoins.',
+      "Lodgic est une agence spécialisée dans la création d'applications mobiles modernes et performantes adaptées à vos besoins.",
     url: 'https://lodgic-dev.com',
     siteName: 'Lodgic',
     images: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
-        alt: 'Lodgic - Développeurs Application Mobile Toulouse',
+        alt: 'Lodgic - Développeurs Application Mobile',
       },
     ],
     locale: 'fr_FR',
@@ -45,7 +45,7 @@ export default function Home() {
             "name": "Lodgic",
             "url": "https://lodgic-dev.com",
             "logo": "https://lodgic-dev.com/FullLogo_Transparent.png",
-            "description": "Agence spécialisée dans la création de solutions numériques modernes et performantes adaptées à vos besoins.",
+            "description": "Agence spécialisée dans la création d'applications mobiles modernes et performantes adaptées à vos besoins.",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Toulouse",
@@ -64,8 +64,8 @@ export default function Home() {
         <Hero />
         <Features />
         <Process />
-        <ProjectCTA />
         <SuccessStories />
+        <ProjectCTA />
         <FAQ />
       </div>
     </>

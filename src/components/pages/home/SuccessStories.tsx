@@ -224,8 +224,6 @@ export default function SuccessStories() {
             <div
               key={caseItem.id}
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
             >
               <div className="relative h-48 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-indigo-600/20 z-10"></div>
@@ -233,36 +231,39 @@ export default function SuccessStories() {
                 {caseItem.id === 3 ? (
                   // Affichage spécial pour HouseGuard avec 3 téléphones
                   <div className="flex justify-center items-center w-full h-full p-2">
-                    <div className="flex space-x-[-15px] transform scale-90">
+                    <div className="flex space-x-[-15px] transform scale-75 sm:scale-90">
                       {/* Premier téléphone (légèrement incliné vers la gauche) */}
                       <div className="relative transform -rotate-6 z-10">
-                        <div className="w-24 h-44 bg-transparent rounded-xl overflow-hidden ">
+                        <div className="w-20 sm:w-24 h-40 sm:h-44 bg-transparent rounded-xl overflow-hidden">
                           <img
                             src="/images/house-proprietaire.png"
                             alt="HouseGuard - Vue propriétaire"
                             className="w-full h-full object-cover"
+                            loading="lazy"
                           />
                         </div>
                       </div>
 
                       {/* Téléphone central (plus grand et au premier plan) */}
                       <div className="relative transform z-20 scale-110">
-                        <div className="w-24 h-44 bg-transparent rounded-xl overflow-hidden  shadow-lg">
+                        <div className="w-20 sm:w-24 h-40 sm:h-44 bg-transparent rounded-xl overflow-hidden shadow-lg">
                           <img
                             src="/images/house-locataire.png"
                             alt="HouseGuard - Vue locataire"
                             className="w-full h-full object-cover"
+                            loading="lazy"
                           />
                         </div>
                       </div>
 
                       {/* Troisième téléphone (légèrement incliné vers la droite) */}
                       <div className="relative transform rotate-6 z-10">
-                        <div className="w-24 h-44 bg-transparent rounded-xl overflow-hidden ">
+                        <div className="w-20 sm:w-24 h-40 sm:h-44 bg-transparent rounded-xl overflow-hidden">
                           <img
                             src="/images/house-biens.png"
                             alt="HouseGuard - Dashboard"
                             className="w-full h-full object-cover"
+                            loading="lazy"
                           />
                         </div>
                       </div>
@@ -274,6 +275,7 @@ export default function SuccessStories() {
                     src={caseItem.image}
                     alt={caseItem.title}
                     className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                 )}
               </div>

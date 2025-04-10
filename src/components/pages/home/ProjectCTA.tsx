@@ -1,189 +1,102 @@
+import Link from 'next/link'
+import Image from 'next/image'
+
 export default function ProjectCTA() {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
-      {/* Vague en haut pour transition */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
-        <svg
-          className="absolute top-0 w-full h-full"
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,80 C240,0 480,0 720,40 C960,80 1200,80 1440,40 L1440,0 L0,0 Z" fill="white" />
-        </svg>
+    <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+      {/* Éléments décoratifs */}
+      <div className="absolute top-0 left-0 w-full h-full">
+        {/* Points lumineux */}
+        <div className="absolute top-1/4 right-1/4 w-3 h-3 bg-white rounded-full opacity-20"></div>
+        <div className="absolute top-3/4 left-1/3 w-2 h-2 bg-white rounded-full opacity-30"></div>
+        <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-white rounded-full opacity-10"></div>
+        <div className="absolute bottom-1/4 right-1/5 w-3 h-3 bg-white rounded-full opacity-20"></div>
+
+        {/* Cercles abstraits */}
+        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full border border-white/10"></div>
+        <div className="absolute -bottom-40 -left-20 w-80 h-80 rounded-full border border-white/10"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-white/5"></div>
       </div>
 
-      {/* Background gradient - Exactement comme le Hero */}
-      <div className="absolute inset-0 z-0 bg-blue-600"></div>
-
-      {/* Formes SVG en arrière-plan - Plus détaillées comme dans le Hero */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        {/* Cercles et formes abstraites */}
-        <svg
-          className="absolute top-0 left-0 w-full h-full"
-          viewBox="0 0 1440 800"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          {/* Grand cercle central */}
-          <circle cx="720" cy="400" r="400" fill="url(#gradient1)" fillOpacity="0.2" />
-
-          {/* Cercle supérieur droit */}
-          <circle cx="1100" cy="150" r="200" fill="url(#gradient2)" fillOpacity="0.15" />
-
-          {/* Cercle inférieur gauche */}
-          <circle cx="300" cy="650" r="250" fill="url(#gradient3)" fillOpacity="0.15" />
-
-          {/* Forme abstraite 1 */}
-          <path
-            d="M-100,300 C100,200 300,600 500,500 C700,400 900,700 1100,600 C1300,500 1500,300 1700,400 L1700,800 L-100,800 Z"
-            fill="url(#gradient4)"
-            fillOpacity="0.1"
-          />
-
-          {/* Forme abstraite 2 */}
-          <path
-            d="M1600,0 C1400,100 1200,50 1000,150 C800,250 600,100 400,200 C200,300 0,200 -200,100 L-200,-100 L1600,-100 Z"
-            fill="url(#gradient5)"
-            fillOpacity="0.1"
-          />
-
-          {/* Éléments géométriques supplémentaires */}
-          <circle cx="200" cy="200" r="50" fill="#4F46E5" fillOpacity="0.1" />
-          <circle cx="1300" cy="300" r="70" fill="#4F46E5" fillOpacity="0.08" />
-          <rect
-            x="600"
-            y="100"
-            width="100"
-            height="100"
-            rx="20"
-            transform="rotate(30 600 100)"
-            fill="#4F46E5"
-            fillOpacity="0.07"
-          />
-          <rect
-            x="1000"
-            y="500"
-            width="80"
-            height="80"
-            rx="15"
-            transform="rotate(-15 1000 500)"
-            fill="#4F46E5"
-            fillOpacity="0.07"
-          />
-
-          {/* Définition des dégradés - Identiques au Hero */}
-          <defs>
-            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#4F46E5" />
-              <stop offset="100%" stopColor="#2563EB" />
-            </linearGradient>
-            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#6366F1" />
-              <stop offset="100%" stopColor="#4F46E5" />
-            </linearGradient>
-            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#1E293B" />
-              <stop offset="100%" stopColor="#0F172A" />
-            </linearGradient>
-            <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#0F172A" />
-              <stop offset="100%" stopColor="#1E293B" />
-            </linearGradient>
-            <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#1E293B" />
-              <stop offset="100%" stopColor="#334155" />
-            </linearGradient>
-          </defs>
-        </svg>
-
-        {/* Points lumineux et particules */}
-        <div className="absolute top-1/4 right-1/5 w-2 h-2 bg-white rounded-full opacity-50"></div>
-        <div className="absolute top-1/3 left-1/4 w-3 h-3 bg-white rounded-full opacity-30"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-white rounded-full opacity-40"></div>
-        <div className="absolute top-2/3 left-1/6 w-2 h-2 bg-white rounded-full opacity-60"></div>
-        <div className="absolute top-1/2 right-1/6 w-4 h-4 bg-indigo-200 rounded-full opacity-20"></div>
-      </div>
-
-      {/* Content */}
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
-          <h2
-            className="font-inter-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight tracking-tight mb-4 md:mb-6"
-            data-aos="fade-up"
-          >
-            Une idée d'app ?{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-white">
-              Réalisons-la ensemble
-            </span>
-          </h2>
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          {/* Contenu gauche */}
+          <div className="lg:w-1/2">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Prêt à concrétiser votre projet d'application mobile ?
+            </h2>
+            <p className="text-white/90 text-lg mb-8">
+              Transformez votre idée en une application performante. Notre équipe d'experts vous accompagne à chaque étape,
+              de la conception au déploiement, pour créer une solution sur mesure adaptée à vos besoins.
+            </p>
 
-          <p
-            className="font-inter-regular text-white text-opacity-90 mb-6 md:mb-10 max-w-2xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed"
-            data-aos="fade-up"
-            data-aos-delay="50"
-          >
-            Transformez votre projet en application mobile native. iOS ou Android, nous créons des solutions
-            performantes qui vous ressemblent.
-          </p>
+            {/* Points clés */}
+            <div className="mb-10 space-y-4">
+              {[
+                "Consultation gratuite et devis personnalisé",
+                "Respect des délais et du budget fixés",
+                "Solutions adaptées aux dernières technologies",
+                "Support continu après le lancement"
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start">
+                  <svg className="h-6 w-6 text-blue-200 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="ml-3 text-white">{item}</span>
+                </div>
+              ))}
+            </div>
 
-          <div
-            className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-6 sm:mt-8 mb-6 sm:mb-8"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <a
-              href="/contact"
-              className="font-inter-medium bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center text-sm sm:text-base"
-            >
-              <svg
-                className="w-4 h-4 sm:w-5 sm:h-5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+            {/* Boutons d'action */}
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                ></path>
-              </svg>
-              Parlons de votre app mobile
-            </a>
-            <a
-              href="/services"
-              className="font-inter-medium border border-slate-300 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:border-white transition-all duration-300 flex items-center group shadow-md text-sm sm:text-base"
-            >
-              Découvrir nos services mobiles
-              <svg
-                className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+                Demander un devis gratuit
+              </Link>
+              <Link
+                href="/services"
+                className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </a>
+                Découvrir nos services
+              </Link>
+            </div>
+          </div>
+
+          {/* Image à droite */}
+          <div className="w-full lg:w-1/2 relative">
+            <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1510"
+                alt="Équipe de développement mobile en discussion"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+                className="object-cover object-center"
+                quality={90}
+                style={{ width: '100%', height: '100%' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
+
+              {/* Overlay avec formulaire simplifié */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 bg-gradient-to-t from-blue-900/90 to-blue-900/60">
+                <h3 className="text-white text-lg sm:text-xl font-medium mb-3 sm:mb-4">Contactez-nous dès maintenant</h3>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href="/contact"
+                    className="bg-white text-blue-600 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-all flex-grow text-center"
+                  >
+                    Prendre rendez-vous
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Élément décoratif */}
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-blue-300/20 rounded-lg -z-10"></div>
           </div>
         </div>
-      </div>
-
-      {/* Vague en bas pour transition */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
-        <svg
-          className="absolute bottom-0 w-full h-full"
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,80 L0,80 Z" fill="white" />
-        </svg>
       </div>
     </section>
   )
