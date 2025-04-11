@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 const technologies = [
     {
@@ -36,6 +36,11 @@ const technologies = [
 ]
 
 export default function TechStack() {
+
+    const router = useRouter()
+    const handleClick = () => {
+        router.push('/services')
+    }
     return (
         <section className="py-20 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
@@ -52,12 +57,8 @@ export default function TechStack() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {technologies.map((tech, index) => (
-                        <motion.div
+                        <div
                             key={tech.name}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
                             className={`${tech.color} rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group`}
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-bl-[100px] -z-10 transition-all duration-300 group-hover:bg-white/30"></div>
@@ -77,7 +78,7 @@ export default function TechStack() {
 
                             <p className="text-gray-700">{tech.description}</p>
 
-                            <div className="mt-4 pt-4 border-t border-gray-200/50 flex justify-between items-center">
+                            <div className="mt-4 pt-4 border-t border-gray-200/50 flex justify-between items-center cursor-pointer" onClick={handleClick}>
                                 <span className={`text-sm font-medium ${tech.textColor}`}>En savoir plus</span>
                                 <svg
                                     className={`w-5 h-5 ${tech.textColor} transform group-hover:translate-x-1 transition-transform`}
@@ -88,7 +89,7 @@ export default function TechStack() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                 </svg>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 
