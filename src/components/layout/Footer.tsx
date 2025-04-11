@@ -106,7 +106,7 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm"
                   tabIndex={0}
                 >
-                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-indigo-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-blue-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
                   <span className="group-hover:translate-x-0.5 transition-transform duration-300">À propos</span>
                 </Link>
               </li>
@@ -116,7 +116,7 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm"
                   tabIndex={0}
                 >
-                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-purple-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-blue-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
                   <span className="group-hover:translate-x-0.5 transition-transform duration-300">Services</span>
                 </Link>
               </li>
@@ -136,7 +136,7 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm"
                   tabIndex={0}
                 >
-                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-indigo-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-blue-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
                   <span className="group-hover:translate-x-0.5 transition-transform duration-300">Rendez-vous</span>
                 </Link>
               </li>

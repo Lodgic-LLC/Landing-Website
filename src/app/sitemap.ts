@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: 'https://lodgic-dev.com/projets',
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'yearly',
+      priority: 0.8,
+    },
+    {
       url: 'https://lodgic-dev.com/rendez-vous',
       lastModified: new Date().toISOString(),
       changeFrequency: 'yearly',

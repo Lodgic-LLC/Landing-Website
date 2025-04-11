@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaMobile, FaCode, FaPlug, FaTools, FaChevronRight } from 'react-icons/fa'
 
 export const metadata: Metadata = {
@@ -44,6 +45,7 @@ export default function Services() {
         'Publication et optimisation App Store',
         'Support des dernières fonctionnalités iOS',
       ],
+      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1470"
     },
     {
       id: 2,
@@ -59,6 +61,7 @@ export default function Services() {
         'Publication et optimisation Google Play',
         'Support des dernières fonctionnalités Android',
       ],
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1374"
     },
     {
       id: 3,
@@ -73,6 +76,7 @@ export default function Services() {
         'Synchronisation temps réel et mode hors-ligne',
         'APIs REST et GraphQL optimisées mobile',
       ],
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1374"
     },
     {
       id: 4,
@@ -87,25 +91,27 @@ export default function Services() {
         'Support technique réactif',
         'Évolutions et nouvelles fonctionnalités',
       ],
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1470"
     },
   ]
 
   const FeaturePoint = ({ text }: { text: string }) => (
     <div className="flex items-start">
       <div className="flex-shrink-0 mt-1">
-        <FaChevronRight className="w-3 h-3 md:w-4 md:h-4 text-blue-600" />
+        <svg className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+        </svg>
       </div>
-      <p className="ml-2 md:ml-3 text-sm md:text-base text-gray-600">{text}</p>
+      <p className="ml-3 text-gray-600">{text}</p>
     </div>
   )
 
   return (
     <>
-      {/* Section Hero mise à jour */}
-      <section className="w-full bg-gradient-to-br from-blue-600 to-indigo-700 pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden relative">
-        {/* Formes SVG en arrière-plan */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          {/* Cercles et formes abstraites */}
+      {/* Hero Section */}
+      <section className="w-full bg-gradient-to-br from-blue-600 to-blue-800 pt-24 md:pt-32 overflow-hidden relative">
+        {/* Formes abstraites en arrière-plan */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-30">
           <svg
             className="absolute top-0 left-0 w-full h-full"
             viewBox="0 0 1440 800"
@@ -113,128 +119,105 @@ export default function Services() {
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice"
           >
-            {/* Grand cercle central */}
-            <circle cx="720" cy="400" r="400" fill="url(#gradient1)" fillOpacity="0.2" />
+            <circle cx="720" cy="350" r="400" fill="white" fillOpacity="0.1" />
+            <circle cx="1100" cy="150" r="200" fill="white" fillOpacity="0.1" />
+            <circle cx="300" cy="650" r="250" fill="white" fillOpacity="0.1" />
 
-            {/* Cercle supérieur droit */}
-            <circle cx="1100" cy="150" r="200" fill="url(#gradient2)" fillOpacity="0.15" />
-
-            {/* Cercle inférieur gauche */}
-            <circle cx="300" cy="650" r="250" fill="url(#gradient3)" fillOpacity="0.15" />
-
-            {/* Forme abstraite 1 */}
-            <path
-              d="M-100,300 C100,200 300,600 500,500 C700,400 900,700 1100,600 C1300,500 1500,300 1700,400 L1700,800 L-100,800 Z"
-              fill="url(#gradient4)"
-              fillOpacity="0.1"
-            />
-
-            {/* Forme abstraite 2 */}
-            <path
-              d="M1600,0 C1400,100 1200,50 1000,150 C800,250 600,100 400,200 C200,300 0,200 -200,100 L-200,-100 L1600,-100 Z"
-              fill="url(#gradient5)"
-              fillOpacity="0.1"
-            />
-
-            {/* Points décoratifs */}
-            <g opacity="0.3">
-              <circle cx="150" cy="150" r="2" fill="white" />
-              <circle cx="350" cy="250" r="2" fill="white" />
-              <circle cx="550" cy="150" r="2" fill="white" />
-              <circle cx="750" cy="300" r="2" fill="white" />
-              <circle cx="950" cy="200" r="2" fill="white" />
-              <circle cx="1150" cy="350" r="2" fill="white" />
-              <circle cx="1350" cy="250" r="2" fill="white" />
-
-              <circle cx="250" cy="350" r="2" fill="white" />
-              <circle cx="450" cy="450" r="2" fill="white" />
-              <circle cx="650" cy="350" r="2" fill="white" />
-              <circle cx="850" cy="500" r="2" fill="white" />
-              <circle cx="1050" cy="400" r="2" fill="white" />
-              <circle cx="1250" cy="550" r="2" fill="white" />
+            {/* Points lumineux */}
+            <g opacity="0.5">
+              {[...Array(20)].map((_, i) => (
+                <circle
+                  key={i}
+                  cx={Math.random() * 1440}
+                  cy={Math.random() * 800}
+                  r={Math.random() * 2 + 1}
+                  fill="white"
+                />
+              ))}
             </g>
-
-            {/* Définition des dégradés */}
-            <defs>
-              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#4F46E5" />
-                <stop offset="100%" stopColor="#2563EB" />
-              </linearGradient>
-              <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#6366F1" />
-                <stop offset="100%" stopColor="#4F46E5" />
-              </linearGradient>
-              <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#3B82F6" />
-                <stop offset="100%" stopColor="#2563EB" />
-              </linearGradient>
-              <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#4F46E5" />
-                <stop offset="100%" stopColor="#2563EB" />
-              </linearGradient>
-              <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3B82F6" />
-                <stop offset="100%" stopColor="#6366F1" />
-              </linearGradient>
-            </defs>
           </svg>
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-white mb-4 md:mb-6 leading-tight">
-              Applications Mobiles <span className="text-blue-200">Natives</span> iOS & Android
-            </h1>
-            <p className="font-inter-regular text-white text-opacity-90 mb-6 md:mb-8 text-base md:text-lg lg:text-xl leading-relaxed">
-              Nous développons des applications mobiles natives performantes et innovantes, parfaitement adaptées aux
-              besoins de votre entreprise et de vos utilisateurs.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-8 md:mt-10">
-              <Link
-                href="/contact"
-                className="font-inter-medium bg-white text-blue-600 px-6 md:px-8 py-3 rounded-lg hover:bg-gray-100 transition-all shadow-md hover:shadow-lg text-sm md:text-base flex items-center"
-              >
-                <svg
-                  className="w-5 h-5 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pb-20 md:pb-24">
+            {/* Contenu gauche */}
+            <div className="w-full lg:w-1/2 pt-8 lg:pt-0">
+              <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+                Applications Mobiles <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">Natives</span> iOS & Android
+              </h1>
+
+              <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed">
+                Nous développons des applications mobiles natives performantes et innovantes, parfaitement adaptées aux
+                besoins de votre entreprise et de vos utilisateurs.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/contact"
+                  className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path>
-                </svg>
-                Discuter de mon projet
-              </Link>
-              <Link
-                href="/a-propos"
-                className="font-inter-medium border-2 border-white text-white px-6 md:px-8 py-3 rounded-lg hover:bg-white/10 transition-all text-sm md:text-base flex items-center group"
-              >
-                En savoir plus sur Lodgic
-                <svg
-                  className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                  Discuter de mon projet
+                </Link>
+                <Link
+                  href="/a-propos"
+                  className="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all flex items-center group"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </Link>
+                  En savoir plus sur Lodgic
+                  <svg
+                    className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Image à droite */}
+            <div className="w-full lg:w-1/2 mt-10 lg:mt-0">
+              <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px]">
+                <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?q=80&w=1442"
+                    alt="Application mobile développement"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-center"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+                </div>
+
+                {/* Élément décoratif derrière l'image */}
+                <div className="absolute -bottom-6 -right-6 w-full h-full rounded-2xl border-2 border-blue-300/20 -z-10"></div>
+
+                {/* Points flottants autour de l'image */}
+                <div className="absolute -top-4 -left-4 w-8 h-8 bg-blue-400/30 rounded-full blur-sm"></div>
+                <div className="absolute top-1/2 -right-4 w-6 h-6 bg-white/30 rounded-full blur-sm"></div>
+                <div className="absolute -bottom-2 left-1/4 w-4 h-4 bg-blue-300/40 rounded-full blur-sm"></div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Forme SVG en bas pour transition */}
+        {/* Forme de transition vers le contenu suivant */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
           <svg
             className="absolute bottom-0 w-full h-full"
@@ -243,373 +226,147 @@ export default function Services() {
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none"
           >
-            <path d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,80 L0,80 Z" fill="white" />
+            <path d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z" fill="white" />
           </svg>
         </div>
       </section>
 
       {/* Section des services principaux */}
-      {mainServices.slice(0, 2).map((service, index) => (
-        <section key={service.id} className={`py-16 md:py-24 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
-          <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center">
-            {/* Texte - Alternance gauche/droite */}
-            <div
-              className={`w-full md:w-1/2 mb-12 md:mb-0 ${index % 2 === 0 ? 'md:pr-12 order-1' : 'md:pl-12 order-2'}`}
-              data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
-              data-aos-duration="1000"
-            >
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-100 rounded-xl flex items-center justify-center mr-4 md:mr-5 shadow-md">
-                  {service.icon}
+      {mainServices.map((service, index) => (
+        <section key={service.id} className={`py-20 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
+
+              {/* Contenu textuel */}
+              <div className="lg:w-1/2">
+                <div className="flex items-center mb-6">
+                  <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center shadow-md mr-4">
+                    {service.icon}
+                  </div>
+                  <h2 className="text-3xl font-bold text-gray-900">{service.title}</h2>
                 </div>
-                <h2 className="font-inter-bold text-xl md:text-2xl lg:text-3xl text-gray-900">{service.title}</h2>
-              </div>
 
-              <p className="font-inter-regular text-gray-600 mb-6 md:mb-8 text-base md:text-lg leading-relaxed">
-                {service.description}
-              </p>
+                <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                  {service.description}
+                </p>
 
-              <div className="space-y-3 md:space-y-4 mb-8 md:mb-10">
-                {service.features.map((feature, i) => (
-                  <FeaturePoint key={i} text={feature} />
-                ))}
-              </div>
-
-              {/* Section Technologies utilisées */}
-              <div className="mb-8 md:mb-10">
-                <h4 className="font-inter-semibold text-gray-800 mb-3 flex items-center">
-                  <svg
-                    className="w-5 h-5 mr-2 text-blue-600"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  Technologies utilisées
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.id === 1 && (
-                    <>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Swift
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        SwiftUI
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">Expo</span>
-                    </>
-                  )}
-                  {service.id === 2 && (
-                    <>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Kotlin
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Android SDK
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Jetpack Compose
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">Room</span>
-                    </>
-                  )}
-                  {service.id === 3 && (
-                    <>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        NestJS
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Stripe
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        API REST
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Prisma
-                      </span>
-                    </>
-                  )}
-                  {service.id === 4 && (
-                    <>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        GitHub
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        CI/CD
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Docker
-                      </span>
-                    </>
-                  )}
+                <div className="space-y-4 mb-8">
+                  {service.features.map((feature, i) => (
+                    <FeaturePoint key={i} text={feature} />
+                  ))}
                 </div>
-              </div>
-            </div>
 
-            {/* Illustration - Alternance droite/gauche */}
-            <div
-              className={`w-full md:w-1/2 flex justify-center ${index % 2 === 0 ? 'order-2' : 'order-1 mb-12 md:mb-0'}`}
-              data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
-              data-aos-duration="1000"
-              data-aos-delay="200"
-            >
-              <div className="relative w-full max-w-sm md:max-w-lg">
-                {/* Fond dégradé */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-2xl transform ${
-                    index % 2 === 0 ? 'rotate-1' : '-rotate-1'
-                  } shadow-xl`}
-                ></div>
+                {/* Technologies */}
+                <div className="mb-8">
+                  <h4 className="font-medium text-gray-800 mb-3 flex items-center">
+                    <svg
+                      className="w-5 h-5 mr-2 text-blue-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                      />
+                    </svg>
+                    Technologies utilisées
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {service.id === 1 && (
+                      <>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          Swift
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          SwiftUI
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          UIKit
+                        </span>
+                      </>
+                    )}
+                    {service.id === 2 && (
+                      <>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          Kotlin
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          Android SDK
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          Jetpack Compose
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          Room
+                        </span>
+                      </>
+                    )}
+                    {service.id === 3 && (
+                      <>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          NestJS
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          Stripe
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          API REST
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          Prisma
+                        </span>
+                      </>
+                    )}
+                    {service.id === 4 && (
+                      <>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          GitHub
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          CI/CD
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          Docker
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                          AWS
+                        </span>
+                      </>
+                    )}
+                  </div>
+                </div>
 
-                {/* Contenu de l'illustration */}
-                <div
-                  className={`relative bg-white rounded-2xl p-6 md:p-8 shadow-lg overflow-hidden border border-gray-100`}
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center px-5 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors"
                 >
-                  {/* Illustration spécifique au service - conservé tel quel */}
-                  {service.id === 1 && (
-                    <div className="relative z-10 flex justify-center items-center">
-                      {/* Illustration d'applications mobiles - plus simple et intuitive */}
-                      <svg
-                        className="w-full h-auto max-w-md"
-                        viewBox="0 0 500 350"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        {/* Smartphone principal */}
-                        <rect x="180" y="50" width="140" height="250" rx="20" fill="#1F2937" />
-                        <rect x="190" y="70" width="120" height="210" rx="5" fill="#60A5FA" />
+                  Demander un devis gratuit
+                  <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
 
-                        {/* Écran du smartphone */}
-                        <rect x="200" y="80" width="100" height="15" rx="3" fill="white" opacity="0.9" />
+              {/* Image */}
+              <div className="w-full lg:w-1/2">
+                <div className="relative w-full">
+                  <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] rounded-xl overflow-hidden shadow-lg">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-center"
+                      quality={85}
+                      loading={service.id === 1 ? "eager" : "lazy"}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 to-transparent"></div>
+                  </div>
 
-                        {/* Icônes d'applications */}
-                        <rect x="205" y="105" width="20" height="20" rx="5" fill="#F472B6" />
-                        <rect x="235" y="105" width="20" height="20" rx="5" fill="#34D399" />
-                        <rect x="265" y="105" width="20" height="20" rx="5" fill="#FBBF24" />
-
-                        <rect x="205" y="135" width="20" height="20" rx="5" fill="#3B82F6" />
-                        <rect x="235" y="135" width="20" height="20" rx="5" fill="#EC4899" />
-                        <rect x="265" y="135" width="20" height="20" rx="5" fill="#10B981" />
-
-                        <rect x="205" y="165" width="20" height="20" rx="5" fill="#8B5CF6" />
-                        <rect x="235" y="165" width="20" height="20" rx="5" fill="#F59E0B" />
-                        <rect x="265" y="165" width="20" height="20" rx="5" fill="#EF4444" />
-
-                        {/* Barre de navigation */}
-                        <rect x="205" y="230" width="90" height="20" rx="10" fill="white" opacity="0.6" />
-
-                        {/* Bouton home */}
-                        <circle cx="250" cy="240" r="5" fill="white" />
-
-                        {/* Smartphone secondaire (légèrement décalé) */}
-                        <rect x="100" y="80" width="120" height="220" rx="15" fill="#1F2937" />
-                        <rect x="110" y="95" width="100" height="190" rx="5" fill="#8B5CF6" />
-
-                        {/* Éléments d'interface */}
-                        <rect x="120" y="110" width="80" height="40" rx="5" fill="white" opacity="0.8" />
-                        <rect x="120" y="160" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="120" y="180" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="120" y="200" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="120" y="240" width="40" height="15" rx="7" fill="#F472B6" />
-
-                        {/* Smartphone tertiaire */}
-                        <rect x="280" y="90" width="120" height="210" rx="15" fill="#1F2937" />
-                        <rect x="290" y="105" width="100" height="180" rx="5" fill="#10B981" />
-
-                        {/* Carte/widget */}
-                        <rect x="300" y="115" width="80" height="60" rx="5" fill="white" opacity="0.8" />
-                        <circle cx="320" cy="135" r="8" fill="#3B82F6" />
-                        <rect x="335" y="130" width="35" height="5" rx="2" fill="#3B82F6" opacity="0.8" />
-                        <rect x="335" y="140" width="25" height="5" rx="2" fill="#3B82F6" opacity="0.8" />
-
-                        {/* Éléments d'interface */}
-                        <rect x="300" y="185" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="300" y="205" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="300" y="225" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="300" y="250" width="40" height="15" rx="7" fill="#F472B6" />
-                      </svg>
-                    </div>
-                  )}
-
-                  {service.id === 2 && (
-                    <div className="relative z-10 flex justify-center items-center">
-                      {/* Illustration de site web - plus intuitive */}
-                      <svg
-                        className="w-full h-auto max-w-md"
-                        viewBox="0 0 500 350"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        {/* Écran d'ordinateur */}
-                        <rect x="75" y="50" width="350" height="220" rx="10" fill="#1F2937" />
-                        <rect x="85" y="60" width="330" height="200" rx="5" fill="white" />
-
-                        {/* Barre de navigation */}
-                        <rect x="85" y="60" width="330" height="40" rx="5" fill="#3B82F6" />
-
-                        {/* Logo */}
-                        <circle cx="110" cy="80" r="10" fill="white" />
-
-                        {/* Liens de navigation */}
-                        <rect x="140" y="75" width="30" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="180" y="75" width="30" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="220" y="75" width="30" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="260" y="75" width="30" height="10" rx="2" fill="white" opacity="0.8" />
-
-                        {/* Bouton de contact */}
-                        <rect x="350" y="72" width="50" height="16" rx="8" fill="#F472B6" />
-                        <rect x="360" y="78" width="30" height="4" rx="1" fill="white" />
-
-                        {/* Image principale */}
-                        <rect x="100" y="120" width="200" height="120" rx="5" fill="#E5E7EB" />
-                        <circle cx="150" cy="150" r="20" fill="#60A5FA" />
-                        <rect x="180" y="140" width="100" height="8" rx="2" fill="#60A5FA" />
-                        <rect x="180" y="155" width="80" height="8" rx="2" fill="#60A5FA" />
-                        <rect x="180" y="170" width="60" height="20" rx="5" fill="#F472B6" />
-
-                        {/* Sidebar */}
-                        <rect x="320" y="120" width="80" height="120" rx="5" fill="#F3F4F6" />
-                        <rect x="330" y="130" width="60" height="8" rx="2" fill="#6B7280" />
-                        <rect x="330" y="145" width="60" height="5" rx="1" fill="#9CA3AF" />
-                        <rect x="330" y="155" width="60" height="5" rx="1" fill="#9CA3AF" />
-                        <rect x="330" y="165" width="60" height="5" rx="1" fill="#9CA3AF" />
-                        <rect x="330" y="185" width="60" height="8" rx="2" fill="#6B7280" />
-                        <rect x="330" y="200" width="60" height="5" rx="1" fill="#9CA3AF" />
-                        <rect x="330" y="210" width="60" height="5" rx="1" fill="#9CA3AF" />
-                        <rect x="330" y="220" width="60" height="5" rx="1" fill="#9CA3AF" />
-
-                        {/* Base de l'ordinateur */}
-                        <path d="M175 270 L325 270 L315 290 L185 290 L175 270 Z" fill="#1F2937" />
-                        <rect x="225" y="270" width="50" height="5" rx="2" fill="#4B5563" />
-                      </svg>
-                    </div>
-                  )}
-
-                  {service.id === 3 && (
-                    <div className="relative z-10 flex justify-center items-center">
-                      {/* Illustration de connexion d'outils - plus intuitive */}
-                      <svg
-                        className="w-full h-auto max-w-md"
-                        viewBox="0 0 500 350"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        {/* Appareil 1 - Smartphone */}
-                        <rect x="80" y="100" width="100" height="180" rx="15" fill="#1F2937" />
-                        <rect x="90" y="110" width="80" height="160" rx="5" fill="#60A5FA" />
-                        <rect x="100" y="120" width="60" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="100" y="140" width="60" height="40" rx="5" fill="white" opacity="0.6" />
-                        <rect x="100" y="190" width="60" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="100" y="210" width="60" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="100" y="230" width="30" height="20" rx="5" fill="#F472B6" />
-
-                        {/* Appareil 2 - Ordinateur */}
-                        <rect x="320" y="100" width="140" height="100" rx="5" fill="#1F2937" />
-                        <rect x="330" y="110" width="120" height="80" rx="3" fill="#10B981" />
-                        <rect x="340" y="120" width="100" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="340" y="140" width="100" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="340" y="160" width="60" height="20" rx="5" fill="#F472B6" />
-                        <path d="M350 200 L430 200 L420 220 L360 220 L350 200 Z" fill="#1F2937" />
-
-                        {/* Appareil 3 - Tablette */}
-                        <rect x="300" y="230" width="120" height="90" rx="8" fill="#1F2937" />
-                        <rect x="305" y="235" width="110" height="80" rx="5" fill="#8B5CF6" />
-                        <rect x="315" y="245" width="90" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="315" y="265" width="90" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="315" y="285" width="50" height="20" rx="5" fill="#F472B6" />
-
-                        {/* Connexions */}
-                        <path d="M180 150 L320 130" stroke="#3B82F6" strokeWidth="3" strokeDasharray="5 5" />
-                        <path d="M180 180 L300 250" stroke="#8B5CF6" strokeWidth="3" strokeDasharray="5 5" />
-                        <path d="M320 180 L300 230" stroke="#10B981" strokeWidth="3" strokeDasharray="5 5" />
-
-                        {/* Icônes de données */}
-                        <circle cx="250" cy="140" r="15" fill="#3B82F6" />
-                        <rect x="245" cy="135" width="10" height="2" fill="white" />
-                        <rect x="245" cy="140" width="10" height="2" fill="white" />
-                        <rect x="245" cy="145" width="10" height="2" fill="white" />
-
-                        <circle cx="240" cy="215" r="15" fill="#8B5CF6" />
-                        <rect x="235" cy="210" width="10" height="2" fill="white" />
-                        <rect x="235" cy="215" width="10" height="2" fill="white" />
-                        <rect x="235" cy="220" width="10" height="2" fill="white" />
-
-                        <circle cx="310" cy="205" r="15" fill="#10B981" />
-                        <rect x="305" cy="200" width="10" height="2" fill="white" />
-                        <rect x="305" cy="205" width="10" height="2" fill="white" />
-                        <rect x="305" cy="210" width="10" height="2" fill="white" />
-                      </svg>
-                    </div>
-                  )}
-
-                  {service.id === 4 && (
-                    <div className="relative z-10 flex justify-center items-center">
-                      {/* Illustration d'assistance - plus intuitive */}
-                      <svg
-                        className="w-full h-auto max-w-md"
-                        viewBox="0 0 500 350"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        {/* Écran principal */}
-                        <rect x="100" y="50" width="300" height="200" rx="10" fill="#1F2937" />
-                        <rect x="110" y="60" width="280" height="180" rx="5" fill="#F3F4F6" />
-
-                        {/* Éléments d'interface */}
-                        <rect x="130" y="80" width="240" height="40" rx="5" fill="white" />
-                        <rect x="140" y="95" width="150" height="10" rx="2" fill="#6B7280" />
-                        <circle cx="350" cy="100" r="10" fill="#10B981" />
-                        <path d="M345 100 L350 105 L355 95" stroke="white" strokeWidth="2" />
-
-                        {/* Graphique de performance */}
-                        <rect x="130" y="130" width="240" height="90" rx="5" fill="white" />
-                        <path d="M140 200 L360 200" stroke="#E5E7EB" strokeWidth="1" />
-                        <path d="M140 170 L360 170" stroke="#E5E7EB" strokeWidth="1" />
-                        <path d="M140 140 L360 140" stroke="#E5E7EB" strokeWidth="1" />
-
-                        <path
-                          d="M150 190 L180 160 L210 180 L240 130 L270 150 L300 140 L330 170 L350 150"
-                          stroke="#3B82F6"
-                          strokeWidth="3"
-                          fill="none"
-                        />
-                        <circle cx="150" cy="190" r="4" fill="#3B82F6" />
-                        <circle cx="180" cy="160" r="4" fill="#3B82F6" />
-                        <circle cx="210" cy="180" r="4" fill="#3B82F6" />
-                        <circle cx="240" cy="130" r="4" fill="#3B82F6" />
-                        <circle cx="270" cy="150" r="4" fill="#3B82F6" />
-                        <circle cx="300" cy="140" r="4" fill="#3B82F6" />
-                        <circle cx="330" cy="170" r="4" fill="#3B82F6" />
-                        <circle cx="350" cy="150" r="4" fill="#3B82F6" />
-
-                        {/* Éléments de support */}
-                        <circle cx="400" cy="120" r="30" fill="#F472B6" opacity="0.2" />
-                        <circle cx="400" cy="120" r="20" fill="#F472B6" opacity="0.4" />
-                        <circle cx="400" cy="120" r="10" fill="#F472B6" />
-
-                        <circle cx="80" cy="200" r="25" fill="#10B981" opacity="0.2" />
-                        <circle cx="80" cy="200" r="15" fill="#10B981" opacity="0.4" />
-                        <circle cx="80" cy="200" r="8" fill="#10B981" />
-
-                        {/* Icônes de notification */}
-                        <circle cx="400" cy="200" r="20" fill="#FBBF24" opacity="0.2" />
-                        <rect x="395" y="195" width="10" height="10" rx="2" fill="#FBBF24" />
-                        <path d="M400 190 L400 185" stroke="#FBBF24" strokeWidth="2" />
-                        <path d="M400 215 L400 210" stroke="#FBBF24" strokeWidth="2" />
-                        <path d="M390 200 L385 200" stroke="#FBBF24" strokeWidth="2" />
-                        <path d="M415 200 L410 200" stroke="#FBBF24" strokeWidth="2" />
-
-                        {/* Base de l'écran */}
-                        <rect x="200" y="250" width="100" height="10" rx="3" fill="#1F2937" />
-                        <rect x="175" y="260" width="150" height="5" rx="2" fill="#4B5563" />
-                      </svg>
-                    </div>
-                  )}
+                  {/* Éléments décoratifs */}
+                  <div className={`absolute -z-10 ${index % 2 === 0 ? '-bottom-4 -right-4' : '-bottom-4 -left-4'} w-24 h-24 ${service.color} rounded-xl opacity-50`}></div>
+                  <div className={`absolute -z-10 ${index % 2 === 0 ? '-top-4 -left-4' : '-top-4 -right-4'} w-12 h-12 bg-blue-200 rounded-full`}></div>
                 </div>
               </div>
             </div>
@@ -617,31 +374,40 @@ export default function Services() {
         </section>
       ))}
 
-      {/* CTA entre les services */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-blue-600 to-indigo-700">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-inter-bold text-white mb-6">
+      {/* Section CTA */}
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+        {/* Éléments décoratifs */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          {/* Points lumineux */}
+          <div className="absolute top-1/4 right-1/4 w-3 h-3 bg-white rounded-full opacity-20"></div>
+          <div className="absolute top-3/4 left-1/3 w-2 h-2 bg-white rounded-full opacity-30"></div>
+          <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-white rounded-full opacity-10"></div>
+          <div className="absolute bottom-1/4 right-1/5 w-3 h-3 bg-white rounded-full opacity-20"></div>
+
+          {/* Cercles abstraits */}
+          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full border border-white/10"></div>
+          <div className="absolute -bottom-40 -left-20 w-80 h-80 rounded-full border border-white/10"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Prêt à transformer votre idée en réalité ?
             </h2>
-            <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-white/90 text-lg mb-8">
               Discutons ensemble de votre projet et trouvons la solution idéale pour répondre à vos besoins spécifiques.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/rendez-vous"
-                className="bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-lg font-inter-medium shadow-lg hover:shadow-xl transition-all flex items-center text-sm md:text-base"
-                data-aos="fade-up"
-                data-aos-delay="100"
+                className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Prendre rendez-vous
-                <FaChevronRight className="ml-2 h-3 w-3" />
+                <FaChevronRight className="inline-block ml-2" />
               </Link>
               <Link
                 href="/contact"
-                className="bg-transparent text-white border border-white hover:bg-white/10 px-6 py-3 rounded-lg font-inter-medium transition-all text-sm md:text-base"
-                data-aos="fade-up"
-                data-aos-delay="150"
+                className="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all"
               >
                 Nous contacter
               </Link>
@@ -650,402 +416,26 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Deuxième partie des services */}
-      {mainServices.slice(2, 4).map((service, index) => (
-        <section key={service.id} className={`py-16 md:py-24 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
-          <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center">
-            {/* Texte - Alternance gauche/droite */}
-            <div
-              className={`w-full md:w-1/2 mb-12 md:mb-0 ${index % 2 === 0 ? 'md:pr-12 order-1' : 'md:pl-12 order-2'}`}
-              data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
-              data-aos-duration="1000"
-            >
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-100 rounded-xl flex items-center justify-center mr-4 md:mr-5 shadow-md">
-                  {service.icon}
-                </div>
-                <h2 className="font-inter-bold text-xl md:text-2xl lg:text-3xl text-gray-900">{service.title}</h2>
-              </div>
-
-              <p className="font-inter-regular text-gray-600 mb-6 md:mb-8 text-base md:text-lg leading-relaxed">
-                {service.description}
-              </p>
-
-              <div className="space-y-3 md:space-y-4 mb-8 md:mb-10">
-                {service.features.map((feature, i) => (
-                  <FeaturePoint key={i} text={feature} />
-                ))}
-              </div>
-
-              {/* Section Technologies utilisées */}
-              <div className="mb-8 md:mb-10">
-                <h4 className="font-inter-semibold text-gray-800 mb-3 flex items-center">
-                  <svg
-                    className="w-5 h-5 mr-2 text-blue-600"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  Technologies utilisées
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.id === 1 && (
-                    <>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        React Native
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        JavaScript
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Swift
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Kotlin
-                      </span>
-                    </>
-                  )}
-                  {service.id === 2 && (
-                    <>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        React.js
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Next.js
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Tailwind CSS
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        JavaScript
-                      </span>
-                    </>
-                  )}
-                  {service.id === 3 && (
-                    <>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        NestJS
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Stripe
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        API REST
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Prisma
-                      </span>
-                    </>
-                  )}
-                  {service.id === 4 && (
-                    <>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        GitHub
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        CI/CD
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                        Docker
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">AWS</span>
-                    </>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            {/* Illustration - Alternance droite/gauche */}
-            <div
-              className={`w-full md:w-1/2 flex justify-center ${index % 2 === 0 ? 'order-2' : 'order-1 mb-12 md:mb-0'}`}
-              data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}
-              data-aos-duration="1000"
-              data-aos-delay="200"
-            >
-              <div className="relative w-full max-w-sm md:max-w-lg">
-                {/* Fond dégradé */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-2xl transform ${
-                    index % 2 === 0 ? 'rotate-1' : '-rotate-1'
-                  } shadow-xl`}
-                ></div>
-
-                {/* Contenu de l'illustration */}
-                <div
-                  className={`relative bg-white rounded-2xl p-6 md:p-8 shadow-lg overflow-hidden border border-gray-100`}
-                >
-                  {/* Illustration spécifique au service - conservé tel quel */}
-                  {service.id === 1 && (
-                    <div className="relative z-10 flex justify-center items-center">
-                      {/* Illustration d'applications mobiles - plus simple et intuitive */}
-                      <svg
-                        className="w-full h-auto max-w-md"
-                        viewBox="0 0 500 350"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        {/* Smartphone principal */}
-                        <rect x="180" y="50" width="140" height="250" rx="20" fill="#1F2937" />
-                        <rect x="190" y="70" width="120" height="210" rx="5" fill="#60A5FA" />
-
-                        {/* Écran du smartphone */}
-                        <rect x="200" y="80" width="100" height="15" rx="3" fill="white" opacity="0.9" />
-
-                        {/* Icônes d'applications */}
-                        <rect x="205" y="105" width="20" height="20" rx="5" fill="#F472B6" />
-                        <rect x="235" y="105" width="20" height="20" rx="5" fill="#34D399" />
-                        <rect x="265" y="105" width="20" height="20" rx="5" fill="#FBBF24" />
-
-                        <rect x="205" y="135" width="20" height="20" rx="5" fill="#3B82F6" />
-                        <rect x="235" y="135" width="20" height="20" rx="5" fill="#EC4899" />
-                        <rect x="265" y="135" width="20" height="20" rx="5" fill="#10B981" />
-
-                        <rect x="205" y="165" width="20" height="20" rx="5" fill="#8B5CF6" />
-                        <rect x="235" y="165" width="20" height="20" rx="5" fill="#F59E0B" />
-                        <rect x="265" y="165" width="20" height="20" rx="5" fill="#EF4444" />
-
-                        {/* Barre de navigation */}
-                        <rect x="205" y="230" width="90" height="20" rx="10" fill="white" opacity="0.6" />
-
-                        {/* Bouton home */}
-                        <circle cx="250" cy="240" r="5" fill="white" />
-
-                        {/* Smartphone secondaire (légèrement décalé) */}
-                        <rect x="100" y="80" width="120" height="220" rx="15" fill="#1F2937" />
-                        <rect x="110" y="95" width="100" height="190" rx="5" fill="#8B5CF6" />
-
-                        {/* Éléments d'interface */}
-                        <rect x="120" y="110" width="80" height="40" rx="5" fill="white" opacity="0.8" />
-                        <rect x="120" y="160" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="120" y="180" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="120" y="200" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="120" y="240" width="40" height="15" rx="7" fill="#F472B6" />
-
-                        {/* Smartphone tertiaire */}
-                        <rect x="280" y="90" width="120" height="210" rx="15" fill="#1F2937" />
-                        <rect x="290" y="105" width="100" height="180" rx="5" fill="#10B981" />
-
-                        {/* Carte/widget */}
-                        <rect x="300" y="115" width="80" height="60" rx="5" fill="white" opacity="0.8" />
-                        <circle cx="320" cy="135" r="8" fill="#3B82F6" />
-                        <rect x="335" y="130" width="35" height="5" rx="2" fill="#3B82F6" opacity="0.8" />
-                        <rect x="335" y="140" width="25" height="5" rx="2" fill="#3B82F6" opacity="0.8" />
-
-                        {/* Éléments d'interface */}
-                        <rect x="300" y="185" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="300" y="205" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="300" y="225" width="80" height="10" rx="2" fill="white" opacity="0.6" />
-                        <rect x="300" y="250" width="40" height="15" rx="7" fill="#F472B6" />
-                      </svg>
-                    </div>
-                  )}
-
-                  {service.id === 2 && (
-                    <div className="relative z-10 flex justify-center items-center">
-                      {/* Illustration de site web - plus intuitive */}
-                      <svg
-                        className="w-full h-auto max-w-md"
-                        viewBox="0 0 500 350"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        {/* Écran d'ordinateur */}
-                        <rect x="75" y="50" width="350" height="220" rx="10" fill="#1F2937" />
-                        <rect x="85" y="60" width="330" height="200" rx="5" fill="white" />
-
-                        {/* Barre de navigation */}
-                        <rect x="85" y="60" width="330" height="40" rx="5" fill="#3B82F6" />
-
-                        {/* Logo */}
-                        <circle cx="110" cy="80" r="10" fill="white" />
-
-                        {/* Liens de navigation */}
-                        <rect x="140" y="75" width="30" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="180" y="75" width="30" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="220" y="75" width="30" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="260" y="75" width="30" height="10" rx="2" fill="white" opacity="0.8" />
-
-                        {/* Bouton de contact */}
-                        <rect x="350" y="72" width="50" height="16" rx="8" fill="#F472B6" />
-                        <rect x="360" y="78" width="30" height="4" rx="1" fill="white" />
-
-                        {/* Image principale */}
-                        <rect x="100" y="120" width="200" height="120" rx="5" fill="#E5E7EB" />
-                        <circle cx="150" cy="150" r="20" fill="#60A5FA" />
-                        <rect x="180" y="140" width="100" height="8" rx="2" fill="#60A5FA" />
-                        <rect x="180" y="155" width="80" height="8" rx="2" fill="#60A5FA" />
-                        <rect x="180" y="170" width="60" height="20" rx="5" fill="#F472B6" />
-
-                        {/* Sidebar */}
-                        <rect x="320" y="120" width="80" height="120" rx="5" fill="#F3F4F6" />
-                        <rect x="330" y="130" width="60" height="8" rx="2" fill="#6B7280" />
-                        <rect x="330" y="145" width="60" height="5" rx="1" fill="#9CA3AF" />
-                        <rect x="330" y="155" width="60" height="5" rx="1" fill="#9CA3AF" />
-                        <rect x="330" y="165" width="60" height="5" rx="1" fill="#9CA3AF" />
-                        <rect x="330" y="185" width="60" height="8" rx="2" fill="#6B7280" />
-                        <rect x="330" y="200" width="60" height="5" rx="1" fill="#9CA3AF" />
-                        <rect x="330" y="210" width="60" height="5" rx="1" fill="#9CA3AF" />
-                        <rect x="330" y="220" width="60" height="5" rx="1" fill="#9CA3AF" />
-
-                        {/* Base de l'ordinateur */}
-                        <path d="M175 270 L325 270 L315 290 L185 290 L175 270 Z" fill="#1F2937" />
-                        <rect x="225" y="270" width="50" height="5" rx="2" fill="#4B5563" />
-                      </svg>
-                    </div>
-                  )}
-
-                  {service.id === 3 && (
-                    <div className="relative z-10 flex justify-center items-center">
-                      {/* Illustration de connexion d'outils - plus intuitive */}
-                      <svg
-                        className="w-full h-auto max-w-md"
-                        viewBox="0 0 500 350"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        {/* Appareil 1 - Smartphone */}
-                        <rect x="80" y="100" width="100" height="180" rx="15" fill="#1F2937" />
-                        <rect x="90" y="110" width="80" height="160" rx="5" fill="#60A5FA" />
-                        <rect x="100" y="120" width="60" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="100" y="140" width="60" height="40" rx="5" fill="white" opacity="0.6" />
-                        <rect x="100" y="190" width="60" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="100" y="210" width="60" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="100" y="230" width="30" height="20" rx="5" fill="#F472B6" />
-
-                        {/* Appareil 2 - Ordinateur */}
-                        <rect x="320" y="100" width="140" height="100" rx="5" fill="#1F2937" />
-                        <rect x="330" y="110" width="120" height="80" rx="3" fill="#10B981" />
-                        <rect x="340" y="120" width="100" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="340" y="140" width="100" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="340" y="160" width="60" height="20" rx="5" fill="#F472B6" />
-                        <path d="M350 200 L430 200 L420 220 L360 220 L350 200 Z" fill="#1F2937" />
-
-                        {/* Appareil 3 - Tablette */}
-                        <rect x="300" y="230" width="120" height="90" rx="8" fill="#1F2937" />
-                        <rect x="305" y="235" width="110" height="80" rx="5" fill="#8B5CF6" />
-                        <rect x="315" y="245" width="90" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="315" y="265" width="90" height="10" rx="2" fill="white" opacity="0.8" />
-                        <rect x="315" y="285" width="50" height="20" rx="5" fill="#F472B6" />
-
-                        {/* Connexions */}
-                        <path d="M180 150 L320 130" stroke="#3B82F6" strokeWidth="3" strokeDasharray="5 5" />
-                        <path d="M180 180 L300 250" stroke="#8B5CF6" strokeWidth="3" strokeDasharray="5 5" />
-                        <path d="M320 180 L300 230" stroke="#10B981" strokeWidth="3" strokeDasharray="5 5" />
-
-                        {/* Icônes de données */}
-                        <circle cx="250" cy="140" r="15" fill="#3B82F6" />
-                        <rect x="245" cy="135" width="10" height="2" fill="white" />
-                        <rect x="245" cy="140" width="10" height="2" fill="white" />
-                        <rect x="245" cy="145" width="10" height="2" fill="white" />
-
-                        <circle cx="240" cy="215" r="15" fill="#8B5CF6" />
-                        <rect x="235" cy="210" width="10" height="2" fill="white" />
-                        <rect x="235" cy="215" width="10" height="2" fill="white" />
-                        <rect x="235" cy="220" width="10" height="2" fill="white" />
-
-                        <circle cx="310" cy="205" r="15" fill="#10B981" />
-                        <rect x="305" cy="200" width="10" height="2" fill="white" />
-                        <rect x="305" cy="205" width="10" height="2" fill="white" />
-                        <rect x="305" cy="210" width="10" height="2" fill="white" />
-                      </svg>
-                    </div>
-                  )}
-
-                  {service.id === 4 && (
-                    <div className="relative z-10 flex justify-center items-center">
-                      {/* Illustration d'assistance - plus intuitive */}
-                      <svg
-                        className="w-full h-auto max-w-md"
-                        viewBox="0 0 500 350"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        {/* Écran principal */}
-                        <rect x="100" y="50" width="300" height="200" rx="10" fill="#1F2937" />
-                        <rect x="110" y="60" width="280" height="180" rx="5" fill="#F3F4F6" />
-
-                        {/* Éléments d'interface */}
-                        <rect x="130" y="80" width="240" height="40" rx="5" fill="white" />
-                        <rect x="140" y="95" width="150" height="10" rx="2" fill="#6B7280" />
-                        <circle cx="350" cy="100" r="10" fill="#10B981" />
-                        <path d="M345 100 L350 105 L355 95" stroke="white" strokeWidth="2" />
-
-                        {/* Graphique de performance */}
-                        <rect x="130" y="130" width="240" height="90" rx="5" fill="white" />
-                        <path d="M140 200 L360 200" stroke="#E5E7EB" strokeWidth="1" />
-                        <path d="M140 170 L360 170" stroke="#E5E7EB" strokeWidth="1" />
-                        <path d="M140 140 L360 140" stroke="#E5E7EB" strokeWidth="1" />
-
-                        <path
-                          d="M150 190 L180 160 L210 180 L240 130 L270 150 L300 140 L330 170 L350 150"
-                          stroke="#3B82F6"
-                          strokeWidth="3"
-                          fill="none"
-                        />
-                        <circle cx="150" cy="190" r="4" fill="#3B82F6" />
-                        <circle cx="180" cy="160" r="4" fill="#3B82F6" />
-                        <circle cx="210" cy="180" r="4" fill="#3B82F6" />
-                        <circle cx="240" cy="130" r="4" fill="#3B82F6" />
-                        <circle cx="270" cy="150" r="4" fill="#3B82F6" />
-                        <circle cx="300" cy="140" r="4" fill="#3B82F6" />
-                        <circle cx="330" cy="170" r="4" fill="#3B82F6" />
-                        <circle cx="350" cy="150" r="4" fill="#3B82F6" />
-
-                        {/* Éléments de support */}
-                        <circle cx="400" cy="120" r="30" fill="#F472B6" opacity="0.2" />
-                        <circle cx="400" cy="120" r="20" fill="#F472B6" opacity="0.4" />
-                        <circle cx="400" cy="120" r="10" fill="#F472B6" />
-
-                        <circle cx="80" cy="200" r="25" fill="#10B981" opacity="0.2" />
-                        <circle cx="80" cy="200" r="15" fill="#10B981" opacity="0.4" />
-                        <circle cx="80" cy="200" r="8" fill="#10B981" />
-
-                        {/* Icônes de notification */}
-                        <circle cx="400" cy="200" r="20" fill="#FBBF24" opacity="0.2" />
-                        <rect x="395" y="195" width="10" height="10" rx="2" fill="#FBBF24" />
-                        <path d="M400 190 L400 185" stroke="#FBBF24" strokeWidth="2" />
-                        <path d="M400 215 L400 210" stroke="#FBBF24" strokeWidth="2" />
-                        <path d="M390 200 L385 200" stroke="#FBBF24" strokeWidth="2" />
-                        <path d="M415 200 L410 200" stroke="#FBBF24" strokeWidth="2" />
-
-                        {/* Base de l'écran */}
-                        <rect x="200" y="250" width="100" height="10" rx="3" fill="#1F2937" />
-                        <rect x="175" y="260" width="150" height="5" rx="2" fill="#4B5563" />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
-
       {/* Section Méthodologie */}
-      <section className="py-20 bg-gradient-to-r from-gray-50 to-gray-100">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-inter-bold text-gray-900 mb-4">Notre approche complète</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nous combinons nos expertises complémentaires pour donner vie à votre vision
+          {/* En-tête de section */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Notre approche de développement
+            </h2>
+            <div className="w-20 h-1.5 bg-blue-600 mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-gray-600">
+              Nous combinons nos expertises pour donner vie à votre vision et créer des applications mobiles qui se démarquent.
             </p>
           </div>
 
-          {/* Les 4 cartes en ligne */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {/* Stratégie / Conseils */}
-            <div
-              className="bg-white rounded-xl shadow-md p-6 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
-              data-aos="fade-up"
-            >
+          {/* Cartes */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Carte 1 */}
+            <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:border-blue-100 transition-all hover:shadow-lg group">
               <div className="flex justify-center mb-5">
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors">
                   <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
@@ -1056,23 +446,18 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-lg font-inter-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
                 Stratégie / Conseils
               </h3>
-              <p className="text-gray-600 text-center text-sm">
-                Nous développons une stratégie adaptée à votre projet. De la définition du projet à la mise en place de
-                la solution.
+              <p className="text-gray-600 text-center">
+                Nous développons une stratégie adaptée à votre projet, de la définition des besoins à la planification de la solution.
               </p>
             </div>
 
-            {/* Design */}
-            <div
-              className="bg-white rounded-xl shadow-md p-6 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            {/* Carte 2 */}
+            <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:border-blue-100 transition-all hover:shadow-lg group">
               <div className="flex justify-center mb-5">
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors">
                   <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
@@ -1083,22 +468,18 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-lg font-inter-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
                 Design
               </h3>
-              <p className="text-gray-600 text-center text-sm">
-                Nous créons une identité visuelle a votre image, du maquettage à la mise en place de votre site web.
+              <p className="text-gray-600 text-center">
+                Nous créons une expérience utilisateur intuitive et une interface graphique moderne qui reflète votre identité.
               </p>
             </div>
 
-            {/* Développement */}
-            <div
-              className="bg-white rounded-xl shadow-md p-6 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            {/* Carte 3 */}
+            <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:border-blue-100 transition-all hover:shadow-lg group">
               <div className="flex justify-center mb-5">
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors">
                   <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
@@ -1109,22 +490,18 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-lg font-inter-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
                 Développement
               </h3>
-              <p className="text-gray-600 text-center text-sm">
-                Nous développons votre projet en utilisant les technologies les plus adaptées
+              <p className="text-gray-600 text-center">
+                Nous développons votre application avec une architecture robuste et un code propre et optimisé.
               </p>
             </div>
 
-            {/* Maintenance */}
-            <div
-              className="bg-white rounded-xl shadow-md p-6 relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 hover:border-blue-100 group"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
+            {/* Carte 4 */}
+            <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:border-blue-100 transition-all hover:shadow-lg group">
               <div className="flex justify-center mb-5">
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors">
                   <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
@@ -1135,26 +512,26 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-lg font-inter-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 text-center group-hover:text-blue-600 transition-colors">
                 Maintenance
               </h3>
-              <p className="text-gray-600 text-center text-sm">
-                Nous assurons le suivi et le bon fonctionnement de votre projet.
+              <p className="text-gray-600 text-center">
+                Nous assurons le suivi et la maintenance continue de votre application pour garantir sa performance et son évolution.
               </p>
             </div>
           </div>
 
           {/* CTA */}
-          <div className="text-center" data-aos="fade-up" data-aos-delay="400">
-            <a
-              href="/rendez-vous"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-lg font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-lg"
+          <div className="text-center mt-12">
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors"
             >
               Discuter de votre projet
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
