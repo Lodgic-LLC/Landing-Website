@@ -63,7 +63,9 @@ export default function APropos() {
             <div className="w-full lg:w-1/2">
               <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
                 Des solutions numériques
-                <span className="block bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">qui vous ressemblent</span>
+                <span className="block bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">
+                  qui vous ressemblent
+                </span>
               </h1>
 
               <p className="text-white/90 text-lg md:text-xl mb-8 max-w-lg leading-relaxed">
@@ -115,20 +117,20 @@ export default function APropos() {
               </div>
             </div>
 
-            {/* Image à droite */}
-            <div className="w-full lg:w-1/2 mt-10 lg:mt-0">
-              <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
-                <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+            {/* Image à droite - Hidden on mobile, visible on tablet and up */}
+            <div className="w-full lg:w-1/2 mt-10 lg:mt-0 hidden sm:block">
+              <div className="relative w-full">
+                <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-xl overflow-hidden shadow-xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470"
-                    alt="Équipe Lodgic"
+                    src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1470"
+                    alt="Notre approche de développement"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-center"
                     priority
                     style={{ width: '100%', height: '100%' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 to-transparent"></div>
                 </div>
 
                 {/* Éléments décoratifs */}
@@ -159,8 +161,8 @@ export default function APropos() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            {/* Image à gauche */}
-            <div className="w-full lg:w-1/2">
+            {/* Image à gauche - Hidden on mobile, visible on tablet and up */}
+            <div className="w-full lg:w-1/2 hidden sm:block">
               <div className="relative w-full rounded-xl overflow-hidden shadow-xl">
                 <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]">
                   <Image
@@ -295,8 +297,8 @@ export default function APropos() {
                   <div className="ml-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Amélioration continue</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Nous ne nous contentons pas de livrer un produit final. Nous vous accompagnons dans
-                      l'amélioration continue de votre produit.
+                      Nous ne nous contentons pas de livrer un produit final. Nous vous accompagnons dans l'amélioration
+                      continue de votre produit.
                     </p>
                   </div>
                 </div>
@@ -304,7 +306,7 @@ export default function APropos() {
             </div>
 
             {/* Image à droite */}
-            <div className="w-full lg:w-1/2 mt-10 lg:mt-0">
+            <div className="w-full lg:w-1/2 mt-10 lg:mt-0 hidden sm:block">
               <div className="relative w-full">
                 <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-xl overflow-hidden shadow-xl">
                   <Image
@@ -403,25 +405,40 @@ export default function APropos() {
               </div>
 
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Yann est votre interlocuteur principal tout au long de votre projet. Il analyse vos besoins et
-                objectifs pour créer un cahier des charges précis qui servira de base à la réalisation.
+                Yann est votre interlocuteur principal tout au long de votre projet. Il analyse vos besoins et objectifs
+                pour créer un cahier des charges précis qui servira de base à la réalisation.
               </p>
 
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <svg className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="ml-3 text-gray-600">Analyse et compréhension de vos besoins</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="ml-3 text-gray-600">Suivi et coordination du développement</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="ml-3 text-gray-600">Accompagnement post-lancement et évolutions</span>
@@ -459,19 +476,34 @@ export default function APropos() {
 
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <svg className="h-5 w-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-5 w-5 text-indigo-600 mt-0.5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="ml-3 text-gray-600">Développement d'applications web et mobiles</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="h-5 w-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-5 w-5 text-indigo-600 mt-0.5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="ml-3 text-gray-600">Intégration d'API et services tiers</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="h-5 w-5 text-indigo-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-5 w-5 text-indigo-600 mt-0.5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="ml-3 text-gray-600">Optimisation des performances et de la sécurité</span>

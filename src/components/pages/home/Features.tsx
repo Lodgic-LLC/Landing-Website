@@ -1,110 +1,249 @@
-import React from 'react'
 import Image from 'next/image'
 
-const features = [
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-      </svg>
-    ),
-    title: 'Applications Mobiles Natives',
-    description:
-      "Développement d'applications iOS et Android performantes, offrant une expérience utilisateur fluide et intuitive.",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-    title: 'Applications Hybrides',
-    description:
-      'Solutions cross-platform permettant un déploiement rapide sur iOS et Android avec une base de code unique.',
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-      </svg>
-    ),
-    title: 'Design UX/UI Moderne',
-    description:
-      "Interfaces élégantes, accessibles et centrées sur l'utilisateur, conçues pour maximiser l'engagement et la satisfaction.",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
-    title: 'Sécurité Renforcée',
-    description:
-      "Protection des données utilisateurs et conformité aux normes de sécurité les plus strictes (RGPD, OWASP).",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    title: 'Haute Performance',
-    description:
-      "Applications optimisées pour une exécution rapide, une consommation de batterie maîtrisée et des temps de chargement minimaux.",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-      </svg>
-    ),
-    title: 'Maintenance Continue',
-    description:
-      "Support technique, mises à jour régulières et évolutions pour garantir la pérennité et l'amélioration constante de votre application.",
-  },
-]
-
 export default function Features() {
+  const features = [
+    {
+      id: 1,
+      title: 'Conseil & Stratégie',
+      description:
+        "Ensemble, on définit l'utilisation de votre application, on établit un cahier des charges pour cadrer son développement.",
+      icon: (
+        <svg
+          className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 16V21M12 16L19 21M12 16L5 21M5 3L12 7L19 3V14.5C19 15.8807 17.8807 17 16.5 17H7.5C6.11929 17 5 15.8807 5 14.5V3Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ),
+      color: 'from-amber-500 to-orange-500',
+      bgColor: 'bg-amber-50',
+      shadowColor: 'shadow-amber-200',
+      link: '/services/conseil',
+    },
+    {
+      id: 2,
+      title: 'Design & Prototypage',
+      description:
+        'Nous vous présentons des maquettes afin que vous puissiez visualiser son design avant la réalisation.',
+      icon: (
+        <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4 16L8.58579 11.4142C9.36683 10.6332 10.6332 10.6332 11.4142 11.4142L16 16M14 14L15.5858 12.4142C16.3668 11.6332 17.6332 11.6332 18.4142 12.4142L20 14M14 8H14.01M6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ),
+      color: 'from-purple-500 to-indigo-500',
+      bgColor: 'bg-purple-50',
+      shadowColor: 'shadow-purple-200',
+      link: '/services/ux-design',
+    },
+    {
+      id: 3,
+      title: "Développement de l'application",
+      description:
+        "C'est là que la magie opère ! On code votre application, en restant flexible pour s'adapter à vos retours. ",
+      icon: (
+        <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10.3246 4.31731C10.751 2.5609 13.249 2.5609 13.6754 4.31731C13.9508 5.45193 15.2507 5.99038 16.2478 5.38285C17.7913 4.44239 19.5576 6.2087 18.6172 7.75218C18.0096 8.74925 18.5481 10.0492 19.6827 10.3246C21.4391 10.751 21.4391 13.249 19.6827 13.6754C18.5481 13.9508 18.0096 15.2507 18.6172 16.2478C19.5576 17.7913 17.7913 19.5576 16.2478 18.6172C15.2507 18.0096 13.9508 18.5481 13.6754 19.6827C13.249 21.4391 10.751 21.4391 10.3246 19.6827C10.0492 18.5481 8.74926 18.0096 7.75219 18.6172C6.2087 19.5576 4.44239 17.7913 5.38285 16.2478C5.99038 15.2507 5.45193 13.9508 4.31731 13.6754C2.5609 13.249 2.5609 10.751 4.31731 10.3246C5.45193 10.0492 5.99037 8.74926 5.38285 7.75218C4.44239 6.2087 6.2087 4.44239 7.75219 5.38285C8.74926 5.99037 10.0492 5.45193 10.3246 4.31731Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ),
+      color: 'from-blue-500 to-cyan-500',
+      bgColor: 'bg-blue-50',
+      shadowColor: 'shadow-blue-200',
+      link: '/services/custom-solutions',
+    },
+    {
+      id: 4,
+      title: 'Lancement & Évolution',
+      description:
+        "Votre application est prête ! On la met en ligne et reste à vos côtés pour l'optimiser selon les retours et vos idées.",
+      icon: (
+        <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4 5C4 4.44772 4.44772 4 5 4H19C19.5523 4 20 4.44772 20 5V7C20 7.55228 19.5523 8 19 8H5C4.44772 8 4 7.55228 4 7V5Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M4 13C4 12.4477 4.44772 12 5 12H11C11.5523 12 12 12.4477 12 13V19C12 19.5523 11.5523 20 11 20H5C4.44772 20 4 19.5523 4 19V13Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M16 13C16 12.4477 16.4477 12 17 12H19C19.5523 12 20 12.4477 20 13V19C20 19.5523 19.5523 20 19 20H17C16.4477 20 16 19.5523 16 19V13Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ),
+      color: 'from-cyan-500 to-teal-500',
+      bgColor: 'bg-cyan-50',
+      shadowColor: 'shadow-cyan-200',
+      link: '/services/support',
+    },
+  ]
+
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* En-tête de section */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Notre expertise en développement d'applications
+    <section className="w-full bg-white py-12 sm:py-16 md:py-24 relative overflow-hidden">
+      {/* Vague en haut pour transition */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
+        <svg
+          className="absolute top-0 w-full h-full"
+          viewBox="0 0 1440 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,80 C240,0 480,0 720,40 C960,80 1200,80 1440,40 L1440,0 L0,0 Z" fill="white" />
+        </svg>
+      </div>
+
+      {/* Formes SVG en arrière-plan */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        {/* Cercles et formes abstraites */}
+        <svg
+          className="absolute top-0 left-0 w-full h-full opacity-30"
+          viewBox="0 0 1440 800"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          {/* Grand cercle central */}
+          <circle cx="720" cy="400" r="300" fill="url(#gradient1)" fillOpacity="0.1" />
+
+          {/* Cercle supérieur droit */}
+          <circle cx="1100" cy="150" r="150" fill="url(#gradient2)" fillOpacity="0.1" />
+
+          {/* Cercle inférieur gauche */}
+          <circle cx="300" cy="650" r="200" fill="url(#gradient3)" fillOpacity="0.1" />
+
+          {/* Forme abstraite 1 */}
+          <path
+            d="M-100,300 C100,200 300,600 500,500 C700,400 900,700 1100,600 C1300,500 1500,300 1700,400 L1700,800 L-100,800 Z"
+            fill="url(#gradient4)"
+            fillOpacity="0.05"
+          />
+
+          {/* Définition des dégradés */}
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#4F46E5" />
+              <stop offset="100%" stopColor="#2563EB" />
+            </linearGradient>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#6366F1" />
+              <stop offset="100%" stopColor="#4F46E5" />
+            </linearGradient>
+            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#2563EB" />
+            </linearGradient>
+            <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#4F46E5" />
+              <stop offset="100%" stopColor="#2563EB" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-inter-bold text-gray-900 mb-4 sm:mb-6">
+            Nous vous{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+              accompagnons
+            </span>{' '}
+            à chaque étape du développement de votre application mobile
           </h2>
-          <div className="w-20 h-1.5 bg-blue-600 mx-auto mb-6 rounded-full"></div>
-          <p className="text-lg text-gray-600">
-            Des solutions mobiles innovantes qui répondent aux besoins spécifiques de votre entreprise et de vos utilisateurs.
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            De la conception à la livraison, nous vous accompagnons à chaque étape pour concrétiser votre application
+            mobile native.
           </p>
+          <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mt-4 sm:mt-8"></div>
         </div>
 
-        {/* Grille de fonctionnalités */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <div
-              key={index}
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all group relative overflow-hidden"
+              key={feature.id}
+              className={`${feature.bgColor} rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col h-full group`}
             >
-              {/* Décoration d'angle */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-blue-50 rounded-bl-[40px] -z-10 group-hover:bg-blue-100 transition-colors"></div>
+              {/* Mobile layout (horizontal) */}
+              <div className="block sm:hidden">
+                <div className="p-3 flex items-center">
+                  <div
+                    className={`w-10 h-10 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-md transform group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}
+                  >
+                    {feature.icon}
+                  </div>
+                  <div className="flex-grow px-3">
+                    <h3 className="text-base font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {feature.title}
+                    </h3>
+                    <p className="text-xs text-gray-700 mt-1 line-clamp-2">{feature.description}</p>
+                  </div>
+                  <div className="w-6 h-6 bg-white text-gray-800 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border border-gray-100 flex-shrink-0">
+                    {feature.id}
+                  </div>
+                </div>
+              </div>
 
-              {/* Icône */}
-              <div className="mb-5">{feature.icon}</div>
+              {/* Tablet/Desktop layout (vertical) */}
+              <div className="hidden sm:block p-6 flex-grow">
+                <div className="flex items-center justify-between mb-6">
+                  <div
+                    className={`w-12 h-12 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-md transform group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    {feature.icon}
+                  </div>
+                  <div className="w-7 h-7 bg-white text-gray-800 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border border-gray-100">
+                    {feature.id}
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-base text-gray-700">{feature.description}</p>
+              </div>
 
-              {/* Contenu */}
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <div className={`h-1 w-full bg-gradient-to-r ${feature.color}`}></div>
             </div>
           ))}
         </div>
-
-        {/* Image et contenu supplémentaire */}
         <div className="mt-20 flex flex-col lg:flex-row items-center gap-10">
-          {/* Image à gauche */}
-          <div className="w-full lg:w-1/2 relative">
+          {/* Image à gauche - Hidden on mobile, visible on tablet and up */}
+          <div className="w-full lg:w-1/2 relative hidden sm:block">
             <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1374&auto=format&fit=crop"
@@ -123,25 +262,28 @@ export default function Features() {
 
           {/* Contenu à droite */}
           <div className="lg:w-1/2">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Une approche sur-mesure pour votre projet
-            </h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Une approche sur-mesure pour votre projet</h3>
             <p className="text-gray-600 mb-6">
-              Nous ne croyons pas aux solutions uniformisées. Chaque entreprise a des besoins spécifiques et
-              des objectifs uniques. Notre équipe d'experts travaille en étroite collaboration avec vous pour
-              comprendre vos enjeux et concevoir une application mobile qui répond parfaitement à vos attentes.
+              Chaque entreprise a des besoins spécifiques et des objectifs uniques. Notre équipe d'experts travaille en
+              étroite collaboration avec vous pour comprendre vos enjeux et concevoir une application mobile qui répond
+              parfaitement à vos attentes.
             </p>
 
             {/* Points clés */}
             <div className="space-y-4">
               {[
-                "Analyse approfondie de vos besoins métier",
-                "Conception UX/UI personnalisée selon votre identité",
-                "Développement agile avec validations régulières",
-                "Tests rigoureux sur tous les appareils cibles"
+                'Analyse approfondie de vos besoins métier',
+                'Conception UX/UI personnalisée selon votre identité',
+                'Développement agile avec validations régulières',
+                'Tests rigoureux sur tous les appareils cibles',
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-6 w-6 text-blue-600 mt-0.5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
                   <p className="ml-3 text-gray-600">{item}</p>
@@ -150,6 +292,19 @@ export default function Features() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Vague en bas pour transition */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
+        <svg
+          className="absolute bottom-0 w-full h-full"
+          viewBox="0 0 1440 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,80 L0,80 Z" fill="white" />
+        </svg>
       </div>
     </section>
   )

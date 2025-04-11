@@ -26,20 +26,25 @@ export default function ProjectCTA() {
               Prêt à concrétiser votre projet d'application mobile ?
             </h2>
             <p className="text-white/90 text-lg mb-8">
-              Transformez votre idée en une application performante. Notre équipe d'experts vous accompagne à chaque étape,
-              de la conception au déploiement, pour créer une solution sur mesure adaptée à vos besoins.
+              Transformez votre idée en une application. Notre équipe d'experts vous accompagne à chaque étape, de la
+              conception au déploiement, pour créer une solution sur mesure adaptée à vos besoins.
             </p>
 
             {/* Points clés */}
             <div className="mb-10 space-y-4">
               {[
-                "Consultation gratuite et devis personnalisé",
-                "Respect des délais et du budget fixés",
-                "Solutions adaptées aux dernières technologies",
-                "Support continu après le lancement"
+                'Consultation gratuite et devis personnalisé',
+                'Respect des délais et du budget fixés',
+                'Solutions adaptées aux dernières technologies',
+                'Support continu après le lancement',
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start">
-                  <svg className="h-6 w-6 text-blue-200 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-6 w-6 text-blue-200 mt-0.5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="ml-3 text-white">{item}</span>
@@ -64,8 +69,8 @@ export default function ProjectCTA() {
             </div>
           </div>
 
-          {/* Image à droite */}
-          <div className="w-full lg:w-1/2 relative">
+          {/* Image à droite - Hidden on mobile, visible on tablet and up */}
+          <div className="w-full lg:w-1/2 relative hidden sm:block">
             <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl">
               <Image
                 src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1510"
@@ -81,7 +86,9 @@ export default function ProjectCTA() {
 
               {/* Overlay avec formulaire simplifié */}
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 bg-gradient-to-t from-blue-900/90 to-blue-900/60">
-                <h3 className="text-white text-lg sm:text-xl font-medium mb-3 sm:mb-4">Contactez-nous dès maintenant</h3>
+                <h3 className="text-white text-lg sm:text-xl font-medium mb-3 sm:mb-4">
+                  Contactez-nous dès maintenant
+                </h3>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
                     href="/rendez-vous"

@@ -40,12 +40,11 @@ export default function Services() {
       color: 'from-blue-200 to-indigo-300',
       delay: 100,
       features: [
-        'Développement natif en Swift pour des performances optimales',
-        'Design suivant les guidelines Apple (Human Interface)',
-        'Publication et optimisation App Store',
-        'Support des dernières fonctionnalités iOS',
+        'Applications pour iPhone (iOS) et Android',
+        'Intégration de services externes (paiement, réservation, etc.) et ajout de vos fonctionnalités',
+        "Publication sur l'App Store et Google Play",
       ],
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1470"
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1470',
     },
     {
       id: 2,
@@ -56,42 +55,39 @@ export default function Services() {
       color: 'from-purple-200 to-pink-300',
       delay: 200,
       features: [
-        'Développement natif en Kotlin pour des performances maximales',
-        'Design Material You et guidelines Android',
-        'Publication et optimisation Google Play',
-        'Support des dernières fonctionnalités Android',
+        'Optimisé pour le référencement naturel (SEO) sur Google',
+        'Intégration de services externes (paiement, réservation, etc.) et ajout de vos fonctionnalités',
       ],
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1374"
+      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1374',
     },
     {
       id: 3,
       icon: <FaPlug className="h-8 w-8 text-blue-600" />,
-      title: 'Intégrations & APIs mobiles',
-      description: 'Nous intégrons des services tiers et développons des APIs dédiées pour vos applications mobiles.',
+      title: 'Connexion de vos outils et services numériques',
+      description:
+        "Nous relions vos différents logiciels et services pour qu'ils communiquent entre eux, automatisation de l'échange d'informations.",
       color: 'from-green-200 to-teal-300',
       delay: 300,
       features: [
-        'Authentification sécurisée et gestion des utilisateurs',
-        'Paiements in-app et abonnements',
-        'Synchronisation temps réel et mode hors-ligne',
-        'APIs REST et GraphQL optimisées mobile',
+        'Connexion entre vos différents logiciels',
+        'Intégration avec des services externes (paiement, réservation, etc.)',
+        "Automatisation de l'échange d'informations",
       ],
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1374"
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1374',
     },
     {
       id: 4,
       icon: <FaTools className="h-8 w-8 text-blue-600" />,
-      title: 'Maintenance & Évolution',
+      title: 'Assistance et amélioration continue',
       description: "Nous assurons le suivi, la maintenance et l'évolution de vos applications mobiles dans le temps.",
       color: 'from-yellow-200 to-amber-300',
       delay: 400,
       features: [
-        'Mises à jour régulières et correctifs',
-        'Monitoring des performances et crash reporting',
-        'Support technique réactif',
-        'Évolutions et nouvelles fonctionnalités',
+        'Protection contre les risques de sécurité',
+        'Assistance en cas de problème',
+        'Sauvegarde régulière de vos données',
       ],
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1470"
+      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1470',
     },
   ]
 
@@ -143,7 +139,9 @@ export default function Services() {
             {/* Contenu gauche */}
             <div className="w-full lg:w-1/2 pt-8 lg:pt-0">
               <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-                Applications Mobiles <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">Natives</span> iOS & Android
+                Applications Mobiles{' '}
+                <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">Natives</span>{' '}
+                iOS & Android
               </h1>
 
               <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed">
@@ -184,14 +182,19 @@ export default function Services() {
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
                   </svg>
                 </Link>
               </div>
             </div>
 
-            {/* Image à droite */}
-            <div className="w-full lg:w-1/2 mt-10 lg:mt-0">
+            {/* Image à droite - Hidden on mobile, visible on tablet and up */}
+            <div className="w-full lg:w-1/2 mt-10 lg:mt-0 hidden sm:block">
               <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px]">
                 <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl shadow-2xl">
                   <Image
@@ -235,8 +238,9 @@ export default function Services() {
       {mainServices.map((service, index) => (
         <section key={service.id} className={`py-20 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
           <div className="max-w-7xl mx-auto px-6">
-            <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
-
+            <div
+              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}
+            >
               {/* Contenu textuel */}
               <div className="lg:w-1/2">
                 <div className="flex items-center mb-6">
@@ -246,9 +250,7 @@ export default function Services() {
                   <h2 className="text-3xl font-bold text-gray-900">{service.title}</h2>
                 </div>
 
-                <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                  {service.description}
-                </p>
+                <p className="text-gray-600 text-lg mb-8 leading-relaxed">{service.description}</p>
 
                 <div className="space-y-4 mb-8">
                   {service.features.map((feature, i) => (
@@ -259,11 +261,7 @@ export default function Services() {
                 {/* Technologies */}
                 <div className="mb-8">
                   <h4 className="font-medium text-gray-800 mb-3 flex items-center">
-                    <svg
-                      className="w-5 h-5 mr-2 text-blue-600"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
+                    <svg className="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                       <path
                         fillRule="evenodd"
                         d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
@@ -275,10 +273,10 @@ export default function Services() {
                     {service.id === 1 && (
                       <>
                         <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                          Swift
+                          React Native
                         </span>
                         <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                          SwiftUI
+                          Javascript
                         </span>
                         <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
                           UIKit
@@ -288,16 +286,10 @@ export default function Services() {
                     {service.id === 2 && (
                       <>
                         <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                          Kotlin
+                          Tailwind CSS
                         </span>
                         <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
                           Android SDK
-                        </span>
-                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                          Jetpack Compose
-                        </span>
-                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-md">
-                          Room
                         </span>
                       </>
                     )}
@@ -348,8 +340,8 @@ export default function Services() {
               </div>
 
               {/* Image */}
-              <div className="w-full lg:w-1/2">
-                <div className="relative w-full">
+              <div className="w-full lg:w-1/2 hidden sm:block">
+                <div className="relative w-full ">
                   <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] rounded-xl overflow-hidden shadow-lg">
                     <Image
                       src={service.image}
@@ -358,15 +350,23 @@ export default function Services() {
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover object-center"
                       quality={85}
-                      loading={service.id === 1 ? "eager" : "lazy"}
+                      loading={service.id === 1 ? 'eager' : 'lazy'}
                       style={{ width: '100%', height: '100%' }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 to-transparent"></div>
                   </div>
 
                   {/* Éléments décoratifs */}
-                  <div className={`absolute -z-10 ${index % 2 === 0 ? '-bottom-4 -right-4' : '-bottom-4 -left-4'} w-24 h-24 ${service.color} rounded-xl opacity-50`}></div>
-                  <div className={`absolute -z-10 ${index % 2 === 0 ? '-top-4 -left-4' : '-top-4 -right-4'} w-12 h-12 bg-blue-200 rounded-full`}></div>
+                  <div
+                    className={`absolute -z-10 ${
+                      index % 2 === 0 ? '-bottom-4 -right-4' : '-bottom-4 -left-4'
+                    } w-24 h-24 ${service.color} rounded-xl opacity-50`}
+                  ></div>
+                  <div
+                    className={`absolute -z-10 ${
+                      index % 2 === 0 ? '-top-4 -left-4' : '-top-4 -right-4'
+                    } w-12 h-12 bg-blue-200 rounded-full`}
+                  ></div>
                 </div>
               </div>
             </div>
@@ -421,12 +421,11 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-6">
           {/* En-tête de section */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Notre approche de développement
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Notre approche de développement</h2>
             <div className="w-20 h-1.5 bg-blue-600 mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-gray-600">
-              Nous combinons nos expertises pour donner vie à votre vision et créer des applications mobiles qui se démarquent.
+              Nous combinons nos expertises pour donner vie à votre vision et créer des applications mobiles qui se
+              démarquent.
             </p>
           </div>
 
@@ -450,7 +449,8 @@ export default function Services() {
                 Stratégie / Conseils
               </h3>
               <p className="text-gray-600 text-center">
-                Nous développons une stratégie adaptée à votre projet, de la définition des besoins à la planification de la solution.
+                Nous développons une stratégie adaptée à votre projet, de la définition des besoins à la planification
+                de la solution.
               </p>
             </div>
 
@@ -472,7 +472,8 @@ export default function Services() {
                 Design
               </h3>
               <p className="text-gray-600 text-center">
-                Nous créons une expérience utilisateur intuitive et une interface graphique moderne qui reflète votre identité.
+                Nous créons une expérience utilisateur intuitive et une interface graphique moderne qui reflète votre
+                identité.
               </p>
             </div>
 
@@ -516,7 +517,8 @@ export default function Services() {
                 Maintenance
               </h3>
               <p className="text-gray-600 text-center">
-                Nous assurons le suivi et la maintenance continue de votre application pour garantir sa performance et son évolution.
+                Nous assurons le suivi et la maintenance continue de votre application pour garantir sa performance et
+                son évolution.
               </p>
             </div>
           </div>

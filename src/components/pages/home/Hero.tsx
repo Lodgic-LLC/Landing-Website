@@ -48,8 +48,8 @@ export default function Hero() {
               </h1>
 
               <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed">
-                Notre agence accompagne votre entreprise dans la création d'applications mobiles natives
-                et hybrides, du concept au lancement, avec une approche centrée sur l'expérience utilisateur.
+                Expertise technique, design innovant et accompagnement personnalisé pour concrétiser vos projets
+                d'applications mobiles.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -85,7 +85,12 @@ export default function Hero() {
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
                   </svg>
                 </Link>
               </div>
@@ -93,7 +98,7 @@ export default function Hero() {
           </div>
 
           {/* Image à droite */}
-          <div className="w-full lg:w-1/2 mt-10 lg:mt-0">
+          <div className="w-full lg:w-1/2 mt-10 lg:mt-0 hidden sm:block">
             <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px]">
               <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl shadow-2xl">
                 <Image
