@@ -97,14 +97,13 @@ export default function Hero() {
             <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px]">
               <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/images/hero-app-development.jpg"
+                  src="/images/hero.jpg"
                   alt="Développement d'applications mobiles"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-center"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
               </div>
 
               {/* Élément décoratif derrière l'image */}
