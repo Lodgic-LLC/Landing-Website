@@ -8,28 +8,28 @@ const technologies = [
     {
         name: 'React Native',
         logo: 'https://cdn.worldvectorlogo.com/logos/react-2.svg',
-        description: "Framework JavaScript pour le développement d'applications mobiles multiplateformes performantes",
+        description: "Permet de créer des applications mobiles qui fonctionnent aussi bien sur iPhone que sur Android avec un seul code",
         color: 'bg-blue-50',
         textColor: 'text-blue-600',
     },
     {
         name: 'Expo',
         logo: 'https://cdn.worldvectorlogo.com/logos/expo-1.svg',
-        description: "Plateforme et ensemble d'outils facilitant le développement et le déploiement d'applications React Native",
+        description: "Simplifie la création et le partage d'applications mobiles, pour vous les faire tester rapidement et facilement",
         color: 'bg-gray-50',
         textColor: 'text-gray-800',
     },
     {
         name: 'Prisma',
         logo: 'https://cdn.worldvectorlogo.com/logos/prisma-4.svg',
-        description: "ORM moderne pour Node.js et TypeScript simplifiant les interactions avec les bases de données",
+        description: "Gère efficacement toutes vos données et informations, comme un bibliothécaire ultra-organisé pour votre application",
         color: 'bg-indigo-50',
         textColor: 'text-indigo-600',
     },
     {
         name: 'NestJS',
         logo: 'https://cdn.worldvectorlogo.com/logos/nestjs.svg',
-        description: "Framework Node.js progressif pour la construction d'API backend évolutives et maintenables",
+        description: "Crée l'intelligence derrière votre application, assurant sa rapidité, sa sécurité et sa capacité à évoluer",
         color: 'bg-red-50',
         textColor: 'text-red-600',
     },
@@ -50,8 +50,8 @@ export default function TechStack() {
                     </h2>
                     <div className="w-16 sm:w-20 h-1.5 bg-blue-600 mx-auto mb-4 sm:mb-6 rounded-full"></div>
                     <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-                        Nous utilisons les technologies les plus modernes et performantes pour développer vos applications mobiles,
-                        garantissant ainsi qualité, maintenabilité et évolutivité.
+                        Nous utilisons les outils les plus modernes pour créer vos applications mobiles,
+                        ce qui garantit qu'elles seront rapides, fiables et faciles à faire évoluer avec vos besoins.
                     </p>
                 </div>
 
@@ -100,16 +100,15 @@ export default function TechStack() {
                                 Un écosystème complet et intégré
                             </h3>
                             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
-                                Cette combinaison technologique nous permet de développer des applications
-                                robustes de A à Z, du backend performant à l'interface utilisateur fluide,
-                                tout en garantissant une expérience de développement optimale et des délais réduits.
+                                Ces technologies fonctionnent parfaitement ensemble, comme les pièces d'un puzzle,
+                                pour vous offrir des applications complètes et performantes, tout en réduisant le temps de développement.
                             </p>
                             <ul className="space-y-2 sm:space-y-3">
                                 {[
-                                    "Développement cross-platform: une base de code, deux plateformes (iOS & Android)",
-                                    "API RESTful sécurisées et évolutives avec NestJS",
-                                    "Gestion de données efficace et typée avec Prisma",
-                                    "Déploiement et mises à jour simplifiés via Expo"
+                                    "Une seule application qui fonctionne sur iPhone et Android à la fois",
+                                    "Des services en ligne sécurisés et qui supportent de nombreux utilisateurs",
+                                    "Une gestion intelligente et organisée de vos données",
+                                    "Des mises à jour simples et rapides de votre application"
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-start">
                                         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -132,7 +131,7 @@ export default function TechStack() {
                                                         key={`icon-${tech.name}`}
                                                         className="bg-white p-3 sm:p-4 rounded-lg shadow-lg transform transition-transform hover:scale-105"
                                                     >
-                                                        <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 mx-auto">
+                                                        <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 mx-auto">
                                                             <Image
                                                                 src={tech.logo}
                                                                 alt={tech.name}
