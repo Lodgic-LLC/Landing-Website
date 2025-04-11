@@ -84,7 +84,7 @@ export default function ProjectCTA() {
                 <h3 className="text-white text-lg sm:text-xl font-medium mb-3 sm:mb-4">Contactez-nous dès maintenant</h3>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
-                    href="/contact"
+                    href="/rendez-vous"
                     className="bg-white text-blue-600 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-all flex-grow text-center"
                   >
                     Prendre rendez-vous
