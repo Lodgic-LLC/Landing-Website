@@ -2,27 +2,42 @@
 
 import React from 'react'
 import BookingWidget from './BookingWidget'
-import { FaCheckCircle, FaComments, FaCalendarAlt, FaArrowRight, FaLaptopCode, FaHeadset, FaQuestionCircle, FaChevronRight, FaClock, FaLightbulb } from 'react-icons/fa'
+import {
+  FaCheckCircle,
+  FaComments,
+  FaCalendarAlt,
+  FaArrowRight,
+  FaLaptopCode,
+  FaHeadset,
+  FaQuestionCircle,
+  FaChevronRight,
+  FaClock,
+  FaLightbulb,
+} from 'react-icons/fa'
 import Link from 'next/link'
 
 const RendezVousContent = () => {
   const faqItems = [
     {
-      question: "Comment se déroule le rendez-vous ?",
-      answer: "Notre rendez-vous de consultation se déroule en vidéoconférence via Google Meet. Nous discuterons de votre projet, de vos objectifs et de vos besoins spécifiques. Notre équipe vous fournira des conseils personnalisés et vous présentera les solutions possibles."
+      question: 'Combien de temps dure un rendez-vous ?',
+      answer:
+        "Nos consultations stratégiques durent 45 minutes, un format optimisé pour analyser vos besoins, répondre à vos questions et établir les bases d'une collaboration efficace.",
     },
     {
-      question: "Combien de temps dure la consultation ?",
-      answer: "La consultation initiale dure environ 45 minutes. Ce temps nous permet d'explorer votre projet en détail et de répondre à toutes vos questions. Si nécessaire, nous pourrons planifier des sessions de suivi."
+      question: 'Le rendez-vous est-il gratuit ?',
+      answer:
+        "Oui, cette consultation initiale est offerte sans engagement. Elle nous permet d'évaluer précisément vos besoins et de déterminer comment notre expertise peut vous apporter une valeur ajoutée.",
     },
     {
-      question: "Est-ce que la consultation est gratuite ?",
-      answer: "Oui, la consultation initiale est entièrement gratuite et sans engagement. Nous croyons qu'il est important de bien comprendre vos besoins avant de vous proposer des solutions adaptées."
+      question: 'Comment se déroule le rendez-vous ?',
+      answer:
+        "La consultation se déroule par visioconférence sécurisée. Vous recevrez un lien de connexion après votre réservation. Nous analyserons ensemble vos objectifs et élaborerons un plan d'action personnalisé.",
     },
     {
-      question: "Que dois-je préparer avant le rendez-vous ?",
-      answer: "Pour maximiser l'efficacité de notre consultation, nous vous recommandons de préparer une description générale de votre projet, vos objectifs principaux, et toute référence visuelle ou fonctionnelle qui pourrait nous aider à mieux comprendre vos attentes."
-    }
+      question: 'Puis-je modifier ma réservation ?',
+      answer:
+        'Absolument, vous pouvez modifier ou annuler votre rendez-vous à tout moment via le lien de confirmation reçu par email. Nous comprenons que les priorités peuvent évoluer.',
+    },
   ]
 
   return (
@@ -84,7 +99,9 @@ const RendezVousContent = () => {
                     </div>
                     <div className="ml-5">
                       <h3 className="text-xl font-medium text-gray-800">1. Réservez un créneau</h3>
-                      <p className="mt-2 text-gray-600 leading-relaxed">Choisissez un horaire qui vous convient dans notre calendrier en ligne.</p>
+                      <p className="mt-2 text-gray-600 leading-relaxed">
+                        Choisissez un horaire qui vous convient dans notre calendrier en ligne.
+                      </p>
                     </div>
                   </div>
 
@@ -96,7 +113,9 @@ const RendezVousContent = () => {
                     </div>
                     <div className="ml-5">
                       <h3 className="text-xl font-medium text-gray-800">2. Consultation vidéo</h3>
-                      <p className="mt-2 text-gray-600 leading-relaxed">Nous échangerons par visioconférence pour discuter en détail de votre projet.</p>
+                      <p className="mt-2 text-gray-600 leading-relaxed">
+                        Nous échangerons par visioconférence pour discuter en détail de votre projet.
+                      </p>
                     </div>
                   </div>
 
@@ -108,7 +127,9 @@ const RendezVousContent = () => {
                     </div>
                     <div className="ml-5">
                       <h3 className="text-xl font-medium text-gray-800">3. Analyse personnalisée</h3>
-                      <p className="mt-2 text-gray-600 leading-relaxed">Nous vous fournirons des conseils et solutions adaptés à vos besoins spécifiques.</p>
+                      <p className="mt-2 text-gray-600 leading-relaxed">
+                        Nous vous fournirons des conseils et solutions adaptés à vos besoins spécifiques.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -162,7 +183,10 @@ const RendezVousContent = () => {
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50 relative">
-        <div className="absolute top-0 left-0 right-0 h-32 bg-white" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 0)' }}></div>
+        <div
+          className="absolute top-0 left-0 right-0 h-32 bg-white"
+          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 0)' }}
+        ></div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
