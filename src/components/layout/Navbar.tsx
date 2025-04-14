@@ -96,7 +96,13 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center" aria-label="Accueil Lodgic">
               <div className="h-9 w-9 relative mr-2">
-                <Image src="/favicon.ico" alt="Logo Lodgic" width={36} height={36} className="object-contain" />
+                <Image
+                  src="/FullLogo_Transparent_NoBuffer.png"
+                  alt="Logo Lodgic"
+                  width={36}
+                  height={36}
+                  className="object-contain"
+                />
               </div>
               <span className="font-semibold text-xl text-gray-800">Lodgic</span>
             </Link>

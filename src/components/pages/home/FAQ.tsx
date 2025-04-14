@@ -75,9 +75,9 @@ export default function FAQ() {
     },
     {
       id: 4,
-      question: 'Quelles technologies utilisez-vous pour le développement mobile ?',
+      question: 'Quelles technologies utilisez-vous pour développer les applications mobiles ?',
       answer:
-        'Nous développons des applications mobiles natives avec Swift pour iOS et Kotlin pour Android, garantissant ainsi les meilleures performances et une expérience utilisateur optimale sur chaque plateforme.',
+        "Nous utilisons principalement React Native et Expo pour le développement d'applications mobiles cross-plateforme. Cela nous permet de créer des applications performantes pour Android et iOS à partir d'une seule base de code, tout en offrant une expérience utilisateur proche du natif. Pour le backend, nous privilégions NestJS et Prisma.",
       icon: (
         <svg className="w-5 h-5 text-[#2563EB]" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -217,9 +217,8 @@ export default function FAQ() {
                     <span className="font-medium text-sm sm:text-base md:text-lg text-gray-900">{item.question}</span>
                   </div>
                   <svg
-                    className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-500 transform ${
-                      !isMobile ? 'transition-transform duration-200' : ''
-                    } flex-shrink-0 ml-2 ${openQuestion === item.id ? 'rotate-180' : ''}`}
+                    className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-500 transform ${!isMobile ? 'transition-transform duration-200' : ''
+                      } flex-shrink-0 ml-2 ${openQuestion === item.id ? 'rotate-180' : ''}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -238,9 +237,8 @@ export default function FAQ() {
                 ) : (
                   // Version desktop avec animation
                   <div
-                    className={`px-3 sm:px-6 transition-all duration-200 ease-out overflow-hidden border-t border-gray-100 ${
-                      openQuestion === item.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 border-t-0'
-                    }`}
+                    className={`px-3 sm:px-6 transition-all duration-200 ease-out overflow-hidden border-t border-gray-100 ${openQuestion === item.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 border-t-0'
+                      }`}
                   >
                     <p className="text-sm sm:text-base text-gray-600 py-3 sm:py-4">{item.answer}</p>
                   </div>
