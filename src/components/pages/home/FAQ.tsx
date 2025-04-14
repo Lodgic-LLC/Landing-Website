@@ -74,7 +74,7 @@ export default function FAQ() {
       ),
     },
     {
-      id: 'tech-stack',
+      id: 4,
       question: 'Quelles technologies utilisez-vous pour développer les applications mobiles ?',
       answer:
         "Nous utilisons principalement React Native et Expo pour le développement d'applications mobiles cross-plateforme. Cela nous permet de créer des applications performantes pour Android et iOS à partir d'une seule base de code, tout en offrant une expérience utilisateur proche du natif. Pour le backend, nous privilégions NestJS et Prisma.",
