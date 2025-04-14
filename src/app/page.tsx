@@ -10,16 +10,16 @@ import SuccessStories from '@/components/pages/home/SuccessStories'
 import TechStack from '@/components/pages/home/TechStack'
 
 export const metadata: Metadata = {
-  title: "Développeur d'Applications Mobiles Toulouse | Lodgic",
+  title: "Développeur Application Mobile Toulouse - Lodgic",
   description:
-    "Lodgic est une agence spécialisée dans le développement d'applications mobiles performantes avec React Native, Expo, Prisma et NestJS.",
+    "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups et entreprises.",
   alternates: {
     canonical: 'https://lodgic-dev.com',
   },
   openGraph: {
-    title: "Développeur d'Applications Mobile Toulouse | Lodgic",
+    title: "Développeur Application Mobile Toulouse - Lodgic",
     description:
-      'Transformez votre idée en application mobile performante grâce à notre expertise en React Native, Expo, Prisma et NestJS. Solutions sur mesure et accompagnement complet.',
+      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo). Expertise et accompagnement.",
     url: 'https://lodgic-dev.com',
     siteName: 'Lodgic',
     images: [
@@ -27,16 +27,23 @@ export const metadata: Metadata = {
         url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
-        alt: "Lodgic - Experts en Développement d'Applications Mobile Toulouse",
+        alt: "Lodgic - Développeur d'Application Mobile à Toulouse",
       },
     ],
     locale: 'fr_FR',
     type: 'website',
   },
   keywords: [
-    'développement mobile',
-    'Toulouse',
-    "Développement d'applications mobiles toulouse",
+    'Développeur Application Mobile Toulouse',
+    'Agence développement mobile Toulouse',
+    'Création application mobile Toulouse',
+    'Développeur mobile Toulouse',
+    'Application mobile sur mesure Toulouse',
+    'Développement application Android Toulouse',
+    'Développement application iOS Toulouse',
+    'Développeur React Native Toulouse',
+    'Agence web et mobile Toulouse',
+    'Freelance développeur mobile Toulouse',
     'React Native',
     'Expo',
     'Prisma',
@@ -44,6 +51,7 @@ export const metadata: Metadata = {
     'application mobile',
     'développeur application',
     'agence développement',
+    'Toulouse',
   ],
 }
 
@@ -56,9 +64,9 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             "name": "Lodgic",
+            "image": "https://lodgic-dev.com/FullLogo_Transparent.png",
             "url": "https://lodgic-dev.com",
-            "logo": "https://lodgic-dev.com/FullLogo_Transparent.png",
-            "description": "Agence spécialisée dans le développement d'applications mobiles avec React Native, Expo, Prisma et NestJS.",
+            "description": "Lodgic est votre développeur d'application mobile à Toulouse, spécialisé en React Native et Expo pour créer des solutions sur mesure.",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Toulouse",
