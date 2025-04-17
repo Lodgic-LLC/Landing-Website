@@ -310,7 +310,7 @@ export default function APropos() {
               <div className="relative w-full">
                 <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-xl overflow-hidden shadow-xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1470"
+                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470"
                     alt="Notre approche de développement"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
