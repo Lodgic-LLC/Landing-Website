@@ -10,7 +10,24 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    domains: ['images.unsplash.com', 'cdn.worldvectorlogo.com', 'seeklogo.com', 'raw.githubusercontent.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.worldvectorlogo.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'seeklogo.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+      },
+    ],
   },
   experimental: {
     optimizeCss: true,

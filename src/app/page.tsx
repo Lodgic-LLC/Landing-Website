@@ -1,23 +1,25 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import FAQ from '@/components/pages/home/FAQ'
-import Features from '@/components/pages/home/Features'
+import dynamic from 'next/dynamic'
 import Hero from '@/components/pages/home/Hero'
-import Process from '@/components/pages/home/Process'
-import ProjectCTA from '@/components/pages/home/ProjectCTA'
-import SuccessStories from '@/components/pages/home/SuccessStories'
 import TechStack from '@/components/pages/home/TechStack'
 
+const Features = dynamic(() => import('@/components/pages/home/Features'))
+const Process = dynamic(() => import('@/components/pages/home/Process'))
+const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
+const ProjectCTA = dynamic(() => import('@/components/pages/home/ProjectCTA'))
+const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
+
 export const metadata: Metadata = {
-  title: "Développeur Application Mobile Toulouse - Lodgic",
+  title: 'Développeur Application Mobile Toulouse - Lodgic',
   description:
     "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups et entreprises.",
   alternates: {
     canonical: 'https://lodgic-dev.com',
   },
   openGraph: {
-    title: "Développeur Application Mobile Toulouse - Lodgic",
+    title: 'Développeur Application Mobile Toulouse - Lodgic',
     description:
       "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo). Expertise et accompagnement.",
     url: 'https://lodgic-dev.com',
