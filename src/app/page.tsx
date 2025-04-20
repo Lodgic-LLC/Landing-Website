@@ -98,10 +98,10 @@ export default function Home() {
       </Script>
       <main>
         <Hero />
-        <TechStack />
         <Features />
         <Process />
         <SuccessStories />
+        <TechStack />
         <ProjectCTA />
         <FAQ />
       </main>
