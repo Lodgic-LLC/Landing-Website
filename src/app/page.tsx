@@ -14,14 +14,14 @@ const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 export const metadata: Metadata = {
   title: 'Développeur Application Mobile Toulouse - Lodgic',
   description:
-    "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups et entreprises.",
+    "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups, entreprises et particuliers.",
   alternates: {
     canonical: 'https://lodgic-dev.com',
   },
   openGraph: {
     title: 'Développeur Application Mobile Toulouse - Lodgic',
     description:
-      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo). Expertise et accompagnement.",
+      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
     url: 'https://lodgic-dev.com',
     siteName: 'Lodgic',
     images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
-        alt: "Lodgic - Développeur d'Application Mobile à Toulouse",
+        alt: "Développeur d'Application Mobile à Toulouse Lodgic - ",
       },
     ],
     locale: 'fr_FR',
@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   },
   keywords: [
     'Développeur Application Mobile Toulouse',
+    'Développeurs Applications Mobile Toulouse',
     'Agence développement mobile Toulouse',
     'Création application mobile Toulouse',
     'Développeur mobile Toulouse',
@@ -64,11 +65,12 @@ export default function Home() {
         {`
           {
             "@context": "https://schema.org",
-            "@type": "ProfessionalService",
+            "@type": "LocalBusiness",
             "name": "Lodgic",
             "image": "https://lodgic-dev.com/FullLogo_Transparent.png",
             "url": "https://lodgic-dev.com",
             "description": "Lodgic est votre développeur d'application mobile à Toulouse, spécialisé en React Native et Expo pour créer des solutions sur mesure.",
+            "email": "lodgic.dev@gmail.com",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Toulouse",
@@ -82,8 +84,9 @@ export default function Home() {
               "availableLanguage": ["French", "English"]
             },
             "sameAs": [
-              "https://github.com/lodgic-dev",
-              "https://linkedin.com/company/lodgic-dev"
+              "https://github.com/lodgic-llc",
+              "https://linkedin.com/company/lodgic-dev",
+              "https://x.com/lodgic-dev"
             ],
             "knowsAbout": [
               "React Native",

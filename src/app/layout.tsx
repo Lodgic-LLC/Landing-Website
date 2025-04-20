@@ -15,10 +15,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://lodgic-dev.com'),
   title: {
     default: 'Développeur Application Mobile Toulouse - Lodgic',
-    template: '%s | Lodgic',
+    template: '%s - Lodgic',
   },
   keywords: [
     'Développeur Application Mobile Toulouse',
+    'Développeurs Applications Mobile Toulouse',
     'Agence développement mobile Toulouse',
     'Création application mobile Toulouse',
     'Développeur mobile Toulouse',
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: "Lodgic - Développeur Application Mobile Toulouse",
+    title: 'Lodgic - Développeur Application Mobile Toulouse',
     description:
       "Agence spécialisée dans la conception d'applications mobiles (Android & iOS) et web sur mesure pour les entrepreneurs et startups à Toulouse.",
     images: '/FullLogo_Transparent_NoBuffer.png',
@@ -57,34 +58,32 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Lodgic - Développeur Application Mobile Toulouse",
+    title: 'Lodgic - Développeur Application Mobile Toulouse',
     description:
-      "Agence spécialisée dans la conception d'applications mobiles (Android & iOS) et web sur mesure pour les entrepreneurs et startups à Toulouse.",
+      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
     images: '/lodgic-banner.png',
     creator: '@lodgic',
     site: '@lodgic',
   },
   other: {
     'instagram:card': 'summary_large_image',
-    'instagram:title': "Lodgic - Développeur Application Mobile Toulouse",
+    'instagram:title': 'Développeur Application Mobile Toulouse - Lodgic',
     'instagram:description':
-      "Agence spécialisée dans la conception d'applications mobiles (Android & iOS) et web sur mesure pour les entrepreneurs et startups à Toulouse.",
+      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
     'instagram:image': '/lodgic-banner.png',
     'whatsapp:card': 'summary_large_image',
-    'whatsapp:title': "Lodgic - Développeur Application Mobile Toulouse",
+    'whatsapp:title': 'Développeur Application Mobile Toulouse - Lodgic',
     'whatsapp:description':
-      "Agence spécialisée dans la conception d'applications mobiles (Android & iOS) et web sur mesure pour les entrepreneurs et startups à Toulouse.",
+      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
     'whatsapp:image': '/lodgic-banner.png',
-    'og:logo': '/FullLogo_Transparent_NoBuffer.png',
     'og:image': '/lodgic-banner.png',
     'og:url': 'https://lodgic-dev.com',
     'og:site_name': 'Lodgic',
     'og:locale': 'fr_FR',
     'og:type': 'website',
-    'og:title': "Lodgic - Développeur Application Mobile Toulouse",
+    'og:title': 'Développeur Application Mobile Toulouse - Lodgic',
     'og:description':
-      "Agence spécialisée dans la conception d'applications mobiles (Android & iOS) et web sur mesure pour les entrepreneurs et startups à Toulouse.",
-      
+      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
   },
 }
 
