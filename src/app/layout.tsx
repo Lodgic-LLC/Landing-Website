@@ -76,6 +76,15 @@ export const metadata: Metadata = {
       "Agence spécialisée dans la conception d'applications mobiles (Android & iOS) et web sur mesure pour les entrepreneurs et startups à Toulouse.",
     'whatsapp:image': '/lodgic-banner.png',
     'og:logo': '/FullLogo_Transparent_NoBuffer.png',
+    'og:image': '/lodgic-banner.png',
+    'og:url': 'https://lodgic-dev.com',
+    'og:site_name': 'Lodgic',
+    'og:locale': 'fr_FR',
+    'og:type': 'website',
+    'og:title': "Lodgic - Développeur Application Mobile Toulouse",
+    'og:description':
+      "Agence spécialisée dans la conception d'applications mobiles (Android & iOS) et web sur mesure pour les entrepreneurs et startups à Toulouse.",
+      
   },
 }
 
