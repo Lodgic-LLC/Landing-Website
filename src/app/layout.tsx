@@ -40,27 +40,27 @@ export const metadata: Metadata = {
     'développement iOS',
   ],
   description:
-    'Développeur Application Mobile à Toulouse : Lodgic conçoit des applications mobiles (Android & iOS) et web sur mesure pour entrepreneurs et startups.',
+    "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups, entreprises et particuliers.",
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'Lodgic - Développeur Application Mobile Toulouse',
+    title: 'Développeur Application Mobile Toulouse - Lodgic',
     description:
-      "Agence spécialisée dans la conception d'applications mobiles (Android & iOS) et web sur mesure pour les entrepreneurs et startups à Toulouse.",
+      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups, entreprises et particuliers.",
     images: '/FullLogo_Transparent_NoBuffer.png',
     type: 'website',
     locale: 'fr_FR',
     url: 'https://lodgic-dev.com',
-    siteName: 'Lodgic',
+    siteName: 'Lodgic Dev',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lodgic - Développeur Application Mobile Toulouse',
+    title: 'Développeur Application Mobile Toulouse - Lodgic',
     description:
-      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
+      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups, entreprises et particuliers.",
     images: '/lodgic-banner.png',
     creator: '@lodgic',
     site: '@lodgic',
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     'whatsapp:image': '/lodgic-banner.png',
     'og:image': '/lodgic-banner.png',
     'og:url': 'https://lodgic-dev.com',
-    'og:site_name': 'Lodgic',
+    'og:site_name': 'Lodgic Dev',
     'og:locale': 'fr_FR',
     'og:type': 'website',
     'og:title': 'Développeur Application Mobile Toulouse - Lodgic',
@@ -93,7 +93,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className="overflow-x-hidden overscroll-none">
+    <html lang="fr" className="overflow-x-hidden overscroll-none" suppressHydrationWarning>
       <head>
         {/* Scripts Iubenda pour la gestion des cookies */}
         <Script id="iubenda-config" strategy="afterInteractive">
@@ -119,6 +119,13 @@ export default function RootLayout({
             });
           `}
         </Script>
+
+        {/* Ahrefs Analytics Script */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="NwAOnm/5ns2EDAKe8YmE8g"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={`${inter.variable} bg-white min-h-screen overflow-x-hidden overscroll-none antialiased`}>
         <div className="relative w-full overflow-hidden">
