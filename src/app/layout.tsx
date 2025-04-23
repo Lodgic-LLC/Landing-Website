@@ -17,8 +17,6 @@ const structuredData = {
   name: 'Lodgic Dev',
   image: 'https://lodgic-dev.com/FullLogo_Transparent.png',
   url: 'https://lodgic-dev.com',
-  description:
-    "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
   email: 'lodgic.dev@gmail.com',
   address: {
     '@type': 'PostalAddress',
@@ -125,9 +123,8 @@ export default function RootLayout({
             _iub.csConfiguration = {"siteId":3950256,"cookiePolicyId":94594353,"lang":"fr","storage":{"useSiteId":true}};
           `}
         </Script>
-        <Script id="structured-data" type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </Script>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+
         <Script src="https://cs.iubenda.com/autoblocking/3950256.js" strategy="afterInteractive" />
         <Script src="//cdn.iubenda.com/cs/gpp/stub.js" strategy="afterInteractive" />
         <Script src="//cdn.iubenda.com/cs/iubenda_cs.js" strategy="afterInteractive" charSet="UTF-8" async />
