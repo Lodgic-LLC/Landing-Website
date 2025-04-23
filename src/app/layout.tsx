@@ -123,7 +123,9 @@ export default function RootLayout({
             _iub.csConfiguration = {"siteId":3950256,"cookiePolicyId":94594353,"lang":"fr","storage":{"useSiteId":true}};
           `}
         </Script>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify(structuredData)}
+        </Script>
 
         <Script src="https://cs.iubenda.com/autoblocking/3950256.js" strategy="afterInteractive" />
         <Script src="//cdn.iubenda.com/cs/gpp/stub.js" strategy="afterInteractive" />
