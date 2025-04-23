@@ -11,6 +11,29 @@ const inter = Inter({
   weight: ['400', '500', '600', '700'],
 })
 
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Lodgic Dev',
+  image: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+  url: 'https://lodgic-dev.com',
+  description:
+    "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
+  email: 'lodgic.dev@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Toulouse',
+    addressRegion: 'Occitanie',
+    addressCountry: 'FR',
+  },
+
+  sameAs: [
+    'https://github.com/lodgic-llc',
+    'https://linkedin.com/company/lodgic-dev',
+    'https://x.com/lodgic-dev',
+  ],
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://lodgic-dev.com'),
   title: {
@@ -101,6 +124,9 @@ export default function RootLayout({
             var _iub = _iub || [];
             _iub.csConfiguration = {"siteId":3950256,"cookiePolicyId":94594353,"lang":"fr","storage":{"useSiteId":true}};
           `}
+        </Script>
+        <Script id="structured-data" type="application/ld+json">
+          {JSON.stringify(structuredData)}
         </Script>
         <Script src="https://cs.iubenda.com/autoblocking/3950256.js" strategy="afterInteractive" />
         <Script src="//cdn.iubenda.com/cs/gpp/stub.js" strategy="afterInteractive" />

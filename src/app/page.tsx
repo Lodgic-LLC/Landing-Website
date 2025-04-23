@@ -61,44 +61,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Script id="schema-org" type="application/ld+json">
-        {`
-          {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Lodgic Dev",
-            "image": "https://lodgic-dev.com/FullLogo_Transparent.png",
-            "url": "https://lodgic-dev.com",
-            "description": "Lodgic Dev est votre développeur d'application mobile à Toulouse, spécialisé en React Native et Expo pour créer des solutions sur mesure.",
-            "email": "lodgic.dev@gmail.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Toulouse",
-              "addressRegion": "Occitanie",
-              "addressCountry": "FR"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer service",
-              "email": "contact.lodgic@gmail.com",
-              "availableLanguage": ["French", "English"]
-            },
-            "sameAs": [
-              "https://github.com/lodgic-llc",
-              "https://linkedin.com/company/lodgic-dev",
-              "https://x.com/lodgic-dev"
-            ],
-            "knowsAbout": [
-              "React Native",
-              "Expo",
-              "Prisma",
-              "NestJS",
-              "Mobile App Development",
-              "Cross-platform Development"
-            ]
-          }
-        `}
-      </Script>
       <main>
         <Hero />
         <Features />
