@@ -1,61 +1,63 @@
-import React from 'react'
-import type { Metadata } from 'next'
-import Script from 'next/script'
-import dynamic from 'next/dynamic'
-import Hero from '@/components/pages/home/Hero'
-import TechStack from '@/components/pages/home/TechStack'
+import React from "react";
+import type { Metadata } from "next";
+import Script from "next/script";
+import dynamic from "next/dynamic";
+import Hero from "@/components/pages/home/Hero";
+// import TechStack from '@/components/pages/home/TechStack'
 
-const Features = dynamic(() => import('@/components/pages/home/Features'))
-const Process = dynamic(() => import('@/components/pages/home/Process'))
-const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
-const ProjectCTA = dynamic(() => import('@/components/pages/home/ProjectCTA'))
-const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
+const Features = dynamic(() => import("@/components/pages/home/Features"));
+const Process = dynamic(() => import("@/components/pages/home/Process"));
+const SuccessStories = dynamic(
+  () => import("@/components/pages/home/SuccessStories")
+);
+const ProjectCTA = dynamic(() => import("@/components/pages/home/ProjectCTA"));
+const FAQ = dynamic(() => import("@/components/pages/home/FAQ"));
 
 export const metadata: Metadata = {
-  title: 'Développeur Application Mobile Toulouse - Lodgic',
+  title: "Développeur Application Mobile Toulouse - Lodgic",
   description:
     "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups et entreprises.",
   alternates: {
-    canonical: 'https://lodgic-dev.com',
+    canonical: "https://lodgic-dev.com",
   },
   openGraph: {
-    title: 'Développeur Application Mobile Toulouse - Lodgic',
+    title: "Développeur Application Mobile Toulouse - Lodgic",
     description:
       "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo). Expertise et accompagnement.",
-    url: 'https://lodgic-dev.com',
-    siteName: 'Lodgic',
+    url: "https://lodgic-dev.com",
+    siteName: "Lodgic",
     images: [
       {
-        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        url: "https://lodgic-dev.com/FullLogo_Transparent.png",
         width: 1200,
         height: 630,
         alt: "Lodgic - Développeur d'Application Mobile à Toulouse",
       },
     ],
-    locale: 'fr_FR',
-    type: 'website',
+    locale: "fr_FR",
+    type: "website",
   },
   keywords: [
-    'Développeur Application Mobile Toulouse',
-    'Agence développement mobile Toulouse',
-    'Création application mobile Toulouse',
-    'Développeur mobile Toulouse',
-    'Application mobile sur mesure Toulouse',
-    'Développement application Android Toulouse',
-    'Développement application iOS Toulouse',
-    'Développeur React Native Toulouse',
-    'Agence web et mobile Toulouse',
-    'Freelance développeur mobile Toulouse',
-    'React Native',
-    'Expo',
-    'Prisma',
-    'NestJS',
-    'application mobile',
-    'développeur application',
-    'agence développement',
-    'Toulouse',
+    "Développeur Application Mobile Toulouse",
+    "Agence développement mobile Toulouse",
+    "Création application mobile Toulouse",
+    "Développeur mobile Toulouse",
+    "Application mobile sur mesure Toulouse",
+    "Développement application Android Toulouse",
+    "Développement application iOS Toulouse",
+    "Développeur React Native Toulouse",
+    "Agence web et mobile Toulouse",
+    "Freelance développeur mobile Toulouse",
+    "React Native",
+    "Expo",
+    "Prisma",
+    "NestJS",
+    "application mobile",
+    "développeur application",
+    "agence développement",
+    "Toulouse",
   ],
-}
+};
 
 export default function Home() {
   return (
@@ -101,10 +103,9 @@ export default function Home() {
         <Features />
         <Process />
         <SuccessStories />
-        <TechStack />
         <ProjectCTA />
         <FAQ />
       </main>
     </>
-  )
+  );
 }
