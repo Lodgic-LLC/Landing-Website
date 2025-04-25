@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import Hero from '@/components/pages/home/Hero'
-import TechStack from '@/components/pages/home/TechStack'
+// import TechStack from '@/components/pages/home/TechStack'
 
 const Features = dynamic(() => import('@/components/pages/home/Features'))
 const Process = dynamic(() => import('@/components/pages/home/Process'))
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Développeur Application Mobile Toulouse - Lodgic',
     description:
-      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
+      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo). Expertise et accompagnement.",
     url: 'https://lodgic-dev.com',
     siteName: 'Lodgic',
     images: [
@@ -37,7 +37,6 @@ export const metadata: Metadata = {
   },
   keywords: [
     'Développeur Application Mobile Toulouse',
-    'Développeurs Applications Mobile Toulouse',
     'Agence développement mobile Toulouse',
     'Création application mobile Toulouse',
     'Développeur mobile Toulouse',
@@ -104,7 +103,6 @@ export default function Home() {
         <Features />
         <Process />
         <SuccessStories />
-        <TechStack />
         <ProjectCTA />
         <FAQ />
       </main>

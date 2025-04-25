@@ -62,15 +62,14 @@ export default function APropos() {
             {/* Contenu gauche */}
             <div className="w-full lg:w-1/2">
               <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-                Des solutions numériques
+                Créons ensemble
                 <span className="block bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">
-                  qui vous ressemblent
+                  l'application qu'il vous faut
                 </span>
               </h1>
 
               <p className="text-white/90 text-lg md:text-xl mb-8 max-w-lg leading-relaxed">
-                Nous créons des applications web et mobiles simples à utiliser, adaptées à vos besoins et qui évoluent
-                avec votre entreprise.
+                Chez Lodgic, On vous accompagne pas à pas, de l'idée au lancement concret de votre application.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -184,11 +183,12 @@ export default function APropos() {
                 <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center shadow-md mr-4">
                   <FaLightbulb className="w-6 h-6 text-blue-600" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Un accompagnement de confiance</h2>
+                <h2 className="text-3xl font-bold text-gray-900">On est là pour vous, à chaque étape</h2>
               </div>
 
               <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-                Nous vous guidons à chaque étape de votre projet, avec transparence et simplicité.
+                Notre priorité est la réelle collaboration avec vous, pour que votre application soit parfaitement
+                adaptée à vos besoins.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -199,7 +199,9 @@ export default function APropos() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Écoute</h3>
-                  <p className="text-gray-600">Nous prenons le temps de comprendre vos besoins et vos objectifs.</p>
+                  <p className="text-gray-600">
+                    On prend vraiment le temps de comprendre ce qui est important pour vous.
+                  </p>
                 </div>
 
                 <div className="bg-blue-50 p-5 rounded-lg shadow-sm">
@@ -214,7 +216,7 @@ export default function APropos() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Clarté</h3>
-                  <p className="text-gray-600">Nous vous expliquons chaque étape avec des termes simples et clairs.</p>
+                  <p className="text-gray-600">Pas de jargon technique ! On vous explique tout simplement.</p>
                 </div>
 
                 <div className="bg-blue-50 p-5 rounded-lg shadow-sm">
@@ -228,141 +230,7 @@ export default function APropos() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Réactivité</h3>
-                  <p className="text-gray-600">Nous répondons rapidement à vos demandes et préoccupations.</p>
-                </div>
-              </div>
-
-              <div className="inline-flex items-center px-5 py-3 bg-blue-50 border border-blue-100 rounded-lg">
-                <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" />
-                  <path d="M8 11a1 1 0 100 2h4a1 1 0 100-2H8zM8 7a1 1 0 000 2h2a1 1 0 000-2H8z" />
-                </svg>
-                <span className="font-medium text-gray-900">Cahier des charges gratuit</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section Notre Approche */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Notre approche</h2>
-            <div className="w-20 h-1.5 bg-blue-600 mx-auto rounded-full mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Chez Lodgic, nous abordons chaque projet avec une méthodologie structurée et flexible.
-            </p>
-          </div>
-
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            {/* Contenu gauche */}
-            <div className="lg:w-1/2">
-              <div className="space-y-8">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
-                      <span className="text-xl font-bold text-blue-600">1</span>
-                    </div>
-                  </div>
-                  <div className="ml-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Découverte de votre projet</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Nous prenons le temps de comprendre vos objectifs, votre marché et vos défis spécifiques pour
-                      créer une solution adaptée a vos besoins.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
-                      <span className="text-xl font-bold text-blue-600">2</span>
-                    </div>
-                  </div>
-                  <div className="ml-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Conception centrée utilisateur</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Nous plaçons l'expérience utilisateur au cœur de notre processus de conception.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
-                      <span className="text-xl font-bold text-blue-600">3</span>
-                    </div>
-                  </div>
-                  <div className="ml-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Amélioration continue</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Nous ne nous contentons pas de livrer un produit final. Nous vous accompagnons dans l'amélioration
-                      continue de votre produit.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Image à droite */}
-            <div className="w-full lg:w-1/2 mt-10 lg:mt-0 hidden sm:block">
-              <div className="relative w-full">
-                <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-xl overflow-hidden shadow-xl">
-                  <Image
-                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470"
-                    alt="Notre approche de développement"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover object-center"
-                    style={{ width: '100%', height: '100%' }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 to-transparent"></div>
-                </div>
-
-                {/* Card par-dessus l'image */}
-                <div className="absolute -bottom-10 -left-10 w-72 bg-white rounded-lg shadow-xl p-6 border border-gray-100">
-                  <h4 className="font-bold text-gray-900 mb-3 flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                      <path
-                        fillRule="evenodd"
-                        d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    Notre méthode
-                  </h4>
-
-                  <div className="space-y-2">
-                    <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-2">
-                        <span className="text-xs font-bold text-blue-600">1</span>
-                      </div>
-                      <p className="text-sm text-gray-700">Conseils et analyse des besoins</p>
-                    </div>
-
-                    <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-2">
-                        <span className="text-xs font-bold text-blue-600">2</span>
-                      </div>
-                      <p className="text-sm text-gray-700">Conception</p>
-                    </div>
-
-                    <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-2">
-                        <span className="text-xs font-bold text-blue-600">3</span>
-                      </div>
-                      <p className="text-sm text-gray-700">Développement</p>
-                    </div>
-
-                    <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-2">
-                        <span className="text-xs font-bold text-blue-600">4</span>
-                      </div>
-                      <p className="text-sm text-gray-700">Suivi & Optimisation</p>
-                    </div>
-                  </div>
+                  <p className="text-gray-600">Besoin de nous ? On répond présent rapidement.</p>
                 </div>
               </div>
             </div>

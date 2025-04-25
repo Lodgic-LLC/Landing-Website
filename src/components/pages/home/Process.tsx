@@ -5,7 +5,7 @@ import React from "react";
 const steps = [
   {
     number: "01",
-    title: "Écoute et Stratégie",
+    title: "Stratégie",
     description:
       "Pour bien démarrer, nous discutons ensemble de votre projet et de vos objectifs. Nous établissons ensuite un plan détaillé pour s'assurer que l'application correspond parfaitement à vos attentes.",
     features: [
