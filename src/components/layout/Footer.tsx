@@ -49,7 +49,8 @@ export default function Footer() {
               </h2>
             </div>
             <p className="text-gray-400 text-xs sm:text-sm leading-relaxed tracking-wide">
-              Solutions digitales sur mesure pour transformer vos idées en expériences numériques exceptionnelles.
+              Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure
+              (React Native, Expo) pour startups, entreprises et particuliers.
             </p>
             <div className="flex space-x-3 sm:space-x-4 pt-1 sm:pt-2">
               <a

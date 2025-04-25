@@ -202,7 +202,7 @@ export default function Contact() {
                   <div className="bg-gray-50 rounded-lg p-6 border border-gray-100">
                     <h3 className="font-semibold text-lg text-gray-900 mb-2">Quels types de projets acceptez-vous ?</h3>
                     <p className="text-gray-700">
-                      Nous développons principalement des applications web et mobile sur-mesure pour les entreprises et startups. Nous travaillons avec des projets de toutes tailles, du site vitrine à l'application complexe avec backend et API.
+                      Nous développons principalement des applications web et mobile sur-mesure pour les particuliers, entreprises et startups. Nous travaillons avec des projets de toutes tailles, du site vitrine à l'application complexe avec backend et API.
                     </p>
                   </div>
 
@@ -216,7 +216,7 @@ export default function Contact() {
                   <div className="bg-gray-50 rounded-lg p-6 border border-gray-100">
                     <h3 className="font-semibold text-lg text-gray-900 mb-2">Quels sont vos délais moyens de réalisation ?</h3>
                     <p className="text-gray-700">
-                      Les délais varient selon la complexité du projet. Un site vitrine peut être réalisé en 2-4 semaines, tandis qu'une application complète peut nécessiter 2-6 mois. Nous établissons ensemble un planning réaliste dès le début du projet.
+                      Les délais varient selon la complexité du projet. Un site vitrine peut être réalisé en quelques jours/semaines, tandis qu'une application complète nécessite plus de temps. Nous établissons ensemble un planning réaliste dès le début du projet.
                     </p>
                   </div>
                 </div>

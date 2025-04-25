@@ -140,13 +140,11 @@ export default function Services() {
             <div className="w-full lg:w-1/2 pt-8 lg:pt-0">
               <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
                 Applications Mobiles{' '}
-                <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">Natives</span>{' '}
-                iOS & Android
+                <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">iOS & Android</span>{' '}
               </h1>
 
               <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed">
-                Nous développons des applications mobiles natives performantes et innovantes, parfaitement adaptées aux
-                besoins de votre entreprise et de vos utilisateurs.
+                Nous développons votre application pour quelle soit parfaitement adaptées a vos besoins.
               </p>
 
               <div className="flex flex-wrap gap-4">
