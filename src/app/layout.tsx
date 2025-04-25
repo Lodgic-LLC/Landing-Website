@@ -25,11 +25,7 @@ const structuredData = {
     addressCountry: 'FR',
   },
 
-  sameAs: [
-    'https://github.com/lodgic-llc',
-    'https://linkedin.com/company/lodgic-dev',
-    'https://x.com/lodgic-dev',
-  ],
+  sameAs: ['https://github.com/lodgic-llc', 'https://linkedin.com/company/lodgic-dev', 'https://x.com/lodgic-dev'],
 }
 
 export const metadata: Metadata = {
@@ -123,7 +119,12 @@ export default function RootLayout({
             _iub.csConfiguration = {"siteId":3950256,"cookiePolicyId":94594353,"lang":"fr","storage":{"useSiteId":true}};
           `}
         </Script>
-        <Script id="structured-data" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
 
         <Script src="https://cs.iubenda.com/autoblocking/3950256.js" strategy="afterInteractive" />
         <Script src="//cdn.iubenda.com/cs/gpp/stub.js" strategy="afterInteractive" />
