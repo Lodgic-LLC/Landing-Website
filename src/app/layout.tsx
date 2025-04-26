@@ -151,8 +151,8 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${inter.variable} bg-white min-h-screen overflow-x-hidden overscroll-none antialiased`}>
-        <div className="relative w-full overflow-hidden">
+      <body className={`${inter.variable} font-inter bg-gray-50 text-gray-800 overflow-x-hidden`}>
+        <div className="relative w-full">
           <Navbar />
           {children}
           <Footer />

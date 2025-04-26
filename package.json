@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "domhandler": "^5.0.3",
+    "domutils": "^3.2.2",
     "framer-motion": "^12.6.3",
+    "htmlparser2": "^10.0.0",
     "next": "15.2.1",
     "react": "^19.0.0",
     "react-calendly": "^4.3.1",
@@ -18,6 +21,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.9",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^19",

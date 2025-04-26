@@ -1,67 +1,81 @@
 import { MetadataRoute } from 'next'
+import { blogPosts } from '@/data/blog/posts' // Import blog posts
+
+const BASE_URL = 'https://lodgic-dev.com' // Define base URL
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  // Get blog post routes
+  const blogPostRoutes = blogPosts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date).toISOString(),
+    changeFrequency: 'yearly' as const,
+    priority: 0.7,
+  }))
+
+  // Static routes
+  const staticRoutes = [
     {
-      url: 'https://lodgic-dev.com',
+      url: BASE_URL,
       lastModified: new Date().toISOString(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const,
       priority: 1.0,
     },
     {
-      url: 'https://lodgic-dev.com/services',
+      url: `${BASE_URL}/services`,
       lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: 'https://lodgic-dev.com/contact',
+      url: `${BASE_URL}/contact`,
       lastModified: new Date().toISOString(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'yearly' as const,
       priority: 0.7,
     },
     {
-      url: 'https://lodgic-dev.com/projets',
+      url: `${BASE_URL}/projets`,
       lastModified: new Date().toISOString(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'yearly' as const,
       priority: 0.8,
     },
     {
-      url: 'https://lodgic-dev.com/rendez-vous',
+      url: `${BASE_URL}/rendez-vous`,
       lastModified: new Date().toISOString(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'yearly' as const,
       priority: 0.7,
     },
     {
-      url: 'https://lodgic-dev.com/a-propos',
+      url: `${BASE_URL}/a-propos`,
       lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: 'https://lodgic-dev.com/politique-confidentialite',
+      url: `${BASE_URL}/politique-confidentialite`,
       lastModified: new Date().toISOString(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'yearly' as const,
       priority: 0.5,
     },
     {
-      url: 'https://lodgic-dev.com/projets/houseguard',
+      url: `${BASE_URL}/projets/houseguard`,
       lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
-      url: 'https://lodgic-dev.com/projets/coinfinder',
+      url: `${BASE_URL}/projets/coinfinder`,
       lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
-      url: 'https://lodgic-dev.com/projets/forge-ai',
+      url: `${BASE_URL}/projets/forge-ai`,
       lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
-
   ]
+
+  // Combine and return all routes
+  return [...staticRoutes, ...blogPostRoutes]
 }
