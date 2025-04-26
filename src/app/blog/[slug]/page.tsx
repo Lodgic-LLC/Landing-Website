@@ -10,10 +10,10 @@ import { Element, Node } from 'domhandler' // Import specific types for nodes
 import render from 'dom-serializer' // To render back to HTML string
 import TableOfContents from '@/components/blog/TableOfContents' // Import the new TOC component
 
-interface PostPageProps {
-  params: {
-    slug: string
-  }
+// Define a specific type for the page props
+interface BlogPageProps {
+  params: Promise<{ slug: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }> // Make searchParams a Promise type as well
 }
 
 interface Heading {
@@ -34,9 +34,12 @@ const slugify = (text: string): string => {
 }
 
 // Génère les métadonnées dynamiques pour le SEO
-export async function generateMetadata({ params }: PostPageProps, parent: ResolvingMetadata): Promise<Metadata> {
-  const awaitedParams = await params
-  const post = await getPostBySlug(awaitedParams.slug)
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }, // Update the type for params
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const paramsValue = await params // Await the promise
+  const post = await getPostBySlug(paramsValue.slug)
 
   if (!post) {
     return {
@@ -67,15 +70,19 @@ export async function generateMetadata({ params }: PostPageProps, parent: Resolv
 
 // Génère les chemins statiques pour chaque article au build time
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    slug: post.slug,
-  }))
+  return blogPosts
+    .map((post) => ({
+      slug: post.slug,
+    }))
+    .map((params) => Promise.resolve(params))
 }
 
 // Le composant de la page de l'article
-const PostPage = async ({ params }: PostPageProps) => {
-  const awaitedParams = await params
-  const post = await getPostBySlug(awaitedParams.slug)
+const PostPage = async (props: BlogPageProps) => {
+  // Use the new interface
+  const { params } = props // Destructure params inside the function
+  const paramsValue = await params // Await the promise to get the actual params
+  const post = await getPostBySlug(paramsValue.slug)
 
   if (!post) {
     notFound()
