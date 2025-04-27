@@ -60,7 +60,7 @@ export default function Services() {
       id: 1,
       icon: <FaMobile className="h-8 w-8 text-blue-600" />,
       title: 'Applications iOS natives',
-      description: 'Nous développons des applications iOS natives en Swift, optimisées pour iPhone et iPad.',
+      description: 'Nous développons des applications iOS natives , optimisées pour iPhone et iPad.',
       color: 'from-blue-200 to-indigo-300',
       delay: 100,
       features: [

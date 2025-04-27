@@ -64,10 +64,31 @@ export const metadata: Metadata = {
   },
 }
 
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Lodgic',
+  image: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+  url: 'https://lodgic-dev.com',
+  email: 'lodgic.dev@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Toulouse',
+    addressRegion: 'Occitanie',
+    addressCountry: 'FR',
+  },
+
+  sameAs: ['https://github.com/lodgic-llc', 'https://linkedin.com/company/lodgic-dev', 'https://x.com/lodgic-dev'],
+}
 export default function Home() {
   return (
     <>
       <main>
+        <script
+          key="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <Hero />
         <Features />
         <Process />

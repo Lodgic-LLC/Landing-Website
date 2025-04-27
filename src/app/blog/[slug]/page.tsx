@@ -9,6 +9,7 @@ import * as domutils from 'domutils' // DOM utilities (use namespace import)
 import { Element, Node } from 'domhandler' // Import specific types for nodes
 import render from 'dom-serializer' // To render back to HTML string
 import TableOfContents from '@/components/blog/TableOfContents' // Import the new TOC component
+import Script from 'next/script'
 
 // Define a specific type for the page props
 interface BlogPageProps {
@@ -138,67 +139,104 @@ const PostPage = async (props: BlogPageProps) => {
   const processedContent = render(dom)
   // --- Process HTML Content for TOC --- END
 
+  // Création du schéma LD-JSON pour l'article
+  const articleSchemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://lodgic-dev.com/blog/${post.slug}`,
+    },
+    headline: post.title,
+    description: post.summary,
+    image: post.imageUrl,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Lodgic',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+      },
+    },
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
+    articleBody: post.summary,
+    ...(post.tags && { keywords: post.tags.join(', ') }),
+  }
+
   return (
-    // Container keeps max-width for overall structure including TOC space
-    <div className="container mx-auto px-4 py-16 md:py-20 lg:py-24 max-w-7xl">
-      <div className="lg:flex lg:flex-row lg:gap-12 xl:gap-16">
-        {' '}
-        {/* Added larger gap for xl */}
-        {/* Table of Contents - Fixed width, sticky */}
-        {/* Adjust w-64 or w-72 based on preference */}
-        {/* Main Article Content Wrapper - Remove min-w-0 */}
-        <div className="flex-1">
-          {/* Article centered within its wrapper */}
-          <article className="bg-white p-6 sm:p-8 md:p-10 rounded-lg shadow-md border border-gray-200 max-w-4xl mx-auto">
-            {' '}
-            {/* Centered article */}
-            <header className="mb-8 md:mb-10 text-center">
-              <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                {post.title}
-              </h1>
-              <p className="text-gray-500 text-sm">
-                Publié le{' '}
-                {new Date(post.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}{' '}
-                par {post.author}
-              </p>
-              <div className="mt-6 border-t border-gray-200 pt-6">
-                <Link
-                  href="/blog"
-                  className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center group"
-                >
-                  <span className="mr-1 transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
-                  Retour au blog
-                </Link>
+    <>
+      <script
+        key="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchemaData) }}
+      />
+
+      {/* Container keeps max-width for overall structure including TOC space */}
+      <div className="container mx-auto px-4 py-16 md:py-20 lg:py-24 max-w-7xl">
+        <div className="lg:flex lg:flex-row lg:gap-12 xl:gap-16">
+          {' '}
+          {/* Added larger gap for xl */}
+          {/* Table of Contents - Fixed width, sticky */}
+          {/* Adjust w-64 or w-72 based on preference */}
+          {/* Main Article Content Wrapper - Remove min-w-0 */}
+          <div className="flex-1">
+            {/* Article centered within its wrapper */}
+            <article className="bg-white p-6 sm:p-8 md:p-10 rounded-lg shadow-md border border-gray-200 max-w-4xl mx-auto">
+              {' '}
+              {/* Centered article */}
+              <header className="mb-8 md:mb-10 text-center">
+                <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                  {post.title}
+                </h1>
+                <p className="text-gray-500 text-sm">
+                  Publié le{' '}
+                  {new Date(post.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}{' '}
+                  par {post.author}
+                </p>
+                <div className="mt-6 border-t border-gray-200 pt-6">
+                  <Link
+                    href="/blog"
+                    className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center group"
+                  >
+                    <span className="mr-1 transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
+                    Retour au blog
+                  </Link>
+                </div>
+              </header>
+              <div className="mb-8 md:mb-10">
+                <Image
+                  src={post.imageUrl}
+                  alt={post.imageAlt}
+                  width={800}
+                  height={450}
+                  className="w-full h-auto rounded-lg shadow-sm border border-gray-100"
+                  priority
+                />
               </div>
-            </header>
-            <div className="mb-8 md:mb-10">
-              <Image
-                src={post.imageUrl}
-                alt={post.imageAlt}
-                width={800}
-                height={450}
-                className="w-full h-auto rounded-lg shadow-sm border border-gray-100"
-                priority
+              {/* Use the processed content with IDs */}
+              <div
+                className="prose prose-lg lg:prose-xl max-w-none mx-auto
+                          prose-pre:overflow-x-auto /* Allow horizontal scroll for code blocks */
+                          prose-headings:scroll-mt-24 /* Offset for sticky header */
+                          prose-headings:text-gray-800 prose-headings:font-semibold
+                          prose-p:text-gray-700 prose-p:leading-relaxed
+                          prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-a:transition-colors
+                          prose-strong:text-gray-800
+                          prose-ul:list-disc prose-ul:pl-6 prose-li:my-1
+                          prose-ol:list-decimal prose-ol:pl-6 prose-li:my-1
+                          prose-img:rounded-md prose-img:shadow-sm prose-img:border prose-img:border-gray-100"
+                dangerouslySetInnerHTML={{ __html: processedContent }} // Use processed content
               />
-            </div>
-            {/* Use the processed content with IDs */}
-            <div
-              className="prose prose-lg lg:prose-xl max-w-none mx-auto
-                        prose-pre:overflow-x-auto /* Allow horizontal scroll for code blocks */
-                        prose-headings:scroll-mt-24 /* Offset for sticky header */
-                        prose-headings:text-gray-800 prose-headings:font-semibold
-                        prose-p:text-gray-700 prose-p:leading-relaxed
-                        prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-a:transition-colors
-                        prose-strong:text-gray-800
-                        prose-ul:list-disc prose-ul:pl-6 prose-li:my-1
-                        prose-ol:list-decimal prose-ol:pl-6 prose-li:my-1
-                        prose-img:rounded-md prose-img:shadow-sm prose-img:border prose-img:border-gray-100"
-              dangerouslySetInnerHTML={{ __html: processedContent }} // Use processed content
-            />
-          </article>
+            </article>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

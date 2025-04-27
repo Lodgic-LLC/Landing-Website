@@ -14,7 +14,7 @@ const inter = Inter({
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'Lodgic Dev',
+  name: 'Lodgic',
   image: 'https://lodgic-dev.com/FullLogo_Transparent.png',
   url: 'https://lodgic-dev.com',
   email: 'lodgic.dev@gmail.com',
