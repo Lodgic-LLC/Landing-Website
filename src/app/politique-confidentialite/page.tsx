@@ -2,15 +2,20 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Lodgic - Politique de Confidentialité',
-  description: 'Politique de Confidentialité pour Lodgic',
+  description:
+    'Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
+  alternates: {
+    canonical: 'https://lodgic-dev.com/politique-confidentialite',
+  },
   openGraph: {
     title: 'Lodgic - Politique de Confidentialité',
-    description: 'Politique de Confidentialité pour Lodgic',
+    description:
+      'Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
     url: 'https://lodgic-dev.com/politique-confidentialite',
     siteName: 'Lodgic',
     images: [
       {
-        url: 'https://lodgic-dev.com/FullLogo_Transparent_NoBuffer.png',
+        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
         alt: 'Lodgic - Politique de Confidentialité',
@@ -18,6 +23,23 @@ export const metadata: Metadata = {
     ],
     locale: 'fr_FR',
     type: 'website',
+  },
+  keywords: [
+    'politique de confidentialité',
+    'protection des données',
+    'RGPD',
+    'vie privée',
+    'données personnelles',
+    'Lodgic',
+    'confidentialité',
+    'droits des utilisateurs',
+    'cookies',
+  ],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lodgic - Politique de Confidentialité',
+    description: 'Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
+    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
   },
 }
 

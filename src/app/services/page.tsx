@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'Lodgic - Services de Développement Mobile',
   description:
     'Découvrez nos services de développement mobile natif iOS et Android pour créer des applications performantes et innovantes',
+  alternates: {
+    canonical: 'https://lodgic-dev.com/services',
+  },
   openGraph: {
     title: 'Lodgic - Services de Développement Mobile',
     description:
@@ -15,7 +18,7 @@ export const metadata: Metadata = {
     siteName: 'Lodgic',
     images: [
       {
-        url: 'https://lodgic-dev.com/FullLogo_Transparent_NoBuffer.png',
+        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
         alt: 'Lodgic Services Mobile',
@@ -23,6 +26,27 @@ export const metadata: Metadata = {
     ],
     locale: 'fr_FR',
     type: 'website',
+  },
+  keywords: [
+    'développement mobile',
+    'applications iOS',
+    'applications Android',
+    'React Native',
+    'développeur applications mobiles',
+    'création application sur mesure',
+    'applications natives',
+    'développement app',
+    'intégration API',
+    'services web',
+    'Lodgic services',
+    'développement Toulouse',
+  ],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lodgic - Services de Développement Mobile',
+    description:
+      'Découvrez nos services de développement mobile natif iOS et Android pour créer des applications performantes et innovantes',
+    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
   },
 }
 
@@ -140,7 +164,9 @@ export default function Services() {
             <div className="w-full lg:w-1/2 pt-8 lg:pt-0">
               <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
                 Applications Mobiles{' '}
-                <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">iOS & Android</span>{' '}
+                <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">
+                  iOS & Android
+                </span>{' '}
               </h1>
 
               <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed">

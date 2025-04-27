@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
-        alt: "Développeur d'Application Mobile à Toulouse Lodgic - ",
+        alt: "Développeur d'Application Mobile à Toulouse Lodgic",
       },
     ],
     locale: 'fr_FR',
@@ -55,6 +55,13 @@ export const metadata: Metadata = {
     'agence développement',
     'Toulouse',
   ],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Développeur Application Mobile Toulouse - Lodgic',
+    description:
+      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo).",
+    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
+  },
 }
 
 export default function Home() {

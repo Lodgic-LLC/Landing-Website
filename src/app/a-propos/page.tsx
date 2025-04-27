@@ -6,6 +6,9 @@ import { FaArrowRight, FaLightbulb, FaUsers, FaRocket } from 'react-icons/fa'
 export const metadata: Metadata = {
   title: 'Lodgic - A Propos',
   description: 'Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale',
+  alternates: {
+    canonical: 'https://lodgic-dev.com/a-propos',
+  },
   openGraph: {
     title: 'Lodgic - A Propos',
     description: 'Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale',
@@ -13,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'Lodgic',
     images: [
       {
-        url: 'https://lodgic-dev.com/FullLogo_Transparent_NoBuffer.png',
+        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
         alt: 'Lodgic - À propos de nous',
@@ -21,6 +24,26 @@ export const metadata: Metadata = {
     ],
     locale: 'fr_FR',
     type: 'website',
+  },
+  keywords: [
+    'à propos',
+    'Lodgic',
+    'équipe de développement',
+    'agence mobile Toulouse',
+    'expertise développement',
+    'histoire Lodgic',
+    'valeurs entreprise',
+    'développeur mobile',
+    'expertise technique',
+    'services numériques',
+    'transformation digitale',
+    'développement sur mesure',
+  ],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lodgic - A Propos',
+    description: 'Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale',
+    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
   },
 }
 

@@ -7,7 +7,44 @@ export const metadata: Metadata = {
   title: 'Blog | Actualités et Conseils Web par Lodgic',
   description:
     'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.',
-  // Ajoutez d'autres méta-données SEO si nécessaire (open graph, etc.)
+  alternates: {
+    canonical: 'https://lodgic-dev.com/blog',
+  },
+  openGraph: {
+    title: 'Blog | Actualités et Conseils Web par Lodgic',
+    description:
+      'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.',
+    url: 'https://lodgic-dev.com/blog',
+    siteName: 'Lodgic',
+    images: [
+      {
+        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        width: 1200,
+        height: 630,
+        alt: 'Blog Lodgic - Actualités et Conseils Web',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  keywords: [
+    'blog développement web',
+    'conseils web',
+    'tendances technologiques',
+    'développement application mobile',
+    'blog tech',
+    'SEO',
+    'design web',
+    'blog Lodgic',
+    'actualités tech',
+  ],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | Actualités et Conseils Web par Lodgic',
+    description:
+      'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques.',
+    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
+  },
 }
 
 const BlogPage = () => {

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'Lodgic',
     images: [
       {
-        url: 'https://lodgic-dev.com/FullLogo_Transparent_NoBuffer.png',
+        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
         alt: 'Lodgic - Contactez-nous',
@@ -24,6 +24,26 @@ export const metadata: Metadata = {
     ],
     locale: 'fr_FR',
     type: 'website',
+  },
+  keywords: [
+    'contact',
+    'Lodgic',
+    'agence développement',
+    'développeur mobile',
+    'nous contacter',
+    'devis application mobile',
+    'projet numérique',
+    'demande information',
+    'consultation projet',
+    'Toulouse développeur',
+    'développement application',
+    'formulaire contact',
+  ],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lodgic - Contact',
+    description: 'Contactez-nous pour discuter de vos besoins numériques et de la façon dont nous pouvons vous aider',
+    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
   },
 }
 
@@ -63,7 +83,8 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col text-center">
             <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-              Entrons en <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">contact</span>
+              Entrons en{' '}
+              <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">contact</span>
             </h1>
 
             <p className="text-white/90 text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -151,7 +172,9 @@ export default function Contact() {
                       <div className="ml-4">
                         <h3 className="text-lg font-semibold text-gray-900">Localisation</h3>
                         <p className="text-gray-700">Toulouse, France</p>
-                        <p className="text-gray-600 text-sm mt-1">Travail à distance sur toute la France et à l'international</p>
+                        <p className="text-gray-600 text-sm mt-1">
+                          Travail à distance sur toute la France et à l'international
+                        </p>
                       </div>
                     </div>
 
@@ -202,21 +225,29 @@ export default function Contact() {
                   <div className="bg-gray-50 rounded-lg p-6 border border-gray-100">
                     <h3 className="font-semibold text-lg text-gray-900 mb-2">Quels types de projets acceptez-vous ?</h3>
                     <p className="text-gray-700">
-                      Nous développons principalement des applications web et mobile sur-mesure pour les particuliers, entreprises et startups. Nous travaillons avec des projets de toutes tailles, du site vitrine à l'application complexe avec backend et API.
+                      Nous développons principalement des applications web et mobile sur-mesure pour les particuliers,
+                      entreprises et startups. Nous travaillons avec des projets de toutes tailles, du site vitrine à
+                      l'application complexe avec backend et API.
                     </p>
                   </div>
 
                   <div className="bg-gray-50 rounded-lg p-6 border border-gray-100">
                     <h3 className="font-semibold text-lg text-gray-900 mb-2">Comment se déroule une collaboration ?</h3>
                     <p className="text-gray-700">
-                      Après un premier contact, nous organisons un appel découverte pour comprendre votre projet. Nous vous présentons ensuite une proposition détaillée incluant planning, budget et méthodologie. Une fois validée, nous commençons le développement avec des points réguliers.
+                      Après un premier contact, nous organisons un appel découverte pour comprendre votre projet. Nous
+                      vous présentons ensuite une proposition détaillée incluant planning, budget et méthodologie. Une
+                      fois validée, nous commençons le développement avec des points réguliers.
                     </p>
                   </div>
 
                   <div className="bg-gray-50 rounded-lg p-6 border border-gray-100">
-                    <h3 className="font-semibold text-lg text-gray-900 mb-2">Quels sont vos délais moyens de réalisation ?</h3>
+                    <h3 className="font-semibold text-lg text-gray-900 mb-2">
+                      Quels sont vos délais moyens de réalisation ?
+                    </h3>
                     <p className="text-gray-700">
-                      Les délais varient selon la complexité du projet. Un site vitrine peut être réalisé en quelques jours/semaines, tandis qu'une application complète nécessite plus de temps. Nous établissons ensemble un planning réaliste dès le début du projet.
+                      Les délais varient selon la complexité du projet. Un site vitrine peut être réalisé en quelques
+                      jours/semaines, tandis qu'une application complète nécessite plus de temps. Nous établissons
+                      ensemble un planning réaliste dès le début du projet.
                     </p>
                   </div>
                 </div>
@@ -229,11 +260,10 @@ export default function Contact() {
       {/* Section CTA */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-            Vous préférez programmer un appel ?
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Vous préférez programmer un appel ?</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Nous proposons également des créneaux de rendez-vous téléphoniques pour discuter plus en détail de votre projet.
+            Nous proposons également des créneaux de rendez-vous téléphoniques pour discuter plus en détail de votre
+            projet.
           </p>
           <Link
             href="/rendez-vous"

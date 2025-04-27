@@ -26,12 +26,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Lodgic - Planifier un Rendez-vous',
     description:
-      'Planifiez une consultation gratuite avec notre équipe pour discuter de votre projet numérique et obtenir des conseils d\'experts sur mesure.',
+      "Planifiez une consultation gratuite avec notre équipe pour discuter de votre projet numérique et obtenir des conseils d'experts sur mesure.",
     url: 'https://lodgic-dev.com/rendez-vous',
     siteName: 'Lodgic',
     images: [
       {
-        url: 'https://lodgic-dev.com/FullLogo_Transparent_NoBuffer.png',
+        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
         alt: 'Lodgic - Prendre rendez-vous',
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Lodgic - Planifier un Rendez-vous',
     description:
-      'Planifiez une consultation gratuite avec notre équipe pour discuter de votre projet numérique et obtenir des conseils d\'experts sur mesure.',
-    images: ['https://lodgic-dev.com/FullLogo_Transparent_NoBuffer.png'],
+      "Planifiez une consultation gratuite avec notre équipe pour discuter de votre projet numérique et obtenir des conseils d'experts sur mesure.",
+    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
   },
 }
 

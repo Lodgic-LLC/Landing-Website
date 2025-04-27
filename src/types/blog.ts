@@ -7,4 +7,5 @@ export interface BlogPost {
   imageUrl: string
   imageAlt: string
   content: string // ou utiliser un type plus spécifique si vous parsez du Markdown
+  tags?: string[] // Tableau optionnel de tags pour l'article
 }

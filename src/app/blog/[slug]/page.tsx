@@ -50,9 +50,14 @@ export async function generateMetadata(
   return {
     title: `${post.title} | Blog Lodgic`,
     description: post.summary,
+    alternates: {
+      canonical: `https://lodgic-dev.com/blog/${paramsValue.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.summary,
+      url: `https://lodgic-dev.com/blog/${paramsValue.slug}`,
+      siteName: 'Lodgic',
       images: [
         {
           url: post.imageUrl,
@@ -64,7 +69,22 @@ export async function generateMetadata(
       type: 'article',
       publishedTime: new Date(post.date).toISOString(),
       authors: [post.author],
+      locale: 'fr_FR',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.summary,
+      images: [post.imageUrl],
+    },
+    keywords: [
+      'lodgic',
+      'blog tech',
+      'développement web',
+      'application mobile',
+      post.title.toLowerCase(),
+      ...(post.tags || []),
+    ],
   }
 }
 
