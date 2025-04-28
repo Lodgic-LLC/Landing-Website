@@ -14,7 +14,7 @@ const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 export const metadata: Metadata = {
   title: 'Développeur Application Mobile Toulouse - Lodgic',
   description:
-    "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups, entreprises et particuliers.",
+    "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
   alternates: {
     canonical: 'https://lodgic-dev.com',
   },

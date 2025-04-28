@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     'développement iOS',
   ],
   description:
-    "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups, entreprises et particuliers.",
+    "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Développeur Application Mobile Toulouse - Lodgic',
     description:
-      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups, entreprises et particuliers.",
+      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
     images: '/FullLogo_Transparent_NoBuffer.png',
     type: 'website',
     locale: 'fr_FR',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Développeur Application Mobile Toulouse - Lodgic',
     description:
-      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo) pour startups, entreprises et particuliers.",
+      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
     images: '/lodgic-banner.png',
     creator: '@lodgic',
     site: '@lodgic',

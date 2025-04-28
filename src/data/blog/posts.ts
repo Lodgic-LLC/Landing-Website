@@ -616,7 +616,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
   // BON : Valider/Nettoyer l'URL
   const isValidUrl = urlUser.startsWith('http://') || urlUser.startsWith('https://') || urlUser.startsWith('/');
   const safeUrl = isValidUrl ? urlUser : '#'; // Ou mieux, nettoyer avec une lib
-  return <a href={safeUrl} target="_blank" rel="noopener noreferrer">Lien sécurisé</a>;
+  return <a target="_blank" rel="noopener noreferrer">Lien sécurisé</a>;
 };</code></pre>
         <li><strong>Bibliothèques Tierces :</strong> Certaines bibliothèques peuvent avoir leurs propres vulnérabilités XSS ou mal utiliser <code>dangerouslySetInnerHTML</code>.</li>
       </ul>
