@@ -42,3 +42,9 @@ html {
     font-weight: 700;
   }
 }
+
+@media (min-width: 1400px) {
+  .summary {
+    display: block;
+  }
+}

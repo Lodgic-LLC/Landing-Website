@@ -116,7 +116,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className="overflow-x-hidden overscroll-none" suppressHydrationWarning>
+    <html lang="fr" className="" suppressHydrationWarning>
       <head>
         {/* Scripts Iubenda pour la gestion des cookies */}
         <Script id="iubenda-config" strategy="afterInteractive">
@@ -157,7 +157,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${inter.variable} font-inter bg-gray-50 text-gray-800 overflow-x-hidden`}>
+      <body className={`${inter.variable} font-inter bg-gray-50 text-gray-800`}>
         <div className="relative w-full">
           <Navbar />
           {children}

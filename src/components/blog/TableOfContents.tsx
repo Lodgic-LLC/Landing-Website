@@ -105,11 +105,10 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ headings }) => {
             <a
               href={`#${heading.id}`}
               onClick={(e) => handleLinkClick(e, heading.id)}
-              className={`block transition-colors duration-200 hover:text-blue-600 ${
-                activeId === heading.id
-                  ? 'text-blue-600 font-medium' // Active state style
-                  : 'text-gray-500' // Default state style
-              }`}
+              className={`block transition-colors duration-200 hover:text-blue-600 ${activeId === heading.id
+                ? 'text-blue-600 font-medium' // Active state style
+                : 'text-gray-500' // Default state style
+                }`}
             >
               {heading.text}
             </a>

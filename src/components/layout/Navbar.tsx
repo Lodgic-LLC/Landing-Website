@@ -8,8 +8,6 @@ import Image from 'next/image'
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollTop, setLastScrollTop] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
   const pathname = usePathname()
 
@@ -38,35 +36,20 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', checkIfMobile)
   }, [])
 
-  const handleScroll = useCallback(() => {
-    const currentScrollPos = window.scrollY || document.documentElement.scrollTop
-    const scrollingDown = currentScrollPos > lastScrollTop
-    const scrollThreshold = 10
-
-    // Toujours visible en haut de page
-    if (currentScrollPos < 50) {
-      setIsVisible(true)
-    }
-    // Masquer lors du défilement vers le bas, afficher lors du défilement vers le haut
-    else if (Math.abs(currentScrollPos - lastScrollTop) > scrollThreshold) {
-      setIsVisible(!scrollingDown)
-    }
-
-    setScrollPosition(currentScrollPos)
-    setLastScrollTop(currentScrollPos)
-  }, [lastScrollTop])
-
-  // Initialiser la position de défilement au chargement
+  // Initialiser la position de défilement au chargement (simplified)
   useEffect(() => {
+    const handleSimpleScroll = () => {
+      setScrollPosition(window.scrollY || document.documentElement.scrollTop)
+    }
     // Définir la position de défilement initiale
-    setScrollPosition(window.scrollY || document.documentElement.scrollTop)
+    handleSimpleScroll()
 
     // Ajouter l'écouteur d'événement
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleSimpleScroll)
 
     // Nettoyer l'écouteur d'événement
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [handleScroll])
+    return () => window.removeEventListener('scroll', handleSimpleScroll)
+  }, []) // Dependency array is now empty as handleScroll is removed
 
   useEffect(() => {
     setIsMenuOpen(false)
@@ -87,8 +70,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
-        } bg-white backdrop-blur-sm shadow-sm`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white backdrop-blur-sm shadow-sm`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 py-2">

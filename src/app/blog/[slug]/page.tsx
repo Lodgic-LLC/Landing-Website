@@ -8,8 +8,13 @@ import { parseDocument } from 'htmlparser2' // Parser
 import * as domutils from 'domutils' // DOM utilities (use namespace import)
 import { Element, Node } from 'domhandler' // Import specific types for nodes
 import render from 'dom-serializer' // To render back to HTML string
-import TableOfContents from '@/components/blog/TableOfContents' // Import the new TOC component
+import CodeBlockHighlighter from '@/components/blog/CodeBlockHighlighter' // Import the new Client Component
 import Script from 'next/script'
+import TableOfContents from '@/components/blog/TableOfContents' // Reverted to default import
+
+// Import a Prism theme (e.g., Tomorrow Night)
+// Ideally, import this in your global layout.tsx or main CSS file
+import 'prismjs/themes/prism-tomorrow.css'
 
 // Define a specific type for the page props
 interface BlogPageProps {
@@ -109,7 +114,7 @@ const PostPage = async (props: BlogPageProps) => {
     notFound()
   }
 
-  // --- Process HTML Content for TOC --- START
+  // --- Process HTML Content for IDs (Server-side) --- START
   const headings: Heading[] = []
   const dom = parseDocument(post.content)
   const h2Elements = domutils.findAll(
@@ -122,24 +127,20 @@ const PostPage = async (props: BlogPageProps) => {
     const text = domutils.textContent(h2).trim()
     if (text) {
       let id = slugify(text)
-      // Ensure uniqueness if needed (simple counter for now)
       const originalId = id
       while (headings.some((h) => h.id === id)) {
         headingIndex++
         id = `${originalId}-${headingIndex}`
       }
-      headingIndex = 0 // Reset for next base id
-
+      headingIndex = 0
       headings.push({ id, text, level: 2 })
-      // Add the id attribute to the h2 element in the DOM object
       h2.attribs = { ...h2.attribs, id }
     }
   })
-  // Render the modified DOM back to an HTML string
-  const processedContent = render(dom)
-  // --- Process HTML Content for TOC --- END
+  const processedContent = render(dom) // Content with IDs added
+  // --- Process HTML Content for IDs (Server-side) --- END
 
-  // Création du schéma LD-JSON pour l'article
+  // --- LD-JSON Schema (Server-side) --- START
   const articleSchemaData = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -163,77 +164,77 @@ const PostPage = async (props: BlogPageProps) => {
       },
     },
     datePublished: new Date(post.date).toISOString(),
-    dateModified: new Date(post.date).toISOString(),
-    articleBody: post.summary,
+    dateModified: new Date(post.date).toISOString(), // Or use a lastUpdated field if available
+    articleBody: post.summary, // Keep it concise for schema
     ...(post.tags && { keywords: post.tags.join(', ') }),
   }
+  // --- LD-JSON Schema (Server-side) --- END
 
   return (
     <>
-      <script
+      <Script
         key="structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchemaData) }}
       />
 
-      {/* Container keeps max-width for overall structure including TOC space */}
-      <div className="container mx-auto px-4 py-16 md:py-20 lg:py-24 max-w-7xl">
-        <div className="lg:flex lg:flex-row lg:gap-12 xl:gap-16">
-          {' '}
-          {/* Added larger gap for xl */}
-          {/* Table of Contents - Fixed width, sticky */}
-          {/* Adjust w-64 or w-72 based on preference */}
-          {/* Main Article Content Wrapper - Remove min-w-0 */}
-          <div className="flex-1">
-            {/* Article centered within its wrapper */}
-            <article className="bg-white p-6 sm:p-8 md:p-10 rounded-lg shadow-md border border-gray-200 max-w-4xl mx-auto">
-              {' '}
-              {/* Centered article */}
-              <header className="mb-8 md:mb-10 text-center">
-                <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                  {post.title}
-                </h1>
-                <p className="text-gray-500 text-sm">
-                  Publié le{' '}
-                  {new Date(post.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}{' '}
-                  par {post.author}
-                </p>
-                <div className="mt-6 border-t border-gray-200 pt-6">
-                  <Link
-                    href="/blog"
-                    className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center group"
-                  >
-                    <span className="mr-1 transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
-                    Retour au blog
-                  </Link>
-                </div>
-              </header>
-              <div className="mb-8 md:mb-10">
-                <Image
-                  src={post.imageUrl}
-                  alt={post.imageAlt}
-                  width={800}
-                  height={450}
-                  className="w-full h-auto rounded-lg shadow-sm border border-gray-100"
-                  priority
-                />
-              </div>
-              {/* Use the processed content with IDs */}
-              <div
-                className="prose prose-lg lg:prose-xl max-w-none mx-auto
-                          prose-pre:overflow-x-auto /* Allow horizontal scroll for code blocks */
-                          prose-headings:scroll-mt-24 /* Offset for sticky header */
-                          prose-headings:text-gray-800 prose-headings:font-semibold
-                          prose-p:text-gray-700 prose-p:leading-relaxed
-                          prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-a:transition-colors
-                          prose-strong:text-gray-800
-                          prose-ul:list-disc prose-ul:pl-6 prose-li:my-1
-                          prose-ol:list-decimal prose-ol:pl-6 prose-li:my-1
-                          prose-img:rounded-md prose-img:shadow-sm prose-img:border prose-img:border-gray-100"
-                dangerouslySetInnerHTML={{ __html: processedContent }} // Use processed content
-              />
-            </article>
+      {/* Apply a subtle background to the whole page container */}
+      <div className="bg-slate-50">
+
+        {/* Container principal pour l'article - Utilisation de Flexbox pour gérer la disposition */}
+        {/* Ajout de 'relative' pour le positionnement potentiel d'enfants absolus si nécessaire */}
+        {/* Ajout de 'xl:flex xl:gap-8' pour activer Flexbox et l'espacement sur les grands écrans */}
+        <div className="container mx-auto px-4 py-20 md:py-24 lg:py-28 max-w-7xl relative xl:flex xl:gap-8">
+
+          {/* Sommaire sticky à gauche sur les grands écrans - Maintenant DANS le container Flex */}
+          {/* Ajustement de la largeur et position sticky */}
+          {/* 'flex-shrink-0' empêche le sommaire de rétrécir */}
+          {/* La hauteur est limitée pour permettre le scroll interne si besoin : h-[calc(100vh-theme(spacing.24)-theme(spacing.28))] correspond à la hauteur de la vue moins le top offset et un peu de padding bas */}
+          <div className="hidden xl:block sticky top-24 z-10 w-60 xl:w-72 flex-shrink-0 self-start h-[calc(100vh-theme(spacing.24)-theme(spacing.28))] overflow-y-auto">
+            <aside className="pr-4"> {/* Ajout de padding droit pour espacer le texte de la scrollbar */}
+              <TableOfContents headings={headings} />
+            </aside>
           </div>
+
+          {/* Contenu principal de l'article - Prend l'espace restant */}
+          {/* 'flex-grow' permet à l'article de prendre l'espace disponible */}
+          {/* max-w-none xl:max-w-4xl pour contrôler la largeur max spécifiquement ici */}
+          <article className="bg-white p-8 sm:p-10 md:p-12 rounded-lg shadow-lg border border-gray-200 flex-grow max-w-none xl:max-w-4xl mx-auto xl:mx-0">
+            {/* Increased bottom margin */}
+            <header className="mb-10 md:mb-12 text-center xl:text-left"> {/* Ajustement alignement texte sur grand écran */}
+              <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                {post.title}
+              </h1>
+              <p className="text-gray-500 text-sm">
+                Publié le{' '}
+                {new Date(post.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}{' '}
+                par {post.author}
+              </p>
+              <div className="mt-6 border-t border-gray-200 pt-6">
+                <Link
+                  href="/blog"
+                  className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center group"
+                >
+                  <span className="mr-1 transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
+                  Retour au blog
+                </Link>
+              </div>
+            </header>
+            {/* Increased bottom margin */}
+            <div className="mb-10 md:mb-12">
+              <Image
+                src={post.imageUrl}
+                alt={post.imageAlt}
+                width={800}
+                height={450}
+                className="w-full h-auto rounded-lg shadow-sm border border-gray-100"
+                priority // Keep priority for LCP
+              />
+            </div>
+            {/* Use the Client Component for rendering and highlighting */}
+            <CodeBlockHighlighter htmlContent={processedContent} />
+          </article>
+
         </div>
       </div>
     </>
