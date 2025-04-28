@@ -87,25 +87,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      } bg-white backdrop-blur-sm shadow-sm`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+        } bg-white backdrop-blur-sm shadow-sm`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 py-2">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center" aria-label="Accueil Lodgic">
-              <div className="h-9 w-9 relative mr-2">
-                <Image
-                  src="/FullLogo_Transparent_NoBuffer.png"
-                  alt="Logo Lodgic"
-                  width={36}
-                  height={36}
-                  className="object-contain"
-                />
-              </div>
-              <span className="font-semibold text-xl text-gray-800">Lodgic</span>
+              <span className="font-montserrat-bold font-semibold text-2xl bg-gradient-to-r from-blue-700 to-blue-500 text-transparent bg-clip-text">Lodgic</span>
             </Link>
           </div>
 
@@ -115,11 +105,10 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  isActive(item.path)
-                    ? 'text-gray-800 bg-gray-100'
-                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-                }`}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${isActive(item.path)
+                  ? 'text-gray-800 bg-gray-100'
+                  : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                  }`}
               >
                 {item.name}
               </Link>
@@ -192,18 +181,16 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-          isMenuOpen ? 'max-h-[440px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
+        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-[440px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
       >
         <div className="px-4 pt-2 pb-4 space-y-1 bg-white shadow-md border-t border-gray-100">
           {navigationItems.map((item) => (
             <Link
               key={item.name}
               href={item.path}
-              className={`block px-4 py-3 rounded-md text-base font-medium transition-all duration-200 ${
-                isActive(item.path) ? 'text-gray-800 bg-gray-100' : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-              }`}
+              className={`block px-4 py-3 rounded-md text-base font-medium transition-all duration-200 ${isActive(item.path) ? 'text-gray-800 bg-gray-100' : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                }`}
             >
               {item.name}
             </Link>

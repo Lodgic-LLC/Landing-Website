@@ -40,15 +40,13 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-16 mb-8 sm:mb-16">
           {/* Logo et description */}
           <div className="col-span-2 sm:col-span-1 space-y-4 sm:space-y-7 mb-6 sm:mb-0">
+            {/* Conteneur flex pour l'icône et le nom */}
             <div className="flex items-center">
-              <div className="bg-white/10 p-2 sm:p-2.5 rounded-lg mr-3">
-                <img src="/favicon.ico" alt="Logo Lodgic" className="w-6 h-6 sm:w-8 sm:h-8" />
-              </div>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-indigo-400">
-                Lodgic
-              </h2>
+              {/* Conteneur pour l'icône SVG - sans padding, la taille est dans le SVG */}
+              <span className="font-montserrat-bold font-semibold text-2xl bg-gradient-to-r from-blue-700 to-blue-500 text-transparent bg-clip-text">Lodgic</span>
             </div>
-            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed tracking-wide">
+
+            <p className="text-gray-400 text-xs sm:text-sm pt-6 leading-relaxed tracking-wide">
               Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure
               (React Native, Expo) pour startups, entreprises et particuliers.
             </p>
