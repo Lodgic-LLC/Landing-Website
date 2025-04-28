@@ -36,10 +36,7 @@ const structuredData = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lodgic-dev.com'),
-  title: {
-    default: 'Développeur Application Mobile Toulouse - Lodgic',
-    template: '%s - Lodgic',
-  },
+  title: 'Développeur Application Mobile Toulouse - Lodgic',
   keywords: [
     'Développeur Application Mobile Toulouse',
     'Développeurs Applications Mobile Toulouse',

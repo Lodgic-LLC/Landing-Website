@@ -5,14 +5,14 @@ import { blogPosts } from '@/data/blog/posts'
 import { FaChevronRight } from 'react-icons/fa'
 
 export const metadata: Metadata = {
-  title: 'Blog | Actualités et Conseils Web par Lodgic',
+  title: 'Blog - Actualités et Conseils Web par Lodgic',
   description:
     'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.',
   alternates: {
     canonical: 'https://lodgic-dev.com/blog',
   },
   openGraph: {
-    title: 'Blog | Actualités et Conseils Web par Lodgic',
+    title: 'Blog - Actualités et Conseils Web par Lodgic',
     description:
       'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.',
     url: 'https://lodgic-dev.com/blog',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog | Actualités et Conseils Web par Lodgic',
+    title: 'Blog - Actualités et Conseils Web par Lodgic',
     description:
       'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques.',
     images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
@@ -123,14 +123,12 @@ const BlogPage = () => {
             <div className="w-full lg:w-1/2 pt-8 lg:pt-0">
               <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
                 Notre{' '}
-                <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">
-                  Blog
-                </span>{' '}
-                Tech
+                <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">Blog</span> Tech
               </h1>
 
               <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed">
-                Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.
+                Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances
+                technologiques pour améliorer votre présence en ligne.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -225,7 +223,8 @@ const BlogPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos derniers articles</h2>
             <div className="w-20 h-1.5 bg-blue-600 mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-gray-600">
-              Découvrez nos réflexions et conseils sur les dernières tendances technologiques et les meilleures pratiques de développement.
+              Découvrez nos réflexions et conseils sur les dernières tendances technologiques et les meilleures
+              pratiques de développement.
             </p>
           </div>
 
@@ -242,13 +241,17 @@ const BlogPage = () => {
                     width={500}
                     height={300}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
-                    loading={index < 3 ? "eager" : "lazy"}
+                    loading={index < 3 ? 'eager' : 'lazy'}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white/90 text-sm mb-2">
-                      {new Date(post.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
+                      {new Date(post.date).toLocaleDateString('fr-FR', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
                     </p>
                     <h2 className="text-xl font-semibold text-white group-hover:text-blue-100 transition-colors duration-200 line-clamp-2">
                       {post.title}
@@ -261,7 +264,11 @@ const BlogPage = () => {
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                     <span className="text-sm text-gray-500 flex items-center">
                       <svg className="w-4 h-4 mr-1 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                        <path
+                          fillRule="evenodd"
+                          d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                          clipRule="evenodd"
+                        />
                       </svg>
                       {post.author}
                     </span>
@@ -270,7 +277,9 @@ const BlogPage = () => {
                       className="text-blue-600 hover:text-blue-800 font-medium text-sm inline-flex items-center group/link"
                     >
                       Lire la suite
-                      <span className="ml-1 transition-transform duration-200 group-hover/link:translate-x-1">&rarr;</span>
+                      <span className="ml-1 transition-transform duration-200 group-hover/link:translate-x-1">
+                        &rarr;
+                      </span>
                     </Link>
                   </div>
                 </div>
@@ -297,9 +306,7 @@ const BlogPage = () => {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Vous avez une question ou un projet ?
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Vous avez une question ou un projet ?</h2>
             <p className="text-white/90 text-lg mb-8">
               Notre équipe est prête à vous accompagner dans la réalisation de vos projets web et mobiles.
             </p>
