@@ -4,13 +4,13 @@ import { Metadata } from 'next'
 import { FaArrowRight, FaLightbulb, FaUsers, FaRocket } from 'react-icons/fa'
 
 export const metadata: Metadata = {
-  title: 'Lodgic - A Propos',
+  title: 'A Propos - Lodgic',
   description: 'Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale',
   alternates: {
     canonical: 'https://lodgic-dev.com/a-propos',
   },
   openGraph: {
-    title: 'Lodgic - A Propos',
+    title: 'A Propos - Lodgic',
     description: 'Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale',
     url: 'https://lodgic-dev.com/a-propos',
     siteName: 'Lodgic',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Lodgic - A Propos',
+    title: 'A Propos - Lodgic',
     description: 'Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale',
     images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
   },

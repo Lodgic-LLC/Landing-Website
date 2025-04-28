@@ -4,14 +4,14 @@ import Image from 'next/image'
 import { FaMobile, FaCode, FaPlug, FaTools, FaChevronRight } from 'react-icons/fa'
 
 export const metadata: Metadata = {
-  title: 'Lodgic - Services de Développement Mobile',
+  title: 'Services de Développement Mobile - Lodgic',
   description:
     'Découvrez nos services de développement mobile natif iOS et Android pour créer des applications performantes et innovantes',
   alternates: {
     canonical: 'https://lodgic-dev.com/services',
   },
   openGraph: {
-    title: 'Lodgic - Services de Développement Mobile',
+    title: 'Services de Développement Mobile - Lodgic',
     description:
       'Découvrez nos services de développement mobile natif iOS et Android pour créer des applications performantes et innovantes',
     url: 'https://lodgic-dev.com/services',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Lodgic - Services de Développement Mobile',
+    title: 'Services de Développement Mobile - Lodgic',
     description:
       'Découvrez nos services de développement mobile natif iOS et Android pour créer des applications performantes et innovantes',
     images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],

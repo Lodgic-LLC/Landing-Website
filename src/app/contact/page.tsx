@@ -4,13 +4,13 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Lodgic - Contact',
+  title: 'Contact - Lodgic',
   description: 'Contactez-nous pour discuter de vos besoins numériques et de la façon dont nous pouvons vous aider',
   alternates: {
     canonical: 'https://lodgic-dev.com/contact',
   },
   openGraph: {
-    title: 'Lodgic - Contact',
+    title: 'Contact - Lodgic',
     description: 'Contactez-nous pour discuter de vos besoins numériques et de la façon dont nous pouvons vous aider',
     url: 'https://lodgic-dev.com/contact',
     siteName: 'Lodgic',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
-        alt: 'Lodgic - Contactez-nous',
+        alt: 'Contactez-nous - Lodgic',
       },
     ],
     locale: 'fr_FR',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Lodgic - Contact',
+    title: 'Contact - Lodgic',
     description: 'Contactez-nous pour discuter de vos besoins numériques et de la façon dont nous pouvons vous aider',
     images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
   },

@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Lodgic - Politique de Confidentialité',
+  title: 'Politique de Confidentialité - Lodgic',
   description:
     'Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
   alternates: {
     canonical: 'https://lodgic-dev.com/politique-confidentialite',
   },
   openGraph: {
-    title: 'Lodgic - Politique de Confidentialité',
+    title: 'Politique de Confidentialité - Lodgic',
     description:
       'Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
     url: 'https://lodgic-dev.com/politique-confidentialite',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Lodgic - Politique de Confidentialité',
+    title: 'Politique de Confidentialité - Lodgic',
     description: 'Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
     images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
   },
