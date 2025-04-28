@@ -7,7 +7,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-04-26',
     author: "L'équipe Lodgic",
     summary:
-      'Découvrez les meilleures stratégies et techniques pour propulser votre site Next.js en haut des résultats de recherche Google. De la configuration initiale aux optimisations avancées pour dominer les SERPs.',
+      'Propulsez votre site Next.js en haut des résultats Google. Découvrez les stratégies SEO essentielles, de la configuration aux optimisations avancées.',
     imageUrl:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: 'Tableau de bord analytique montrant la croissance SEO',
@@ -198,11 +198,11 @@ return {
   },
   {
     slug: 'tailwind-vs-css-modules',
-    title: 'TailwindCSS vs CSS Modules : Quel est le Meilleur Choix pour React en 2024 ?',
+    title: 'TailwindCSS vs CSS Modules : Meilleur Choix pour React en 2024 ?',
     date: '2025-04-25',
     author: "L'équipe Lodgic",
     summary:
-      'Tailwind et CSS Modules offrent des approches radicalement différentes pour styliser les applications React. Découvrez une comparaison approfondie pour faire le choix éclairé adapté à votre projet.',
+      'TailwindCSS vs CSS Modules pour React : deux approches différentes. Découvrez notre comparaison détaillée pour choisir la meilleure solution pour votre projet.',
     imageUrl:
       'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: "Code CSS affiché sur un écran d'ordinateur portable",
@@ -346,11 +346,11 @@ function MyButton() {
   },
   {
     slug: 'creer-landing-page-efficace',
-    title: 'Les 5 Clés Indispensables pour une Landing Page qui Convertit en 2024',
+    title: '5 Clés Indispensables pour une Landing Page qui Convertit en 2024',
     date: '2025-04-24',
     author: "L'équipe Lodgic",
     summary:
-      "Votre landing page est la première impression cruciale. Découvrez les 5 éléments fondamentaux pour la structurer, l'optimiser et maximiser vos taux de conversion.",
+      "Votre landing page est cruciale. Découvrez 5 éléments fondamentaux pour la structurer, l'optimiser et maximiser vos conversions dès la première impression.",
     imageUrl:
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Updated relevant image
     imageAlt: "Équipe collaborant sur la conception d'une interface web pour une landing page efficace",
@@ -442,11 +442,11 @@ function MyButton() {
   },
   {
     slug: 'importance-responsive-design',
-    title: "Responsive Design en 2024 : Plus qu'une Option, une Nécessité Absolue",
+    title: "Responsive Design en 2024 : Plus qu'une Option, une Nécessité",
     date: '2025-04-23',
     author: "L'équipe Lodgic",
     summary:
-      "Le trafic mobile explose et Google priorise l'indexation mobile-first. Découvrez pourquoi ignorer le responsive design aujourd'hui nuit gravement à votre UX, SEO et business.",
+      "Le trafic mobile domine et Google priorise le mobile-first. Ignorer le responsive design nuit à l'UX, au SEO et à votre business. Découvrez pourquoi c'est crucial.",
     imageUrl:
       'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: 'Site web affiché sur différents appareils : ordinateur, tablette, smartphone',
@@ -565,11 +565,11 @@ function MyButton() {
   },
   {
     slug: 'securiser-application-react',
-    title: 'Guide Essentiel 2024 : Sécuriser Votre Application React Contre les Failles Courantes',
+    title: 'Sécuriser Votre App React : Guide Essentiel 2024 Contre les Failles',
     date: '2025-04-22',
     author: "L'équipe Lodgic",
     summary:
-      'Le développement React est puissant, mais la sécurité ne doit jamais être négligée. Apprenez à identifier et prévenir les vulnérabilités comme le XSS, le CSRF, et plus encore.',
+      'Sécurisez votre app React. Apprenez à identifier et prévenir les vulnérabilités courantes comme le XSS et le CSRF. Protégez vos utilisateurs et vos données.',
     imageUrl:
       'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: 'Cadenas numérique symbolisant la sécurité informatique',
@@ -594,7 +594,7 @@ function MyButton() {
       <h3>Comment React Aide (par Défaut)</h3>
       <p>React offre une protection de base contre le XSS : <strong>il échappe automatiquement les données intégrées dans le JSX</strong>. Cela signifie que si vous affichez une variable contenant du HTML potentiellement dangereux, React l'affichera comme du texte brut plutôt que de l'interpréter comme du HTML.</p>
       <pre><code class="language-jsx">const MonComposant = ({ userInput }) => {
-  // Si userInput = "<img src='invalid' onerror='alert(\'XSS!\')' />"
+  // Si userInput = "<img alt='Image invalide' onerror='alert(\'XSS!\')' />"
   return <div>{userInput}</div>; 
   // Résultat : Le texte brut de la balise img sera affiché, pas exécuté.
 };</code></pre>
@@ -611,7 +611,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
         <li><strong>Injection dans les Props d'Attributs :</strong> Attention à l'utilisation de données utilisateur directement dans les attributs HTML, notamment les URLs (<code>href</code>, <code>src</code>). Une URL commençant par <code>javascript:</code> peut exécuter du code. Validez et nettoyez toujours les URLs avant de les utiliser.</li>
         <pre><code class="language-jsx">const LienUtilisateur = ({ urlUser }) => {
   // MAUVAIS : urlUser pourrait être "javascript:alert('XSS')"
-  // return <a href={urlUser}>Click me</a>;
+  // return <a>Lien utilisateur</a>;
 
   // BON : Valider/Nettoyer l'URL
   const isValidUrl = urlUser.startsWith('http://') || urlUser.startsWith('https://') || urlUser.startsWith('/');
