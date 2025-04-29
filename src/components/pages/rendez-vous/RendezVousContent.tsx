@@ -56,7 +56,7 @@ const RendezVousContent = () => {
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white mb-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Planifiez votre consultation gratuite
+              Planifiez votre entretien de découverte
             </h1>
             <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
               Discutons de votre projet et explorons ensemble les possibilités pour le concrétiser.
@@ -227,7 +227,7 @@ const RendezVousContent = () => {
                 Prêt à transformer votre vision en réalité ?
               </h2>
               <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-                Planifiez votre consultation gratuite ou explorez nos projets pour découvrir notre expertise.
+                Planifiez votre entretien de découverte et découvrez comment nous pouvons vous aider à réaliser vos ambitions.
               </p>
               <div className="flex flex-wrap justify-center gap-6">
                 <Link
