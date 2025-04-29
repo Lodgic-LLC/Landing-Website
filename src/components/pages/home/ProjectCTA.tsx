@@ -1,9 +1,10 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from "next/link";
+import Image from "next/image";
+import { FaChevronRight } from "react-icons/fa";
 
 export default function ProjectCTA() {
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
       {/* Éléments décoratifs */}
       <div className="absolute top-0 left-0 w-full h-full">
         {/* Points lumineux */}
@@ -21,57 +22,50 @@ export default function ProjectCTA() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Contenu gauche */}
-          <div className="lg:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Prêt à concrétiser votre projet d'application mobile ?
+          <div className="lg:w-1/2 text-center lg:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Envie de concrétiser votre projet ?
             </h2>
-            <p className="text-white/90 text-lg mb-8">
-              Transformez votre idée en une application. Notre équipe d'experts vous accompagne à chaque étape, de la
-              conception au déploiement, pour créer une solution sur mesure adaptée à vos besoins.
+            <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto lg:mx-0">
+              Discutons de votre idée et transformons-la en une application
+              mobile concrète.
             </p>
 
-            {/* Points clés */}
-            <div className="mb-10 space-y-4">
-              {[
-                'Consultation gratuite et devis personnalisé',
-                'Respect des délais et du budget fixés',
-                'Solutions adaptées aux dernières technologies',
-                'Support continu après le lancement',
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-start">
-                  <svg
-                    className="h-6 w-6 text-blue-200 mt-0.5 flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="ml-3 text-white">{item}</span>
-                </div>
-              ))}
-            </div>
-
             {/* Boutons d'action */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
               <Link
                 href="/contact"
-                className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center"
               >
-                Demander un devis gratuit
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                Nous contacter
               </Link>
               <Link
                 href="/services"
-                className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all"
+                className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all flex items-center group"
               >
                 Découvrir nos services
+                <FaChevronRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
 
           {/* Image à droite - Hidden on mobile, visible on tablet and up */}
           <div className="w-full lg:w-1/2 relative hidden sm:block">
-            <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[400px] rounded-xl overflow-hidden shadow-2xl">
               <Image
                 src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1510"
                 alt="Équipe de développement mobile en discussion"
@@ -79,20 +73,20 @@ export default function ProjectCTA() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
                 className="object-cover object-center"
-                quality={90}
-                style={{ width: '100%', height: '100%' }}
+                quality={85}
+                style={{ width: "100%", height: "100%" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
 
               {/* Overlay avec formulaire simplifié */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 bg-gradient-to-t from-blue-900/90 to-blue-900/60">
-                <h3 className="text-white text-lg sm:text-xl font-medium mb-3 sm:mb-4">
-                  Contactez-nous dès maintenant
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-blue-900/80 to-blue-900/50">
+                <h3 className="text-white text-lg font-medium mb-3">
+                  Contactez-nous
                 </h3>
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex gap-3">
                   <Link
                     href="/rendez-vous"
-                    className="bg-white text-blue-600 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-all flex-grow text-center"
+                    className="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-all flex-grow text-center text-sm"
                   >
                     Prendre rendez-vous
                   </Link>
@@ -101,10 +95,10 @@ export default function ProjectCTA() {
             </div>
 
             {/* Élément décoratif */}
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-blue-300/20 rounded-lg -z-10"></div>
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-blue-300/20 rounded-lg -z-10"></div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,88 +1,88 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { Metadata } from 'next'
-import { blogPosts } from '@/data/blog/posts'
-import { FaChevronRight } from 'react-icons/fa'
+import Link from "next/link";
+import Image from "next/image";
+import { Metadata } from "next";
+import { blogPosts } from "@/data/blog/posts";
+import { FaChevronRight } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: 'Blog - Actualités et Conseils Web par Lodgic',
+  title: "Blog - Actualités et Conseils Web par Lodgic",
   description:
-    'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.',
+    "Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.",
   alternates: {
-    canonical: 'https://lodgic-dev.com/blog',
+    canonical: "https://lodgic-dev.com/blog",
   },
   openGraph: {
-    title: 'Blog - Actualités et Conseils Web par Lodgic',
+    title: "Blog - Actualités et Conseils Web par Lodgic",
     description:
-      'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.',
-    url: 'https://lodgic-dev.com/blog',
-    siteName: 'Lodgic',
+      "Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.",
+    url: "https://lodgic-dev.com/blog",
+    siteName: "Lodgic",
     images: [
       {
-        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        url: "https://lodgic-dev.com/FullLogo_Transparent.png",
         width: 1200,
         height: 630,
-        alt: 'Blog Lodgic - Actualités et Conseils Web',
+        alt: "Blog Lodgic - Actualités et Conseils Web",
       },
     ],
-    locale: 'fr_FR',
-    type: 'website',
+    locale: "fr_FR",
+    type: "website",
   },
   keywords: [
-    'blog développement web',
-    'conseils web',
-    'tendances technologiques',
-    'développement application mobile',
-    'blog tech',
-    'SEO',
-    'design web',
-    'blog Lodgic',
-    'actualités tech',
+    "blog développement web",
+    "conseils web",
+    "tendances technologiques",
+    "développement application mobile",
+    "blog tech",
+    "SEO",
+    "design web",
+    "blog Lodgic",
+    "actualités tech",
   ],
   twitter: {
-    card: 'summary_large_image',
-    title: 'Blog - Actualités et Conseils Web par Lodgic',
+    card: "summary_large_image",
+    title: "Blog - Actualités et Conseils Web par Lodgic",
     description:
-      'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques.',
-    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
+      "Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques.",
+    images: ["https://lodgic-dev.com/FullLogo_Transparent.png"],
   },
-}
+};
 
 const BlogPage = () => {
   // Création du schéma LD-JSON pour le blog
   const blogSchemaData = {
-    '@context': 'https://schema.org',
-    '@type': 'Blog',
-    name: 'Blog Lodgic - Actualités et Conseils Web',
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Blog Lodgic - Actualités et Conseils Web",
     description:
-      'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.',
-    url: 'https://lodgic-dev.com/blog',
+      "Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.",
+    url: "https://lodgic-dev.com/blog",
     publisher: {
-      '@type': 'Organization',
-      name: 'Lodgic',
+      "@type": "Organization",
+      name: "Lodgic",
       logo: {
-        '@type': 'ImageObject',
-        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        "@type": "ImageObject",
+        url: "https://lodgic-dev.com/FullLogo_Transparent.png",
       },
     },
     blogPost: blogPosts.map((post) => ({
-      '@type': 'BlogPosting',
+      "@type": "BlogPosting",
       headline: post.title,
       description: post.summary,
       datePublished: new Date(post.date).toISOString(),
       author: {
-        '@type': 'Person',
+        "@type": "Person",
         name: post.author,
       },
       image: post.imageUrl,
       url: `https://lodgic-dev.com/blog/${post.slug}`,
     })),
-  }
+  };
 
   return (
     <>
       <script
-        key={'structured-data'}
+        key={"structured-data"}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchemaData) }}
       />
@@ -119,16 +119,18 @@ const BlogPage = () => {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pb-20 md:pb-24">
-            {/* Contenu gauche */}
-            <div className="w-full lg:w-1/2 pt-8 lg:pt-0">
+            {/* Contenu gauche - Focusing on Conseils */}
+            <div className="w-full lg:w-1/2 pt-8 lg:pt-0 text-center lg:text-left">
               <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-                Notre{' '}
-                <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">Blog</span> Tech
+                Nos{" "}
+                <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">
+                  Conseils
+                </span>
+                <span className="block">pour vos Applications</span>
               </h1>
-
-              <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed">
-                Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances
-                technologiques pour améliorer votre présence en ligne.
+              <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Développement, design, SEO : découvrez nos articles pour
+                optimiser vos projets.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -203,7 +205,10 @@ const BlogPage = () => {
         </div>
 
         {/* Forme de transition vers le contenu suivant */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
+        <div
+          className="absolute bottom-0 left-0 w-full overflow-hidden"
+          style={{ height: "80px" }}
+        >
           <svg
             className="absolute bottom-0 w-full h-full"
             viewBox="0 0 1440 80"
@@ -211,7 +216,10 @@ const BlogPage = () => {
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none"
           >
-            <path d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z" fill="white" />
+            <path
+              d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z"
+              fill="white"
+            />
           </svg>
         </div>
       </section>
@@ -220,11 +228,13 @@ const BlogPage = () => {
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos derniers articles</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Nos derniers articles
+            </h2>
             <div className="w-20 h-1.5 bg-blue-600 mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-gray-600">
-              Découvrez nos réflexions et conseils sur les dernières tendances technologiques et les meilleures
-              pratiques de développement.
+              Découvrez nos réflexions et conseils sur les dernières tendances
+              technologiques et les meilleures pratiques de développement.
             </p>
           </div>
 
@@ -234,23 +244,26 @@ const BlogPage = () => {
                 key={post.slug}
                 className={`group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
               >
-                <Link href={`/blog/${post.slug}`} className="block overflow-hidden relative h-56 md:h-64">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="block overflow-hidden relative h-56 md:h-64"
+                >
                   <Image
                     src={post.imageUrl}
                     alt={post.imageAlt}
                     width={500}
                     height={300}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
-                    loading={index < 3 ? 'eager' : 'lazy'}
+                    loading={index < 3 ? "eager" : "lazy"}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-white/90 text-sm mb-2">
-                      {new Date(post.date).toLocaleDateString('fr-FR', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
+                      {new Date(post.date).toLocaleDateString("fr-FR", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
                       })}
                     </p>
                     <h2 className="text-xl font-semibold text-white group-hover:text-blue-100 transition-colors duration-200 line-clamp-2">
@@ -260,10 +273,16 @@ const BlogPage = () => {
                 </Link>
 
                 <div className="p-5 md:p-6 flex flex-col flex-grow bg-gradient-to-br from-white to-gray-50">
-                  <p className="text-gray-600 mb-4 flex-grow line-clamp-3">{post.summary}</p>
+                  <p className="text-gray-600 mb-4 flex-grow line-clamp-3">
+                    {post.summary}
+                  </p>
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                     <span className="text-sm text-gray-500 flex items-center">
-                      <svg className="w-4 h-4 mr-1 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                      <svg
+                        className="w-4 h-4 mr-1 text-blue-600"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
                         <path
                           fillRule="evenodd"
                           d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
@@ -306,9 +325,12 @@ const BlogPage = () => {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Vous avez une question ou un projet ?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Vous avez une question ou un projet ?
+            </h2>
             <p className="text-white/90 text-lg mb-8">
-              Notre équipe est prête à vous accompagner dans la réalisation de vos projets web et mobiles.
+              Notre équipe est prête à vous accompagner dans la réalisation de
+              vos projets web et mobiles.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -329,7 +351,7 @@ const BlogPage = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default BlogPage
+export default BlogPage;
