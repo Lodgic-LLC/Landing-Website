@@ -170,7 +170,8 @@ export default function Services() {
               </h1>
 
               <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed">
-                Nous développons votre application pour quelle soit parfaitement adaptées a vos besoins.
+                Vous n'avez pas les compétences pour développer votre application ? Lodgic vous accompagne de la
+                conception à la mise en ligne de votre projet.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -230,7 +231,7 @@ export default function Services() {
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
-                </div>
+                </div>Notre Blog
 
                 {/* Élément décoratif derrière l'image */}
                 <div className="absolute -bottom-6 -right-6 w-full h-full rounded-2xl border-2 border-blue-300/20 -z-10"></div>
