@@ -48,7 +48,7 @@ export default function Hero() {
               </h1>
 
               <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed">
-              Votre idée, notre savoir-faire : Un accompagnement personnalisé, un design sur mesure et une expertise technique pour créer ensemble l’application mobile qui vous ressemble.
+              Votre idée, notre savoir-faire : Un accompagnement personnalisé, un design sur mesure et notre expertise technique pour créer ensemble l’application mobile qui vous ressemble.
               </p>
 
               <div className="flex flex-wrap gap-4">

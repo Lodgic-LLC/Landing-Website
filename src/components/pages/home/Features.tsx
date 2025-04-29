@@ -98,8 +98,7 @@ export default function Features() {
             à chaque étape du développement de votre application mobile
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            De la conception à la livraison, nous vous accompagnons à chaque
-            étape pour concrétiser votre application mobile.
+          De l’idée initiale jusqu’à la mise en ligne, nous sommes à vos côtés à chaque étape pour donner vie à votre projet.
           </p>
           <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mt-4 sm:mt-8"></div>
         </div>

@@ -6,8 +6,7 @@ const steps = [
   {
     number: "01",
     title: "Stratégie",
-    description:
-      "Pour bien démarrer, nous discutons ensemble de votre projet et de vos objectifs. Nous établissons ensuite un plan détaillé pour s'assurer que l'application correspond parfaitement à vos attentes.",
+    description: "Analyse de vos objectifs et définition du plan projet.",
     features: [
       "Définir ce que l'application doit faire",
       "Établir un calendrier et les étapes du projet",
@@ -18,7 +17,7 @@ const steps = [
     number: "02",
     title: "Design et Maquettes",
     description:
-      "À cette étape, nous créons l'apparence de votre application. Vous verrez à quoi ressemblera chaque écran pour s'assurer qu'elle est à la fois esthétique et facile à prendre en main.",
+      "Création des maquettes visuelles et de l'interface utilisateur.",
     features: [
       "Maquettes visuelles de tous les écrans",
       "Un style graphique unique pour votre projet",
@@ -28,10 +27,9 @@ const steps = [
   {
     number: "03",
     title: "Création de l'Application",
-    description:
-      "C'est le moment où nous construisons réellement votre application. Nous passons des maquettes a en une application fonctionnelle, rapide et fiable.",
+    description: "Développement de l'application fonctionnelle .",
     features: [
-      "Programmation soignée et bien organisée",
+      "Optimisation du référencement naturel (SEO)",
       "Structure permettant des évolutions futures",
       "Vérifications régulières a vos cotés",
     ],
@@ -40,7 +38,7 @@ const steps = [
     number: "04",
     title: "Vérifications et Lancement",
     description:
-      "Avant de vous livrer l'application, nous la testons pour nous assurer qu'elle fonctionne parfaitement sur tous les appareils. Puis nous la publions et vous accompagnons pour son lancement réussi.",
+      "Tests, corrections et mise en ligne de votre application.",
     features: [
       "Tests approfondis sur différents téléphones",
       "Correction de tous les problèmes identifiés",
@@ -50,12 +48,11 @@ const steps = [
   {
     number: "05",
     title: "Suivi et Améliorations",
-    description:
-      "Une application réussie évolue constamment. Nous restons à vos côtés après le lancement pour assurer son bon fonctionnement, l'améliorer selon les retours de vos utilisateurs et ajouter de nouvelles fonctionnalités.",
+    description: "Support post-lancement, maintenance et évolutions futures.",
     features: [
-      "Assistance technique rapide en cas de besoin",
-      "Mises à jour régulières de sécurité",
-      "Analyse de l'utilisation par vos clients",
+      "Assistance technique",
+      "Mise à jour de l'application",
+      "Développement de nouvelles fonctionnalités",
     ],
   },
 ];
@@ -71,12 +68,11 @@ export default function Process() {
         {/* En-tête de section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Comment nous créons votre application
+            Notre Processus de Création
           </h2>
           <div className="w-20 h-1.5 bg-blue-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-gray-600">
-            Notre méthode transparente pour transformer votre idée en une
-            application mobile réussie.
+            De l'idée à l'application réussie, étape par étape.
           </p>
         </div>
 
