@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function Features() {
   return (
@@ -98,15 +99,16 @@ export default function Features() {
             à chaque étape du développement de votre application mobile
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-          De l’idée initiale jusqu’à la mise en ligne, nous sommes à vos côtés à chaque étape pour donner vie à votre projet.
+            De l’idée initiale jusqu’à la mise en ligne, nous sommes à vos côtés
+            à chaque étape pour donner vie à votre projet.
           </p>
           <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full mt-4 sm:mt-8"></div>
         </div>
 
-        <div className="mt-20 flex flex-col lg:flex-row items-center gap-10">
-          {/* Image à gauche - Hidden on mobile, visible on tablet and up */}
+        <div className="mt-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* Image à gauche - Added subtle border */}
           <div className="w-full lg:w-1/2 relative hidden sm:block">
-            <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-lg border border-gray-100">
               <Image
                 src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1374&auto=format&fit=crop"
                 alt="Équipe de développement mobile"
@@ -115,28 +117,47 @@ export default function Features() {
                 priority
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-blue-900/20"></div>
+              <div className="absolute inset-0 bg-blue-900/10"></div>
             </div>
             {/* Élément décoratif */}
             <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-100 rounded-full -z-10"></div>
             <div className="absolute -top-4 -right-4 w-32 h-32 border-2 border-blue-200 rounded-lg -z-10"></div>
           </div>
 
-          {/* Contenu à droite */}
+          {/* Contenu à droite - Improved list styling */}
           <div className="lg:w-1/2">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Un accompagnement à l’image de votre projet
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-5">
+              Un accompagnement à l'image de votre projet
             </h3>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8">
-            Chaque projet est unique. Nous travaillons main dans la main avec vous pour concevoir une application mobile qui répond à vos besoins            </p>
-            <ul className="space-y-3 text-base sm:text-lg text-gray-600 list-disc list-inside">
-              <li>Analyse de vos objectifs et de vos besoins.</li>
-              <li>Design sur mesure avec maquettes.</li>
-              <li>
-                Construction pas à pas de votre application, avec votre validations a chaque étape de votre projet.
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
+              Chaque projet est unique. Nous travaillons main dans la main avec
+              vous pour concevoir une application mobile qui répond à vos
+              besoins.
+            </p>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <FaCheckCircle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                <span className="text-base sm:text-lg text-gray-600">
+                  Analyse de vos objectifs et de vos besoins.
+                </span>
               </li>
-              <li>
-              Tests complet de votre application.
+              <li className="flex items-start gap-3">
+                <FaCheckCircle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                <span className="text-base sm:text-lg text-gray-600">
+                  Design sur mesure avec maquettes.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <FaCheckCircle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                <span className="text-base sm:text-lg text-gray-600">
+                  Construction pas à pas, avec vos validations à chaque étape.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <FaCheckCircle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                <span className="text-base sm:text-lg text-gray-600">
+                  Tests complets pour un fonctionnement parfait.
+                </span>
               </li>
             </ul>
           </div>

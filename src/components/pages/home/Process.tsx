@@ -37,8 +37,7 @@ const steps = [
   {
     number: "04",
     title: "Vérifications et Lancement",
-    description:
-      "Tests, corrections et mise en ligne de votre application.",
+    description: "Tests, corrections et mise en ligne de votre application.",
     features: [
       "Tests approfondis sur différents téléphones",
       "Correction de tous les problèmes identifiés",
