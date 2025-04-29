@@ -114,53 +114,39 @@ export default function Footer() {
             </h3>
             <ul className="grid grid-cols-2 sm:grid-cols-1 gap-x-2 gap-y-2">
               <li>
-                <Link
-                  href="/"
-                  className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm"
-                  tabIndex={0}
-                >
+                <Link href="/" className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm" tabIndex={0}>
                   <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-blue-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
                   <span className="group-hover:translate-x-0.5 transition-transform duration-300">Accueil</span>
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/a-propos"
-                  className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm"
-                  tabIndex={0}
-                >
-                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-blue-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:translate-x-0.5 transition-transform duration-300">À propos</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm"
-                  tabIndex={0}
-                >
+                <Link href="/services" className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm" tabIndex={0}>
                   <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-blue-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
                   <span className="group-hover:translate-x-0.5 transition-transform duration-300">Services</span>
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/contact"
-                  className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm"
-                  tabIndex={0}
-                >
+                <Link href="/projets" className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm" tabIndex={0}>
                   <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-blue-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:translate-x-0.5 transition-transform duration-300">Contact</span>
+                  <span className="group-hover:translate-x-0.5 transition-transform duration-300">Projets</span>
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/rendez-vous"
-                  className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm"
-                  tabIndex={0}
-                >
+                <Link href="/blog" className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm" tabIndex={0}>
                   <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-blue-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:translate-x-0.5 transition-transform duration-300">Rendez-vous</span>
+                  <span className="group-hover:translate-x-0.5 transition-transform duration-300">Lodgic Conseils</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/a-propos" className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm" tabIndex={0}>
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-blue-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:translate-x-0.5 transition-transform duration-300">À propos</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors inline-flex items-center group text-xs sm:text-sm" tabIndex={0}>
+                  <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-blue-500 mr-1.5 sm:mr-2.5 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:translate-x-0.5 transition-transform duration-300">Contact</span>
                 </Link>
               </li>
             </ul>
