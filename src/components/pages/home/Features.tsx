@@ -125,23 +125,18 @@ export default function Features() {
           {/* Contenu à droite */}
           <div className="lg:w-1/2">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Une approche sur-mesure pour votre projet
+            Un accompagnement à l’image de votre projet
             </h3>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8">
-              Chaque projet a des besoins spécifiques et des objectifs uniques.
-              Nous travaillons en collaboration avec vous pour comprendre vos
-              enjeux et concevoir une application mobile qui répond parfaitement
-              à vos attentes.
-            </p>
+            Chaque projet est unique. Nous travaillons main dans la main avec vous pour concevoir une application mobile qui répond à vos besoins            </p>
             <ul className="space-y-3 text-base sm:text-lg text-gray-600 list-disc list-inside">
               <li>Analyse de vos objectifs et de vos besoins.</li>
-              <li>Création d'un design sur mesure avec proposition de maquettes.</li>
+              <li>Design sur mesure avec maquettes.</li>
               <li>
                 Construction pas à pas de votre application, avec votre validations a chaque étape de votre projet.
               </li>
               <li>
-                Tests pour assurer un fonctionnement parfait sur mobiles IOS/Android et
-                tablettes.
+              Tests complet de votre application.
               </li>
             </ul>
           </div>

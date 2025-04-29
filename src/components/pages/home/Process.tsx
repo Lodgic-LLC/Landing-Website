@@ -68,11 +68,11 @@ export default function Process() {
         {/* En-tête de section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Notre Processus de Création
+            Notre processus de développement
           </h2>
           <div className="w-20 h-1.5 bg-blue-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-gray-600">
-            De l'idée à l'application réussie, étape par étape.
+            De l'idée à l'application réalisée, étape par étape.
           </p>
         </div>
 
