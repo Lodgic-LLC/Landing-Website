@@ -1,51 +1,55 @@
-import ContactForm from '@/components/pages/contact/ContactForm'
-import { Metadata } from 'next'
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
-import Link from 'next/link'
+import ContactForm from "@/components/pages/contact/ContactForm";
+import { Metadata } from "next";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: 'Contact - Lodgic',
-  description: 'Contactez-nous pour discuter de vos besoins numériques et de la façon dont nous pouvons vous aider',
+  title: "Contact - Lodgic",
+  description:
+    "Contactez-nous pour discuter de vos besoins numériques et de la façon dont nous pouvons vous aider",
   alternates: {
-    canonical: 'https://lodgic-dev.com/contact',
+    canonical: "https://lodgic-dev.com/contact",
   },
   openGraph: {
-    title: 'Contact - Lodgic',
-    description: 'Contactez-nous pour discuter de vos besoins numériques et de la façon dont nous pouvons vous aider',
-    url: 'https://lodgic-dev.com/contact',
-    siteName: 'Lodgic',
+    title: "Contact - Lodgic",
+    description:
+      "Contactez-nous pour discuter de vos besoins numériques et de la façon dont nous pouvons vous aider",
+    url: "https://lodgic-dev.com/contact",
+    siteName: "Lodgic",
     images: [
       {
-        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        url: "https://lodgic-dev.com/FullLogo_Transparent.png",
         width: 1200,
         height: 630,
-        alt: 'Contactez-nous - Lodgic',
+        alt: "Contactez-nous - Lodgic",
       },
     ],
-    locale: 'fr_FR',
-    type: 'website',
+    locale: "fr_FR",
+    type: "website",
   },
   keywords: [
-    'contact',
-    'Lodgic',
-    'agence développement',
-    'développeur mobile',
-    'nous contacter',
-    'devis application mobile',
-    'projet numérique',
-    'demande information',
-    'consultation projet',
-    'Toulouse développeur',
-    'développement application',
-    'formulaire contact',
+    "contact",
+    "Lodgic",
+    "agence développement",
+    "développeur mobile",
+    "nous contacter",
+    "devis application mobile",
+    "projet numérique",
+    "demande information",
+    "consultation projet",
+    "Toulouse développeur",
+    "développement application",
+    "formulaire contact",
   ],
   twitter: {
-    card: 'summary_large_image',
-    title: 'Contact - Lodgic',
-    description: 'Contactez-nous pour discuter de vos besoins numériques et de la façon dont nous pouvons vous aider',
-    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
+    card: "summary_large_image",
+    title: "Contact - Lodgic",
+    description:
+      "Contactez-nous pour discuter de vos besoins numériques et de la façon dont nous pouvons vous aider",
+    images: ["https://lodgic-dev.com/FullLogo_Transparent.png"],
   },
-}
+};
 
 export default function Contact() {
   return (
@@ -81,22 +85,50 @@ export default function Contact() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col text-center">
-            <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-              Entrons en{' '}
-              <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">contact</span>
-            </h1>
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
+              <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+                Entrons en{" "}
+                <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">
+                  contact
+                </span>
+              </h1>
 
-            <p className="text-white/90 text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
-              Nous sommes à votre écoute pour échanger sur votre projet et répondre à toutes vos questions.
-            </p>
+              <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Nous sommes à votre écoute pour échanger sur votre projet et
+                répondre à toutes vos questions.
+              </p>
 
-            <div className="w-20 h-1.5 bg-white mx-auto rounded-full mb-8"></div>
+              <div className="w-20 h-1.5 bg-white mx-auto lg:mx-0 rounded-full mb-8"></div>
+            </div>
+
+            <div className="w-full lg:w-1/2 mt-10 lg:mt-0 hidden lg:block">
+              <div className="relative w-full">
+                <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-xl overflow-hidden shadow-xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1470"
+                    alt="Deux professionnels souriants collaborant sur un projet avec Lodgic"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-center"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 to-transparent"></div>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border-2 border-blue-300/20 -z-10"></div>
+                <div className="absolute -top-3 -left-3 w-7 h-7 bg-blue-400/30 rounded-full blur-sm"></div>
+                <div className="absolute top-1/2 -right-3 w-5 h-5 bg-white/30 rounded-full blur-sm"></div>
+                <div className="absolute bottom-0 left-1/4 w-4 h-4 bg-blue-300/40 rounded-full blur-sm"></div>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Forme de transition vers le contenu suivant */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
+        <div
+          className="absolute bottom-0 left-0 w-full overflow-hidden"
+          style={{ height: "80px" }}
+        >
           <svg
             className="absolute bottom-0 w-full h-full"
             viewBox="0 0 1440 80"
@@ -104,7 +136,10 @@ export default function Contact() {
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none"
           >
-            <path d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z" fill="white" />
+            <path
+              d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z"
+              fill="white"
+            />
           </svg>
         </div>
       </section>
@@ -132,7 +167,9 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="ml-4">
-                        <h3 className="text-lg font-semibold text-gray-900">Email</h3>
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          Email
+                        </h3>
                         <a
                           href="mailto:lodgicdev@gmail.com"
                           className="text-blue-600 hover:text-blue-800 transition-colors"
@@ -149,15 +186,29 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="ml-4">
-                        <h3 className="text-lg font-semibold text-gray-900">Téléphone</h3>
-                        <p className="text-gray-700">Disponible sur rendez-vous</p>
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          Téléphone
+                        </h3>
+                        <p className="text-gray-700">
+                          Disponible sur rendez-vous
+                        </p>
                         <Link
                           href="/rendez-vous"
                           className="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center mt-1"
                         >
                           Prendre rendez-vous
-                          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                          <svg
+                            className="w-4 h-4 ml-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M9 5l7 7-7 7"
+                            />
                           </svg>
                         </Link>
                       </div>
@@ -170,10 +221,13 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="ml-4">
-                        <h3 className="text-lg font-semibold text-gray-900">Localisation</h3>
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          Localisation
+                        </h3>
                         <p className="text-gray-700">Toulouse, France</p>
                         <p className="text-gray-600 text-sm mt-1">
-                          Travail à distance sur toute la France et à l'international
+                          Travail à distance sur toute la France et à
+                          l'international
                         </p>
                       </div>
                     </div>
@@ -185,15 +239,23 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="ml-4">
-                        <h3 className="text-lg font-semibold text-gray-900">Horaires</h3>
-                        <p className="text-gray-700">Lundi - Vendredi : 9h - 18h</p>
-                        <p className="text-gray-600 text-sm mt-1">Réponse sous 24h ouvrées</p>
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          Horaires
+                        </h3>
+                        <p className="text-gray-700">
+                          Lundi - Vendredi : 9h - 18h
+                        </p>
+                        <p className="text-gray-600 text-sm mt-1">
+                          Réponse sous 24h ouvrées
+                        </p>
                       </div>
                     </div>
                   </div>
 
                   <div className="pt-6 border-t border-gray-200">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Localisation</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      Localisation
+                    </h3>
                     <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden shadow-md">
                       <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92456.0598028624!2d1.3629132758433282!3d43.60080324959764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2sToulouse!5e0!3m2!1sfr!2sfr!4v1692440665349!5m2!1sfr!2sfr"
@@ -223,20 +285,28 @@ export default function Contact() {
 
                 <div className="space-y-6">
                   <div className="bg-gray-50 rounded-lg p-6 border border-gray-100">
-                    <h3 className="font-semibold text-lg text-gray-900 mb-2">Quels types de projets acceptez-vous ?</h3>
+                    <h3 className="font-semibold text-lg text-gray-900 mb-2">
+                      Quels types de projets acceptez-vous ?
+                    </h3>
                     <p className="text-gray-700">
-                      Nous développons principalement des applications web et mobile sur-mesure pour les particuliers,
-                      entreprises et startups. Nous travaillons avec des projets de toutes tailles, du site vitrine à
-                      l'application complexe avec backend et API.
+                      Nous développons principalement des applications web et
+                      mobile sur-mesure pour les particuliers, entreprises et
+                      startups. Nous travaillons avec des projets de toutes
+                      tailles, du site vitrine à l'application complexe avec
+                      backend et API.
                     </p>
                   </div>
 
                   <div className="bg-gray-50 rounded-lg p-6 border border-gray-100">
-                    <h3 className="font-semibold text-lg text-gray-900 mb-2">Comment se déroule une collaboration ?</h3>
+                    <h3 className="font-semibold text-lg text-gray-900 mb-2">
+                      Comment se déroule une collaboration ?
+                    </h3>
                     <p className="text-gray-700">
-                      Après un premier contact, nous organisons un appel découverte pour comprendre votre projet. Nous
-                      vous présentons ensuite une proposition détaillée incluant planning, budget et méthodologie. Une
-                      fois validée, nous commençons le développement avec des points réguliers.
+                      Après un premier contact, nous organisons un appel
+                      découverte pour comprendre votre projet. Nous vous
+                      présentons ensuite une proposition détaillée incluant
+                      planning, budget et méthodologie. Une fois validée, nous
+                      commençons le développement avec des points réguliers.
                     </p>
                   </div>
 
@@ -245,9 +315,11 @@ export default function Contact() {
                       Quels sont vos délais moyens de réalisation ?
                     </h3>
                     <p className="text-gray-700">
-                      Les délais varient selon la complexité du projet. Un site vitrine peut être réalisé en quelques
-                      jours/semaines, tandis qu'une application complète nécessite plus de temps. Nous établissons
-                      ensemble un planning réaliste dès le début du projet.
+                      Les délais varient selon la complexité du projet. Un site
+                      vitrine peut être réalisé en quelques jours/semaines,
+                      tandis qu'une application complète nécessite plus de
+                      temps. Nous établissons ensemble un planning réaliste dès
+                      le début du projet.
                     </p>
                   </div>
                 </div>
@@ -260,10 +332,12 @@ export default function Contact() {
       {/* Section CTA */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Vous préférez programmer un appel ?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+            Vous préférez programmer un appel ?
+          </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Nous proposons également des créneaux de rendez-vous téléphoniques pour discuter plus en détail de votre
-            projet.
+            Nous proposons également des créneaux de rendez-vous téléphoniques
+            pour discuter plus en détail de votre projet.
           </p>
           <Link
             href="/rendez-vous"
@@ -288,5 +362,5 @@ export default function Contact() {
         </div>
       </section>
     </>
-  )
+  );
 }
