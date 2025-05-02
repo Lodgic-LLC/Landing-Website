@@ -11,6 +11,7 @@ export const blogPosts: BlogPost[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: 'Tableau de bord analytique montrant la croissance SEO',
+    category: 'SEO',
     content: `
       <p class="lead text-lg text-gray-600 mb-8">Dans le paysage numérique concurrentiel de 2024, avoir un site web performant ne suffit plus. La visibilité est reine, et le SEO (Search Engine Optimization) est la clé qui ouvre les portes des premières pages de Google. Pour les développeurs et entreprises utilisant Next.js, le framework React de référence pour la production, optimiser le référencement naturel est non seulement possible, mais fortement encouragé par les capacités intrinsèques du framework.</p>
 
@@ -206,6 +207,7 @@ return {
     imageUrl:
       'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: "Code CSS affiché sur un écran d'ordinateur portable",
+    category: 'Développement',
     content: `
       <p class="lead text-lg text-gray-600 mb-8">Dans l'écosystème bouillonnant de React, choisir la bonne stratégie de stylisation est une décision cruciale qui impacte la productivité des développeurs, la maintenabilité du code, et la performance de l'application. Parmi la multitude d'options, deux approches populaires se distinguent en 2024 : TailwindCSS, le framework CSS "utility-first", et les CSS Modules, une solution axée sur l'isolation des styles au niveau du composant.</p>
 
@@ -354,6 +356,7 @@ function MyButton() {
     imageUrl:
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Updated relevant image
     imageAlt: "Équipe collaborant sur la conception d'une interface web pour une landing page efficace",
+    category: 'Web',
     content: `
       <p class="lead text-lg text-gray-600 mb-8">Une landing page (ou page d'atterrissage) n'est pas une page web ordinaire. C'est une page spécifiquement conçue avec un unique objectif : la conversion. Qu'il s'agisse de capturer une adresse email, de vendre un produit, d'encourager une inscription à un webinaire ou de générer des demandes de devis, son succès se mesure à sa capacité à transformer un visiteur en acteur. En 2024, avec une attention en ligne toujours plus volatile, maîtriser l'art de la landing page est essentiel.</p>
 
@@ -450,6 +453,7 @@ function MyButton() {
     imageUrl:
       'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: 'Site web affiché sur différents appareils : ordinateur, tablette, smartphone',
+    category: 'Développement',
     content: `
       <p class="lead text-lg text-gray-600 mb-8">Il fut un temps où le responsive web design était considéré comme une "bonne pratique", un "plus" appréciable. En 2024, cette époque est révolue. Avec la domination écrasante du trafic mobile et l'adoption par Google de l'indexation "mobile-first", concevoir un site web qui ne s'adapte pas parfaitement à tous les écrans n'est plus une option, c'est une erreur stratégique majeure.</p>
 
@@ -573,6 +577,7 @@ function MyButton() {
     imageUrl:
       'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: 'Cadenas numérique symbolisant la sécurité informatique',
+    category: 'Développement',
     content: `
       <p class="lead text-lg text-gray-600 mb-8">React, avec son approche déclarative et son écosystème riche, a révolutionné la façon dont nous construisons les interfaces utilisateur. Cependant, sa popularité en fait également une cible pour les acteurs malveillants. Si React intègre certaines protections natives, une compréhension approfondie des menaces courantes et des bonnes pratiques de sécurité est indispensable pour tout développeur React soucieux de protéger ses utilisateurs et ses données en 2024.</p>
 
