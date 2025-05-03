@@ -1,9 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Metadata } from 'next'
-import { blogPosts } from '@/data/blog/posts'
+import { blogPosts as rawBlogPosts } from '@/data/blog/posts'
+import type { BlogPost } from '@/types/blog'
 import { FaChevronRight, FaSearch, FaFilter } from 'react-icons/fa'
 import BlogFilters from '@/components/blog/BlogFilters'
+
+const blogPosts = JSON.parse(JSON.stringify(rawBlogPosts))
 
 export const metadata: Metadata = {
   title: 'Blog - Actualités et Conseils Web par Lodgic',
@@ -65,7 +68,7 @@ const blogSchemaData = {
       url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
     },
   },
-  blogPost: blogPosts.map((post) => ({
+  blogPost: (blogPosts as BlogPost[]).map((post: BlogPost) => ({
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.summary,
