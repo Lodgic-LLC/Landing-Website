@@ -1,27 +1,34 @@
-'use client'
+"use client";
 
-import { useState, useMemo } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { FaChevronRight, FaSearch, FaFilter } from 'react-icons/fa'
-import { BlogPost } from '@/types/blog'
+import { useState, useMemo } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { FaChevronRight, FaSearch, FaFilter } from "react-icons/fa";
+import { BlogPost } from "@/types/blog";
 
 // Types pour les filtres
-type Category = 'Tous' | 'Développement' | 'Design' | 'SEO' | 'Mobile' | 'Web'
-type SortOption = 'date' | 'title'
+type Category = "Tous" | "Développement" | "Design" | "SEO" | "Mobile" | "Web";
+type SortOption = "date" | "title";
 
 interface BlogFiltersProps {
-  blogPosts: BlogPost[]
+  blogPosts: BlogPost[];
 }
 
 const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
   // États pour les filtres
-  const [searchQuery, setSearchQuery] = useState('')
-  const [selectedCategory, setSelectedCategory] = useState<Category>('Tous')
-  const [sortBy, setSortBy] = useState<SortOption>('date')
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<Category>("Tous");
+  const [sortBy, setSortBy] = useState<SortOption>("date");
 
   // Extraction des catégories uniques
-  const categories: Category[] = ['Tous', 'Développement', 'Design', 'SEO', 'Mobile', 'Web']
+  const categories: Category[] = [
+    "Tous",
+    "Développement",
+    "Design",
+    "SEO",
+    "Mobile",
+    "Web",
+  ];
 
   // Filtrage et tri des articles
   const filteredPosts = useMemo(() => {
@@ -29,85 +36,92 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
       .filter((post) => {
         const matchesSearch =
           post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          post.summary.toLowerCase().includes(searchQuery.toLowerCase())
-        const matchesCategory = selectedCategory === 'Tous' || post.category === selectedCategory
-        return matchesSearch && matchesCategory
+          post.summary.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesCategory =
+          selectedCategory === "Tous" || post.category === selectedCategory;
+        return matchesSearch && matchesCategory;
       })
       .sort((a, b) => {
-        if (sortBy === 'date') {
-          return new Date(b.date).getTime() - new Date(a.date).getTime()
+        if (sortBy === "date") {
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
         }
-        return a.title.localeCompare(b.title)
-      })
-  }, [searchQuery, selectedCategory, sortBy, blogPosts])
+        return a.title.localeCompare(b.title);
+      });
+  }, [searchQuery, selectedCategory, sortBy, blogPosts]);
 
   return (
     <>
-      {/* Filtres et Recherche Section */}
-      <section className="py-8 bg-white border-b border-gray-100  shadow-sm">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            {/* Barre de recherche */}
-            <div className="relative w-full md:w-96">
-              <input
-                type="text"
-                placeholder="Rechercher un article..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 rounded-lg border focus:outline-none border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
-                aria-label="Rechercher un article"
-              />
-              <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            </div>
-
-            {/* Filtres */}
-            <div className="flex flex-wrap gap-2 items-center">
-              <div className="flex items-center gap-2">
-                <FaFilter className="text-gray-500" />
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value as Category)}
-                  className="px-3 py-2 rounded-lg border focus:outline-none border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
-                  aria-label="Filtrer par catégorie"
-                >
-                  {categories.map((category) => (
-                    <option key={category} value={category}>
-                      {category}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="px-3 py-2 rounded-lg border focus:outline-none border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
-                aria-label="Trier les articles"
-              >
-                <option value="date">Plus récent</option>
-                <option value="title">A-Z</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Articles Grid Section - Amélioré */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos derniers articles</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Nos derniers articles
+            </h2>
             <div className="w-20 h-1.5 bg-blue-600 mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-gray-600">
-              Découvrez nos réflexions et conseils sur les dernières tendances technologiques et les meilleures
-              pratiques de développement.
+              Découvrez nos réflexions et conseils sur les dernières tendances
+              technologiques et les meilleures pratiques de développement.
             </p>
+
+            {/* Conteneur pour la recherche et les filtres (design épuré) */}
+            <div className="mt-8 mb-12 max-w-4xl mx-auto">
+              {/* Conteneur Flex pour Recherche et Filtres */}
+              <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
+                {/* Barre de recherche */}
+                <div className="relative w-full md:w-auto md:flex-1 max-w-md">
+                  <input
+                    type="text"
+                    placeholder="Rechercher un article..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-10 pr-4 py-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 shadow-sm"
+                    aria-label="Rechercher un article"
+                  />
+                  <FaSearch className="absolute left-3.5 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                </div>
+
+                {/* Filtres */}
+                <div className="flex flex-wrap justify-center gap-3 items-center">
+                  <div className="flex items-center gap-2">
+                    <FaFilter className="text-gray-500" />
+                    <select
+                      value={selectedCategory}
+                      onChange={(e) =>
+                        setSelectedCategory(e.target.value as Category)
+                      }
+                      className="px-3 py-2.5 rounded-md border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 shadow-sm text-gray-700"
+                      aria-label="Filtrer par catégorie"
+                    >
+                      {categories.map((category) => (
+                        <option key={category} value={category}>
+                          {category}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value as SortOption)}
+                    className="px-3 py-2.5 rounded-md border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 shadow-sm text-gray-700"
+                    aria-label="Trier les articles"
+                  >
+                    <option value="date">Plus récent</option>
+                    <option value="title">A-Z</option>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
 
           {filteredPosts.length === 0 ? (
             <div className="text-center py-12">
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">Aucun article trouvé</h3>
-              <p className="text-gray-500">Essayez de modifier vos critères de recherche</p>
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">
+                Aucun article trouvé
+              </h3>
+              <p className="text-gray-500">
+                Essayez de modifier vos critères de recherche
+              </p>
             </div>
           ) : (
             <div className="grid gap-8 md:gap-10 lg:gap-12 md:grid-cols-2 lg:grid-cols-3">
@@ -127,7 +141,7 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
                       width={500}
                       height={300}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
-                      loading={index < 3 ? 'eager' : 'lazy'}
+                      loading={index < 3 ? "eager" : "lazy"}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
 
@@ -142,7 +156,9 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
                   </Link>
 
                   <div className="p-5 md:p-6 flex flex-col flex-grow bg-gradient-to-br from-white to-gray-50">
-                    <p className="text-gray-600 mb-4 flex-grow line-clamp-3">{post.summary}</p>
+                    <p className="text-gray-600 mb-4 flex-grow line-clamp-3">
+                      {post.summary}
+                    </p>
                     <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                       <div className="flex items-center gap-2">
                         <span className="text-sm text-gray-500 flex items-center">
@@ -161,10 +177,10 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
                           {post.author}
                         </span>
                         <span className="text-sm text-gray-400">
-                          {new Date(post.date).toLocaleDateString('fr-FR', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric',
+                          {new Date(post.date).toLocaleDateString("fr-FR", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
                           })}
                         </span>
                       </div>
@@ -173,10 +189,7 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
                         className="text-blue-600 hover:text-blue-800 font-medium text-sm inline-flex items-center group/link"
                         aria-label={`Lire la suite de l'article : ${post.title}`}
                       >
-                        Lire la suite
-                        <span className="ml-1 transition-transform duration-200 group-hover/link:translate-x-1">
-                          &rarr;
-                        </span>
+                        <FaChevronRight className="w-4 h-4 ml-1" />
                       </Link>
                     </div>
                   </div>
@@ -187,7 +200,7 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default BlogFilters
+export default BlogFilters;
