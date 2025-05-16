@@ -12,7 +12,6 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigationItems = [
-    { name: 'Accueil', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Projets', path: '/projets' },
     { name: 'Lodgic Conseils', path: '/blog' },
@@ -87,8 +86,8 @@ export default function Navbar() {
                 href={item.path}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
                   isActive(item.path)
-                    ? 'text-[#E67E22] bg-[#E67E22]/20'
-                    : 'text-[#2C3E50]/80 hover:text-[#2C3E50] hover:bg-[#E67E22]/10'
+                    ? 'bg-[#2C3E50] text-white'
+                    : 'text-[#2C3E50]/80 hover:text-[#2C3E50] hover:bg-[#2C3E50]/10'
                 }`}
               >
                 {item.name}
@@ -100,7 +99,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <Link
               href="/rendez-vous"
-              className="ml-4 px-6 py-2 rounded-full text-sm font-semibold transition-colors bg-[#E67E22] text-white hover:bg-[#E67E22]/90 shadow-sm hover:shadow-md flex items-center"
+              className="ml-4 px-6 py-2 rounded-full text-sm font-semibold transition-colors bg-[#2C3E50] text-white hover:bg-[#2C3E50]/90 shadow-sm hover:shadow-md flex items-center"
             >
               <span className="flex items-center">
                 <svg
@@ -173,8 +172,8 @@ export default function Navbar() {
               href={item.path}
               className={`block px-4 py-3 rounded-md text-base font-medium transition-all duration-200 ${
                 isActive(item.path)
-                  ? 'text-[#E67E22] bg-[#E67E22]/20'
-                  : 'text-[#2C3E50]/80 hover:text-[#2C3E50] hover:bg-[#E67E22]/10'
+                  ? 'bg-[#2C3E50] text-white'
+                  : 'text-[#2C3E50]/80 hover:text-[#2C3E50] hover:bg-[#2C3E50]/10'
               }`}
             >
               {item.name}
@@ -184,7 +183,7 @@ export default function Navbar() {
           <div className="pt-2">
             <Link
               href="/rendez-vous"
-              className="flex items-center justify-center w-full px-4 py-3 rounded-full text-base font-semibold transition-colors bg-[#E67E22] text-white hover:bg-[#E67E22]/90 shadow-sm"
+              className="flex items-center justify-center w-full px-4 py-3 rounded-full text-base font-semibold transition-colors bg-[#2C3E50] text-white hover:bg-[#2C3E50]/90 shadow-sm"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
