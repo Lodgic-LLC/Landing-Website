@@ -13,7 +13,6 @@ export default function Navbar() {
 
   const navigationItems = [
     { name: 'Services', path: '/services' },
-    { name: 'Projets', path: '/projets' },
     { name: 'Lodgic Conseils', path: '/blog' },
     { name: 'À propos', path: '/a-propos' },
     { name: 'Contact', path: '/contact' },

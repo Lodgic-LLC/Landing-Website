@@ -13,8 +13,11 @@ import {
   FaChevronRight,
   FaClock,
   FaLightbulb,
+  FaRocket,
+  FaEnvelope,
 } from 'react-icons/fa'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const RendezVousContent = () => {
   const faqItems = [
@@ -42,39 +45,86 @@ const RendezVousContent = () => {
 
   return (
     <main className="min-h-screen bg-[#FAF3E0]">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#2C3E50] to-[#2C3E50]/80 py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <svg className="absolute left-0 top-0 h-full w-full" viewBox="0 0 800 800">
-            <circle cx="400" cy="400" r="200" fill="#FFFFFF" fillOpacity="0.1" />
-            <circle cx="100" cy="100" r="50" fill="#FFFFFF" fillOpacity="0.1" />
-            <circle cx="700" cy="200" r="80" fill="#FFFFFF" fillOpacity="0.1" />
-            <circle cx="200" cy="600" r="100" fill="#FFFFFF" fillOpacity="0.1" />
-            <circle cx="600" cy="600" r="70" fill="#FFFFFF" fillOpacity="0.1" />
+      {/* Hero Section - Updated to match services page style */}
+      <section className="w-full bg-[#FFFFFF] pt-28 md:pt-36 pb-16 md:pb-20 overflow-hidden relative">
+        {/* Formes abstraites en arrière-plan */}
+        <div className="absolute inset-0 overflow-hidden z-0 opacity-30">
+          <svg
+            className="absolute top-0 left-0 w-full h-full"
+            viewBox="0 0 1440 800"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <circle cx="200" cy="100" r="300" fill="#E67E22" fillOpacity="0.05" />
+            <circle cx="1200" cy="700" r="250" fill="#E67E22" fillOpacity="0.05" />
+            <path d="M-200 400 Q400 200 720 400 T1600 400" stroke="#E67E22" strokeOpacity="0.03" strokeWidth="100" />
+            <g opacity="0.8">
+              {[...Array(25)].map((_, i) => (
+                <circle
+                  key={`hero-dot-rdv-${i}`}
+                  cx={Math.random() * 1440}
+                  cy={Math.random() * 800}
+                  r={Math.random() * 2 + 1}
+                  fill="#2C3E50"
+                />
+              ))}
+            </g>
           </svg>
         </div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center text-[#FFFFFF] mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Planifiez votre <span className="text-[#E67E22]">entretien de découverte</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-[#FFFFFF]/90 leading-relaxed">
-              Discutons de votre projet et explorons ensemble les possibilités pour le concrétiser.
-            </p>
-          </div>
-          <div className="flex justify-center">
-            <div className="p-2 rounded-full bg-[#FFFFFF]/10 backdrop-blur-sm">
-              <div className="flex items-center space-x-2 text-[#FFFFFF] px-4 py-2">
-                <FaClock className="text-[#FFFFFF]/80" />
-                <span className="text-sm font-medium">Consultation de 45 minutes</span>
-                <span className="mx-2">•</span>
-                <FaQuestionCircle className="text-[#FFFFFF]/80" />
-                <span className="text-sm font-medium">Sans engagement</span>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
+            {/* Contenu gauche */}
+            <div className="w-full lg:w-3/5 text-center lg:text-left">
+              <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#2C3E50] leading-tight mb-6">
+                Planifiez votre <span className="text-[#E67E22]">Entretien Découverte</span>
+              </h1>
+              <p className="text-[#374151] text-lg sm:text-xl mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Discutons de votre projet et explorons ensemble les possibilités pour le concrétiser. Réservez un
+                créneau gratuit de 45 minutes.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                <Link
+                  href="#booking-widget"
+                  className="bg-[#E67E22] text-[#FFFFFF] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#E67E22]/90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center text-lg"
+                >
+                  <FaCalendarAlt className="w-5 h-5 mr-2.5" />
+                  Prendre Rendez-vous
+                </Link>
+                <Link
+                  href="/contact"
+                  className="border-2 border-[#2C3E50] text-[#2C3E50] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#2C3E50]/10 hover:border-[#2C3E50] transition-all flex items-center group text-lg"
+                >
+                  <FaEnvelope className="w-5 h-5 mr-2.5" />
+                  Nous Contacter
+                  <FaChevronRight className="w-4 h-4 ml-2.5 transform group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Image à droite - Apparaît sur les grands écrans */}
+            <div className="w-full lg:w-2/5 mt-10 lg:mt-0 hidden lg:block">
+              <div className="relative h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
+                <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl shadow-xl">
+                  <Image
+                    src="/svg/services.svg"
+                    alt="Planifier un rendez-vous avec Lodgic"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="w-full h-full object-contain p-4 sm:p-6 md:p-8"
+                    priority
+                  />
+                </div>
+                {/* Éléments décoratifs supplémentaires */}
+                <div className="absolute -top-5 -left-5 w-16 h-16 bg-[#E67E22]/20 rounded-full blur-md animate-pulse"></div>
+                <div className="absolute -bottom-5 -right-5 w-20 h-20 border-4 border-[#E67E22]/30 rounded-full animate-ping-slow"></div>
               </div>
             </div>
           </div>
         </div>
-        {/* Wave Transition */}
+
+        {/* Forme de transition vers le contenu suivant */}
         <div
           className="absolute bottom-0 left-0 w-full overflow-hidden"
           style={{ height: '100px', transform: 'translateY(1px)' }}
@@ -91,8 +141,8 @@ const RendezVousContent = () => {
         </div>
       </section>
 
-      {/* Booking Section */}
-      <section className="py-20 relative bg-[#FAF3E0]">
+      {/* Booking Section - ensure id="booking-widget" is on the relevant parent for the anchor link */}
+      <section id="booking-widget" className="py-20 relative bg-[#FAF3E0]">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative z-10">
