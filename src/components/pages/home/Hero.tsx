@@ -39,14 +39,14 @@ export default function Hero() {
           {/* Contenu gauche */}
           <div className="w-full lg:w-1/2 pt-8 lg:pt-0 text-center lg:text-left">
             <div>
-              <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-[#2C3E50] leading-tight mb-6">
-                On vous accompagne pour créer votre <span className="text-[#E67E22]">application mobile</span> sur
-                mesure
+              <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2C3E50] leading-tight mb-6">
+                <span className="md:hidden">Votre App <span className="text-[#E67E22]">Mobile</span>, Sur Mesure</span>
+                <span className="hidden md:inline">On vous accompagne pour créer votre <span className="text-[#E67E22]">application mobile</span> sur mesure</span>
               </h1>
 
-              <p className="text-[#2C3E50]/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed mx-auto lg:mx-0">
-                On sait qu'il n'est pas toujours simple de donner vie à son idée. On est là pour vous guider, pas à pas,
-                de la conception au lancement de votre application.
+              <p className="text-[#2C3E50]/90 text-md sm:text-lg md:text-xl mb-8 max-w-xl leading-relaxed mx-auto lg:mx-0">
+                <span className="md:hidden">De l'idée au lancement, on vous guide pas à pas.</span>
+                <span className="hidden md:inline">On sait qu'il n'est pas toujours simple de donner vie à son idée. On est là pour vous guider, pas à pas, de la conception au lancement de votre application.</span>
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">

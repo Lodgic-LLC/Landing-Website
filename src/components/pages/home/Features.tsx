@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import { FaCheckCircle } from 'react-icons/fa'
+import { FaCheckCircle, FaRocket, FaPalette, FaCogs } from 'react-icons/fa'
 
 export default function Features() {
   return (
@@ -47,11 +46,12 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-inter-bold text-[#2C3E50] mb-4 sm:mb-6">
-            On vous <span className="text-[#E67E22]">accompagne</span> à chaque étape du développement de votre
-            application mobile
+            <span className="md:hidden">Votre App, Étape par Étape</span>
+            <span className="hidden md:inline">On vous <span className="text-[#E67E22]">accompagne</span> à chaque étape du développement de votre application mobile</span>
           </h2>
-          <p className="text-lg sm:text-xl text-[#2C3E50]/80 max-w-3xl mx-auto">
-            De l'idée à la mise en ligne, on est là pour concrétiser votre projet, main dans la main.
+          <p className="text-md sm:text-lg md:text-xl text-[#2C3E50]/80 max-w-3xl mx-auto">
+            <span className="md:hidden">De l'idée à la mise en ligne, main dans la main.</span>
+            <span className="hidden md:inline">De l'idée à la mise en ligne, on est là pour concrétiser votre projet, main dans la main.</span>
           </p>
           <div className="w-16 sm:w-24 h-1 bg-[#E67E22] mx-auto rounded-full mt-4 sm:mt-8"></div>
         </div>
@@ -390,38 +390,66 @@ export default function Features() {
           </div>
 
           {/* Contenu à droite */}
-          <div className="lg:w-1/2">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#2C3E50] mb-5">
-              Un accompagnement à l'image de votre projet
-            </h3>
-            <p className="text-base sm:text-lg md:text-xl text-[#2C3E50]/80 mb-8">
-              Votre projet est unique. On collabore étroitement avec vous pour une app qui vous ressemble et répond à
-              vos attentes.
-            </p>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="w-5 h-5 text-[#E67E22] mt-1 flex-shrink-0" />
-                <span className="text-base sm:text-lg text-[#2C3E50]/90">
-                  Analyse de vos objectifs et de vos besoins.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="w-5 h-5 text-[#E67E22] mt-1 flex-shrink-0" />
-                <span className="text-base sm:text-lg text-[#2C3E50]/90">Design sur mesure avec maquettes.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="w-5 h-5 text-[#E67E22] mt-1 flex-shrink-0" />
-                <span className="text-base sm:text-lg text-[#2C3E50]/90">
-                  Construction pas à pas, avec vos validations à chaque étape.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaCheckCircle className="w-5 h-5 text-[#E67E22] mt-1 flex-shrink-0" />
-                <span className="text-base sm:text-lg text-[#2C3E50]/90">
-                  Tests complets pour un fonctionnement parfait.
-                </span>
-              </li>
-            </ul>
+          <div className="lg:w-1/2 space-y-10">
+            {[
+              {
+                icon: <FaRocket className="w-7 h-7 text-[#E67E22]" />,
+                title: 'Des fondations solides pour évoluer',
+                description:
+                  "On construit votre application avec des technologies modernes et éprouvées, pour qu'elle soit performante aujourd'hui et prête pour demain.",
+                mobileDescription: 'Technologies modernes et performantes.',
+                points: [
+                  'Code de qualité, testé et documenté.',
+                  'Architecture pensée pour la scalabilité.',
+                  'Sécurité intégrée dès la conception.',
+                ],
+              },
+              {
+                icon: <FaPalette className="w-7 h-7 text-[#E67E22]" />,
+                title: 'Un design qui vous ressemble',
+                description:
+                  "On imagine une interface utilisateur intuitive et un design unique qui capture l'essence de votre marque et séduit vos utilisateurs.",
+                mobileDescription: 'Interface intuitive, design unique.',
+                points: [
+                  'Maquettes interactives (Figma).',
+                  'Respect de votre identité visuelle.',
+                  'Accessibilité et expérience utilisateur soignées.',
+                ],
+              },
+              {
+                icon: <FaCogs className="w-7 h-7 text-[#E67E22]" />,
+                title: 'Fonctionnalités sur-mesure',
+                description:
+                  "Votre application est unique. On développe des fonctionnalités spécifiques à vos besoins pour vous démarquer et apporter une vraie valeur ajoutée.",
+                mobileDescription: 'Fonctionnalités spécifiques à vos besoins.',
+                points: [
+                  'Analyse approfondie de vos attentes.',
+                  'Solutions personnalisées et innovantes.',
+                  'Intégration avec vos outils existants.',
+                ],
+              },
+            ].map((feature, index) => (
+              <div key={index} className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#E67E22]/10 rounded-xl flex items-center justify-center">
+                  {feature.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">{feature.title}</h3>
+                  <p className="text-[#2C3E50]/80 text-sm sm:text-base mb-3">
+                    <span className="md:hidden">{feature.mobileDescription}</span>
+                    <span className="hidden md:inline">{feature.description}</span>
+                  </p>
+                  <ul className="space-y-1.5">
+                    {feature.points.map((point, pIndex) => (
+                      <li key={pIndex} className="flex items-center text-sm text-[#2C3E50]/70">
+                        <FaCheckCircle className="w-4 h-4 text-[#A3B18A] mr-2.5 flex-shrink-0" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

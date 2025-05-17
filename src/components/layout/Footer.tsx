@@ -11,29 +11,6 @@ export default function Footer() {
       <div className="absolute top-1/4 left-0 w-[30rem] h-[30rem] bg-[#A3B18A]/5 rounded-full blur-[120px] -z-0"></div>
 
       {/* Bouton Prendre RDV flottant pour mobile */}
-      <div className="sm:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-xs">
-        <Link
-          href="/rendez-vous"
-          className="flex items-center justify-center px-6 py-3 bg-[#E67E22] text-white rounded-full hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-base font-semibold w-full"
-          tabIndex={0}
-        >
-          <svg
-            className="w-5 h-5 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
-          </svg>
-          Discutons de votre projet
-        </Link>
-      </div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 md:gap-16 mb-10 sm:mb-16">

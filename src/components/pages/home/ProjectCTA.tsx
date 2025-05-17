@@ -26,9 +26,9 @@ export default function ProjectCTA() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-[#FAF3E0] mb-5">
               Prêts à transformer <span className="text-[#E67E22]">votre idée</span> en réalité ?
             </h2>
-            <p className="text-[#FAF3E0]/90 text-lg md:text-xl mb-8 max-w-xl mx-auto lg:mx-0">
-              On est là pour vous accompagner à chaque étape. Discutons de votre projet et voyons comment on peut vous
-              aider à le concrétiser.
+            <p className="text-[#FAF3E0]/90 text-md md:text-lg lg:text-xl mb-8 max-w-xl mx-auto lg:mx-0">
+              <span className="md:hidden">Discutons de votre projet et concrétisons-le ensemble.</span>
+              <span className="hidden md:inline">On est là pour vous accompagner à chaque étape. Discutons de votre projet et voyons comment on peut vous aider à le concrétiser.</span>
             </p>
 
             {/* Boutons d'action */}

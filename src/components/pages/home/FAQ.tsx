@@ -173,9 +173,9 @@ export default function FAQ() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-inter-bold text-[#2C3E50] mb-4">
               Vos interrogations, nos <span className="text-[#E67E22]">réponses claires</span>
             </h2>
-            <p className="text-lg md:text-xl text-[#2C3E50]/80 max-w-3xl mx-auto mb-6">
-              On a rassemblé ici les questions que vous nous posez souvent. Si la vôtre n'y est pas, on est là pour y
-              répondre !
+            <p className="text-md md:text-lg lg:text-xl text-[#2C3E50]/80 max-w-3xl mx-auto mb-6">
+              <span className="md:hidden">Questions fréquentes. Pas la vôtre ? Contactez-nous !</span>
+              <span className="hidden md:inline">On a rassemblé ici les questions que vous nous posez souvent. Si la vôtre n'y est pas, on est là pour y répondre !</span>
             </p>
             <div className="w-20 h-1.5 bg-[#E67E22] mx-auto rounded-full"></div>
           </div>
