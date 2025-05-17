@@ -2,15 +2,15 @@
 
 import React from 'react'
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FaLightbulb, FaTools, FaRocket } from 'react-icons/fa'; // Added new icons
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { FaLightbulb, FaTools, FaRocket } from 'react-icons/fa' // Added new icons
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules'
 
 const steps = [
   {
@@ -18,7 +18,7 @@ const steps = [
     title: 'On définit la stratégie ensemble',
     description:
       'On commence par écouter attentivement vos idées et vos ambitions pour définir une feuille de route claire et alignée sur vos objectifs.',
-    mobileDescription: "Écoute, idées et feuille de route claire.",
+    mobileDescription: 'Écoute, idées et feuille de route claire.',
     features: [
       'On cerne ensemble les fonctionnalités clés de votre future application.',
       'On établit un calendrier réaliste, avec des étapes bien définies.',
@@ -30,7 +30,7 @@ const steps = [
     title: "On imagine l'expérience utilisateur",
     description:
       'Place à la créativité ! On conçoit des maquettes intuitives et un design qui reflète votre identité, pour une expérience utilisateur mémorable.',
-    mobileDescription: "Maquettes intuitives et design unique.",
+    mobileDescription: 'Maquettes intuitives et design unique.',
     features: [
       'Vous visualisez chaque écran grâce à des maquettes détaillées.',
       'On crée un univers graphique qui vous est propre.',
@@ -42,7 +42,7 @@ const steps = [
     title: 'On donne vie à votre application',
     description:
       'Nos développeurs entrent en jeu pour transformer le design en une application fonctionnelle, robuste et optimisée.',
-    mobileDescription: "Design transformé en app fonctionnelle.",
+    mobileDescription: 'Design transformé en app fonctionnelle.',
     features: [
       'On optimise votre app pour les stores (ASO).',
       'On construit une base solide, prête pour les évolutions futures.',
@@ -54,7 +54,7 @@ const steps = [
     title: "On s'assure de la perfection avant le grand saut",
     description:
       'Pas de lancement sans une batterie de tests rigoureux. On peaufine chaque détail pour une mise en ligne sereine.',
-    mobileDescription: "Tests rigoureux pour une qualité parfaite.",
+    mobileDescription: 'Tests rigoureux pour une qualité parfaite.',
     features: [
       "On teste sur une multitude d'appareils pour une compatibilité maximale.",
       'On traque et corrige le moindre bug pour une qualité irréprochable.',
@@ -66,7 +66,7 @@ const steps = [
     title: 'On reste à vos côtés, même après le lancement',
     description:
       "Notre partenariat ne s'arrête pas là. On assure le suivi, la maintenance et on est prêts pour les prochaines étapes de votre croissance.",
-    mobileDescription: "Suivi, maintenance et évolutions futures.",
+    mobileDescription: 'Suivi, maintenance et évolutions futures.',
     features: [
       "Vous bénéficiez d'une assistance technique réactive.",
       'On maintient votre application à jour avec les dernières évolutions.',
@@ -79,28 +79,31 @@ const mobileSteps = [
   {
     number: '01',
     title: 'Stratégie & Conception',
-    description: 'Vos idées, notre expertise. Ensemble, nous définissons une stratégie claire et un design intuitif pour votre application.',
+    description:
+      'Vos idées, notre expertise. Ensemble, nous définissons une stratégie claire et un design intuitif pour votre application.',
     feature: 'Maquettes interactives : visualisez avant de construire.',
     icon: <FaLightbulb className="w-8 h-8 text-[#E67E22]" />,
-    borderColor: 'border-[#E67E22]'
+    borderColor: 'border-[#E67E22]',
   },
   {
     number: '02',
     title: 'Développement & Qualité',
-    description: 'Notre équipe transforme les plans en une application robuste, performante et testée sous toutes les coutures.',
+    description:
+      'Notre équipe transforme les plans en une application robuste, performante et testée sous toutes les coutures.',
     feature: 'Tests rigoureux : une app fiable sur tous les appareils.',
     icon: <FaTools className="w-8 h-8 text-[#E67E22]" />,
-    borderColor: 'border-[#E67E22]'
+    borderColor: 'border-[#E67E22]',
   },
   {
     number: '03',
     title: 'Lancement & Évolution',
-    description: 'Votre application est prête à conquérir le monde ! Nous assurons un lancement réussi et un suivi pour sa croissance future.',
+    description:
+      'Votre application est prête à conquérir le monde ! Nous assurons un lancement réussi et un suivi pour sa croissance future.',
     feature: 'Suivi post-lancement : nous restons vos partenaires.',
     icon: <FaRocket className="w-8 h-8 text-[#E67E22]" />,
-    borderColor: 'border-[#E67E22]'
+    borderColor: 'border-[#E67E22]',
   },
-];
+]
 
 export default function Process() {
   return (
@@ -126,13 +129,20 @@ export default function Process() {
         {/* En-tête de section */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-[#2C3E50] mb-4">
-            <span className="md:hidden">Notre Processus en <span className="text-[#E67E22]">3</span> Étapes</span>
-            <span className="hidden md:inline">Comment on transforme <span className="text-[#E67E22]">votre idée</span> en succès</span>
+            <span className="md:hidden">
+              Notre Processus en <span className="text-[#E67E22]">3</span> Étapes
+            </span>
+            <span className="hidden md:inline">
+              Comment on transforme <span className="text-[#E67E22]">votre idée</span> en succès
+            </span>
           </h2>
           <div className="w-20 h-1.5 bg-[#E67E22] mx-auto mb-6 rounded-full"></div>
           <p className="text-md md:text-lg lg:text-xl text-[#2C3E50]/80">
             <span className="md:hidden">Clair, collaboratif, orienté résultat.</span>
-            <span className="hidden md:inline">On vous accompagne avec un processus clair et collaboratif, pour que chaque étape soit une avancée vers votre objectif.</span>
+            <span className="hidden md:inline">
+              On vous accompagne avec un processus clair et collaboratif, pour que chaque étape soit une avancée vers
+              votre objectif.
+            </span>
           </p>
         </div>
 
@@ -151,32 +161,31 @@ export default function Process() {
           >
             {mobileSteps.map((step, index) => (
               <SwiperSlide key={index} className="pb-2">
-                <div className={`bg-white p-6 rounded-xl shadow-xl h-full flex flex-col justify-between min-h-[360px] border-t-4 ${step.borderColor}`}>
+                <div
+                  className={`bg-white p-6 rounded-xl shadow-xl h-full flex flex-col justify-between min-h-[360px] border-t-4 ${step.borderColor}`}
+                >
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       {step.icon}
-                      <div className="text-4xl font-bold text-gray-300">
-                        {step.number}
-                      </div>
+                      <div className="text-4xl font-bold text-gray-300">{step.number}</div>
                     </div>
-                    <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-[#2C3E50]/80 mb-4 leading-relaxed">
-                      {step.description}
-                    </p>
+                    <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">{step.title}</h3>
+                    <p className="text-sm text-[#2C3E50]/80 mb-4 leading-relaxed">{step.description}</p>
                   </div>
                   <div>
                     {step.feature && (
                       <div className="flex items-start text-left pt-3 border-t border-gray-200">
-                        <div className={`flex-shrink-0 w-4 h-4 rounded-full ${step.borderColor.replace('border-', 'bg-')} text-white flex items-center justify-center text-xs font-bold mt-1 mr-2`}>
+                        <div
+                          className={`flex-shrink-0 w-4 h-4 rounded-full ${step.borderColor.replace(
+                            'border-',
+                            'bg-'
+                          )} text-white flex items-center justify-center text-xs font-bold mt-1 mr-2`}
+                        >
                           <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className="text-xs text-[#2C3E50]/90 font-medium">
-                          {step.feature}
-                        </span>
+                        <span className="text-xs text-[#2C3E50]/90 font-medium">{step.feature}</span>
                       </div>
                     )}
                   </div>
@@ -228,9 +237,7 @@ export default function Process() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className="ml-3 text-[#2C3E50]/90">
-                          {step.features[0]}
-                        </span>
+                        <span className="ml-3 text-[#2C3E50]/90">{step.features[0]}</span>
                       </div>
                     )}
                   </div>
@@ -246,9 +253,7 @@ export default function Process() {
                 </div>
 
                 {/* Caractéristiques */}
-                <div
-                  className={`lg:w-1/2 ${index % 2 === 0 ? 'lg:pl-12' : 'lg:pr-12'} hidden md:block`}
-                >
+                <div className={`lg:w-1/2 ${index % 2 === 0 ? 'lg:pl-12' : 'lg:pr-12'} hidden md:block`}>
                   <div
                     className={`bg-[#FAF3E0]/50 p-6 rounded-xl shadow-md border border-[#A3B18A]/20 ${
                       index % 2 === 0 ? 'lg:rounded-l-xl lg:rounded-r-3xl' : 'lg:rounded-r-xl lg:rounded-l-3xl'

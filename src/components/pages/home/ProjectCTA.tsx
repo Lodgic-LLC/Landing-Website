@@ -28,13 +28,16 @@ export default function ProjectCTA() {
             </h2>
             <p className="text-[#FAF3E0]/90 text-md md:text-lg lg:text-xl mb-8 max-w-xl mx-auto lg:mx-0">
               <span className="md:hidden">Discutons de votre projet et concrétisons-le ensemble.</span>
-              <span className="hidden md:inline">On est là pour vous accompagner à chaque étape. Discutons de votre projet et voyons comment on peut vous aider à le concrétiser.</span>
+              <span className="hidden md:inline">
+                On est là pour vous accompagner à chaque étape. Discutons de votre projet et voyons comment on peut vous
+                aider à le concrétiser.
+              </span>
             </p>
 
             {/* Boutons d'action */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
               <Link
-                href="/contact"
+                href="/rendez-vous"
                 className="bg-[#E67E22] text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center"
                 aria-label="Discutons de votre projet en nous contactant"
               >
