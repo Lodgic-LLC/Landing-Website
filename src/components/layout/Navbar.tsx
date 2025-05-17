@@ -1,89 +1,80 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useCallback, useEffect, useState } from 'react'
+import Image from 'next/image'
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const pathname = usePathname()
 
   const navigationItems = [
-    { name: "Accueil", path: "/" },
-    { name: "Services", path: "/services" },
-    { name: "Projets", path: "/projets" },
-    { name: "Lodgic Conseils", path: "/blog" },
-    { name: "À propos", path: "/a-propos" },
-    { name: "Contact", path: "/contact" },
-  ];
+    { name: 'Services', path: '/services' },
+    { name: 'Projets', path: '/projets' },
+    { name: 'Lodgic Conseils', path: '/blog' },
+    { name: 'À propos', path: '/a-propos' },
+    { name: 'Contact', path: '/contact' },
+  ]
 
   // Vérifier si l'écran est mobile
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768); // 768px est le breakpoint md dans Tailwind
-    };
+      setIsMobile(window.innerWidth < 768) // 768px est le breakpoint md dans Tailwind
+    }
 
     // Vérifier au chargement
-    checkIfMobile();
+    checkIfMobile()
 
     // Ajouter un écouteur pour les changements de taille d'écran
-    window.addEventListener("resize", checkIfMobile);
+    window.addEventListener('resize', checkIfMobile)
 
     // Nettoyer l'écouteur
-    return () => window.removeEventListener("resize", checkIfMobile);
-  }, []);
+    return () => window.removeEventListener('resize', checkIfMobile)
+  }, [])
 
   // Initialiser la position de défilement au chargement (simplified)
   useEffect(() => {
     const handleSimpleScroll = () => {
-      setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-    };
+      setScrollPosition(window.scrollY || document.documentElement.scrollTop)
+    }
     // Définir la position de défilement initiale
-    handleSimpleScroll();
+    handleSimpleScroll()
 
     // Ajouter l'écouteur d'événement
-    window.addEventListener("scroll", handleSimpleScroll);
+    window.addEventListener('scroll', handleSimpleScroll)
 
     // Nettoyer l'écouteur d'événement
-    return () => window.removeEventListener("scroll", handleSimpleScroll);
-  }, []); // Dependency array is now empty as handleScroll is removed
+    return () => window.removeEventListener('scroll', handleSimpleScroll)
+  }, []) // Dependency array is now empty as handleScroll is removed
 
   useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
+    setIsMenuOpen(false)
+  }, [pathname])
 
   const handleToggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   // Vérifier si un lien est actif
   const isActive = (path: string) => {
-    return pathname === path;
-  };
+    return pathname === path
+  }
 
   // Navbar toujours avec fond blanc, même en haut de la page
-  const isHomePage = pathname === "/";
-  const isScrolled = scrollPosition > 50;
+  const isHomePage = pathname === '/'
+  const isScrolled = scrollPosition > 50
 
   return (
-    <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white backdrop-blur-sm shadow-sm`}
-    >
+    <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-[#FAF3E0] backdrop-blur-sm shadow-sm`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 py-2">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link
-              href="/"
-              className="flex items-center"
-              aria-label="Accueil Lodgic"
-            >
-              <span className="font-montserrat-bold font-semibold text-2xl bg-gradient-to-r from-blue-700 to-blue-500 text-transparent bg-clip-text">
-                Lodgic
-              </span>
+            <Link href="/" className="flex items-center" aria-label="Accueil Lodgic">
+              <span className="font-montserrat-bold font-semibold text-2xl text-[#2C3E50]">Lodgic</span>
             </Link>
           </div>
 
@@ -95,8 +86,8 @@ export default function Navbar() {
                 href={item.path}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
                   isActive(item.path)
-                    ? "text-gray-800 bg-gray-100"
-                    : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
+                    ? 'bg-[#2C3E50] text-white'
+                    : 'text-[#2C3E50]/80 hover:text-[#2C3E50] hover:bg-[#2C3E50]/10'
                 }`}
               >
                 {item.name}
@@ -108,7 +99,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <Link
               href="/rendez-vous"
-              className="ml-4 px-4 py-2 rounded-md text-sm font-medium transition-colors bg-blue-600 text-white hover:bg-blue-700 shadow-sm hover:shadow-md"
+              className="ml-4 px-6 py-2 rounded-full text-sm font-semibold transition-colors bg-[#2C3E50] text-white hover:bg-[#2C3E50]/90 shadow-sm hover:shadow-md flex items-center"
             >
               <span className="flex items-center">
                 <svg
@@ -149,12 +140,7 @@ export default function Navbar() {
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
                 <svg
@@ -165,12 +151,7 @@ export default function Navbar() {
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
             </button>
@@ -181,18 +162,18 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-          isMenuOpen ? "max-h-[440px] opacity-100" : "max-h-0 opacity-0"
+          isMenuOpen ? 'max-h-[440px] opacity-100 border-b border-[#2C3E50]/10' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="px-4 pt-2 pb-4 space-y-1 bg-white shadow-md border-t border-gray-100">
+        <div className="px-4 pt-2 pb-4 space-y-1 bg-[#FAF3E0] shadow-md">
           {navigationItems.map((item) => (
             <Link
               key={item.name}
               href={item.path}
               className={`block px-4 py-3 rounded-md text-base font-medium transition-all duration-200 ${
                 isActive(item.path)
-                  ? "text-gray-800 bg-gray-100"
-                  : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
+                  ? 'bg-[#2C3E50] text-white'
+                  : 'text-[#2C3E50]/80 hover:text-[#2C3E50] hover:bg-[#2C3E50]/10'
               }`}
             >
               {item.name}
@@ -202,7 +183,7 @@ export default function Navbar() {
           <div className="pt-2">
             <Link
               href="/rendez-vous"
-              className="flex items-center justify-center w-full px-4 py-3 rounded-md text-base font-medium transition-colors bg-blue-600 text-white hover:bg-blue-700 shadow-sm"
+              className="flex items-center justify-center w-full px-4 py-3 rounded-full text-base font-semibold transition-colors bg-[#2C3E50] text-white hover:bg-[#2C3E50]/90 shadow-sm"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -224,5 +205,5 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-  );
+  )
 }

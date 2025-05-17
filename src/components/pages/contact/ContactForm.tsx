@@ -118,22 +118,22 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100">
+    <div className="bg-[#FFFFFF] rounded-xl shadow-xl overflow-hidden border border-gray-200 hover:border-[#E67E22]/50 hover:shadow-2xl transition-shadow duration-300">
       <div className="p-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-          <div className="w-6 h-1 bg-blue-600 mr-3 rounded-full"></div>
+        <h2 className="text-2xl font-bold text-[#111827] mb-8 flex items-center">
+          <div className="w-8 h-1 bg-gradient-to-r from-[#E67E22] to-[#E67E22]/70 mr-3 rounded-full"></div>
           Envoyez-nous un message
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative group">
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-[#374151] mb-2">
                 Nom complet <span className="text-red-500">*</span>
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaUser className="h-4 w-4 text-gray-400 group-focus-within:text-blue-500 transition-colors duration-200" />
+                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+                  <FaUser className="h-4 w-4 text-gray-400 group-focus-within:text-[#E67E22] transition-colors duration-200" />
                 </div>
                 <input
                   type="text"
@@ -142,19 +142,19 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                  className="w-full pl-10 pr-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#E67E22] focus:border-[#E67E22] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500"
                   placeholder="Votre nom"
                 />
               </div>
             </div>
 
             <div className="relative group">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-[#374151] mb-2">
                 Email <span className="text-red-500">*</span>
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaEnvelope className="h-4 w-4 text-gray-400 group-focus-within:text-blue-500 transition-colors duration-200" />
+                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+                  <FaEnvelope className="h-4 w-4 text-gray-400 group-focus-within:text-[#E67E22] transition-colors duration-200" />
                 </div>
                 <input
                   type="text"
@@ -163,8 +163,9 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all ${formErrors.email ? 'border-red-500 bg-red-50' : 'border-gray-300'
-                    }`}
+                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#E67E22] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500 ${
+                    formErrors.email ? 'border-red-500 focus:border-red-500' : 'border-[#D1D5DB] focus:border-[#E67E22]'
+                  }`}
                   placeholder="Votre adresse email"
                 />
               </div>
@@ -180,12 +181,12 @@ export default function ContactForm() {
           </div>
 
           <div className="relative group">
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="phone" className="block text-sm font-medium text-[#374151] mb-2">
               Téléphone <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FaPhone className="h-4 w-4 text-gray-400 group-focus-within:text-blue-500 transition-colors duration-200" />
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+                <FaPhone className="h-4 w-4 text-gray-400 group-focus-within:text-[#E67E22] transition-colors duration-200" />
               </div>
               <input
                 type="tel"
@@ -194,8 +195,9 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all ${formErrors.phone ? 'border-red-500 bg-red-50' : 'border-gray-300'
-                  }`}
+                className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#E67E22] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500 ${
+                  formErrors.phone ? 'border-red-500 focus:border-red-500' : 'border-[#D1D5DB] focus:border-[#E67E22]'
+                }`}
                 placeholder="Votre numéro de téléphone"
               />
             </div>
@@ -210,12 +212,12 @@ export default function ContactForm() {
           </div>
 
           <div className="relative group">
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="subject" className="block text-sm font-medium text-[#374151] mb-2">
               Objet <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FaFileAlt className="h-4 w-4 text-gray-400 group-focus-within:text-blue-500 transition-colors duration-200" />
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+                <FaFileAlt className="h-4 w-4 text-gray-400 group-focus-within:text-[#E67E22] transition-colors duration-200" />
               </div>
               <input
                 type="text"
@@ -224,14 +226,14 @@ export default function ContactForm() {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                className="w-full pl-10 pr-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#E67E22] focus:border-[#E67E22] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500"
                 placeholder="L'objet de votre message"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="message" className="block text-sm font-medium text-[#374151] mb-2">
               Message <span className="text-red-500">*</span>
             </label>
             <textarea
@@ -241,7 +243,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               rows={6}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none"
+              className="w-full px-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#E67E22] focus:border-[#E67E22] outline-none transition-all resize-none bg-white text-[#111827] placeholder:text-gray-500"
               placeholder="Décrivez votre projet ou votre demande en détail..."
             ></textarea>
           </div>
@@ -250,7 +252,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-3 px-8 rounded-lg transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="bg-[#E67E22] hover:bg-[#E67E22]/90 text-[#FFFFFF] font-semibold py-3.5 px-8 rounded-lg transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer w-full sm:w-auto"
             >
               {isSubmitting ? (
                 <>
@@ -287,10 +289,11 @@ export default function ContactForm() {
 
           {submitStatus && (
             <div
-              className={`p-4 rounded-lg ${submitStatus.success
+              className={`p-4 rounded-lg ${
+                submitStatus.success
                   ? 'bg-green-50 text-green-800 border border-green-200'
                   : 'bg-red-50 text-red-800 border border-red-200'
-                }`}
+              }`}
             >
               <div className="flex">
                 <div className="flex-shrink-0">

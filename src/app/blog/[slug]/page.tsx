@@ -179,19 +179,19 @@ const PostPage = async (props: BlogPageProps) => {
       />
 
       {/* Apply a subtle background to the whole page container */}
-      <div className="bg-slate-50">
-
+      <div className="bg-[#FAF3E0]">
         {/* Container principal pour l'article - Utilisation de Flexbox pour gérer la disposition */}
         {/* Ajout de 'relative' pour le positionnement potentiel d'enfants absolus si nécessaire */}
         {/* Ajout de 'xl:flex xl:gap-8' pour activer Flexbox et l'espacement sur les grands écrans */}
         <div className="container mx-auto px-4 py-20 md:py-24 lg:py-28 max-w-7xl relative xl:flex xl:gap-8">
-
           {/* Sommaire sticky à gauche sur les grands écrans - Maintenant DANS le container Flex */}
           {/* Ajustement de la largeur et position sticky */}
           {/* 'flex-shrink-0' empêche le sommaire de rétrécir */}
           {/* La hauteur est limitée pour permettre le scroll interne si besoin : h-[calc(100vh-theme(spacing.24)-theme(spacing.28))] correspond à la hauteur de la vue moins le top offset et un peu de padding bas */}
           <div className="hidden xl:block sticky top-24 z-10 w-60 xl:w-72 flex-shrink-0 self-start h-[calc(100vh-theme(spacing.24)-theme(spacing.28))] overflow-y-auto">
-            <aside className="pr-4"> {/* Ajout de padding droit pour espacer le texte de la scrollbar */}
+            <aside className="pr-4">
+              {' '}
+              {/* Ajout de padding droit pour espacer le texte de la scrollbar */}
               <TableOfContents headings={headings} />
             </aside>
           </div>
@@ -199,13 +199,15 @@ const PostPage = async (props: BlogPageProps) => {
           {/* Contenu principal de l'article - Prend l'espace restant */}
           {/* 'flex-grow' permet à l'article de prendre l'espace disponible */}
           {/* max-w-none xl:max-w-4xl pour contrôler la largeur max spécifiquement ici */}
-          <article className="bg-white p-8 sm:p-10 md:p-12 rounded-lg shadow-lg border border-gray-200 flex-grow max-w-none xl:max-w-4xl mx-auto xl:mx-0">
+          <article className="bg-[#FFFFFF] p-8 sm:p-10 md:p-12 rounded-xl shadow-xl border border-gray-200 hover:border-[#E67E22]/50 transition-shadow duration-300 flex-grow max-w-none xl:max-w-4xl mx-auto xl:mx-0">
             {/* Increased bottom margin */}
-            <header className="mb-10 md:mb-12 text-center xl:text-left"> {/* Ajustement alignement texte sur grand écran */}
-              <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+            <header className="mb-10 md:mb-12 text-center xl:text-left">
+              {' '}
+              {/* Ajustement alignement texte sur grand écran */}
+              <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-[#111827] mb-4 leading-tight">
                 {post.title}
               </h1>
-              <p className="text-gray-500 text-sm">
+              <p className="text-[#374151] text-sm">
                 Publié le{' '}
                 {new Date(post.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}{' '}
                 par {post.author}
@@ -213,7 +215,7 @@ const PostPage = async (props: BlogPageProps) => {
               <div className="mt-6 border-t border-gray-200 pt-6">
                 <Link
                   href="/blog"
-                  className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center group"
+                  className="text-[#E67E22] hover:text-[#E67E22]/80 text-sm font-medium inline-flex items-center group transition-colors duration-300"
                 >
                   <span className="mr-1 transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
                   Retour au blog
@@ -234,7 +236,6 @@ const PostPage = async (props: BlogPageProps) => {
             {/* Use the Client Component for rendering and highlighting */}
             <CodeBlockHighlighter htmlContent={processedContent} />
           </article>
-
         </div>
       </div>
     </>
