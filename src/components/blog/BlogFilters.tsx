@@ -48,19 +48,8 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
         {' '}
         {/* Fond blanc, position relative pour les vagues */}
         {/* Vague Supérieure */}
-        <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]" style={{ transform: 'scaleY(-1)' }}>
-          <svg
-            className="relative block"
-            style={{ height: '10px', width: 'calc(100% + 1.3px)' }} // Hauteur de la vague et correction pour anti-aliasing
-            viewBox="0 0 1440 100"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <path d="M0,50 C360,120 1080,0 1440,50 L1440,100 L0,100 Z" fill="#FAF3E0" />
-          </svg>
-        </div>
         {/* Contenu principal de la section */}
-        <div className="relative z-[1] container mx-auto px-4 max-w-7xl py-16 md:py-20 mt-[40px] mb-[40px]">
+        <div className="relative z-[1] container mx-auto px-4 max-w-7xl py-16 md:py-20 ">
           {' '}
           {/* mt/mb ajustés pour l'espace des vagues, z-index pour être au-dessus */}
           <div className="text-center max-w-3xl mx-auto mb-14">

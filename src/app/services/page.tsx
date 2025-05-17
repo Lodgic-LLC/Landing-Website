@@ -182,9 +182,9 @@ export default function Services() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-br from-[#2C3E50] to-[#2C3E50]/80 pt-28 md:pt-36 pb-16 md:pb-20 overflow-hidden relative">
+      <section className="w-full bg-[#FFFFFF] pt-28 md:pt-36 pb-16 md:pb-20 overflow-hidden relative">
         {/* Formes abstraites en arrière-plan */}
-        <div className="absolute inset-0 overflow-hidden z-0 opacity-20">
+        <div className="absolute inset-0 overflow-hidden z-0 opacity-30">
           <svg
             className="absolute top-0 left-0 w-full h-full"
             viewBox="0 0 1440 800"
@@ -192,18 +192,18 @@ export default function Services() {
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice"
           >
-            <circle cx="200" cy="100" r="300" fill="#FFFFFF" fillOpacity="0.07" />
-            <circle cx="1200" cy="700" r="250" fill="#FFFFFF" fillOpacity="0.07" />
-            <path d="M-200 400 Q400 200 720 400 T1600 400" stroke="#FFFFFF" strokeOpacity="0.05" strokeWidth="100" />
+            <circle cx="200" cy="100" r="300" fill="#E67E22" fillOpacity="0.05" />
+            <circle cx="1200" cy="700" r="250" fill="#E67E22" fillOpacity="0.05" />
+            <path d="M-200 400 Q400 200 720 400 T1600 400" stroke="#E67E22" strokeOpacity="0.03" strokeWidth="100" />
             {/* Points lumineux */}
-            <g opacity="0.6">
+            <g opacity="0.8">
               {[...Array(25)].map((_, i) => (
                 <circle
                   key={`hero-dot-${i}`}
                   cx={Math.random() * 1440}
                   cy={Math.random() * 800}
                   r={Math.random() * 2 + 1}
-                  fill="#FFFFFF"
+                  fill="#2C3E50"
                 />
               ))}
             </g>
@@ -214,12 +214,11 @@ export default function Services() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
             {/* Contenu gauche */}
             <div className="w-full lg:w-3/5 text-center lg:text-left">
-              <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#FFFFFF] leading-tight mb-6">
-                Des <span className="bg-gradient-to-r text-[#E67E22]  bg-clip-text">Solutions Digitales</span> pour
-                Votre Succès
+              <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#2C3E50] leading-tight mb-6">
+                Des <span className="text-[#E67E22]">Solutions Digitales</span> pour Votre Succès
               </h1>
 
-              <p className="text-[#FFFFFF]/90 text-lg sm:text-xl mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-[#374151] text-lg sm:text-xl mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 De la conception d'applications mobiles performantes à l'intégration de systèmes complexes, Lodgic est
                 votre partenaire technologique pour concrétiser vos ambitions.
               </p>
@@ -227,14 +226,14 @@ export default function Services() {
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Link
                   href="/contact"
-                  className="bg-[#FFFFFF] text-[#2C3E50] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#FAF3E0] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center text-lg"
+                  className="bg-[#E67E22] text-[#FFFFFF] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#E67E22]/90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center text-lg"
                 >
                   <FaRocket className="w-5 h-5 mr-2.5" />
                   Lancer mon Projet
                 </Link>
                 <Link
                   href="/a-propos"
-                  className="border-2 border-[#FFFFFF]/80 text-[#FFFFFF] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#FFFFFF]/10 hover:border-[#FFFFFF] transition-all flex items-center group text-lg"
+                  className="border-2 border-[#2C3E50] text-[#2C3E50] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#2C3E50]/10 hover:border-[#2C3E50] transition-all flex items-center group text-lg"
                 >
                   Qui sommes-nous ?
                   <FaChevronRight className="w-4 h-4 ml-2.5 transform group-hover:translate-x-1 transition-transform" />
@@ -245,7 +244,7 @@ export default function Services() {
             {/* Image à droite - Apparaît sur les grands écrans */}
             <div className="w-full lg:w-2/5 mt-10 lg:mt-0 hidden lg:block">
               <div className="relative h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
-                <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+                <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl shadow-xl">
                   <Image
                     src="/svg/services.svg"
                     alt="Équipe travaillant sur des solutions digitales"
@@ -254,11 +253,10 @@ export default function Services() {
                     className="w-full h-full object-contain p-4 sm:p-6 md:p-8"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2C3E50]/60 to-transparent"></div>
                 </div>
                 {/* Éléments décoratifs supplémentaires */}
-                <div className="absolute -top-5 -left-5 w-16 h-16 bg-[#E67E22]/30 rounded-full blur-md animate-pulse"></div>
-                <div className="absolute -bottom-5 -right-5 w-20 h-20 border-4 border-[#FFFFFF]/20 rounded-full animate-ping-slow"></div>
+                <div className="absolute -top-5 -left-5 w-16 h-16 bg-[#E67E22]/20 rounded-full blur-md animate-pulse"></div>
+                <div className="absolute -bottom-5 -right-5 w-20 h-20 border-4 border-[#E67E22]/30 rounded-full animate-ping-slow"></div>
               </div>
             </div>
           </div>

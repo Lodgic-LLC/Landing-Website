@@ -191,7 +191,7 @@ const BlogPage = () => {
       </section>
 
       {/* Filtres et Articles Grid Section */}
-      <section className="bg-[#FAF3E0] py-12 md:py-16">
+      <section className="bg-[#FAF3E0]">
         <BlogFilters blogPosts={blogPosts} />
       </section>
 
