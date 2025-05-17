@@ -47,11 +47,16 @@ export default function Features() {
         <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-inter-bold text-[#2C3E50] mb-4 sm:mb-6">
             <span className="md:hidden">Votre App, Étape par Étape</span>
-            <span className="hidden md:inline">On vous <span className="text-[#E67E22]">accompagne</span> à chaque étape du développement de votre application mobile</span>
+            <span className="hidden md:inline">
+              On vous <span className="text-[#E67E22]">accompagne</span> à chaque étape du développement de votre
+              application mobile
+            </span>
           </h2>
           <p className="text-md sm:text-lg md:text-xl text-[#2C3E50]/80 max-w-3xl mx-auto">
             <span className="md:hidden">De l'idée à la mise en ligne, main dans la main.</span>
-            <span className="hidden md:inline">De l'idée à la mise en ligne, on est là pour concrétiser votre projet, main dans la main.</span>
+            <span className="hidden md:inline">
+              De l'idée à la mise en ligne, on est là pour concrétiser votre projet, main dans la main.
+            </span>
           </p>
           <div className="w-16 sm:w-24 h-1 bg-[#E67E22] mx-auto rounded-full mt-4 sm:mt-8"></div>
         </div>
@@ -420,7 +425,7 @@ export default function Features() {
                 icon: <FaCogs className="w-7 h-7 text-[#E67E22]" />,
                 title: 'Fonctionnalités sur-mesure',
                 description:
-                  "Votre application est unique. On développe des fonctionnalités spécifiques à vos besoins pour vous démarquer et apporter une vraie valeur ajoutée.",
+                  'Votre application est unique. On développe des fonctionnalités spécifiques à vos besoins pour vous démarquer et apporter une vraie valeur ajoutée.',
                 mobileDescription: 'Fonctionnalités spécifiques à vos besoins.',
                 points: [
                   'Analyse approfondie de vos attentes.',
