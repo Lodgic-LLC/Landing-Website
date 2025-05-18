@@ -81,7 +81,7 @@ export default function Footer() {
               {[
                 // Array for navigation links
                 { href: '/', label: 'Accueil' },
-                { href: '/nos-solutions', label: 'Nos Solutions' },
+                { href: '/services', label: 'Nos Services' },
                 { href: '/blog', label: 'Lodgic Conseils' },
                 { href: '/a-propos', label: 'Qui sommes-nous ?' },
                 { href: '/contact', label: 'Contactez-nous' },
