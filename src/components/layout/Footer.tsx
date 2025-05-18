@@ -4,18 +4,16 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-[#2C3E50] text-[#FAF3E0] py-10 sm:py-16 relative overflow-hidden">
+    <footer className="bg-[#2C3E50] text-[#FAF3E0] pt-10 pb-24 sm:pt-16 sm:pb-10 relative overflow-hidden">
       {/* Éléments décoratifs subtils */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#A3B18A]/30 to-transparent"></div>
       <div className="absolute bottom-0 right-0 w-[40rem] h-[40rem] bg-[#E67E22]/5 rounded-full blur-[120px] -z-0"></div>
       <div className="absolute top-1/4 left-0 w-[30rem] h-[30rem] bg-[#A3B18A]/5 rounded-full blur-[120px] -z-0"></div>
 
-      {/* Bouton Prendre RDV flottant pour mobile */}
-
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 md:gap-16 mb-10 sm:mb-16">
-          <div className="col-span-2 sm:col-span-1 space-y-5 mb-6 sm:mb-0">
-            <Link href="/" className="flex items-center group">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-10 sm:mb-16">
+          <div className="md:col-span-1 space-y-5 text-center md:text-left">
+            <Link href="/" className="inline-flex items-center group justify-center md:justify-start">
               <span className="font-inter-bold font-semibold text-3xl text-[#FAF3E0] group-hover:text-[#E67E22] transition-colors duration-300">
                 Lodgic
               </span>
@@ -24,7 +22,7 @@ export default function Footer() {
               On transforme vos idées en applications mobiles et web sur mesure. Basés à Toulouse, prêts à collaborer où
               que vous soyez.
             </p>
-            <div className="flex space-x-3 pt-2">
+            <div className="flex space-x-3 pt-2 justify-center md:justify-start">
               {[
                 // Array for social links for easier management
                 {
@@ -74,42 +72,57 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="col-span-1 space-y-5">
+          <div className="space-y-5 text-center sm:text-left">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#FAF3E0]/90 relative inline-block">
               Navigation
-              <span className="absolute -bottom-1.5 left-0 w-12 h-0.5 bg-[#E67E22]"></span>
+              <span className="absolute -bottom-1.5 left-1/2 sm:left-0 transform -translate-x-1/2 sm:translate-x-0 w-12 h-0.5 bg-[#E67E22]"></span>
             </h3>
             <ul className="grid grid-cols-2 sm:grid-cols-1 gap-x-2 gap-y-2.5">
               {[
                 // Array for navigation links
                 { href: '/', label: 'Accueil' },
-                { href: '/nos-solutions', label: 'Nos Solutions' }, // Updated from /services
-                { href: '/projets', label: 'Nos Projets' },
+                { href: '/nos-solutions', label: 'Nos Solutions' },
                 { href: '/blog', label: 'Lodgic Conseils' },
                 { href: '/a-propos', label: 'Qui sommes-nous ?' },
                 { href: '/contact', label: 'Contactez-nous' },
+                { href: '/rendez-vous', label: 'Prendre un rendez-vous' },
               ].map((link) => (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[#FAF3E0]/70 hover:text-[#E67E22] transition-colors inline-flex items-center group text-sm"
-                    tabIndex={0}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#A3B18A] mr-2.5 group-hover:bg-[#E67E22] group-hover:scale-110 transition-all duration-300"></span>
-                    <span className="group-hover:translate-x-0.5 transition-transform duration-300">{link.label}</span>
-                  </Link>
+                  {link.href === '/rendez-vous' ? (
+                    <Link
+                      href={link.href}
+                      className=" text-[#E67E22]  hover:text-[#E67E22] transition-colors inline-flex items-center group text-sm"
+                      tabIndex={0}
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#A3B18A] mr-2.5 group-hover:bg-[#E67E22] group-hover:scale-110 transition-all duration-300"></span>
+                      <span className="group-hover:translate-x-0.5 transition-transform duration-300">
+                        {link.label}
+                      </span>
+                    </Link>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-[#FAF3E0]/70 hover:text-[#E67E22] transition-colors inline-flex items-center group text-sm"
+                      tabIndex={0}
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#A3B18A] mr-2.5 group-hover:bg-[#E67E22] group-hover:scale-110 transition-all duration-300"></span>
+                      <span className="group-hover:translate-x-0.5 transition-transform duration-300">
+                        {link.label}
+                      </span>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="col-span-1 space-y-5">
+          <div className="space-y-5 text-center sm:text-left">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#FAF3E0]/90 relative inline-block">
               Contactez-nous
-              <span className="absolute -bottom-1.5 left-0 w-12 h-0.5 bg-[#E67E22]"></span>
+              <span className="absolute -bottom-1.5 left-1/2 sm:left-0 transform -translate-x-1/2 sm:translate-x-0 w-12 h-0.5 bg-[#E67E22]"></span>
             </h3>
             <ul className="space-y-4">
-              <li className="flex items-start group">
+              <li className="flex items-start group justify-center sm:justify-start">
                 <div className="bg-[#3e5265] p-2.5 rounded-lg mr-3.5 group-hover:bg-[#E67E22]/20 transition-colors duration-300 flex-shrink-0">
                   <svg
                     className="w-5 h-5 text-[#FAF3E0]/70 group-hover:text-[#E67E22] transition-colors"
@@ -144,7 +157,7 @@ export default function Footer() {
                   </a>
                 </div>
               </li>
-              <li className="flex items-start group">
+              <li className="flex items-start group justify-center sm:justify-start">
                 <div className="bg-[#3e5265] p-2.5 rounded-lg mr-3.5 group-hover:bg-[#E67E22]/20 transition-colors duration-300 flex-shrink-0">
                   <svg
                     className="w-5 h-5 text-[#FAF3E0]/70 group-hover:text-[#E67E22] transition-colors"
@@ -201,6 +214,25 @@ export default function Footer() {
             {/* Optional: Add more links like Terms of Service if needed */}
           </div>
         </div>
+      </div>
+
+      {/* Floating Action Button for Mobile */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-[#2C3E50]/90 backdrop-blur-sm p-3 shadow-[0_-2px_10px_rgba(0,0,0,0.2)] z-20 border-t border-[#A3B18A]/20">
+        <Link
+          href="/rendez-vous"
+          className="w-full flex items-center justify-center px-6 py-3 bg-[#E67E22] text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg text-sm"
+          aria-label="Prendre un rendez-vous"
+        >
+          <svg className="w-5 h-5 mr-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            />
+          </svg>
+          Prendre RDV (Gratuit)
+        </Link>
       </div>
     </footer>
   )
