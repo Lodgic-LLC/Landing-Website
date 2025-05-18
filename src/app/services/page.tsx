@@ -338,7 +338,7 @@ export default function Services() {
                 )}
 
                 <Link
-                  href="/contact"
+                  href="/rendez-vous"
                   className="inline-flex items-center px-7 py-3.5 bg-[#E67E22] text-[#FFFFFF] rounded-lg shadow-md hover:bg-[#E67E22]/90 transition-colors font-semibold text-lg group"
                 >
                   Obtenir un Devis Personnalisé
