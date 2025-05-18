@@ -215,25 +215,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Floating Action Button for Mobile */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-[#2C3E50]/90 backdrop-blur-sm p-3 shadow-[0_-2px_10px_rgba(0,0,0,0.2)] z-20 border-t border-[#A3B18A]/20">
-        <Link
-          href="/rendez-vous"
-          className="w-full flex items-center justify-center px-6 py-3 bg-[#E67E22] text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg text-sm"
-          aria-label="Prendre un rendez-vous"
-        >
-          <svg className="w-5 h-5 mr-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
-          </svg>
-          Prendre RDV (Gratuit)
-        </Link>
-      </div>
     </footer>
   )
 }
