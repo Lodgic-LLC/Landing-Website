@@ -1,31 +1,27 @@
-import { notFound } from 'next/navigation'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Metadata, ResolvingMetadata } from 'next'
-import { blogPosts, getPostBySlug } from '@/data/blog/posts'
-import { BlogPost } from '@/types/blog'
-import { parseDocument } from 'htmlparser2' // Parser
-import * as domutils from 'domutils' // DOM utilities (use namespace import)
-import { Element, Node } from 'domhandler' // Import specific types for nodes
-import render from 'dom-serializer' // To render back to HTML string
-import CodeBlockHighlighter from '@/components/blog/CodeBlockHighlighter' // Import the new Client Component
-import Script from 'next/script'
-import TableOfContents from '@/components/blog/TableOfContents' // Reverted to default import
-
-// Import a Prism theme (e.g., Tomorrow Night)
-// Ideally, import this in your global layout.tsx or main CSS file
-import 'prismjs/themes/prism-tomorrow.css'
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { Metadata, ResolvingMetadata } from "next";
+import { blogPosts, getPostBySlug } from "@/data/blog/posts";
+import { BlogPost } from "@/types/blog";
+import { parseDocument } from "htmlparser2"; // Parser
+import * as domutils from "domutils"; // DOM utilities (use namespace import)
+import { Element, Node } from "domhandler"; // Import specific types for nodes
+import render from "dom-serializer"; // To render back to HTML string
+import CodeBlockHighlighter from "@/components/blog/CodeBlockHighlighter"; // Import the new Client Component
+import Script from "next/script";
+import TableOfContents from "@/components/blog/TableOfContents"; // Reverted to default import
 
 // Define a specific type for the page props
 interface BlogPageProps {
-  params: Promise<{ slug: string }>
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }> // Make searchParams a Promise type as well
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>; // Make searchParams a Promise type as well
 }
 
 interface Heading {
-  id: string
-  text: string
-  level: number // To potentially handle h3 later
+  id: string;
+  text: string;
+  level: number; // To potentially handle h3 later
 }
 
 // Function to sanitize text for ID generation
@@ -34,23 +30,23 @@ const slugify = (text: string): string => {
     .toString()
     .toLowerCase()
     .trim()
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/[^\w\-]+/g, '') // Remove all non-word chars
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
-}
+    .replace(/\s+/g, "-") // Replace spaces with -
+    .replace(/[^\w\-]+/g, "") // Remove all non-word chars
+    .replace(/\-\-+/g, "-"); // Replace multiple - with single -
+};
 
 // Génère les métadonnées dynamiques pour le SEO
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }, // Update the type for params
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const paramsValue = await params // Await the promise
-  const post = await getPostBySlug(paramsValue.slug)
+  const paramsValue = await params; // Await the promise
+  const post = await getPostBySlug(paramsValue.slug);
 
   if (!post) {
     return {
-      title: 'Article non trouvé',
-    }
+      title: "Article non trouvé",
+    };
   }
 
   return {
@@ -63,7 +59,7 @@ export async function generateMetadata(
       title: post.title,
       description: post.summary,
       url: `https://lodgic-dev.com/blog/${paramsValue.slug}`,
-      siteName: 'Lodgic',
+      siteName: "Lodgic",
       images: [
         {
           url: post.imageUrl,
@@ -72,26 +68,26 @@ export async function generateMetadata(
           alt: post.imageAlt,
         },
       ],
-      type: 'article',
+      type: "article",
       publishedTime: new Date(post.date).toISOString(),
       authors: [post.author],
-      locale: 'fr_FR',
+      locale: "fr_FR",
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: post.title,
       description: post.summary,
       images: [post.imageUrl],
     },
     keywords: [
-      'lodgic',
-      'blog tech',
-      'développement web',
-      'application mobile',
+      "lodgic",
+      "blog tech",
+      "développement web",
+      "application mobile",
       post.title.toLowerCase(),
       ...(post.tags || []),
     ],
-  }
+  };
 }
 
 // Génère les chemins statiques pour chaque article au build time
@@ -100,74 +96,75 @@ export async function generateStaticParams() {
     .map((post) => ({
       slug: post.slug,
     }))
-    .map((params) => Promise.resolve(params))
+    .map((params) => Promise.resolve(params));
 }
 
 // Le composant de la page de l'article
 const PostPage = async (props: BlogPageProps) => {
   // Use the new interface
-  const { params } = props // Destructure params inside the function
-  const paramsValue = await params // Await the promise to get the actual params
-  const post = await getPostBySlug(paramsValue.slug)
+  const { params } = props; // Destructure params inside the function
+  const paramsValue = await params; // Await the promise to get the actual params
+  const post = await getPostBySlug(paramsValue.slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   // --- Process HTML Content for IDs (Server-side) --- START
-  const headings: Heading[] = []
-  const dom = parseDocument(post.content)
+  const headings: Heading[] = [];
+  const dom = parseDocument(post.content);
   const h2Elements = domutils.findAll(
-    (elem: Node): elem is Element => elem instanceof Element && elem.name === 'h2',
+    (elem: Node): elem is Element =>
+      elem instanceof Element && elem.name === "h2",
     dom.children
-  )
-  let headingIndex = 0
+  );
+  let headingIndex = 0;
 
   h2Elements.forEach((h2: Element) => {
-    const text = domutils.textContent(h2).trim()
+    const text = domutils.textContent(h2).trim();
     if (text) {
-      let id = slugify(text)
-      const originalId = id
+      let id = slugify(text);
+      const originalId = id;
       while (headings.some((h) => h.id === id)) {
-        headingIndex++
-        id = `${originalId}-${headingIndex}`
+        headingIndex++;
+        id = `${originalId}-${headingIndex}`;
       }
-      headingIndex = 0
-      headings.push({ id, text, level: 2 })
-      h2.attribs = { ...h2.attribs, id }
+      headingIndex = 0;
+      headings.push({ id, text, level: 2 });
+      h2.attribs = { ...h2.attribs, id };
     }
-  })
-  const processedContent = render(dom) // Content with IDs added
+  });
+  const processedContent = render(dom); // Content with IDs added
   // --- Process HTML Content for IDs (Server-side) --- END
 
   // --- LD-JSON Schema (Server-side) --- START
   const articleSchemaData = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
     mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://lodgic-dev.com/blog/${post.slug}`,
+      "@type": "WebPage",
+      "@id": `https://lodgic-dev.com/blog/${post.slug}`,
     },
     headline: post.title,
     description: post.summary,
     image: post.imageUrl,
     author: {
-      '@type': 'Person',
+      "@type": "Person",
       name: post.author,
     },
     publisher: {
-      '@type': 'Organization',
-      name: 'Lodgic',
+      "@type": "Organization",
+      name: "Lodgic",
       logo: {
-        '@type': 'ImageObject',
-        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        "@type": "ImageObject",
+        url: "https://lodgic-dev.com/FullLogo_Transparent.png",
       },
     },
     datePublished: new Date(post.date).toISOString(),
     dateModified: new Date(post.date).toISOString(), // Or use a lastUpdated field if available
     articleBody: post.summary, // Keep it concise for schema
-    ...(post.tags && { keywords: post.tags.join(', ') }),
-  }
+    ...(post.tags && { keywords: post.tags.join(", ") }),
+  };
   // --- LD-JSON Schema (Server-side) --- END
 
   return (
@@ -190,7 +187,7 @@ const PostPage = async (props: BlogPageProps) => {
           {/* La hauteur est limitée pour permettre le scroll interne si besoin : h-[calc(100vh-theme(spacing.24)-theme(spacing.28))] correspond à la hauteur de la vue moins le top offset et un peu de padding bas */}
           <div className="hidden xl:block sticky top-24 z-10 w-60 xl:w-72 flex-shrink-0 self-start h-[calc(100vh-theme(spacing.24)-theme(spacing.28))] overflow-y-auto">
             <aside className="pr-4">
-              {' '}
+              {" "}
               {/* Ajout de padding droit pour espacer le texte de la scrollbar */}
               <TableOfContents headings={headings} />
             </aside>
@@ -202,14 +199,18 @@ const PostPage = async (props: BlogPageProps) => {
           <article className="bg-[#FFFFFF] p-8 sm:p-10 md:p-12 rounded-xl shadow-xl border border-gray-200 hover:border-[#E67E22]/50 transition-shadow duration-300 flex-grow max-w-none xl:max-w-4xl mx-auto xl:mx-0">
             {/* Increased bottom margin */}
             <header className="mb-10 md:mb-12 text-center xl:text-left">
-              {' '}
+              {" "}
               {/* Ajustement alignement texte sur grand écran */}
               <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-[#111827] mb-4 leading-tight">
                 {post.title}
               </h1>
               <p className="text-[#374151] text-sm">
-                Publié le{' '}
-                {new Date(post.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}{' '}
+                Publié le{" "}
+                {new Date(post.date).toLocaleDateString("fr-FR", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}{" "}
                 par {post.author}
               </p>
               <div className="mt-6 border-t border-gray-200 pt-6">
@@ -217,7 +218,9 @@ const PostPage = async (props: BlogPageProps) => {
                   href="/blog"
                   className="text-[#E67E22] hover:text-[#E67E22]/80 text-sm font-medium inline-flex items-center group transition-colors duration-300"
                 >
-                  <span className="mr-1 transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
+                  <span className="mr-1 transition-transform duration-200 group-hover:-translate-x-1">
+                    &larr;
+                  </span>
                   Retour au blog
                 </Link>
               </div>
@@ -239,7 +242,7 @@ const PostPage = async (props: BlogPageProps) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default PostPage
+export default PostPage;

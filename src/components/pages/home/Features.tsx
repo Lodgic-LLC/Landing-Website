@@ -1,10 +1,13 @@
-import { FaCheckCircle, FaRocket, FaPalette, FaCogs } from 'react-icons/fa'
+import { FaCheckCircle, FaRocket, FaPalette, FaCogs } from "react-icons/fa";
 
 export default function Features() {
   return (
     <section className="w-full bg-white py-12 sm:py-16 md:py-24 relative overflow-hidden">
       {/* Vague en haut pour transition */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
+      <div
+        className="absolute top-0 left-0 w-full overflow-hidden"
+        style={{ height: "80px" }}
+      >
         <svg
           className="absolute top-0 w-full h-full"
           viewBox="0 0 1440 80"
@@ -12,7 +15,10 @@ export default function Features() {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
         >
-          <path d="M0,80 C240,0 480,0 720,40 C960,80 1200,80 1440,40 L1440,0 L0,0 Z" fill="#FAF3E0" />
+          <path
+            d="M0,80 C240,0 480,0 720,40 C960,80 1200,80 1440,40 L1440,0 L0,0 Z"
+            fill="#FAF3E0"
+          />
         </svg>
       </div>
 
@@ -29,7 +35,13 @@ export default function Features() {
           <circle cx="720" cy="400" r="300" fill="#E67E22" fillOpacity="0.05" />
 
           {/* Cercle supérieur droit */}
-          <circle cx="1100" cy="150" r="150" fill="#A3B18A" fillOpacity="0.05" />
+          <circle
+            cx="1100"
+            cy="150"
+            r="150"
+            fill="#A3B18A"
+            fillOpacity="0.05"
+          />
 
           {/* Cercle inférieur gauche */}
           <circle cx="300" cy="650" r="200" fill="#E67E22" fillOpacity="0.04" />
@@ -48,14 +60,17 @@ export default function Features() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-inter-bold text-[#2C3E50] mb-4 sm:mb-6">
             <span className="md:hidden">Votre App, Étape par Étape</span>
             <span className="hidden md:inline">
-              On vous <span className="text-[#E67E22]">accompagne</span> à chaque étape du développement de votre
-              application mobile
+              On vous <span className="text-[#E67E22]">accompagne</span> à
+              chaque étape du développement de votre application mobile
             </span>
           </h2>
           <p className="text-md sm:text-lg md:text-xl text-[#2C3E50]/80 max-w-3xl mx-auto">
-            <span className="md:hidden">De l'idée à la mise en ligne, main dans la main.</span>
+            <span className="md:hidden">
+              De l'idée à la mise en ligne, main dans la main.
+            </span>
             <span className="hidden md:inline">
-              De l'idée à la mise en ligne, on est là pour concrétiser votre projet, main dans la main.
+              De l'idée à la mise en ligne, on est là pour concrétiser votre
+              projet, main dans la main.
             </span>
           </p>
           <div className="w-16 sm:w-24 h-1 bg-[#E67E22] mx-auto rounded-full mt-4 sm:mt-8"></div>
@@ -171,7 +186,12 @@ export default function Features() {
                   transform="translate(-147.74411 -156.06942)"
                   fill="#2f2e41"
                 />
-                <circle cx="778.04043" cy="58.25857" r="27.4387" fill="#ffb8b8" />
+                <circle
+                  cx="778.04043"
+                  cy="58.25857"
+                  r="27.4387"
+                  fill="#ffb8b8"
+                />
                 <path
                   d="M1007.129,335.7166l-26.98618,9.67809-8.219,2.9451-5.999-76.62693,20.58857,10.91955a.43133.43133,0,0,1,.0906.09049,55.71552,55.71552,0,0,1,8.8625,13.14873C1006.75738,318.82533,1007.129,335.7166,1007.129,335.7166Z"
                   transform="translate(-147.74411 -156.06942)"
@@ -262,7 +282,12 @@ export default function Features() {
                   transform="translate(-147.74411 -156.06942)"
                   fill="#E67E22"
                 />
-                <circle cx="553.1367" cy="221.44848" r="21.50617" fill="#3f3d56" />
+                <circle
+                  cx="553.1367"
+                  cy="221.44848"
+                  r="21.50617"
+                  fill="#3f3d56"
+                />
                 <path
                   d="M457.43074,213.91906a56.086,56.086,0,1,1,110.05652,21.68253l-1.96288-.38651a54.08546,54.08546,0,1,0-106.13077-20.90951Z"
                   transform="translate(-147.74411 -156.06942)"
@@ -399,38 +424,38 @@ export default function Features() {
             {[
               {
                 icon: <FaRocket className="w-7 h-7 text-[#E67E22]" />,
-                title: 'Des fondations solides pour évoluer',
+                title: "Des fondations solides pour évoluer",
                 description:
                   "On construit votre application avec des technologies modernes et éprouvées, pour qu'elle soit performante aujourd'hui et prête pour demain.",
-                mobileDescription: 'Technologies modernes et performantes.',
+                mobileDescription: "Technologies modernes et performantes.",
                 points: [
-                  'Code de qualité, testé et documenté.',
-                  'Architecture pensée pour la scalabilité.',
-                  'Sécurité intégrée dès la conception.',
+                  "Code de qualité, testé et documenté.",
+                  "Architecture pensée pour la scalabilité.",
+                  "Sécurité intégrée dès la conception.",
                 ],
               },
               {
                 icon: <FaPalette className="w-7 h-7 text-[#E67E22]" />,
-                title: 'Un design qui vous ressemble',
+                title: "Un design qui vous ressemble",
                 description:
                   "On imagine une interface utilisateur intuitive et un design unique qui capture l'essence de votre marque et séduit vos utilisateurs.",
-                mobileDescription: 'Interface intuitive, design unique.',
+                mobileDescription: "Interface intuitive, design unique.",
                 points: [
-                  'Maquettes interactives (Figma).',
-                  'Respect de votre identité visuelle.',
-                  'Accessibilité et expérience utilisateur soignées.',
+                  "Maquettes interactives (Figma).",
+                  "Respect de votre identité visuelle.",
+                  "Accessibilité et expérience utilisateur soignées.",
                 ],
               },
               {
                 icon: <FaCogs className="w-7 h-7 text-[#E67E22]" />,
-                title: 'Fonctionnalités sur-mesure',
+                title: "Fonctionnalités sur-mesure",
                 description:
-                  'Votre application est unique. On développe des fonctionnalités spécifiques à vos besoins pour vous démarquer et apporter une vraie valeur ajoutée.',
-                mobileDescription: 'Fonctionnalités spécifiques à vos besoins.',
+                  "Votre application est unique. On développe des fonctionnalités spécifiques à vos besoins pour vous démarquer et apporter une vraie valeur ajoutée.",
+                mobileDescription: "Fonctionnalités spécifiques à vos besoins.",
                 points: [
-                  'Analyse approfondie de vos attentes.',
-                  'Solutions personnalisées et innovantes.',
-                  'Intégration avec vos outils existants.',
+                  "Analyse approfondie de vos attentes.",
+                  "Solutions personnalisées et innovantes.",
+                  "Intégration avec vos outils existants.",
                 ],
               },
             ].map((feature, index) => (
@@ -439,14 +464,23 @@ export default function Features() {
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">
+                    {feature.title}
+                  </h3>
                   <p className="text-[#2C3E50]/80 text-sm sm:text-base mb-3">
-                    <span className="md:hidden">{feature.mobileDescription}</span>
-                    <span className="hidden md:inline">{feature.description}</span>
+                    <span className="md:hidden">
+                      {feature.mobileDescription}
+                    </span>
+                    <span className="hidden md:inline">
+                      {feature.description}
+                    </span>
                   </p>
                   <ul className="space-y-1.5">
                     {feature.points.map((point, pIndex) => (
-                      <li key={pIndex} className="flex items-center text-sm text-[#2C3E50]/70">
+                      <li
+                        key={pIndex}
+                        className="flex items-center text-sm text-[#2C3E50]/70"
+                      >
                         <FaCheckCircle className="w-4 h-4 text-[#A3B18A] mr-2.5 flex-shrink-0" />
                         {point}
                       </li>
@@ -459,5 +493,5 @@ export default function Features() {
         </div>
       </div>
     </section>
-  )
+  );
 }
