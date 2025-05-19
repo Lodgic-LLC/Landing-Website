@@ -256,8 +256,8 @@ netlify deploy --prod</code></pre>
     `,
   },
   {
-    slug: 'optimiser-seo-nextjs-2024',
-    title: 'Optimiser le SEO de votre site Next.js en 2024 : Le Guide Ultime',
+    slug: 'optimiser-seo-nextjs-2025',
+    title: 'Optimiser le SEO de votre site Next.js en 2025 : Le Guide Ultime',
     date: '2025-04-26',
     author: "L'équipe Lodgic",
     summary:
@@ -267,7 +267,7 @@ netlify deploy --prod</code></pre>
     imageAlt: 'Tableau de bord analytique montrant la croissance SEO',
     category: 'SEO',
     content: `
-      <p class="lead text-lg text-gray-600 mb-8">Dans le paysage numérique concurrentiel de 2024, avoir un site web performant ne suffit plus. La visibilité est reine, et le SEO (Search Engine Optimization) est la clé qui ouvre les portes des premières pages de Google. Pour les développeurs et entreprises utilisant Next.js, le framework React de référence pour la production, optimiser le référencement naturel est non seulement possible, mais fortement encouragé par les capacités intrinsèques du framework.</p>
+      <p class="lead text-lg text-gray-600 mb-8">Dans le paysage numérique concurrentiel de 2025, avoir un site web performant ne suffit plus. La visibilité est reine, et le SEO (Search Engine Optimization) est la clé qui ouvre les portes des premières pages de Google. Pour les développeurs et entreprises utilisant Next.js, le framework React de référence pour la production, optimiser le référencement naturel est non seulement possible, mais fortement encouragé par les capacités intrinsèques du framework.</p>
 
       <h2>Pourquoi le SEO est Crucial pour les Sites Next.js ?</h2>
       <p>Next.js brille par ses fonctionnalités orientées performance et expérience utilisateur, telles que le rendu côté serveur (SSR), la génération de sites statiques (SSG), le pré-rendu, et l'optimisation automatique des images via <code>next/image</code>. Ces éléments sont des atouts majeurs pour le SEO :</p>
@@ -422,7 +422,7 @@ return {
       <p>Google utilise les Core Web Vitals (CWV) comme signaux de classement. Next.js aide grandement, mais surveillez ces métriques :</p>
       <ul>
         <li><strong>Largest Contentful Paint (LCP) :</strong> Temps de chargement du plus gros élément visible. Optimisez les images (<code>next/image</code>), le CSS critique, et réduisez le temps de réponse serveur.</li>
-        <li><strong>First Input Delay (FID) / Interaction to Next Paint (INP) :</strong> Réactivité de la page aux interactions utilisateur. Limitez le JavaScript lourd sur le thread principal, utilisez les Web Workers, et optimisez les Client Components. (INP remplace FID en mars 2024).</li>
+        <li><strong>First Input Delay (FID) / Interaction to Next Paint (INP) :</strong> Réactivité de la page aux interactions utilisateur. Limitez le JavaScript lourd sur le thread principal, utilisez les Web Workers, et optimisez les Client Components. (INP remplace FID en mars 2025).</li>
         <li><strong>Cumulative Layout Shift (CLS) :</strong> Stabilité visuelle. Spécifiez les dimensions des images et vidéos, réservez de l'espace pour les publicités ou le contenu dynamique.</li>
       </ul>
       <p>Utilisez des outils comme Google PageSpeed Insights, Lighthouse (dans les DevTools Chrome), et la Google Search Console pour mesurer et identifier les points d'amélioration.</p>
@@ -453,7 +453,7 @@ return {
   },
   {
     slug: 'tailwind-vs-css-modules',
-    title: 'TailwindCSS vs CSS Modules : Meilleur Choix pour React en 2024 ?',
+    title: 'TailwindCSS vs CSS Modules : Meilleur Choix pour React en 2025 ?',
     date: '2025-04-25',
     author: "L'équipe Lodgic",
     summary:
@@ -463,7 +463,7 @@ return {
     imageAlt: "Code CSS affiché sur un écran d'ordinateur portable",
     category: 'Développement',
     content: `
-      <p class="lead text-lg text-gray-600 mb-8">Dans l'écosystème bouillonnant de React, choisir la bonne stratégie de stylisation est une décision cruciale qui impacte la productivité des développeurs, la maintenabilité du code, et la performance de l'application. Parmi la multitude d'options, deux approches populaires se distinguent en 2024 : TailwindCSS, le framework CSS "utility-first", et les CSS Modules, une solution axée sur l'isolation des styles au niveau du composant.</p>
+      <p class="lead text-lg text-gray-600 mb-8">Dans l'écosystème bouillonnant de React, choisir la bonne stratégie de stylisation est une décision cruciale qui impacte la productivité des développeurs, la maintenabilité du code, et la performance de l'application. Parmi la multitude d'options, deux approches populaires se distinguent en 2025 : TailwindCSS, le framework CSS "utility-first", et les CSS Modules, une solution axée sur l'isolation des styles au niveau du composant.</p>
 
       <h2>Comprendre les Deux Approches</h2>
       <p>Avant de comparer, définissons clairement chaque méthode :</p>
@@ -597,12 +597,12 @@ function MyButton() {
       <p>TailwindCSS et CSS Modules sont deux solutions robustes et éprouvées pour styliser des applications React. Aucune n'est universellement "meilleure" que l'autre. Le choix idéal dépend des priorités de votre projet, de la taille et de l'expérience de votre équipe, et de vos préférences personnelles en matière de flux de travail.</p>
       <p><strong>Tailwind</strong> excelle par sa rapidité, sa cohérence et sa performance en production grâce à son approche "utility-first" et sa purge efficace. C'est un excellent choix pour les équipes qui veulent aller vite et maintenir une forte cohérence visuelle.</p>
       <p>Les <strong>CSS Modules</strong> offrent une isolation à toute épreuve et une séparation classique des préoccupations (structure vs style), en utilisant la puissance du CSS standard. C'est une option solide pour ceux qui privilégient la lisibilité du balisage et une approche CSS plus traditionnelle.</p>
-      <p>Évaluez soigneusement les avantages et les inconvénients présentés ici, discutez-en avec votre équipe, et choisissez l'outil qui correspond le mieux à vos besoins spécifiques pour construire des interfaces utilisateur exceptionnelles avec React en 2024.</p>
+      <p>Évaluez soigneusement les avantages et les inconvénients présentés ici, discutez-en avec votre équipe, et choisissez l'outil qui correspond le mieux à vos besoins spécifiques pour construire des interfaces utilisateur exceptionnelles avec React en 2025.</p>
     `,
   },
   {
     slug: 'creer-landing-page-efficace',
-    title: '5 Clés Indispensables pour une Landing Page qui Convertit en 2024',
+    title: '5 Clés Indispensables pour une Landing Page qui Convertit en 2025',
     date: '2025-04-24',
     author: "L'équipe Lodgic",
     summary:
@@ -612,7 +612,7 @@ function MyButton() {
     imageAlt: "Équipe collaborant sur la conception d'une interface web pour une landing page efficace",
     category: 'Web',
     content: `
-      <p class="lead text-lg text-gray-600 mb-8">Une landing page (ou page d'atterrissage) n'est pas une page web ordinaire. C'est une page spécifiquement conçue avec un unique objectif : la conversion. Qu'il s'agisse de capturer une adresse email, de vendre un produit, d'encourager une inscription à un webinaire ou de générer des demandes de devis, son succès se mesure à sa capacité à transformer un visiteur en acteur. En 2024, avec une attention en ligne toujours plus volatile, maîtriser l'art de la landing page est essentiel.</p>
+      <p class="lead text-lg text-gray-600 mb-8">Une landing page (ou page d'atterrissage) n'est pas une page web ordinaire. C'est une page spécifiquement conçue avec un unique objectif : la conversion. Qu'il s'agisse de capturer une adresse email, de vendre un produit, d'encourager une inscription à un webinaire ou de générer des demandes de devis, son succès se mesure à sa capacité à transformer un visiteur en acteur. En 2025, avec une attention en ligne toujours plus volatile, maîtriser l'art de la landing page est essentiel.</p>
 
       <h2>Pourquoi une Landing Page Dédiée est Cruciale ?</h2>
       <p>Envoyer du trafic (issu de publicités, d'emails, de réseaux sociaux) vers votre page d'accueil générique est souvent une erreur coûteuse. La page d'accueil présente trop d'options, trop de distractions. Une landing page dédiée, au contraire, focalise l'attention du visiteur sur une seule offre et un seul appel à l'action (CTA), augmentant considérablement les chances de conversion.</p>
@@ -699,7 +699,7 @@ function MyButton() {
   },
   {
     slug: 'importance-responsive-design',
-    title: "Responsive Design en 2024 : Plus qu'une Option, une Nécessité",
+    title: "Responsive Design en 2025 : Plus qu'une Option, une Nécessité",
     date: '2025-04-23',
     author: "L'équipe Lodgic",
     summary:
@@ -709,7 +709,7 @@ function MyButton() {
     imageAlt: 'Site web affiché sur différents appareils : ordinateur, tablette, smartphone',
     category: 'Développement',
     content: `
-      <p class="lead text-lg text-gray-600 mb-8">Il fut un temps où le responsive web design était considéré comme une "bonne pratique", un "plus" appréciable. En 2024, cette époque est révolue. Avec la domination écrasante du trafic mobile et l'adoption par Google de l'indexation "mobile-first", concevoir un site web qui ne s'adapte pas parfaitement à tous les écrans n'est plus une option, c'est une erreur stratégique majeure.</p>
+      <p class="lead text-lg text-gray-600 mb-8">Il fut un temps où le responsive web design était considéré comme une "bonne pratique", un "plus" appréciable. En 2025, cette époque est révolue. Avec la domination écrasante du trafic mobile et l'adoption par Google de l'indexation "mobile-first", concevoir un site web qui ne s'adapte pas parfaitement à tous les écrans n'est plus une option, c'est une erreur stratégique majeure.</p>
 
       <h2>L'Ère Incontournable du Mobile-First</h2>
       <p>Les chiffres sont sans appel :</p>
@@ -818,12 +818,12 @@ function MyButton() {
       </ul>
 
       <h2>Conclusion : Investissez dans l'Adaptabilité</h2>
-      <p>Le responsive design n'est plus une simple fonctionnalité additionnelle, c'est le fondement d'une présence en ligne réussie en 2024. En adoptant une approche mobile-first et en maîtrisant les techniques d'adaptation, vous offrez une expérience utilisateur optimale, améliorez votre référencement naturel, et maximisez vos chances de conversion sur tous les appareils. Investir dans une présence en ligne adaptative, que ce soit via un site web responsive ou le <a href="/services" class="text-blue-600 hover:text-blue-800 font-medium">développement d'applications mobiles sur mesure à Toulouse</a>, est crucial pour rester compétitif.</p>
+      <p>Le responsive design n'est plus une simple fonctionnalité additionnelle, c'est le fondement d'une présence en ligne réussie en 2025. En adoptant une approche mobile-first et en maîtrisant les techniques d'adaptation, vous offrez une expérience utilisateur optimale, améliorez votre référencement naturel, et maximisez vos chances de conversion sur tous les appareils. Investir dans une présence en ligne adaptative, que ce soit via un site web responsive ou le <a href="/services" class="text-blue-600 hover:text-blue-800 font-medium">développement d'applications mobiles sur mesure à Toulouse</a>, est crucial pour rester compétitif.</p>
     `,
   },
   {
     slug: 'securiser-application-react',
-    title: 'Sécuriser Votre App React : Guide Essentiel 2024 Contre les Failles',
+    title: 'Sécuriser Votre App React : Guide Essentiel 2025 Contre les Failles',
     date: '2025-04-22',
     author: "L'équipe Lodgic",
     summary:
@@ -833,7 +833,7 @@ function MyButton() {
     imageAlt: 'Cadenas numérique symbolisant la sécurité informatique',
     category: 'Développement',
     content: `
-      <p class="lead text-lg text-gray-600 mb-8">React, avec son approche déclarative et son écosystème riche, a révolutionné la façon dont nous construisons les interfaces utilisateur. Cependant, sa popularité en fait également une cible pour les acteurs malveillants. Si React intègre certaines protections natives, une compréhension approfondie des menaces courantes et des bonnes pratiques de sécurité est indispensable pour tout développeur React soucieux de protéger ses utilisateurs et ses données en 2024.</p>
+      <p class="lead text-lg text-gray-600 mb-8">React, avec son approche déclarative et son écosystème riche, a révolutionné la façon dont nous construisons les interfaces utilisateur. Cependant, sa popularité en fait également une cible pour les acteurs malveillants. Si React intègre certaines protections natives, une compréhension approfondie des menaces courantes et des bonnes pratiques de sécurité est indispensable pour tout développeur React soucieux de protéger ses utilisateurs et ses données en 2025.</p>
 
       <h2>Les Risques de Sécurité Spécifiques (et Moins Spécifiques) à React</h2>
       <p>Bien que React ne soit pas intrinsèquement plus ou moins sécurisé qu'un autre framework frontend, certaines de ses caractéristiques ou les pratiques courantes dans son écosystème peuvent introduire des vulnérabilités si l'on n'y prend pas garde :</p>
