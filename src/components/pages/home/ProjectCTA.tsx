@@ -58,7 +58,7 @@ export default function ProjectCTA() {
                 Discutons de votre projet
               </Link>
               <Link
-                href="/nos-solutions" // Assuming a page for solutions/services
+                href="/services"
                 className="bg-transparent border-2 border-[#FAF3E0] text-[#FAF3E0] px-8 py-3 rounded-full font-semibold hover:bg-[#FAF3E0] hover:text-[#2C3E50] transition-all flex items-center group"
                 aria-label="Explorez nos solutions pour votre projet"
               >
@@ -104,6 +104,6 @@ export default function ProjectCTA() {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   )
 }
