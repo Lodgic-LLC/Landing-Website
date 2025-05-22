@@ -447,7 +447,7 @@ return {
       </ul>
       <p>Le maillage interne, comme mentionné précédemment, est également crucial pour guider les utilisateurs et les moteurs de recherche à travers votre site.</p>
 
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Conclusion : Le SEO est un Marathon, Pas un Sprint</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="conclusion">Conclusion : Le SEO est un Marathon, Pas un Sprint</h2>
       <p>Optimiser le SEO de votre site Next.js est un processus continu. Les bases techniques posées par Next.js vous donnent une longueur d'avance significative, mais la création de contenu de valeur, l'amélioration constante de l'expérience utilisateur, et une stratégie de netlinking réfléchie sont indispensables pour atteindre et maintenir les premières positions.</p>
       <p>Surveillez vos performances via la Google Search Console et Google Analytics, adaptez votre stratégie en fonction des résultats et des évolutions des algorithmes, et n'oubliez jamais que votre objectif premier est de satisfaire vos utilisateurs. Un site utile et agréable pour les humains le sera aussi, la plupart du temps, pour Google.</p>
     `,
@@ -695,7 +695,7 @@ function MyButton() {
         <li><strong>Itérez :</strong> Appliquez les apprentissages et continuez à tester de nouvelles hypothèses pour améliorer constamment vos résultats.</li>
       </ul>
 
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Conclusion : La Science de la Conversion</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="conclusion">Conclusion : La Science de la Conversion</h2>
       <p>Créer une landing page qui convertit n'est pas un hasard. C'est un mélange de psychologie, de design centré utilisateur, de copywriting persuasif, et d'optimisation technique. En appliquant rigoureusement ces cinq clés – un message clair, un design épuré, un CTA irrésistible, des preuves sociales fortes, et une optimisation mobile/vitesse impeccable – vous mettez toutes les chances de votre côté pour atteindre vos objectifs de conversion et rentabiliser vos efforts marketing.</p>
     `,
   },
@@ -1030,7 +1030,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
     content: `
       <p class="lead text-lg text-gray-600 mb-8">Vous avez une idée géniale d'application mobile et vous souhaitez la concrétiser ? Le premier pas crucial est la rédaction d'un cahier des charges solide. Ce document servira de guide tout au long du développement et assurera que votre vision est parfaitement comprise par l'équipe de développement. Voici comment structurer efficacement votre cahier des charges.</p>
 
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">1. Présentation du Projet et Contexte</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="presentation-projet">1. Présentation du Projet et Contexte</h2>
       <p>Commencez par poser les bases de votre projet :</p>
       <ul>
         <li><strong>Votre Entreprise :</strong> Présentez brièvement votre structure, votre secteur d'activité et votre positionnement sur le marché.</li>
@@ -1044,7 +1044,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
         <figcaption class="mt-2 text-sm text-gray-500">Une bonne compréhension du contexte est essentielle pour démarrer.</figcaption>
       </figure>
 
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">2. Description Détaillée des Fonctionnalités</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="description-fonctionnalites">2. Description Détaillée des Fonctionnalités</h2>
       <p>Listez toutes les fonctionnalités que vous souhaitez voir dans votre application. Pour chaque fonctionnalité, précisez :</p>
       <ul>
         <li><strong>Objectif :</strong> À quoi sert cette fonctionnalité ?</li>
@@ -1071,7 +1071,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
         </ul>
       </div>
 
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">3. Spécifications Techniques</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="specifications-techniques">3. Spécifications Techniques</h2>
       <p>Même si vous n'êtes pas technicien, il est important de préciser certains aspects techniques :</p>
       <ul>
         <li><strong>Plateformes :</strong> iOS, Android, ou les deux ?</li>
@@ -1080,7 +1080,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
         <li><strong>Performance :</strong> Y a-t-il des exigences particulières en termes de vitesse ou de réactivité ?</li>
       </ul>
 
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">4. Design et Expérience Utilisateur</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="design-ux">4. Design et Expérience Utilisateur</h2>
       <p>Décrivez vos attentes en matière d'interface :</p>
       <ul>
         <li><strong>Charte Graphique :</strong> Avez-vous déjà une identité visuelle (logo, couleurs, typographie) ?</li>
@@ -1094,7 +1094,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
         <figcaption class="mt-2 text-sm text-gray-500">Le design doit être intuitif et agréable à utiliser.</figcaption>
       </figure>
 
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">5. Aspects Légaux et Sécurité</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="aspects-legaux">5. Aspects Légaux et Sécurité</h2>
       <p>N'oubliez pas les aspects réglementaires :</p>
       <ul>
         <li><strong>RGPD :</strong> Quelles données personnelles seront collectées ? Comment seront-elles protégées ?</li>
@@ -1103,7 +1103,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
         <li><strong>Conformité :</strong> Votre secteur d'activité est-il soumis à des réglementations particulières ?</li>
       </ul>
 
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">6. Planning et Budget</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="planning-budget">6. Planning et Budget</h2>
       <p>Précisez vos contraintes temporelles et financières :</p>
       <ul>
         <li><strong>Date de Lancement :</strong> Avez-vous une date butoir ?</li>
@@ -1112,7 +1112,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
         <li><strong>Maintenance :</strong> Avez-vous prévu un budget pour la maintenance et les mises à jour ?</li>
       </ul>
 
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">7. Livrables et Suivi</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="livrables-suivi">7. Livrables et Suivi</h2>
       <p>Définissez clairement ce que vous attendez de l'équipe de développement :</p>
       <ul>
         <li><strong>Livrables :</strong> Code source, documentation, guides d'utilisation, etc.</li>
@@ -1132,7 +1132,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
         </ul>
       </div>
 
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Conclusion</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="conclusion">Conclusion</h2>
       <p>Un cahier des charges bien rédigé est la clé du succès de votre projet d'application mobile. Il permet de :</p>
       <ul>
         <li>Clarifier votre vision</li>

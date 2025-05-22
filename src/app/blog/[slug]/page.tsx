@@ -30,9 +30,11 @@ const slugify = (text: string): string => {
     .toString()
     .toLowerCase()
     .trim()
-    .replace(/\s+/g, "-") // Replace spaces with -
-    .replace(/[^\w\-]+/g, "") // Remove all non-word chars
-    .replace(/\-\-+/g, "-"); // Replace multiple - with single -
+    .normalize('NFD') // Décompose les caractères accentués
+    .replace(/[\u0300-\u036f]/g, '') // Supprime les diacritiques
+    .replace(/[^a-z0-9]+/g, '-') // Remplace tous les caractères non alphanumériques par un tiret
+    .replace(/^-+|-+$/g, '') // Supprime les tirets au début et à la fin
+    .replace(/-+/g, '-'); // Remplace les tirets multiples par un seul tiret
 };
 
 // Génère les métadonnées dynamiques pour le SEO
