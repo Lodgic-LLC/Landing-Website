@@ -49,27 +49,27 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ headings }) => {
     }
 
     // Options for the observer (which part of the viewport to consider)
-    // rootMargin negative top margin means the heading needs to be below the sticky header
     const observerOptions = {
-      rootMargin: "-100px 0px -50% 0px", // Adjust top margin based on header height
-      threshold: 1.0, // Trigger when 100% visible
+      rootMargin: "-100px 0px -50% 0px",
+      threshold: 1.0,
     };
 
     observer.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveId(entry.target.id);
+          const id = entry.target.getAttribute('id');
+          if (id) {
+            setActiveId(id);
+          }
         }
       });
     }, observerOptions);
 
-    // Observe each heading element
-    const headingElements = document.querySelectorAll(
-      headings.map((h) => `#${h.id}`).join(", ")
-    );
-    headingElements.forEach((el) => {
-      if (el) {
-        observer.current?.observe(el);
+    // Observe each heading element - Using a safer approach
+    headings.forEach((heading) => {
+      const element = document.getElementById(heading.id);
+      if (element) {
+        observer.current?.observe(element);
       }
     });
 
@@ -77,7 +77,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ headings }) => {
     return () => {
       observer.current?.disconnect();
     };
-  }, [headings]); // Re-run observer setup if headings change
+  }, [headings]);
 
   // --- Scroll TOC into view if active item is outside --- (Optional but good UX)
   useEffect(() => {
@@ -123,13 +123,11 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ headings }) => {
               onClick={(e) => handleLinkClick(e, heading.id)}
               className={`block transition-colors duration-200 
                 ${heading.level === 2 ? "text-base font-medium" : "text-sm"}
-                ${
-                  activeId === heading.id
-                    ? "text-orange-600 font-semibold" // Active state style
-                    : "text-gray-600 hover:text-orange-500" // Default state style
-                } ${
-                heading.level > 2 ? "pl-2" : ""
-              } // Additional padding for sub-headings
+                ${activeId === heading.id
+                  ? "text-orange-600 font-semibold" // Active state style
+                  : "text-gray-600 hover:text-orange-500" // Default state style
+                } ${heading.level > 2 ? "pl-2" : ""
+                } // Additional padding for sub-headings
               `}
             >
               {heading.text}
