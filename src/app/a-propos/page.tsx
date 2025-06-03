@@ -1,51 +1,62 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { Metadata } from 'next'
-import { FaArrowRight, FaLightbulb, FaUsers, FaRocket, FaEnvelope, FaChevronRight, FaCheckCircle } from 'react-icons/fa'
+import Link from "next/link";
+import Image from "next/image";
+import { Metadata } from "next";
+import {
+  FaArrowRight,
+  FaLightbulb,
+  FaUsers,
+  FaRocket,
+  FaEnvelope,
+  FaChevronRight,
+  FaCheckCircle,
+} from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: 'A Propos - Lodgic',
-  description: 'Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale',
+  title: "A Propos - Lodgic",
+  description:
+    "Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale",
   alternates: {
-    canonical: 'https://lodgic-dev.com/a-propos',
+    canonical: "https://lodgic-dev.com/a-propos",
   },
   openGraph: {
-    title: 'A Propos - Lodgic',
-    description: 'Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale',
-    url: 'https://lodgic-dev.com/a-propos',
-    siteName: 'Lodgic',
+    title: "A Propos - Lodgic",
+    description:
+      "Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale",
+    url: "https://lodgic-dev.com/a-propos",
+    siteName: "Lodgic",
     images: [
       {
-        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        url: "https://lodgic-dev.com/FullLogo_Transparent.png",
         width: 1200,
         height: 630,
-        alt: 'Lodgic - À propos de nous',
+        alt: "Lodgic - À propos de nous",
       },
     ],
-    locale: 'fr_FR',
-    type: 'website',
+    locale: "fr_FR",
+    type: "website",
   },
   keywords: [
-    'à propos',
-    'Lodgic',
-    'équipe de développement',
-    'agence mobile Toulouse',
-    'expertise développement',
-    'histoire Lodgic',
-    'valeurs entreprise',
-    'développeur mobile',
-    'expertise technique',
-    'services numériques',
-    'transformation digitale',
-    'développement sur mesure',
+    "à propos",
+    "Lodgic",
+    "équipe de développement",
+    "agence mobile Toulouse",
+    "expertise développement",
+    "histoire Lodgic",
+    "valeurs entreprise",
+    "développeur mobile",
+    "expertise technique",
+    "services numériques",
+    "transformation digitale",
+    "développement sur mesure",
   ],
   twitter: {
-    card: 'summary_large_image',
-    title: 'A Propos - Lodgic',
-    description: 'Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale',
-    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
+    card: "summary_large_image",
+    title: "A Propos - Lodgic",
+    description:
+      "Découvrez notre expertise, notre histoire et notre vision pour votre transformation digitale",
+    images: ["https://lodgic-dev.com/FullLogo_Transparent.png"],
   },
-}
+};
 
 export default function APropos() {
   return (
@@ -61,9 +72,26 @@ export default function APropos() {
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice"
           >
-            <circle cx="200" cy="100" r="300" fill="#E67E22" fillOpacity="0.05" />
-            <circle cx="1200" cy="700" r="250" fill="#E67E22" fillOpacity="0.05" />
-            <path d="M-200 400 Q400 200 720 400 T1600 400" stroke="#E67E22" strokeOpacity="0.03" strokeWidth="100" />
+            <circle
+              cx="200"
+              cy="100"
+              r="300"
+              fill="#E67E22"
+              fillOpacity="0.05"
+            />
+            <circle
+              cx="1200"
+              cy="700"
+              r="250"
+              fill="#E67E22"
+              fillOpacity="0.05"
+            />
+            <path
+              d="M-200 400 Q400 200 720 400 T1600 400"
+              stroke="#E67E22"
+              strokeOpacity="0.03"
+              strokeWidth="100"
+            />
             {/* Points lumineux */}
             <g opacity="0.8">
               {[...Array(20)].map((_, i) => (
@@ -85,11 +113,14 @@ export default function APropos() {
             <div className="w-full lg:w-3/5 text-center lg:text-left">
               <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#2C3E50] leading-tight mb-6">
                 Créons ensemble
-                <span className="block text-[#E67E22]">l'application qu'il vous faut</span>
+                <span className="block text-[#E67E22]">
+                  l'application qu'il vous faut
+                </span>
               </h1>
 
               <p className="text-[#374151] text-lg sm:text-xl mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Chez Lodgic, On vous accompagne pas à pas, de l'idée au lancement concret de votre application.
+                Chez Lodgic, On vous accompagne pas à pas, de l'idée au
+                lancement concret de votre application.
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
@@ -134,7 +165,7 @@ export default function APropos() {
         {/* Forme de transition vers le contenu suivant */}
         <div
           className="absolute bottom-0 left-0 w-full overflow-hidden"
-          style={{ height: '100px', transform: 'translateY(1px)' }}
+          style={{ height: "100px", transform: "translateY(1px)" }}
         >
           <svg
             className="absolute bottom-0 w-full h-full"
@@ -143,7 +174,10 @@ export default function APropos() {
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none"
           >
-            <path d="M0,50 C360,120 1080,0 1440,50 L1440,100 L0,100 Z" fill="#FAF3E0" />
+            <path
+              d="M0,50 C360,120 1080,0 1440,50 L1440,100 L0,100 Z"
+              fill="#FAF3E0"
+            />
           </svg>
         </div>
       </section>
@@ -152,65 +186,16 @@ export default function APropos() {
       <section className="py-20 bg-[#FAF3E0]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 md:mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-4">Qui sommes-nous ?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-4">
+              Qui sommes-nous ?
+            </h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-[#E67E22] to-[#E67E22]/70 mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-[#374151] max-w-3xl mx-auto leading-relaxed">
               Une équipe à taille humaine, proche de vous et de vos besoins.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
-            {}
-            <div className="bg-[#FFFFFF] rounded-xl shadow-lg p-8 border border-gray-200 hover:border-[#E67E22]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group">
-              <div className="flex items-center mb-6">
-                <div className="relative w-20 h-20 mr-6">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#E67E22]/80 to-[#E67E22]/60 group-hover:from-[#E67E22] group-hover:to-[#E67E22]/70 transition-all duration-300 shadow-md"></div>
-                  <div className="absolute inset-1 rounded-full bg-[#FAF3E0] flex items-center justify-center">
-                    <svg
-                      className="w-10 h-10 text-[#E67E22] group-hover:text-[#FFFFFF] transition-colors duration-300"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <circle cx="12" cy="8" r="5" />
-                      <path d="M20 21C20 16.5817 16.4183 13 12 13C7.58172 13 4 16.5817 4 21" />
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#111827] group-hover:text-[#E67E22] transition-colors">
-                    
-                  </h3>
-                  <p className="text-[#E67E22] font-medium">Relation client / Développeur Mobile</p>
-                </div>
-              </div>
-
-              <p className="text-[#374151] mb-6 leading-relaxed">
-                Yann est votre interlocuteur principal tout au long de votre projet. Il analyse vos besoins et objectifs
-                pour créer un cahier des charges précis qui servira de base à la réalisation.
-              </p>
-
-              <div className="space-y-3">
-                <div className="flex items-start">
-                  <FaCheckCircle className="h-5 w-5 text-[#E67E22] mt-0.5 flex-shrink-0 group-hover:text-[#2C3E50] transition-colors" />
-                  <span className="ml-3 text-[#374151] group-hover:text-[#111827] transition-colors">
-                    Analyse et compréhension de vos besoins
-                  </span>
-                </div>
-                <div className="flex items-start">
-                  <FaCheckCircle className="h-5 w-5 text-[#E67E22] mt-0.5 flex-shrink-0 group-hover:text-[#2C3E50] transition-colors" />
-                  <span className="ml-3 text-[#374151] group-hover:text-[#111827] transition-colors">
-                    Suivi et coordination du développement
-                  </span>
-                </div>
-                <div className="flex items-start">
-                  <FaCheckCircle className="h-5 w-5 text-[#E67E22] mt-0.5 flex-shrink-0 group-hover:text-[#2C3E50] transition-colors" />
-                  <span className="ml-3 text-[#374151] group-hover:text-[#111827] transition-colors">
-                    Accompagnement post-lancement et évolutions
-                  </span>
-                </div>
-              </div>
-            </div>
-
+          <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto mb-12">
             {/* Mathéo Katbie */}
             <div className="bg-[#FFFFFF] rounded-xl shadow-lg p-8 border border-gray-200 hover:border-[#E67E22]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group">
               <div className="flex items-center mb-6">
@@ -231,14 +216,17 @@ export default function APropos() {
                   <h3 className="text-2xl font-bold text-[#111827] group-hover:text-[#E67E22] transition-colors">
                     Mathéo Katbie
                   </h3>
-                  <p className="text-[#E67E22] font-medium">Développeur Full-Stack Web & Mobile</p>
+                  <p className="text-[#E67E22] font-medium">
+                    Développeur Full-Stack Web & Mobile
+                  </p>
                 </div>
               </div>
 
               <p className="text-[#374151] mb-6 leading-relaxed">
-                Mathéo donne vie à votre projet avec des solutions techniques robustes et intuitives. Son expertise
-                couvre l'ensemble du développement, du back-end au front-end, pour des applications performantes et
-                faciles à utiliser.
+                Mathéo donne vie à votre projet avec des solutions techniques
+                robustes et intuitives. Son expertise couvre l'ensemble du
+                développement, du back-end au front-end, pour des applications
+                performantes et faciles à utiliser.
               </p>
 
               <div className="space-y-3">
@@ -277,10 +265,12 @@ export default function APropos() {
                   Une équipe adaptable à vos besoins
                 </h3>
                 <p className="text-[#374151] leading-relaxed">
-                  Pour les projets d'envergure ou nécessitant des compétences spécifiques, nous collaborons avec notre
-                  réseau de développeurs spécialisés (UI/UX designers, experts en sécurité, développeurs mobiles natifs,
-                  etc.). Cette flexibilité nous permet de constituer l'équipe idéale pour votre projet, quelle que soit
-                  sa taille ou sa complexité.
+                  Pour les projets d'envergure ou nécessitant des compétences
+                  spécifiques, nous collaborons avec notre réseau de
+                  développeurs spécialisés (UI/UX designers, experts en
+                  sécurité, développeurs mobiles natifs, etc.). Cette
+                  flexibilité nous permet de constituer l'équipe idéale pour
+                  votre projet, quelle que soit sa taille ou sa complexité.
                 </p>
               </div>
             </div>
@@ -315,7 +305,8 @@ export default function APropos() {
               Envie d'en savoir plus sur notre façon de travailler ?
             </h2>
             <p className="text-[#FFFFFF]/90 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-              Découvrez nos services ou contactez-nous pour discuter de votre projet digital.
+              Découvrez nos services ou contactez-nous pour discuter de votre
+              projet digital.
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
               <Link
@@ -337,5 +328,5 @@ export default function APropos() {
         </div>
       </section>
     </>
-  )
+  );
 }

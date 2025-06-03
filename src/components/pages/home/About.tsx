@@ -49,11 +49,6 @@ const About = () => {
               </div>
             </div>
 
-            <p className="text-[#374151] mb-6 leading-relaxed text-sm sm:text-base">
-              <span className="md:hidden">Interlocuteur principal, il analyse vos besoins pour un cahier des charges précis.</span>
-              <span className="hidden md:inline">Yann est votre interlocuteur principal tout au long de votre projet. Il analyse vos besoins et objectifs pour créer un cahier des charges précis qui servira de base à la réalisation.</span>
-            </p>
-
             <div className="space-y-3">
               <div className="flex items-start">
                 <FaCheckCircle className="h-5 w-5 text-[#E67E22] mt-0.5 flex-shrink-0 group-hover:text-[#2C3E50] transition-colors" />
