@@ -25,7 +25,7 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
-          {/* Yann Rouquie */}
+          
           <div className="bg-[#FFFFFF] rounded-xl shadow-lg p-6 md:p-8 border border-gray-200 hover:border-[#E67E22]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group">
             <div className="flex flex-col sm:flex-row items-center text-center sm:text-left mb-6">
               <div className="relative w-20 h-20 mr-0 sm:mr-6 mb-4 sm:mb-0 flex-shrink-0">
@@ -43,7 +43,7 @@ const About = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-[#111827] group-hover:text-[#E67E22] transition-colors">
-                  Yann Rouquie
+                  
                 </h3>
                 <p className="text-[#E67E22] font-medium">Relation client / Développeur Mobile</p>
               </div>
