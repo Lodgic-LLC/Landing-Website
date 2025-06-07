@@ -7,7 +7,7 @@ import Hero from '@/components/pages/home/Hero'
 
 const Features = dynamic(() => import('@/components/pages/home/Features'))
 const Process = dynamic(() => import('@/components/pages/home/Process'))
-const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
+const About = dynamic(() => import('@/components/pages/home/About'))
 const ProjectCTA = dynamic(() => import('@/components/pages/home/ProjectCTA'))
 const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 
@@ -92,7 +92,7 @@ export default function Home() {
         <Hero />
         <Features />
         <Process />
-        <SuccessStories />
+        <About />
         <ProjectCTA />
         <FAQ />
       </main>

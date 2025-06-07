@@ -1,18 +1,22 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Metadata } from 'next'
-import { blogPosts } from '@/data/blog/posts'
-import { FaChevronRight } from 'react-icons/fa'
+import { blogPosts as rawBlogPosts } from '@/data/blog/posts'
+import type { BlogPost } from '@/types/blog'
+import { FaChevronRight, FaSearch, FaFilter, FaEnvelope, FaCalendarAlt } from 'react-icons/fa'
+import BlogFilters from '@/components/blog/BlogFilters'
+
+const blogPosts = JSON.parse(JSON.stringify(rawBlogPosts))
 
 export const metadata: Metadata = {
-  title: 'Blog | Actualités et Conseils Web par Lodgic',
+  title: 'Blog - Actualités et Conseils Web par Lodgic',
   description:
     'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.',
   alternates: {
     canonical: 'https://lodgic-dev.com/blog',
   },
   openGraph: {
-    title: 'Blog | Actualités et Conseils Web par Lodgic',
+    title: 'Blog - Actualités et Conseils Web par Lodgic',
     description:
       'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.',
     url: 'https://lodgic-dev.com/blog',
@@ -41,44 +45,44 @@ export const metadata: Metadata = {
   ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog | Actualités et Conseils Web par Lodgic',
+    title: 'Blog - Actualités et Conseils Web par Lodgic',
     description:
       'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques.',
     images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
   },
 }
 
-const BlogPage = () => {
-  // Création du schéma LD-JSON pour le blog
-  const blogSchemaData = {
-    '@context': 'https://schema.org',
-    '@type': 'Blog',
-    name: 'Blog Lodgic - Actualités et Conseils Web',
-    description:
-      'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.',
-    url: 'https://lodgic-dev.com/blog',
-    publisher: {
-      '@type': 'Organization',
-      name: 'Lodgic',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
-      },
+// Création du schéma LD-JSON pour le blog
+const blogSchemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Blog Lodgic - Actualités et Conseils Web',
+  description:
+    'Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.',
+  url: 'https://lodgic-dev.com/blog',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Lodgic',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
     },
-    blogPost: blogPosts.map((post) => ({
-      '@type': 'BlogPosting',
-      headline: post.title,
-      description: post.summary,
-      datePublished: new Date(post.date).toISOString(),
-      author: {
-        '@type': 'Person',
-        name: post.author,
-      },
-      image: post.imageUrl,
-      url: `https://lodgic-dev.com/blog/${post.slug}`,
-    })),
-  }
+  },
+  blogPost: (blogPosts as BlogPost[]).map((post: BlogPost) => ({
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.summary,
+    datePublished: new Date(post.date).toISOString(),
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    image: post.imageUrl,
+    url: `https://lodgic-dev.com/blog/${post.slug}`,
+  })),
+}
 
+const BlogPage = () => {
   return (
     <>
       <script
@@ -87,10 +91,10 @@ const BlogPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchemaData) }}
       />
 
-      {/* Hero Section */}
-      <section className="w-full bg-gradient-to-br from-blue-600 to-blue-800 pt-24 md:pt-32 overflow-hidden relative">
+      {/* Hero Section - Amélioré */}
+      <section className="w-full bg-[#FFFFFF] pt-28 md:pt-36 pb-16 md:pb-20 overflow-hidden relative">
         {/* Formes abstraites en arrière-plan */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-30">
+        <div className="absolute inset-0 overflow-hidden z-0 opacity-30">
           <svg
             className="absolute top-0 left-0 w-full h-full"
             viewBox="0 0 1440 800"
@@ -98,19 +102,17 @@ const BlogPage = () => {
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice"
           >
-            <circle cx="720" cy="350" r="400" fill="white" fillOpacity="0.1" />
-            <circle cx="1100" cy="150" r="200" fill="white" fillOpacity="0.1" />
-            <circle cx="300" cy="650" r="250" fill="white" fillOpacity="0.1" />
-
-            {/* Points lumineux */}
-            <g opacity="0.5">
-              {[...Array(20)].map((_, i) => (
+            <circle cx="200" cy="100" r="300" fill="#E67E22" fillOpacity="0.05" />
+            <circle cx="1200" cy="700" r="250" fill="#E67E22" fillOpacity="0.05" />
+            <path d="M-200 400 Q400 200 720 400 T1600 400" stroke="#E67E22" strokeOpacity="0.03" strokeWidth="100" />
+            <g opacity="0.8">
+              {[...Array(25)].map((_, i) => (
                 <circle
-                  key={i}
+                  key={`hero-dot-${i}`}
                   cx={Math.random() * 1440}
                   cy={Math.random() * 800}
                   r={Math.random() * 2 + 1}
-                  fill="white"
+                  fill="#2C3E50"
                 />
               ))}
             </g>
@@ -118,204 +120,133 @@ const BlogPage = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pb-20 md:pb-24">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
             {/* Contenu gauche */}
-            <div className="w-full lg:w-1/2 pt-8 lg:pt-0">
-              <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-                Notre{' '}
-                <span className="bg-gradient-to-r from-blue-200 to-white text-transparent bg-clip-text">
-                  Blog
-                </span>{' '}
-                Tech
+            <div className="w-full lg:w-3/5 text-center lg:text-left">
+              <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#2C3E50] leading-tight mb-6">
+                Nos <span className="text-[#E67E22]">Conseils</span>
+                <span className="block text-4xl sm:text-5xl lg:text-5xl mt-1 sm:mt-2">
+                  pour Vos Projets Web & Mobile
+                </span>
               </h1>
-
-              <p className="text-white/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed">
-                Explorez nos articles sur le développement web, le design, le SEO et les dernières tendances technologiques pour améliorer votre présence en ligne.
+              <p className="text-[#374151] text-lg sm:text-xl mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Développement, design, SEO : découvrez nos articles pour optimiser votre présence en ligne et la
+                performance de vos applications.
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Link
                   href="/contact"
-                  className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center"
+                  className="bg-[#E67E22] text-[#FFFFFF] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#E67E22]/90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center text-lg"
                 >
-                  <svg
-                    className="w-5 h-5 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    ></path>
-                  </svg>
+                  <FaEnvelope className="w-5 h-5 mr-2.5" />
                   Contactez-nous
                 </Link>
                 <Link
                   href="/services"
-                  className="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all flex items-center group"
+                  className="border-2 border-[#2C3E50] text-[#2C3E50] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#2C3E50]/10 hover:border-[#2C3E50] transition-all flex items-center group text-lg"
                 >
-                  Découvrir nos services
-                  <svg
-                    className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
+                  Nos Services
+                  <FaChevronRight className="w-4 h-4 ml-2.5 transform group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
 
-            {/* Image à droite - Hidden on mobile, visible on tablet and up */}
-            <div className="w-full lg:w-1/2 mt-10 lg:mt-0 hidden sm:block">
-              <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px]">
-                <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+            {/* Image à droite */}
+            <div className="w-full lg:w-2/5 mt-10 lg:mt-0 hidden lg:block">
+              <div className="relative h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
+                <div className="relative z-10 w-full h-full overflow-hidden rounded-2xl shadow-xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1470"
-                    alt="Blog et actualités technologiques"
+                    src="/svg/blog.svg"
+                    alt="Illustration du blog Lodgic avec des idées et des articles"
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="w-full h-full object-contain p-4 sm:p-6 md:p-8"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
                 </div>
-
-                {/* Élément décoratif derrière l'image */}
-                <div className="absolute -bottom-6 -right-6 w-full h-full rounded-2xl border-2 border-blue-300/20 -z-10"></div>
-
-                {/* Points flottants autour de l'image */}
-                <div className="absolute -top-4 -left-4 w-8 h-8 bg-blue-400/30 rounded-full blur-sm"></div>
-                <div className="absolute top-1/2 -right-4 w-6 h-6 bg-white/30 rounded-full blur-sm"></div>
-                <div className="absolute -bottom-2 left-1/4 w-4 h-4 bg-blue-300/40 rounded-full blur-sm"></div>
+                <div className="absolute -top-5 -left-5 w-16 h-16 bg-[#E67E22]/20 rounded-full blur-md animate-pulse"></div>
+                <div className="absolute -bottom-5 -right-5 w-20 h-20 border-4 border-[#E67E22]/30 rounded-full animate-ping-slow"></div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Forme de transition vers le contenu suivant */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
+        <div
+          className="absolute bottom-0 left-0 w-full overflow-hidden"
+          style={{ height: '100px', transform: 'translateY(1px)' }}
+        >
           <svg
             className="absolute bottom-0 w-full h-full"
-            viewBox="0 0 1440 80"
+            viewBox="0 0 1440 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none"
           >
-            <path d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z" fill="white" />
+            <path d="M0,50 C360,120 1080,0 1440,50 L1440,100 L0,100 Z" fill="#FAF3E0" />
           </svg>
         </div>
       </section>
 
-      {/* Articles Grid Section */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos derniers articles</h2>
-            <div className="w-20 h-1.5 bg-blue-600 mx-auto mb-6 rounded-full"></div>
-            <p className="text-lg text-gray-600">
-              Découvrez nos réflexions et conseils sur les dernières tendances technologiques et les meilleures pratiques de développement.
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:gap-10 lg:gap-12 md:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post, index) => (
-              <article
-                key={post.slug}
-                className={`group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
-              >
-                <Link href={`/blog/${post.slug}`} className="block overflow-hidden relative h-56 md:h-64">
-                  <Image
-                    src={post.imageUrl}
-                    alt={post.imageAlt}
-                    width={500}
-                    height={300}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
-                    loading={index < 3 ? "eager" : "lazy"}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
-
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <p className="text-white/90 text-sm mb-2">
-                      {new Date(post.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
-                    </p>
-                    <h2 className="text-xl font-semibold text-white group-hover:text-blue-100 transition-colors duration-200 line-clamp-2">
-                      {post.title}
-                    </h2>
-                  </div>
-                </Link>
-
-                <div className="p-5 md:p-6 flex flex-col flex-grow bg-gradient-to-br from-white to-gray-50">
-                  <p className="text-gray-600 mb-4 flex-grow line-clamp-3">{post.summary}</p>
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                    <span className="text-sm text-gray-500 flex items-center">
-                      <svg className="w-4 h-4 mr-1 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                      </svg>
-                      {post.author}
-                    </span>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="text-blue-600 hover:text-blue-800 font-medium text-sm inline-flex items-center group/link"
-                    >
-                      Lire la suite
-                      <span className="ml-1 transition-transform duration-200 group-hover/link:translate-x-1">&rarr;</span>
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
+      {/* Filtres et Articles Grid Section */}
+      <section className="bg-[#FAF3E0]">
+        <BlogFilters blogPosts={blogPosts} />
       </section>
 
-      {/* Section CTA */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
-        {/* Éléments décoratifs */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          {/* Points lumineux */}
-          <div className="absolute top-1/4 right-1/4 w-3 h-3 bg-white rounded-full opacity-20"></div>
-          <div className="absolute top-3/4 left-1/3 w-2 h-2 bg-white rounded-full opacity-30"></div>
-          <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-white rounded-full opacity-10"></div>
-          <div className="absolute bottom-1/4 right-1/5 w-3 h-3 bg-white rounded-full opacity-20"></div>
-
-          {/* Cercles abstraits */}
-          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full border border-white/10"></div>
-          <div className="absolute -bottom-40 -left-20 w-80 h-80 rounded-full border border-white/10"></div>
+      {/* CTA Section - Amélioré */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-[#2C3E50] to-[#2C3E50]/80 relative overflow-hidden">
+        {/* Éléments décoratifs (style services) */}
+        <div className="absolute inset-0 overflow-hidden z-0">
+          <svg
+            className="absolute top-0 left-0 w-full h-full opacity-10"
+            viewBox="0 0 1440 500"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <circle cx="720" cy="250" r="300" fill="#FFFFFF" />
+            <circle cx="100" cy="100" r="150" fill="#FFFFFF" />
+            <circle cx="1300" cy="400" r="200" fill="#FFFFFF" />
+          </svg>
+          {/* Points lumineux (style services) */}
+          <div className="absolute top-1/4 right-1/4 w-4 h-4 bg-[#FFFFFF]/30 rounded-full animate-pulse"></div>
+          <div className="absolute top-3/4 left-1/3 w-3 h-3 bg-[#FFFFFF]/40 rounded-full animate-pulse delay-500"></div>
+          <div className="absolute top-1/3 left-1/4 w-5 h-5 bg-[#FFFFFF]/20 rounded-full animate-pulse delay-1000"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Vous avez une question ou un projet ?
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
+          {' '}
+          {/* max-w-4xl comme services CTA */}
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#FFFFFF] mb-6 leading-tight">
+              {' '}
+              {/* Style titre comme services CTA */}
+              Une Question, un Projet ? Parlons-en !
             </h2>
-            <p className="text-white/90 text-lg mb-8">
-              Notre équipe est prête à vous accompagner dans la réalisation de vos projets web et mobiles.
+            <p className="text-[#FFFFFF]/90 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+              {' '}
+              {/* Style paragraphe comme services CTA */}
+              Notre équipe est à votre écoute pour discuter de vos idées et transformer votre vision en réalité
+              digitale.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
+              {' '}
+              {/* Style boutons comme services CTA */}
               <Link
                 href="/rendez-vous"
-                className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="bg-[#FFFFFF] text-[#2C3E50] px-8 py-4 rounded-lg font-semibold hover:bg-[#FAF3E0] transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center text-lg w-full sm:w-auto justify-center"
               >
-                Prendre rendez-vous
-                <FaChevronRight className="inline-block ml-2" />
+                <FaCalendarAlt className="w-5 h-5 mr-2.5" /> {/* Icône FaCalendarAlt */}
+                Prendre Rendez-vous
               </Link>
               <Link
                 href="/contact"
-                className="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all"
+                className="border-2 border-[#FFFFFF]/80 text-[#FFFFFF] px-8 py-4 rounded-lg font-semibold hover:bg-[#FFFFFF]/10 hover:border-[#FFFFFF] transition-all flex items-center text-lg w-full sm:w-auto justify-center group"
               >
-                Nous contacter
+                <FaEnvelope className="w-5 h-5 mr-2.5" /> {/* Icône FaEnvelope déjà importée normalement */}
+                Nous Contacter
+                <FaChevronRight className="w-4 h-4 ml-2.5 transform group-hover:translate-x-1 transition-transform hidden sm:inline-block" />
               </Link>
             </div>
           </div>

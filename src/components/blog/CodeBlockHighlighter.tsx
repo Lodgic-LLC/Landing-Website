@@ -1,37 +1,39 @@
-'use client'
+"use client";
 
-import React, { useEffect } from 'react'
-import Prism from 'prismjs'
+import React, { useEffect } from "react";
+import Prism from "prismjs";
 
 // Import languages you want to support
-import 'prismjs/components/prism-javascript'
-import 'prismjs/components/prism-typescript'
-import 'prismjs/components/prism-jsx'
-import 'prismjs/components/prism-tsx'
-import 'prismjs/components/prism-css'
-import 'prismjs/components/prism-json'
-import 'prismjs/components/prism-bash'
-import 'prismjs/components/prism-markdown'
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-tsx";
+import "prismjs/components/prism-css";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-markdown";
 // Add more languages as needed: import 'prismjs/components/prism-python';
 
 interface CodeBlockHighlighterProps {
-    htmlContent: string
+  htmlContent: string;
 }
 
 const CodeBlockHighlighter: React.FC<CodeBlockHighlighterProps> = ({
-    htmlContent,
+  htmlContent,
 }) => {
-    useEffect(() => {
-        // Check if Prism is available (it might not be in SSR initial render pass)
-        if (typeof window !== 'undefined') {
-            Prism.highlightAll()
-        }
-    }, [htmlContent]) // Re-run highlighting if content changes
+  useEffect(() => {
+    // Check if Prism is available (it might not be in SSR initial render pass)
+    if (typeof window !== "undefined") {
+      Prism.highlightAll();
+    }
+  }, [htmlContent]); // Re-run highlighting if content changes
 
-    return (
-        <div
-            className="prose prose-lg lg:prose-xl max-w-none mx-auto
-                 prose-headings:scroll-mt-24 prose-headings:text-gray-800 prose-headings:font-semibold
+  return (
+    <div
+      className="prose prose-lg lg:prose-xl max-w-none mx-auto
+                 prose-headings:scroll-mt-24 prose-headings:text-orange-600 prose-headings:font-bold
+                 prose-h2:text-3xl prose-h2:lg:text-4xl prose-h2:font-extrabold prose-h2:mt-10 prose-h2:mb-4
+                 prose-h3:text-2xl prose-h3:lg:text-3xl prose-h3:font-bold prose-h3:mt-8 prose-h3:mb-3
                  prose-p:text-gray-700 prose-p:leading-relaxed
                  prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-a:transition-colors
                  prose-strong:text-gray-800
@@ -41,9 +43,9 @@ const CodeBlockHighlighter: React.FC<CodeBlockHighlighterProps> = ({
                  /* Removed prose-pre and prose-code styles as Prism theme will handle them */
                  prose-code:before:content-none prose-code:after:content-none /* Keep removing quotes from inline code */
                 "
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
-    )
-}
+      dangerouslySetInnerHTML={{ __html: htmlContent }}
+    />
+  );
+};
 
-export default CodeBlockHighlighter 
+export default CodeBlockHighlighter;

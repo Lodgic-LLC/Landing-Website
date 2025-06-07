@@ -2,7 +2,7 @@ import RendezVousContent from '@/components/pages/rendez-vous/RendezVousContent'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Lodgic - Planifier un Rendez-vous',
+  title: 'Planifier un Rendez-vous - Lodgic',
   description:
     'Prenez rendez-vous avec notre équipe pour discuter de vos besoins numériques et obtenir des conseils personnalisés pour votre projet mobile ou web.',
   alternates: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     'rendez-vous en ligne',
   ],
   openGraph: {
-    title: 'Lodgic - Planifier un Rendez-vous',
+    title: 'Planifier un Rendez-vous - Lodgic',
     description:
       "Planifiez une consultation gratuite avec notre équipe pour discuter de votre projet numérique et obtenir des conseils d'experts sur mesure.",
     url: 'https://lodgic-dev.com/rendez-vous',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lodgic - Planifier un Rendez-vous',
+    title: 'Planifier un Rendez-vous - Lodgic',
     description:
       "Planifiez une consultation gratuite avec notre équipe pour discuter de votre projet numérique et obtenir des conseils d'experts sur mesure.",
     images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],

@@ -2,8 +2,262 @@ import { BlogPost } from '@/types/blog' // Assuming you have a type definition f
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'optimiser-seo-nextjs-2024',
-    title: 'Optimiser le SEO de votre site Next.js en 2024 : Le Guide Ultime',
+    slug: 'jamstack-revolution-web',
+    title: 'JAMstack : La Révolution du Développement Web Moderne',
+    date: '2025-05-05',
+    author: "L'équipe Lodgic",
+    summary:
+      "Découvrez comment l'architecture JAMstack transforme le développement web avec des sites plus rapides, plus sécurisés et plus évolutifs grâce à JavaScript, APIs et Markup prérendu.",
+    imageUrl:
+      'https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600',
+    imageAlt: "Code et interface de développement web moderne sur un écran d'ordinateur",
+    category: 'Développement',
+    content: `
+      <p class="lead text-lg text-gray-600 mb-8">Le paysage du développement web évolue constamment, et ces dernières années, une approche a particulièrement gagné en popularité : le JAMstack. Bien plus qu'une simple technologie, le JAMstack représente un changement fondamental dans la façon de concevoir, développer et déployer des sites web modernes. Dans cet article, nous explorerons ce qu'est le JAMstack, pourquoi il suscite tant d'enthousiasme, et comment l'adopter dans vos projets.</p>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Qu'est-ce que le JAMstack ?</h2>
+      <p>JAMstack est un acronyme qui signifie <strong>J</strong>avaScript, <strong>A</strong>PIs et <strong>M</strong>arkup. Inventé par Mathias Biilmann, CEO de Netlify, ce terme décrit une architecture moderne pour créer des sites web et applications avec :</p>
+      
+      <ul>
+        <li><strong>JavaScript</strong> qui gère toute la programmation dynamique côté client</li>
+        <li><strong>APIs</strong> réutilisables accessibles via HTTPS avec JavaScript pour les fonctionnalités backend</li>
+        <li><strong>Markup</strong> (HTML) prérendu, généralement avec un générateur de site statique</li>
+      </ul>
+      
+      <p>Contrairement aux sites traditionnels qui reposent sur un serveur générant des pages à la volée pour chaque requête, les sites JAMstack sont pré-construits et servis directement depuis un CDN (Content Delivery Network), sans dépendance à un serveur d'application.</p>
+
+      <figure class="my-10 text-center">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1000" alt="Code sur un écran avec symboles JavaScript" class="mx-auto rounded-lg shadow-md border border-gray-100" />
+        <figcaption class="mt-2 text-sm text-gray-500">Le JAMstack sépare clairement le frontend du backend, permettant de nouveaux workflows de développement.</figcaption>
+      </figure>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Les Avantages du JAMstack</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6 my-8">
+        <div class="bg-blue-50 p-5 rounded-lg">
+          <h3 class="font-bold text-blue-800">Performance Exceptionnelle</h3>
+          <p>Sans temps de génération côté serveur, les sites JAMstack sont ultra-rapides. Avec le prérendu et les CDN, le contenu est servi au plus près des utilisateurs, réduisant considérablement les temps de chargement.</p>
+        </div>
+        
+        <div class="bg-green-50 p-5 rounded-lg">
+          <h3 class="font-bold text-green-800">Sécurité Renforcée</h3>
+          <p>Sans serveur d'application traditionnel, la surface d'attaque est fortement réduite. Plus de vulnérabilités PHP ou WordPress à exploiter. Les APIs peuvent être isolées et sécurisées individuellement.</p>
+        </div>
+        
+        <div class="bg-amber-50 p-5 rounded-lg">
+          <h3 class="font-bold text-amber-800">Évolutivité Sans Effort</h3>
+          <p>Les sites JAMstack se déploient entièrement sur des CDN, offrant une évolutivité instantanée. Pas besoin de configurer des équilibreurs de charge ou de redimensionner des serveurs pour gérer des pics de trafic.</p>
+        </div>
+        
+        <div class="bg-purple-50 p-5 rounded-lg">
+          <h3 class="font-bold text-purple-800">Expérience Développeur Améliorée</h3>
+          <p>Les développeurs peuvent se concentrer sur des composants fonctionnels spécifiques. Le déploiement continu, le versionnement Git et les environnements de prévisualisation facilitent la collaboration.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Les Technologies Clés du JAMstack</h2>
+      
+      <h3>1. Générateurs de Sites Statiques (SSG)</h3>
+      <p>Les SSG sont au cœur de l'écosystème JAMstack. Ils prennent vos données et templates et génèrent un site HTML/CSS/JS complet lors du build. Les plus populaires incluent :</p>
+      <ul>
+        <li><strong>Next.js</strong> - Particulièrement puissant avec React, offrant des fonctionnalités hybrides (SSG, SSR, ISR)</li>
+        <li><strong>Gatsby</strong> - Axé sur React avec un riche écosystème de plugins</li>
+        <li><strong>Nuxt.js</strong> - L'équivalent pour Vue.js</li>
+        <li><strong>Astro</strong> - Nouvelle approche zero-JS par défaut</li>
+        <li><strong>Hugo</strong> - Réputé pour sa vitesse exceptionnelle de génération</li>
+        <li><strong>11ty</strong> - Simple et flexible, ne nécessitant pas de framework JS</li>
+      </ul>
+
+      <h3>2. CMS Headless</h3>
+      <p>Ces CMS fournissent une interface conviviale pour la gestion de contenu tout en livrant les données via API, sans gérer le frontend :</p>
+      <ul>
+        <li><strong>Contentful</strong> - CMS headless d'entreprise avec de puissantes capacités</li>
+        <li><strong>Sanity</strong> - Très personnalisable, avec un studio d'édition React</li>
+        <li><strong>Strapi</strong> - Solution open-source avec une interface d'administration personnalisable</li>
+        <li><strong>Ghost</strong> - Idéal pour les sites axés sur le blogging</li>
+        <li><strong>TinaCMS</strong> - Édition de contenu visuelle dans le contexte du site</li>
+      </ul>
+
+      <h3>3. Services d'API</h3>
+      <p>Les fonctionnalités dynamiques dans JAMstack sont gérées par des APIs spécialisées :</p>
+      <ul>
+        <li><strong>Fonctions Serverless</strong> - AWS Lambda, Netlify Functions, Vercel Functions, etc.</li>
+        <li><strong>Services d'Authentification</strong> - Auth0, Firebase Auth, Supabase Auth, Clerk</li>
+        <li><strong>Gestion de Paiement</strong> - Stripe, PayPal</li>
+        <li><strong>Recherche</strong> - Algolia, Typesense, Elasticsearch</li>
+        <li><strong>Commentaires et Forums</strong> - Disqus, GraphComment, selbst-hosted avec Serverless</li>
+      </ul>
+
+      <h3>4. Plateformes de Déploiement JAMstack</h3>
+      <p>Ces plateformes simplifient considérablement le déploiement et l'hébergement :</p>
+      <ul>
+        <li><strong>Netlify</strong> - Pionnier du JAMstack avec un écosystème complet</li>
+        <li><strong>Vercel</strong> - Excellente intégration avec Next.js et l'écosystème React</li>
+        <li><strong>GitHub Pages</strong> - Solution simple et gratuite pour projets statiques</li>
+        <li><strong>Cloudflare Pages</strong> - Intégration profonde avec le réseau Cloudflare</li>
+        <li><strong>AWS Amplify</strong> - Intégration avec l'écosystème AWS</li>
+      </ul>
+
+      <figure class="my-10 text-center">
+        <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1000" alt="Écran d'ordinateur montrant une interface de développement web moderne" class="mx-auto rounded-lg shadow-md border border-gray-100" />
+        <figcaption class="mt-2 text-sm text-gray-500">L'écosystème JAMstack continue de s'enrichir avec de nouveaux outils et services.</figcaption>
+      </figure>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Mettre en Place un Projet JAMstack</h2>
+      
+      <p>Voici les étapes essentielles pour démarrer un projet JAMstack :</p>
+
+      <h3>1. Choisir la Stack Technique</h3>
+      <pre><code class="language-bash"># Exemple de création d'un projet Next.js avec TypeScript
+npx create-next-app@latest my-jamstack-site --typescript
+
+# Ou avec Gatsby
+npm init gatsby</code></pre>
+
+      <h3>2. Configurer les Sources de Données</h3>
+      <p>Vous pouvez utiliser un CMS headless ou des fichiers locaux (Markdown, MDX, etc.) :</p>
+      <pre><code class="language-javascript">// Exemple avec Next.js et fichiers Markdown locaux
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+export function getAllPosts() {
+  const postsDirectory = path.join(process.cwd(), 'posts');
+  const filenames = fs.readdirSync(postsDirectory);
+  
+  return filenames.map(filename => {
+    const slug = filename.replace(/\.md$/, '');
+    const fullPath = path.join(postsDirectory, filename);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+    
+    return {
+      slug,
+      frontmatter: data,
+      content
+    };
+  });
+}</code></pre>
+
+      <h3>3. Implémenter la Génération Statique</h3>
+      <pre><code class="language-javascript">// Exemple avec Next.js
+// pages/blog/[slug].js
+import { getAllPosts, getPostBySlug } from '../../lib/api';
+import markdownToHtml from '../../lib/markdownToHtml';
+
+export default function Post({ post }) {
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    </article>
+  );
+}
+
+export async function getStaticProps({ params }) {
+  const post = getPostBySlug(params.slug);
+  const content = await markdownToHtml(post.content);
+  
+  return {
+    props: {
+      post: {
+        ...post,
+        content
+      }
+    }
+  };
+}
+
+export async function getStaticPaths() {
+  const posts = getAllPosts();
+  
+  return {
+    paths: posts.map(post => {
+      return {
+        params: {
+          slug: post.slug
+        }
+      };
+    }),
+    fallback: false
+  };
+}</code></pre>
+
+      <h3>4. Intégrer des Fonctionnalités Dynamiques via API</h3>
+      <pre><code class="language-javascript">// Exemple de fonction serverless avec Netlify Functions
+// netlify/functions/newsletter-signup.js
+exports.handler = async function(event, context) {
+  // Seulement accepter les requêtes POST
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: "Method Not Allowed" };
+  }
+  
+  try {
+    const { email } = JSON.parse(event.body);
+    
+    // Intégration avec un service comme Mailchimp, SendGrid, etc.
+    // const response = await addSubscriber(email);
+    
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: "Inscription réussie!" })
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: "Erreur lors de l'inscription", error: error.message })
+    };
+  }
+};</code></pre>
+
+      <h3>5. Déployer sur une Plateforme JAMstack</h3>
+      <pre><code class="language-bash"># Exemple avec Netlify CLI
+netlify deploy --prod</code></pre>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Cas d'Usage Idéaux pour JAMstack</h2>
+      
+      <p>Le JAMstack excelle particulièrement dans ces scénarios :</p>
+      
+      <ul>
+        <li><strong>Sites Vitrines et Corporate</strong> - Rapides, sécurisés et peu coûteux à maintenir</li>
+        <li><strong>Blogs et Sites de Documentation</strong> - Parfait avec les générateurs de sites statiques</li>
+        <li><strong>Portfolios et Sites Personnels</strong> - Faciles à déployer et économiques</li>
+        <li><strong>E-commerce (taille petite à moyenne)</strong> - Avec Snipcart, Commerce.js, ou solutions headless</li>
+        <li><strong>Applications Web avec Contenu Dynamique Limité</strong> - Utilisant des APIs pour les parties dynamiques</li>
+      </ul>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Limites et Considérations</h2>
+      
+      <p>Bien que puissant, le JAMstack n'est pas adapté à tous les scénarios :</p>
+      
+      <ul>
+        <li><strong>Contenu Très Dynamique</strong> - Si votre contenu change constamment (secondes/minutes), le SSG peut devenir contraignant</li>
+        <li><strong>Applications Complexes avec État Global</strong> - Bien que possible, certaines applications riches peuvent être plus complexes à implémenter</li>
+        <li><strong>Temps de Build</strong> - Les sites très volumineux peuvent avoir des temps de build longs, bien que des solutions comme l'ISR de Next.js résolvent ce problème</li>
+        <li><strong>Dépendance aux APIs Tierces</strong> - Une panne d'un service tiers peut affecter certaines fonctionnalités</li>
+      </ul>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">L'Avenir du JAMstack</h2>
+      
+      <p>Le futur du JAMstack semble brillant, avec plusieurs tendances émergentes :</p>
+      
+      <ul>
+        <li><strong>Hydration Partielle</strong> - Des frameworks comme Astro et Qwik permettent de n'envoyer le JavaScript que là où c'est nécessaire</li>
+        <li><strong>Solutions Hybrides</strong> - Combinaison de SSG, SSR et rendu côté client selon les besoins spécifiques de chaque page</li>
+        <li><strong>Edge Computing</strong> - Exécution de code dynamique au plus près des utilisateurs sur les CDN</li>
+        <li><strong>DX Améliorée</strong> - Outils plus intuitifs et workflows simplifiés pour les développeurs</li>
+      </ul>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Conclusion</h2>
+      
+      <p>Le JAMstack représente bien plus qu'une tendance technologique passagère. C'est une réponse aux défis modernes du web : performance, sécurité, évolutivité et expérience développeur. Son adoption continuera probablement à croître à mesure que l'écosystème mûrit et que les outils deviennent plus sophistiqués.</p>
+      
+      <p>Si vous n'avez pas encore exploré cette approche, c'est le moment idéal pour commencer un projet JAMstack et découvrir par vous-même les avantages qu'il peut offrir. Que vous soyez une startup cherchant à lancer rapidement, une entreprise visant à améliorer la performance de votre présence web, ou un développeur cherchant à enrichir vos compétences, le JAMstack mérite certainement votre attention.</p>
+    `,
+  },
+  {
+    slug: 'optimiser-seo-nextjs-2025',
+    title: 'Optimiser le SEO de votre site Next.js en 2025 : Le Guide Ultime',
     date: '2025-04-26',
     author: "L'équipe Lodgic",
     summary:
@@ -11,10 +265,11 @@ export const blogPosts: BlogPost[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: 'Tableau de bord analytique montrant la croissance SEO',
+    category: 'SEO',
     content: `
-      <p class="lead text-lg text-gray-600 mb-8">Dans le paysage numérique concurrentiel de 2024, avoir un site web performant ne suffit plus. La visibilité est reine, et le SEO (Search Engine Optimization) est la clé qui ouvre les portes des premières pages de Google. Pour les développeurs et entreprises utilisant Next.js, le framework React de référence pour la production, optimiser le référencement naturel est non seulement possible, mais fortement encouragé par les capacités intrinsèques du framework.</p>
+      <p class="lead text-lg text-gray-600 mb-8">Dans le paysage numérique concurrentiel de 2025, avoir un site web performant ne suffit plus. La visibilité est reine, et le SEO (Search Engine Optimization) est la clé qui ouvre les portes des premières pages de Google. Pour les développeurs et entreprises utilisant Next.js, le framework React de référence pour la production, optimiser le référencement naturel est non seulement possible, mais fortement encouragé par les capacités intrinsèques du framework.</p>
 
-      <h2>Pourquoi le SEO est Crucial pour les Sites Next.js ?</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Pourquoi le SEO est Crucial pour les Sites Next.js ?</h2>
       <p>Next.js brille par ses fonctionnalités orientées performance et expérience utilisateur, telles que le rendu côté serveur (SSR), la génération de sites statiques (SSG), le pré-rendu, et l'optimisation automatique des images via <code>next/image</code>. Ces éléments sont des atouts majeurs pour le SEO :</p>
       <ul>
         <li><strong>Temps de chargement réduits :</strong> La vitesse est un facteur de classement critique. Next.js facilite la création de sites ultra-rapides.</li>
@@ -23,7 +278,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
       <p>Cependant, ces avantages ne sont pas automatiques. Une configuration réfléchie et une stratégie SEO continue sont essentielles pour exploiter pleinement le potentiel de Next.js.</p>
 
-      <h2>Étape 1 : Les Fondations Techniques Indispensables</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Étape 1 : Les Fondations Techniques Indispensables</h2>
       <p>Avant de plonger dans les optimisations avancées, assurons-nous que les bases sont solides.</p>
 
       <h3>Balises Meta Essentielles</h3>
@@ -92,7 +347,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 }</code></pre>
 
-      <h2>Étape 2 : Tirer Parti du SSR et du SSG</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Étape 2 : Tirer Parti du SSR et du SSG</h2>
       <p>Le choix entre SSR et SSG dépend de la nature de votre contenu. Les deux sont excellents pour le SEO lorsqu'ils sont bien utilisés.</p>
       <ul>
         <li><strong>SSG (Static Site Generation) :</strong> Idéal pour les pages dont le contenu change peu fréquemment (pages marketing, articles de blog, documentation). Le HTML est généré au moment du build, offrant des performances maximales et une indexation facile. Utilisez <code>generateStaticParams</code> pour les routes dynamiques.</li>
@@ -100,7 +355,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       </ul>
       <p>Avec l'App Router, Next.js utilise par défaut les Server Components, qui sont rendus côté serveur (similaire au SSG ou SSR selon la stratégie de cache). Vous pouvez utiliser les Client Components (<code>'use client'</code>) pour l'interactivité, mais assurez-vous que le contenu crucial pour le SEO est rendu côté serveur.</p>
 
-      <h2>Étape 3 : Optimisation Avancée des Images</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Étape 3 : Optimisation Avancée des Images</h2>
       <p>Les images lourdes sont un frein majeur à la vitesse de chargement. Le composant <code>next/image</code> est votre meilleur allié :</p>
       <ul>
         <li><strong>Optimisation automatique :</strong> Redimensionnement, optimisation du format (WebP, AVIF) et chargement différé (lazy loading) par défaut.</li>
@@ -120,7 +375,7 @@ function MonComposant() {
         <figcaption class="mt-2 text-sm text-gray-500">L'optimisation passe par un code et une configuration soignés.</figcaption>
       </figure>
 
-      <h2>Étape 4 : Données Structurées (Schema.org)</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Étape 4 : Données Structurées (Schema.org)</h2>
       <p>Les données structurées aident Google à comprendre le contexte de votre contenu et peuvent générer des "Rich Snippets" (résultats enrichis) dans les SERPs, augmentant ainsi votre taux de clic.</p>
       <p>Utilisez le format JSON-LD, intégré dans une balise <code>&lt;script type="application/ld+json"&gt;</code>. Pour un article de blog, par exemple :</p>
       <pre><code class="language-javascript">// Dans generateMetadata ou directement dans le composant de page (avec Head ou script)
@@ -163,16 +418,16 @@ return {
 }</code></pre>
       <p>Adaptez le type (<code>@type</code>) et les propriétés en fonction du contenu de chaque page (Produit, Événement, FAQ, etc.). Utilisez l'outil de test des résultats enrichis de Google pour valider votre balisage.</p>
 
-      <h2>Étape 5 : Performance et Core Web Vitals</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Étape 5 : Performance et Core Web Vitals</h2>
       <p>Google utilise les Core Web Vitals (CWV) comme signaux de classement. Next.js aide grandement, mais surveillez ces métriques :</p>
       <ul>
         <li><strong>Largest Contentful Paint (LCP) :</strong> Temps de chargement du plus gros élément visible. Optimisez les images (<code>next/image</code>), le CSS critique, et réduisez le temps de réponse serveur.</li>
-        <li><strong>First Input Delay (FID) / Interaction to Next Paint (INP) :</strong> Réactivité de la page aux interactions utilisateur. Limitez le JavaScript lourd sur le thread principal, utilisez les Web Workers, et optimisez les Client Components. (INP remplace FID en mars 2024).</li>
+        <li><strong>First Input Delay (FID) / Interaction to Next Paint (INP) :</strong> Réactivité de la page aux interactions utilisateur. Limitez le JavaScript lourd sur le thread principal, utilisez les Web Workers, et optimisez les Client Components. (INP remplace FID en mars 2025).</li>
         <li><strong>Cumulative Layout Shift (CLS) :</strong> Stabilité visuelle. Spécifiez les dimensions des images et vidéos, réservez de l'espace pour les publicités ou le contenu dynamique.</li>
       </ul>
       <p>Utilisez des outils comme Google PageSpeed Insights, Lighthouse (dans les DevTools Chrome), et la Google Search Console pour mesurer et identifier les points d'amélioration.</p>
 
-      <h2>Étape 6 : Stratégie de Contenu et Mots-Clés</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Étape 6 : Stratégie de Contenu et Mots-Clés</h2>
       <p>Le meilleur SEO technique ne sert à rien sans contenu de qualité répondant aux intentions de recherche des utilisateurs.</p>
       <ul>
         <li><strong>Recherche de mots-clés :</strong> Identifiez les termes que votre public cible utilise. Utilisez des outils comme Google Keyword Planner, Ahrefs, SEMrush, ou des options gratuites.</li>
@@ -181,7 +436,7 @@ return {
         <li><strong>Maillage interne :</strong> Liez vos pages entre elles de manière logique avec des textes d'ancre descriptifs. Cela aide à la navigation et distribue le "jus SEO".</li>
       </ul>
 
-      <h2>Étape 7 : Netlinking (Stratégie de Liens)</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Étape 7 : Netlinking (Stratégie de Liens)</h2>
       <p>Les liens entrants (backlinks) depuis d'autres sites de confiance sont un facteur de classement majeur. Obtenir des backlinks de qualité demande du temps et des efforts :</p>
       <ul>
         <li>Créez du contenu exceptionnel que d'autres voudront naturellement citer.</li>
@@ -191,14 +446,14 @@ return {
       </ul>
       <p>Le maillage interne, comme mentionné précédemment, est également crucial pour guider les utilisateurs et les moteurs de recherche à travers votre site.</p>
 
-      <h2>Conclusion : Le SEO est un Marathon, Pas un Sprint</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="conclusion">Conclusion : Le SEO est un Marathon, Pas un Sprint</h2>
       <p>Optimiser le SEO de votre site Next.js est un processus continu. Les bases techniques posées par Next.js vous donnent une longueur d'avance significative, mais la création de contenu de valeur, l'amélioration constante de l'expérience utilisateur, et une stratégie de netlinking réfléchie sont indispensables pour atteindre et maintenir les premières positions.</p>
       <p>Surveillez vos performances via la Google Search Console et Google Analytics, adaptez votre stratégie en fonction des résultats et des évolutions des algorithmes, et n'oubliez jamais que votre objectif premier est de satisfaire vos utilisateurs. Un site utile et agréable pour les humains le sera aussi, la plupart du temps, pour Google.</p>
     `,
   },
   {
     slug: 'tailwind-vs-css-modules',
-    title: 'TailwindCSS vs CSS Modules : Meilleur Choix pour React en 2024 ?',
+    title: 'TailwindCSS vs CSS Modules : Meilleur Choix pour React en 2025 ?',
     date: '2025-04-25',
     author: "L'équipe Lodgic",
     summary:
@@ -206,10 +461,11 @@ return {
     imageUrl:
       'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: "Code CSS affiché sur un écran d'ordinateur portable",
+    category: 'Développement',
     content: `
-      <p class="lead text-lg text-gray-600 mb-8">Dans l'écosystème bouillonnant de React, choisir la bonne stratégie de stylisation est une décision cruciale qui impacte la productivité des développeurs, la maintenabilité du code, et la performance de l'application. Parmi la multitude d'options, deux approches populaires se distinguent en 2024 : TailwindCSS, le framework CSS "utility-first", et les CSS Modules, une solution axée sur l'isolation des styles au niveau du composant.</p>
+      <p class="lead text-lg text-gray-600 mb-8">Dans l'écosystème bouillonnant de React, choisir la bonne stratégie de stylisation est une décision cruciale qui impacte la productivité des développeurs, la maintenabilité du code, et la performance de l'application. Parmi la multitude d'options, deux approches populaires se distinguent en 2025 : TailwindCSS, le framework CSS "utility-first", et les CSS Modules, une solution axée sur l'isolation des styles au niveau du composant.</p>
 
-      <h2>Comprendre les Deux Approches</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Comprendre les Deux Approches</h2>
       <p>Avant de comparer, définissons clairement chaque méthode :</p>
       
       <h3>TailwindCSS : L'approche "Utility-First"</h3>
@@ -252,7 +508,7 @@ function MyButton() {
   );
 }</code></pre>
 
-      <h2>Comparaison Détaillée : Tailwind vs CSS Modules</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Comparaison Détaillée : Tailwind vs CSS Modules</h2>
 
       <figure class="my-10 text-center">
         <img src="https://images.unsplash.com/photo-1550063873-ab792950096b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1000" alt="Balance comparant deux éléments" class="mx-auto rounded-lg shadow-md border border-gray-100" />
@@ -307,7 +563,7 @@ function MyButton() {
         </div>
       </div>
 
-      <h2>Quand Utiliser Quoi ? Cas d'Usage et Recommandations</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Quand Utiliser Quoi ? Cas d'Usage et Recommandations</h2>
 
       <h3>Optez pour TailwindCSS si :</h3>
       <ul>
@@ -334,19 +590,19 @@ function MyButton() {
         <figcaption class="mt-2 text-sm text-gray-500">Le choix dépend fortement du contexte de votre projet et des préférences de votre équipe.</figcaption>
       </figure>
 
-      <h2>Combinaison des Deux Approches ?</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Combinaison des Deux Approches ?</h2>
       <p>Il est techniquement possible d'utiliser Tailwind et les CSS Modules dans le même projet. Par exemple, utiliser Tailwind pour la mise en page générale et les utilitaires courants, et les CSS Modules pour des composants très spécifiques ou complexes. Cependant, cela peut introduire une complexité supplémentaire et nécessiter une discipline d'équipe rigoureuse pour savoir quand utiliser quelle approche.</p>
 
-      <h2>Conclusion : Un Choix Structurant</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Conclusion : Un Choix Structurant</h2>
       <p>TailwindCSS et CSS Modules sont deux solutions robustes et éprouvées pour styliser des applications React. Aucune n'est universellement "meilleure" que l'autre. Le choix idéal dépend des priorités de votre projet, de la taille et de l'expérience de votre équipe, et de vos préférences personnelles en matière de flux de travail.</p>
       <p><strong>Tailwind</strong> excelle par sa rapidité, sa cohérence et sa performance en production grâce à son approche "utility-first" et sa purge efficace. C'est un excellent choix pour les équipes qui veulent aller vite et maintenir une forte cohérence visuelle.</p>
       <p>Les <strong>CSS Modules</strong> offrent une isolation à toute épreuve et une séparation classique des préoccupations (structure vs style), en utilisant la puissance du CSS standard. C'est une option solide pour ceux qui privilégient la lisibilité du balisage et une approche CSS plus traditionnelle.</p>
-      <p>Évaluez soigneusement les avantages et les inconvénients présentés ici, discutez-en avec votre équipe, et choisissez l'outil qui correspond le mieux à vos besoins spécifiques pour construire des interfaces utilisateur exceptionnelles avec React en 2024.</p>
+      <p>Évaluez soigneusement les avantages et les inconvénients présentés ici, discutez-en avec votre équipe, et choisissez l'outil qui correspond le mieux à vos besoins spécifiques pour construire des interfaces utilisateur exceptionnelles avec React en 2025.</p>
     `,
   },
   {
     slug: 'creer-landing-page-efficace',
-    title: '5 Clés Indispensables pour une Landing Page qui Convertit en 2024',
+    title: '5 Clés Indispensables pour une Landing Page qui Convertit en 2025',
     date: '2025-04-24',
     author: "L'équipe Lodgic",
     summary:
@@ -354,13 +610,14 @@ function MyButton() {
     imageUrl:
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Updated relevant image
     imageAlt: "Équipe collaborant sur la conception d'une interface web pour une landing page efficace",
+    category: 'Web',
     content: `
-      <p class="lead text-lg text-gray-600 mb-8">Une landing page (ou page d'atterrissage) n'est pas une page web ordinaire. C'est une page spécifiquement conçue avec un unique objectif : la conversion. Qu'il s'agisse de capturer une adresse email, de vendre un produit, d'encourager une inscription à un webinaire ou de générer des demandes de devis, son succès se mesure à sa capacité à transformer un visiteur en acteur. En 2024, avec une attention en ligne toujours plus volatile, maîtriser l'art de la landing page est essentiel.</p>
+      <p class="lead text-lg text-gray-600 mb-8">Une landing page (ou page d'atterrissage) n'est pas une page web ordinaire. C'est une page spécifiquement conçue avec un unique objectif : la conversion. Qu'il s'agisse de capturer une adresse email, de vendre un produit, d'encourager une inscription à un webinaire ou de générer des demandes de devis, son succès se mesure à sa capacité à transformer un visiteur en acteur. En 2025, avec une attention en ligne toujours plus volatile, maîtriser l'art de la landing page est essentiel.</p>
 
-      <h2>Pourquoi une Landing Page Dédiée est Cruciale ?</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Pourquoi une Landing Page Dédiée est Cruciale ?</h2>
       <p>Envoyer du trafic (issu de publicités, d'emails, de réseaux sociaux) vers votre page d'accueil générique est souvent une erreur coûteuse. La page d'accueil présente trop d'options, trop de distractions. Une landing page dédiée, au contraire, focalise l'attention du visiteur sur une seule offre et un seul appel à l'action (CTA), augmentant considérablement les chances de conversion.</p>
 
-      <h2>Clé n°1 : Un Titre Accrocheur et une Proposition de Valeur Claire</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Clé n°1 : Un Titre Accrocheur et une Proposition de Valeur Claire</h2>
       <p>Vous avez quelques secondes pour capter l'attention. Votre titre principal (H1) est l'élément le plus important. Il doit :</p>
       <ul>
         <li><strong>Être clair et concis :</strong> Le visiteur doit comprendre immédiatement de quoi il s'agit.</li>
@@ -380,7 +637,7 @@ function MyButton() {
         <figcaption class="mt-2 text-sm text-gray-500">Communiquez clairement le bénéfice principal dès le départ.</figcaption>
       </figure>
 
-      <h2>Clé n°2 : Un Design Épuré et Centré sur l'Objectif</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Clé n°2 : Un Design Épuré et Centré sur l'Objectif</h2>
       <p>Le design de votre landing page doit servir l'objectif de conversion, pas le distraire.</p>
       <ul>
         <li><strong>Minimalisme :</strong> Éliminez tout élément superflu. Pas de barre de navigation complexe, pas de liens externes non essentiels (sauf mentions légales). Chaque élément doit contribuer à la conversion.</li>
@@ -390,7 +647,7 @@ function MyButton() {
         <li><strong>Lisibilité :</strong> Choisissez des polices claires, une taille de texte suffisante, et un bon contraste entre le texte et l'arrière-plan.</li>
       </ul>
 
-      <h2>Clé n°3 : Un Appel à l'Action (CTA) Irrésistible</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Clé n°3 : Un Appel à l'Action (CTA) Irrésistible</h2>
       <p>Le CTA est le point culminant de votre landing page. C'est le bouton ou le lien qui incite le visiteur à passer à l'action.</p>
       <ul>
         <li><strong>Visibilité :</strong> Le bouton CTA doit se démarquer par sa couleur, sa taille et son emplacement. Utilisez des couleurs contrastantes.</li>
@@ -400,7 +657,7 @@ function MyButton() {
         <li><strong>Formulaire Optimisé (si applicable) :</strong> Si le CTA mène à un formulaire, ne demandez que les informations strictement nécessaires. Moins il y a de champs, plus le taux de conversion est élevé. Expliquez pourquoi vous demandez certaines informations.</li>
       </ul>
 
-      <h2>Clé n°4 : Preuve Sociale et Éléments de Confiance</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Clé n°4 : Preuve Sociale et Éléments de Confiance</h2>
       <p>Les visiteurs sont naturellement sceptiques. Vous devez construire la confiance et démontrer la valeur de votre offre.</p>
       <ul>
         <li><strong>Témoignages Clients :</strong> Des témoignages authentiques (avec nom, photo, entreprise si possible) sont extrêmement puissants. Les témoignages vidéo sont encore plus impactants.</li>
@@ -417,7 +674,7 @@ function MyButton() {
         <figcaption class="mt-2 text-sm text-gray-500">La preuve sociale, comme les témoignages, rassure et convainc.</figcaption>
       </figure>
 
-      <h2>Clé n°5 : Optimisation Mobile et Vitesse de Chargement</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Clé n°5 : Optimisation Mobile et Vitesse de Chargement</h2>
       <p>Une grande partie de votre trafic proviendra probablement des appareils mobiles. Ignorer l'optimisation mobile et la vitesse, c'est saboter vos conversions.</p>
       <ul>
         <li><strong>Responsive Design Parfait :</strong> Votre landing page doit s'afficher et fonctionner impeccablement sur toutes les tailles d'écran (smartphones, tablettes, desktops). Testez rigoureusement.</li>
@@ -427,7 +684,7 @@ function MyButton() {
       </ul>
       <p>Une page lente frustre les utilisateurs et les incite à partir avant même d'avoir vu votre offre. Google pénalise également les sites lents dans ses classements.</p>
 
-      <h2>Bonus : Testez et Itérez (A/B Testing)</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Bonus : Testez et Itérez (A/B Testing)</h2>
       <p>Votre première version de landing page ne sera probablement pas parfaite. La clé du succès à long terme est le test et l'optimisation continus.</p>
       <ul>
         <li><strong>Test A/B :</strong> Créez différentes versions de votre page en ne modifiant qu'un seul élément à la fois (titre, texte du CTA, image principale, couleur du bouton, structure du formulaire...).</li>
@@ -436,13 +693,13 @@ function MyButton() {
         <li><strong>Itérez :</strong> Appliquez les apprentissages et continuez à tester de nouvelles hypothèses pour améliorer constamment vos résultats.</li>
       </ul>
 
-      <h2>Conclusion : La Science de la Conversion</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="conclusion">Conclusion : La Science de la Conversion</h2>
       <p>Créer une landing page qui convertit n'est pas un hasard. C'est un mélange de psychologie, de design centré utilisateur, de copywriting persuasif, et d'optimisation technique. En appliquant rigoureusement ces cinq clés – un message clair, un design épuré, un CTA irrésistible, des preuves sociales fortes, et une optimisation mobile/vitesse impeccable – vous mettez toutes les chances de votre côté pour atteindre vos objectifs de conversion et rentabiliser vos efforts marketing.</p>
     `,
   },
   {
     slug: 'importance-responsive-design',
-    title: "Responsive Design en 2024 : Plus qu'une Option, une Nécessité",
+    title: "Responsive Design en 2025 : Plus qu'une Option, une Nécessité",
     date: '2025-04-23',
     author: "L'équipe Lodgic",
     summary:
@@ -450,10 +707,11 @@ function MyButton() {
     imageUrl:
       'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: 'Site web affiché sur différents appareils : ordinateur, tablette, smartphone',
+    category: 'Développement',
     content: `
-      <p class="lead text-lg text-gray-600 mb-8">Il fut un temps où le responsive web design était considéré comme une "bonne pratique", un "plus" appréciable. En 2024, cette époque est révolue. Avec la domination écrasante du trafic mobile et l'adoption par Google de l'indexation "mobile-first", concevoir un site web qui ne s'adapte pas parfaitement à tous les écrans n'est plus une option, c'est une erreur stratégique majeure.</p>
+      <p class="lead text-lg text-gray-600 mb-8">Il fut un temps où le responsive web design était considéré comme une "bonne pratique", un "plus" appréciable. En 2025, cette époque est révolue. Avec la domination écrasante du trafic mobile et l'adoption par Google de l'indexation "mobile-first", concevoir un site web qui ne s'adapte pas parfaitement à tous les écrans n'est plus une option, c'est une erreur stratégique majeure.</p>
 
-      <h2>L'Ère Incontournable du Mobile-First</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">L'Ère Incontournable du Mobile-First</h2>
       <p>Les chiffres sont sans appel :</p>
       <ul>
         <li>Plus de 60% du trafic web mondial provient désormais des appareils mobiles.</li>
@@ -467,7 +725,7 @@ function MyButton() {
         <figcaption class="mt-2 text-sm text-gray-500">La tendance mobile n'est pas prête de s'inverser.</figcaption>
       </figure>
 
-      <h2>Impact Dévastateur sur l'Expérience Utilisateur (UX)</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Impact Dévastateur sur l'Expérience Utilisateur (UX)</h2>
       <p>Imaginez devoir zoomer, pincer, et faire défiler horizontalement un site conçu pour un grand écran sur votre smartphone. C'est une expérience frustrante qui conduit inévitablement à :</p>
       <ul>
         <li><strong>Taux de Rebond Élevé :</strong> Les utilisateurs quittent immédiatement un site non adapté.</li>
@@ -477,7 +735,7 @@ function MyButton() {
       </ul>
       <p>Un design responsive garantit une expérience fluide et agréable quel que soit l'appareil, renforçant la confiance et encourageant l'engagement.</p>
 
-      <h2>Bénéfices SEO Directs et Indirects</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Bénéfices SEO Directs et Indirects</h2>
       <p>Google l'a clairement indiqué : l'adaptabilité mobile (mobile-friendliness) est un facteur de classement direct. Au-delà de ça, un bon responsive design influence positivement d'autres signaux SEO importants :</p>
       <ul>
         <li><strong>Meilleur Engagement Utilisateur :</strong> Google interprète les faibles taux de rebond et le temps passé sur site comme des signes de qualité et de pertinence, ce qui peut améliorer le classement.</li>
@@ -486,7 +744,7 @@ function MyButton() {
         <li><strong>Core Web Vitals :</strong> Un design responsive bien conçu contribue souvent à de meilleurs Core Web Vitals (notamment le CLS), qui sont des facteurs de classement.</li>
       </ul>
 
-      <h2>Comment Implémenter Concrètement le Responsive Design ?</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Comment Implémenter Concrètement le Responsive Design ?</h2>
       <p>La mise en œuvre repose sur plusieurs techniques CSS fondamentales, souvent facilitées par des frameworks comme TailwindCSS :</p>
       
       <h3>1. Approche "Mobile-First"</h3>
@@ -559,13 +817,13 @@ function MyButton() {
         <li><strong>Des Outils Tiers :</strong> Des services comme BrowserStack ou LambdaTest permettent de tester sur une vaste gamme d'appareils et navigateurs réels. Des outils comme Responsively App peuvent afficher votre site dans plusieurs viewports simultanément.</li>
       </ul>
 
-      <h2>Conclusion : Investissez dans l'Adaptabilité</h2>
-      <p>Le responsive design n'est plus une simple fonctionnalité additionnelle, c'est le fondement d'une présence en ligne réussie en 2024. En adoptant une approche mobile-first et en maîtrisant les techniques d'adaptation, vous offrez une expérience utilisateur optimale, améliorez votre référencement naturel, et maximisez vos chances de conversion sur tous les appareils. Investir dans une présence en ligne adaptative, que ce soit via un site web responsive ou le <a href="/services" class="text-blue-600 hover:text-blue-800 font-medium">développement d'applications mobiles sur mesure à Toulouse</a>, est crucial pour rester compétitif.</p>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Conclusion : Investissez dans l'Adaptabilité</h2>
+      <p>Le responsive design n'est plus une simple fonctionnalité additionnelle, c'est le fondement d'une présence en ligne réussie en 2025. En adoptant une approche mobile-first et en maîtrisant les techniques d'adaptation, vous offrez une expérience utilisateur optimale, améliorez votre référencement naturel, et maximisez vos chances de conversion sur tous les appareils. Investir dans une présence en ligne adaptative, que ce soit via un site web responsive ou le <a href="/services" class="text-blue-600 hover:text-blue-800 font-medium">développement d'applications mobiles sur mesure à Toulouse</a>, est crucial pour rester compétitif.</p>
     `,
   },
   {
     slug: 'securiser-application-react',
-    title: 'Sécuriser Votre App React : Guide Essentiel 2024 Contre les Failles',
+    title: 'Sécuriser Votre App React : Guide Essentiel 2025 Contre les Failles',
     date: '2025-04-22',
     author: "L'équipe Lodgic",
     summary:
@@ -573,10 +831,11 @@ function MyButton() {
     imageUrl:
       'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600', // Main image
     imageAlt: 'Cadenas numérique symbolisant la sécurité informatique',
+    category: 'Développement',
     content: `
-      <p class="lead text-lg text-gray-600 mb-8">React, avec son approche déclarative et son écosystème riche, a révolutionné la façon dont nous construisons les interfaces utilisateur. Cependant, sa popularité en fait également une cible pour les acteurs malveillants. Si React intègre certaines protections natives, une compréhension approfondie des menaces courantes et des bonnes pratiques de sécurité est indispensable pour tout développeur React soucieux de protéger ses utilisateurs et ses données en 2024.</p>
+      <p class="lead text-lg text-gray-600 mb-8">React, avec son approche déclarative et son écosystème riche, a révolutionné la façon dont nous construisons les interfaces utilisateur. Cependant, sa popularité en fait également une cible pour les acteurs malveillants. Si React intègre certaines protections natives, une compréhension approfondie des menaces courantes et des bonnes pratiques de sécurité est indispensable pour tout développeur React soucieux de protéger ses utilisateurs et ses données en 2025.</p>
 
-      <h2>Les Risques de Sécurité Spécifiques (et Moins Spécifiques) à React</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Les Risques de Sécurité Spécifiques (et Moins Spécifiques) à React</h2>
       <p>Bien que React ne soit pas intrinsèquement plus ou moins sécurisé qu'un autre framework frontend, certaines de ses caractéristiques ou les pratiques courantes dans son écosystème peuvent introduire des vulnérabilités si l'on n'y prend pas garde :</p>
       <ul>
         <li><strong>Cross-Site Scripting (XSS) :</strong> La menace la plus courante pour les applications frontend.</li>
@@ -588,7 +847,7 @@ function MyButton() {
       </ul>
       <p>Explorons les menaces principales et comment s'en prémunir.</p>
 
-      <h2>Menace n°1 : Le Cross-Site Scripting (XSS)</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Menace n°1 : Le Cross-Site Scripting (XSS)</h2>
       <p>Le XSS survient lorsqu'un attaquant parvient à injecter et exécuter du code JavaScript malveillant dans le navigateur d'un utilisateur légitime, souvent via des champs de formulaire non validés, des paramètres d'URL, ou du contenu généré par l'utilisateur affiché sans échappement.</p>
       
       <h3>Comment React Aide (par Défaut)</h3>
@@ -626,7 +885,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
         <figcaption class="mt-2 text-sm text-gray-500">La vigilance est de mise, même avec les protections natives de React.</figcaption>
       </figure>
 
-      <h2>Menace n°2 : Le Cross-Site Request Forgery (CSRF)</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Menace n°2 : Le Cross-Site Request Forgery (CSRF)</h2>
       <p>Le CSRF (parfois appelé XSRF) force un utilisateur authentifié à exécuter involontairement une action sur une application web où il est actuellement connecté. L'attaquant crée une requête malveillante (souvent via un lien ou un formulaire sur un autre site) que le navigateur de la victime envoie automatiquement avec les cookies d'authentification associés au site cible.</p>
       <p>React lui-même n'offre pas de protection directe contre le CSRF, car cela dépend de la gestion des sessions et des requêtes côté serveur.</p>
       <h3>Stratégies de Mitigation (Côté Backend et Frontend)</h3>
@@ -638,7 +897,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
       </ul>
       <p>Dans une application React, vous devrez récupérer le token anti-CSRF (souvent via un appel API initial ou un endpoint dédié) et l'inclure dans toutes les requêtes qui modifient l'état côté serveur.</p>
 
-      <h2>Menace n°3 : Sécurité des API et Authentification/Autorisation</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Menace n°3 : Sécurité des API et Authentification/Autorisation</h2>
       <p>Votre application React communique probablement avec des API backend. La sécurité de ces API est primordiale.</p>
       <ul>
         <li><strong>HTTPS Partout :</strong> Toute communication doit se faire via HTTPS pour chiffrer les données en transit.</li>
@@ -647,8 +906,9 @@ const ContenuNettoye = ({ htmlBrut }) => {
         <li><strong>Validation des Entrées Côté Serveur :</strong> Validez toutes les données reçues par l'API, même si elles ont déjà été validées côté client.</li>
         <li><strong>Limitation de Débit (Rate Limiting) :</strong> Protégez vos API contre les abus et les attaques par force brute.</li>
       </ul>
+      <br/>
 
-      <h2>Menace n°4 : Gestion Sécurisée des Dépendances</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Menace n°4 : Gestion Sécurisée des Dépendances</h2>
       <p>L'écosystème npm est une force, mais aussi une surface d'attaque potentielle. Une dépendance (ou une dépendance d'une dépendance) peut contenir une vulnérabilité.</p>
       <ul>
         <li><strong>Audits Réguliers :</strong> Utilisez <code>npm audit</code> ou <code>yarn audit</code> régulièrement pour détecter les vulnérabilités connues dans vos dépendances.</li>
@@ -657,7 +917,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
         <li><strong>Vigilance :</strong> Soyez prudent avant d'ajouter de nouvelles dépendances. Vérifiez leur popularité, leur maintenance, et les problèmes ouverts sur leur dépôt.</li>
       </ul>
 
-      <h2>Autres Bonnes Pratiques</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Autres Bonnes Pratiques</h2>
       <ul>
         <li><strong>Content Security Policy (CSP) :</strong> Définissez un en-tête HTTP <code>Content-Security-Policy</code> pour spécifier les sources de contenu approuvées (scripts, styles, images...), limitant ainsi l'impact des attaques XSS.</li>
         <li><strong>Sécurité des En-têtes HTTP :</strong> Utilisez d'autres en-têtes de sécurité comme <code>X-Content-Type-Options: nosniff</code>, <code>X-Frame-Options: DENY</code>, <code>Referrer-Policy: strict-origin-when-cross-origin</code>, <code>Strict-Transport-Security (HSTS)</code>.</li>
@@ -669,8 +929,212 @@ const ContenuNettoye = ({ htmlBrut }) => {
         <figcaption class="mt-2 text-sm text-gray-500">La sécurité nécessite une approche multicouche et une attention constante.</figcaption>
       </figure>
 
-      <h2>Conclusion : La Sécurité, une Responsabilité Partagée</h2>
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Conclusion : La Sécurité, une Responsabilité Partagée</h2>
       <p>Sécuriser une application React n'est pas seulement l'affaire de React lui-même. C'est une combinaison de l'utilisation correcte des fonctionnalités de React, de la sécurisation rigoureuse du backend et des API, d'une gestion prudente des dépendances, et de l'application des bonnes pratiques générales de sécurité web. En comprenant les menaces courantes comme le XSS et le CSRF et en mettant en œuvre les stratégies de mitigation appropriées, vous construirez des applications non seulement fonctionnelles et performantes, mais aussi robustes et dignes de confiance.</p>
+    `,
+  },
+  {
+    slug: 'architecture-composants-web-moderne',
+    title: "L'Architecture à Base de Composants : La clé du Développement Web Moderne",
+    date: '2025-05-12',
+    author: "L'équipe Lodgic",
+    summary:
+      "Découvrez comment l'architecture à base de composants avec des frameworks comme React, Vue ou Angular simplifie la création d'interfaces utilisateur complexes, améliore la réutilisabilité du code et facilite la maintenance des applications web.",
+    imageUrl:
+      'https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600',
+    imageAlt: "Schéma illustrant une architecture à base de composants sur un écran d'ordinateur",
+    category: 'Développement',
+    content: `
+      <p class="lead text-lg text-gray-600 mb-8">L\'univers du développement web a connu une transformation radicale ces dernières années, passant de pages HTML statiques à des applications web dynamiques et interactives. Au cœur de cette évolution se trouve l\'adoption massive de l\'architecture à base de composants, popularisée par des bibliothèques et frameworks JavaScript tels que React, Vue.js, et Angular. Cette approche a fondamentalement changé la manière dont nous concevons, construisons et maintenons les interfaces utilisateur (UI).</p>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Qu\'est-ce que l\'Architecture à Base de Composants ?</h2>
+      <p>L\'architecture à base de composants est un paradigme de conception logicielle qui consiste à décomposer une interface utilisateur complexe en éléments plus petits, autonomes et réutilisables appelés "composants". Chaque composant encapsule sa propre logique, sa structure (HTML), ses styles (CSS) et parfois même son état. Pensez-y comme à des briques LEGO® : vous pouvez assembler différentes briques de différentes manières pour construire des structures variées et complexes.</p>
+      
+      <figure class="my-10 text-center">
+        <img src="https://images.unsplash.com/photo-1550063873-ab792950096b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1000" alt="Illustration de blocs s\'assemblant, symbolisant les composants" class="mx-auto rounded-lg shadow-md border border-gray-100" />
+        <figcaption class="mt-2 text-sm text-gray-500">Les composants s\'assemblent pour former des interfaces utilisateur robustes et évolutives.</figcaption>
+      </figure>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Les Avantages Majeurs de cette Approche</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6 my-8">
+        <div class="bg-emerald-50 p-5 rounded-lg">
+          <h3 class="font-bold text-emerald-800">Réutilisabilité du Code</h3>
+          <p>C\'est l\'un des avantages les plus significatifs. Une fois qu\'un composant (par exemple, un sélecteur de date personnalisé) est créé, il peut être réutilisé à plusieurs endroits dans l\'application, voire dans d\'autres projets, sans avoir à réécrire le code. Cela accélère le développement et réduit la duplication.</p>
+        </div>
+        
+        <div class="bg-sky-50 p-5 rounded-lg">
+          <h3 class="font-bold text-sky-800">Maintenabilité Améliorée</h3>
+          <p>Les modifications ou les corrections de bugs peuvent être effectuées au niveau du composant spécifique sans affecter le reste de l\'application. Cette isolation rend le débogage plus facile et le code global plus stable et plus simple à maintenir à long terme.</p>
+        </div>
+        
+        <div class="bg-rose-50 p-5 rounded-lg">
+          <h3 class="font-bold text-rose-800">Collaboration Facilitée</h3>
+          <p>Les équipes de développement peuvent travailler en parallèle sur différents composants sans se marcher sur les pieds. Cela permet une meilleure répartition des tâches et une intégration plus fluide des fonctionnalités.</p>
+        </div>
+        
+        <div class="bg-violet-50 p-5 rounded-lg">
+          <h3 class="font-bold text-violet-800">Testabilité Accrue</h3>
+          <p>Chaque composant peut être testé unitairement de manière isolée, ce qui garantit sa fiabilité avant son intégration dans des ensembles plus vastes. Cela conduit à une meilleure qualité logicielle globale.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Frameworks Populaires et Écosystème</h2>
+      <p>Plusieurs frameworks JavaScript dominent le paysage du développement à base de composants :</p>
+      <ul>
+        <li><strong>React :</strong> Développé par Facebook, React est une bibliothèque JavaScript pour construire des interfaces utilisateur. Sa popularité repose sur son Virtual DOM, son approche déclarative et son vaste écosystème.</li>
+        <li><strong>Vue.js :</strong> Connu pour sa courbe d\'apprentissage progressive et sa flexibilité, Vue.js est un framework qui s\'intègre facilement dans des projets existants ou peut être utilisé pour des applications monopages (SPA) complexes.</li>
+        <li><strong>Angular :</strong> Développé par Google, Angular est un framework complet et opinionné, particulièrement adapté aux grandes applications d\'entreprise. Il utilise TypeScript et propose une structure bien définie.</li>
+        <li><strong>Svelte :</strong> Adopte une approche différente en compilant les composants en code JavaScript impératif optimisé lors de la phase de build, ce qui peut conduire à des applications plus légères et plus rapides.</li>
+        <li><strong>Web Components :</strong> Une suite de technologies standardisées par le W3C permettant de créer des éléments HTML personnalisés réutilisables, nativement supportés par les navigateurs modernes.</li>
+      </ul>
+
+      <figure class="my-10 text-center">
+        <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1000" alt="Logos de React, Vue, Angular sur un fond de code" class="mx-auto rounded-lg shadow-md border border-gray-100" />
+        <figcaption class="mt-2 text-sm text-gray-500">L\\'écosystème des composants est riche et en constante évolution.</figcaption>
+      </figure>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Principes de Conception d'un Bon Composant</h2>
+      <p>Pour tirer le meilleur parti de cette architecture, il est crucial de suivre quelques principes :</p>
+      <ul>
+        <li><strong>Single Responsibility Principle (SRP) :</strong> Un composant ne devrait avoir qu'une seule raison de changer. Essayez de le garder focalisé sur une tâche unique.</li>
+        <li><strong>Haute Cohésion :</strong> Les éléments à l'intérieur d'un composant doivent être logiquement liés et contribuer à son objectif unique.</li>
+        <li><strong>Faible Couplage :</strong> Les composants doivent être aussi indépendants que possible les uns des autres. La communication entre eux se fait généralement via des props (données parent-enfant) et des événements (données enfant-parent).</li>
+        <li><strong>Props Claires et API Définie :</strong> L'interface d'un composant (les props qu'il accepte) doit être bien définie et documentée.</li>
+        <li><strong>Pureté (pour les composants de présentation) :</strong> Idéalement, de nombreux composants devraient être "purs", c'est-à-dire qu'ils rendent toujours la même UI pour les mêmes props, sans effets de bord.</li>
+      </ul>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4">Conclusion</h2>
+      <p>L'architecture à base de composants n'est pas seulement une mode, mais une évolution naturelle et puissante dans la construction d'applications web modernes. Elle favorise la modularité, la réutilisabilité, la maintenabilité et la collaboration, permettant aux développeurs de créer des expériences utilisateur plus riches et plus robustes. Que vous utilisiez React, Vue, Angular ou une autre technologie, maîtriser les principes de la conception de composants est devenu une compétence indispensable pour tout développeur web souhaitant rester pertinent et efficace.</p>
+      <p>Adopter cette approche peut sembler demander un investissement initial en termes de réflexion et de structuration, mais les bénéfices à long terme en termes de productivité et de qualité du code sont indéniables.</p>
+    `,
+  },
+  {
+    slug: 'cahier-charges-app-mobile',
+    title: 'Comment Rédiger un Cahier des Charges Efficace pour Votre Application Mobile',
+    date: '2025-05-22',
+    author: "L'équipe Lodgic",
+    summary:
+      'Guide pratique pour les clients : apprenez à rédiger un cahier des charges clair et complet pour votre application mobile, étape essentielle pour garantir le succès de votre projet.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600',
+    imageAlt: 'Personne travaillant sur un document de spécifications pour une application mobile',
+    category: 'Développement',
+    content: `
+      <p class="lead text-lg text-gray-600 mb-8">Vous avez une idée géniale d'application mobile et vous souhaitez la concrétiser ? Le premier pas crucial est la rédaction d'un cahier des charges solide. Ce document servira de guide tout au long du développement et assurera que votre vision est parfaitement comprise par l'équipe de développement. Voici comment structurer efficacement votre cahier des charges.</p>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="presentation-projet">1. Présentation du Projet et Contexte</h2>
+      <p>Commencez par poser les bases de votre projet :</p>
+      <ul>
+        <li><strong>Votre Entreprise :</strong> Présentez brièvement votre structure, votre secteur d'activité et votre positionnement sur le marché.</li>
+        <li><strong>Objectifs du Projet :</strong> Pourquoi souhaitez-vous développer cette application ? Quels problèmes souhaitez-vous résoudre ?</li>
+        <li><strong>Public Cible :</strong> Définissez clairement vos utilisateurs finaux (âge, profession, habitudes, etc.).</li>
+        <li><strong>Concurrence :</strong> Citez les applications similaires existantes et expliquez en quoi la vôtre sera différente.</li>
+      </ul>
+
+      <figure class="my-10 text-center">
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1000" alt="Équipe en réunion de brainstorming" class="mx-auto rounded-lg shadow-md border border-gray-100" />
+        <figcaption class="mt-2 text-sm text-gray-500">Une bonne compréhension du contexte est essentielle pour démarrer.</figcaption>
+      </figure>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="description-fonctionnalites">2. Description Détaillée des Fonctionnalités</h2>
+      <p>Listez toutes les fonctionnalités que vous souhaitez voir dans votre application. Pour chaque fonctionnalité, précisez :</p>
+      <ul>
+        <li><strong>Objectif :</strong> À quoi sert cette fonctionnalité ?</li>
+        <li><strong>Utilisateurs :</strong> Qui pourra l'utiliser ?</li>
+        <li><strong>Processus :</strong> Comment fonctionne-t-elle ?</li>
+        <li><strong>Priorité :</strong> Est-ce une fonctionnalité essentielle (MVP) ou secondaire ?</li>
+      </ul>
+
+      <div class="bg-blue-50 p-5 rounded-lg my-8">
+        <h3 class="font-bold text-blue-800 mb-3">Exemple de Description de Fonctionnalité</h3>
+        <p><strong>Fonctionnalité :</strong> Système de réservation de rendez-vous</p>
+        <ul>
+          <li><strong>Objectif :</strong> Permettre aux clients de prendre rendez-vous en ligne</li>
+          <li><strong>Utilisateurs :</strong> Clients et administrateurs</li>
+          <li><strong>Processus :</strong> 
+            <ul>
+              <li>Le client sélectionne un service</li>
+              <li>Choisit une date et un créneau horaire</li>
+              <li>Confirme sa réservation</li>
+              <li>Reçoit une confirmation par email</li>
+            </ul>
+          </li>
+          <li><strong>Priorité :</strong> MVP (Minimum Viable Product)</li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="specifications-techniques">3. Spécifications Techniques</h2>
+      <p>Même si vous n'êtes pas technicien, il est important de préciser certains aspects techniques :</p>
+      <ul>
+        <li><strong>Plateformes :</strong> iOS, Android, ou les deux ?</li>
+        <li><strong>Versions :</strong> Quelles versions des systèmes d'exploitation doivent être supportées ?</li>
+        <li><strong>Intégrations :</strong> Avez-vous besoin d'intégrer des services externes (paiement, cartographie, etc.) ?</li>
+        <li><strong>Performance :</strong> Y a-t-il des exigences particulières en termes de vitesse ou de réactivité ?</li>
+      </ul>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="design-ux">4. Design et Expérience Utilisateur</h2>
+      <p>Décrivez vos attentes en matière d'interface :</p>
+      <ul>
+        <li><strong>Charte Graphique :</strong> Avez-vous déjà une identité visuelle (logo, couleurs, typographie) ?</li>
+        <li><strong>Inspirations :</strong> Citez des applications dont vous appréciez le design.</li>
+        <li><strong>Accessibilité :</strong> Avez-vous des exigences particulières en matière d'accessibilité ?</li>
+        <li><strong>Langues :</strong> L'application doit-elle être multilingue ?</li>
+      </ul>
+
+      <figure class="my-10 text-center">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1000" alt="Maquettes d'interface mobile sur différents écrans" class="mx-auto rounded-lg shadow-md border border-gray-100" />
+        <figcaption class="mt-2 text-sm text-gray-500">Le design doit être intuitif et agréable à utiliser.</figcaption>
+      </figure>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="aspects-legaux">5. Aspects Légaux et Sécurité</h2>
+      <p>N'oubliez pas les aspects réglementaires :</p>
+      <ul>
+        <li><strong>RGPD :</strong> Quelles données personnelles seront collectées ? Comment seront-elles protégées ?</li>
+        <li><strong>Mentions Légales :</strong> Conditions d'utilisation, politique de confidentialité, etc.</li>
+        <li><strong>Sécurité :</strong> Y a-t-il des données sensibles à protéger ?</li>
+        <li><strong>Conformité :</strong> Votre secteur d'activité est-il soumis à des réglementations particulières ?</li>
+      </ul>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="planning-budget">6. Planning et Budget</h2>
+      <p>Précisez vos contraintes temporelles et financières :</p>
+      <ul>
+        <li><strong>Date de Lancement :</strong> Avez-vous une date butoir ?</li>
+        <li><strong>Phases de Développement :</strong> Souhaitez-vous un développement par étapes ?</li>
+        <li><strong>Budget :</strong> Quel est votre budget global ?</li>
+        <li><strong>Maintenance :</strong> Avez-vous prévu un budget pour la maintenance et les mises à jour ?</li>
+      </ul>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="livrables-suivi">7. Livrables et Suivi</h2>
+      <p>Définissez clairement ce que vous attendez de l'équipe de développement :</p>
+      <ul>
+        <li><strong>Livrables :</strong> Code source, documentation, guides d'utilisation, etc.</li>
+        <li><strong>Tests :</strong> Qui sera responsable des tests ? Quels types de tests sont nécessaires ?</li>
+        <li><strong>Formation :</strong> Avez-vous besoin d'une formation pour utiliser l'application ?</li>
+        <li><strong>Support :</strong> Quel type de support technique souhaitez-vous après le lancement ?</li>
+      </ul>
+
+      <div class="bg-green-50 p-5 rounded-lg my-8">
+        <h3 class="font-bold text-green-800 mb-3">Conseils pour un Cahier des Charges Efficace</h3>
+        <ul>
+          <li>Soyez précis et détaillé dans vos descriptions</li>
+          <li>Utilisez des exemples concrets</li>
+          <li>Incluez des maquettes ou des wireframes si possible</li>
+          <li>Précisez les priorités</li>
+          <li>Anticipez les questions que pourrait se poser l'équipe de développement</li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-orange-600 mt-10 mb-4" id="conclusion">Conclusion</h2>
+      <p>Un cahier des charges bien rédigé est la clé du succès de votre projet d'application mobile. Il permet de :</p>
+      <ul>
+        <li>Clarifier votre vision</li>
+        <li>Faciliter la communication avec l'équipe de développement</li>
+        <li>Éviter les malentendus et les retards</li>
+        <li>Obtenir des devis plus précis</li>
+        <li>Assurer un suivi efficace du projet</li>
+      </ul>
+      <p>N'hésitez pas à faire relire votre cahier des charges par des personnes de votre entourage ou par des professionnels du développement pour vous assurer qu'il est clair et complet. Un bon cahier des charges est un investissement qui vous fera gagner du temps et de l'argent sur le long terme.</p>
     `,
   },
   {
@@ -683,6 +1147,7 @@ const ContenuNettoye = ({ htmlBrut }) => {
     imageUrl:
       'https://images.unsplash.com/photo-1501139083538-0139583c060f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600',
     imageAlt: 'Montre et agenda sur un bureau moderne',
+    category: 'Développement',
     content: `
       <p class="lead text-lg text-gray-600 mb-8">Dans notre ère numérique où les notifications fusent de toutes parts et où le travail à distance brouille les frontières entre vie professionnelle et personnelle, la gestion efficace du temps est devenue un défi majeur. Pourtant, maîtriser son temps n'est pas une question de chance ou de talent inné, mais bien d'application de stratégies éprouvées et d'outils adaptés à notre époque.</p>
 

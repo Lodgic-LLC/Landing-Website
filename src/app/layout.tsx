@@ -36,10 +36,7 @@ const structuredData = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lodgic-dev.com'),
-  title: {
-    default: 'Développeur Application Mobile Toulouse - Lodgic',
-    template: '%s - Lodgic',
-  },
+  title: 'Développeur Application Mobile Toulouse - Lodgic',
   keywords: [
     'Développeur Application Mobile Toulouse',
     'Développeurs Applications Mobile Toulouse',
@@ -119,22 +116,12 @@ export default function RootLayout({
     <html lang="fr" className="" suppressHydrationWarning>
       <head>
         {/* Scripts Iubenda pour la gestion des cookies */}
-        <Script id="iubenda-config" strategy="afterInteractive">
-          {`
-            var _iub = _iub || [];
-            _iub.csConfiguration = {"siteId":3950256,"cookiePolicyId":94594353,"lang":"fr","storage":{"useSiteId":true}};
-          `}
-        </Script>
         <Script
           id="structured-data"
           type="application/ld+json"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-
-        <Script src="https://cs.iubenda.com/autoblocking/3950256.js" strategy="afterInteractive" />
-        <Script src="//cdn.iubenda.com/cs/gpp/stub.js" strategy="afterInteractive" />
-        <Script src="//cdn.iubenda.com/cs/iubenda_cs.js" strategy="afterInteractive" charSet="UTF-8" async />
 
         {/* Google Analytics et Google Ads */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-LV93937W8D" strategy="afterInteractive" />

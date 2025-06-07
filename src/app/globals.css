@@ -1,4 +1,5 @@
-@import 'tailwindcss';
+@import "prismjs/themes/prism-tomorrow.css";
+@import "tailwindcss";
 
 /* Animations supprimées pour l'optimisation mobile */
 
@@ -7,38 +8,37 @@ html {
 }
 
 @layer utilities {
-
   .font-montserrat-bold {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
   }
 
   .font-inter {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   .font-inter-light {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 300;
   }
 
   .font-inter-regular {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
   }
 
   .font-inter-medium {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 500;
   }
 
   .font-inter-semibold {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 600;
   }
 
   .font-inter-bold {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 700;
   }
 }

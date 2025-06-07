@@ -12,10 +12,8 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigationItems = [
-    { name: 'Accueil', path: '/' },
     { name: 'Services', path: '/services' },
-    { name: 'Projets', path: '/projets' },
-    { name: 'Blog', path: '/blog' },
+    { name: 'Lodgic Conseils', path: '/blog' },
     { name: 'À propos', path: '/a-propos' },
     { name: 'Contact', path: '/contact' },
   ]
@@ -69,15 +67,13 @@ export default function Navbar() {
   const isScrolled = scrollPosition > 50
 
   return (
-    <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white backdrop-blur-sm shadow-sm`}
-    >
+    <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-[#FAF3E0] backdrop-blur-sm shadow-sm`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 py-2">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center" aria-label="Accueil Lodgic">
-              <span className="font-montserrat-bold font-semibold text-2xl bg-gradient-to-r from-blue-700 to-blue-500 text-transparent bg-clip-text">Lodgic</span>
+              <span className="font-montserrat-bold font-semibold text-2xl text-[#2C3E50]">Lodgic</span>
             </Link>
           </div>
 
@@ -87,10 +83,11 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${isActive(item.path)
-                  ? 'text-gray-800 bg-gray-100'
-                  : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-                  }`}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  isActive(item.path)
+                    ? 'bg-[#2C3E50] text-white'
+                    : 'text-[#2C3E50]/80 hover:text-[#2C3E50] hover:bg-[#2C3E50]/10'
+                }`}
               >
                 {item.name}
               </Link>
@@ -101,7 +98,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <Link
               href="/rendez-vous"
-              className="ml-4 px-4 py-2 rounded-md text-sm font-medium transition-colors bg-blue-600 text-white hover:bg-blue-700 shadow-sm hover:shadow-md"
+              className="ml-4 px-6 py-2 rounded-full text-sm font-semibold transition-colors bg-[#2C3E50] text-white hover:bg-[#2C3E50]/90 shadow-sm hover:shadow-md flex items-center"
             >
               <span className="flex items-center">
                 <svg
@@ -163,16 +160,20 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-[440px] opacity-100' : 'max-h-0 opacity-0'
-          }`}
+        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+          isMenuOpen ? 'max-h-[440px] opacity-100 border-b border-[#2C3E50]/10' : 'max-h-0 opacity-0'
+        }`}
       >
-        <div className="px-4 pt-2 pb-4 space-y-1 bg-white shadow-md border-t border-gray-100">
+        <div className="px-4 pt-2 pb-4 space-y-1 bg-[#FAF3E0] shadow-md">
           {navigationItems.map((item) => (
             <Link
               key={item.name}
               href={item.path}
-              className={`block px-4 py-3 rounded-md text-base font-medium transition-all duration-200 ${isActive(item.path) ? 'text-gray-800 bg-gray-100' : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-                }`}
+              className={`block px-4 py-3 rounded-md text-base font-medium transition-all duration-200 ${
+                isActive(item.path)
+                  ? 'bg-[#2C3E50] text-white'
+                  : 'text-[#2C3E50]/80 hover:text-[#2C3E50] hover:bg-[#2C3E50]/10'
+              }`}
             >
               {item.name}
             </Link>
@@ -181,7 +182,7 @@ export default function Navbar() {
           <div className="pt-2">
             <Link
               href="/rendez-vous"
-              className="flex items-center justify-center w-full px-4 py-3 rounded-md text-base font-medium transition-colors bg-blue-600 text-white hover:bg-blue-700 shadow-sm"
+              className="flex items-center justify-center w-full px-4 py-3 rounded-full text-base font-semibold transition-colors bg-[#2C3E50] text-white hover:bg-[#2C3E50]/90 shadow-sm"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
