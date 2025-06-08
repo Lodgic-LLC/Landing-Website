@@ -32,6 +32,8 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['react-icons'],
+    webVitalsAttribution: ['CLS', 'LCP', 'FID', 'FCP', 'TTFB'],
+    scrollRestoration: true,
   },
   async redirects() {
     return [
@@ -73,6 +75,22 @@ const nextConfig: NextConfig = {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
           },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'Server',
+            value: '',
+          },
+          {
+            key: 'X-Powered-By',
+            value: '',
+          },
         ],
       },
       {
@@ -81,6 +99,23 @@ const nextConfig: NextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Server',
+            value: '',
+          },
+        ],
+      },
+      {
+        source: '/(.*).xml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/xml',
+          },
+          {
+            key: 'Server',
+            value: '',
           },
         ],
       },

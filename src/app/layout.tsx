@@ -4,6 +4,7 @@ import './globals.css'
 import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
 import Script from 'next/script'
+import { WebVitals } from './web-vitals'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,7 +37,10 @@ const structuredData = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lodgic-dev.com'),
-  title: 'Développeur Application Mobile Toulouse - Lodgic',
+  title: {
+    default: 'Développeur Application Mobile Toulouse - Lodgic',
+    template: '%s | Lodgic',
+  },
   keywords: [
     'Développeur Application Mobile Toulouse',
     'Développeurs Applications Mobile Toulouse',
@@ -61,11 +65,45 @@ export const metadata: Metadata = {
   ],
   description:
     "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+  authors: [{ name: 'Lodgic', url: 'https://lodgic-dev.com' }],
+  creator: 'Lodgic',
+  publisher: 'Lodgic',
+  category: 'Développement Mobile',
+  classification: 'Business',
+  referrer: 'origin-when-cross-origin',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
+  verification: {
+    google: 'your-google-verification-code', // À remplacer par votre code de vérification
+  },
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    other: [
+      {
+        rel: 'android-chrome-192x192',
+        url: '/android-chrome-192x192.png',
+      },
+      {
+        rel: 'android-chrome-512x512',
+        url: '/android-chrome-512x512.png',
+      },
+    ],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'Développeur Application Mobile Toulouse - Lodgic',
     description:
@@ -145,6 +183,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-inter bg-gray-50 text-gray-800`}>
+        <WebVitals />
         <div className="relative w-full">
           <Navbar />
           {children}
