@@ -52,6 +52,7 @@ export const metadata: Metadata = {
     'NestJS',
     'application mobile',
     'développeur application',
+    'développeur mobile',
     'agence développement',
     'Toulouse',
   ],
