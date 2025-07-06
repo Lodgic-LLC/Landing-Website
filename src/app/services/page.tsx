@@ -16,6 +16,8 @@ import {
   FaCheckCircle,
 } from 'react-icons/fa'
 import React from 'react'
+import { TrackingSection, TrackingLink } from '@/components/analytics/AnalyticsProvider'
+import { PageTracker } from '@/components/analytics/PageTracker'
 
 export const metadata: Metadata = {
   title: 'Services de Développement Mobile - Lodgic',

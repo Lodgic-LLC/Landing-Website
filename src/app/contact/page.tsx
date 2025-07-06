@@ -3,6 +3,8 @@ import { Metadata } from 'next'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaCalendarAlt, FaChevronRight, FaRocket } from 'react-icons/fa'
 import Link from 'next/link'
 import Image from 'next/image'
+import { TrackingSection, TrackingLink } from '@/components/analytics/AnalyticsProvider'
+import { PageTracker } from '@/components/analytics/PageTracker'
 
 export const metadata: Metadata = {
   title: 'Contact - Lodgic',
@@ -51,8 +53,17 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <>
+      <PageTracker 
+        pageName="Contact" 
+        pageCategory="contact_page"
+        additionalData={{
+          page_type: 'contact',
+          conversion_goal: 'lead_generation',
+          form_available: true
+        }}
+      />
       {/* Hero Section */}
-      <section className="w-full bg-[#FFFFFF] pt-28 md:pt-36 pb-16 md:pb-20 overflow-hidden relative">
+      <TrackingSection sectionName="contact_hero" trackOnView={true} trackTimeSpent={true} className="w-full bg-[#FFFFFF] pt-28 md:pt-36 pb-16 md:pb-20 overflow-hidden relative">
         {/* Formes abstraites en arrière-plan */}
         <div className="absolute inset-0 overflow-hidden z-0 opacity-30">
           <svg
@@ -92,13 +103,16 @@ export default function Contact() {
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <Link
+                <TrackingLink
                   href="/rendez-vous"
                   className="bg-[#E67E22] text-[#FFFFFF] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#E67E22]/90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center text-lg"
+                  conversionType="cta_click"
+                  elementId="hero_booking_cta"
+                  category="conversion"
                 >
                   <FaCalendarAlt className="w-5 h-5 mr-2.5" />
                   Prendre un Rendez-vous
-                </Link>
+                </TrackingLink>
                 <Link
                   href="/services"
                   className="border-2 border-[#2C3E50] text-[#2C3E50] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#2C3E50]/10 hover:border-[#2C3E50] transition-all flex items-center group text-lg"
@@ -143,10 +157,10 @@ export default function Contact() {
             <path d="M0,50 C360,0 1080,120 1440,50 L1440,100 L0,100 Z" fill="#FAF3E0" />
           </svg>
         </div>
-      </section>
+      </TrackingSection>
 
       {/* Section Principale */}
-      <section className="py-16 bg-[#FAF3E0]">
+      <TrackingSection sectionName="contact_main" trackOnView={true} trackTimeSpent={true} className="py-16 bg-[#FAF3E0]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16">
             {/* Carte de contact - Colonne Gauche */}
@@ -169,12 +183,15 @@ export default function Contact() {
                       </div>
                       <div className="ml-4">
                         <h3 className="text-lg font-semibold text-[#111827]">Email</h3>
-                        <a
+                        <TrackingLink
                           href="mailto:lodgicdev@gmail.com"
                           className="text-[#E67E22] hover:text-[#E67E22]/80 transition-colors duration-300 break-all"
+                          conversionType="email_click"
+                          elementId="contact_email"
+                          category="conversion"
                         >
                           lodgicdev@gmail.com
-                        </a>
+                        </TrackingLink>
                       </div>
                     </div>
 
@@ -187,9 +204,12 @@ export default function Contact() {
                       <div className="ml-4">
                         <h3 className="text-lg font-semibold text-[#111827]">Téléphone</h3>
                         <p className="text-[#374151]">Disponible sur rendez-vous</p>
-                        <Link
+                        <TrackingLink
                           href="/rendez-vous"
                           className="text-[#E67E22] hover:text-[#E67E22]/80 transition-colors duration-300 inline-flex items-center mt-1 font-medium"
+                          conversionType="cta_click"
+                          elementId="phone_booking_cta"
+                          category="conversion"
                         >
                           Prendre rendez-vous
                           <svg
@@ -200,7 +220,7 @@ export default function Contact() {
                           >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                           </svg>
-                        </Link>
+                        </TrackingLink>
                       </div>
                     </div>
 
@@ -300,10 +320,10 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </TrackingSection>
 
       {/* Section CTA */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-[#2C3E50] to-[#2C3E50]/80 relative overflow-hidden">
+      <TrackingSection sectionName="contact_cta" trackOnView={true} trackTimeSpent={true} className="py-20 md:py-28 bg-gradient-to-br from-[#2C3E50] to-[#2C3E50]/80 relative overflow-hidden">
         {/* Éléments décoratifs */}
         <div className="absolute inset-0 overflow-hidden z-0">
           <svg
@@ -330,15 +350,18 @@ export default function Contact() {
             Nous proposons également des créneaux de rendez-vous téléphoniques pour discuter plus en détail de votre
             projet.
           </p>
-          <Link
+          <TrackingLink
             href="/rendez-vous"
             className="inline-flex items-center justify-center px-8 py-4 bg-[#FFFFFF] text-[#2C3E50] rounded-lg font-semibold hover:bg-[#FAF3E0] transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-lg"
+            conversionType="cta_click"
+            elementId="bottom_booking_cta"
+            category="conversion"
           >
             <FaPhone className="w-5 h-5 mr-2.5" />
             Planifier un rendez-vous
-          </Link>
+          </TrackingLink>
         </div>
-      </section>
+      </TrackingSection>
     </>
   )
 }

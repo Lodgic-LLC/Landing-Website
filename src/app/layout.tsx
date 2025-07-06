@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
 import Script from 'next/script'
 import { WebVitals } from './web-vitals'
+import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -184,11 +185,21 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} font-inter bg-gray-50 text-gray-800`}>
         <WebVitals />
-        <div className="relative w-full">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <AnalyticsProvider
+          config={{
+            debug: process.env.NODE_ENV === 'development',
+            enableAutoTracking: true,
+            scrollThreshold: 25,
+            timeThreshold: 10,
+            exitIntentEnabled: true,
+          }}
+        >
+          <div className="relative w-full">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </AnalyticsProvider>
       </body>
     </html>
   )

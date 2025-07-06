@@ -3,6 +3,9 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import Hero from '@/components/pages/home/Hero'
+import { TrackingSection } from '@/components/analytics/AnalyticsProvider'
+import { PageTracker } from '@/components/analytics/PageTracker'
+import { AdvancedTracker } from '@/components/analytics/AdvancedTracker'
 // import TechStack from '@/components/pages/home/TechStack'
 
 const Features = dynamic(() => import('@/components/pages/home/Features'))
@@ -84,18 +87,53 @@ const structuredData = {
 export default function Home() {
   return (
     <>
+      <PageTracker 
+        pageName="Home" 
+        pageCategory="landing_page"
+        additionalData={{
+          page_type: 'homepage',
+          business_type: 'mobile_development',
+          location: 'toulouse'
+        }}
+      />
+      <AdvancedTracker
+        pageName="Home"
+        enableExitIntent={true}
+        enableMouseTracking={true}
+        enableIdleTracking={true}
+        enablePerformanceTracking={true}
+        idleTimeout={45000}
+        mouseTrackingThreshold={300}
+      />
       <main>
         <script
           key="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <Hero />
-        <Features />
-        <Process />
-        <About />
-        <ProjectCTA />
-        <FAQ />
+        <TrackingSection sectionName="hero" trackOnView={true} trackTimeSpent={true}>
+          <Hero />
+        </TrackingSection>
+        
+        <TrackingSection sectionName="features" trackOnView={true} trackTimeSpent={true}>
+          <Features />
+        </TrackingSection>
+        
+        <TrackingSection sectionName="process" trackOnView={true} trackTimeSpent={true}>
+          <Process />
+        </TrackingSection>
+        
+        <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
+          <About />
+        </TrackingSection>
+        
+        <TrackingSection sectionName="project_cta" trackOnView={true} trackTimeSpent={true}>
+          <ProjectCTA />
+        </TrackingSection>
+        
+        <TrackingSection sectionName="faq" trackOnView={true} trackTimeSpent={true}>
+          <FAQ />
+        </TrackingSection>
       </main>
     </>
   )

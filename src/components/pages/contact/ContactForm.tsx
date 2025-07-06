@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { FaEnvelope, FaUser, FaPhone, FaPaperPlane, FaFileAlt } from 'react-icons/fa'
+import { useAnalytics } from '@/hooks/useAnalytics'
 
 interface SubmitStatusType {
   success: boolean
@@ -26,6 +27,7 @@ export default function ContactForm() {
   const [submitStatus, setSubmitStatus] = useState<SubmitStatusType | null>(null)
   const [formErrors, setFormErrors] = useState<FormErrorsType>({})
   const router = useRouter()
+  const analytics = useAnalytics()
 
   const validateEmail = (email: string): boolean => {
     // Regex pour validation d'email
@@ -59,6 +61,10 @@ export default function ContactForm() {
     }
   }
 
+  const handleFieldFocus = (fieldName: string) => {
+    analytics.trackFormInteraction('contact_form', 'focus', fieldName)
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
@@ -78,11 +84,24 @@ export default function ContactForm() {
     // S'il y a des erreurs, les afficher et arrêter la soumission
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors)
+      // Tracker l'abandon du formulaire à cause des erreurs
+      analytics.trackFormInteraction('contact_form', 'abandon', 'validation_error', {
+        error_fields: Object.keys(errors),
+        form_completion: calculateFormCompletion()
+      })
       return
     }
 
     setIsSubmitting(true)
     setFormErrors({})
+
+    // Tracker la soumission du formulaire
+    analytics.trackFormInteraction('contact_form', 'submit', undefined, {
+      form_completion: 100,
+      has_phone: !!formData.phone,
+      message_length: formData.message.length,
+      subject: formData.subject
+    })
 
     try {
       // Créer un objet FormData à partir du formulaire
@@ -104,6 +123,12 @@ export default function ContactForm() {
       })
 
       if (response.ok) {
+        // Tracker la conversion réussie
+        analytics.trackConversion('contact_form', 10, {
+          form_type: 'contact',
+          conversion_point: 'form_submit',
+          lead_quality: 'high'
+        })
         router.push('/merci')
       }
     } catch (error) {
@@ -112,9 +137,19 @@ export default function ContactForm() {
         success: false,
         message: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
       })
+      // Tracker l'erreur de soumission
+      analytics.trackFormInteraction('contact_form', 'abandon', 'submit_error', {
+        error_message: error instanceof Error ? error.message : 'Unknown error'
+      })
     } finally {
       setIsSubmitting(false)
     }
+  }
+
+  const calculateFormCompletion = () => {
+    const fields = [formData.name, formData.email, formData.phone, formData.subject, formData.message]
+    const filledFields = fields.filter(field => field.trim() !== '').length
+    return Math.round((filledFields / fields.length) * 100)
   }
 
   return (
@@ -141,6 +176,7 @@ export default function ContactForm() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
+                  onFocus={() => handleFieldFocus('name')}
                   required
                   className="w-full pl-10 pr-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#E67E22] focus:border-[#E67E22] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500"
                   placeholder="Votre nom"
@@ -162,6 +198,7 @@ export default function ContactForm() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  onFocus={() => handleFieldFocus('email')}
                   required
                   className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#E67E22] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500 ${
                     formErrors.email ? 'border-red-500 focus:border-red-500' : 'border-[#D1D5DB] focus:border-[#E67E22]'
@@ -194,6 +231,7 @@ export default function ContactForm() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                onFocus={() => handleFieldFocus('phone')}
                 required
                 className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#E67E22] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500 ${
                   formErrors.phone ? 'border-red-500 focus:border-red-500' : 'border-[#D1D5DB] focus:border-[#E67E22]'
@@ -225,6 +263,7 @@ export default function ContactForm() {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
+                onFocus={() => handleFieldFocus('subject')}
                 required
                 className="w-full pl-10 pr-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#E67E22] focus:border-[#E67E22] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500"
                 placeholder="L'objet de votre message"
@@ -241,6 +280,7 @@ export default function ContactForm() {
               name="message"
               value={formData.message}
               onChange={handleChange}
+              onFocus={() => handleFieldFocus('message')}
               required
               rows={6}
               className="w-full px-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#E67E22] focus:border-[#E67E22] outline-none transition-all resize-none bg-white text-[#111827] placeholder:text-gray-500"
