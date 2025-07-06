@@ -128,9 +128,12 @@ export default function FAQ() {
 
   return (
     <>
-      <Script id="faq-schema" type="application/ld+json">
-        {JSON.stringify(faqSchemaData)}
-      </Script>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
+      />
 
       <section className="relative py-16 sm:py-20 md:py-24 bg-white overflow-hidden">
         {/* Vague en haut pour transition */}
@@ -175,7 +178,10 @@ export default function FAQ() {
             </h2>
             <p className="text-md md:text-lg lg:text-xl text-[#2C3E50]/80 max-w-3xl mx-auto mb-6">
               <span className="md:hidden">Questions fréquentes. Pas la vôtre ? Contactez-nous !</span>
-              <span className="hidden md:inline">On a rassemblé ici les questions que vous nous posez souvent. Si la vôtre n'y est pas, on est là pour y répondre !</span>
+              <span className="hidden md:inline">
+                On a rassemblé ici les questions que vous nous posez souvent. Si la vôtre n'y est pas, on est là pour y
+                répondre !
+              </span>
             </p>
             <div className="w-20 h-1.5 bg-[#E67E22] mx-auto rounded-full"></div>
           </div>

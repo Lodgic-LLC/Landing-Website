@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maintenance - Lodgic</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --brand-blue-dark: #2c3e50;
+        --brand-beige-light: #faf3e0;
+        --brand-orange-accent: #e67e22;
+        --brand-green-sage: #a3b18a;
+        --brand-blue-light: #3498db;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--brand-beige-light);
+        color: var(--brand-blue-dark);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      .header {
+        background-color: var(--brand-beige-light);
+        padding: 1rem 0;
+        box-shadow: 0 2px 4px rgba(44, 62, 80, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        color: var(--brand-blue-dark);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .logo:hover {
+        color: var(--brand-blue-light);
+      }
+
+      .status-badge {
+        background-color: var(--brand-orange-accent);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* Main Content */
+      .main-content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        min-height: calc(100vh - 200px);
+      }
+
+      .maintenance-card {
+        background: white;
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 20px 40px rgba(44, 62, 80, 0.1);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .maintenance-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--brand-blue-dark) 0%,
+          var(--brand-blue-light) 50%,
+          var(--brand-orange-accent) 100%
+        );
+      }
+
+      .icon-container {
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .maintenance-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1rem;
+        background: var(--brand-blue-dark);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        animation: rotate 3s linear infinite;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .maintenance-icon::before {
+        content: '⚙️';
+        font-size: 2rem;
+        animation: rotate 2s linear infinite reverse;
+      }
+
+      .title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--brand-blue-dark);
+        margin-bottom: 1rem;
+      }
+
+      .subtitle {
+        font-size: 1.25rem;
+        color: var(--brand-blue-dark);
+        opacity: 0.8;
+        margin-bottom: 2rem;
+      }
+
+      .description {
+        font-size: 1.1rem;
+        color: var(--brand-blue-dark);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+      }
+
+      .progress-container {
+        margin: 2rem 0;
+      }
+
+      .progress-label {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--brand-blue-dark);
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 8px;
+        background: rgba(44, 62, 80, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 0.5rem;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--brand-blue-dark) 0%, var(--brand-blue-light) 100%);
+        border-radius: 4px;
+        width: 0%;
+        animation: progressAnimation 10s ease-in-out infinite;
+      }
+
+      @keyframes progressAnimation {
+        0% {
+          width: 0%;
+        }
+        50% {
+          width: 75%;
+        }
+        100% {
+          width: 0%;
+        }
+      }
+
+      .eta {
+        font-size: 0.875rem;
+        color: var(--brand-blue-dark);
+        opacity: 0.7;
+      }
+
+      .contact-info {
+        background: var(--brand-beige-light);
+        padding: 1.5rem;
+        border-radius: 15px;
+        margin-top: 2rem;
+        border: 1px solid rgba(44, 62, 80, 0.1);
+      }
+
+      .contact-title {
+        font-weight: 700;
+        color: var(--brand-blue-dark);
+        margin-bottom: 1rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+        color: var(--brand-blue-dark);
+      }
+
+      .contact-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.5rem;
+      }
+
+      .contact-link {
+        color: var(--brand-blue-dark);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-link:hover {
+        color: var(--brand-blue-light);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--brand-blue-dark);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        margin-top: auto;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-text {
+        margin-bottom: 1rem;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-link {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--brand-orange-accent);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-content {
+          padding: 0 1rem;
+        }
+
+        .logo {
+          font-size: 1.5rem;
+        }
+
+        .maintenance-card {
+          padding: 2rem 1.5rem;
+          margin: 1rem;
+        }
+
+        .title {
+          font-size: 2rem;
+        }
+
+        .subtitle {
+          font-size: 1.1rem;
+        }
+
+        .description {
+          font-size: 1rem;
+        }
+
+        .footer-links {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .header-content {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .main-content {
+          padding: 1rem;
+        }
+
+        .maintenance-card {
+          padding: 1.5rem 1rem;
+        }
+
+        .title {
+          font-size: 1.75rem;
+        }
+
+        .maintenance-icon {
+          width: 60px;
+          height: 60px;
+        }
+
+        .maintenance-icon::before {
+          font-size: 1.5rem;
+        }
+      }
+
+      /* Animations */
+      .maintenance-card {
+        animation: slideUp 0.6s ease-out;
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Loading dots */
+      .loading-dots {
+        display: inline-block;
+        margin-left: 0.5rem;
+      }
+
+      .loading-dots span {
+        animation: blink 1.4s infinite both;
+      }
+
+      .loading-dots span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .loading-dots span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes blink {
+        0%,
+        80%,
+        100% {
+          opacity: 0;
+        }
+        40% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <a href="/" class="logo">Lodgic</a>
+        <div class="status-badge">Maintenance en cours</div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="maintenance-card">
+        <div class="icon-container">
+          <div class="maintenance-icon"></div>
+        </div>
+
+        <h1 class="title">Maintenance en cours</h1>
+        <p class="subtitle">
+          Mise à jour du site en cours<span class="loading-dots"><span>.</span><span>.</span><span>.</span></span>
+        </p>
+
+        <p class="description">
+          Nous effectuons actuellement une maintenance programmée pour améliorer votre expérience. Notre site sera de
+          retour en ligne très prochainement avec de nouvelles fonctionnalités et améliorations.
+        </p>
+
+        <div class="progress-container">
+          <div class="progress-label">Progression de la maintenance</div>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <div class="eta">Temps estimé : quelques minutes</div>
+        </div>
+
+        <div class="contact-info">
+          <h3 class="contact-title">Besoin d'aide ?</h3>
+          <div class="contact-item">
+            <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+              />
+            </svg>
+            <a href="mailto:lodgicdev@gmail.com" class="contact-link">lodgicdev@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              />
+            </svg>
+            <span>Nous revenons très bientôt</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-text">© 2024 Lodgic - Développement d'applications web et mobiles</p>
+        <div class="footer-links">
+          <a href="/services" class="footer-link">Services</a>
+          <a href="/blog" class="footer-link">Blog</a>
+          <a href="/a-propos" class="footer-link">À propos</a>
+          <a href="/contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mise à jour dynamique du temps
+      function updateTime() {
+        const now = new Date()
+        const minutes = now.getMinutes()
+        const estimatedTime = Math.max(1, 15 - (minutes % 15))
+
+        const etaElement = document.querySelector('.eta')
+        if (etaElement) {
+          etaElement.textContent = `Temps estimé : ${estimatedTime} minute${estimatedTime > 1 ? 's' : ''}`
+        }
+      }
+
+      // Gestion du titre dynamique
+      function updateTitle() {
+        const titles = ['Maintenance en cours - Lodgic', 'Mise à jour... - Lodgic', 'Bientôt de retour - Lodgic']
+
+        let currentIndex = 0
+        setInterval(() => {
+          document.title = titles[currentIndex]
+          currentIndex = (currentIndex + 1) % titles.length
+        }, 3000)
+      }
+
+      // Initialisation
+      updateTime()
+      updateTitle()
+
+      // Mise à jour toutes les minutes
+      setInterval(updateTime, 60000)
+
+      // Effet de particules subtil
+      function createParticle() {
+        const particle = document.createElement('div')
+        particle.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: var(--brand-blue-light);
+                border-radius: 50%;
+                pointer-events: none;
+                opacity: 0.3;
+                z-index: 1;
+                left: ${Math.random() * 100}vw;
+                top: 100vh;
+                animation: float 15s linear infinite;
+            `
+
+        document.body.appendChild(particle)
+
+        setTimeout(() => {
+          particle.remove()
+        }, 15000)
+      }
+
+      // Ajouter l'animation float
+      const style = document.createElement('style')
+      style.textContent = `
+            @keyframes float {
+                to {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `
+      document.head.appendChild(style)
+
+      // Créer des particules occasionnellement
+      setInterval(createParticle, 3000)
+    </script>
+  </body>
+</html>

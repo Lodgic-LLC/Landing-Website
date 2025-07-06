@@ -68,32 +68,16 @@ export const metadata: Metadata = {
   },
 }
 
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Lodgic',
-  image: 'https://lodgic-dev.com/FullLogo_Transparent.png',
-  url: 'https://lodgic-dev.com',
-  email: 'lodgic.dev@gmail.com',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Toulouse',
-    addressRegion: 'Occitanie',
-    addressCountry: 'FR',
-  },
-
-  sameAs: ['https://github.com/lodgic-llc', 'https://linkedin.com/company/lodgic-dev', 'https://x.com/lodgic-dev'],
-}
 export default function Home() {
   return (
     <>
-      <PageTracker 
-        pageName="Home" 
+      <PageTracker
+        pageName="Home"
         pageCategory="landing_page"
         additionalData={{
           page_type: 'homepage',
           business_type: 'mobile_development',
-          location: 'toulouse'
+          location: 'toulouse',
         }}
       />
       <AdvancedTracker
@@ -106,31 +90,26 @@ export default function Home() {
         mouseTrackingThreshold={300}
       />
       <main>
-        <script
-          key="structured-data"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
         <TrackingSection sectionName="hero" trackOnView={true} trackTimeSpent={true}>
           <Hero />
         </TrackingSection>
-        
+
         <TrackingSection sectionName="features" trackOnView={true} trackTimeSpent={true}>
           <Features />
         </TrackingSection>
-        
+
         <TrackingSection sectionName="process" trackOnView={true} trackTimeSpent={true}>
           <Process />
         </TrackingSection>
-        
+
         <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
           <About />
         </TrackingSection>
-        
+
         <TrackingSection sectionName="project_cta" trackOnView={true} trackTimeSpent={true}>
           <ProjectCTA />
         </TrackingSection>
-        
+
         <TrackingSection sectionName="faq" trackOnView={true} trackTimeSpent={true}>
           <FAQ />
         </TrackingSection>

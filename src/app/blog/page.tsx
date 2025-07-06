@@ -5,6 +5,7 @@ import { blogPosts as rawBlogPosts } from '@/data/blog/posts'
 import type { BlogPost } from '@/types/blog'
 import { FaChevronRight, FaSearch, FaFilter, FaEnvelope, FaCalendarAlt } from 'react-icons/fa'
 import BlogFilters from '@/components/blog/BlogFilters'
+import Script from 'next/script'
 
 const blogPosts = JSON.parse(JSON.stringify(rawBlogPosts))
 
@@ -85,9 +86,10 @@ const blogSchemaData = {
 const BlogPage = () => {
   return (
     <>
-      <script
-        key={'structured-data'}
+      <Script
+        id="blog-structured-data"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchemaData) }}
       />
 

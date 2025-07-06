@@ -25,14 +25,13 @@ const structuredData = {
   name: 'Lodgic',
   image: 'https://lodgic-dev.com/FullLogo_Transparent.png',
   url: 'https://lodgic-dev.com',
-  email: 'lodgic.dev@gmail.com',
+  email: 'lodgicdev@gmail.com',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Toulouse',
     addressRegion: 'Occitanie',
     addressCountry: 'FR',
   },
-
   sameAs: ['https://github.com/lodgic-llc', 'https://linkedin.com/company/lodgic-dev', 'https://x.com/lodgic-dev'],
 }
 
