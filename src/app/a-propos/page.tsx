@@ -159,11 +159,68 @@ export default function APropos() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+            {/* Yann Jerome */}
+            <div className="bg-[#FFFFFF] rounded-xl shadow-lg p-6 md:p-8 border border-gray-200 hover:border-[#E67E22]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group">
+              <div className="flex flex-col sm:flex-row items-center text-center sm:text-left mb-6">
+                <div className="relative w-20 h-20 mr-0 sm:mr-6 mb-4 sm:mb-0 flex-shrink-0">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#E67E22]/80 to-[#E67E22]/60 group-hover:from-[#E67E22] group-hover:to-[#E67E22]/70 transition-all duration-300 shadow-md"></div>
+                  <div className="absolute inset-1 rounded-full bg-[#FAF3E0] flex items-center justify-center">
+                    <svg
+                      className="w-10 h-10 text-[#E67E22] group-hover:text-[#FFFFFF] transition-colors duration-300"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <circle cx="12" cy="8" r="5" />
+                      <path d="M20 21C20 16.5817 16.4183 13 12 13C7.58172 13 4 16.5817 4 21" />
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-[#111827] group-hover:text-[#E67E22] transition-colors">
+                    Yann Jerome
+                  </h3>
+                  <p className="text-[#E67E22] font-medium">Relation client / Développeur Mobile</p>
+                </div>
+              </div>
+
+              <p className="text-[#374151] mb-6 leading-relaxed text-sm sm:text-base">
+                <span className="md:hidden">
+                  Votre interlocuteur privilégié pour comprendre vos besoins et assurer le suivi de votre projet.
+                </span>
+                <span className="hidden md:inline">
+                  Yann est votre interlocuteur privilégié tout au long de votre projet. Il analyse vos besoins,
+                  coordonne le développement et assure un suivi personnalisé pour garantir que votre vision se
+                  concrétise parfaitement.
+                </span>
+              </p>
+
+              <div className="space-y-3">
+                <div className="flex items-start">
+                  <FaCheckCircle className="h-5 w-5 text-[#E67E22] mt-0.5 flex-shrink-0 group-hover:text-[#2C3E50] transition-colors" />
+                  <span className="ml-3 text-[#374151] group-hover:text-[#111827] transition-colors">
+                    Analyse et compréhension de vos besoins
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <FaCheckCircle className="h-5 w-5 text-[#E67E22] mt-0.5 flex-shrink-0 group-hover:text-[#2C3E50] transition-colors" />
+                  <span className="ml-3 text-[#374151] group-hover:text-[#111827] transition-colors">
+                    Suivi et coordination du développement
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <FaCheckCircle className="h-5 w-5 text-[#E67E22] mt-0.5 flex-shrink-0 group-hover:text-[#2C3E50] transition-colors" />
+                  <span className="ml-3 text-[#374151] group-hover:text-[#111827] transition-colors">
+                    Accompagnement post-lancement et évolutions
+                  </span>
+                </div>
+              </div>
+            </div>
+
             {/* Mathéo Katbie */}
-            <div className="bg-[#FFFFFF] rounded-xl shadow-lg p-8 border border-gray-200 hover:border-[#E67E22]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group">
-              <div className="flex items-center mb-6">
-                <div className="relative w-20 h-20 mr-6">
+            <div className="bg-[#FFFFFF] rounded-xl shadow-lg p-6 md:p-8 border border-gray-200 hover:border-[#E67E22]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group">
+              <div className="flex flex-col sm:flex-row items-center text-center sm:text-left mb-6">
+                <div className="relative w-20 h-20 mr-0 sm:mr-6 mb-4 sm:mb-0 flex-shrink-0">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#2C3E50]/80 to-[#2C3E50]/60 group-hover:from-[#2C3E50] group-hover:to-[#2C3E50]/70 transition-all duration-300 shadow-md"></div>
                   <div className="absolute inset-1 rounded-full bg-[#FAF3E0] flex items-center justify-center">
                     <svg
@@ -184,10 +241,15 @@ export default function APropos() {
                 </div>
               </div>
 
-              <p className="text-[#374151] mb-6 leading-relaxed">
-                Mathéo donne vie à votre projet avec des solutions techniques robustes et intuitives. Son expertise
-                couvre l'ensemble du développement, du back-end au front-end, pour des applications performantes et
-                faciles à utiliser.
+              <p className="text-[#374151] mb-6 leading-relaxed text-sm sm:text-base">
+                <span className="md:hidden">
+                  Donne vie à votre projet avec des solutions techniques robustes et intuitives.
+                </span>
+                <span className="hidden md:inline">
+                  Mathéo donne vie à votre projet avec des solutions techniques robustes et intuitives. Son expertise
+                  couvre l'ensemble du développement, du back-end au front-end, pour des applications performantes et
+                  faciles à utiliser.
+                </span>
               </p>
 
               <div className="space-y-3">

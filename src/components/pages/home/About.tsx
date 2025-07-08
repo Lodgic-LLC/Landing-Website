@@ -4,7 +4,10 @@ const About = () => {
   return (
     <section className="py-20 bg-[#FAF3E0] relative overflow-hidden">
       {/* Top Wave separator */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '80px', transform: 'translateY(0px)' }}>
+      <div
+        className="absolute top-0 left-0 w-full overflow-hidden"
+        style={{ height: '80px', transform: 'translateY(0px)' }}
+      >
         <svg
           className="absolute top-0 w-full h-full"
           viewBox="0 0 1440 80"
@@ -12,7 +15,7 @@ const About = () => {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
         >
-          <path d="M0,80 C240,0 480,0 720,40 C960,80 1200,80 1440,40 L1440,0 L0,0 Z" fill="#FFFFFF" /> 
+          <path d="M0,80 C240,0 480,0 720,40 C960,80 1200,80 1440,40 L1440,0 L0,0 Z" fill="#FFFFFF" />
         </svg>
       </div>
       <div className="max-w-7xl mx-auto px-6">
@@ -25,7 +28,6 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
-          
           <div className="bg-[#FFFFFF] rounded-xl shadow-lg p-6 md:p-8 border border-gray-200 hover:border-[#E67E22]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group">
             <div className="flex flex-col sm:flex-row items-center text-center sm:text-left mb-6">
               <div className="relative w-20 h-20 mr-0 sm:mr-6 mb-4 sm:mb-0 flex-shrink-0">
@@ -43,11 +45,22 @@ const About = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-[#111827] group-hover:text-[#E67E22] transition-colors">
-                  
+                  Yann Jerome
                 </h3>
                 <p className="text-[#E67E22] font-medium">Relation client / Développeur Mobile</p>
               </div>
             </div>
+
+            <p className="text-[#374151] mb-6 leading-relaxed text-sm sm:text-base">
+              <span className="md:hidden">
+                Votre interlocuteur privilégié pour comprendre vos besoins et assurer le suivi de votre projet.
+              </span>
+              <span className="hidden md:inline">
+                Yann est votre interlocuteur privilégié tout au long de votre projet. Il analyse vos besoins, coordonne
+                le développement et assure un suivi personnalisé pour garantir que votre vision se concrétise
+                parfaitement.
+              </span>
+            </p>
 
             <div className="space-y-3">
               <div className="flex items-start">
@@ -96,8 +109,14 @@ const About = () => {
             </div>
 
             <p className="text-[#374151] mb-6 leading-relaxed text-sm sm:text-base">
-              <span className="md:hidden">Donne vie à votre projet avec des solutions techniques robustes et intuitives.</span>
-              <span className="hidden md:inline">Mathéo donne vie à votre projet avec des solutions techniques robustes et intuitives. Son expertise couvre l'ensemble du développement, du back-end au front-end, pour des applications performantes et faciles à utiliser.</span>
+              <span className="md:hidden">
+                Donne vie à votre projet avec des solutions techniques robustes et intuitives.
+              </span>
+              <span className="hidden md:inline">
+                Mathéo donne vie à votre projet avec des solutions techniques robustes et intuitives. Son expertise
+                couvre l'ensemble du développement, du back-end au front-end, pour des applications performantes et
+                faciles à utiliser.
+              </span>
             </p>
 
             <div className="space-y-3">
@@ -136,15 +155,25 @@ const About = () => {
                 Une équipe adaptable à vos besoins
               </h3>
               <p className="text-[#374151] leading-relaxed text-sm sm:text-base">
-                <span className="md:hidden">Pour les projets d'envergure, nous collaborons avec notre réseau de développeurs spécialisés.</span>
-                <span className="hidden md:inline">Pour les projets d'envergure ou nécessitant des compétences spécifiques, nous collaborons avec notre réseau de développeurs spécialisés (UI/UX designers, experts en sécurité, développeurs mobiles natifs, etc.). Cette flexibilité nous permet de constituer l'équipe idéale pour votre projet, quelle que soit sa taille ou sa complexité.</span>
+                <span className="md:hidden">
+                  Pour les projets d'envergure, nous collaborons avec notre réseau de développeurs spécialisés.
+                </span>
+                <span className="hidden md:inline">
+                  Pour les projets d'envergure ou nécessitant des compétences spécifiques, nous collaborons avec notre
+                  réseau de développeurs spécialisés (UI/UX designers, experts en sécurité, développeurs mobiles natifs,
+                  etc.). Cette flexibilité nous permet de constituer l'équipe idéale pour votre projet, quelle que soit
+                  sa taille ou sa complexité.
+                </span>
               </p>
             </div>
           </div>
         </div>
       </div>
       {/* Bottom Wave separator */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px', transform: 'translateY(1px)' }}>
+      <div
+        className="absolute bottom-0 left-0 w-full overflow-hidden"
+        style={{ height: '80px', transform: 'translateY(1px)' }}
+      >
         <svg
           className="absolute bottom-0 w-full h-full"
           viewBox="0 0 1440 80"
@@ -159,4 +188,4 @@ const About = () => {
   )
 }
 
-export default About; 
+export default About
