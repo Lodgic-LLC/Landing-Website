@@ -14,9 +14,9 @@ export function WebVitals() {
     }
 
     // Optionnel : console.log pour le développement
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Web Vital:', metric)
-    }
+    // if (process.env.NODE_ENV === 'development') {
+    //   console.log('Web Vital:', metric)
+    // }
   })
 
   return null
