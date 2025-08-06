@@ -8,7 +8,10 @@ on:
     types:
       - closed
     branches:
-      - main  
+      - main
+  schedule:
+    # Exécuter tous les jours à 20h00 UTC (22h00 heure française en hiver, 21h00 en été)
+    - cron: '0 20 * * *'  
 
 jobs:
   deploy:
