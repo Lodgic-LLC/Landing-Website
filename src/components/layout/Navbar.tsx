@@ -93,7 +93,7 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <Link href="/rendez-vous">
+            <Link href="/#contact">
               <span className="px-3 py-3  text-sm font-bricolage-grotesque-bold leading-6 [30px] text-[16px] transition-all duration-200 text-[#001F45] border border-[#001F45] hover:bg-[#001F45] hover:text-white">
                 Nous Contacter
               </span>
