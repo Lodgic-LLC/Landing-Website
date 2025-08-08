@@ -4,21 +4,16 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-[#2C3E50] text-[#FAF3E0] pt-10 pb-24 sm:pt-16 sm:pb-10 relative overflow-hidden">
-      {/* Éléments décoratifs subtils */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#A3B18A]/30 to-transparent"></div>
-      <div className="absolute bottom-0 right-0 w-[40rem] h-[40rem] bg-[#E67E22]/5 rounded-full blur-[120px] -z-0"></div>
-      <div className="absolute top-1/4 left-0 w-[30rem] h-[30rem] bg-[#A3B18A]/5 rounded-full blur-[120px] -z-0"></div>
-
+    <footer className="bg-[#001F45] text-white pt-10 pb-14 sm:pt-16 sm:pb-10 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-10 sm:mb-16">
-          <div className="md:col-span-1 space-y-5 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-10 sm:mb-16">
+          <div className="md:col-span-1 space-y-5 text-center md:text-left max-w-md mx-auto md:max-w-none">
             <Link href="/" className="inline-flex items-center group justify-center md:justify-start">
-              <span className="font-inter-bold font-semibold text-3xl text-[#FAF3E0] group-hover:text-[#E67E22] transition-colors duration-300">
+              <span className="font-bricolage-grotesque-regular text-3xl text-white group-hover:text-[#DBFF00] transition-colors duration-300">
                 Lodgic
               </span>
             </Link>
-            <p className="text-[#FAF3E0]/70 text-sm leading-relaxed">
+            <p className="text-white/80 text-sm leading-relaxed font-inter-regular">
               On transforme vos idées en applications mobiles et web sur mesure. Basés à Toulouse, prêts à collaborer où
               que vous soyez.
             </p>
@@ -62,7 +57,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#3e5265] p-2.5 rounded-full text-[#FAF3E0]/70 hover:text-[#E67E22] hover:bg-[#E67E22]/20 transition-all duration-300 group"
+                  className="bg-white/10 p-2.5 rounded-full text-white/80 hover:text-[#DBFF00] hover:bg-[#DBFF00]/20 transition-all duration-300 group"
                   aria-label={social.label}
                   tabIndex={0}
                 >
@@ -72,146 +67,142 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="space-y-5 text-center sm:text-left">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#FAF3E0]/90 relative inline-block">
-              Navigation
-              <span className="absolute -bottom-1.5 left-1/2 sm:left-0 transform -translate-x-1/2 sm:translate-x-0 w-12 h-0.5 bg-[#E67E22]"></span>
-            </h3>
-            <ul className="grid grid-cols-2 sm:grid-cols-1 gap-x-2 gap-y-2.5">
-              {[
-                // Array for navigation links
-                { href: '/', label: 'Accueil' },
-                { href: '/services', label: 'Nos Services' },
-                { href: '/blog', label: 'Lodgic Conseils' },
-                { href: '/a-propos', label: 'Qui sommes-nous ?' },
-                { href: '/contact', label: 'Contactez-nous' },
-                { href: '/rendez-vous', label: 'Prendre un rendez-vous' },
-              ].map((link) => (
-                <li key={link.label}>
-                  {link.href === '/rendez-vous' ? (
+          <div className="md:col-span-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
+              <div className="text-center sm:text-left">
+                <h3 className="text-white font-bricolage-grotesque-regular text-lg mb-4">Navigation</h3>
+                <ul className="space-y-3">
+                  <li>
                     <Link
-                      href={link.href}
-                      className=" text-[#E67E22]  hover:text-[#E67E22] transition-colors inline-flex items-center group text-sm"
+                      href="/"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#A3B18A] mr-2.5 group-hover:bg-[#E67E22] group-hover:scale-110 transition-all duration-300"></span>
-                      <span className="group-hover:translate-x-0.5 transition-transform duration-300">
-                        {link.label}
-                      </span>
+                      Accueil
                     </Link>
-                  ) : (
+                  </li>
+                  <li>
                     <Link
-                      href={link.href}
-                      className="text-[#FAF3E0]/70 hover:text-[#E67E22] transition-colors inline-flex items-center group text-sm"
+                      href="/services"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#A3B18A] mr-2.5 group-hover:bg-[#E67E22] group-hover:scale-110 transition-all duration-300"></span>
-                      <span className="group-hover:translate-x-0.5 transition-transform duration-300">
-                        {link.label}
-                      </span>
+                      Nos services
                     </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+                  </li>
+                  <li>
+                    <Link
+                      href="/portfolio"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
+                      tabIndex={0}
+                    >
+                      Portfolio
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/blog"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
+                      tabIndex={0}
+                    >
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
+                      tabIndex={0}
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
-          <div className="space-y-5 text-center sm:text-left">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#FAF3E0]/90 relative inline-block">
-              Contactez-nous
-              <span className="absolute -bottom-1.5 left-1/2 sm:left-0 transform -translate-x-1/2 sm:translate-x-0 w-12 h-0.5 bg-[#E67E22]"></span>
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start group justify-center sm:justify-start">
-                <div className="bg-[#3e5265] p-2.5 rounded-lg mr-3.5 group-hover:bg-[#E67E22]/20 transition-colors duration-300 flex-shrink-0">
-                  <svg
-                    className="w-5 h-5 text-[#FAF3E0]/70 group-hover:text-[#E67E22] transition-colors"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-xs text-[#FAF3E0]/60 mb-0.5 font-medium">Par email</p>
-                  <a
-                    href="mailto:lodgicdev@gmail.com"
-                    className="inline-flex items-center text-[#FAF3E0]/80 hover:text-[#E67E22] transition-colors text-sm group"
-                  >
-                    <span>lodgicdev@gmail.com</span>
-                    <svg
-                      className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 transition-transform duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start group justify-center sm:justify-start">
-                <div className="bg-[#3e5265] p-2.5 rounded-lg mr-3.5 group-hover:bg-[#E67E22]/20 transition-colors duration-300 flex-shrink-0">
-                  <svg
-                    className="w-5 h-5 text-[#FAF3E0]/70 group-hover:text-[#E67E22] transition-colors"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-xs text-[#FAF3E0]/60 mb-0.5 font-medium">Notre port d'attache</p>
-                  <span className="text-[#FAF3E0]/80 text-sm">Toulouse, Occitanie, France</span>
-                </div>
-              </li>
-              <li className="hidden sm:block pt-2">
-                <Link
-                  href="/rendez-vous"
-                  className="inline-flex items-center px-6 py-2.5 bg-[#E67E22] text-white rounded-full hover:bg-opacity-90 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-sm font-semibold"
-                  tabIndex={0}
-                >
-                  <span>Planifier un entretien</span>
-                  <svg
-                    className="w-4 h-4 ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </Link>
-              </li>
-            </ul>
+              <div className="text-center sm:text-left">
+                <h3 className="text-white font-bricolage-grotesque-regular text-lg mb-4">Nous contacter</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start group justify-center sm:justify-start">
+                    <div className="bg-white/10 p-2.5 rounded-lg mr-3.5 group-hover:bg-[#DBFF00]/20 transition-colors duration-300 flex-shrink-0">
+                      <svg
+                        className="w-5 h-5 text-white/80 group-hover:text-[#DBFF00] transition-colors"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-xs text-white/70 mb-0.5 font-medium font-inter-regular">Par email</p>
+                      <a
+                        href="mailto:lodgicdev@gmail.com"
+                        className="inline-flex items-center text-white/90 hover:text-[#DBFF00] transition-colors text-sm group font-inter-regular"
+                      >
+                        <span>lodgicdev@gmail.com</span>
+                        <svg
+                          className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 transition-transform duration-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </li>
+                  <li className="flex items-start group justify-center sm:justify-start">
+                    <div className="bg-white/10 p-2.5 rounded-lg mr-3.5 group-hover:bg-[#DBFF00]/20 transition-colors duration-300 flex-shrink-0">
+                      <svg
+                        className="w-5 h-5 text-white/80 group-hover:text-[#DBFF00] transition-colors"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-xs text-white/70 mb-0.5 font-medium font-inter-regular">Localisation</p>
+                      <span className="text-white/90 text-sm font-inter-regular">Toulouse, Occitanie, France</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="pt-6 sm:pt-8 border-t border-[#FAF3E0]/10 flex flex-col sm:flex-row justify-between items-center gap-y-4">
-          <p className="text-[#FAF3E0]/60 text-xs sm:text-sm text-center sm:text-left">
-            © {currentYear} <span className="text-[#FAF3E0]/80 font-semibold">Lodgic</span>. Tous droits réservés. Conçu
-            avec <span className="text-[#E67E22]">❤</span> à Toulouse.
+        <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-y-4">
+          <p className="text-white/70 text-xs sm:text-sm text-center sm:text-left font-inter-regular">
+            © {currentYear} <span className="text-white font-bricolage-grotesque-regular">Lodgic</span>. Tous droits
+            réservés.
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 sm:gap-x-6 gap-y-2">
             <Link
               href="/politique-confidentialite"
-              className="text-[#FAF3E0]/60 hover:text-[#E67E22] text-xs sm:text-sm transition-colors"
+              className="text-white/70 hover:text-[#DBFF00] text-xs sm:text-sm transition-colors font-inter-regular"
               tabIndex={0}
             >
               Politique de confidentialité
             </Link>
-            {/* Optional: Add more links like Terms of Service if needed */}
+            <Link
+              href="/politique-cookies"
+              className="text-white/70 hover:text-[#DBFF00] text-xs sm:text-sm transition-colors font-inter-regular"
+              tabIndex={0}
+            >
+              Politique de cookies
+            </Link>
           </div>
         </div>
       </div>

@@ -41,6 +41,35 @@ html {
     font-family: "Inter", sans-serif;
     font-weight: 700;
   }
+
+  .font-bricolage-grotesque {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+
+  .font-bricolage-grotesque-light {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 300;
+  }
+
+  .font-bricolage-grotesque-regular {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 400;
+  }
+
+  .font-bricolage-grotesque-medium {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 500;
+  }
+
+  .font-bricolage-grotesque-semibold {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 600;
+  }
+
+  .font-bricolage-grotesque-bold {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 700;
+  }
 }
 
 @media (min-width: 1400px) {

@@ -101,14 +101,16 @@ export default function Home() {
         <TrackingSection sectionName="process" trackOnView={true} trackTimeSpent={true}>
           <Process />
         </TrackingSection>
-
+        
+        <TrackingSection sectionName="project_cta" trackOnView={true} trackTimeSpent={true}>
+          <ProjectCTA />
+        </TrackingSection>
+        
         <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
           <About />
         </TrackingSection>
 
-        <TrackingSection sectionName="project_cta" trackOnView={true} trackTimeSpent={true}>
-          <ProjectCTA />
-        </TrackingSection>
+        
 
         <TrackingSection sectionName="faq" trackOnView={true} trackTimeSpent={true}>
           <FAQ />
