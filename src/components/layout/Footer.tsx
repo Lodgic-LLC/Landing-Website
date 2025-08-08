@@ -4,17 +4,16 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-[#2C3E50] text-[#FAF3E0] pt-10 pb-24 sm:pt-16 sm:pb-10 relative overflow-hidden">
-
+    <footer className="bg-[#001F45] text-white pt-10 pb-14 sm:pt-16 sm:pb-10 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-10 sm:mb-16">
-          <div className="md:col-span-1 space-y-5 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-10 sm:mb-16">
+          <div className="md:col-span-1 space-y-5 text-center md:text-left max-w-md mx-auto md:max-w-none">
             <Link href="/" className="inline-flex items-center group justify-center md:justify-start">
-              <span className="font-bricolage-grotesque-regular text-3xl text-[#FAF3E0] group-hover:text-blue-600 transition-colors duration-300">
+              <span className="font-bricolage-grotesque-regular text-3xl text-white group-hover:text-[#DBFF00] transition-colors duration-300">
                 Lodgic
               </span>
             </Link>
-            <p className="text-[#FAF3E0]/70 text-sm leading-relaxed font-inter-regular">
+            <p className="text-white/80 text-sm leading-relaxed font-inter-regular">
               On transforme vos idées en applications mobiles et web sur mesure. Basés à Toulouse, prêts à collaborer où
               que vous soyez.
             </p>
@@ -58,7 +57,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#3e5265] p-2.5 rounded-full text-[#FAF3E0]/70 hover:text-blue-600 hover:bg-blue-600/20 transition-all duration-300 group"
+                  className="bg-white/10 p-2.5 rounded-full text-white/80 hover:text-[#DBFF00] hover:bg-[#DBFF00]/20 transition-all duration-300 group"
                   aria-label={social.label}
                   tabIndex={0}
                 >
@@ -70,13 +69,13 @@ export default function Footer() {
 
           <div className="md:col-span-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
-              <div>
-                <h3 className="text-[#FAF3E0] font-bricolage-grotesque-regular text-lg mb-4">Navigation</h3>
+              <div className="text-center sm:text-left">
+                <h3 className="text-white font-bricolage-grotesque-regular text-lg mb-4">Navigation</h3>
                 <ul className="space-y-3">
                   <li>
                     <Link
                       href="/"
-                      className="text-[#FAF3E0]/70 hover:text-blue-600 transition-colors text-sm font-inter-regular"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >
                       Accueil
@@ -85,7 +84,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/services"
-                      className="text-[#FAF3E0]/70 hover:text-blue-600 transition-colors text-sm font-inter-regular"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >
                       Nos services
@@ -94,7 +93,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/portfolio"
-                      className="text-[#FAF3E0]/70 hover:text-blue-600 transition-colors text-sm font-inter-regular"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >
                       Portfolio
@@ -103,7 +102,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/blog"
-                      className="text-[#FAF3E0]/70 hover:text-blue-600 transition-colors text-sm font-inter-regular"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >
                       Blog
@@ -112,7 +111,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/contact"
-                      className="text-[#FAF3E0]/70 hover:text-blue-600 transition-colors text-sm font-inter-regular"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >
                       Contact
@@ -121,13 +120,13 @@ export default function Footer() {
                 </ul>
               </div>
 
-              <div>
-                <h3 className="text-[#FAF3E0] font-bricolage-grotesque-regular text-lg mb-4">Nous contacter</h3>
+              <div className="text-center sm:text-left">
+                <h3 className="text-white font-bricolage-grotesque-regular text-lg mb-4">Nous contacter</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start group justify-center sm:justify-start">
-                    <div className="bg-[#3e5265] p-2.5 rounded-lg mr-3.5 group-hover:bg-blue-600/20 transition-colors duration-300 flex-shrink-0">
+                    <div className="bg-white/10 p-2.5 rounded-lg mr-3.5 group-hover:bg-[#DBFF00]/20 transition-colors duration-300 flex-shrink-0">
                       <svg
-                        className="w-5 h-5 text-[#FAF3E0]/70 group-hover:text-blue-600 transition-colors"
+                        className="w-5 h-5 text-white/80 group-hover:text-[#DBFF00] transition-colors"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -136,10 +135,10 @@ export default function Footer() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-[#FAF3E0]/60 mb-0.5 font-medium font-inter-regular">Par email</p>
+                      <p className="text-xs text-white/70 mb-0.5 font-medium font-inter-regular">Par email</p>
                       <a
                         href="mailto:lodgicdev@gmail.com"
-                        className="inline-flex items-center text-[#FAF3E0]/80 hover:text-blue-600 transition-colors text-sm group font-inter-regular"
+                        className="inline-flex items-center text-white/90 hover:text-[#DBFF00] transition-colors text-sm group font-inter-regular"
                       >
                         <span>lodgicdev@gmail.com</span>
                         <svg
@@ -160,9 +159,9 @@ export default function Footer() {
                     </div>
                   </li>
                   <li className="flex items-start group justify-center sm:justify-start">
-                    <div className="bg-[#3e5265] p-2.5 rounded-lg mr-3.5 group-hover:bg-blue-600/20 transition-colors duration-300 flex-shrink-0">
+                    <div className="bg-white/10 p-2.5 rounded-lg mr-3.5 group-hover:bg-[#DBFF00]/20 transition-colors duration-300 flex-shrink-0">
                       <svg
-                        className="w-5 h-5 text-[#FAF3E0]/70 group-hover:text-blue-600 transition-colors"
+                        className="w-5 h-5 text-white/80 group-hover:text-[#DBFF00] transition-colors"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -174,8 +173,8 @@ export default function Footer() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-[#FAF3E0]/60 mb-0.5 font-medium font-inter-regular">Localisation</p>
-                      <span className="text-[#FAF3E0]/80 text-sm font-inter-regular">Toulouse, Occitanie, France</span>
+                      <p className="text-xs text-white/70 mb-0.5 font-medium font-inter-regular">Localisation</p>
+                      <span className="text-white/90 text-sm font-inter-regular">Toulouse, Occitanie, France</span>
                     </div>
                   </li>
                 </ul>
@@ -184,17 +183,25 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-6 sm:pt-8 border-t border-[#FAF3E0]/10 flex flex-col sm:flex-row justify-between items-center gap-y-4">
-          <p className="text-[#FAF3E0]/60 text-xs sm:text-sm text-center sm:text-left font-inter-regular">
-            © {currentYear} <span className="text-[#FAF3E0]/80 font-semibold">Lodgic</span>. Tous droits réservés.
+        <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-y-4">
+          <p className="text-white/70 text-xs sm:text-sm text-center sm:text-left font-inter-regular">
+            © {currentYear} <span className="text-white font-bricolage-grotesque-regular">Lodgic</span>. Tous droits
+            réservés.
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 sm:gap-x-6 gap-y-2">
             <Link
               href="/politique-confidentialite"
-              className="text-[#FAF3E0]/60 hover:text-blue-600 text-xs sm:text-sm transition-colors font-inter-regular"
+              className="text-white/70 hover:text-[#DBFF00] text-xs sm:text-sm transition-colors font-inter-regular"
               tabIndex={0}
             >
               Politique de confidentialité
+            </Link>
+            <Link
+              href="/politique-cookies"
+              className="text-white/70 hover:text-[#DBFF00] text-xs sm:text-sm transition-colors font-inter-regular"
+              tabIndex={0}
+            >
+              Politique de cookies
             </Link>
           </div>
         </div>

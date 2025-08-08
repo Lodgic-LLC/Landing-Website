@@ -1,129 +1,138 @@
-"use client";
-import { useState, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+'use client'
+import { useState, useEffect, useMemo } from 'react'
+import NextImage from 'next/image'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { blogPosts } from '@/data/blog/posts'
 
 export default function Features() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [imagesLoaded, setImagesLoaded] = useState(false)
 
   const services = [
     {
       title: "Développement d'applications mobiles",
-      description: "Nous créons des applications mobiles innovantes, évolutives et sécurisées, parfaitement alignées avec la vision de votre entreprise et vos objectifs commerciaux."
+      description:
+        'Nous créons des applications mobiles innovantes, évolutives et sécurisées, parfaitement alignées avec la vision de votre entreprise et vos objectifs commerciaux.',
     },
     {
-      title: "Systèmes distribués",
-      description: "Architecture et développement de systèmes distribués robustes pour gérer la charge et assurer la scalabilité de vos applications."
+      title: 'Systèmes distribués',
+      description:
+        'Architecture et développement de systèmes distribués robustes pour gérer la charge et assurer la scalabilité de vos applications.',
     },
     {
-      title: "Intelligence artificielle",
-      description: "Intégration de solutions d'IA avancées pour automatiser vos processus et améliorer l'expérience utilisateur."
+      title: 'Intelligence artificielle',
+      description:
+        "Intégration de solutions d'IA avancées pour automatiser vos processus et améliorer l'expérience utilisateur.",
     },
     {
-      title: "Commerce électronique",
-      description: "Développement de plateformes e-commerce complètes avec des fonctionnalités avancées de gestion et de paiement."
+      title: 'Commerce électronique',
+      description:
+        'Développement de plateformes e-commerce complètes avec des fonctionnalités avancées de gestion et de paiement.',
     },
     {
-      title: "UI/UX design",
-      description: "Conception d'interfaces utilisateur intuitives et d'expériences utilisateur exceptionnelles pour vos applications."
+      title: 'UI/UX design',
+      description:
+        "Conception d'interfaces utilisateur intuitives et d'expériences utilisateur exceptionnelles pour vos applications.",
     },
     {
-      title: "Assurance qualité",
-      description: "Tests complets et assurance qualité pour garantir la fiabilité et la performance de vos solutions logicielles."
+      title: 'Assurance qualité',
+      description:
+        'Tests complets et assurance qualité pour garantir la fiabilité et la performance de vos solutions logicielles.',
     },
     {
-      title: "Analyse de données",
-      description: "Solutions d'analyse de données pour transformer vos données en insights exploitables et prendre de meilleures décisions."
+      title: 'Analyse de données',
+      description:
+        "Solutions d'analyse de données pour transformer vos données en insights exploitables et prendre de meilleures décisions.",
     },
     {
-      title: "Cloud & DevOps",
-      description: "Déploiement et gestion d'infrastructures cloud avec des pratiques DevOps pour optimiser vos opérations."
-    }
-  ];
+      title: 'Cloud & DevOps',
+      description:
+        "Déploiement et gestion d'infrastructures cloud avec des pratiques DevOps pour optimiser vos opérations.",
+    },
+  ]
 
-  const images = [
-    "https://picsum.photos/id/1015/1200/800",
-    "https://picsum.photos/id/1005/1200/800",
-    "https://picsum.photos/id/1040/1200/800",
-    "https://picsum.photos/id/1025/1200/800",
-    "https://picsum.photos/id/1039/1200/800",
-    "https://picsum.photos/id/1050/1200/800",
-    "https://picsum.photos/id/1060/1200/800",
-    "https://picsum.photos/id/1074/1200/800"
-  ] as const;
+  const images = useMemo(() => {
+    const urls = blogPosts.map((post) => post.imageUrl).filter(Boolean)
+
+    if (urls.length === 0) {
+      return Array(services.length).fill('/images/hero-app-development.jpg') as string[]
+    }
+
+    const result: string[] = []
+    for (let index = 0; index < services.length; index += 1) {
+      result.push(urls[index % urls.length] as string)
+    }
+    return result
+  }, [services.length])
 
   // Préchargement des images
   useEffect(() => {
     const preloadImages = async () => {
       const imagePromises = images.map((src) => {
         return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.onload = resolve;
-          img.onerror = reject;
-          img.src = src;
-        });
-      });
+          const img = new Image()
+          img.onload = resolve
+          img.onerror = reject
+          img.src = src
+        })
+      })
 
       try {
-        await Promise.all(imagePromises);
-        setImagesLoaded(true);
+        await Promise.all(imagePromises)
+        setImagesLoaded(true)
       } catch (error) {
-        console.warn('Certaines images n\'ont pas pu être préchargées:', error);
-        setImagesLoaded(true); // On continue même si certaines images échouent
+        console.warn("Certaines images n'ont pas pu être préchargées:", error)
+        setImagesLoaded(true) // On continue même si certaines images échouent
       }
-    };
+    }
 
-    preloadImages();
-  }, []);
+    preloadImages()
+  }, [images])
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % services.length);
-  };
+    setCurrentSlide((prev) => (prev + 1) % services.length)
+  }
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + services.length) % services.length);
-  };
+    setCurrentSlide((prev) => (prev - 1 + services.length) % services.length)
+  }
 
   const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
+    setCurrentSlide(index)
+  }
 
   return (
-    <div className="bg-white py-16">
+    <div className="bg-white py-16" id="services">
       {/* Header Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
         <h2 className="text-4xl font-bold mb-6 font-bricolage-grotesque-bold">
           Services de développement logiciel complet
         </h2>
         <p className="text-lg max-w-4xl mx-auto font-inter-regular">
-          Nous servons en tant que partenaire technologique de bout en bout, offrant des solutions logicielles de haute qualité
-          en nous appuyant sur une expertise technique approfondie et une compréhension profonde du domaine commercial.
+          Nous servons en tant que partenaire technologique de bout en bout, offrant des solutions logicielles de haute
+          qualité en nous appuyant sur une expertise technique approfondie et une compréhension profonde du domaine
+          commercial.
         </p>
       </div>
 
       {/* Section Services en accordion - Full Width */}
       <div className="w-full">
         <div>
-
           {/* Accordion des services */}
-          <div className="flex flex-col lg:flex-row min-h-[500px] border border-gray-200 overflow-hidden">
+          <div className="flex flex-col lg:flex-row min-h-[420px] lg:h-[560px] items-stretch border border-gray-200 overflow-hidden">
             {services.map((service, idx) => {
-              const isActive = idx === currentSlide;
-              const isFirst = idx === 0;
-              const isLast = idx === services.length - 1;
-              
+              const isActive = idx === currentSlide
+              const isFirst = idx === 0
+              const isLast = idx === services.length - 1
+
               return (
                 <div
                   key={idx}
-                  className={`relative overflow-hidden cursor-pointer transition-all duration-500 ease-out ${
-                    isActive 
-                      ? 'lg:flex-[10] flex-1 bg-[#001F45] text-white shadow-2xl z-10' 
-                      : 'lg:flex-[1] flex-1 bg-white text-gray-700 hover:shadow-lg'
-                  } ${
-                    !isLast ? 'border-r border-gray-200' : ''
-                  } ${
-                    !isFirst && !isActive ? 'lg:border-l-0' : ''
-                  }`}
+                  className={`relative overflow-hidden cursor-pointer transition-[flex,background-color,color,box-shadow] duration-500 ease-out ${
+                    isActive
+                      ? 'block lg:flex-[10] bg-[#001F45] text-white shadow-2xl z-10'
+                      : 'hidden lg:block lg:flex-[1] bg-white text-gray-700 hover:shadow-lg'
+                  } ${!isLast ? 'lg:border-r lg:border-gray-200' : ''} ${!isFirst && !isActive ? 'lg:border-l-0' : ''}`}
                   onClick={() => goToSlide(idx)}
                 >
                   {/* Contenu réduit (quand inactif) */}
@@ -138,19 +147,22 @@ export default function Features() {
 
                   {/* Contenu élargi (quand actif) */}
                   {isActive && (
-                    <div 
-                      className="h-full grid lg:grid-cols-2 min-h-[400px] lg:min-h-[500px] opacity-0 animate-fadeIn"
+                    <div
+                      className="h-full grid lg:grid-cols-2 opacity-0 animate-fadeIn"
                       style={{
-                        animation: 'fadeIn 0.4s ease-out 0.2s forwards'
+                        animation: 'fadeIn 0.4s ease-out 0.2s forwards',
                       }}
                     >
                       {/* Image */}
                       <div className="relative overflow-hidden h-48 lg:h-full">
                         {imagesLoaded ? (
-                          <img
+                          <NextImage
                             src={images[idx]}
                             alt={service.title}
-                            className="h-full w-full object-cover"
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                            className="object-cover"
+                            priority={idx === currentSlide}
                           />
                         ) : (
                           <div className="h-full w-full bg-gray-300 animate-pulse flex items-center justify-center">
@@ -160,14 +172,10 @@ export default function Features() {
                       </div>
 
                       {/* Contenu détaillé */}
-                      <div className="p-6 lg:p-10 flex flex-col justify-between">
+                      <div className="h-full p-6 lg:p-10 flex flex-col justify-between lg:overflow-y-auto">
                         <div>
-                          <h3 className="text-2xl lg:text-3xl font-bricolage-grotesque-bold mb-4 ">
-                            {service.title}
-                          </h3>
-                          <p className="text-white/80 font-inter-regular mb-6">
-                            {service.description}
-                          </p>
+                          <h3 className="text-2xl lg:text-3xl font-bricolage-grotesque-bold mb-4 ">{service.title}</h3>
+                          <p className="text-white/80 font-inter-regular mb-6">{service.description}</p>
                           <button
                             type="button"
                             className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-white/80 transition-colors duration-300"
@@ -184,8 +192,8 @@ export default function Features() {
                             <button
                               aria-label="Précédent"
                               onClick={(e) => {
-                                e.stopPropagation();
-                                prevSlide();
+                                e.stopPropagation()
+                                prevSlide()
                               }}
                               className="h-10 w-10 grid place-items-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-105"
                             >
@@ -194,8 +202,8 @@ export default function Features() {
                             <button
                               aria-label="Suivant"
                               onClick={(e) => {
-                                e.stopPropagation();
-                                nextSlide();
+                                e.stopPropagation()
+                                nextSlide()
                               }}
                               className="h-10 w-10 grid place-items-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-105"
                             >
@@ -207,7 +215,7 @@ export default function Features() {
                     </div>
                   )}
                 </div>
-              );
+              )
             })}
           </div>
 
@@ -218,9 +226,7 @@ export default function Features() {
                 key={idx}
                 onClick={() => goToSlide(idx)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  idx === currentSlide 
-                    ? 'bg-[#001F45] scale-125' 
-                    : 'bg-gray-300 hover:bg-gray-400'
+                  idx === currentSlide ? 'bg-[#001F45] scale-125' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Aller au service ${idx + 1}`}
               />
@@ -241,5 +247,5 @@ export default function Features() {
         }
       `}</style>
     </div>
-  );
+  )
 }

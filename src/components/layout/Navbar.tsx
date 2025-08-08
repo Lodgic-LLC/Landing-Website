@@ -12,10 +12,9 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigationItems = [
-    { name: 'Services', path: '/services' },
-    { name: 'Lodgic Conseils', path: '/blog' },
-    { name: 'À propos', path: '/a-propos' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Services', path: '/#services' },
+    { name: 'Lodgic Conseils', path: '/#blog' },
+    { name: 'À propos', path: '/#about' },
   ]
 
   // Vérifier si l'écran est mobile
@@ -67,13 +66,17 @@ export default function Navbar() {
   const isScrolled = scrollPosition > 50
 
   return (
-    <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white border-b border-gray-100' : 'bg-[#f6f7fc] border-b border-transparent'}`}>
+    <nav
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white border-b border-gray-100' : 'bg-[#f6f7fc] border-b border-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[80px]">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center" aria-label="Accueil Lodgic">
-              <span className="font-bricolage-grotesque-bold text-blue-600 text-3xl">Lodgic</span>
+              <span className="font-bricolage-grotesque-bold text-[#001F45] text-3xl">Lodgic</span>
             </Link>
           </div>
 
@@ -84,16 +87,16 @@ export default function Navbar() {
                 key={item.name}
                 href={item.path}
                 className={`px-3 py-2 rounded-md text-sm font-inter-regular leading-6 text-[16px] transition-all duration-200 ${
-                  isActive(item.path)
-                    ? 'text-blue-600'
-                    : 'text-gray-700 hover:text-blue-600'
+                  isActive(item.path) ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
             <Link href="/rendez-vous">
-              <span className="px-3 py-3 rounded-md text-sm font-bricolage-grotesque-regular leading-6 [30px] text-[16px] transition-all duration-200 text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white">Nous Contacter</span>
+              <span className="px-3 py-3  text-sm font-bricolage-grotesque-bold leading-6 [30px] text-[16px] transition-all duration-200 text-[#001F45] border border-[#001F45] hover:bg-[#001F45] hover:text-white">
+                Nous Contacter
+              </span>
             </Link>
           </div>
 
@@ -147,9 +150,7 @@ export default function Navbar() {
               key={item.name}
               href={item.path}
               className={`block px-4 py-3 rounded-md text-base font-medium transition-all duration-200 ${
-                isActive(item.path)
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                isActive(item.path) ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
               }`}
             >
               {item.name}
@@ -158,24 +159,10 @@ export default function Navbar() {
 
           <div className="pt-2">
             <Link
-              href="/rendez-vous"
-              className="flex items-center justify-center w-full px-4 py-3 rounded-full text-base font-semibold transition-colors bg-blue-600 text-white hover:bg-blue-700 shadow-sm"
+              href="/#contact"
+              className="flex items-center justify-center w-full px-4 py-3 text-base font-semibold transition-colors bg-white text-[#001F45] hover:bg-[#001F45] border border-[#001F45] hover:text-white shadow-sm"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              Prendre rendez-vous
+              Nous Contacter
             </Link>
           </div>
         </div>

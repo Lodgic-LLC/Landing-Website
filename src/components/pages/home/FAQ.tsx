@@ -9,21 +9,21 @@ export default function ContactForm() {
     phone: '',
     company: '',
     message: '',
-    consent: false
+    consent: false,
   })
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }))
   }
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      consent: e.target.checked
+      consent: e.target.checked,
     }))
   }
 
@@ -34,7 +34,10 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 bg-white overflow-hidden border-t border-gray-200">
+    <section
+      className="relative py-16 sm:py-20 md:py-24 bg-white overflow-hidden border-t border-gray-200"
+      id="contact"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
@@ -44,11 +47,9 @@ export default function ContactForm() {
                 Contactez-nous
               </h1>
               <div className="mb-8">
-                <h3 className="text-lg font-inter-regular text-[rgb(22,40,105)] mb-2">
-                  Ventes et demandes générales
-                </h3>
-                <a 
-                  href="mailto:lodgicdev@gmail.com" 
+                <h3 className="text-lg font-inter-regular text-[rgb(22,40,105)] mb-2">Ventes et demandes générales</h3>
+                <a
+                  href="mailto:lodgicdev@gmail.com"
                   className="underline underline-offset-2 underline-color-blue-600 transition-colors duration-200"
                 >
                   lodgicdev@gmail.com
@@ -135,7 +136,8 @@ export default function ContactForm() {
                     required
                   />
                   <label htmlFor="consent" className="text-sm text-gray-600 leading-relaxed">
-                    En soumettant ce formulaire, je donne mon consentement à Lodgic pour traiter mes données personnelles conformément à la{' '}
+                    En soumettant ce formulaire, je donne mon consentement à Lodgic pour traiter mes données
+                    personnelles conformément à la{' '}
                     <a href="/privacy" className=" hover:text-blue-800 underline">
                       Politique de Confidentialité
                     </a>{' '}
@@ -150,7 +152,7 @@ export default function ContactForm() {
                 {/* Bouton d'envoi */}
                 <button
                   type="submit"
-                  className="w-full bg-[#DBFF00] hover:bg-[#caeb00] text-black font-semibold py-4 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9ACD32] focus:ring-offset-2 text-lg font-bricolage-grotesque-regular cursor-pointer" 
+                  className="w-full bg-[#DBFF00] hover:bg-[#caeb00] text-black font-semibold py-4 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9ACD32] focus:ring-offset-2 text-lg font-bricolage-grotesque-regular cursor-pointer"
                 >
                   Envoyer
                 </button>
