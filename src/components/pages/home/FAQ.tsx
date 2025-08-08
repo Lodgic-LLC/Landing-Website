@@ -1,8 +1,19 @@
 'use client'
 
 import { useState } from 'react'
+import { useAnalytics } from '@/hooks/useAnalytics'
 
-export default function ContactForm() {
+interface SubmitStatusType {
+  success: boolean
+  message: string
+}
+
+interface FormErrorsType {
+  email?: string
+  phone?: string
+}
+
+export default function FAQ() {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -11,6 +22,102 @@ export default function ContactForm() {
     message: '',
     consent: false,
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatusType | null>(null)
+  const [formErrors, setFormErrors] = useState<FormErrorsType>({})
+  const analytics = useAnalytics()
+
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    return emailRegex.test(email)
+  }
+
+  const validatePhone = (phone: string): boolean => {
+    if (!phone.trim()) return true
+    const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/
+    return phoneRegex.test(phone)
+  }
+
+  const calculateFormCompletion = () => {
+    const fields = [formData.fullName, formData.email, formData.phone, formData.company, formData.message]
+    const filled = fields.filter((f) => f && f.trim() !== '').length
+    return Math.round((filled / fields.length) * 100)
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const errors: FormErrorsType = {}
+    if (!validateEmail(formData.email)) {
+      errors.email = "L'adresse email n'est pas valide"
+    }
+    if (formData.phone && !validatePhone(formData.phone)) {
+      errors.phone = "Le numéro de téléphone n'est pas valide (format français attendu)"
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors)
+      analytics.trackFormInteraction('contact_form', 'abandon', 'validation_error', {
+        error_fields: Object.keys(errors),
+        form_completion: calculateFormCompletion(),
+      })
+      return
+    }
+
+    setIsSubmitting(true)
+    setFormErrors({})
+    setSubmitStatus(null)
+
+    analytics.trackFormInteraction('contact_form', 'submit', undefined, {
+      form_completion: 100,
+      has_phone: !!formData.phone,
+      message_length: formData.message.length,
+      subject: 'Demande via FAQ',
+    })
+
+    try {
+      const form = e.target as HTMLFormElement
+      const formDataObj = new FormData(form)
+
+      formDataObj.append('_subject', `Nouveau message (FAQ): ${formData.fullName || 'Visiteur'}`)
+      formDataObj.append('_next', 'https://lodgic-dev.com/merci')
+      formDataObj.append('_captcha', 'false')
+
+      const response = await fetch('https://formsubmit.co/ajax/c1f6460b84bc25bfcdc7f63d038c2dfd', {
+        method: 'POST',
+        body: formDataObj,
+        headers: { Accept: 'application/json' },
+      })
+
+      if (response.ok) {
+        analytics.trackConversion('contact_form', 10, {
+          form_type: 'contact',
+          conversion_point: 'form_submit',
+          lead_quality: 'high',
+        })
+        setSubmitStatus({
+          success: true,
+          message: 'Votre message a bien été envoyé. Nous revenons vers vous rapidement.',
+        })
+        setFormData({ fullName: '', email: '', phone: '', company: '', message: '', consent: false })
+        return
+      }
+
+      // Si pas ok
+      setSubmitStatus({ success: false, message: "Échec de l'envoi. Veuillez réessayer." })
+    } catch (error) {
+      console.error('Erreur:', error)
+      setSubmitStatus({
+        success: false,
+        message: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
+      })
+      analytics.trackFormInteraction('contact_form', 'abandon', 'submit_error', {
+        error_message: error instanceof Error ? error.message : 'Unknown error',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -27,11 +134,7 @@ export default function ContactForm() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-  }
+  // (supprimé) ancien handleSubmit redondant
 
   return (
     <section
@@ -152,10 +255,25 @@ export default function ContactForm() {
                 {/* Bouton d'envoi */}
                 <button
                   type="submit"
-                  className="w-full bg-[#DBFF00] hover:bg-[#caeb00] text-black font-semibold py-4 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9ACD32] focus:ring-offset-2 text-lg font-bricolage-grotesque-regular cursor-pointer"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#DBFF00] hover:bg-[#caeb00] text-black font-semibold py-4 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9ACD32] focus:ring-offset-2 text-lg font-bricolage-grotesque-regular cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Envoyer
+                  {isSubmitting ? 'Envoi en cours…' : 'Envoyer'}
                 </button>
+
+                {submitStatus && (
+                  <div
+                    role="status"
+                    aria-live="polite"
+                    className={`${
+                      submitStatus.success
+                        ? 'text-green-700 bg-green-50 border-green-200'
+                        : 'text-red-700 bg-red-50 border-red-200'
+                    } text-sm mt-2 p-3 rounded border`}
+                  >
+                    {submitStatus.message}
+                  </div>
+                )}
               </form>
             </div>
           </div>
