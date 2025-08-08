@@ -42,7 +42,7 @@ export default function ProjectCTA() {
             {languages.map((language, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 px-8 py-2"
+                className="flex-shrink-0 px-8 py-4S"
               >
                 <span className="text-white font-medium whitespace-nowrap text-sm">
                   {language}

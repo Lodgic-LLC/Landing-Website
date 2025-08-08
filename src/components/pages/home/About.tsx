@@ -1,10 +1,13 @@
 'use client'
 
 import { FaCheckCircle, FaUsers, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { blogPosts } from '@/data/blog/posts'
 
 const About = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
+  const projectsScrollRef = useRef<HTMLDivElement>(null)
 
   const testimonials = [
     {
@@ -54,6 +57,25 @@ const About = () => {
 
   const goToTestimonial = (index: number) => {
     setCurrentTestimonial(index)
+  }
+
+  // Fonctions pour le carousel de projets
+  const scrollToProject = (direction: 'left' | 'right') => {
+    if (projectsScrollRef.current) {
+      const cardWidth = 320 // largeur approximative d'une carte + gap
+      const scrollAmount = direction === 'left' ? -cardWidth : cardWidth
+      projectsScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+    }
+  }
+
+  const nextProject = () => {
+    scrollToProject('right')
+    setCurrentProjectIndex((prev) => Math.min(prev + 1, blogPosts.length - 1))
+  }
+
+  const prevProject = () => {
+    scrollToProject('left')
+    setCurrentProjectIndex((prev) => Math.max(prev - 1, 0))
   }
 
   useEffect(() => {
@@ -282,6 +304,81 @@ const About = () => {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Section Projets Réalisés - Carousel */}
+    <section className="py-16 bg-white">
+      <div className="w-full ">
+        {/* En-tête */}
+        <div className="text-center mb-12 pr-6">
+          <h2 className="text-3xl md:text-4xl font-bricolage-grotesque-bold text-[#000f45] mb-4">
+            Notre blog
+          </h2>
+          <p className="font-inter text-[#162869]">Explorez notre blog pour découvrir les dernières tendances et insights sur le développement web et mobile.</p>
+        </div>
+
+        {/* Carousel Container */}
+        <div className="relative ml-96">
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevProject}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-[#000f45] hover:bg-[#000f45] hover:text-white transition-all duration-300 border border-gray-200"
+            aria-label="Projet précédent"
+          >
+            <FaChevronLeft className="w-4 h-4" />
+          </button>
+          
+          <button
+            onClick={nextProject}
+            className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-[#000f45] hover:bg-[#000f45] hover:text-white transition-all duration-300 border border-gray-200"
+            aria-label="Projet suivant"
+          >
+            <FaChevronRight className="w-4 h-4" />
+          </button>
+
+          {/* Scrollable Projects Container */}
+          <div 
+            ref={projectsScrollRef}
+            className="flex gap-6 overflow-x-auto scrollbar-hide pl-12 pr-6 py-4"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {blogPosts.map((post, index) => (
+              <div
+                key={post.slug}
+                className="flex-shrink-0 w-80 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <div className="absolute inset-0 bg-black/20 z-10"></div>
+                  <img 
+                    src={post.imageUrl}
+                    alt={post.imageAlt || post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
+                      {post.category}
+                    </span>
+                  </div>
+                  <h3 className="font-bricolage-grotesque-bold text-[#000f45] text-lg mb-3 line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-[#162869] font-inter text-sm mb-4 line-clamp-2">
+                    {post.summary}
+                  </p>
+                  <button className="flex items-center text-[#162869] hover:text-[#000f45] font-inter font-medium text-sm group-hover:gap-2 transition-all duration-300">
+                    Explorer
+                    <svg className="w-4 h-4 ml-1 group-hover:ml-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
