@@ -14,7 +14,7 @@ export default function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 pb-16 md:pb-20">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Colonne texte */}
           <div className="w-full lg:w-1/2 pt-4 lg:pt-0 text-center lg:text-left">
             <h1 className="font-bricolage-grotesque-bold text-[#000f45] text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-5">
@@ -38,11 +38,65 @@ export default function Hero() {
               </Link>
               <Link
                 href="/#services"
-                className="inline-flex items-center justify-center rounded-md border border-[#001F45] px-6 py-3 text-[#001F45] font-inter font-medium hover:bg-[#001F45]/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#001F45]"
+                className="inline-flex items-center justify-center rounded-md border border-[#001F45] px-6 py-3 text-[#001F45] font-inter font-medium hover:bg-[#DBFF00] hover:text-[#001F45] transition-all duration-300 focus:outline-none"
                 aria-label="Voir nos services"
               >
                 Voir nos services
               </Link>
+            </div>
+          </div>
+
+          {/* Colonne images */}
+          <div className="w-full lg:w-1/2 flex justify-center items-end relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[600px] overflow-hidden">
+            {/* Mathéo - En arrière-plan */}
+            <div className="absolute top-8 bottom-0 -left-64  transform translate-x-1/2 z-30">
+              <Image
+                src="/images/hero/matheo.png"
+                alt="Mathéo - Développeur"
+                width={800}
+                height={1200}
+                className="h-[600px]  sm:h-[700px] md:h-[800px] lg:h-[700px] w-auto object-cover object-center drop-shadow-lg"
+                priority
+              />
+              {/* Informations Mathéo */}
+              <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center">
+                <div className="bg-white backdrop-blur-sm px-4 py-3 shadow-lg border border-[#001F45] transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-[#DBFF00] cursor-pointer">
+                  <h3 className="font-bricolage-grotesque-bold text-[#001F45] text-sm sm:text-base">Mathéo</h3>
+                  <p className="hidden sm:block font-inter text-[#162869] text-xs sm:text-sm mt-1">
+                    <span className=" inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5"></span>
+                    Fondateur & Développeur
+                  </p>
+                  <p className="block sm:hidden font-inter text-[#162869] text-xs sm:text-sm mt-1">
+                    <span className=" inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5"></span>
+                    Développeur
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Yann - Au premier plan */}
+            <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/6 z-20">
+              <Image
+                src="/images/hero/yann.png"
+                alt="Yann - Développeur"
+                width={800}
+                height={1200}
+                className="h-[650px] sm:h-[750px] md:h-[850px] lg:h-[750px] w-auto object-cover object-center drop-shadow-xl"
+                priority
+              />
+              <div className="absolute bottom-30 left-1/2 transform -translate-x-1/2 text-center min-w-max">
+                <div className="bg-white backdrop-blur-sm px-6 py-3 shadow-lg border border-[#001F45] transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-[#DBFF00] cursor-pointer whitespace-nowrap">
+                  <h3 className="font-bricolage-grotesque-bold text-[#001F45] text-sm sm:text-base">Yann</h3>
+                  <p className="hidden sm:block font-inter text-[#162869] text-xs sm:text-sm mt-1">
+                    <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5"></span>
+                    Fondateur & Responsable Client
+                  </p>
+                  <p className="block sm:hidden font-inter text-[#162869] text-xs sm:text-sm mt-1">
+                    <span className=" inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5"></span>
+                    Responsable Client
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
