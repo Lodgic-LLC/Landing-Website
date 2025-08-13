@@ -25,10 +25,15 @@ export default function Process() {
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-bricolage-grotesque-regular"> 
-            25+ années d'expertise technologique centrée sur l'entreprise
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bricolage-grotesque-bold text-[#000f45] mb-6"> 
+            Expertise{' '}
+            <span className="relative">
+              <span className="relative z-10">technologique</span>
+              <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 transform -skew-x-12 z-0"></span>
+            </span>
+            {' '}centrée sur l'entreprise
           </h2>
-          <p className="text-lg max-w-4xl mx-auto leading-relaxed font-inter-regular">
+          <p className="text-base md:text-lg max-w-4xl mx-auto font-inter text-[#162869]/80 leading-relaxed">
             Nous livrons des solutions logicielles d'entreprise qui aident les entreprises à transformer les processus métier clés, maximisant l'efficacité opérationnelle et l'agilité.
           </p>
         </div>

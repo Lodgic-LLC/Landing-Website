@@ -1,7 +1,7 @@
 'use client'
-import { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import NextImage from 'next/image'
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { FaChevronLeft, FaChevronRight, FaMobile, FaServer, FaBrain, FaShoppingCart, FaPalette, FaShieldAlt, FaChartBar, FaCloud } from 'react-icons/fa'
 import { blogPosts } from '@/data/blog/posts'
 
 export default function Features() {
@@ -13,41 +13,65 @@ export default function Features() {
       title: "Développement d'applications mobiles",
       description:
         'Nous créons des applications mobiles innovantes, évolutives et sécurisées, parfaitement alignées avec la vision de votre entreprise et vos objectifs commerciaux.',
+      icon: FaMobile,
+      color: 'from-blue-500 to-purple-600',
+      bgColor: 'bg-gradient-to-br from-blue-50 to-purple-50'
     },
     {
       title: 'Systèmes distribués',
       description:
         'Architecture et développement de systèmes distribués robustes pour gérer la charge et assurer la scalabilité de vos applications.',
+      icon: FaServer,
+      color: 'from-green-500 to-teal-600',
+      bgColor: 'bg-gradient-to-br from-green-50 to-teal-50'
     },
     {
       title: 'Intelligence artificielle',
       description:
         "Intégration de solutions d'IA avancées pour automatiser vos processus et améliorer l'expérience utilisateur.",
+      icon: FaBrain,
+      color: 'from-purple-500 to-pink-600',
+      bgColor: 'bg-gradient-to-br from-purple-50 to-pink-50'
     },
     {
       title: 'Commerce électronique',
       description:
         'Développement de plateformes e-commerce complètes avec des fonctionnalités avancées de gestion et de paiement.',
+      icon: FaShoppingCart,
+      color: 'from-orange-500 to-red-600',
+      bgColor: 'bg-gradient-to-br from-orange-50 to-red-50'
     },
     {
       title: 'UI/UX design',
       description:
         "Conception d'interfaces utilisateur intuitives et d'expériences utilisateur exceptionnelles pour vos applications.",
+      icon: FaPalette,
+      color: 'from-pink-500 to-rose-600',
+      bgColor: 'bg-gradient-to-br from-pink-50 to-rose-50'
     },
     {
       title: 'Assurance qualité',
       description:
         'Tests complets et assurance qualité pour garantir la fiabilité et la performance de vos solutions logicielles.',
+      icon: FaShieldAlt,
+      color: 'from-emerald-500 to-green-600',
+      bgColor: 'bg-gradient-to-br from-emerald-50 to-green-50'
     },
     {
       title: 'Analyse de données',
       description:
         "Solutions d'analyse de données pour transformer vos données en insights exploitables et prendre de meilleures décisions.",
+      icon: FaChartBar,
+      color: 'from-indigo-500 to-blue-600',
+      bgColor: 'bg-gradient-to-br from-indigo-50 to-blue-50'
     },
     {
       title: 'Cloud & DevOps',
       description:
         "Déploiement et gestion d'infrastructures cloud avec des pratiques DevOps pour optimiser vos opérations.",
+      icon: FaCloud,
+      color: 'from-cyan-500 to-blue-600',
+      bgColor: 'bg-gradient-to-br from-cyan-50 to-blue-50'
     },
   ]
 
@@ -82,7 +106,7 @@ export default function Features() {
         setImagesLoaded(true)
       } catch (error) {
         console.warn("Certaines images n'ont pas pu être préchargées:", error)
-        setImagesLoaded(true) // On continue même si certaines images échouent
+        setImagesLoaded(true)
       }
     }
 
@@ -102,150 +126,113 @@ export default function Features() {
   }
 
   return (
-    <div className="bg-white py-16" id="services">
-      {/* Header Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <h2 className="text-4xl font-bold mb-6 font-bricolage-grotesque-bold">
-          Services de développement logiciel complet
-        </h2>
-        <p className="text-lg max-w-4xl mx-auto font-inter-regular">
-          Nous servons en tant que partenaire technologique de bout en bout, offrant des solutions logicielles de haute
-          qualité en nous appuyant sur une expertise technique approfondie et une compréhension profonde du domaine
-          commercial.
-        </p>
-      </div>
+    <section className="bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-32 pb-20" id="services">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bricolage-grotesque-bold text-[#000f45] mb-6">
+            Développement d'applications{' '}
+            <span className="relative">
+              <span className="relative z-10">web et mobiles</span>
+              <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 transform -skew-x-12 z-0"></span>
+            </span>
+          </h2>
+          
+          <p className="text-base md:text-lg max-w-4xl mx-auto font-inter text-[#162869]/80 leading-relaxed">
+            Nous servons en tant que partenaire technologique de bout en bout, offrant des solutions logicielles de haute
+            qualité en nous appuyant sur une expertise technique approfondie et une compréhension profonde du domaine
+            commercial.
+          </p>
+        </div>
 
-      {/* Section Services en accordion - Full Width */}
-      <div className="w-full">
-        <div>
-          {/* Accordion des services */}
-          <div className="flex flex-col lg:flex-row min-h-[420px] lg:h-[560px] items-stretch border border-gray-200 overflow-hidden">
-            {services.map((service, idx) => {
-              const isActive = idx === currentSlide
-              const isFirst = idx === 0
-              const isLast = idx === services.length - 1
+        {/* Services Grid - Hidden on mobile */}
+            
 
-              return (
-                <div
-                  key={idx}
-                  className={`relative overflow-hidden cursor-pointer transition-[flex,background-color,color,box-shadow] duration-500 ease-out ${
-                    isActive
-                      ? 'block lg:flex-[10] bg-[#001F45] text-white shadow-2xl z-10'
-                      : 'hidden lg:block lg:flex-[1] bg-white text-gray-700 hover:shadow-lg'
-                  } ${!isLast ? 'lg:border-r lg:border-gray-200' : ''} ${!isFirst && !isActive ? 'lg:border-l-0' : ''}`}
-                  onClick={() => goToSlide(idx)}
-                >
-                  {/* Contenu réduit (quand inactif) */}
-                  {!isActive && (
-                    <div className="h-full flex lg:flex-col items-center justify-center p-6 lg:p-4">
-                      <span className="text-2xl lg:text-xl bottom-0 absolute mb-2 lg:mb-4">+</span>
-                      <span className="lg:transform lg:-rotate-90 lg:whitespace-nowrap text-center text-sm font-inter-regular">
-                        {service.title}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Contenu élargi (quand actif) */}
-                  {isActive && (
-                    <div
-                      className="h-full grid lg:grid-cols-2 opacity-0 animate-fadeIn"
-                      style={{
-                        animation: 'fadeIn 0.4s ease-out 0.2s forwards',
-                      }}
-                    >
-                      {/* Image */}
-                      <div className="relative overflow-hidden h-48 lg:h-full">
-                        {imagesLoaded ? (
-                          <NextImage
-                            src={images[idx]}
-                            alt={service.title}
-                            fill
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                            className="object-cover"
-                            priority={idx === currentSlide}
-                          />
-                        ) : (
-                          <div className="h-full w-full bg-gray-300 animate-pulse flex items-center justify-center">
-                            <span className="text-gray-500">Chargement...</span>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Contenu détaillé */}
-                      <div className="h-full p-6 lg:p-10 flex flex-col justify-between lg:overflow-y-auto">
-                        <div>
-                          <h3 className="text-2xl lg:text-3xl font-bricolage-grotesque-bold mb-4 ">{service.title}</h3>
-                          <p className="text-white/80 font-inter-regular mb-6">{service.description}</p>
-                          <button
-                            type="button"
-                            className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-white/80 transition-colors duration-300"
-                          >
-                            Voir le service
-                            <span aria-hidden>↗</span>
-                          </button>
-                        </div>
-
-                        {/* Navigation */}
-                        <div className="flex items-center justify-between mt-8">
-                          <div className="h-px bg-white/20 flex-1 mr-6" />
-                          <div className="flex gap-3">
-                            <button
-                              aria-label="Précédent"
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                prevSlide()
-                              }}
-                              className="h-10 w-10 grid place-items-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-105"
-                            >
-                              <FaChevronLeft />
-                            </button>
-                            <button
-                              aria-label="Suivant"
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                nextSlide()
-                              }}
-                              className="h-10 w-10 grid place-items-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-105"
-                            >
-                              <FaChevronRight />
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+        {/* Section détaillée du service actif - Full width on mobile */}
+        <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl border border-gray-100">
+          <div className="grid lg:grid-cols-2 min-h-[500px]">
+            {/* Image */}
+            <div className="relative overflow-hidden h-64 lg:h-full">
+              {imagesLoaded ? (
+                <NextImage
+                  src={images[currentSlide]}
+                  alt={services[currentSlide].title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  priority
+                />
+              ) : (
+                <div className="h-full w-full bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse flex items-center justify-center">
+                  <span className="text-gray-500">Chargement...</span>
                 </div>
-              )
-            })}
-          </div>
+              )}
+              
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+            </div>
 
-          {/* Navigation mobile supplémentaire */}
-          <div className="lg:hidden mt-6 flex justify-center gap-2">
-            {services.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => goToSlide(idx)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  idx === currentSlide ? 'bg-[#001F45] scale-125' : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-                aria-label={`Aller au service ${idx + 1}`}
-              />
-            ))}
+            {/* Contenu détaillé */}
+            <div className="p-8 lg:p-12 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${services[currentSlide].color} text-white flex-shrink-0`}>
+                    {React.createElement(services[currentSlide].icon, { className: "w-5 h-5 sm:w-6 sm:h-6" })}
+                  </div>
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bricolage-grotesque-bold text-[#001F45]">
+                    {services[currentSlide].title}
+                  </h3>
+                </div>
+                
+                <p className="text-[#162869]/80 font-inter leading-relaxed text-lg mb-8">
+                  {services[currentSlide].description}
+                </p>
+              </div>
+
+              {/* Navigation */}
+              <div className="flex items-center justify-between pt-8 border-t border-gray-100">
+                <div className="flex items-center gap-4">
+                  <span className="text-sm font-inter text-[#162869]/60">
+                    {currentSlide + 1} / {services.length}
+                  </span>
+                  <div className="flex gap-2">
+                    {services.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => goToSlide(idx)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          idx === currentSlide 
+                            ? 'bg-[#001F45] scale-125' 
+                            : 'bg-gray-300 hover:bg-gray-400'
+                        }`}
+                        aria-label={`Aller au service ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="flex gap-3">
+                  <button
+                    aria-label="Précédent"
+                    onClick={prevSlide}
+                    className="h-12 w-12 grid place-items-center rounded-xl bg-gray-100 hover:bg-[#001F45] hover:text-white transition-all duration-300 hover:scale-105"
+                  >
+                    <FaChevronLeft />
+                  </button>
+                  <button
+                    aria-label="Suivant"
+                    onClick={nextSlide}
+                    className="h-12 w-12 grid place-items-center rounded-xl bg-gray-100 hover:bg-[#001F45] hover:text-white transition-all duration-300 hover:scale-105"
+                  >
+                    <FaChevronRight />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-      `}</style>
-    </div>
+    </section>
   )
 }
