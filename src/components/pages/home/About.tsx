@@ -96,9 +96,13 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 md:mb-20">
             <h2 className="text-3xl md:text-4xl font-bricolage-grotesque-bold text-[#000f45] mb-4">
-              Qui sommes-nous ?
+              Qui{' '}
+              <span className="relative">
+                <span className="relative z-10">sommes-nous</span>
+                <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 transform -skew-x-12 z-0"></span>
+              </span>
+              {' '}?
             </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-[#000f45] to-[#162869] mx-auto rounded-full mb-6"></div>
             <p className="text-lg font-inter text-[#162869] max-w-3xl mx-auto leading-relaxed">
               Une équipe à taille humaine, proche de vous et de vos besoins.
             </p>
@@ -225,9 +229,13 @@ const About = () => {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bricolage-grotesque-bold text-[#000f45] mb-4">
-                Ce que disent nos clients
+                Ce que{' '}
+                <span className="relative">
+                  <span className="relative z-10">disent</span>
+                  <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 transform -skew-x-12 z-0"></span>
+                </span>
+                {' '}nos clients
               </h2>
-              <div className="w-24 h-1.5 bg-gradient-to-r from-[#000f45] to-[#162869] mx-auto rounded-full mb-6"></div>
               <p className="text-lg font-inter text-[#162869] max-w-3xl mx-auto leading-relaxed">
                 Découvrez les retours de nos clients satisfaits qui nous font confiance pour leurs projets digitaux.
               </p>
@@ -310,7 +318,13 @@ const About = () => {
         <div className="w-full ">
           {/* En-tête */}
           <div className="text-center mb-12 pr-6">
-            <h2 className="text-3xl md:text-4xl font-bricolage-grotesque-bold text-[#000f45] mb-4">Notre blog</h2>
+            <h2 className="text-3xl md:text-4xl font-bricolage-grotesque-bold text-[#000f45] mb-4">
+              Notre{' '}
+              <span className="relative">
+                <span className="relative z-10">blog</span>
+                <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 transform -skew-x-12 z-0"></span>
+              </span>
+            </h2>
             <p className="font-inter text-[#162869]">
               Explorez notre blog pour découvrir les dernières tendances et insights sur le développement web et mobile.
             </p>

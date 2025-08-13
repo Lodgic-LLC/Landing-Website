@@ -10,25 +10,25 @@ export default function Features() {
 
   const services = [
     {
-      title: "Développement d'applications mobiles",
+      title: "Applications mobiles",
       description:
-        'Nous créons des applications mobiles innovantes, évolutives et sécurisées, parfaitement alignées avec la vision de votre entreprise et vos objectifs commerciaux.',
+        'Création d\'applications pour iPhone et Android. Votre application sur mesure, simple à utiliser et qui répond à vos besoins.',
       icon: FaMobile,
       color: 'from-blue-500 to-purple-600',
       bgColor: 'bg-gradient-to-br from-blue-50 to-purple-50'
     },
     {
-      title: 'Développement de sites web',
+      title: 'Sites web',
       description:
-        'Création de sites web modernes, responsives et optimisés SEO, allant des sites vitrines aux applications web complexes avec des technologies de pointe.',
+        'Création de sites web modernes et adaptés à tous les écrans. De la vitrine simple aux sites complexes avec toutes les fonctionnalités.',
       icon: FaGlobe,
       color: 'from-emerald-500 to-teal-600',
       bgColor: 'bg-gradient-to-br from-emerald-50 to-teal-50'
     },
     {
-      title: 'UI/UX design',
+      title: 'Design',
       description:
-        "Conception d'interfaces utilisateur intuitives et d'expériences utilisateur exceptionnelles pour vos applications.",
+        'Création d\'interfaces belles et faciles à utiliser. Un design qui plaît à vos clients et simplifie leur expérience.',
       icon: FaPalette,
       color: 'from-pink-500 to-rose-600',
       bgColor: 'bg-gradient-to-br from-pink-50 to-rose-50'
@@ -36,15 +36,15 @@ export default function Features() {
     {
       title: 'Maintenance',
       description:
-        'Services de maintenance continue, mises à jour et optimisation de vos applications pour garantir leur performance et leur fiabilité dans le temps.',
+        'Mise à jour et amélioration continue de vos applications. Nous gardons vos outils performants et sécurisés.',
       icon: FaCogs,
       color: 'from-green-500 to-teal-600',
       bgColor: 'bg-gradient-to-br from-green-50 to-teal-50'
     },
     {
-      title: 'Déploiement',
+      title: 'Mise en ligne',
       description:
-        'Déploiement sécurisé et automatisé de vos applications avec des pratiques DevOps modernes pour un lancement rapide et fiable.',
+        'Installation et configuration de vos applications sur internet. Votre projet accessible partout, tout le temps.',
       icon: FaRocket,
       color: 'from-orange-500 to-red-600',
       bgColor: 'bg-gradient-to-br from-orange-50 to-red-50'
@@ -118,9 +118,7 @@ export default function Features() {
           </h2>
           
           <p className="text-base md:text-lg max-w-4xl mx-auto font-inter text-[#162869]/80 leading-relaxed">
-            Nous servons en tant que partenaire technologique de bout en bout, offrant des solutions logicielles de haute
-            qualité en nous appuyant sur une expertise technique approfondie et une compréhension profonde du domaine
-            commercial.
+           
           </p>
         </div>
 
