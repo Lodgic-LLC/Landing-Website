@@ -10,27 +10,31 @@ export default function Hero() {
       {/* Décor de fond amélioré */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl animate-pulse" />
-        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-[#eaf2ff] via-[#d4e6ff] to-transparent blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-r from-[#DBFF00]/20] to-[#001F45]/10 blur-2xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div
+          className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-[#eaf2ff] via-[#d4e6ff] to-transparent blur-3xl animate-pulse"
+          style={{ animationDelay: '1s' }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-r from-[#DBFF00]/20] to-[#001F45]/10 blur-2xl animate-pulse"
+          style={{ animationDelay: '2s' }}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Colonne texte */}
-          <div className="w-full lg:w-1/2 pt-4 lg:pt-0 text-center lg:text-left">
-
+          <div className="w-full lg:w-1/2 pt-4 lg:pt-0 text-center lg:text-left pb-[50px]">
             <h1 className="font-bricolage-grotesque-bold text-[#000f45] text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
               Créons ensemble l'
               <span className="relative">
                 <span className="relative z-10">application</span>
                 <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 transform -skew-x-12 z-0"></span>
-              </span>
-              {' '}qui vous ressemble.
+              </span>{' '}
+              qui vous ressemble.
             </h1>
-            
+
             <p className="font-inter text-[#162869] text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 opacity-90">
-              Chez Lodgic, on vous accompagne pas à pas. 
-              De l'idée à la réalisation de votre application.
+              Chez Lodgic, on vous accompagne pas à pas. De l'idée à la réalisation de votre application.
             </p>
 
             {/* Points clés - Hidden on mobile */}
@@ -66,26 +70,28 @@ export default function Hero() {
           </div>
 
           {/* Colonne images */}
-          <div className="w-full lg:w-1/2 flex justify-center items-end relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[600px] overflow-hidden">
+          <div className="w-full lg:w-1/2 flex justify-center items-center relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[500px]">
             {/* Mathéo - En arrière-plan */}
-            <div className="absolute top-8 bottom-0 -left-64 transform translate-x-1/2 z-30">
+            <div className="absolute top-16 bottom-0 left-1/4 transform -translate-x-1/2 z-30">
               <Image
-                src="/images/hero/matheo.png"
+                src="/images/matheo.png"
                 alt="Mathéo - Développeur"
-                width={800}
-                height={1200}
-                className="h-[600px] sm:h-[700px] md:h-[800px] lg:h-[700px] w-auto object-cover object-center drop-shadow-2xl filter brightness-95"
+                width={600}
+                height={900}
+                className="h-[380px] sm:h-[420px] md:h-[460px] lg:h-[480px] w-auto object-cover object-center drop-shadow-2xl filter brightness-95"
                 priority
               />
               {/* Informations Mathéo */}
               <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center">
-                <div className="bg-white/95 backdrop-blur-md px-6 py-4 shadow-xl border border-[#001F45]/20 rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-[#DBFF00] cursor-pointer group">
-                  <h3 className="font-bricolage-grotesque-bold text-[#001F45] text-sm sm:text-base group-hover:text-[#0b2b63] transition-colors">Mathéo</h3>
-                  <p className="hidden sm:block font-inter text-[#162869] text-xs sm:text-sm mt-1">
+                <div className="bg-white/95 backdrop-blur-md px-8 py-4 shadow-xl border border-[#001F45]/20 rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-[#DBFF00] cursor-pointer group min-w-[200px]">
+                  <h3 className="font-bricolage-grotesque-bold text-[#001F45] text-sm sm:text-base group-hover:text-[#0b2b63] transition-colors">
+                    Mathéo
+                  </h3>
+                  <p className="hidden sm:block font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>
                     Fondateur & Développeur
                   </p>
-                  <p className="block sm:hidden font-inter text-[#162869] text-xs sm:text-sm mt-1">
+                  <p className="block sm:hidden font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>
                     Développeur
                   </p>
@@ -94,23 +100,25 @@ export default function Hero() {
             </div>
 
             {/* Yann - Au premier plan */}
-            <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/6 z-20">
+            <div className="absolute top-12 bottom-0 right-1/4 transform translate-x-1/2 z-20">
               <Image
-                src="/images/hero/yann.png"
+                src="/images/yann.png"
                 alt="Yann - Développeur"
-                width={800}
-                height={1200}
-                className="h-[650px] sm:h-[750px] md:h-[850px] lg:h-[750px] w-auto object-cover object-center drop-shadow-2xl filter brightness-105"
+                width={600}
+                height={900}
+                className="h-[400px] sm:h-[440px] md:h-[480px] lg:h-[500px] w-auto object-cover object-center drop-shadow-2xl filter brightness-105"
                 priority
               />
-              <div className="absolute bottom-30 left-1/2 transform -translate-x-1/2 text-center min-w-max">
-                <div className="bg-white/95 backdrop-blur-md px-6 py-4 shadow-xl border border-[#001F45]/20 rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-[#DBFF00] cursor-pointer whitespace-nowrap group">
-                  <h3 className="font-bricolage-grotesque-bold text-[#001F45] text-sm sm:text-base group-hover:text-[#0b2b63] transition-colors">Yann</h3>
-                  <p className="hidden sm:block font-inter text-[#162869] text-xs sm:text-sm mt-1">
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+                <div className="bg-white/95 backdrop-blur-md px-8 py-4 shadow-xl border border-[#001F45]/20 rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-[#DBFF00] cursor-pointer group min-w-[220px]">
+                  <h3 className="font-bricolage-grotesque-bold text-[#001F45] text-sm sm:text-base group-hover:text-[#0b2b63] transition-colors">
+                    Yann
+                  </h3>
+                  <p className="hidden sm:block font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>
                     Fondateur & Responsable Client
                   </p>
-                  <p className="block sm:hidden font-inter text-[#162869] text-xs sm:text-sm mt-1">
+                  <p className="block sm:hidden font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>
                     Responsable Client
                   </p>
@@ -120,6 +128,9 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Dégradé vers le blanc en bas du hero */}
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-white pointer-events-none z-10"></div>
     </section>
   )
 }
