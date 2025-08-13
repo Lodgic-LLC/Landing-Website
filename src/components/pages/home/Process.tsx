@@ -11,16 +11,12 @@ export default function Process() {
     { name: "Sites web", hasArrow: true },
     { name: "Applications mobiles", hasArrow: true },
     { name: "E-commerce", hasArrow: false },
-    { name: "Gestion de contenu", hasArrow: false },
-    { name: "Marketing digital", hasArrow: false },
-    { name: "Service client", hasArrow: false },
     { name: "Gestion de projet", hasArrow: false },
+    { name: "SAAS", hasArrow: false },
+    { name: "Site Vitrine", hasArrow: false },
     { name: "Maintenance & support", hasArrow: false },
     { name: "Optimisation SEO", hasArrow: false },
     { name: "Gestion des données", hasArrow: false },
-    { name: "Formation & accompagnement", hasArrow: false },
-    { name: "Analyse & reporting", hasArrow: false },
-    { name: "Collaboration & productivité", hasArrow: false }
   ]
 
   return (

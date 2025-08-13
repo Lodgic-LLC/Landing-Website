@@ -34,20 +34,20 @@ export default function Features() {
       bgColor: 'bg-gradient-to-br from-pink-50 to-rose-50'
     },
     {
-      title: 'Maintenance',
-      description:
-        'Mise à jour et amélioration continue de vos applications. Nous gardons vos outils performants et sécurisés.',
-      icon: FaCogs,
-      color: 'from-green-500 to-teal-600',
-      bgColor: 'bg-gradient-to-br from-green-50 to-teal-50'
-    },
-    {
       title: 'Mise en ligne',
       description:
         'Installation et configuration de vos applications sur internet. Votre projet accessible partout, tout le temps.',
       icon: FaRocket,
       color: 'from-orange-500 to-red-600',
       bgColor: 'bg-gradient-to-br from-orange-50 to-red-50'
+    },
+    {
+      title: 'Maintenance',
+      description:
+        'Mise à jour et amélioration continue de vos applications. Nous gardons vos outils performants et sécurisés.',
+      icon: FaCogs,
+      color: 'from-green-500 to-teal-600',
+      bgColor: 'bg-gradient-to-br from-green-50 to-teal-50'
     },
 
  
