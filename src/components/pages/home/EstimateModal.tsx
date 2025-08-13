@@ -214,7 +214,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
           </h2>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
+            className="text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
           >
             <FaTimes size={24} />
           </button>

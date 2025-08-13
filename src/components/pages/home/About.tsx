@@ -270,7 +270,7 @@ const About = () => {
                 <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-6">
                   <button
                     onClick={prevTestimonial}
-                    className="w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-[#000f45] hover:bg-[#000f45] hover:text-white transition-all duration-300 border border-gray-200"
+                    className="w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-[#000f45] hover:bg-[#000f45] hover:text-white transition-all duration-300 border border-gray-200 cursor-pointer"
                     aria-label="Témoignage précédent"
                   >
                     <FaChevronLeft className="w-4 h-4" />
@@ -279,7 +279,7 @@ const About = () => {
                 <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-6">
                   <button
                     onClick={nextTestimonial}
-                    className="w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-[#000f45] hover:bg-[#000f45] hover:text-white transition-all duration-300 border border-gray-200"
+                    className="w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-[#000f45] hover:bg-[#000f45] hover:text-white transition-all duration-300 border border-gray-200 cursor-pointer"
                     aria-label="Témoignage suivant"
                   >
                     <FaChevronRight className="w-4 h-4" />
@@ -293,7 +293,7 @@ const About = () => {
                   <button
                     key={index}
                     onClick={() => goToTestimonial(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
                       index === currentTestimonial ? 'bg-[#000f45] scale-125' : 'bg-gray-300 hover:bg-[#162869]'
                     }`}
                     aria-label={`Aller au témoignage ${index + 1}`}
@@ -364,7 +364,7 @@ const About = () => {
                     </h3>
                     <p className="text-[#162869]/80 font-inter text-sm mb-4 line-clamp-2">{post.summary}</p>
                     <button
-                      className="group inline-flex items-center gap-2 text-sm font-inter font-medium text-[#0b57d0] hover:underline focus:outline-none"
+                      className="group inline-flex items-center gap-2 text-sm font-inter font-medium text-[#0b57d0] hover:underline focus:outline-none cursor-pointer"
                       aria-label={`Explorer l'article ${post.title}`}
                     >
                       Explorer

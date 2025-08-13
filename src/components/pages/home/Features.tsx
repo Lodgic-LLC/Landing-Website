@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect, useMemo } from 'react'
 import NextImage from 'next/image'
-import { FaChevronLeft, FaChevronRight, FaMobile, FaServer, FaBrain, FaShoppingCart, FaPalette, FaShieldAlt, FaChartBar, FaCloud } from 'react-icons/fa'
+import { FaChevronLeft, FaChevronRight, FaMobile, FaServer, FaPalette, FaGlobe, FaCogs, FaRocket } from 'react-icons/fa'
 import { blogPosts } from '@/data/blog/posts'
 
 export default function Features() {
@@ -18,28 +18,12 @@ export default function Features() {
       bgColor: 'bg-gradient-to-br from-blue-50 to-purple-50'
     },
     {
-      title: 'Systèmes distribués',
+      title: 'Développement de sites web',
       description:
-        'Architecture et développement de systèmes distribués robustes pour gérer la charge et assurer la scalabilité de vos applications.',
-      icon: FaServer,
-      color: 'from-green-500 to-teal-600',
-      bgColor: 'bg-gradient-to-br from-green-50 to-teal-50'
-    },
-    {
-      title: 'Intelligence artificielle',
-      description:
-        "Intégration de solutions d'IA avancées pour automatiser vos processus et améliorer l'expérience utilisateur.",
-      icon: FaBrain,
-      color: 'from-purple-500 to-pink-600',
-      bgColor: 'bg-gradient-to-br from-purple-50 to-pink-50'
-    },
-    {
-      title: 'Commerce électronique',
-      description:
-        'Développement de plateformes e-commerce complètes avec des fonctionnalités avancées de gestion et de paiement.',
-      icon: FaShoppingCart,
-      color: 'from-orange-500 to-red-600',
-      bgColor: 'bg-gradient-to-br from-orange-50 to-red-50'
+        'Création de sites web modernes, responsives et optimisés SEO, allant des sites vitrines aux applications web complexes avec des technologies de pointe.',
+      icon: FaGlobe,
+      color: 'from-emerald-500 to-teal-600',
+      bgColor: 'bg-gradient-to-br from-emerald-50 to-teal-50'
     },
     {
       title: 'UI/UX design',
@@ -50,29 +34,23 @@ export default function Features() {
       bgColor: 'bg-gradient-to-br from-pink-50 to-rose-50'
     },
     {
-      title: 'Assurance qualité',
+      title: 'Maintenance',
       description:
-        'Tests complets et assurance qualité pour garantir la fiabilité et la performance de vos solutions logicielles.',
-      icon: FaShieldAlt,
-      color: 'from-emerald-500 to-green-600',
-      bgColor: 'bg-gradient-to-br from-emerald-50 to-green-50'
+        'Services de maintenance continue, mises à jour et optimisation de vos applications pour garantir leur performance et leur fiabilité dans le temps.',
+      icon: FaCogs,
+      color: 'from-green-500 to-teal-600',
+      bgColor: 'bg-gradient-to-br from-green-50 to-teal-50'
     },
     {
-      title: 'Analyse de données',
+      title: 'Déploiement',
       description:
-        "Solutions d'analyse de données pour transformer vos données en insights exploitables et prendre de meilleures décisions.",
-      icon: FaChartBar,
-      color: 'from-indigo-500 to-blue-600',
-      bgColor: 'bg-gradient-to-br from-indigo-50 to-blue-50'
+        'Déploiement sécurisé et automatisé de vos applications avec des pratiques DevOps modernes pour un lancement rapide et fiable.',
+      icon: FaRocket,
+      color: 'from-orange-500 to-red-600',
+      bgColor: 'bg-gradient-to-br from-orange-50 to-red-50'
     },
-    {
-      title: 'Cloud & DevOps',
-      description:
-        "Déploiement et gestion d'infrastructures cloud avec des pratiques DevOps pour optimiser vos opérations.",
-      icon: FaCloud,
-      color: 'from-cyan-500 to-blue-600',
-      bgColor: 'bg-gradient-to-br from-cyan-50 to-blue-50'
-    },
+
+ 
   ]
 
   const images = useMemo(() => {
@@ -201,7 +179,7 @@ export default function Features() {
                       <button
                         key={idx}
                         onClick={() => goToSlide(idx)}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
                           idx === currentSlide 
                             ? 'bg-[#001F45] scale-125' 
                             : 'bg-gray-300 hover:bg-gray-400'
@@ -216,14 +194,14 @@ export default function Features() {
                   <button
                     aria-label="Précédent"
                     onClick={prevSlide}
-                    className="h-12 w-12 grid place-items-center rounded-xl bg-gray-100 hover:bg-[#001F45] hover:text-white transition-all duration-300 hover:scale-105"
+                    className="h-12 w-12 grid place-items-center rounded-xl bg-gray-100 hover:bg-[#001F45] hover:text-white transition-all duration-300 hover:scale-105 cursor-pointer"
                   >
                     <FaChevronLeft />
                   </button>
                   <button
                     aria-label="Suivant"
                     onClick={nextSlide}
-                    className="h-12 w-12 grid place-items-center rounded-xl bg-gray-100 hover:bg-[#001F45] hover:text-white transition-all duration-300 hover:scale-105"
+                    className="h-12 w-12 grid place-items-center rounded-xl bg-gray-100 hover:bg-[#001F45] hover:text-white transition-all duration-300 hover:scale-105 cursor-pointer"
                   >
                     <FaChevronRight />
                   </button>

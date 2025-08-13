@@ -14,22 +14,23 @@ import {
   FaCalendarAlt,
   FaEnvelope,
   FaCheckCircle,
+  FaGlobe,
 } from 'react-icons/fa'
 import React from 'react'
 import { TrackingSection, TrackingLink } from '@/components/analytics/AnalyticsProvider'
 import { PageTracker } from '@/components/analytics/PageTracker'
 
 export const metadata: Metadata = {
-  title: 'Services de Développement Mobile - Lodgic',
+  title: 'Services de Développement Web et Mobile - Lodgic',
   description:
-    'Découvrez nos services de développement mobile natif iOS et Android pour créer des applications performantes et innovantes',
+    'Découvrez nos services de développement web et mobile pour créer des sites web modernes et des applications performantes et innovantes',
   alternates: {
     canonical: 'https://lodgic-dev.com/services',
   },
   openGraph: {
-    title: 'Services de Développement Mobile - Lodgic',
+    title: 'Services de Développement Web et Mobile - Lodgic',
     description:
-      'Découvrez nos services de développement mobile natif iOS et Android pour créer des applications performantes et innovantes',
+      'Découvrez nos services de développement web et mobile pour créer des sites web modernes et des applications performantes et innovantes',
     url: 'https://lodgic-dev.com/services',
     siteName: 'Lodgic',
     images: [
@@ -37,18 +38,23 @@ export const metadata: Metadata = {
         url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
-        alt: 'Lodgic Services Mobile',
+        alt: 'Lodgic Services Web et Mobile',
       },
     ],
     locale: 'fr_FR',
     type: 'website',
   },
   keywords: [
+    'développement web',
     'développement mobile',
     'applications iOS',
     'applications Android',
+    'React.js',
+    'Next.js',
     'React Native',
+    'développeur web',
     'développeur applications mobiles',
+    'création site web',
     'création application sur mesure',
     'applications natives',
     'développement app',
@@ -59,9 +65,9 @@ export const metadata: Metadata = {
   ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Services de Développement Mobile - Lodgic',
+    title: 'Services de Développement Web et Mobile - Lodgic',
     description:
-      'Découvrez nos services de développement mobile natif iOS et Android pour créer des applications performantes et innovantes',
+      'Découvrez nos services de développement web et mobile pour créer des sites web modernes et des applications performantes et innovantes',
     images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
   },
 }
@@ -74,12 +80,29 @@ export default function Services() {
   const mainServices = [
     {
       id: 1,
-      icon: <FaMobile className="h-10 w-10 text-[#E67E22]" />,
-      title: 'Applications iOS natives',
+      icon: <FaGlobe className="h-10 w-10 text-[#E67E22]" />,
+      title: 'Développement de sites web',
       description:
-        'Nous développons des applications iOS natives , optimisées pour iPhone et iPad, offrant une expérience utilisateur fluide et performante.',
+        'Création de sites web modernes, responsives et optimisés SEO, allant des sites vitrines aux applications web complexes avec des technologies de pointe.',
       gradientColor: 'from-[#E67E22]/70 to-[#E67E22]/40',
       delay: 100,
+      features: [
+        'Sites web responsives et optimisés SEO',
+        'Applications web progressives (PWA)',
+        'Intégration de systèmes de gestion de contenu',
+        'Interfaces utilisateur modernes et intuitives',
+      ],
+      image: '/svg/computer.svg',
+      tech: ['React.js', 'Next.js', 'TypeScript', 'TailwindCSS'],
+    },
+    {
+      id: 2,
+      icon: <FaMobile className="h-10 w-10 text-[#A3B18A]" />,
+      title: 'Applications mobiles',
+      description:
+        'Nous développons des applications mobiles natives et cross-platform, optimisées pour iOS et Android, offrant une expérience utilisateur fluide et performante.',
+      gradientColor: 'from-[#A3B18A]/70 to-[#A3B18A]/40',
+      delay: 200,
       features: [
         'Applications pour iPhone (iOS) et Android',
         'Intégration de services externes (paiement, réservation, etc.) et ajout de vos fonctionnalités',
@@ -90,21 +113,21 @@ export default function Services() {
       tech: ['React Native', 'JavaScript', 'Swift', 'UIKit'],
     },
     {
-      id: 2,
-      icon: <FaCode className="h-10 w-10 text-[#A3B18A]" />,
-      title: 'Applications Android natives',
+      id: 3,
+      icon: <FaPlug className="h-10 w-10 text-[#2C3E50]" />,
+      title: 'Connexion de vos outils et services numériques',
       description:
-        "Nous créons des applications Android natives en Kotlin ou Java, optimisées pour une large gamme d'appareils Android.",
-      gradientColor: 'from-[#A3B18A]/70 to-[#A3B18A]/40',
-      delay: 200,
+        "Nous relions vos différents logiciels et services pour qu'ils communiquent entre eux, automatisant l'échange d'informations et optimisant vos processus.",
+      gradientColor: 'from-[#2C3E50]/70 to-[#2C3E50]/40',
+      delay: 300,
       features: [
-        'Optimisé pour le référencement naturel (SEO) sur Google Play',
-        'Intégration de services externes (paiement, réservation, etc.)',
-        'Notifications push et fonctionnalités avancées',
-        'Tests rigoureux sur multiples appareils',
+        'Connexion entre vos différents logiciels (CRM, ERP, etc.)',
+        'Intégration avec des services externes (paiement, API tierces)',
+        "Automatisation de l'échange d'informations et des workflows",
+        "Création d'API REST robustes et sécurisées",
       ],
-      image: '/svg/android.svg',
-      tech: ['Kotlin', 'Java', 'Android SDK', 'Jetpack Compose'],
+      image: '/svg/server.svg',
+      tech: ['NestJS', 'Node.js', 'Stripe', 'API REST', 'GraphQL', 'Prisma'],
     },
     {
       id: 3,
