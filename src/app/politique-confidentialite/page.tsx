@@ -52,20 +52,37 @@ export default function PolitiqueConfidentialite() {
   })
 
   return (
-    <div className="bg-[#FAF3E0] pt-24 pb-16 md:pt-32 md:pb-24">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <section className="w-full bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 pb-16 md:pb-24 overflow-hidden relative">
+      {/* Décor de fond */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl animate-pulse" />
+        <div
+          className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-[#eaf2ff] via-[#d4e6ff] to-transparent blur-3xl animate-pulse"
+          style={{ animationDelay: '1s' }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-r from-[#DBFF00]/20 to-[#001F45]/10 blur-2xl animate-pulse"
+          style={{ animationDelay: '2s' }}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 max-w-4xl relative z-10">
         <div className="mb-12 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#111827] mb-4">Politique de Confidentialité</h1>
-          <p className="text-sm text-[#374151]">Dernière mise à jour : {lastUpdated}</p>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#E67E22] to-[#E67E22]/70 mx-auto mt-6 rounded-full"></div>
+          <h1 className="font-bricolage-grotesque-bold text-[#001F45] text-3xl md:text-4xl lg:text-5xl mb-4">
+            Politique de Confidentialité
+          </h1>
+          <p className="font-inter text-[#162869] text-sm md:text-base mb-6 opacity-90">
+            Dernière mise à jour : {lastUpdated}
+          </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 mx-auto rounded-full"></div>
         </div>
 
-        <div className="bg-[#FFFFFF] p-8 sm:p-10 md:p-12 rounded-xl shadow-xl border border-gray-200 hover:border-[#E67E22]/50 transition-shadow duration-300 space-y-10">
+        <div className="bg-white/90 backdrop-blur-sm p-8 sm:p-10 md:p-12 rounded-xl shadow-xl border border-[#001F45]/10 hover:border-[#DBFF00]/50 transition-all duration-300 space-y-10 hover:shadow-2xl">
           <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
+            <h2 className="font-bricolage-grotesque-bold text-[#001F45] text-2xl mb-6 pb-2 border-b border-[#DBFF00]/30">
               1. Collecte des données personnelles
             </h2>
-            <p className="text-[#374151] leading-relaxed mb-4">
+            <p className="font-inter text-[#162869] leading-relaxed mb-4">
               Lodgic peut collecter les données personnelles suivantes :
             </p>
             <ul className="space-y-2 mb-4">
@@ -288,6 +305,6 @@ export default function PolitiqueConfidentialite() {
           </section>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
