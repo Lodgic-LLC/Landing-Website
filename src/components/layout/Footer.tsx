@@ -83,34 +83,34 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/services"
+                      href="/#services"
                       className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >
-                      Nos services
+                      Services
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/portfolio"
+                      href="/#blog"
                       className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >
-                      Portfolio
+                      Lodgic Conseils
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/blog"
+                      href="/#about"
                       className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >
-                      Blog
+                      À propos
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/contact"
+                      href="/#contact"
                       className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >
@@ -195,13 +195,6 @@ export default function Footer() {
               tabIndex={0}
             >
               Politique de confidentialité
-            </Link>
-            <Link
-              href="/politique-cookies"
-              className="text-white/70 hover:text-[#DBFF00] text-xs sm:text-sm transition-colors font-inter-regular"
-              tabIndex={0}
-            >
-              Politique de cookies
             </Link>
           </div>
         </div>
