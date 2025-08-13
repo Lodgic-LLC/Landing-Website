@@ -177,69 +177,73 @@ const PostPage = async (props: BlogPageProps) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchemaData) }}
       />
 
-      {/* Apply a subtle background to the whole page container */}
-      <div className="bg-[#FAF3E0]">
-        {/* Container principal pour l'article - Utilisation de Flexbox pour gérer la disposition */}
-        {/* Ajout de 'relative' pour le positionnement potentiel d'enfants absolus si nécessaire */}
-        {/* Ajout de 'xl:flex xl:gap-8' pour activer Flexbox et l'espacement sur les grands écrans */}
-        <div className="container mx-auto px-4 py-20 md:py-24 lg:py-28 max-w-7xl relative xl:flex xl:gap-8">
-          {/* Sommaire sticky à gauche sur les grands écrans - Maintenant DANS le container Flex */}
-          {/* Ajustement de la largeur et position sticky */}
-          {/* 'flex-shrink-0' empêche le sommaire de rétrécir */}
-          {/* La hauteur est limitée pour permettre le scroll interne si besoin : h-[calc(100vh-theme(spacing.24)-theme(spacing.28))] correspond à la hauteur de la vue moins le top offset et un peu de padding bas */}
+      {/* Page container avec style moderne */}
+      <div className="bg-[#f6f7fc] min-h-screen">
+        {/* Container principal pour l'article */}
+        <div className="max-w-7xl mx-auto px-6 py-20 md:py-24 lg:py-28 relative xl:flex xl:gap-8">
+          {/* Sommaire sticky à gauche sur les grands écrans */}
           <div className="hidden xl:block sticky top-24 z-10 w-60 xl:w-72 flex-shrink-0 self-start h-[calc(100vh-theme(spacing.24)-theme(spacing.28))] overflow-y-auto">
             <aside className="pr-4">
-              {" "}
-              {/* Ajout de padding droit pour espacer le texte de la scrollbar */}
               <TableOfContents headings={headings} />
             </aside>
           </div>
 
-          {/* Contenu principal de l'article - Prend l'espace restant */}
-          {/* 'flex-grow' permet à l'article de prendre l'espace disponible */}
-          {/* max-w-none xl:max-w-4xl pour contrôler la largeur max spécifiquement ici */}
-          <article className="bg-[#FFFFFF] p-8 sm:p-10 md:p-12 rounded-xl shadow-xl border border-gray-200 hover:border-[#E67E22]/50 transition-shadow duration-300 flex-grow max-w-none xl:max-w-4xl mx-auto xl:mx-0">
-            {/* Increased bottom margin */}
-            <header className="mb-10 md:mb-12 text-center xl:text-left">
-              {" "}
-              {/* Ajustement alignement texte sur grand écran */}
-              <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-[#111827] mb-4 leading-tight">
+          {/* Contenu principal de l'article */}
+          <article className="bg-white rounded-none border border-gray-200 hover:border-[#000f45]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group flex-grow max-w-none xl:max-w-4xl mx-auto xl:mx-0">
+            {/* Header de l'article */}
+            <header className="p-8 md:p-10 text-center xl:text-left border-b border-gray-100">
+              <div className="mb-4">
+                <span className="inline-block px-4 py-2 text-sm font-semibold text-[#000f45] bg-[#DBFF00] rounded-full">
+                  {post.category}
+                </span>
+              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bricolage-grotesque-bold text-[#000f45] mb-6 leading-tight">
                 {post.title}
               </h1>
-              <p className="text-[#374151] text-sm">
-                Publié le{" "}
-                {new Date(post.date).toLocaleDateString("fr-FR", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}{" "}
-                par {post.author}
+              <p className="text-[#162869] font-inter text-lg mb-6">
+                {post.summary}
               </p>
-              <div className="mt-6 border-t border-gray-200 pt-6">
-                <Link
-                  href="/blog"
-                  className="text-[#E67E22] hover:text-[#E67E22]/80 text-sm font-medium inline-flex items-center group transition-colors duration-300"
-                >
-                  <span className="mr-1 transition-transform duration-200 group-hover:-translate-x-1">
-                    &larr;
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-4 text-[#162869] font-inter">
+                  <span className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-[#000f45]" viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="8" r="5" />
+                      <path d="M20 21C20 16.5817 16.4183 13 12 13C7.58172 13 4 16.5817 4 21" />
+                    </svg>
+                    {post.author}
                   </span>
-                  Retour au blog
-                </Link>
+                  <span className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-[#000f45]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    {new Date(post.date).toLocaleDateString("fr-FR", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
+                </div>
               </div>
             </header>
-            {/* Increased bottom margin */}
-            <div className="mb-10 md:mb-12">
-              <Image
-                src={post.imageUrl}
-                alt={post.imageAlt}
-                width={800}
-                height={450}
-                className="w-full h-auto rounded-lg shadow-sm border border-gray-100"
-                priority // Keep priority for LCP
-              />
+
+            {/* Image principale */}
+            <div className="p-8 md:p-10 pb-0">
+              <div className="relative overflow-hidden rounded-lg">
+                <Image
+                  src={post.imageUrl}
+                  alt={post.imageAlt}
+                  width={800}
+                  height={450}
+                  className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
+                  priority
+                />
+              </div>
             </div>
-            {/* Use the Client Component for rendering and highlighting */}
-            <CodeBlockHighlighter htmlContent={processedContent} />
+
+            {/* Contenu de l'article */}
+            <div className="p-8 md:p-10 pt-6">
+              <CodeBlockHighlighter htmlContent={processedContent} />
+            </div>
           </article>
         </div>
       </div>

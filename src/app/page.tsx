@@ -15,16 +15,16 @@ const ProjectCTA = dynamic(() => import('@/components/pages/home/ProjectCTA'))
 const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 
 export const metadata: Metadata = {
-  title: 'Développeur Application Mobile Toulouse - Lodgic',
+  title: 'Développeur Web et Mobile Toulouse - Lodgic',
   description:
-    "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
+    "Besoin d'un Développeur Web et Mobile à Toulouse ? Lodgic crée des sites web et applications mobiles sur mesure pour startups, entreprises et particuliers.",
   alternates: {
     canonical: 'https://lodgic-dev.com',
   },
   openGraph: {
-    title: 'Développeur Application Mobile Toulouse - Lodgic',
+    title: 'Développeur Web et Mobile Toulouse - Lodgic',
     description:
-      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo). Expertise et accompagnement.",
+      "Lodgic, développeur web et mobile à Toulouse, transforme votre idée en site web ou application performante (React.js, Next.js, React Native). Expertise et accompagnement.",
     url: 'https://lodgic-dev.com',
     siteName: 'Lodgic Dev',
     images: [
@@ -32,28 +32,37 @@ export const metadata: Metadata = {
         url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
         width: 1200,
         height: 630,
-        alt: "Développeur d'Application Mobile à Toulouse Lodgic",
+        alt: "Développeur Web et Mobile à Toulouse Lodgic",
       },
     ],
     locale: 'fr_FR',
     type: 'website',
   },
   keywords: [
-    'Développeur Application Mobile Toulouse',
-    'Agence développement mobile Toulouse',
+    'Développeur Web et Mobile Toulouse',
+    'Agence développement web et mobile Toulouse',
+    'Création site web Toulouse',
     'Création application mobile Toulouse',
+    'Développeur web Toulouse',
     'Développeur mobile Toulouse',
+    'Site web sur mesure Toulouse',
     'Application mobile sur mesure Toulouse',
     'Développement application Android Toulouse',
     'Développement application iOS Toulouse',
+    'Développeur React.js Toulouse',
     'Développeur React Native Toulouse',
     'Agence web et mobile Toulouse',
+    'Freelance développeur web Toulouse',
     'Freelance développeur mobile Toulouse',
+    'React.js',
+    'Next.js',
     'React Native',
     'Expo',
     'Prisma',
     'NestJS',
+    'site web',
     'application mobile',
+    'développeur web',
     'développeur application',
     'développeur mobile',
     'agence développement',
@@ -61,9 +70,9 @@ export const metadata: Metadata = {
   ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Développeur Application Mobile Toulouse - Lodgic',
+    title: 'Développeur Web et Mobile Toulouse - Lodgic',
     description:
-      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure (React Native, Expo).",
+      "Besoin d'un Développeur Web et Mobile à Toulouse ? Lodgic crée des sites web et applications mobiles sur mesure (React.js, Next.js, React Native).",
     images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
   },
 }
@@ -76,7 +85,7 @@ export default function Home() {
         pageCategory="landing_page"
         additionalData={{
           page_type: 'homepage',
-          business_type: 'mobile_development',
+          business_type: 'web_and_mobile_development',
           location: 'toulouse',
         }}
       />
