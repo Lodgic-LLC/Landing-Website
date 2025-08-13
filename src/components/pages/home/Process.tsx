@@ -1,9 +1,12 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6'
+import EstimateModal from './EstimateModal'
 
 export default function Process() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  
   const services = [
     { name: "Sites web", hasArrow: true },
     { name: "Applications mobiles", hasArrow: true },
@@ -59,14 +62,21 @@ export default function Process() {
         {/* Bouton Estimer mon devis avec flèche */}
         <div className="mt-20 w-full flex items-center justify-center">
           <div className="flex items-center gap-4 rounded-none">
-                        <a
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="inline-block border border-black
-              text-black text-lg md:text-xl px-8 py-4 rounded-none shadow-lg hover:shadow-xl transform hover:scale-105 transition-all font-bricolage-grotesque-regular font-bold duration-300 cursor-pointer bg-[#DBFF00]"
+              text-black text-lg md:text-xl px-8 py-4 rounded-none shadow-lg hover:shadow-xl transform hover:scale-105 transition-all font-bricolage-grotesque-regular font-bold duration-300 cursor-pointer bg-[#DBFF00] hover:bg-[#c4e600]"
             >
               Estimer mon devis en 1 min
-            </a>
+            </button>
           </div>
         </div>
+
+        {/* Modal d'estimation */}
+        <EstimateModal 
+          isOpen={isModalOpen} 
+          onClose={() => setIsModalOpen(false)} 
+        />
       </div>
     </section>
   )
