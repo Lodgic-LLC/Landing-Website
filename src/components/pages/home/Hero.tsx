@@ -89,7 +89,7 @@ export default function Hero() {
                   </h3>
                   <p className="hidden sm:block font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>
-                    Fondateur & Développeur
+                    Développeur web et mobile
                   </p>
                   <p className="block sm:hidden font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>
@@ -116,7 +116,7 @@ export default function Hero() {
                   </h3>
                   <p className="hidden sm:block font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>
-                    Fondateur & Responsable Client
+                    Contact client et webdesigner
                   </p>
                   <p className="block sm:hidden font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>

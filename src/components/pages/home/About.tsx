@@ -68,7 +68,7 @@ const About = () => {
                   <h3 className="text-2xl font-bricolage-grotesque-bold text-[#000f45] group-hover:text-[#162869] transition-colors">
                     Yann Jerome
                   </h3>
-                  <p className="text-[#162869] font-inter font-medium">Relation client / Développeur Mobile</p>
+                  <p className="text-[#162869] font-inter font-medium">Relation client et webdesigner</p>
                 </div>
               </div>
 
@@ -77,9 +77,8 @@ const About = () => {
                   Votre interlocuteur privilégié pour comprendre vos besoins et assurer le suivi de votre projet.
                 </span>
                 <span className="hidden md:inline">
-                  Yann est votre interlocuteur privilégié tout au long de votre projet. Il analyse vos besoins,
-                  coordonne le développement et assure un suivi personnalisé pour garantir que votre vision se
-                  concrétise parfaitement.
+                  Yann est votre interlocuteur tout au long du projet. Il analyse vos besoins,
+                   et assure un suivi personnalisé pour garantir que votre application soit parfaitement adaptée à vos besoins.
                 </span>
               </p>
 
@@ -87,19 +86,19 @@ const About = () => {
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                    Analyse et compréhension de vos besoins
+                    Conseils et suivi de votre projet
                   </span>
                 </div>
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                    Suivi personnalisé de votre projet
+                    Validation du cahier des charges avant développement
                   </span>
                 </div>
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                    Coordination avec l'équipe technique
+                    Présentation des maquettes et des fonctionnalités
                   </span>
                 </div>
               </div>
@@ -125,17 +124,14 @@ const About = () => {
                   <h3 className="text-2xl font-bricolage-grotesque-bold text-[#000f45] group-hover:text-[#162869] transition-colors">
                     Mathéo Katbie
                   </h3>
-                  <p className="text-[#162869] font-inter font-medium">Développeur Full-Stack</p>
+                  <p className="text-[#162869] font-inter font-medium">Expert en développement web et mobile</p>
                 </div>
               </div>
 
               <p className="text-[#162869] font-inter mb-6 leading-relaxed text-sm sm:text-base">
-                <span className="md:hidden">
-                  Expert technique qui transforme vos idées en solutions digitales performantes.
-                </span>
                 <span className="hidden md:inline">
-                  Mathéo apporte son expertise technique pour transformer vos idées en réalité. Son approche couvre
-                  l'ensemble du développement, du back-end au front-end, pour des applications performantes et faciles à
+                  Mathéo transformer vos idées en réalité. Son approche couvre
+                  l'ensemble du développement, du back-end au front-end, pour une application performantes et faciles à
                   utiliser.
                 </span>
               </p>
@@ -171,9 +167,9 @@ const About = () => {
           {/* En-tête */}
           <div className="text-center mb-12 pr-6">
             <h2 className="text-3xl md:text-4xl font-bricolage-grotesque-bold text-[#000f45] mb-4">
-              Notre{' '}
+              Lodgic{' '}
               <span className="relative">
-                <span className="relative z-10">blog</span>
+                <span className="relative z-10">Conseils</span>
                 <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 transform -skew-x-12 z-0"></span>
               </span>
             </h2>
