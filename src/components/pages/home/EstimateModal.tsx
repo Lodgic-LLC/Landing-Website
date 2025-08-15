@@ -1,9 +1,39 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { FaTimes, FaArrowLeft, FaArrowRight, FaCheckCircle, FaUser, FaEnvelope, FaPaperPlane, FaCog } from 'react-icons/fa'
+import {
+  FaTimes,
+  FaArrowLeft,
+  FaArrowRight,
+  FaCheckCircle,
+  FaUser,
+  FaEnvelope,
+  FaPaperPlane,
+  FaCog,
+} from 'react-icons/fa'
 import { FaComputer, FaMobile, FaClock, FaCreditCard, FaBell, FaMap, FaChartBar, FaLock } from 'react-icons/fa6'
 import { useAnalytics } from '@/hooks/useAnalytics'
+
+// Helper function to delay opening a URL until a gtag event is sent.
+
+function gtagSendEvent(url?: string) {
+  const callback = function () {
+    if (typeof url === 'string') {
+      window.location.href = url
+    }
+  }
+
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    ;(window as any).gtag('event', 'conversion_event_submit_lead_form', {
+      event_callback: callback,
+      event_timeout: 2000,
+    })
+  } else {
+    // Fallback si gtag n'est pas disponible
+    callback()
+  }
+  return false
+}
 
 interface EstimateModalProps {
   isOpen: boolean
@@ -41,13 +71,13 @@ const initialFormData: FormData = {
     notifications: false,
     maps: false,
     analytics: false,
-    backoffice: false
+    backoffice: false,
   },
   timeline: '',
   contact: {
     name: '',
-    email: ''
-  }
+    email: '',
+  },
 }
 
 export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
@@ -69,9 +99,9 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
   }, [isOpen])
 
   const complexityDescriptions = {
-    simple: "Interface basique, fonctionnalités essentielles",
-    classic: "Design personnalisé, fonctionnalités avancées",
-    complex: "Architecture complexe, intégrations multiples"
+    simple: 'Interface basique, fonctionnalités essentielles',
+    classic: 'Design personnalisé, fonctionnalités avancées',
+    complex: 'Architecture complexe, intégrations multiples',
   }
 
   const featuresPricing = {
@@ -80,7 +110,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
     notifications: 600,
     maps: 900,
     analytics: 700,
-    backoffice: 1500
+    backoffice: 1500,
   }
 
   const basePricing = {
@@ -88,13 +118,13 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
       vitrine: { simple: 2500, classic: 3500, complex: 6000 },
       ecommerce: { simple: 4000, classic: 5500, complex: 9000 },
       webapp: { simple: 6000, classic: 8000, complex: 14000 },
-      blog: { simple: 2000, classic: 3000, complex: 5000 }
+      blog: { simple: 2000, classic: 3000, complex: 5000 },
     },
     mobile: {
       ios: { simple: 2700, classic: 5000, complex: 8300 },
       android: { simple: 2700, classic: 5000, complex: 8300 },
-      both: { simple: 4000, classic: 7300, complex: 12700 }
-    }
+      both: { simple: 4000, classic: 7300, complex: 12700 },
+    },
   }
 
   const calculatePrice = () => {
@@ -150,7 +180,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
       formDataObj.append('_subject', 'Nouvelle estimation de devis')
       formDataObj.append('_next', 'https://lodgic-dev.com/merci')
       formDataObj.append('_captcha', 'false')
-      
+
       // Add estimate details
       formDataObj.append('project_type', formData.projectType)
       if (formData.websiteType) formDataObj.append('website_type', formData.websiteType)
@@ -170,6 +200,10 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
 
       if (response.ok) {
         setSubmitStatus({ success: true, message: 'Estimation envoyée avec succès !' })
+
+        // Envoyer l'événement de conversion Google Tag
+        gtagSendEvent()
+
         setTimeout(() => {
           onClose()
         }, 2000)
@@ -178,7 +212,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
       console.error('Erreur:', error)
       setSubmitStatus({
         success: false,
-        message: "Une erreur est survenue. Veuillez réessayer."
+        message: 'Une erreur est survenue. Veuillez réessayer.',
       })
     } finally {
       setIsSubmitting(false)
@@ -187,16 +221,22 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
 
   const isStepValid = () => {
     switch (currentStep) {
-      case 1: return formData.projectType !== ''
-      case 2: 
+      case 1:
+        return formData.projectType !== ''
+      case 2:
         if (formData.projectType === 'website') return formData.websiteType !== ''
         if (formData.projectType === 'mobile') return formData.platforms && formData.platforms.length > 0
         return false
-      case 3: return formData.complexity !== ''
-      case 4: return true // Features are optional
-      case 5: return formData.timeline !== ''
-      case 6: return formData.contact.name && formData.contact.email
-      default: return false
+      case 3:
+        return formData.complexity !== ''
+      case 4:
+        return true // Features are optional
+      case 5:
+        return formData.timeline !== ''
+      case 6:
+        return formData.contact.name && formData.contact.email
+      default:
+        return false
     }
   }
 
@@ -209,13 +249,8 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
       <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="border-b border-gray-200 p-6 flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-gray-900 font-bricolage-grotesque-regular">
-            Estimation de devis
-          </h2>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
-          >
+          <h2 className="text-2xl font-bold text-gray-900 font-bricolage-grotesque-regular">Estimation de devis</h2>
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 transition-colors cursor-pointer">
             <FaTimes size={24} />
           </button>
         </div>
@@ -223,11 +258,13 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
         {/* Progress Bar */}
         <div className="px-6 py-4 border-b border-gray-200">
           <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
-            <span>Étape {currentStep} sur {totalSteps}</span>
+            <span>
+              Étape {currentStep} sur {totalSteps}
+            </span>
             <span>{Math.round((currentStep / totalSteps) * 100)}%</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
+            <div
               className="bg-[#DBFF00] h-2 rounded-full transition-all duration-300"
               style={{ width: `${(currentStep / totalSteps) * 100}%` }}
             ></div>
@@ -274,15 +311,13 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
             <div className="space-y-6">
               {formData.projectType === 'website' && (
                 <>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                    Quel type de site web ?
-                  </h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Quel type de site web ?</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
                       { key: 'vitrine', label: 'Site Vitrine', desc: 'Présentation de votre entreprise' },
                       { key: 'ecommerce', label: 'E-commerce', desc: 'Boutique en ligne' },
                       { key: 'webapp', label: 'Application Web', desc: 'Plateforme interactive' },
-                      { key: 'blog', label: 'Blog/Magazine', desc: 'Site de contenu' }
+                      { key: 'blog', label: 'Blog/Magazine', desc: 'Site de contenu' },
                     ].map((type) => (
                       <button
                         key={type.key}
@@ -300,16 +335,14 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                   </div>
                 </>
               )}
-              
+
               {formData.projectType === 'mobile' && (
                 <>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                    Sur quelles plateformes ?
-                  </h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Sur quelles plateformes ?</h3>
                   <div className="space-y-3">
                     {[
                       { key: 'ios', label: 'iOS (iPhone/iPad)', icon: '🍎' },
-                      { key: 'android', label: 'Android', icon: '🤖' }
+                      { key: 'android', label: 'Android', icon: '🤖' },
                     ].map((platform) => (
                       <label
                         key={platform.key}
@@ -321,14 +354,14 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                           onChange={(e) => {
                             const platforms = formData.platforms || []
                             if (e.target.checked) {
-                              setFormData({ 
-                                ...formData, 
-                                platforms: [...platforms, platform.key as 'ios' | 'android'] 
+                              setFormData({
+                                ...formData,
+                                platforms: [...platforms, platform.key as 'ios' | 'android'],
                               })
                             } else {
-                              setFormData({ 
-                                ...formData, 
-                                platforms: platforms.filter(p => p !== platform.key) 
+                              setFormData({
+                                ...formData,
+                                platforms: platforms.filter((p) => p !== platform.key),
                               })
                             }
                           }}
@@ -346,14 +379,12 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
           {/* Step 3: Complexity */}
           {currentStep === 3 && (
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Niveau de complexité souhaité ?
-              </h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Niveau de complexité souhaité ?</h3>
               <div className="space-y-4">
                 {[
                   { key: 'simple', label: 'Simple' },
                   { key: 'classic', label: 'Classique' },
-                  { key: 'complex', label: 'Complexe' }
+                  { key: 'complex', label: 'Complexe' },
                 ].map((complexity) => (
                   <button
                     key={complexity.key}
@@ -377,9 +408,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
           {/* Step 4: Features */}
           {currentStep === 4 && (
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Fonctionnalités additionnelles
-              </h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Fonctionnalités additionnelles</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   { key: 'auth', label: 'Authentification', icon: FaLock, desc: 'Connexion utilisateur' },
@@ -387,7 +416,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                   { key: 'notifications', label: 'Notifications', icon: FaBell, desc: 'Push notifications' },
                   { key: 'maps', label: 'Carte interactive', icon: FaMap, desc: 'Géolocalisation' },
                   { key: 'analytics', label: 'Statistiques', icon: FaChartBar, desc: 'Tableau de bord' },
-                  { key: 'backoffice', label: 'Back-office', icon: FaCog, desc: 'Administration' }
+                  { key: 'backoffice', label: 'Back-office', icon: FaCog, desc: 'Administration' },
                 ].map((feature) => (
                   <label
                     key={feature.key}
@@ -400,13 +429,15 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                     <input
                       type="checkbox"
                       checked={formData.features[feature.key as keyof typeof formData.features]}
-                      onChange={(e) => setFormData({
-                        ...formData,
-                        features: {
-                          ...formData.features,
-                          [feature.key]: e.target.checked
-                        }
-                      })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          features: {
+                            ...formData.features,
+                            [feature.key]: e.target.checked,
+                          },
+                        })
+                      }
                       className="mt-1 mr-3 h-4 w-4 text-[#DBFF00] border-gray-300 rounded focus:ring-[#DBFF00]"
                     />
                     <div className="flex-1">
@@ -425,9 +456,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
           {/* Step 5: Timeline */}
           {currentStep === 5 && (
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Délai souhaité ?
-              </h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Délai souhaité ?</h3>
               <div className="space-y-4">
                 <button
                   onClick={() => setFormData({ ...formData, timeline: 'standard' })}
@@ -471,10 +500,8 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
           {/* Step 6: Summary and Contact */}
           {currentStep === 6 && (
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Résumé et contact
-              </h3>
-              
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Résumé et contact</h3>
+
               {/* Price Summary */}
               <div className="bg-gray-50 rounded-lg p-6 space-y-4">
                 <h4 className="font-semibold text-gray-900">Estimation du projet</h4>
@@ -530,10 +557,12 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                         type="text"
                         required
                         value={formData.contact.name}
-                        onChange={(e) => setFormData({
-                          ...formData,
-                          contact: { ...formData.contact, name: e.target.value }
-                        })}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            contact: { ...formData.contact, name: e.target.value },
+                          })
+                        }
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#DBFF00] focus:border-[#DBFF00] outline-none"
                         placeholder="Votre nom"
                       />
@@ -551,10 +580,12 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                         type="email"
                         required
                         value={formData.contact.email}
-                        onChange={(e) => setFormData({
-                          ...formData,
-                          contact: { ...formData.contact, email: e.target.value }
-                        })}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            contact: { ...formData.contact, email: e.target.value },
+                          })
+                        }
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#DBFF00] focus:border-[#DBFF00] outline-none"
                         placeholder="votre@email.com"
                       />
@@ -570,8 +601,19 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                   {isSubmitting ? (
                     <>
                       <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
                       </svg>
                       Envoi en cours...
                     </>
@@ -585,11 +627,13 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
               </form>
 
               {submitStatus && (
-                <div className={`p-4 rounded-lg ${
-                  submitStatus.success 
-                    ? 'bg-green-50 text-green-800 border border-green-200' 
-                    : 'bg-red-50 text-red-800 border border-red-200'
-                }`}>
+                <div
+                  className={`p-4 rounded-lg ${
+                    submitStatus.success
+                      ? 'bg-green-50 text-green-800 border border-green-200'
+                      : 'bg-red-50 text-red-800 border border-red-200'
+                  }`}
+                >
                   <div className="flex items-center">
                     {submitStatus.success ? (
                       <FaCheckCircle className="mr-2 text-green-600" />
@@ -614,7 +658,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
             <FaArrowLeft className="mr-2" />
             Précédent
           </button>
-          
+
           {currentStep < totalSteps ? (
             <button
               onClick={handleNext}
@@ -629,4 +673,4 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
       </div>
     </div>
   )
-} 
+}

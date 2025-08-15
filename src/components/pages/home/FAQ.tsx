@@ -150,7 +150,6 @@ export default function FAQ() {
                 Contactez-nous
               </h1>
               <div className="mb-8">
-                <h3 className="text-lg font-inter-regular text-[rgb(22,40,105)] mb-2">Ventes et demandes générales</h3>
                 <a
                   href="mailto:lodgicdev@gmail.com"
                   className="underline underline-offset-2 underline-color-blue-600 transition-colors duration-200"

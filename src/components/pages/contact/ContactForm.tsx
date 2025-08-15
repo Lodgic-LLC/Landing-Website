@@ -5,6 +5,27 @@ import { useRouter } from 'next/navigation'
 import { FaEnvelope, FaUser, FaPhone, FaPaperPlane, FaFileAlt } from 'react-icons/fa'
 import { useAnalytics } from '@/hooks/useAnalytics'
 
+// Helper function to delay opening a URL until a gtag event is sent.
+
+function gtagSendEvent(url?: string) {
+  const callback = function () {
+    if (typeof url === 'string') {
+      window.location.href = url
+    }
+  }
+
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    ;(window as any).gtag('event', 'conversion_event_submit_lead_form', {
+      event_callback: callback,
+      event_timeout: 2000,
+    })
+  } else {
+    // Fallback si gtag n'est pas disponible
+    callback()
+  }
+  return false
+}
+
 interface SubmitStatusType {
   success: boolean
   message: string
@@ -87,7 +108,7 @@ export default function ContactForm() {
       // Tracker l'abandon du formulaire à cause des erreurs
       analytics.trackFormInteraction('contact_form', 'abandon', 'validation_error', {
         error_fields: Object.keys(errors),
-        form_completion: calculateFormCompletion()
+        form_completion: calculateFormCompletion(),
       })
       return
     }
@@ -100,7 +121,7 @@ export default function ContactForm() {
       form_completion: 100,
       has_phone: !!formData.phone,
       message_length: formData.message.length,
-      subject: formData.subject
+      subject: formData.subject,
     })
 
     try {
@@ -127,9 +148,11 @@ export default function ContactForm() {
         analytics.trackConversion('contact_form', 10, {
           form_type: 'contact',
           conversion_point: 'form_submit',
-          lead_quality: 'high'
+          lead_quality: 'high',
         })
-        router.push('/merci')
+
+        // Envoyer l'événement de conversion Google Tag
+        gtagSendEvent()
       }
     } catch (error) {
       console.error('Erreur:', error)
@@ -139,7 +162,7 @@ export default function ContactForm() {
       })
       // Tracker l'erreur de soumission
       analytics.trackFormInteraction('contact_form', 'abandon', 'submit_error', {
-        error_message: error instanceof Error ? error.message : 'Unknown error'
+        error_message: error instanceof Error ? error.message : 'Unknown error',
       })
     } finally {
       setIsSubmitting(false)
@@ -148,7 +171,7 @@ export default function ContactForm() {
 
   const calculateFormCompletion = () => {
     const fields = [formData.name, formData.email, formData.phone, formData.subject, formData.message]
-    const filledFields = fields.filter(field => field.trim() !== '').length
+    const filledFields = fields.filter((field) => field.trim() !== '').length
     return Math.round((filledFields / fields.length) * 100)
   }
 
