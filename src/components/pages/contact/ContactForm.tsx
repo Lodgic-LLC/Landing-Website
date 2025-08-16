@@ -6,11 +6,11 @@ import { FaEnvelope, FaUser, FaPhone, FaPaperPlane, FaFileAlt } from 'react-icon
 import { useAnalytics } from '@/hooks/useAnalytics'
 
 // Helper function to delay opening a URL until a gtag event is sent.
-
+// Call it in response to an action that should navigate to a URL.
 function gtagSendEvent(url?: string) {
   const callback = function () {
     if (typeof url === 'string') {
-      window.location.href = url
+      window.location = url as any
     }
   }
 
@@ -151,8 +151,25 @@ export default function ContactForm() {
           lead_quality: 'high',
         })
 
+        setSubmitStatus({
+          success: true,
+          message: 'Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.',
+        })
+
         // Envoyer l'événement de conversion Google Tag
         gtagSendEvent()
+
+        // Réinitialiser le formulaire après 3 secondes
+        setTimeout(() => {
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: '',
+          })
+          setSubmitStatus(null)
+        }, 3000)
       }
     } catch (error) {
       console.error('Erreur:', error)
@@ -231,7 +248,7 @@ export default function ContactForm() {
               </div>
               {formErrors.email && (
                 <p className="mt-1 text-sm text-red-600 flex items-center">
-                  <span className="inline-block w-4 h-4 mr-1 rounded-full bg-red-100 flex items-center justify-center">
+                  <span className="flex w-4 h-4 mr-1 rounded-full bg-red-100 items-center justify-center">
                     <span className="block w-1 h-1 rounded-full bg-red-600"></span>
                   </span>
                   {formErrors.email}
@@ -264,7 +281,7 @@ export default function ContactForm() {
             </div>
             {formErrors.phone && (
               <p className="mt-1 text-sm text-red-600 flex items-center">
-                <span className="inline-block w-4 h-4 mr-1 rounded-full bg-red-100 flex items-center justify-center">
+                <span className="flex w-4 h-4 mr-1 rounded-full bg-red-100 items-center justify-center">
                   <span className="block w-1 h-1 rounded-full bg-red-600"></span>
                 </span>
                 {formErrors.phone}
