@@ -130,9 +130,7 @@ const About = () => {
 
               <p className="text-[#162869] font-inter mb-6 leading-relaxed text-sm sm:text-base">
                 <span className="hidden md:inline">
-                  Mathéo transformer vos idées en réalité. Son approche couvre
-                  l'ensemble du développement, du back-end au front-end, pour une application performantes et faciles à
-                  utiliser.
+                Mathéo transforme vos idées en réalité. Son expertise couvre l’ensemble du développement, du back-end au front-end, pour créer des applications performantes, sécurisées et simples à utiliser.
                 </span>
               </p>
 

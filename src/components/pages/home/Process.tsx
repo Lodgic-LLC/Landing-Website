@@ -33,7 +33,7 @@ export default function Process() {
             {' '}pour vous
           </h2>
           <p className="text-base md:text-lg max-w-4xl mx-auto font-inter text-[#162869]/80 leading-relaxed">
-            Nous développons des sites web, des applications mobiles et des outils en ligne qui aident votre entreprise à mieux fonctionner et à attirer plus de clients.
+          Nous concevons des applications mobiles, des sites web et des outils en ligne sur mesure, optimisés pour le référencement afin de vous aider à attirer davantage de clients.
           </p>
         </div>
 

@@ -34,7 +34,7 @@ export default function Hero() {
             </h1>
 
             <p className="font-inter text-[#162869] text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 opacity-90">
-              Chez Lodgic, on vous accompagne pas à pas. De l'idée à la réalisation de votre application.
+            Chez Lodgic, nous vous accompagnons pas à pas, de l’idée à la réalisation, pour créer une application qui vous ressemble.
             </p>
 
             {/* Points clés - Hidden on mobile */}

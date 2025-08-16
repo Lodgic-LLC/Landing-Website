@@ -12,7 +12,7 @@ export default function Features() {
     {
       title: "Applications mobiles",
       description:
-        'Création d\'applications pour iPhone et Android. Votre application sur mesure, simple à utiliser et qui répond à vos besoins.',
+        'Nous développons des applications mobiles iOS et Android sur mesure, faciles à utiliser et parfaitement adaptées à vos besoins.',
       icon: FaMobile,
       color: 'from-blue-500 to-purple-600',
       bgColor: 'bg-gradient-to-br from-blue-50 to-purple-50'
@@ -20,7 +20,7 @@ export default function Features() {
     {
       title: 'Sites web',
       description:
-        'Création de sites web modernes et adaptés à tous les écrans. De la vitrine simple aux sites complexes avec toutes les fonctionnalités.',
+        'Nous concevons des sites web responsives, allant du simple site vitrine aux plateformes complexes intégrant toutes les fonctionnalités nécessaires à votre projet.',
       icon: FaGlobe,
       color: 'from-emerald-500 to-teal-600',
       bgColor: 'bg-gradient-to-br from-emerald-50 to-teal-50'
@@ -28,7 +28,7 @@ export default function Features() {
     {
       title: 'Design',
       description:
-        'Création d\'interfaces belles et faciles à utiliser. Un design qui plaît à vos clients et simplifie leur expérience.',
+        'Nos designs sont conçus et validés avec vous, pour offrir une expérience simple et agréable à vos clients.',
       icon: FaPalette,
       color: 'from-pink-500 to-rose-600',
       bgColor: 'bg-gradient-to-br from-pink-50 to-rose-50'
@@ -36,7 +36,7 @@ export default function Features() {
     {
       title: 'Mise en ligne',
       description:
-        'Installation et configuration de vos applications sur internet. Votre projet accessible partout, tout le temps.',
+        'Nous assurons l’installation et la configuration de vos applications en ligne, pour rendre votre projet accessible partout et à tout moment.',
       icon: FaRocket,
       color: 'from-orange-500 to-red-600',
       bgColor: 'bg-gradient-to-br from-orange-50 to-red-50'
@@ -44,7 +44,7 @@ export default function Features() {
     {
       title: 'Maintenance',
       description:
-        'Mise à jour et amélioration continue de vos applications. Nous gardons vos outils performants et sécurisés.',
+        'Nous assurons la mise à jour et l’amélioration continue de vos applications, afin de garantir des outils toujours performants et sécurisés.',
       icon: FaCogs,
       color: 'from-green-500 to-teal-600',
       bgColor: 'bg-gradient-to-br from-green-50 to-teal-50'
