@@ -15,11 +15,11 @@ import { FaComputer, FaMobile, FaClock, FaCreditCard, FaBell, FaMap, FaChartBar,
 import { useAnalytics } from '@/hooks/useAnalytics'
 
 // Helper function to delay opening a URL until a gtag event is sent.
-
+// Call it in response to an action that should navigate to a URL.
 function gtagSendEvent(url?: string) {
   const callback = function () {
     if (typeof url === 'string') {
-      window.location.href = url
+      window.location = url as any
     }
   }
 
