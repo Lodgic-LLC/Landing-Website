@@ -28,8 +28,6 @@ const About = () => {
     setCurrentProjectIndex((prev) => Math.max(prev - 1, 0))
   }
 
-
-
   return (
     <>
       <section className="py-10 bg-[#f6f7fc] relative overflow-hidden" id="about">
@@ -40,8 +38,8 @@ const About = () => {
               <span className="relative">
                 <span className="relative z-10">sommes-nous</span>
                 <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 transform -skew-x-12 z-0"></span>
-              </span>
-              {' '}?
+              </span>{' '}
+              ?
             </h2>
             <p className="text-lg font-inter text-[#162869] max-w-3xl mx-auto leading-relaxed">
               Une équipe à taille humaine, proche de vous et de vos besoins.
@@ -49,7 +47,7 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
-            <div className="bg-[#FFFFFF] p-6 md:p-8 border border-gray-200 hover:border-[#000f45]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group">
+            <div className="bg-[#FFFFFF] p-6 md:p-8 border border-gray-200 hover:border-[#000f45]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group cursor-pointer">
               <div className="flex flex-col sm:flex-row items-center text-center sm:text-left mb-6">
                 <div className="relative w-20 h-20 mr-0 sm:mr-6 mb-4 sm:mb-0 flex-shrink-0">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#000f45]/80 to-[#162869]/60 group-hover:from-[#000f45] group-hover:to-[#162869]/70 transition-all duration-300 shadow-md"></div>
@@ -66,7 +64,7 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bricolage-grotesque-bold text-[#000f45] group-hover:text-[#162869] transition-colors">
-                    Yann Jerome
+                    Yann Rouquie
                   </h3>
                   <p className="text-[#162869] font-inter font-medium">Relation client et webdesigner</p>
                 </div>
@@ -105,7 +103,7 @@ const About = () => {
             </div>
 
             {/* Mathéo Katbie */}
-            <div className="bg-[#FFFFFF] p-6 md:p-8 border border-gray-200 hover:border-[#000f45]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group">
+            <div className="bg-[#FFFFFF] p-6 md:p-8 border border-gray-200 hover:border-[#000f45]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group cursor-pointer">
               <div className="flex flex-col sm:flex-row items-center text-center sm:text-left mb-6">
                 <div className="relative w-20 h-20 mr-0 sm:mr-6 mb-4 sm:mb-0 flex-shrink-0">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#000f45]/80 to-[#162869]/60 group-hover:from-[#000f45] group-hover:to-[#162869]/70 transition-all duration-300 shadow-md"></div>
@@ -157,7 +155,7 @@ const About = () => {
             </div>
           </div>
         </div>
-             </section>
+      </section>
 
       {/* Section Projets Réalisés - Carousel */}
       <section className="py-16 bg-white" id="blog">
