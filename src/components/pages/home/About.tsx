@@ -52,14 +52,12 @@ const About = () => {
                 <div className="relative w-20 h-20 mr-0 sm:mr-6 mb-4 sm:mb-0 flex-shrink-0">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#000f45]/80 to-[#162869]/60 group-hover:from-[#000f45] group-hover:to-[#162869]/70 transition-all duration-300 shadow-md"></div>
                   <div className="absolute inset-1 rounded-full bg-white flex items-center justify-center">
-                    <svg
-                      className="w-10 h-10 text-[#000f45] transition-colors duration-300"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <circle cx="12" cy="8" r="5" />
-                      <path d="M20 21C20 16.5817 16.4183 13 12 13C7.58172 13 4 16.5817 4 21" />
-                    </svg>
+                    <img
+                      src="/images/yann-tete.png"
+                      alt="Yann Rouquie"
+                      loading="lazy"
+                      className="w-full h-full rounded-full object-cover"
+                    />
                   </div>
                 </div>
                 <div>
@@ -72,11 +70,11 @@ const About = () => {
 
               <p className="text-[#162869] font-inter mb-6 leading-relaxed text-sm sm:text-base">
                 <span className="md:hidden">
-                À votre écoute pour traduire vos besoins en solutions et suivre chaque étape de votre projet
+                  À votre écoute pour traduire vos besoins en solutions et suivre chaque étape de votre projet
                 </span>
                 <span className="hidden md:inline">
                   Yann est votre interlocuteur tout au long du projet. Il analyse vos besoins,
-                   et assure un suivi personnalisé pour garantir que votre application soit parfaitement adaptée à vos besoins.
+                  et assure un suivi personnalisé pour garantir que votre application soit parfaitement adaptée à vos besoins.
                 </span>
               </p>
 
@@ -84,12 +82,12 @@ const About = () => {
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                  Accompagnement et conseils personnalisés                  </span>
+                    Accompagnement et conseils personnalisés                  </span>
                 </div>
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                  Validation du cahier des charges avant lancement du projet
+                    Validation du cahier des charges avant lancement du projet
                   </span>
                 </div>
                 <div className="flex items-start">
@@ -107,14 +105,12 @@ const About = () => {
                 <div className="relative w-20 h-20 mr-0 sm:mr-6 mb-4 sm:mb-0 flex-shrink-0">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#000f45]/80 to-[#162869]/60 group-hover:from-[#000f45] group-hover:to-[#162869]/70 transition-all duration-300 shadow-md"></div>
                   <div className="absolute inset-1 rounded-full bg-white flex items-center justify-center">
-                    <svg
-                      className="w-10 h-10 text-[#000f45] transition-colors duration-300"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <circle cx="12" cy="8" r="5" />
-                      <path d="M20 21C20 16.5817 16.4183 13 12 13C7.58172 13 4 16.5817 4 21" />
-                    </svg>
+                    <img
+                      src="/images/matheo-tete.png"
+                      alt="Mathéo Katbie"
+                      loading="lazy"
+                      className="w-full h-full rounded-full object-cover"
+                    />
                   </div>
                 </div>
                 <div>
@@ -127,7 +123,7 @@ const About = () => {
 
               <p className="text-[#162869] font-inter mb-6 leading-relaxed text-sm sm:text-base">
                 <span className="hidden md:inline">
-                Mathéo transforme vos idées en réalité. Son expertise couvre l’ensemble du développement, du back-end au front-end, pour créer des applications performantes, sécurisées et simples à utiliser.
+                  Mathéo transforme vos idées en réalité. Son expertise couvre l’ensemble du développement, du back-end au front-end, pour créer des applications performantes, sécurisées et simples à utiliser.
                 </span>
               </p>
 
