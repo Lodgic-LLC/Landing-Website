@@ -66,13 +66,13 @@ const About = () => {
                   <h3 className="text-2xl font-bricolage-grotesque-bold text-[#000f45] group-hover:text-[#162869] transition-colors">
                     Yann Rouquie
                   </h3>
-                  <p className="text-[#162869] font-inter font-medium">Relation client et webdesigner</p>
+                  <p className="text-[#162869] font-inter font-medium">Accompagnement client & Design</p>
                 </div>
               </div>
 
               <p className="text-[#162869] font-inter mb-6 leading-relaxed text-sm sm:text-base">
                 <span className="md:hidden">
-                  Votre interlocuteur privilégié pour comprendre vos besoins et assurer le suivi de votre projet.
+                À votre écoute pour traduire vos besoins en solutions et suivre chaque étape de votre projet
                 </span>
                 <span className="hidden md:inline">
                   Yann est votre interlocuteur tout au long du projet. Il analyse vos besoins,
@@ -84,13 +84,12 @@ const About = () => {
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                    Conseils et suivi de votre projet
-                  </span>
+                  Accompagnement et conseils personnalisés                  </span>
                 </div>
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                    Validation du cahier des charges avant développement
+                  Validation du cahier des charges avant lancement du projet
                   </span>
                 </div>
                 <div className="flex items-start">
