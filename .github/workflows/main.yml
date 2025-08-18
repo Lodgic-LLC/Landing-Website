@@ -1,17 +1,11 @@
 name: Deploy to VPS
 
 on:
-  push:
-    branches:
-      - main  
   pull_request:
     types:
       - closed
     branches:
       - main
-  schedule:
-    # Exécuter tous les jours à 20h00 UTC (22h00 heure française en hiver, 21h00 en été)
-    - cron: '0 20 * * *'  
 
 jobs:
   deploy:
