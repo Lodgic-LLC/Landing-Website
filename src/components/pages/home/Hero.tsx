@@ -34,7 +34,7 @@ export default function Hero() {
             </h1>
 
             <p className="font-inter text-[#162869] text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 opacity-90">
-              Chez Lodgic, on vous accompagne pas à pas. De l'idée à la réalisation de votre application.
+            Chez Lodgic, nous vous accompagnons pas à pas, de l’idée à la réalisation, pour créer une application qui vous ressemble.
             </p>
 
             {/* Points clés - Hidden on mobile */}
@@ -89,7 +89,7 @@ export default function Hero() {
                   </h3>
                   <p className="hidden sm:block font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>
-                    Fondateur & Développeur
+                    Développeur web et mobile
                   </p>
                   <p className="block sm:hidden font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>
@@ -116,7 +116,7 @@ export default function Hero() {
                   </h3>
                   <p className="hidden sm:block font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>
-                    Fondateur & Responsable Client
+                    Contact client et webdesigner
                   </p>
                   <p className="block sm:hidden font-inter text-[#162869] text-xs sm:text-sm mt-1 whitespace-nowrap">
                     <span className="inline-block w-2 h-2 bg-[#DBFF00] rounded-full mr-1.5 animate-pulse"></span>
