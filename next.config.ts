@@ -46,10 +46,10 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: 'host',
-            value: 'www.lodgic-dev.com',
+            value: 'lodgic-dev.com',
           },
         ],
-        destination: 'https://lodgic-dev.com/:path*',
+        destination: 'https://www.lodgic-dev.com/:path*',
         permanent: true,
       },
     ]
