@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/prismjs": "^1.26.5",
+    "@vercel/analytics": "^1.5.0",
     "domhandler": "^5.0.3",
     "domutils": "^3.2.2",
     "framer-motion": "^12.6.3",

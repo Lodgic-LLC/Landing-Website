@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/Navbar'
 import Script from 'next/script'
 import { WebVitals } from './web-vitals'
 import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
+import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -198,6 +199,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </AnalyticsProvider>
+        <Analytics />
       </body>
     </html>
   )
