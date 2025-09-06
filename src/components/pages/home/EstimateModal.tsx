@@ -105,25 +105,25 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
   }
 
   const featuresPricing = {
-    auth: 800,
-    payment: 1200,
-    notifications: 600,
-    maps: 900,
-    analytics: 700,
-    backoffice: 1500,
+    auth: 1000,
+    payment: 1500,
+    notifications: 750,
+    maps: 1125,
+    analytics: 875,
+    backoffice: 1875,
   }
 
   const basePricing = {
     website: {
-      vitrine: { simple: 2500, classic: 3500, complex: 6000 },
-      ecommerce: { simple: 4000, classic: 5500, complex: 9000 },
-      webapp: { simple: 6000, classic: 8000, complex: 14000 },
-      blog: { simple: 2000, classic: 3000, complex: 5000 },
+      vitrine: { simple: 3125, classic: 4375, complex: 7500 },
+      ecommerce: { simple: 5000, classic: 6875, complex: 11250 },
+      webapp: { simple: 7500, classic: 10000, complex: 17500 },
+      blog: { simple: 2500, classic: 3750, complex: 6250 },
     },
     mobile: {
-      ios: { simple: 2700, classic: 5000, complex: 8300 },
-      android: { simple: 2700, classic: 5000, complex: 8300 },
-      both: { simple: 4000, classic: 7300, complex: 12700 },
+      ios: { simple: 3375, classic: 6250, complex: 10375 },
+      android: { simple: 3375, classic: 6250, complex: 10375 },
+      both: { simple: 5000, classic: 9125, complex: 15875 },
     },
   }
 
