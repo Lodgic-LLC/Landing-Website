@@ -4,8 +4,8 @@ title: "5 Clés Indispensables pour une Landing Page qui Convertit en 2025"
 date: "2025-04-24"
 author: "L'équipe Lodgic"
 summary: "Votre landing page est cruciale. Découvrez 5 éléments fondamentaux pour la structurer, l'optimiser et maximiser vos conversions dès la première impression."
-imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600"
-imageAlt: "Équipe collaborant sur la conception d'une interface web pour une landing page efficace"
+imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600"
+imageAlt: "Tableau de bord marketing affichant des indicateurs de conversion"
 category: "Web"
 popular: true
 ---
