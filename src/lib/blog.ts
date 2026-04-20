@@ -3,7 +3,6 @@ import 'server-only'
 import fs from 'node:fs'
 import path from 'node:path'
 import matter from 'gray-matter'
-import { marked } from 'marked'
 import type { BlogPost, BlogPostMeta } from '@/types/blog'
 
 const BLOG_CONTENT_DIR = path.join(process.cwd(), 'content', 'blog')
@@ -40,15 +39,49 @@ const ensureBlogDirectoryExists = (): void => {
   }
 }
 
-const looksLikeHtml = (body: string): boolean => {
-  return /<\w+[\s>\/]/.test(body.trim().slice(0, 200))
-}
+/**
+ * Dédente les lignes HTML indentées pour qu'elles soient reconnues comme des
+ * blocs HTML par CommonMark (et non comme des blocs de code indentés).
+ *
+ * - Préserve le contenu des fences de code (``` ou ~~~).
+ * - Retire l'indentation de toute ligne commençant par une balise HTML.
+ * - Retire également l'indentation des lignes qui suivent directement une
+ *   balise HTML (contenu textuel d'un élément HTML) tant qu'une ligne vide
+ *   n'est pas rencontrée.
+ */
+const dedentHtmlBlocks = (source: string): string => {
+  const lines = source.split('\n')
+  let inFence = false
+  let inHtmlBlock = false
 
-const renderContent = (body: string): string => {
-  if (looksLikeHtml(body)) {
-    return body
-  }
-  return marked.parse(body, { async: false }) as string
+  return lines
+    .map((line) => {
+      const fenceMatch = /^\s*(```|~~~)/.test(line)
+      if (fenceMatch) {
+        inFence = !inFence
+        inHtmlBlock = false
+        return line
+      }
+      if (inFence) return line
+
+      if (line.trim() === '') {
+        inHtmlBlock = false
+        return line
+      }
+
+      const startsWithHtmlTag = /^\s*<\/?[a-zA-Z]/.test(line)
+      if (startsWithHtmlTag) {
+        inHtmlBlock = true
+        return line.replace(/^\s+/, '')
+      }
+
+      if (inHtmlBlock) {
+        return line.replace(/^\s{4,}/, '')
+      }
+
+      return line
+    })
+    .join('\n')
 }
 
 const parseMarkdownFile = (filename: string): BlogPost => {
@@ -58,7 +91,7 @@ const parseMarkdownFile = (filename: string): BlogPost => {
   const { data, content } = matter(rawFile)
   const frontmatter = data as BlogFrontmatter
 
-  const html = renderContent(content)
+  const normalizedContent = dedentHtmlBlocks(content)
 
   return {
     slug: frontmatter.slug ?? slugFromFile,
@@ -71,7 +104,7 @@ const parseMarkdownFile = (filename: string): BlogPost => {
     tags: frontmatter.tags ?? [],
     category: normalizeCategory(frontmatter.category),
     popular: Boolean(frontmatter.popular),
-    content: html,
+    content: normalizedContent,
   }
 }
 

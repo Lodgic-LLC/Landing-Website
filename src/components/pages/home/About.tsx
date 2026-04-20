@@ -57,18 +57,19 @@ const About = () => {
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                    Accompagnement et conseils personnalisés                  </span>
-                </div>
-                <div className="flex items-start">
-                  <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
-                  <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                    Validation du cahier des charges avant lancement du projet
+                    Accompagnement et conseils personnalisés, de la définition du besoin jusqu'à la mise en ligne
                   </span>
                 </div>
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                    Présentation des maquettes et des fonctionnalités
+                    Validation du cahier des charges avec des priorités claires, un budget cadré et des délais réalistes
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
+                  <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
+                    Présentation des maquettes et des fonctionnalités avec ajustements continus selon vos retours
                   </span>
                 </div>
               </div>
@@ -106,19 +107,19 @@ const About = () => {
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                    Développement d'applications web et mobiles
+                    Développement d'applications web et mobiles sur mesure, pensées pour convertir et rester simples à utiliser
                   </span>
                 </div>
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                    Intégration d'API et services tiers
+                    Intégration d'API et de services tiers (paiement, CRM, analytics, automatisations) selon vos besoins métier
                   </span>
                 </div>
                 <div className="flex items-start">
                   <FaCheckCircle className="h-5 w-5 text-[#000f45] mt-0.5 flex-shrink-0 group-hover:text-[#162869] transition-colors" />
                   <span className="ml-3 text-[#162869] font-inter group-hover:text-[#000f45] transition-colors">
-                    Optimisation des performances et de la sécurité
+                    Optimisation des performances, de la sécurité et de la stabilité pour un produit fiable dans le temps
                   </span>
                 </div>
               </div>

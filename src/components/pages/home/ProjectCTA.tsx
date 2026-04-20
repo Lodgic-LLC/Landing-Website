@@ -1,9 +1,5 @@
 'use client'
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { FaChevronRight } from 'react-icons/fa'
-
 export default function ProjectCTA() {
   const languages = [
     '.Net',
@@ -34,21 +30,22 @@ export default function ProjectCTA() {
   return (
     <div className="bg-white overflow-hidden">
       <div className="w-full">
-        {/* Infnite Slider - Blue Bar Style */}
-        <div className="relative bg-[#001F45] py-4 overflow-hidden">
-          <div className="flex animate-scroll">
-            {/* First set of languages */}
+        <div className="relative bg-gradient-to-r from-[#001432] via-[#001F45] to-[#001432] py-5 overflow-hidden border-y border-white/5">
+          <div className="flex animate-scroll mask-fade-x">
             {languages.map((language, index) => (
-              <div key={`first-${index}`} className="flex-shrink-0 px-8 py-4">
-                <span className="text-white font-medium whitespace-nowrap text-sm">{language}</span>
-                {index < languages.length - 1 && <span className="text-white/50 ml-8">•</span>}
+              <div key={`first-${index}`} className="flex-shrink-0 flex items-center px-6">
+                <span className="text-white/90 font-inter font-medium whitespace-nowrap text-sm tracking-wide">
+                  {language}
+                </span>
+                <span className="inline-block w-1 h-1 rounded-full bg-[#DBFF00]/60 ml-6" />
               </div>
             ))}
-            {/* Duplicate set for seamless loop */}
             {languages.map((language, index) => (
-              <div key={`second-${index}`} className="flex-shrink-0 px-8 py-4">
-                <span className="text-white font-medium whitespace-nowrap text-sm">{language}</span>
-                {index < languages.length - 1 && <span className="text-white/50 ml-8">•</span>}
+              <div key={`second-${index}`} className="flex-shrink-0 flex items-center px-6">
+                <span className="text-white/90 font-inter font-medium whitespace-nowrap text-sm tracking-wide">
+                  {language}
+                </span>
+                <span className="inline-block w-1 h-1 rounded-full bg-[#DBFF00]/60 ml-6" />
               </div>
             ))}
           </div>

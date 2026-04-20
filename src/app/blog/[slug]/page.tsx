@@ -1,67 +1,94 @@
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import { Metadata, ResolvingMetadata } from "next";
-import { blogPosts, getPostBySlug } from "@/data/blog/posts";
-import { BlogPost } from "@/types/blog";
-import { parseDocument } from "htmlparser2"; // Parser
-import * as domutils from "domutils"; // DOM utilities (use namespace import)
-import { Element, Node } from "domhandler"; // Import specific types for nodes
-import render from "dom-serializer"; // To render back to HTML string
-import CodeBlockHighlighter from "@/components/blog/CodeBlockHighlighter"; // Import the new Client Component
-import Script from "next/script";
-import TableOfContents from "@/components/blog/TableOfContents"; // Reverted to default import
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import { Metadata } from 'next'
+import Script from 'next/script'
 
-// Define a specific type for the page props
+import { blogPosts, getPostBySlug } from '@/data/blog/posts'
+import MarkdownRenderer from '@/components/blog/MarkdownRenderer'
+import TableOfContents from '@/components/blog/TableOfContents'
+
 interface BlogPageProps {
-  params: Promise<{ slug: string }>;
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>; // Make searchParams a Promise type as well
+  params: Promise<{ slug: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 interface Heading {
-  id: string;
-  text: string;
-  level: number; // To potentially handle h3 later
+  id: string
+  text: string
+  level: number
 }
 
-// Function to sanitize text for ID generation
-const slugify = (text: string): string => {
-  return text
+const slugify = (text: string): string =>
+  text
     .toString()
     .toLowerCase()
     .trim()
-    .normalize('NFD') // Décompose les caractères accentués
-    .replace(/[\u0300-\u036f]/g, '') // Supprime les diacritiques
-    .replace(/[^a-z0-9]+/g, '-') // Remplace tous les caractères non alphanumériques par un tiret
-    .replace(/^-+|-+$/g, '') // Supprime les tirets au début et à la fin
-    .replace(/-+/g, '-'); // Remplace les tirets multiples par un seul tiret
-};
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-+/g, '-')
 
-// Génère les métadonnées dynamiques pour le SEO
-export async function generateMetadata(
-  { params }: { params: Promise<{ slug: string }> }, // Update the type for params
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const paramsValue = await params; // Await the promise
-  const post = await getPostBySlug(paramsValue.slug);
+const stripHtmlTags = (value: string): string => value.replace(/<[^>]+>/g, '').trim()
+
+const extractHeadings = (markdown: string): Heading[] => {
+  const withoutFenced = markdown.replace(/```[\s\S]*?```/g, '').replace(/~~~[\s\S]*?~~~/g, '')
+
+  const headings: Heading[] = []
+  const seen = new Set<string>()
+
+  const pushHeading = (rawText: string) => {
+    const text = rawText.trim()
+    if (!text) return
+    let id = slugify(text)
+    if (!id) return
+    const baseId = id
+    let index = 1
+    while (seen.has(id)) {
+      index += 1
+      id = `${baseId}-${index}`
+    }
+    seen.add(id)
+    headings.push({ id, text, level: 2 })
+  }
+
+  const mdRegex = /^##\s+(.+?)\s*#*\s*$/gm
+  let match: RegExpExecArray | null
+  while ((match = mdRegex.exec(withoutFenced)) !== null) {
+    pushHeading(stripHtmlTags(match[1]))
+  }
+
+  const htmlRegex = /<h2\b[^>]*>([\s\S]*?)<\/h2>/gi
+  while ((match = htmlRegex.exec(withoutFenced)) !== null) {
+    pushHeading(stripHtmlTags(match[1]))
+  }
+
+  return headings
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const post = await getPostBySlug(slug)
 
   if (!post) {
-    return {
-      title: "Article non trouvé",
-    };
+    return { title: 'Article non trouvé' }
   }
 
   return {
     title: `${post.title} | Blog Lodgic`,
     description: post.summary,
     alternates: {
-      canonical: `https://lodgic-dev.com/blog/${paramsValue.slug}`,
+      canonical: `https://lodgic-dev.com/blog/${slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.summary,
-      url: `https://lodgic-dev.com/blog/${paramsValue.slug}`,
-      siteName: "Lodgic",
+      url: `https://lodgic-dev.com/blog/${slug}`,
+      siteName: 'Lodgic',
       images: [
         {
           url: post.imageUrl,
@@ -70,104 +97,70 @@ export async function generateMetadata(
           alt: post.imageAlt,
         },
       ],
-      type: "article",
+      type: 'article',
       publishedTime: new Date(post.date).toISOString(),
       authors: [post.author],
-      locale: "fr_FR",
+      locale: 'fr_FR',
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title: post.title,
       description: post.summary,
       images: [post.imageUrl],
     },
     keywords: [
-      "lodgic",
-      "blog tech",
-      "développement web",
-      "application mobile",
+      'lodgic',
+      'blog tech',
+      'développement web',
+      'application mobile',
       post.title.toLowerCase(),
       ...(post.tags || []),
     ],
-  };
+  }
 }
 
-// Génère les chemins statiques pour chaque article au build time
 export async function generateStaticParams() {
-  return blogPosts
-    .map((post) => ({
-      slug: post.slug,
-    }))
-    .map((params) => Promise.resolve(params));
+  return blogPosts.map((post) => ({ slug: post.slug }))
 }
 
-// Le composant de la page de l'article
 const PostPage = async (props: BlogPageProps) => {
-  // Use the new interface
-  const { params } = props; // Destructure params inside the function
-  const paramsValue = await params; // Await the promise to get the actual params
-  const post = await getPostBySlug(paramsValue.slug);
+  const { params } = props
+  const { slug } = await params
+  const post = await getPostBySlug(slug)
 
   if (!post) {
-    notFound();
+    notFound()
   }
 
-  // --- Process HTML Content for IDs (Server-side) --- START
-  const headings: Heading[] = [];
-  const dom = parseDocument(post.content);
-  const h2Elements = domutils.findAll(
-    (elem: Node): elem is Element =>
-      elem instanceof Element && elem.name === "h2",
-    dom.children
-  );
-  let headingIndex = 0;
+  const headings = extractHeadings(post.content)
 
-  h2Elements.forEach((h2: Element) => {
-    const text = domutils.textContent(h2).trim();
-    if (text) {
-      let id = slugify(text);
-      const originalId = id;
-      while (headings.some((h) => h.id === id)) {
-        headingIndex++;
-        id = `${originalId}-${headingIndex}`;
-      }
-      headingIndex = 0;
-      headings.push({ id, text, level: 2 });
-      h2.attribs = { ...h2.attribs, id };
-    }
-  });
-  const processedContent = render(dom); // Content with IDs added
-  // --- Process HTML Content for IDs (Server-side) --- END
-
-  // --- LD-JSON Schema (Server-side) --- START
   const articleSchemaData = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
     mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://lodgic-dev.com/blog/${post.slug}`,
+      '@type': 'WebPage',
+      '@id': `https://lodgic-dev.com/blog/${post.slug}`,
     },
     headline: post.title,
     description: post.summary,
     image: post.imageUrl,
     author: {
-      "@type": "Person",
+      '@type': 'Person',
       name: post.author,
     },
     publisher: {
-      "@type": "Organization",
-      name: "Lodgic",
+      '@type': 'Organization',
+      name: 'Lodgic',
       logo: {
-        "@type": "ImageObject",
-        url: "https://lodgic-dev.com/FullLogo_Transparent.png",
+        '@type': 'ImageObject',
+        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
       },
     },
     datePublished: new Date(post.date).toISOString(),
-    dateModified: new Date(post.date).toISOString(), // Or use a lastUpdated field if available
-    articleBody: post.summary, // Keep it concise for schema
-    ...(post.tags && { keywords: post.tags.join(", ") }),
-  };
-  // --- LD-JSON Schema (Server-side) --- END
+    dateModified: new Date(post.date).toISOString(),
+    articleBody: post.summary,
+    ...(post.tags && { keywords: post.tags.join(', ') }),
+  }
 
   return (
     <>
@@ -177,20 +170,15 @@ const PostPage = async (props: BlogPageProps) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchemaData) }}
       />
 
-      {/* Page container avec style moderne */}
       <div className="bg-[#f6f7fc] min-h-screen">
-        {/* Container principal pour l'article */}
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-24 lg:py-28 relative xl:flex xl:gap-8">
-          {/* Sommaire sticky à gauche sur les grands écrans */}
           <div className="hidden xl:block sticky top-24 z-10 w-60 xl:w-72 flex-shrink-0 self-start h-[calc(100vh-theme(spacing.24)-theme(spacing.28))] overflow-y-auto">
             <aside className="pr-4">
               <TableOfContents headings={headings} />
             </aside>
           </div>
 
-          {/* Contenu principal de l'article */}
           <article className="bg-white rounded-none border border-gray-200 hover:border-[#000f45]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group flex-grow max-w-none xl:max-w-4xl mx-auto xl:mx-0">
-            {/* Header de l'article */}
             <header className="p-8 md:p-10 text-center xl:text-left border-b border-gray-100">
               <div className="mb-4">
                 <span className="inline-block px-4 py-2 text-sm font-semibold text-[#000f45] bg-[#DBFF00] rounded-full">
@@ -200,9 +188,7 @@ const PostPage = async (props: BlogPageProps) => {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bricolage-grotesque-bold text-[#000f45] mb-6 leading-tight">
                 {post.title}
               </h1>
-              <p className="text-[#162869] font-inter text-lg mb-6">
-                {post.summary}
-              </p>
+              <p className="text-[#162869] font-inter text-lg mb-6">{post.summary}</p>
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-4 text-[#162869] font-inter">
                   <span className="flex items-center gap-2">
@@ -214,19 +200,18 @@ const PostPage = async (props: BlogPageProps) => {
                   </span>
                   <span className="flex items-center gap-2">
                     <svg className="w-5 h-5 text-[#000f45]" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                     </svg>
-                    {new Date(post.date).toLocaleDateString("fr-FR", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
+                    {new Date(post.date).toLocaleDateString('fr-FR', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
                     })}
                   </span>
                 </div>
               </div>
             </header>
 
-            {/* Image principale */}
             <div className="p-8 md:p-10 pb-0">
               <div className="relative overflow-hidden rounded-lg">
                 <Image
@@ -240,15 +225,14 @@ const PostPage = async (props: BlogPageProps) => {
               </div>
             </div>
 
-            {/* Contenu de l'article */}
             <div className="p-8 md:p-10 pt-6">
-              <CodeBlockHighlighter htmlContent={processedContent} />
+              <MarkdownRenderer content={post.content} />
             </div>
           </article>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default PostPage;
+export default PostPage
