@@ -14,13 +14,18 @@
     "domhandler": "^5.0.3",
     "domutils": "^3.2.2",
     "framer-motion": "^12.6.3",
+    "gray-matter": "^4.0.3",
     "htmlparser2": "^10.0.0",
+    "marked": "^18.0.1",
     "next": "15.2.1",
     "prismjs": "^1.30.0",
     "react": "^19.0.0",
     "react-calendly": "^4.3.1",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
     "swiper": "^11.2.6"
   },
   "devDependencies": {

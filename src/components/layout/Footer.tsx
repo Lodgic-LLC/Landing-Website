@@ -92,7 +92,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/#blog"
+                      href="/blog"
                       className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
                       tabIndex={0}
                     >

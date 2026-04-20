@@ -1,33 +1,8 @@
 'use client'
 
-import { FaCheckCircle, FaUsers, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-import { blogPosts } from '@/data/blog/posts'
-import Link from 'next/link'
-import { useState, useRef } from 'react'
+import { FaCheckCircle } from 'react-icons/fa'
 
 const About = () => {
-  const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
-  const projectsScrollRef = useRef<HTMLDivElement>(null)
-
-  // Fonctions pour le carousel de projets
-  const scrollToProject = (direction: 'left' | 'right') => {
-    if (projectsScrollRef.current) {
-      const cardWidth = 320 // largeur approximative d'une carte + gap
-      const scrollAmount = direction === 'left' ? -cardWidth : cardWidth
-      projectsScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
-    }
-  }
-
-  const nextProject = () => {
-    scrollToProject('right')
-    setCurrentProjectIndex((prev) => Math.min(prev + 1, blogPosts.length - 1))
-  }
-
-  const prevProject = () => {
-    scrollToProject('left')
-    setCurrentProjectIndex((prev) => Math.max(prev - 1, 0))
-  }
-
   return (
     <>
       <section className="py-10 bg-[#f6f7fc] relative overflow-hidden" id="about">
@@ -147,93 +122,6 @@ const About = () => {
                   </span>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section Projets Réalisés - Carousel */}
-      <section className="py-16 bg-white" id="blog">
-        <div className="w-full ">
-          {/* En-tête */}
-          <div className="text-center mb-12 pr-6">
-            <h2 className="text-3xl md:text-4xl font-bricolage-grotesque-bold text-[#000f45] mb-4">
-              Lodgic{' '}
-              <span className="relative">
-                <span className="relative z-10">Conseils</span>
-                <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 transform -skew-x-12 z-0"></span>
-              </span>
-            </h2>
-            <p className="font-inter text-[#162869]">
-              Explorez notre blog pour découvrir les dernières tendances et insights sur le développement web et mobile.
-            </p>
-          </div>
-
-          {/* Carousel Container */}
-          <div className="relative ">
-            {/* Boutons de navigation (style barre verticale jaune) */}
-            <button
-              onClick={prevProject}
-              className="absolute inset-y-0 left-0 z-10 w-10 md:w-12 bg-[#DBFF00] hover:bg-[#d4ff00] text-black flex items-center justify-center duration-200 focus:outline-none cursor-pointer"
-              aria-label="Projet précédent"
-            >
-              <FaChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={nextProject}
-              className="absolute inset-y-0 right-0 z-10 w-10 md:w-12 bg-[#DBFF00] hover:bg-[#d4ff00] text-black flex items-center justify-center duration-200 focus:outline-none cursor-pointer"
-              aria-label="Projet suivant"
-            >
-              <FaChevronRight className="w-6 h-6" />
-            </button>
-
-            {/* Scrollable Projects Container */}
-            <div
-              ref={projectsScrollRef}
-              className="flex gap-6 overflow-x-auto scrollbar-hide pl-12 pr-12 py-4"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {blogPosts.map((post, index) => (
-                <div
-                  key={post.slug}
-                  className="flex-shrink-0 w-80 bg-white rounded-none overflow-hidden border border-transparent  transition-all duration-300 group hover:cursor-pointer"
-                >
-                  <div className="relative h-[180px] md:h-[180px] overflow-hidden">
-                    <img
-                      src={post.imageUrl}
-                      alt={post.imageAlt || post.title}
-                      loading="lazy"
-                      className="w-full h-[160px] object-cover group-hover:scale-[1.03] transition-transform duration-300"
-                    />
-                  </div>
-                  <div>
-                    <div className="mb-2">
-                      <span className="text-[12px] uppercase tracking-wide text-gray-500 font-inter">
-                        {post.category}
-                      </span>
-                    </div>
-                    <h3 className="font-bricolage-grotesque-regualr text-[#0b143d] text-xl md:text-2xl leading-snug mb-3 line-clamp-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-[#162869]/80 font-inter text-sm mb-4 line-clamp-2">{post.summary}</p>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="group inline-flex items-center gap-2 text-sm font-inter font-medium text-[#0b57d0] hover:underline focus:outline-none cursor-pointer"
-                      aria-label={`Explorer l'article ${post.title}`}
-                    >
-                      Explorer
-                      <svg
-                        className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>

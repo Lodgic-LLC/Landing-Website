@@ -1,4 +1,4 @@
-export interface BlogPost {
+export interface BlogPostMeta {
   slug: string
   title: string
   date: string
@@ -6,7 +6,14 @@ export interface BlogPost {
   summary: string
   imageUrl: string
   imageAlt: string
-  content: string // ou utiliser un type plus spécifique si vous parsez du Markdown
-  tags?: string[] // Tableau optionnel de tags pour l'article
-  category: 'Développement' | 'Design' | 'SEO' | 'Mobile' | 'Web' // Catégorie de l'article
+  category: 'Développement' | 'Design' | 'SEO' | 'Mobile' | 'Web'
+  popular?: boolean
+  tags?: string[]
 }
+
+export interface BlogPost extends BlogPostMeta {
+  content: string
+}
+
+export type PostMeta = BlogPostMeta
+export type Post = BlogPost

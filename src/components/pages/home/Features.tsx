@@ -2,7 +2,12 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import NextImage from 'next/image'
 import { FaChevronLeft, FaChevronRight, FaMobile, FaServer, FaPalette, FaGlobe, FaCogs, FaRocket } from 'react-icons/fa'
-import { blogPosts } from '@/data/blog/posts'
+
+const serviceImages = [
+  'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600',
+  'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600',
+  'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600',
+]
 
 export default function Features() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -54,7 +59,7 @@ export default function Features() {
   ]
 
   const images = useMemo(() => {
-    const urls = blogPosts.map((post) => post.imageUrl).filter(Boolean)
+    const urls = serviceImages.filter(Boolean)
 
     if (urls.length === 0) {
       return Array(services.length).fill('/images/hero-app-development.jpg') as string[]
