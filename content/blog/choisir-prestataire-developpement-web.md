@@ -7,7 +7,7 @@ summary: "Découvrez les critères essentiels pour choisir le prestataire idéal
 imageUrl: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600"
 imageAlt: "Équipe de développeurs en réunion avec un client"
 category: "Développement"
-popular: false
+popular: true
 ---
 
 <p class="lead text-lg text-gray-600 mb-8">Choisir le bon prestataire de développement web ou mobile est une décision cruciale qui peut faire la différence entre le succès et l'échec de votre projet. Avec la multitude d'agences, de freelances et de sociétés de services disponibles, comment s'y retrouver ? Ce guide vous donnera toutes les clés pour faire le bon choix et éviter les pièges les plus courants.</p>

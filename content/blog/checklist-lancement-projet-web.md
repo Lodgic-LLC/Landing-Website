@@ -7,7 +7,7 @@ summary: "Une checklist pratique pour eviter les oublis avant la mise en product
 imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600"
 imageAlt: "Checklist sur un bureau de travail"
 category: "Web"
-popular: false
+popular: true
 tags:
   - lancement
   - qualite
