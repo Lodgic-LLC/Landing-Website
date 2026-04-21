@@ -185,7 +185,7 @@ const PostPage = async (props: BlogPageProps) => {
                   {post.category}
                 </span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bricolage-grotesque-bold text-[#000f45] mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-sofia-bold text-[#000f45] mb-6 leading-tight">
                 {post.title}
               </h1>
               <p className="text-[#162869] font-inter text-lg mb-6">{post.summary}</p>

@@ -56,9 +56,9 @@ const RendezVousContent = () => {
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice"
           >
-            <circle cx="200" cy="100" r="300" fill="#E67E22" fillOpacity="0.05" />
-            <circle cx="1200" cy="700" r="250" fill="#E67E22" fillOpacity="0.05" />
-            <path d="M-200 400 Q400 200 720 400 T1600 400" stroke="#E67E22" strokeOpacity="0.03" strokeWidth="100" />
+            <circle cx="200" cy="100" r="300" fill="#0EA5E9" fillOpacity="0.05" />
+            <circle cx="1200" cy="700" r="250" fill="#0EA5E9" fillOpacity="0.05" />
+            <path d="M-200 400 Q400 200 720 400 T1600 400" stroke="#0EA5E9" strokeOpacity="0.03" strokeWidth="100" />
             <g opacity="0.8">
               {[...Array(25)].map((_, i) => (
                 <circle
@@ -78,7 +78,7 @@ const RendezVousContent = () => {
             {/* Contenu gauche */}
             <div className="w-full lg:w-3/5 text-center lg:text-left">
               <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#2C3E50] leading-tight mb-6">
-                Planifiez votre <span className="text-[#E67E22]">Entretien Découverte</span>
+                Planifiez votre <span className="text-[#0EA5E9]">Entretien Découverte</span>
               </h1>
               <p className="text-[#374151] text-lg sm:text-xl mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Discutons de votre projet et explorons ensemble les possibilités pour le concrétiser. Réservez un
@@ -87,7 +87,7 @@ const RendezVousContent = () => {
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Link
                   href="#booking-widget"
-                  className="bg-[#E67E22] text-[#FFFFFF] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#E67E22]/90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center text-lg"
+                  className="bg-[#0EA5E9] text-[#FFFFFF] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#0EA5E9]/90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center text-lg"
                 >
                   <FaCalendarAlt className="w-5 h-5 mr-2.5" />
                   Prendre Rendez-vous
@@ -117,8 +117,8 @@ const RendezVousContent = () => {
                   />
                 </div>
                 {/* Éléments décoratifs supplémentaires */}
-                <div className="absolute -top-5 -left-5 w-16 h-16 bg-[#E67E22]/20 rounded-full blur-md animate-pulse"></div>
-                <div className="absolute -bottom-5 -right-5 w-20 h-20 border-4 border-[#E67E22]/30 rounded-full animate-ping-slow"></div>
+                <div className="absolute -top-5 -left-5 w-16 h-16 bg-[#0EA5E9]/20 rounded-full blur-md animate-pulse"></div>
+                <div className="absolute -bottom-5 -right-5 w-20 h-20 border-4 border-[#0EA5E9]/30 rounded-full animate-ping-slow"></div>
               </div>
             </div>
           </div>
@@ -147,19 +147,19 @@ const RendezVousContent = () => {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative z-10">
               {/* Process & Benefits */}
-              <div className="bg-[#FFFFFF] rounded-xl shadow-xl p-8 border border-gray-200 hover:border-[#E67E22]/50 hover:shadow-2xl transition-shadow duration-300">
+              <div className="bg-[#FFFFFF] rounded-xl shadow-xl p-8 border border-gray-200 hover:border-[#0EA5E9]/50 hover:shadow-2xl transition-shadow duration-300">
                 <h2 className="text-3xl font-bold text-[#111827] mb-8 flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-[#E67E22]/10 flex items-center justify-center mr-3">
-                    <FaLightbulb className="h-5 w-5 text-[#E67E22]" />
+                  <div className="w-10 h-10 rounded-full bg-[#0EA5E9]/10 flex items-center justify-center mr-3">
+                    <FaLightbulb className="h-5 w-5 text-[#0EA5E9]" />
                   </div>
                   Comment ça marche ?
                 </h2>
 
                 <div className="space-y-8 mb-10">
-                  <div className="flex items-start hover:bg-[#E67E22]/5 p-3 rounded-lg transition-colors duration-200 group">
+                  <div className="flex items-start hover:bg-[#0EA5E9]/5 p-3 rounded-lg transition-colors duration-200 group">
                     <div className="flex-shrink-0 mt-1">
-                      <div className="bg-[#E67E22]/10 group-hover:bg-[#E67E22]/20 p-3 rounded-full shadow-sm transition-colors duration-200">
-                        <FaCalendarAlt className="h-6 w-6 text-[#E67E22]" />
+                      <div className="bg-[#0EA5E9]/10 group-hover:bg-[#0EA5E9]/20 p-3 rounded-full shadow-sm transition-colors duration-200">
+                        <FaCalendarAlt className="h-6 w-6 text-[#0EA5E9]" />
                       </div>
                     </div>
                     <div className="ml-5">
@@ -170,10 +170,10 @@ const RendezVousContent = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start hover:bg-[#E67E22]/5 p-3 rounded-lg transition-colors duration-200 group">
+                  <div className="flex items-start hover:bg-[#0EA5E9]/5 p-3 rounded-lg transition-colors duration-200 group">
                     <div className="flex-shrink-0 mt-1">
-                      <div className="bg-[#E67E22]/10 group-hover:bg-[#E67E22]/20 p-3 rounded-full shadow-sm transition-colors duration-200">
-                        <FaComments className="h-6 w-6 text-[#E67E22]" />
+                      <div className="bg-[#0EA5E9]/10 group-hover:bg-[#0EA5E9]/20 p-3 rounded-full shadow-sm transition-colors duration-200">
+                        <FaComments className="h-6 w-6 text-[#0EA5E9]" />
                       </div>
                     </div>
                     <div className="ml-5">
@@ -184,10 +184,10 @@ const RendezVousContent = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start hover:bg-[#E67E22]/5 p-3 rounded-lg transition-colors duration-200 group">
+                  <div className="flex items-start hover:bg-[#0EA5E9]/5 p-3 rounded-lg transition-colors duration-200 group">
                     <div className="flex-shrink-0 mt-1">
-                      <div className="bg-[#E67E22]/10 group-hover:bg-[#E67E22]/20 p-3 rounded-full shadow-sm transition-colors duration-200">
-                        <FaLaptopCode className="h-6 w-6 text-[#E67E22]" />
+                      <div className="bg-[#0EA5E9]/10 group-hover:bg-[#0EA5E9]/20 p-3 rounded-full shadow-sm transition-colors duration-200">
+                        <FaLaptopCode className="h-6 w-6 text-[#0EA5E9]" />
                       </div>
                     </div>
                     <div className="ml-5">
@@ -228,14 +228,14 @@ const RendezVousContent = () => {
               </div>
 
               {/* Booking Widget */}
-              <div className="bg-[#FFFFFF] rounded-xl shadow-xl overflow-hidden border border-gray-200 hover:border-[#E67E22]/50 hover:shadow-2xl transition-shadow duration-300">
-                <div className="p-6 bg-gradient-to-r from-[#E67E22]/5 to-[#E67E22]/10 border-b border-[#E67E22]/20">
+              <div className="bg-[#FFFFFF] rounded-xl shadow-xl overflow-hidden border border-gray-200 hover:border-[#0EA5E9]/50 hover:shadow-2xl transition-shadow duration-300">
+                <div className="p-6 bg-gradient-to-r from-[#0EA5E9]/5 to-[#0EA5E9]/10 border-b border-[#0EA5E9]/20">
                   <h3 className="text-2xl font-bold text-[#111827] flex items-center">
-                    <FaCalendarAlt className="h-5 w-5 text-[#E67E22] mr-2" />
+                    <FaCalendarAlt className="h-5 w-5 text-[#0EA5E9] mr-2" />
                     Réservez votre créneau
                   </h3>
                   <p className="text-[#374151] mt-2 flex items-center">
-                    <FaClock className="h-4 w-4 text-[#E67E22] mr-2" />
+                    <FaClock className="h-4 w-4 text-[#0EA5E9] mr-2" />
                     Consultation gratuite de 45 minutes
                   </p>
                 </div>
@@ -266,11 +266,11 @@ const RendezVousContent = () => {
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <span className="inline-block px-3 py-1 rounded-full bg-[#E67E22]/10 text-[#E67E22] text-sm font-medium mb-3">
+              <span className="inline-block px-3 py-1 rounded-full bg-[#0EA5E9]/10 text-[#0EA5E9] text-sm font-medium mb-3">
                 FAQ
               </span>
               <h2 className="text-3xl font-bold text-[#111827] mb-4">Questions fréquentes</h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-[#E67E22] to-[#E67E22]/70 mx-auto mb-4"></div>
+              <div className="w-20 h-1 bg-gradient-to-r from-[#0EA5E9] to-[#0EA5E9]/70 mx-auto mb-4"></div>
               <p className="text-[#374151] max-w-2xl mx-auto">
                 Tout ce que vous devez savoir avant de réserver votre consultation avec notre équipe.
               </p>
@@ -280,10 +280,10 @@ const RendezVousContent = () => {
               {faqItems.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-[#FFFFFF] rounded-xl p-6 shadow-lg border border-gray-200 hover:border-[#E67E22]/50 hover:shadow-xl transition-all duration-300"
+                  className="bg-[#FFFFFF] rounded-xl p-6 shadow-lg border border-gray-200 hover:border-[#0EA5E9]/50 hover:shadow-xl transition-all duration-300"
                 >
                   <h3 className="text-xl font-medium text-[#111827] mb-3 flex items-start">
-                    <FaQuestionCircle className="h-5 w-5 text-[#E67E22] mt-1 mr-3 flex-shrink-0" />
+                    <FaQuestionCircle className="h-5 w-5 text-[#0EA5E9] mt-1 mr-3 flex-shrink-0" />
                     <span>{item.question}</span>
                   </h3>
                   <p className="text-[#374151] ml-8 leading-relaxed">{item.answer}</p>
@@ -332,7 +332,7 @@ const RendezVousContent = () => {
               <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-6">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium rounded-lg shadow-lg text-[#2C3E50] bg-[#FFFFFF] hover:bg-[#FAF3E0] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#E67E22] transition-all duration-200 hover:scale-105 transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium rounded-lg shadow-lg text-[#2C3E50] bg-[#FFFFFF] hover:bg-[#FAF3E0] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0EA5E9] transition-all duration-200 hover:scale-105 transform hover:-translate-y-0.5"
                 >
                   Nous contacter
                   <FaHeadset className="ml-2 h-5 w-5" />

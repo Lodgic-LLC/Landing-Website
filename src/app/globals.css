@@ -2,6 +2,24 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Sofia Pro (best if self-hosted). The declarations below will use a local install
+   or any file placed at /public/fonts/*. If you don't host the font, the site will
+   fallback to Plus Jakarta / Inter / system sans. */
+@font-face {
+  font-family: 'Sofia Pro';
+  src: local('Sofia Pro'), local('SofiaPro'), url('/fonts/SofiaPro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sofia Pro';
+  src: local('Sofia Pro Bold'), local('SofiaPro-Bold'), url('/fonts/SofiaPro-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -10,7 +28,7 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Sofia Pro', 'Plus Jakarta Sans', 'Inter', sans-serif;
   color: #0f1b42;
   background-color: #ffffff;
 }
@@ -74,6 +92,15 @@ h3 {
     font-family: "Inter", sans-serif;
   }
 
+  .font-sofia {
+    font-family: 'Sofia Pro', 'Plus Jakarta Sans', 'Inter', sans-serif;
+  }
+
+  .font-sofia-bold {
+    font-family: 'Sofia Pro', 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-weight: 700;
+  }
+
   .font-inter-light {
     font-family: "Inter", sans-serif;
     font-weight: 300;
@@ -99,33 +126,57 @@ h3 {
     font-weight: 700;
   }
 
-  .font-bricolage-grotesque {
-    font-family: "Bricolage Grotesque", sans-serif;
+  .font-plus-jakarta {
+    font-family: "Plus Jakarta Sans", sans-serif;
   }
 
-  .font-bricolage-grotesque-light {
-    font-family: "Bricolage Grotesque", sans-serif;
+  .font-plus-jakarta-light {
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 300;
   }
 
-  .font-bricolage-grotesque-regular {
-    font-family: "Bricolage Grotesque", sans-serif;
+  .font-plus-jakarta-regular {
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 400;
   }
 
-  .font-bricolage-grotesque-medium {
-    font-family: "Bricolage Grotesque", sans-serif;
+  .font-plus-jakarta-medium {
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
   }
 
-  .font-bricolage-grotesque-semibold {
-    font-family: "Bricolage Grotesque", sans-serif;
+  .font-plus-jakarta-semibold {
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 600;
   }
 
-  .font-bricolage-grotesque-bold {
-    font-family: "Bricolage Grotesque", sans-serif;
+  .font-plus-jakarta-bold {
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 700;
+  }
+
+  .font-plus-jakarta-extrabold {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 800;
+  }
+
+  /* Common design system helpers for the new aesthetic */
+  .heading {
+    color: #001F45;
+    line-height: 1.03;
+  }
+
+  .lead {
+    color: #162869;
+    opacity: 0.9;
+  }
+
+  .btn-primary {
+    background-color: #001F45;
+    color: #ffffff;
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
   }
 }
 

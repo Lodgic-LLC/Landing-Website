@@ -69,7 +69,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
     <div className="bg-[#f6f7fc] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 lg:py-28">
         <header className="text-center mb-12 md:mb-16">
-          <h1 className="text-4xl md:text-5xl font-bricolage-grotesque-bold text-[#000f45] mb-4">
+          <h1 className="text-4xl md:text-5xl font-sofia-bold text-[#000f45] mb-4">
             Lodgic{' '}
             <span className="relative inline-block">
               <span className="relative z-10">Conseils</span>
@@ -107,7 +107,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                       {formatDate(featuredPost.date)}
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-4xl font-bricolage-grotesque-bold text-[#000f45] mb-4 leading-tight group-hover:text-[#162869] transition-colors">
+                  <h3 className="text-2xl md:text-4xl font-sofia-bold text-[#000f45] mb-4 leading-tight group-hover:text-[#162869] transition-colors">
                     {featuredPost.title}
                   </h3>
                   <p className="text-[#162869] font-inter text-base md:text-lg mb-6 max-w-3xl">
@@ -135,7 +135,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
           <section className="lg:col-span-8" aria-labelledby="posts-heading">
             <h2
               id="posts-heading"
-              className="text-2xl md:text-3xl font-bricolage-grotesque-bold text-[#000f45] mb-8"
+              className="text-2xl md:text-3xl font-sofia-bold text-[#000f45] mb-8"
             >
               Tous les articles
             </h2>
@@ -170,7 +170,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                             {formatDate(post.date)}
                           </span>
                         </div>
-                        <h3 className="text-lg md:text-xl font-bricolage-grotesque-bold text-[#0b143d] leading-snug mb-3 line-clamp-2 group-hover:text-[#162869] transition-colors">
+                        <h3 className="text-lg md:text-xl font-sofia-bold text-[#0b143d] leading-snug mb-3 line-clamp-2 group-hover:text-[#162869] transition-colors">
                           {post.title}
                         </h3>
                         <p className="text-sm text-[#162869]/80 font-inter line-clamp-3 mb-4 flex-grow">
@@ -249,7 +249,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
             <div className="sticky top-24 bg-white border border-gray-200 p-6 md:p-8">
               <h2
                 id="popular-heading"
-                className="text-xl md:text-2xl font-bricolage-grotesque-bold text-[#000f45] mb-6"
+                className="text-xl md:text-2xl font-sofia-bold text-[#000f45] mb-6"
               >
                 Articles populaires
               </h2>

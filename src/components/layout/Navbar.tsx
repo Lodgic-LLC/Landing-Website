@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
@@ -51,7 +52,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center group" aria-label="Accueil Lodgic">
-              <span className="font-bricolage-grotesque-bold text-[#001F45] text-2xl md:text-3xl group-hover:text-[#0b2b63] transition-colors">
+              <span className="font-sofia-bold text-[#001F45] text-2xl md:text-3xl group-hover:text-[#0b2b63] transition-colors">
                 Lodgic
               </span>
             </Link>

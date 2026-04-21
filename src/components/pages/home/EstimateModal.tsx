@@ -249,7 +249,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
       <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="border-b border-gray-200 p-6 flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-gray-900 font-bricolage-grotesque-regular">Estimation de devis</h2>
+          <h2 className="text-2xl font-bold text-gray-900 font-sofia">Estimation de devis</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-600 transition-colors cursor-pointer">
             <FaTimes size={24} />
           </button>

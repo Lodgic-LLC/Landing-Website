@@ -20,14 +20,14 @@ export default function NotFound() {
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
         {/* Numéro 404 avec style amélioré */}
         <div className="mb-8">
-          <h1 className="font-bricolage-grotesque-bold text-[#001F45] text-8xl sm:text-9xl md:text-[10rem] leading-none mb-4 opacity-90">
+          <h1 className="font-sofia-bold text-[#001F45] text-8xl sm:text-9xl md:text-[10rem] leading-none mb-4 opacity-90">
             404
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 mx-auto mb-8"></div>
         </div>
 
         {/* Titre et description */}
-        <h2 className="font-bricolage-grotesque-bold text-[#001F45] text-2xl sm:text-3xl md:text-4xl mb-6">
+        <h2 className="font-sofia-bold text-[#001F45] text-2xl sm:text-3xl md:text-4xl mb-6">
           Page non trouvée
         </h2>
         <p className="font-inter text-[#162869] text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12 opacity-90">

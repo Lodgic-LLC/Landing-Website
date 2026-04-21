@@ -146,13 +146,16 @@ export default function FAQ() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
             {/* Section gauche - Informations de contact */}
             <div className="lg:w-1/2 lg:pr-8 lg:border-r lg:border-gray-300 flex-shrink-0">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bricolage-grotesque-regular text-[rgb(0,15,69)] mb-6">
-                Contactez-nous
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-sofia-bold text-[rgb(0,15,69)] mb-6">
+                Commencer un projet
               </h1>
+              <p className="text-gray-600 mb-8 font-inter">
+                Parlez-nous de vos objectifs technologiques. Notre équipe d'experts est prête à vous accompagner dans la création de solutions sur-mesure.
+              </p>
               <div className="mb-8">
                 <a
                   href="mailto:lodgicdev@gmail.com"
-                  className="underline underline-offset-2 underline-color-blue-600 transition-colors duration-200"
+                  className="font-inter text-[#001F45] font-medium underline underline-offset-4 hover:text-[#001F45]/70 transition-colors duration-200"
                 >
                   lodgicdev@gmail.com
                 </a>
@@ -255,7 +258,7 @@ export default function FAQ() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#DBFF00] hover:bg-[#caeb00] text-black font-semibold py-4 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9ACD32] focus:ring-offset-2 text-lg font-bricolage-grotesque-regular cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full bg-[#DBFF00] hover:bg-[#caeb00] text-black font-semibold py-4 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9ACD32] focus:ring-offset-2 text-lg font-sofia cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Envoi en cours…' : 'Envoyer'}
                 </button>

@@ -70,7 +70,7 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-4">
               Nos derniers articles
             </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-[#E67E22] to-[#E67E22]/70 mx-auto mb-6 rounded-full"></div>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-[#0EA5E9] to-[#0EA5E9]/70 mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-[#374151]">
               Découvrez nos réflexions et conseils sur les dernières tendances
               technologiques et les meilleures pratiques de développement.
@@ -87,7 +87,7 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
                     placeholder="Rechercher un article..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 rounded-md border border-[#D1D5DB] focus:outline-none focus:ring-2 focus:ring-[#E67E22] focus:border-[#E67E22]/70 transition-colors duration-200 shadow-sm placeholder:text-[#6B7280] text-[#111827] bg-white"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-md border border-[#D1D5DB] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9] focus:border-[#0EA5E9]/70 transition-colors duration-200 shadow-sm placeholder:text-[#6B7280] text-[#111827] bg-white"
                     aria-label="Rechercher un article"
                   />
                   <FaSearch className="absolute left-3.5 top-1/2 transform -translate-y-1/2 text-[#9CA3AF]" />
@@ -102,7 +102,7 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
                       onChange={(e) =>
                         setSelectedCategory(e.target.value as Category)
                       }
-                      className="px-3 py-2.5 rounded-md border border-[#D1D5DB] bg-white focus:outline-none focus:ring-2 focus:ring-[#E67E22] focus:border-[#E67E22]/70 transition-colors duration-200 shadow-sm text-[#111827]"
+                      className="px-3 py-2.5 rounded-md border border-[#D1D5DB] bg-white focus:outline-none focus:ring-2 focus:ring-[#0EA5E9] focus:border-[#0EA5E9]/70 transition-colors duration-200 shadow-sm text-[#111827]"
                       aria-label="Filtrer par catégorie"
                     >
                       {categories.map((category) => (
@@ -115,7 +115,7 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as SortOption)}
-                    className="px-3 py-2.5 rounded-md border border-[#D1D5DB] bg-white focus:outline-none focus:ring-2 focus:ring-[#E67E22] focus:border-[#E67E22]/70 transition-colors duration-200 shadow-sm text-[#111827]"
+                    className="px-3 py-2.5 rounded-md border border-[#D1D5DB] bg-white focus:outline-none focus:ring-2 focus:ring-[#0EA5E9] focus:border-[#0EA5E9]/70 transition-colors duration-200 shadow-sm text-[#111827]"
                     aria-label="Trier les articles"
                   >
                     <option value="date">Plus récent</option>
@@ -139,7 +139,7 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
               {filteredPosts.map((post, index) => (
                 <article
                   key={post.slug}
-                  className="group flex flex-col overflow-hidden rounded-xl border border-[#E0E0E0] bg-[#FAF3E0]/40 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 hover:border-[#E67E22]/60"
+                  className="group flex flex-col overflow-hidden rounded-xl border border-[#E0E0E0] bg-[#FAF3E0]/40 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 hover:border-[#0EA5E9]/60"
                 >
                   <Link
                     href={`/blog/${post.slug}`}
@@ -158,7 +158,7 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2C3E50]/70 via-[#2C3E50]/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
 
                     <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
-                      <span className="inline-block px-3 py-1 text-xs font-semibold text-[#E67E22] bg-[#E67E22]/10 rounded-full mb-2 group-hover:bg-[#E67E22]/20 transition-colors">
+                      <span className="inline-block px-3 py-1 text-xs font-semibold text-[#0EA5E9] bg-[#0EA5E9]/10 rounded-full mb-2 group-hover:bg-[#0EA5E9]/20 transition-colors">
                         {post.category}
                       </span>
                       <h2 className="text-xl md:text-2xl font-bold text-[#FFFFFF] group-hover:text-[#FAF3E0] transition-colors duration-200 line-clamp-2 leading-tight">
@@ -174,11 +174,11 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
                     <div className="flex items-center justify-between mt-auto pt-3 border-t border-[#EEEEEE]">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-x-3 gap-y-1.5 text-xs md:text-sm text-[#6B7280]">
                         <span className="flex items-center">
-                          <FaUserCircle className="w-3.5 h-3.5 mr-1.5 text-[#E67E22]" />
+                          <FaUserCircle className="w-3.5 h-3.5 mr-1.5 text-[#0EA5E9]" />
                           {post.author}
                         </span>
                         <span className="flex items-center">
-                          <FaCalendarAlt className="w-3.5 h-3.5 mr-1.5 text-[#E67E22]" />
+                          <FaCalendarAlt className="w-3.5 h-3.5 mr-1.5 text-[#0EA5E9]" />
                           {new Date(post.date).toLocaleDateString("fr-FR", {
                             year: "numeric",
                             month: "short",
@@ -188,7 +188,7 @@ const BlogFilters = ({ blogPosts }: BlogFiltersProps) => {
                       </div>
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="text-[#E67E22] hover:text-[#E67E22]/80 font-semibold text-sm inline-flex items-center group/link"
+                        className="text-[#0EA5E9] hover:text-[#0EA5E9]/80 font-semibold text-sm inline-flex items-center group/link"
                         aria-label={`Lire la suite de l'article : ${post.title}`}
                       >
                         Lire plus

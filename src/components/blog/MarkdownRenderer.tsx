@@ -91,10 +91,10 @@ const proseClasses = [
   'prose-p:text-[#162869]/90 prose-p:leading-8 prose-p:my-5',
 
   // Headings
-  'prose-headings:font-bricolage-grotesque-bold prose-headings:tracking-tight prose-headings:text-[#000f45]',
+  'prose-headings:font-sofia-bold prose-headings:tracking-tight prose-headings:text-[#000f45]',
   'prose-h1:text-4xl md:prose-h1:text-5xl prose-h1:mb-8 prose-h1:mt-10',
   'prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:mt-14 prose-h2:mb-5 prose-h2:pb-3 prose-h2:border-b prose-h2:border-gray-200 prose-h2:scroll-mt-28',
-  'prose-h3:text-xl md:prose-h3:text-2xl prose-h3:text-[#001F45] prose-h3:mt-10 prose-h3:mb-3 prose-h3:font-bricolage-grotesque-semibold',
+  'prose-h3:text-xl md:prose-h3:text-2xl prose-h3:text-[#001F45] prose-h3:mt-10 prose-h3:mb-3 prose-h3:font-sofia-bold',
   'prose-h4:text-lg md:prose-h4:text-xl prose-h4:text-[#001F45] prose-h4:mt-8 prose-h4:mb-2',
 
   // Links
