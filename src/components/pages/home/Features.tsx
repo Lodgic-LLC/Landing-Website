@@ -162,6 +162,7 @@ export default function Features() {
               {steps.map((step, idx) => {
                 const Icon = step.icon
                 const isActive = activeIdx === idx
+                const isNext = (activeIdx + 1) % steps.length === idx
                 
                 return (
                   <div
@@ -171,6 +172,13 @@ export default function Features() {
                   >
                     <div className="relative -translate-x-1/2 -translate-y-1/2 flex items-center justify-center group cursor-pointer" onClick={() => setActiveIdx(idx)}>
                       
+                      {/* Interaction hint for the Next Step */}
+                      {isNext && (
+                        <div className="absolute -top-6 whitespace-nowrap text-xs font-sofia-bold text-[#0EA5E9] animate-bounce px-2 py-1 bg-white rounded-md shadow-sm border border-[#0EA5E9]/20 z-20 pointer-events-none">
+                          Suivant ↓
+                        </div>
+                      )}
+
                       {/* Active ping ring */}
                       {isActive && (
                         <div className="absolute inset-0 rounded-full bg-[#0EA5E9] animate-ping opacity-30" style={{ animationDuration: '2s' }}></div>
