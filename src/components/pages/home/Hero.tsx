@@ -65,10 +65,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
+                        duration: 1.5, 
                         delay: 0, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 0, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -78,10 +78,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 0.15, 
+                        duration: 1.5, 
+                        delay: 0.05, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 0.15, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.05, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -91,10 +91,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 0.3, 
+                        duration: 1.5, 
+                        delay: 0.1, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 0.3, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.1, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -104,10 +104,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 0.44999999999999996, 
+                        duration: 1.5, 
+                        delay: 0.15000000000000002, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 0.44999999999999996, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.15000000000000002, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -117,10 +117,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 0.6, 
+                        duration: 1.5, 
+                        delay: 0.2, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 0.6, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.2, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -130,10 +130,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 0.75, 
+                        duration: 1.5, 
+                        delay: 0.25, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 0.75, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.25, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -143,10 +143,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 0.8999999999999999, 
+                        duration: 1.5, 
+                        delay: 0.30000000000000004, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 0.8999999999999999, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.30000000000000004, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -156,10 +156,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 1.05, 
+                        duration: 1.5, 
+                        delay: 0.35000000000000003, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 1.05, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.35000000000000003, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -169,10 +169,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 1.2, 
+                        duration: 1.5, 
+                        delay: 0.4, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 1.2, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.4, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -182,10 +182,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 1.3499999999999999, 
+                        duration: 1.5, 
+                        delay: 0.45, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 1.3499999999999999, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.45, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -195,10 +195,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 1.5, 
+                        duration: 1.5, 
+                        delay: 0.5, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 1.5, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.5, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -208,10 +208,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 1.65, 
+                        duration: 1.5, 
+                        delay: 0.55, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 1.65, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.55, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -221,10 +221,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 1.7999999999999998, 
+                        duration: 1.5, 
+                        delay: 0.6000000000000001, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 1.7999999999999998, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.6000000000000001, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -234,10 +234,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 1.95, 
+                        duration: 1.5, 
+                        delay: 0.65, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 1.95, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.65, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -247,10 +247,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 2.1, 
+                        duration: 1.5, 
+                        delay: 0.7000000000000001, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 2.1, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.7000000000000001, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -260,10 +260,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 2.25, 
+                        duration: 1.5, 
+                        delay: 0.75, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 2.25, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.75, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -273,10 +273,10 @@ export default function Hero() {
                       initial={{ pathLength: 0, fillOpacity: 0 }}
                       animate={{ pathLength: 1, fillOpacity: 1 }}
                       transition={{ 
-                        duration: 3, 
-                        delay: 2.4, 
+                        duration: 1.5, 
+                        delay: 0.8, 
                         ease: "easeOut",
-                        fillOpacity: { delay: 1.5 + 2.4, duration: 1 }
+                        fillOpacity: { delay: 0.8 + 0.8, duration: 0.5 }
                       }}
                       className="hover:fill-[#0EA5E9]/10 transition-colors duration-500 cursor-pointer"
                     />
@@ -286,7 +286,7 @@ export default function Hero() {
                   <motion.g 
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 3, duration: 0.5, type: "spring" }}
+                    transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
                     className="cursor-pointer"
                   >
                     <circle cx="350" cy="420" r="5" fill="#DBFF00" stroke="#001F45" strokeWidth="2" />
@@ -301,7 +301,7 @@ export default function Hero() {
                 <motion.div 
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 3.5, duration: 0.5 }}
+                  transition={{ delay: 1.8, duration: 0.5 }}
                   className="absolute top-[82%] left-[72%] bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg border border-gray-100 flex items-center gap-2 pointer-events-none"
                 >
                   <div className="w-2 h-2 rounded-full bg-[#DBFF00] shadow-[0_0_8px_rgba(219,255,0,0.8)]" />
