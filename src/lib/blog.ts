@@ -30,7 +30,7 @@ const normalizeCategory = (value: string | undefined): BlogCategory => {
 }
 
 const isMarkdownFile = (filename: string): boolean => {
-  return (filename.endsWith('.md') || filename.endsWith('.mdx')) && filename.toLowerCase() !== 'readme.md'
+  return filename.endsWith('.mdx') && filename.toLowerCase() !== 'readme.mdx'
 }
 
 const ensureBlogDirectoryExists = (): void => {

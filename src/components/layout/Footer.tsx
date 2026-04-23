@@ -9,11 +9,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-10 sm:mb-16">
           <div className="md:col-span-1 space-y-5 text-center md:text-left max-w-md mx-auto md:max-w-none">
             <Link href="/" className="inline-flex items-center group justify-center md:justify-start">
-              <span className="font-bricolage-grotesque-regular text-3xl text-white group-hover:text-[#DBFF00] transition-colors duration-300">
+              <span className="font-sofia-bold text-3xl text-white group-hover:text-[#DBFF00] transition-colors duration-300">
                 Lodgic
               </span>
             </Link>
-            <p className="text-white/80 text-sm leading-relaxed font-inter-regular">
+            <p className="text-white/80 text-sm leading-relaxed font-sofia">
               On transforme vos idées en applications mobiles et web sur mesure. Basés à Toulouse, prêts à collaborer où
               que vous soyez.
             </p>
@@ -70,12 +70,12 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
               <div className="text-center sm:text-left">
-                <h3 className="text-white font-bricolage-grotesque-regular text-lg mb-4">Navigation</h3>
+                <h3 className="text-white font-sofia-bold text-lg mb-4">Navigation</h3>
                 <ul className="space-y-3">
                   <li>
                     <Link
                       href="/"
-                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-sofia text-center sm:text-left"
                       tabIndex={0}
                     >
                       Accueil
@@ -84,7 +84,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/#services"
-                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-sofia text-center sm:text-left"
                       tabIndex={0}
                     >
                       Services
@@ -93,7 +93,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/blog"
-                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-sofia text-center sm:text-left"
                       tabIndex={0}
                     >
                       Lodgic Conseils
@@ -102,7 +102,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/#about"
-                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-sofia text-center sm:text-left"
                       tabIndex={0}
                     >
                       À propos
@@ -111,7 +111,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/#contact"
-                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-inter-regular text-center sm:text-left"
+                      className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-sofia text-center sm:text-left"
                       tabIndex={0}
                     >
                       Contact
@@ -121,7 +121,7 @@ export default function Footer() {
               </div>
 
               <div className="text-center sm:text-left">
-                <h3 className="text-white font-bricolage-grotesque-regular text-lg mb-4">Nous contacter</h3>
+                <h3 className="text-white font-sofia-bold text-lg mb-4">Nous contacter</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start group justify-center sm:justify-start">
                     <div className="bg-white/10 p-2.5 rounded-lg mr-3.5 group-hover:bg-[#DBFF00]/20 transition-colors duration-300 flex-shrink-0">
@@ -135,10 +135,10 @@ export default function Footer() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-white/70 mb-0.5 font-medium font-inter-regular">Par email</p>
+                      <p className="text-xs text-white/70 mb-0.5 font-medium font-sofia">Par email</p>
                       <a
                         href="mailto:lodgicdev@gmail.com"
-                        className="inline-flex items-center text-white/90 hover:text-[#DBFF00] transition-colors text-sm group font-inter-regular"
+                        className="inline-flex items-center text-white/90 hover:text-[#DBFF00] transition-colors text-sm group font-sofia"
                       >
                         <span>lodgicdev@gmail.com</span>
                         <svg
@@ -173,8 +173,8 @@ export default function Footer() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs text-white/70 mb-0.5 font-medium font-inter-regular">Localisation</p>
-                      <span className="text-white/90 text-sm font-inter-regular">Toulouse, Occitanie, France</span>
+                      <p className="text-xs text-white/70 mb-0.5 font-medium font-sofia">Localisation</p>
+                      <span className="text-white/90 text-sm font-sofia">Toulouse, Occitanie, France</span>
                     </div>
                   </li>
                 </ul>
@@ -184,14 +184,14 @@ export default function Footer() {
         </div>
 
         <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-y-4">
-          <p className="text-white/70 text-xs sm:text-sm text-center sm:text-left font-inter-regular">
-            © {currentYear} <span className="text-white font-bricolage-grotesque-regular">Lodgic</span>. Tous droits
+          <p className="text-white/70 text-xs sm:text-sm text-center sm:text-left font-sofia">
+            © {currentYear} <span className="text-white font-sofia">Lodgic</span>. Tous droits
             réservés.
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 sm:gap-x-6 gap-y-2">
             <Link
               href="/politique-confidentialite"
-              className="text-white/70 hover:text-[#DBFF00] text-xs sm:text-sm transition-colors font-inter-regular"
+              className="text-white/70 hover:text-[#DBFF00] text-xs sm:text-sm transition-colors font-sofia"
               tabIndex={0}
             >
               Politique de confidentialité

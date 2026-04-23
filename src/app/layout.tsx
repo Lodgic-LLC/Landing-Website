@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Bricolage_Grotesque } from 'next/font/google'
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
@@ -14,10 +14,10 @@ const inter = Inter({
   weight: ['400', '500', '600', '700'],
 })
 
-const bricolageGrotesque = Bricolage_Grotesque({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-bricolage-grotesque',
-  weight: ['400', '500', '600', '700'],
+  variable: '--font-plus-jakarta',
+  weight: ['400', '500', '600', '700', '800'],
 })
 const structuredData = {
   '@context': 'https://schema.org',
@@ -182,7 +182,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${inter.variable} font-inter  bg-gray-50 text-gray-800`}>
+      <body className={`${inter.variable} ${plusJakartaSans.variable} font-inter bg-gray-50 text-gray-800`}>
         <WebVitals />
         <AnalyticsProvider
           config={{

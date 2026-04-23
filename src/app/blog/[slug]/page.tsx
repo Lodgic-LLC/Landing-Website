@@ -1,15 +1,14 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Script from 'next/script'
 
-import { blogPosts, getPostBySlug } from '@/data/blog/posts'
+import { getAllSlugs, getPostBySlug } from '@/lib/blog'
 import MarkdownRenderer from '@/components/blog/MarkdownRenderer'
 import TableOfContents from '@/components/blog/TableOfContents'
 
 interface BlogPageProps {
   params: Promise<{ slug: string }>
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 interface Heading {
@@ -72,7 +71,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const post = await getPostBySlug(slug)
+  const post = getPostBySlug(slug)
 
   if (!post) {
     return { title: 'Article non trouvé' }
@@ -108,25 +107,16 @@ export async function generateMetadata({
       description: post.summary,
       images: [post.imageUrl],
     },
-    keywords: [
-      'lodgic',
-      'blog tech',
-      'développement web',
-      'application mobile',
-      post.title.toLowerCase(),
-      ...(post.tags || []),
-    ],
   }
 }
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }))
+  return getAllSlugs().map((slug) => ({ slug }))
 }
 
-const PostPage = async (props: BlogPageProps) => {
-  const { params } = props
+export default async function PostPage({ params }: BlogPageProps) {
   const { slug } = await params
-  const post = await getPostBySlug(slug)
+  const post = getPostBySlug(slug)
 
   if (!post) {
     notFound()
@@ -159,7 +149,6 @@ const PostPage = async (props: BlogPageProps) => {
     datePublished: new Date(post.date).toISOString(),
     dateModified: new Date(post.date).toISOString(),
     articleBody: post.summary,
-    ...(post.tags && { keywords: post.tags.join(', ') }),
   }
 
   return (
@@ -185,31 +174,10 @@ const PostPage = async (props: BlogPageProps) => {
                   {post.category}
                 </span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bricolage-grotesque-bold text-[#000f45] mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-sofia-bold text-[#000f45] mb-6 leading-tight">
                 {post.title}
               </h1>
               <p className="text-[#162869] font-inter text-lg mb-6">{post.summary}</p>
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-4 text-[#162869] font-inter">
-                  <span className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-[#000f45]" viewBox="0 0 24 24" fill="currentColor">
-                      <circle cx="12" cy="8" r="5" />
-                      <path d="M20 21C20 16.5817 16.4183 13 12 13C7.58172 13 4 16.5817 4 21" />
-                    </svg>
-                    {post.author}
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-[#000f45]" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                    </svg>
-                    {new Date(post.date).toLocaleDateString('fr-FR', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
-                  </span>
-                </div>
-              </div>
             </header>
 
             <div className="p-8 md:p-10 pb-0">
@@ -234,5 +202,3 @@ const PostPage = async (props: BlogPageProps) => {
     </>
   )
 }
-
-export default PostPage
