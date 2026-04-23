@@ -1,73 +1,66 @@
-'use client'
+import Link from 'next/link'
+import { FaArrowRight } from 'react-icons/fa'
 
-import React from 'react'
-import {
-  FaGlobe,
-  FaMobileAlt,
-  FaShoppingCart,
-  FaCloud,
-  FaStore,
-  FaTools,
-  FaSearch,
-  FaDatabase,
-} from 'react-icons/fa'
-import type { IconType } from 'react-icons'
-
-interface Service {
-  name: string
-  icon: IconType
-}
+import { projects } from '@/data/projects'
+import ProjectCover from '@/components/pages/projects/ProjectCover'
 
 export default function Process() {
-  const services: Service[] = [
-    { name: 'Sites web', icon: FaGlobe },
-    { name: 'Applications mobiles', icon: FaMobileAlt },
-    { name: 'E-commerce', icon: FaShoppingCart },
-    { name: 'SAAS', icon: FaCloud },
-    { name: 'Site vitrine', icon: FaStore },
-    { name: 'Maintenance & support', icon: FaTools },
-    { name: 'Optimisation SEO', icon: FaSearch },
-    { name: 'Gestion des données', icon: FaDatabase },
-  ]
-
   return (
-    <section className="py-24 bg-white" id="devis">
-      <div className="container mx-auto px-6 max-w-6xl">
-        <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 mb-5 rounded-full bg-[#001F45]/5 text-[#001F45] font-inter text-xs font-semibold uppercase tracking-wider">
-            Nos expertises
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bricolage-grotesque-bold text-[#000f45] mb-6 text-balance">
-            Ce que nous{' '}
-            <span className="relative">
-              <span className="relative z-10">créons</span>
-              <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 transform -skew-x-12 z-0" />
-            </span>{' '}
-            pour vous
-          </h2>
-          <p className="text-base md:text-lg max-w-3xl mx-auto font-inter text-[#162869]/80 leading-relaxed">
-            Sites web, applications mobiles et outils sur mesure pour vous aider à concrétiser votre projet
-            et à développer votre activité.
-          </p>
+    <section id="projets" className="py-20 md:py-28 bg-white">
+      <div className="container-editorial">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
+          <div className="max-w-2xl">
+            <span className="inline-block px-3 py-1 rounded-full bg-[var(--color-brand-ink-50)] text-[var(--color-brand-ink)] text-[13px] font-medium mb-4">
+              Réalisations
+            </span>
+            <h2 className="display-h2 text-balance">Quelques projets récents.</h2>
+          </div>
+          <Link
+            href="/projets"
+            className="hidden md:inline-flex items-center gap-1.5 text-[14px] font-medium text-[var(--color-brand-ink)] hover:gap-2.5 transition-all"
+          >
+            Voir tous les projets
+            <FaArrowRight className="h-3 w-3" aria-hidden />
+          </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {services.map((service) => {
-            const Icon = service.icon
-            return (
-              <div
-                key={service.name}
-                className="group relative flex flex-col items-start gap-4 p-6 rounded-2xl border border-gray-200/80 bg-white hover:border-[#001F45]/20 hover:shadow-soft transition-smooth cursor-pointer"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#001F45]/5 text-[#001F45] group-hover:bg-[#DBFF00] group-hover:text-[#001F45] transition-smooth">
-                  <Icon className="h-5 w-5" aria-hidden />
-                </div>
-                <span className="font-inter font-semibold text-[#001F45] text-sm md:text-base leading-snug">
-                  {service.name}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {projects.map((project, index) => (
+            <Link
+              key={project.slug}
+              href={`/projets/${project.slug}`}
+              className="card-std group overflow-hidden"
+              aria-label={`Voir le projet ${project.name}`}
+            >
+              <ProjectCover project={project} priority={index === 0} />
+
+              <div className="p-6 md:p-7">
+                <span className="inline-block px-2.5 py-1 rounded-full bg-[var(--color-page-warm)] border border-[var(--color-border)] text-[12px] font-medium text-[var(--color-muted)] mb-3">
+                  {project.category}
+                </span>
+                <h3 className="text-[18px] md:text-[19px] font-semibold text-[var(--color-ink)] mb-2 tracking-tight">
+                  {project.name}
+                </h3>
+                <p className="text-[14.5px] leading-relaxed text-[var(--color-muted)]">
+                  {project.description}
+                </p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-medium text-[var(--color-brand-ink)] group-hover:gap-2.5 transition-all">
+                  Voir le projet
+                  <FaArrowRight className="h-3 w-3" aria-hidden />
                 </span>
               </div>
-            )
-          })}
+            </Link>
+          ))}
+        </div>
+
+        <div className="md:hidden mt-8 text-center">
+          <Link
+            href="/projets"
+            className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[var(--color-brand-ink)]"
+          >
+            Voir tous les projets
+            <FaArrowRight className="h-3 w-3" aria-hidden />
+          </Link>
         </div>
       </div>
     </section>

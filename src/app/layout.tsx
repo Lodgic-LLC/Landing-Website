@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Bricolage_Grotesque } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
@@ -10,14 +10,9 @@ import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-sans',
   weight: ['400', '500', '600', '700'],
-})
-
-const bricolageGrotesque = Bricolage_Grotesque({
-  subsets: ['latin'],
-  variable: '--font-bricolage-grotesque',
-  weight: ['400', '500', '600', '700'],
+  display: 'swap',
 })
 const structuredData = {
   '@context': 'https://schema.org',
@@ -105,21 +100,28 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: 'Développeur Application Mobile Toulouse - Lodgic',
+    title: 'Lodgic — Studio de développement web & mobile · Toulouse',
     description:
-      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
-    images: '/FullLogo_Transparent_NoBuffer.png',
-    type: 'website',
-    locale: 'fr_FR',
+      "On code l'application qui fait avancer votre business. Yann et Mathéo vous accompagnent de l'idée au lancement, avec un suivi humain et sans jargon.",
     url: 'https://lodgic-dev.com',
-    siteName: 'Lodgic Dev',
+    siteName: 'Lodgic',
+    locale: 'fr_FR',
+    type: 'website',
+    images: [
+      {
+        url: '/lodgic-banner.png',
+        width: 1200,
+        height: 630,
+        alt: 'Lodgic — Studio de développement web & mobile basé à Toulouse',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Développeur Application Mobile Toulouse - Lodgic',
+    title: 'Lodgic — Studio de développement web & mobile · Toulouse',
     description:
-      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
-    images: '/lodgic-banner.png',
+      "On code l'application qui fait avancer votre business. Yann et Mathéo vous accompagnent de l'idée au lancement.",
+    images: ['/lodgic-banner.png'],
     creator: '@lodgic',
     site: '@lodgic',
   },
@@ -182,7 +184,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${inter.variable} font-inter  bg-gray-50 text-gray-800`}>
+      <body className={`${inter.variable} font-sans bg-[var(--color-page)] text-[var(--color-ink)] antialiased`}>
         <WebVitals />
         <AnalyticsProvider
           config={{
