@@ -15,7 +15,6 @@ export default function Navbar() {
     { name: 'Nos réalisations', path: '/#realisations' },
     { name: 'Notre offre', path: '/#offre' },
     { name: 'Lodgic Conseils', path: '/blog' },
-    { name: 'Une question ?', path: '/#contact' },
   ]
 
   useEffect(() => {
@@ -82,7 +81,7 @@ export default function Navbar() {
               href="/#contact"
               className="ml-2 inline-flex items-center justify-center rounded-lg bg-[#001F45] px-5 py-2.5 text-sm font-inter font-semibold text-white shadow-soft hover:bg-[#0b2b63] hover:shadow-elevated transition-smooth"
             >
-              Nous contacter
+              Une question ?
             </Link>
           </div>
 
@@ -150,7 +149,7 @@ export default function Navbar() {
               href="/#contact"
               className="flex items-center justify-center w-full px-4 py-3 rounded-lg text-base font-inter font-semibold bg-[#001F45] text-white hover:bg-[#0b2b63] transition-smooth shadow-soft"
             >
-              Nous contacter
+              Une question ?
             </Link>
           </div>
         </div>
