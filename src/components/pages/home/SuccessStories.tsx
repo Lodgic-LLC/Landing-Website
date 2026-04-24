@@ -32,7 +32,7 @@ const projects: Project[] = [
     category: 'Application mobile',
     description:
       'App iOS et Android pour propriétaires et locataires : gestion des biens, des incidents et des paiements.',
-    year: '2024',
+    year: '2026',
     icon: FaMobileAlt,
     accent: 'blue',
     poster: 'house',
@@ -50,7 +50,7 @@ const projects: Project[] = [
     category: 'SaaS interne',
     description:
       'Plateforme web sur mesure : congés, notes de frais, onboarding — une seule interface pour toute l’équipe RH.',
-    year: '2024',
+    year: '2026',
     icon: FaLayerGroup,
     accent: 'indigo',
     poster: 'rh',

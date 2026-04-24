@@ -22,7 +22,7 @@ export const projects: Project[] = [
     name: 'HouseGuard - Gestion locative',
     category: 'Application mobile',
     client: 'Bailleurs independants et agences immobilieres',
-    year: '2024',
+    year: '2026',
     duration: '10 semaines',
     stack: ['React Native', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma'],
     needs: [
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     name: 'Application de gestion RH',
     category: 'SaaS interne',
     client: 'PME de services B2B · 180 collaborateurs',
-    year: '2024',
+    year: '2026',
     duration: '12 semaines',
     stack: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Tailwind CSS'],
     needs: [

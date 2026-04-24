@@ -178,7 +178,7 @@ export const RhDashboardScreen = () => (
             Bonjour, Camille
           </p>
           <p className="text-[11px]" style={{ color: INK + 'B3' }}>
-            Voici ce qui se passe aujourd’hui · Mars 2024
+            Voici ce qui se passe aujourd’hui · Mars 2026
           </p>
         </div>
         <button className="rounded-lg px-3 py-1.5 text-[11px] font-medium text-white" style={{ background: NAVY }}>
@@ -341,7 +341,7 @@ export const ShopHomeScreen = () => (
 
     <div className="mt-3 rounded-xl p-5" style={{ background: SURFACE }}>
       <p className="text-[10px] uppercase tracking-widest" style={{ color: INK + 'B3' }}>
-        Printemps 2024
+        Printemps 2026
       </p>
       <p className="mt-1 text-lg font-semibold" style={{ color: NAVY }}>
         Matières nobles, coupes sculptées.
@@ -485,7 +485,7 @@ export const HouseIncidentScreen = () => (
 export const HousePaymentScreen = () => (
   <div className="flex h-full flex-col">
     <p className="mt-1 text-[11px]" style={{ color: INK + 'B3' }}>
-      Loyers · Avril 2024
+      Loyers · Avril 2026
     </p>
     <p className="text-sm font-semibold" style={{ color: NAVY }}>
       Vue paiements
@@ -554,7 +554,7 @@ export const RhLeaveCalendarScreen = () => (
           Calendrier des congés
         </p>
         <p className="text-[11px]" style={{ color: INK + 'B3' }}>
-          Équipe Produit — mars 2024
+          Équipe Produit — mars 2026
         </p>
       </div>
       <div className="flex gap-2">
@@ -717,7 +717,7 @@ export const ShopProductScreen = () => (
       </div>
       <div className="col-span-2 flex flex-col">
         <p className="text-[10px] uppercase tracking-widest" style={{ color: INK + 'B3' }}>
-          Printemps 2024
+          Printemps 2026
         </p>
         <p className="mt-1 text-base font-semibold" style={{ color: NAVY }}>
           Sac cabas Léo — cuir tanné
