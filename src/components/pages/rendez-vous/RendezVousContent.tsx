@@ -93,7 +93,7 @@ const RendezVousContent = () => {
                   Prendre Rendez-vous
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/#contact"
                   className="border-2 border-[#2C3E50] text-[#2C3E50] px-8 py-3.5 rounded-lg font-semibold hover:bg-[#2C3E50]/10 hover:border-[#2C3E50] transition-all flex items-center group text-lg"
                 >
                   <FaEnvelope className="w-5 h-5 mr-2.5" />
@@ -331,7 +331,7 @@ const RendezVousContent = () => {
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-6">
                 <Link
-                  href="/contact"
+                  href="/#contact"
                   className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium rounded-lg shadow-lg text-[#2C3E50] bg-[#FFFFFF] hover:bg-[#FAF3E0] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#E67E22] transition-all duration-200 hover:scale-105 transform hover:-translate-y-0.5"
                 >
                   Nous contacter

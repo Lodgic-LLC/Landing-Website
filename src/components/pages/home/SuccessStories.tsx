@@ -1,338 +1,371 @@
-'use client'
-
-import React from 'react'
 import Link from 'next/link'
+import {
+  FaArrowRight,
+  FaBolt,
+  FaChartLine,
+  FaMobileAlt,
+  FaLayerGroup,
+} from 'react-icons/fa'
+import type { IconType } from 'react-icons'
 
-interface CaseItem {
+type Highlight = { id: string; text: string }
+
+type Project = {
   id: number
+  slug: string
   title: string
+  category: string
   description: string
-  image: string // Main image for standard display
-  images?: string[] // Optional: for multi-image display like HouseGuard
+  year: string
+  icon: IconType
+  accent: 'blue' | 'indigo' | 'rose'
+  highlights: Highlight[]
   link: string
-  items: Array<{
-    id: string
-    icon: React.ReactNode
-    text: string
-  }>
+  poster: 'house' | 'rh' | 'shop'
+}
+
+const projects: Project[] = [
+  {
+    id: 1,
+    slug: 'houseguard-gestion-locative',
+    title: 'HouseGuard',
+    category: 'Application mobile',
+    description:
+      'App iOS et Android pour propriétaires et locataires : gestion des biens, des incidents et des paiements.',
+    year: '2024',
+    icon: FaMobileAlt,
+    accent: 'blue',
+    poster: 'house',
+    highlights: [
+      { id: 'h1', text: 'Suivi biens, locataires, signalements' },
+      { id: 'h2', text: 'Paiements et loyers centralisés' },
+      { id: 'h3', text: 'Messagerie propriétaire ↔ locataire' },
+    ],
+    link: '/projets/houseguard-gestion-locative',
+  },
+  {
+    id: 2,
+    slug: 'application-gestion-rh',
+    title: 'Application RH',
+    category: 'SaaS interne',
+    description:
+      'Plateforme web sur mesure : congés, notes de frais, onboarding — une seule interface pour toute l’équipe RH.',
+    year: '2024',
+    icon: FaLayerGroup,
+    accent: 'indigo',
+    poster: 'rh',
+    highlights: [
+      { id: 'r1', text: 'Workflow de validation paramétrable' },
+      { id: 'r2', text: 'Dashboard RH temps réel' },
+      { id: 'r3', text: 'Exports paie & comptabilité' },
+    ],
+    link: '/projets/application-gestion-rh',
+  },
+]
+
+const ACCENT_GRADIENTS: Record<Project['accent'], string> = {
+  blue: 'from-[#e8f0ff] via-[#f3f7ff] to-[#f6f7fc]',
+  indigo: 'from-[#ece8ff] via-[#f3effd] to-[#f6f7fc]',
+  rose: 'from-[#fde7ec] via-[#fcf0f0] to-[#f6f7fc]',
+}
+
+const ACCENT_DOT: Record<Project['accent'], string> = {
+  blue: 'bg-[#0EA5E9]',
+  indigo: 'bg-[#6366F1]',
+  rose: 'bg-[#F43F5E]',
+}
+
+const ACCENT_RING: Record<Project['accent'], string> = {
+  blue: 'ring-[#0EA5E9]/15',
+  indigo: 'ring-[#6366F1]/15',
+  rose: 'ring-[#F43F5E]/15',
+}
+
+const ACCENT_ICON_BG: Record<Project['accent'], string> = {
+  blue: 'bg-[#0EA5E9]/10 text-[#0EA5E9]',
+  indigo: 'bg-[#6366F1]/10 text-[#6366F1]',
+  rose: 'bg-[#F43F5E]/10 text-[#F43F5E]',
+}
+
+const HousePoster = () => (
+  <div className="absolute inset-0 flex items-center justify-center">
+    <div className="relative flex items-end gap-[-8px] translate-y-3">
+      <div className="relative -rotate-6 translate-y-4">
+        <div className="w-[72px] h-[140px] rounded-[18px] border-[3px] border-[#0b1f3f] bg-white shadow-lg overflow-hidden p-1.5">
+          <div className="h-full rounded-[10px] bg-[#f6f7fc] p-1.5">
+            <div className="h-1 w-6 rounded-full bg-[#001F45]/30 mx-auto" />
+            <div className="mt-2 h-2 w-10 rounded bg-[#001F45]/70" />
+            <div className="mt-1 h-1.5 w-14 rounded bg-[#001F45]/20" />
+            <div className="mt-2 rounded bg-[#001F45] h-5" />
+            <div className="mt-2 h-1.5 w-full rounded bg-[#001F45]/10" />
+            <div className="mt-1 h-1.5 w-3/4 rounded bg-[#001F45]/10" />
+          </div>
+        </div>
+      </div>
+      <div className="relative z-10 scale-110">
+        <div className="w-[80px] h-[160px] rounded-[20px] border-[3px] border-[#001F45] bg-white shadow-xl overflow-hidden p-1.5">
+          <div className="h-full rounded-[12px] bg-gradient-to-b from-[#eaf0ff] to-white p-2">
+            <div className="h-1 w-8 rounded-full bg-[#001F45]/40 mx-auto" />
+            <div className="mt-2 h-2 w-12 rounded bg-[#001F45]/80" />
+            <div className="mt-0.5 h-1.5 w-16 rounded bg-[#001F45]/30" />
+            <div className="mt-2 rounded-lg bg-[#001F45] p-1.5">
+              <div className="h-1.5 w-8 rounded bg-white/60" />
+              <div className="mt-1 h-2 w-10 rounded bg-white" />
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-1">
+              <div className="h-6 rounded bg-[#001F45]/10" />
+              <div className="h-6 rounded bg-[#DBFF00]/60" />
+            </div>
+            <div className="mt-1.5 h-1.5 w-full rounded bg-[#001F45]/10" />
+            <div className="mt-1 h-1.5 w-2/3 rounded bg-[#001F45]/10" />
+          </div>
+        </div>
+      </div>
+      <div className="relative rotate-6 translate-y-4">
+        <div className="w-[72px] h-[140px] rounded-[18px] border-[3px] border-[#0b1f3f] bg-white shadow-lg overflow-hidden p-1.5">
+          <div className="h-full rounded-[10px] bg-[#f6f7fc] p-1.5">
+            <div className="h-1 w-6 rounded-full bg-[#001F45]/30 mx-auto" />
+            <div className="mt-2 h-2 w-12 rounded bg-[#001F45]/70" />
+            <div className="mt-2 rounded bg-white ring-1 ring-[#001F45]/10 h-5" />
+            <div className="mt-1 rounded bg-white ring-1 ring-[#001F45]/10 h-5" />
+            <div className="mt-1 rounded bg-white ring-1 ring-[#001F45]/10 h-5" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+const RhPoster = () => (
+  <div className="absolute inset-0 flex items-center justify-center p-6">
+    <div className="relative w-full max-w-[320px]">
+      {/* Browser frame */}
+      <div className="rounded-xl border border-[#001F45]/10 bg-white shadow-xl overflow-hidden">
+        <div className="flex items-center gap-1.5 px-3 py-2 bg-[#f6f7fc] border-b border-[#001F45]/10">
+          <span className="h-2 w-2 rounded-full bg-red-300" />
+          <span className="h-2 w-2 rounded-full bg-amber-300" />
+          <span className="h-2 w-2 rounded-full bg-emerald-300" />
+          <span className="ml-2 h-2 w-24 rounded bg-white ring-1 ring-[#001F45]/10" />
+        </div>
+        <div className="p-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="h-2.5 w-24 rounded bg-[#001F45]" />
+              <div className="mt-1 h-2 w-16 rounded bg-[#001F45]/30" />
+            </div>
+            <div className="h-6 w-16 rounded-md bg-[#001F45]" />
+          </div>
+          <div className="mt-3 grid grid-cols-4 gap-1.5">
+            {['12', '48', '27', '3'].map((v, i) => (
+              <div key={i} className="rounded border border-[#001F45]/10 p-1.5">
+                <div className="h-1.5 w-full rounded bg-[#001F45]/20" />
+                <div className="mt-1 h-3 w-6 rounded bg-[#001F45]" />
+              </div>
+            ))}
+          </div>
+          <div className="mt-3 rounded border border-[#001F45]/10 p-2 space-y-1.5">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="flex items-center justify-between">
+                <div className="h-2 w-16 rounded bg-[#001F45]/30" />
+                <div className="h-2 w-12 rounded bg-[#001F45]/15" />
+                <div className="h-2 w-10 rounded bg-[#6366F1]/50" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* Floating KPI card */}
+      <div className="absolute -right-3 -bottom-3 rounded-lg border border-[#001F45]/10 bg-white shadow-lg p-2.5">
+        <div className="flex items-center gap-2">
+          <span className="h-6 w-6 rounded-md bg-emerald-100 text-emerald-600 flex items-center justify-center text-[10px] font-bold">
+            ↑
+          </span>
+          <div>
+            <div className="h-2 w-12 rounded bg-[#001F45]" />
+            <div className="mt-1 h-1.5 w-10 rounded bg-[#001F45]/30" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+const ShopPoster = () => (
+  <div className="absolute inset-0 flex items-center justify-center p-6">
+    <div className="relative w-full max-w-[320px]">
+      <div className="rounded-xl border border-[#001F45]/10 bg-white shadow-xl overflow-hidden">
+        <div className="flex items-center gap-1.5 px-3 py-2 bg-[#f6f7fc] border-b border-[#001F45]/10">
+          <span className="h-2 w-2 rounded-full bg-red-300" />
+          <span className="h-2 w-2 rounded-full bg-amber-300" />
+          <span className="h-2 w-2 rounded-full bg-emerald-300" />
+          <span className="ml-2 h-2 w-24 rounded bg-white ring-1 ring-[#001F45]/10" />
+        </div>
+        <div className="p-3">
+          <div className="flex items-center justify-between">
+            <div className="h-2.5 w-20 rounded bg-[#001F45]" />
+            <div className="flex gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-[#001F45]/30" />
+              <span className="h-2 w-2 rounded-full bg-[#001F45]/30" />
+              <span className="h-2 w-2 rounded-full bg-[#001F45]/30" />
+            </div>
+          </div>
+          <div className="mt-3 rounded-lg bg-gradient-to-br from-[#fde7ec] via-[#fcf0f0] to-white p-3">
+            <div className="h-2 w-16 rounded bg-[#F43F5E]/80" />
+            <div className="mt-1.5 h-3 w-24 rounded bg-[#001F45]" />
+            <div className="mt-1 h-2 w-20 rounded bg-[#001F45]/40" />
+          </div>
+          <div className="mt-3 grid grid-cols-3 gap-1.5">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="rounded border border-[#001F45]/10 p-1.5">
+                <div className="h-10 rounded bg-[#f6f7fc]" />
+                <div className="mt-1 h-1.5 w-full rounded bg-[#001F45]/20" />
+                <div className="mt-1 h-1.5 w-2/3 rounded bg-[#001F45]/40" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* Floating cart badge */}
+      <div className="absolute -right-3 -top-3 rounded-full bg-[#F43F5E] text-white text-[10px] font-semibold h-8 px-3 inline-flex items-center gap-1.5 shadow-lg">
+        <span>Panier</span>
+        <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-white text-[#F43F5E] text-[10px]">
+          2
+        </span>
+      </div>
+    </div>
+  </div>
+)
+
+const POSTERS: Record<Project['poster'], () => React.ReactNode> = {
+  house: HousePoster,
+  rh: RhPoster,
+  shop: ShopPoster,
 }
 
 export default function SuccessStories() {
-  const successCases: CaseItem[] = [
-    {
-      id: 1,
-      title: 'Forge AI - Marketplace NFT',
-      description: 'Plateforme de génération et achat/vente de NFT IA.',
-      image: '/images/forge-main.png',
-      link: '/projets/forge-ai',
-      items: [
-        {
-          id: 'forge-1',
-          icon: (
-            <svg className="w-5 h-5 text-[#E67E22]" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
-            </svg>
-          ),
-          text: "Développement d'une marketplace NFT innovante.",
-        },
-        {
-          id: 'forge-2',
-          icon: (
-            <svg className="w-5 h-5 text-[#E67E22]" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-            </svg>
-          ),
-          text: "Intégration d'IA pour la génération unique de NFTs.",
-        },
-        {
-          id: 'forge-3',
-          icon: (
-            <svg className="w-5 h-5 text-[#E67E22]" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-            </svg>
-          ),
-          text: 'Système de comptes utilisateurs sécurisé et intuitif.',
-        },
-      ],
-    },
-    {
-      id: 2,
-      title: 'CoinFinder - Veille Crypto',
-      description: "Application web pour le suivi et l'analyse de cryptomonnaies.",
-      image: '/images/coinfinder.png',
-      link: '/projets/coinfinder',
-      items: [
-        {
-          id: 'coin-1',
-          icon: (
-            <svg className="w-5 h-5 text-[#E67E22]" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
-              <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
-            </svg>
-          ),
-          text: 'Interface claire pour le suivi des cryptomonnaies.',
-        },
-        {
-          id: 'coin-2',
-          icon: (
-            <svg className="w-5 h-5 text-[#E67E22]" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" />
-            </svg>
-          ),
-          text: 'Système de paiement automatisé et sécurisé.',
-        },
-        {
-          id: 'coin-3',
-          icon: (
-            <svg className="w-5 h-5 text-[#E67E22]" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fillRule="evenodd"
-                d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"
-                clipRule="evenodd"
-              />
-            </svg>
-          ),
-          text: 'Dashboard personnalisé pour le suivi de portefeuille.',
-        },
-      ],
-    },
-    {
-      id: 3,
-      title: 'HouseGuard - Gestion Locative',
-      description: 'App mobile de gestion locative pour propriétaires et agences.',
-      image: '/images/house-proprietaire.png', // Main image, can be the central one
-      images: [
-        // For the 3-phone display
-        '/images/house-proprietaire.png', // Left
-        '/images/house-locataire.png', // Center
-        '/images/house-biens.png', // Right
-      ],
-      link: '/projets/houseguard',
-      items: [
-        {
-          id: 'house-1',
-          icon: (
-            <svg className="w-5 h-5 text-[#E67E22]" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-            </svg>
-          ),
-          text: 'Gestion simplifiée des biens immobiliers.',
-        },
-        {
-          id: 'house-2',
-          icon: (
-            <svg className="w-5 h-5 text-[#E67E22]" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fillRule="evenodd"
-                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                clipRule="evenodd"
-              />
-            </svg>
-          ),
-          text: 'Suivi rigoureux des paiements et des loyers.',
-        },
-        {
-          id: 'house-3',
-          icon: (
-            <svg className="w-5 h-5 text-[#E67E22]" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fillRule="evenodd"
-                d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
-                clipRule="evenodd"
-              />
-            </svg>
-          ),
-          text: 'Communication fluide entre propriétaires et locataires.',
-        },
-      ],
-    },
-  ]
-
   return (
-    <section className="relative py-16 md:py-24 bg-[#FAF3E0] overflow-hidden">
-      {/* Vague en haut pour transition */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
-        <svg
-          className="absolute top-0 w-full h-full"
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,80 C240,0 480,0 720,40 C960,80 1200,80 1440,40 L1440,0 L0,0 Z" fill="#F5F5F0" />
-        </svg>
-      </div>
+    <section id="realisations" className="relative py-20 md:py-28 bg-[#f6f7fc] overflow-hidden">
+      {/* Halos décoratifs discrets */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#001F45]/5 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#DBFF00]/25 blur-3xl"
+      />
 
-      {/* Formes SVG en arrière-plan */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <svg
-          className="absolute top-0 left-0 w-full h-full" // Adjusted opacity here if needed, or on individual shapes
-          viewBox="0 0 1440 800"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          {/* Grand cercle central */}
-          <circle cx="720" cy="400" r="300" fill="#E67E22" fillOpacity="0.03" />
-          {/* Cercle supérieur droit */}
-          <circle cx="1100" cy="150" r="150" fill="#A3B18A" fillOpacity="0.04" />
-          {/* Cercle inférieur gauche */}
-          <circle cx="300" cy="650" r="200" fill="#E67E22" fillOpacity="0.02" />
-          {/* Forme abstraite 1 */}
-          <path
-            d="M-100,300 C100,200 300,600 500,500 C700,400 900,700 1100,600 C1300,500 1500,300 1700,400 L1700,800 L-100,800 Z"
-            fill="#A3B18A"
-            fillOpacity="0.03"
-          />
-        </svg>
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter-bold text-[#2C3E50] mb-4">
-            Nos <span className="text-[#E67E22]">réalisations</span> dont on est fiers
-          </h2>
-          <p className="text-lg md:text-xl text-[#2C3E50]/80 max-w-3xl mx-auto mb-6">
-            On est ravis de vous montrer quelques projets qu'on a eu le plaisir de co-créer et de voir s'épanouir.
-          </p>
-          <div className="w-20 h-1.5 bg-[#E67E22] mx-auto rounded-full"></div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <div className="flex flex-col gap-6 mb-12 md:mb-16">
+          <div className="max-w-2xl">
+            <p className="text-xs font-inter font-semibold uppercase tracking-wider text-[#162869]/70">
+              Nos réalisations
+            </p>
+            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-sofia-bold text-[#001F45] text-balance">
+              Des projets livrés, <br className="hidden md:inline" />
+              utilisés au quotidien.
+            </h2>
+            <p className="mt-4 text-base md:text-lg text-[#162869]/80 font-inter">
+              Applications mobiles, plateformes SaaS et sites sur-mesure — chaque projet est pensé
+              pour résoudre un vrai besoin métier.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {successCases.map((caseItem) => (
-            <div
-              key={caseItem.id}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 flex flex-col h-full group"
-            >
-              <div className="relative h-48 sm:h-52 md:h-56 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/5 opacity-50 group-hover:opacity-75 transition-opacity duration-300 z-10"></div>
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+          {projects.map((project) => {
+            const Poster = POSTERS[project.poster]
+            const Icon = project.icon
+            return (
+              <Link
+                key={project.id}
+                href={project.link}
+                aria-label={`Découvrir le projet ${project.title}`}
+                className="group relative flex flex-col rounded-2xl bg-white border border-[#001F45]/10 overflow-hidden transition-smooth hover:border-[#001F45]/20 hover:shadow-elevated hover:-translate-y-1"
+              >
+                {/* Poster */}
+                <div
+                  className={`relative h-52 md:h-60 bg-gradient-to-br ${ACCENT_GRADIENTS[project.accent]} overflow-hidden`}
+                >
+                  <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur px-2.5 py-1 text-[11px] font-sofia-bold text-[#001F45] shadow-sm">
+                    <span className={`inline-block h-1.5 w-1.5 rounded-full ${ACCENT_DOT[project.accent]}`} aria-hidden />
+                    {project.category}
+                  </div>
+                  <div className="absolute top-4 right-4 z-10 text-[11px] font-inter font-medium text-[#001F45]/70">
+                    {project.year}
+                  </div>
+                  <Poster />
+                </div>
 
-                {caseItem.id === 3 && caseItem.images?.length === 3 ? (
-                  <div className="flex justify-center items-center w-full h-full p-2 bg-[#F5F5F0]/50">
-                    {' '}
-                    {/* Light background for the phones image */}
-                    <div className="flex space-x-[-15px] transform scale-75 sm:scale-80 md:scale-90">
-                      <div className="relative transform -rotate-6 z-10 shadow-md rounded-lg">
-                        <div className="w-20 sm:w-24 h-40 sm:h-44 bg-gray-700 rounded-lg overflow-hidden ring-2 ring-gray-300">
-                          <img
-                            src={caseItem.images[0]}
-                            alt={`${caseItem.title} - Vue 1`}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                      <div className="relative transform z-20 scale-110 shadow-lg rounded-lg">
-                        <div className="w-20 sm:w-24 h-40 sm:h-44 bg-gray-800 rounded-lg overflow-hidden ring-2 ring-gray-200">
-                          <img
-                            src={caseItem.images[1]}
-                            alt={`${caseItem.title} - Vue 2 (centrale)`}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                      <div className="relative transform rotate-6 z-10 shadow-md rounded-lg">
-                        <div className="w-20 sm:w-24 h-40 sm:h-44 bg-gray-700 rounded-lg overflow-hidden ring-2 ring-gray-300">
-                          <img
-                            src={caseItem.images[2]}
-                            alt={`${caseItem.title} - Vue 3`}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
+                {/* Body */}
+                <div className="flex flex-1 flex-col p-6 md:p-7">
+                  <div className="flex items-start gap-3">
+                    <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${ACCENT_ICON_BG[project.accent]}`}>
+                      <Icon className="h-4 w-4" aria-hidden />
+                    </span>
+                    <div className="flex-1">
+                      <h3 className="text-xl md:text-2xl font-sofia-bold text-[#001F45] leading-tight group-hover:text-[#0b2b63] transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="mt-2 text-sm md:text-[15px] text-[#162869]/85 font-inter leading-relaxed">
+                        {project.description}
+                      </p>
                     </div>
                   </div>
-                ) : (
-                  <img
-                    src={caseItem.image}
-                    alt={caseItem.title}
-                    className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                )}
+
+                  <ul className="mt-5 space-y-2.5">
+                    {project.highlights.map((h) => (
+                      <li key={h.id} className="flex items-start gap-2.5 text-sm text-[#162869]/90 font-inter">
+                        <span className={`mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full ring-1 ${ACCENT_RING[project.accent]} bg-white`}>
+                          <span className={`h-1.5 w-1.5 rounded-full ${ACCENT_DOT[project.accent]}`} />
+                        </span>
+                        <span>{h.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-6 pt-5 border-t border-[#001F45]/5 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-2 text-sm font-sofia-bold text-[#001F45]">
+                      Découvrir ce projet
+                      <FaArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" aria-hidden />
+                    </span>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f6f7fc] text-[#001F45] group-hover:bg-[#001F45] group-hover:text-white transition-colors">
+                      <FaBolt className="h-3.5 w-3.5" aria-hidden />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+
+        {/* CTA bas de section */}
+        <div className="mt-14 md:mt-20 rounded-3xl bg-[#001F45] text-white p-8 md:p-12 relative overflow-hidden">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#DBFF00]/20 blur-3xl"
+          />
+          <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-inter font-semibold uppercase tracking-wider text-white/70">
+                <FaChartLine className="h-3 w-3" aria-hidden />
+                Prêt à lancer le vôtre ?
               </div>
-              <div className="p-6 flex-grow">
-                <h3 className="text-xl lg:text-2xl font-semibold text-[#2C3E50] mb-2 group-hover:text-[#E67E22] transition-colors duration-300">
-                  {caseItem.title}
-                </h3>
-                <p className="text-[#2C3E50]/80 text-sm sm:text-base mb-4">{caseItem.description}</p>
-                <ul className="space-y-2 mb-4">
-                  {caseItem.items.map((item) => (
-                    <li key={item.id} className="flex items-start">
-                      <span className="flex-shrink-0 mt-1">{item.icon}</span>
-                      <span className="ml-2 text-sm text-[#2C3E50]/90">{item.text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="px-6 pb-6 mt-auto">
-                <Link
-                  href={caseItem.link}
-                  className="inline-flex items-center text-[#A3B18A] hover:text-[#E67E22] font-medium transition-colors duration-300"
-                  aria-label={`Découvrir le projet ${caseItem.title}`}
-                >
-                  Découvrir ce projet
-                  <svg
-                    className="w-4 h-4 ml-1.5 transform transition-transform duration-300 group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M13 7l5 5m0 0l-5 5m5-5H6" // Arrow pointing right
-                    ></path>
-                  </svg>
-                </Link>
-              </div>
-              <div className="h-1 w-full bg-[#E67E22] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <h3 className="mt-3 text-2xl md:text-3xl font-sofia-bold text-white text-balance">
+                Chaque grand projet commence par une simple conversation.
+              </h3>
             </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-12 md:mt-16">
-          <Link
-            href="/rendez-vous"
-            className="inline-flex items-center px-8 py-3 bg-[#E67E22] text-white text-lg font-semibold rounded-full hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#E67E22]/50 focus:ring-offset-[#FAF3E0]"
-            aria-label="Discutons de votre projet et prenons rendez-vous"
-          >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+            <Link
+              href="/#contact"
+              className="inline-flex items-center gap-2 rounded-lg bg-white text-[#001F45] px-6 py-3 font-sofia-bold text-sm hover:bg-white/90 transition-smooth self-start md:self-auto"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            Un projet ? Parlons-en !
-          </Link>
-          <p className="mt-4 text-sm text-[#2C3E50]/70">Chaque grand projet commence par une simple conversation.</p>
+              Discutons-en
+              <FaArrowRight className="h-3 w-3" aria-hidden />
+            </Link>
+          </div>
         </div>
-      </div>
-
-      {/* Vague en bas pour transition */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden" style={{ height: '80px' }}>
-        <svg
-          className="absolute bottom-0 w-full h-full"
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          {/* This path should transition to the background of the NEXT section (ProjectCTA which is dark) */}
-          <path d="M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,40 L1440,80 L0,80 Z" fill="#2C3E50" />
-        </svg>
       </div>
     </section>
   )

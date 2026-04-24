@@ -7,14 +7,14 @@
    fallback to Plus Jakarta / Inter / system sans. */
 @font-face {
   font-family: 'Sofia Pro';
-  src: local('Sofia Pro'), local('SofiaPro'), url('/fonts/SofiaPro-Regular.woff2') format('woff2');
+  src: local('Sofia Pro'), local('SofiaPro');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Sofia Pro';
-  src: local('Sofia Pro Bold'), local('SofiaPro-Bold'), url('/fonts/SofiaPro-Bold.woff2') format('woff2');
+  src: local('Sofia Pro Bold'), local('SofiaPro-Bold');
   font-weight: 700;
   font-style: normal;
   font-display: swap;

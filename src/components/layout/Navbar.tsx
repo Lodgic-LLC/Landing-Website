@@ -11,9 +11,11 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigationItems = [
-    { name: 'Services', path: '/#services' },
+    { name: 'Qui sommes-nous ?', path: '/#about' },
+    { name: 'Nos réalisations', path: '/#realisations' },
+    { name: 'Notre offre', path: '/#offre' },
     { name: 'Lodgic Conseils', path: '/blog' },
-    { name: 'À propos', path: '/#about' },
+    { name: 'Une question ?', path: '/#contact' },
   ]
 
   useEffect(() => {

@@ -83,11 +83,11 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/#services"
+                      href="/#offre"
                       className="block text-white/80 hover:text-[#DBFF00] transition-colors text-sm font-sofia text-center sm:text-left"
                       tabIndex={0}
                     >
-                      Services
+                      Notre offre
                     </Link>
                   </li>
                   <li>

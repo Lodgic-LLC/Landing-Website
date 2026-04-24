@@ -152,14 +152,6 @@ export default function FAQ() {
               <p className="text-gray-600 mb-8 font-inter">
                 Parlez-nous de vos objectifs technologiques. Notre équipe d'experts est prête à vous accompagner dans la création de solutions sur-mesure.
               </p>
-              <div className="mb-8">
-                <a
-                  href="mailto:lodgicdev@gmail.com"
-                  className="font-inter text-[#001F45] font-medium underline underline-offset-4 hover:text-[#001F45]/70 transition-colors duration-200"
-                >
-                  lodgicdev@gmail.com
-                </a>
-              </div>
             </div>
 
             {/* Section droite - Formulaire */}
@@ -243,11 +235,11 @@ export default function FAQ() {
                   <label htmlFor="consent" className="text-sm text-gray-600 leading-relaxed">
                     En soumettant ce formulaire, je donne mon consentement à Lodgic pour traiter mes données
                     personnelles conformément à la{' '}
-                    <a href="/privacy" className=" hover:text-blue-800 underline">
+                    <a href="/politique-confidentialite" className=" hover:text-blue-800 underline">
                       Politique de Confidentialité
                     </a>{' '}
                     et à la{' '}
-                    <a href="/cookies" className=" hover:text-blue-800 underline">
+                    <a href="/politique-confidentialite" className=" hover:text-blue-800 underline">
                       Politique des Cookies
                     </a>
                     .

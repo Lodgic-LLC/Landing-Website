@@ -19,7 +19,7 @@ export default function Hero() {
           {/* Left column - content */}
           <div className="lg:col-span-6 xl:col-span-5 pt-10 pb-16 lg:pb-24">
             <h1 className="font-sofia-bold heading text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-6">
-              Agence de dév
+              Agence de développement
             </h1>
 
             <h2 className="font-sofia-bold text-[#0EA5E9] text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
@@ -27,9 +27,8 @@ export default function Hero() {
             </h2>
 
             <p className="lead text-lg sm:text-xl max-w-2xl mb-8">
-              Agence de développement logiciel basée à Toulouse, Lodgic accompagne les porteurs de projets
-              et les entreprises dans la création d'applications web et mobiles sur-mesure — conseil, 
-              ingénierie et suivi opérationnel.
+              Basée à Toulouse, Lodgic conçoit et développe des applications web et mobiles sur mesure
+              pour startups et entreprises : de l'idée au deploiement de l'application.
             </p>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -305,9 +304,9 @@ export default function Hero() {
                   className="absolute top-[82%] left-[72%] bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg border border-gray-100 flex items-center gap-2 pointer-events-none"
                 >
                   <div className="w-2 h-2 rounded-full bg-[#DBFF00] shadow-[0_0_8px_rgba(219,255,0,0.8)]" />
-                  <span className="font-sofia-bold text-xs text-[#001F45] whitespace-nowrap">Notre Agence</span>
+                  <span className="font-sofia-bold text-xs text-[#001F45] whitespace-nowrap">Lodgic</span>
                 </motion.div>
-              </div>
+            </div>
 
               {/* Subtle floating arrow indicating scroll down */}
               <div className="absolute -bottom-16 right-1/4 animate-[bounce_2.5s_infinite] z-0 opacity-40">

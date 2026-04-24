@@ -6,12 +6,10 @@ import Hero from '@/components/pages/home/Hero'
 import { TrackingSection } from '@/components/analytics/AnalyticsProvider'
 import { PageTracker } from '@/components/analytics/PageTracker'
 import { AdvancedTracker } from '@/components/analytics/AdvancedTracker'
-// import TechStack from '@/components/pages/home/TechStack'
 
-const Features = dynamic(() => import('@/components/pages/home/Features'))
-const Process = dynamic(() => import('@/components/pages/home/Process'))
 const About = dynamic(() => import('@/components/pages/home/About'))
-const ProjectCTA = dynamic(() => import('@/components/pages/home/ProjectCTA'))
+const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
+const Process = dynamic(() => import('@/components/pages/home/Process'))
 const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 
 export const metadata: Metadata = {
@@ -103,24 +101,22 @@ export default function Home() {
           <Hero />
         </TrackingSection>
 
-        <TrackingSection sectionName="features" trackOnView={true} trackTimeSpent={true}>
-          <Features />
-        </TrackingSection>
-
-        <TrackingSection sectionName="process" trackOnView={true} trackTimeSpent={true}>
-          <Process />
-        </TrackingSection>
-        
-        <TrackingSection sectionName="project_cta" trackOnView={true} trackTimeSpent={true}>
-          <ProjectCTA />
-        </TrackingSection>
-        
+        {/* 1) Qui sommes-nous */}
         <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
           <About />
         </TrackingSection>
 
-        
+        {/* 2) Nos réalisations */}
+        <TrackingSection sectionName="realisations" trackOnView={true} trackTimeSpent={true}>
+          <SuccessStories />
+        </TrackingSection>
 
+        {/* 3) Découvrir notre offre */}
+        <TrackingSection sectionName="offre" trackOnView={true} trackTimeSpent={true}>
+          <Process />
+        </TrackingSection>
+
+        {/* 4) Une question ? / Contact */}
         <TrackingSection sectionName="faq" trackOnView={true} trackTimeSpent={true}>
           <FAQ />
         </TrackingSection>
