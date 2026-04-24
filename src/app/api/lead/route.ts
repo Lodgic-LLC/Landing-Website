@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-async function createHubspotLead(data: { email: string; message?: string; source?: string }) {
+async function createHubspotLead(data: { email: string; source?: string }) {
   const hubspotToken = process.env.HUBSPOT_ACCESS_TOKEN ?? process.env.HUBSPOT_API_KEY
   if (!hubspotToken) {
     throw new Error('HubSpot token manquant')
@@ -12,10 +12,6 @@ async function createHubspotLead(data: { email: string; message?: string; source
     email: data.email,
     lifecyclestage: 'lead',
     hs_lead_status: 'NEW',
-  }
-
-  if (data.message) {
-    properties.message = data.message
   }
 
   const response = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
@@ -67,7 +63,6 @@ export async function POST(request: Request) {
     }
 
     const email = body.email?.trim().toLowerCase()
-    const message = body.message?.trim() ?? ''
     const consent = Boolean(body.consent)
 
     if (!email) {
@@ -82,7 +77,6 @@ export async function POST(request: Request) {
 
     await createHubspotLead({
       email,
-      message,
       source: body.source ?? 'footer',
     })
 
@@ -90,8 +84,8 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('lead error:', error)
     return NextResponse.json(
-      { error: "Une erreur est survenue, veuillez réessayer." },
-      { status: 500 },
+      { error: "Connexion HubSpot impossible pour le moment. Réessayez dans quelques instants." },
+      { status: 502 },
     )
   }
 }
