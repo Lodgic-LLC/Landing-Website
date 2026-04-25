@@ -1,71 +1,26 @@
 'use client'
 
-export default function ProjectCTA() {
-  const languages = [
-    '.Net',
-    'PHP',
-    'Python',
-    'Ruby',
-    'React Native',
-    'Kotlin',
-    'AWS',
-    'Azure',
-    'Adobe Commerce (Magento)',
-    'Java',
-    'JavaScript',
-    'TypeScript',
-    'React',
-    'Vue.js',
-    'Angular',
-    'Node.js',
-    'Flutter',
-    'Swift',
-    'C#',
-    'Go',
-    'Rust',
-    'Xamarin',
-    'Ionic',
-  ]
+const stack = ['React', 'Next.js', 'React Native', 'Node.js', 'Flutter', 'AWS', 'TypeScript']
 
+export default function ProjectCTA() {
   return (
-    <div className="bg-white overflow-hidden">
-      <div className="w-full">
-        <div className="relative bg-gradient-to-r from-[#001432] via-[#001F45] to-[#001432] py-5 overflow-hidden border-y border-white/5">
-          <div className="flex animate-scroll mask-fade-x">
-            {languages.map((language, index) => (
-              <div key={`first-${index}`} className="flex-shrink-0 flex items-center px-6">
-                <span className="text-white/90 font-inter font-medium whitespace-nowrap text-sm tracking-wide">
-                  {language}
-                </span>
-                <span className="inline-block w-1 h-1 rounded-full bg-[#DBFF00]/60 ml-6" />
-              </div>
-            ))}
-            {languages.map((language, index) => (
-              <div key={`second-${index}`} className="flex-shrink-0 flex items-center px-6">
-                <span className="text-white/90 font-inter font-medium whitespace-nowrap text-sm tracking-wide">
-                  {language}
-                </span>
-                <span className="inline-block w-1 h-1 rounded-full bg-[#DBFF00]/60 ml-6" />
-              </div>
-            ))}
-          </div>
+    <section className="bg-white border-y border-[var(--color-border)] py-6">
+      <div className="container-editorial">
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
+          <span className="text-[13px] font-medium uppercase tracking-wider text-[var(--color-muted-faint)]">
+            Stack
+          </span>
+          <span className="h-3 w-px bg-[var(--color-border-soft)]" aria-hidden />
+          {stack.map((tech) => (
+            <span
+              key={tech}
+              className="inline-flex items-center px-3 py-1.5 rounded-full bg-[var(--color-page-warm)] border border-[var(--color-border)] text-[13px] font-medium text-[var(--color-muted)]"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-scroll {
-          animation: scroll 40s linear infinite;
-        }
-      `}</style>
-    </div>
+    </section>
   )
 }

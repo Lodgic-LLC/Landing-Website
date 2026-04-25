@@ -11,8 +11,9 @@ import { AdvancedTracker } from '@/components/analytics/AdvancedTracker'
 const Features = dynamic(() => import('@/components/pages/home/Features'))
 const Process = dynamic(() => import('@/components/pages/home/Process'))
 const About = dynamic(() => import('@/components/pages/home/About'))
-const ProjectCTA = dynamic(() => import('@/components/pages/home/ProjectCTA'))
+const CTABanner = dynamic(() => import('@/components/pages/home/CTABanner'))
 const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
+const Contact = dynamic(() => import('@/components/pages/home/Contact'))
 
 export const metadata: Metadata = {
   title: 'Développeur Web et Mobile Toulouse - Lodgic',
@@ -103,26 +104,28 @@ export default function Home() {
           <Hero />
         </TrackingSection>
 
-        <TrackingSection sectionName="features" trackOnView={true} trackTimeSpent={true}>
+        <TrackingSection sectionName="services" trackOnView={true} trackTimeSpent={true}>
           <Features />
         </TrackingSection>
 
-        <TrackingSection sectionName="process" trackOnView={true} trackTimeSpent={true}>
+        <TrackingSection sectionName="projets" trackOnView={true} trackTimeSpent={true}>
           <Process />
         </TrackingSection>
-        
-        <TrackingSection sectionName="project_cta" trackOnView={true} trackTimeSpent={true}>
-          <ProjectCTA />
-        </TrackingSection>
-        
+
         <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
           <About />
         </TrackingSection>
 
-        
-
         <TrackingSection sectionName="faq" trackOnView={true} trackTimeSpent={true}>
           <FAQ />
+        </TrackingSection>
+
+        <TrackingSection sectionName="cta_banner" trackOnView={true} trackTimeSpent={true}>
+          <CTABanner />
+        </TrackingSection>
+
+        <TrackingSection sectionName="contact" trackOnView={true} trackTimeSpent={true}>
+          <Contact />
         </TrackingSection>
       </main>
     </>

@@ -2,24 +2,45 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Sofia Pro (best if self-hosted). The declarations below will use a local install
-   or any file placed at /public/fonts/*. If you don't host the font, the site will
-   fallback to Plus Jakarta / Inter / system sans. */
-@font-face {
-  font-family: 'Sofia Pro';
-  src: local('Sofia Pro'), local('SofiaPro'), url('/fonts/SofiaPro-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Sofia Pro';
-  src: local('Sofia Pro Bold'), local('SofiaPro-Bold'), url('/fonts/SofiaPro-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+/* =========================================================
+   Design tokens — Lodgic (indigo)
+   ========================================================= */
+@theme {
+  /* Bleu marine — couleur unique de la marque (boutons, fonds d'accent,
+     badges…). Remplace l'ancien indigo violet. */
+  --color-brand:       #0B2545;
+  --color-brand-600:   #061A33;
+  --color-brand-700:   #030F20;
+  --color-brand-50:    #E7ECF4;
+  --color-brand-100:   #C9D4E3;
+
+  /* Alias utilisés pour les textes d'accent — identique à la marque
+     pour rester cohérent. */
+  --color-brand-ink:    #0B2545;
+  --color-brand-ink-50: #E7ECF4;
+
+  --color-surface:     #FFFFFF;
+  --color-page:        #FAFAFB;
+  --color-page-warm:   #F9FAFB;
+
+  --color-border:      #F1F2F4;
+  --color-border-soft: #E5E7EB;
+  --color-border-ring: rgba(79, 70, 229, 0.18);
+
+  --color-ink:         #0B0D15;
+  --color-muted:       #4B5563;
+  --color-muted-soft:  #6B7280;
+  --color-muted-faint: #9CA3AF;
+
+  --color-accent-soft: #FEE2E2;
+  --color-accent-red:  #DC2626;
+
+  --font-sans: var(--font-sans);
 }
 
+/* =========================================================
+   Base
+   ========================================================= */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -28,160 +49,330 @@ html {
 }
 
 body {
-  font-family: 'Sofia Pro', 'Plus Jakarta Sans', 'Inter', sans-serif;
-  color: #0f1b42;
-  background-color: #ffffff;
+  font-family: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  color: var(--color-ink);
+  background-color: var(--color-page);
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 ::selection {
-  background-color: #DBFF00;
-  color: #001F45;
+  background-color: var(--color-brand);
+  color: #ffffff;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3, h4 {
+  color: var(--color-ink);
   letter-spacing: -0.02em;
+  font-weight: 600;
 }
 
-@keyframes float-soft {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+p { color: var(--color-muted); }
+
+a { color: inherit; text-decoration: none; }
+
+/* =========================================================
+   Keyframes
+   ========================================================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate3d(0, 16px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes pulseBrand {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(1.4); }
+}
+
+/* =========================================================
+   Utilities
+   ========================================================= */
 @layer utilities {
-  .shadow-soft {
-    box-shadow: 0 1px 2px rgba(15, 27, 66, 0.04), 0 12px 32px rgba(15, 27, 66, 0.06);
+  /* Typographie fluide */
+  .display-h1 {
+    font-size: clamp(38px, 5.4vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+  .display-h2 {
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+  .display-h3 {
+    font-size: clamp(18px, 1.6vw, 20px);
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+    color: var(--color-ink);
   }
 
-  .shadow-elevated {
-    box-shadow: 0 4px 8px rgba(15, 27, 66, 0.06), 0 24px 48px rgba(15, 27, 66, 0.12);
+  .text-balance { text-wrap: balance; }
+  .text-pretty  { text-wrap: pretty; }
+
+  /* Boutons */
+  .btn-brand,
+  a.btn-brand,
+  button.btn-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 12px 22px;
+    border-radius: 9999px;
+    background-color: var(--color-brand);
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: nowrap;
+    border: 1px solid var(--color-brand);
+    transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+  }
+  .btn-brand:hover,
+  a.btn-brand:hover,
+  button.btn-brand:hover {
+    background-color: var(--color-brand-600);
+    border-color: var(--color-brand-600);
+    color: #ffffff !important;
+    transform: translateY(-1px);
+  }
+  .btn-brand:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+  }
+  .btn-brand svg { color: currentColor !important; }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 12px 22px;
+    border-radius: 9999px;
+    background-color: #ffffff;
+    color: var(--color-ink);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: nowrap;
+    border: 1px solid var(--color-border-soft);
+    transition: border-color 150ms ease, background-color 150ms ease;
+  }
+  .btn-outline:hover {
+    border-color: var(--color-brand);
+    color: var(--color-brand);
+  }
+  .btn-outline:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
   }
 
-  .ring-brand {
-    box-shadow: 0 0 0 1px rgba(0, 31, 69, 0.08);
+  .btn-on-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 12px 22px;
+    border-radius: 9999px;
+    background-color: #ffffff;
+    color: var(--color-brand);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: nowrap;
+    border: 1px solid #ffffff;
+    transition: background-color 150ms ease, transform 150ms ease;
+  }
+  .btn-on-brand:hover {
+    background-color: var(--color-brand-50);
+    transform: translateY(-1px);
   }
 
-  .gradient-surface {
-    background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+  /* Nav CTA (pill plus compact) */
+  .btn-nav,
+  a.btn-nav,
+  button.btn-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 18px;
+    border-radius: 9999px;
+    background-color: var(--color-brand);
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+    transition: background-color 150ms ease;
+  }
+  .btn-nav:hover,
+  a.btn-nav:hover,
+  button.btn-nav:hover {
+    background-color: var(--color-brand-600);
+    color: #ffffff !important;
+  }
+  .btn-nav svg { color: currentColor !important; }
+
+  /* Badge pill info */
+  .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background-color: #ffffff;
+    border: 1px solid var(--color-border-soft);
+    color: var(--color-muted);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
   }
 
-  .text-balance {
-    text-wrap: balance;
+  /* Card */
+  .card-std {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    transition: border-color 150ms ease, transform 200ms ease;
+  }
+  .card-std:hover {
+    border-color: var(--color-border-soft);
+  }
+
+  /* Pulse dot (hero badge) */
+  .pulse-dot {
+    display: inline-flex;
+    position: relative;
+    width: 8px;
+    height: 8px;
+  }
+  .pulse-dot::before,
+  .pulse-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background-color: var(--color-brand);
+  }
+  .pulse-dot::after {
+    animation: pulseBrand 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* Inputs */
+  .input-field {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 12px;
+    font-size: 15px;
+    color: var(--color-ink);
+    line-height: 1.5;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+  .input-field::placeholder { color: var(--color-muted-faint); }
+  .input-field:focus {
+    outline: none;
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 3px var(--color-border-ring);
+  }
+
+  .input-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-ink);
+    margin-bottom: 6px;
+  }
+
+  /* Section wrappers */
+  .container-editorial {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  @media (min-width: 768px) {
+    .container-editorial { padding-inline: 32px; }
+  }
+
+  /* Masque marquee */
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  /* Animations d'entrée */
+  .animate-fade-up           { animation: fadeUp 600ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .animate-fade-up-delay-1   { animation: fadeUp 600ms 80ms  cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .animate-fade-up-delay-2   { animation: fadeUp 600ms 160ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .animate-fade-up-delay-3   { animation: fadeUp 600ms 240ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .animate-fade-up-delay-4   { animation: fadeUp 600ms 320ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .animate-fade-up-delay-5   { animation: fadeUp 600ms 400ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .animate-fade-in           { animation: fadeIn 400ms ease-out both; }
+  .animate-marquee           { animation: marquee 40s linear infinite; }
+
+  /* IntersectionObserver reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 600ms ease, transform 600ms ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .transition-smooth {
-    transition: all 300ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .animate-float-soft {
-    animation: float-soft 6s ease-in-out infinite;
-  }
+  /* Scrollbar hide */
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { scrollbar-width: none; }
 
-  .mask-fade-x {
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  /* Soft shadows (rarely used) */
+  .shadow-soft {
+    box-shadow: 0 1px 2px rgba(11, 13, 21, 0.04), 0 8px 24px rgba(11, 13, 21, 0.05);
   }
-
-  .font-montserrat-bold {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-  }
-
-  .font-inter {
-    font-family: "Inter", sans-serif;
-  }
-
-  .font-sofia {
-    font-family: 'Sofia Pro', 'Plus Jakarta Sans', 'Inter', sans-serif;
-  }
-
-  .font-sofia-bold {
-    font-family: 'Sofia Pro', 'Plus Jakarta Sans', 'Inter', sans-serif;
-    font-weight: 700;
-  }
-
-  .font-inter-light {
-    font-family: "Inter", sans-serif;
-    font-weight: 300;
-  }
-
-  .font-inter-regular {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-  }
-
-  .font-inter-medium {
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-  }
-
-  .font-inter-semibold {
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-  }
-
-  .font-inter-bold {
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-  }
-
-  .font-plus-jakarta {
-    font-family: "Plus Jakarta Sans", sans-serif;
-  }
-
-  .font-plus-jakarta-light {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 300;
-  }
-
-  .font-plus-jakarta-regular {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 400;
-  }
-
-  .font-plus-jakarta-medium {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 500;
-  }
-
-  .font-plus-jakarta-semibold {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 600;
-  }
-
-  .font-plus-jakarta-bold {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 700;
-  }
-
-  .font-plus-jakarta-extrabold {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 800;
-  }
-
-  /* Common design system helpers for the new aesthetic */
-  .heading {
-    color: #001F45;
-    line-height: 1.03;
-  }
-
-  .lead {
-    color: #162869;
-    opacity: 0.9;
-  }
-
-  .btn-primary {
-    background-color: #001F45;
-    color: #ffffff;
-    padding: 0.875rem 1.75rem;
-    border-radius: 0.75rem;
-    font-weight: 600;
+  .shadow-brand {
+    box-shadow: 0 12px 32px rgba(79, 70, 229, 0.18), 0 2px 6px rgba(79, 70, 229, 0.12);
   }
 }
 
+/* =========================================================
+   Alias legacy (ne pas casser les pages blog + composants non refondus)
+   ========================================================= */
+@layer utilities {
+  .font-inter                       { font-family: var(--font-sans), "Inter", sans-serif; }
+  .font-inter-light                 { font-family: var(--font-sans), sans-serif; font-weight: 300; }
+  .font-inter-regular               { font-family: var(--font-sans), sans-serif; font-weight: 400; }
+  .font-inter-medium                { font-family: var(--font-sans), sans-serif; font-weight: 500; }
+  .font-inter-semibold              { font-family: var(--font-sans), sans-serif; font-weight: 600; }
+  .font-inter-bold                  { font-family: var(--font-sans), sans-serif; font-weight: 700; }
+
+  .font-bricolage-grotesque         { font-family: var(--font-sans), sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+  .font-bricolage-grotesque-light   { font-family: var(--font-sans), sans-serif; font-weight: 400; }
+  .font-bricolage-grotesque-regular { font-family: var(--font-sans), sans-serif; font-weight: 500; }
+  .font-bricolage-grotesque-medium  { font-family: var(--font-sans), sans-serif; font-weight: 500; }
+  .font-bricolage-grotesque-semibold{ font-family: var(--font-sans), sans-serif; font-weight: 600; }
+  .font-bricolage-grotesque-bold    { font-family: var(--font-sans), sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+  .font-montserrat-bold             { font-family: var(--font-sans), sans-serif; font-weight: 700; }
+}
+
 @media (min-width: 1400px) {
-  .summary {
-    display: block;
-  }
+  .summary { display: block; }
 }
