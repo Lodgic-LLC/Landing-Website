@@ -3,6 +3,7 @@ import * as runtime from 'react/jsx-runtime'
 import remarkGfm from 'remark-gfm'
 
 import { CallToAction } from '@/components/blog/CallToAction'
+import { Callout } from "@/components/blog/Callout"
 
 interface MarkdownRendererProps {
   content: string
@@ -22,14 +23,14 @@ export default async function MarkdownRenderer({ content, className }: MarkdownR
     ...runtime,
     remarkPlugins: [remarkGfm],
     development: process.env.NODE_ENV !== 'production',
-    useMDXComponents: () => ({ CallToAction }),
+    useMDXComponents: () => ({ CallToAction, Callout }),
   })
 
   const Content = evaluated.default
 
   return (
     <div className={`${proseClasses} ${className ?? ''}`.trim()}>
-      <Content components={{ CallToAction }} />
+      <Content components={{ CallToAction, Callout }} />
     </div>
   )
 }
