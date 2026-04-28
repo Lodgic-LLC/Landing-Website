@@ -42,6 +42,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${SITE_URL}/developpement-application-mobile`,
+      lastModified: STATIC_LAST_MODIFIED,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/developpement-application-mobile/apple-android`,
+      lastModified: STATIC_LAST_MODIFIED,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/developpement-application-mobile/react-native-flutter`,
+      lastModified: STATIC_LAST_MODIFIED,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${SITE_URL}/projets`,
       lastModified: STATIC_LAST_MODIFIED,
       changeFrequency: 'monthly' as const,

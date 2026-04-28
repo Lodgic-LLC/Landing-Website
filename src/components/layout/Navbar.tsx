@@ -14,6 +14,7 @@ export default function Navbar() {
     { name: 'Qui sommes-nous ?', path: '/#about' },
     { name: 'Nos réalisations', path: '/#realisations' },
     { name: 'Notre offre', path: '/#offre' },
+    { name: 'App mobile', path: '/developpement-application-mobile' },
     { name: 'Lodgic Conseils', path: '/blog' },
   ]
 
