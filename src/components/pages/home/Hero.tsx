@@ -94,7 +94,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={1}
@@ -107,7 +107,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.05, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={2}
@@ -120,7 +120,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.1, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={3}
@@ -133,7 +133,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.15000000000000002, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={4}
@@ -146,7 +146,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.2, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={5}
@@ -159,7 +159,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.25, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={6}
@@ -172,7 +172,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.30000000000000004, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={7}
@@ -185,7 +185,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.35000000000000003, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={8}
@@ -198,7 +198,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.4, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={9}
@@ -211,7 +211,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.45, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={10}
@@ -224,7 +224,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.5, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={11}
@@ -237,7 +237,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.55, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={12}
@@ -250,7 +250,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.6000000000000001, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={13}
@@ -263,7 +263,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.65, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={14}
@@ -276,7 +276,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.7000000000000001, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={15}
@@ -289,7 +289,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.75, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                     <motion.path 
                       key={16}
@@ -302,7 +302,7 @@ export default function Hero() {
                         ease: "easeOut",
                         fillOpacity: { delay: 0.8 + 0.8, duration: 0.5 }
                       }}
-                      whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                      whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                     />
                   </g>
 
@@ -311,7 +311,7 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
-                    whileHover={{ fill: "#e5eeff" }} className="cursor-pointer"
+                    whileHover={{ fill: "#e5eeff", transition: { duration: 0.3 } }} className="cursor-pointer"
                   >
                     <circle cx="350" cy="420" r="5" fill="#DBFF00" stroke="#001F45" strokeWidth="2" />
                     <circle cx="350" cy="420" r="5" fill="none" stroke="#DBFF00" strokeWidth="2">

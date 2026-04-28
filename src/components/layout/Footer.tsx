@@ -203,11 +203,6 @@ export default function Footer() {
             >
               Politique de confidentialité
             </Link>
-            <span className="inline-flex items-center gap-1.5">
-              Fait à Toulouse
-              <span aria-hidden>·</span>
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#DBFF00]" aria-hidden />
-            </span>
           </div>
         </div>
       </div>
