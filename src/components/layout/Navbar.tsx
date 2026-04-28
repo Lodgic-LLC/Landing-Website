@@ -11,9 +11,6 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigationItems = [
-    { name: 'Qui sommes-nous ?', path: '/#about' },
-    { name: 'Nos réalisations', path: '/#realisations' },
-    { name: 'Notre offre', path: '/#offre' },
     { name: 'App mobile', path: '/developpement-application-mobile' },
     { name: 'Lodgic Conseils', path: '/blog' },
   ]
@@ -75,16 +72,20 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.path}
-                className={`relative px-4 py-2 rounded-lg text-sm font-inter font-medium transition-smooth ${
+                className={`group relative px-4 py-2 rounded-lg text-sm font-inter font-medium transition-smooth ${
                   isActive(item.path)
-                    ? 'text-[#001F45]'
-                    : 'text-[#001F45]/70 hover:text-[#001F45] hover:bg-[#001F45]/5'
+                    ? 'text-[#001F45] border-b border-[#001F45]/20'
+                    : 'text-[#001F45]/75 border-b border-transparent hover:text-[#001F45] hover:border-[#001F45]/20'
                 }`}
               >
-                {item.name}
-                {isActive(item.path) && (
-                  <span className="absolute left-1/2 -bottom-0.5 -translate-x-1/2 h-1 w-1 rounded-full bg-[#DBFF00]" />
-                )}
+                <span className="relative z-10">{item.name}</span>
+                <span
+                  className={`absolute left-2 bottom-3 h-2 -skew-x-12 rounded-sm bg-[#DBFF00]/55 transition-all duration-300 ${
+                    isActive(item.path)
+                      ? 'w-[calc(100%-1rem)] opacity-100'
+                      : 'w-0 opacity-0 group-hover:w-[calc(100%-1rem)] group-hover:opacity-100'
+                  }`}
+                />
               </Link>
             ))}
             <Link
@@ -144,13 +145,20 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.path}
-              className={`block px-4 py-3 rounded-lg text-base font-inter font-medium transition-smooth ${
+              className={`group relative block px-4 py-3 rounded-lg text-base font-inter font-medium transition-smooth ${
                 isActive(item.path)
-                  ? 'bg-[#001F45]/5 text-[#001F45]'
-                  : 'text-[#001F45]/80 hover:text-[#001F45] hover:bg-[#001F45]/5'
+                  ? 'text-[#001F45] border-b border-[#001F45]/20'
+                  : 'text-[#001F45]/85 border-b border-transparent hover:text-[#001F45] hover:border-[#001F45]/20'
               }`}
             >
-              {item.name}
+              <span className="relative z-10">{item.name}</span>
+              <span
+                className={`absolute left-4 bottom-4 h-2 -skew-x-12 rounded-sm bg-[#DBFF00]/55 transition-all duration-300 ${
+                  isActive(item.path)
+                    ? 'w-[calc(100%-2rem)] opacity-100'
+                    : 'w-0 opacity-0 group-hover:w-[calc(100%-2rem)] group-hover:opacity-100'
+                }`}
+              />
             </Link>
           ))}
 

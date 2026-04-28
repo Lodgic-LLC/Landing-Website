@@ -2,13 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import {
-  FaArrowRight,
-  FaBolt,
-  FaChartLine,
-  FaMobileAlt,
-  FaLayerGroup,
-} from 'react-icons/fa'
+import { FaArrowRight, FaBolt, FaMobileAlt, FaLayerGroup } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
 
 type Highlight = { id: string; text: string }
@@ -395,39 +389,61 @@ export default function SuccessStories() {
           })}
         </div>
 
-        {/* MEGA CTA de bas de section */}
+        {/* Bloc atelier express */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8 }}
-          className="mt-24 md:mt-32 rounded-[2.5rem] bg-[#001F45] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10 p-10 md:p-16 lg:p-20 shadow-2xl"
+          className="mt-24 md:mt-32 rounded-[2.5rem] bg-[#001F45] relative overflow-hidden p-8 md:p-12 lg:p-14 shadow-2xl"
         >
-          <div aria-hidden className="pointer-events-none absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full bg-[#DBFF00]/20 blur-[100px]" />
-          <div aria-hidden className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-[#DBFF00]/10 blur-[80px]" />
-          
-          <div className="relative z-10 max-w-2xl text-center md:text-left">
-            <div className="inline-flex items-center gap-2 text-sm font-inter font-semibold uppercase tracking-wider text-white/50 mb-4 bg-white/5 px-4 py-1.5 rounded-full border border-white/10 backdrop-blur-sm">
-              <FaChartLine className="h-3.5 w-3.5 text-[#DBFF00]" aria-hidden />
-              Prêt à lancer le vôtre ?
+          <div aria-hidden className="pointer-events-none absolute -top-24 right-0 h-[380px] w-[380px] rounded-full bg-[#DBFF00]/15 blur-[95px]" />
+          <div aria-hidden className="pointer-events-none absolute -bottom-16 left-8 h-60 w-60 rounded-full bg-[#0EA5E9]/20 blur-[95px]" />
+
+          <div className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-5">
+              <div className="inline-flex items-center gap-2 text-xs font-inter font-semibold uppercase tracking-wider text-white/65 mb-4 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
+                <FaBolt className="h-3 w-3 text-[#DBFF00]" aria-hidden />
+                Atelier express
+              </div>
+              <h3 className="text-3xl md:text-4xl font-sofia-bold text-white leading-tight">
+                20 minutes pour cadrer votre application, sans jargon.
+              </h3>
+              <p className="mt-4 text-white/75 font-inter max-w-xl">
+                Vous repartez avec une vision claire: quoi lancer en premier, avec quelle techno et dans quel ordre.
+              </p>
             </div>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-sofia-bold text-white text-balance leading-tight">
-              Chaque grande application commence par une simple discussion.
-            </h3>
-          </div>
-          
-          <div className="relative z-10 shrink-0">
-            <Link
-              href="/#contact"
-              className="group flex items-center justify-between gap-6 rounded-[1.25rem] bg-[#DBFF00] px-8 py-5 hover:bg-white transition-colors duration-300 shadow-[0_0_40px_rgba(219,255,0,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
-            >
-              <span className="text-[#001F45] font-sofia-bold text-xl">
-                Contactez-nous
-              </span>
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#001F45]/10 text-[#001F45] transition-transform duration-300 group-hover:bg-[#001F45] group-hover:text-white group-hover:translate-x-2">
-                <FaArrowRight className="h-4 w-4" aria-hidden />
-              </span>
-            </Link>
+
+            <div className="lg:col-span-4">
+              <div className="rounded-2xl border border-white/15 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="space-y-3">
+                  {[
+                    'Objectifs et priorites',
+                    'Choix techno adapte',
+                    'Plan de lancement concret',
+                  ].map((item, index) => (
+                    <div key={item} className="flex items-center gap-3">
+                      <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#DBFF00] text-[#001F45] text-xs font-bold">
+                        {index + 1}
+                      </span>
+                      <span className="text-sm font-inter text-white/90">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-3 flex lg:justify-end">
+              <Link
+                href="/#contact"
+                className="group inline-flex items-center justify-between gap-4 rounded-2xl bg-[#DBFF00] px-6 py-4 hover:bg-white transition-colors duration-300 shadow-[0_0_35px_rgba(219,255,0,0.2)]"
+              >
+                <span className="text-[#001F45] font-sofia-bold text-lg whitespace-nowrap">Parler du projet</span>
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#001F45]/10 text-[#001F45] transition-transform duration-300 group-hover:bg-[#001F45] group-hover:text-white group-hover:translate-x-1">
+                  <FaArrowRight className="h-4 w-4" aria-hidden />
+                </span>
+              </Link>
+            </div>
           </div>
         </motion.div>
       </div>
