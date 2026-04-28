@@ -1,6 +1,9 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Lodgic - Agence web et mobile Toulouse",
+  "short_name": "Lodgic",
+  "description": "Agence de developpement web et mobile a Toulouse.",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +18,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#001F45",
   "background_color": "#ffffff",
   "display": "standalone"
 }

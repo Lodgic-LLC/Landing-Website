@@ -1,11 +1,33 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { projects } from '@/data/projects'
+import StructuredData from '@/components/seo/StructuredData'
+import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Tous les projets - Lodgic',
+  title: 'Projets web et mobile',
   description:
-    'Une sélection de réalisations web et mobile accompagnées de leur contexte, de leurs défis et de leurs résultats concrets.',
+    'Découvrez les projets web, applications mobiles et SaaS sur mesure réalisés par Lodgic pour des entreprises et entrepreneurs.',
+  alternates: {
+    canonical: `${SITE_URL}/projets`,
+  },
+  openGraph: {
+    title: 'Projets web et mobile - Lodgic',
+    description:
+      'Applications mobiles, plateformes SaaS et sites sur mesure : découvrez les réalisations Lodgic.',
+    url: `${SITE_URL}/projets`,
+    siteName: 'Lodgic',
+    images: [
+      {
+        url: `${SITE_URL}/lodgic-banner.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Projets web et mobile Lodgic',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'website',
+  },
 }
 
 const ACCENT_BY_CATEGORY: Record<string, { dot: string; gradient: string; bg: string; text: string }> = {
@@ -30,8 +52,30 @@ const ACCENT_BY_CATEGORY: Record<string, { dot: string; gradient: string; bg: st
 }
 
 export default function ProjetsPage() {
+  const projectsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${SITE_URL}/projets#collection`,
+    url: `${SITE_URL}/projets`,
+    name: 'Projets web et mobile - Lodgic',
+    description: metadata.description,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    about: { '@id': `${SITE_URL}/#organization` },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: projects.map((project, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${SITE_URL}/projets/${project.slug}`,
+        name: project.name,
+      })),
+    },
+  }
+
   return (
-    <main className="min-h-screen bg-white">
+    <>
+      <StructuredData id="projects-structured-data" data={projectsSchema} />
+      <main className="min-h-screen bg-white">
       {/* HERO */}
       <section className="relative pt-28 pb-14 md:pt-36 md:pb-20 bg-gradient-to-br from-[#f6f7fc] via-white to-[#eaf0ff] overflow-hidden">
         <div
@@ -173,6 +217,7 @@ export default function ProjetsPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

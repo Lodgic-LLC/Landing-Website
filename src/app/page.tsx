@@ -6,6 +6,8 @@ import Hero from '@/components/pages/home/Hero'
 import { TrackingSection } from '@/components/analytics/AnalyticsProvider'
 import { PageTracker } from '@/components/analytics/PageTracker'
 import { AdvancedTracker } from '@/components/analytics/AdvancedTracker'
+import StructuredData from '@/components/seo/StructuredData'
+import { SITE_URL } from '@/lib/site'
 
 const About = dynamic(() => import('@/components/pages/home/About'))
 const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
@@ -17,17 +19,17 @@ export const metadata: Metadata = {
   description:
     "Besoin d'un Développeur Web et Mobile à Toulouse ? Lodgic crée des sites web et applications mobiles sur mesure pour startups, entreprises et particuliers.",
   alternates: {
-    canonical: 'https://lodgic-dev.com',
+    canonical: SITE_URL,
   },
   openGraph: {
     title: 'Développeur Web et Mobile Toulouse - Lodgic',
     description:
       "Lodgic, développeur web et mobile à Toulouse, transforme votre idée en site web ou application performante (React.js, Next.js, React Native). Expertise et accompagnement.",
-    url: 'https://lodgic-dev.com',
+    url: SITE_URL,
     siteName: 'Lodgic Dev',
     images: [
       {
-        url: 'https://lodgic-dev.com/lodgic-banner.png',
+        url: `${SITE_URL}/lodgic-banner.png`,
         width: 1200,
         height: 630,
         alt: "Développeur Web et Mobile à Toulouse Lodgic",
@@ -71,13 +73,26 @@ export const metadata: Metadata = {
     title: 'Développeur Web et Mobile Toulouse - Lodgic',
     description:
       "Besoin d'un Développeur Web et Mobile à Toulouse ? Lodgic crée des sites web et applications mobiles sur mesure (React.js, Next.js, React Native).",
-    images: ['https://lodgic-dev.com/lodgic-banner.png'],
+    images: [`${SITE_URL}/lodgic-banner.png`],
   },
 }
 
 export default function Home() {
+  const homeSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}/#webpage`,
+    url: SITE_URL,
+    name: 'Developpeur Web et Mobile Toulouse - Lodgic',
+    description: metadata.description,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    about: { '@id': `${SITE_URL}/#organization` },
+    inLanguage: 'fr-FR',
+  }
+
   return (
     <>
+      <StructuredData id="home-structured-data" data={homeSchema} />
       <PageTracker
         pageName="Home"
         pageCategory="landing_page"

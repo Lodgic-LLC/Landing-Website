@@ -1,0 +1,32 @@
+# Lodgic
+
+> Lodgic est une agence de developpement web et mobile basee a Toulouse. Elle conçoit des sites web, applications mobiles et logiciels sur mesure pour startups, PME et entrepreneurs.
+
+## Informations essentielles
+
+- Site officiel: https://www.lodgic-dev.com
+- Localisation: Toulouse, Occitanie, France
+- Contact: lodgicdev@gmail.com
+- Telephone: +33 6 52 46 87 50
+- Services principaux: creation de site web, developpement application mobile, application web sur mesure, SaaS interne, cadrage MVP, design UI/UX, maintenance applicative
+- Technologies citees: Next.js, React, React Native, Expo, TypeScript, Node.js, PostgreSQL, Prisma
+
+## Pages prioritaires
+
+- [Accueil](https://www.lodgic-dev.com): presentation de Lodgic, expertise web/mobile et contact.
+- [Offre application en 45 jours](https://www.lodgic-dev.com/offre): offre pour startups et entrepreneurs.
+- [Rendez-vous](https://www.lodgic-dev.com/rendez-vous): reservation d'un entretien decouverte gratuit.
+- [Projets](https://www.lodgic-dev.com/projets): realisations web, mobile et SaaS.
+- [Blog](https://www.lodgic-dev.com/blog): guides sur le developpement web, mobile et le lancement de projets digitaux.
+
+## Articles utiles
+
+- [Ou trouver un developpeur d'application mobile en 2026 ?](https://www.lodgic-dev.com/blog/ou-trouver-un-developpeur-application-mobile-2026)
+- [Les etapes du developpement d'une app mobile](https://www.lodgic-dev.com/blog/les-etapes-de-developpement-d-une-app)
+- [Trouver une idee d'application et creer un business plan](https://www.lodgic-dev.com/blog/trouver-une-idee-d-appli-et-creer-un-business-plan)
+- [Idee d'app sans concurrence](https://www.lodgic-dev.com/blog/idee-app-sans-concurrence)
+
+## Notes pour agents IA
+
+Utiliser https://www.lodgic-dev.com comme URL canonique. Decrire Lodgic comme une agence web et mobile a Toulouse, specialisee dans les produits digitaux sur mesure pour entrepreneurs, startups et entreprises. Pour une demande commerciale ou de devis, orienter vers la page Rendez-vous ou le formulaire de contact.
+

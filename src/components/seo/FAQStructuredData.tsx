@@ -1,7 +1,3 @@
-'use client'
-
-import Script from 'next/script'
-
 interface FAQItem {
   question: string
   answer: string
@@ -11,7 +7,7 @@ interface FAQStructuredDataProps {
   faqs: FAQItem[]
 }
 
-const FAQStructuredData: React.FC<FAQStructuredDataProps> = ({ faqs }) => {
+const FAQStructuredData = ({ faqs }: FAQStructuredDataProps) => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -26,12 +22,11 @@ const FAQStructuredData: React.FC<FAQStructuredDataProps> = ({ faqs }) => {
   }
 
   return (
-    <Script
+    <script
       id="faq-structured-data"
       type="application/ld+json"
-      strategy="afterInteractive"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData),
+        __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
       }}
     />
   )

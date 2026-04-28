@@ -2,21 +2,23 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getAllPosts, getPaginatedPosts, getPopularPosts } from '@/lib/blog'
+import StructuredData from '@/components/seo/StructuredData'
+import { SITE_URL } from '@/lib/site'
 
 const POSTS_PER_PAGE = 9
 
 export const metadata: Metadata = {
-  title: 'Lodgic Conseils - Blog développement web et mobile',
+  title: 'Blog développement web et mobile',
   description:
     "Découvrez les articles de Lodgic sur le développement web, mobile, le design, le SEO et les bonnes pratiques pour lancer vos projets digitaux.",
   alternates: {
-    canonical: 'https://lodgic-dev.com/blog',
+    canonical: `${SITE_URL}/blog`,
   },
   openGraph: {
-    title: 'Lodgic Conseils - Blog Lodgic',
+    title: 'Blog développement web et mobile - Lodgic',
     description:
       "Articles, guides et retours d'expérience de l'équipe Lodgic sur le web, le mobile, le design et le SEO.",
-    url: 'https://lodgic-dev.com/blog',
+    url: `${SITE_URL}/blog`,
     siteName: 'Lodgic',
     type: 'website',
     locale: 'fr_FR',
@@ -64,10 +66,29 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
   const popularPosts = getPopularPosts().filter((p) => p.slug !== featuredPost?.slug)
 
   const pageNumbers = Array.from({ length: totalPages }, (_, idx) => idx + 1)
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    '@id': `${SITE_URL}/blog#blog`,
+    url: `${SITE_URL}/blog`,
+    name: 'Blog developpement web et mobile - Lodgic',
+    description: metadata.description,
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    inLanguage: 'fr-FR',
+    blogPost: allPosts.slice(0, 10).map((post) => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      url: `${SITE_URL}/blog/${post.slug}`,
+      datePublished: new Date(post.date).toISOString(),
+      author: { '@type': 'Person', name: post.author },
+    })),
+  }
 
   return (
-    <div className="bg-[#f6f7fc] min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 lg:py-28">
+    <>
+      <StructuredData id="blog-structured-data" data={blogSchema} />
+      <div className="bg-[#f6f7fc] min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 lg:py-28">
         <header className="text-center mb-12 md:mb-16">
           <h1 className="text-4xl md:text-5xl font-sofia-bold text-[#000f45] mb-4">
             Lodgic{' '}
@@ -279,8 +300,9 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
             </div>
           </aside>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

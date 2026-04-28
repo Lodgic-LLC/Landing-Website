@@ -1,7 +1,3 @@
-'use client'
-
-import Script from 'next/script'
-
 interface BreadcrumbItem {
   name: string
   url: string
@@ -11,7 +7,7 @@ interface BreadcrumbStructuredDataProps {
   items: BreadcrumbItem[]
 }
 
-const BreadcrumbStructuredData: React.FC<BreadcrumbStructuredDataProps> = ({ items }) => {
+const BreadcrumbStructuredData = ({ items }: BreadcrumbStructuredDataProps) => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -24,12 +20,11 @@ const BreadcrumbStructuredData: React.FC<BreadcrumbStructuredDataProps> = ({ ite
   }
 
   return (
-    <Script
+    <script
       id="breadcrumb-structured-data"
       type="application/ld+json"
-      strategy="afterInteractive"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData),
+        __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
       }}
     />
   )

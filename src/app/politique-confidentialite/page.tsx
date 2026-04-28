@@ -1,22 +1,23 @@
 import { Metadata } from 'next'
 import { FaChevronRight } from 'react-icons/fa'
+import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Politique de Confidentialité - Lodgic',
   description:
     'Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
   alternates: {
-    canonical: 'https://lodgic-dev.com/politique-confidentialite',
+    canonical: `${SITE_URL}/politique-confidentialite`,
   },
   openGraph: {
     title: 'Politique de Confidentialité - Lodgic',
     description:
       'Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
-    url: 'https://lodgic-dev.com/politique-confidentialite',
+    url: `${SITE_URL}/politique-confidentialite`,
     siteName: 'Lodgic',
     images: [
       {
-        url: 'https://lodgic-dev.com/lodgic-banner.png',
+        url: `${SITE_URL}/lodgic-banner.png`,
         width: 1200,
         height: 630,
         alt: 'Lodgic - Politique de Confidentialité',
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Politique de Confidentialité - Lodgic',
     description: 'Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
-    images: ['https://lodgic-dev.com/lodgic-banner.png'],
+    images: [`${SITE_URL}/lodgic-banner.png`],
   },
 }
 

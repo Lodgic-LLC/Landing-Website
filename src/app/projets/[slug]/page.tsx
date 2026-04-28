@@ -16,6 +16,8 @@ import {
   RhMobileScreen,
   RhOnboardingScreen,
 } from '@/components/pages/projects/ProjectMockups'
+import StructuredData from '@/components/seo/StructuredData'
+import { SITE_URL } from '@/lib/site'
 
 export async function generateStaticParams() {
   return getAllProjectSlugs().map((slug) => ({ slug }))
@@ -34,8 +36,27 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.name} - Lodgic`,
+    title: project.name,
     description: project.description,
+    alternates: {
+      canonical: `${SITE_URL}/projets/${project.slug}`,
+    },
+    openGraph: {
+      title: `${project.name} - Lodgic`,
+      description: project.description,
+      url: `${SITE_URL}/projets/${project.slug}`,
+      siteName: 'Lodgic',
+      images: [
+        {
+          url: `${SITE_URL}/lodgic-banner.png`,
+          width: 1200,
+          height: 630,
+          alt: `${project.name} - projet Lodgic`,
+        },
+      ],
+      locale: 'fr_FR',
+      type: 'article',
+    },
   }
 }
 
@@ -88,9 +109,24 @@ export default async function ProjetDetailPage({ params }: { params: Promise<{ s
 
   const accent = ACCENT_BY_CATEGORY[project.category] ?? ACCENT_BY_CATEGORY['Site web']
   const otherProjects = projects.filter((p) => p.slug !== project.slug)
+  const projectSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    '@id': `${SITE_URL}/projets/${project.slug}#project`,
+    url: `${SITE_URL}/projets/${project.slug}`,
+    name: project.name,
+    description: project.description,
+    creator: { '@id': `${SITE_URL}/#organization` },
+    dateCreated: project.year,
+    keywords: project.stack.join(', '),
+    about: project.category,
+    inLanguage: 'fr-FR',
+  }
 
   return (
-    <main className="min-h-screen bg-white">
+    <>
+      <StructuredData id="project-structured-data" data={projectSchema} />
+      <main className="min-h-screen bg-white">
       {/* HERO */}
       <section
         className={`relative pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br ${accent.gradient} overflow-hidden`}
@@ -506,6 +542,7 @@ export default async function ProjetDetailPage({ params }: { params: Promise<{ s
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

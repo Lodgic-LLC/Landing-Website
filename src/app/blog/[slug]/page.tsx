@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import type { Metadata } from 'next'
-import Script from 'next/script'
 
 import { getAllSlugs, getPostBySlug } from '@/lib/blog'
 import MarkdownRenderer from '@/components/blog/MarkdownRenderer'
 import TableOfContents from '@/components/blog/TableOfContents'
+import StructuredData from '@/components/seo/StructuredData'
+import { SITE_URL } from '@/lib/site'
 
 interface BlogPageProps {
   params: Promise<{ slug: string }>
@@ -78,15 +79,15 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${post.title} | Blog Lodgic`,
+    title: post.title,
     description: post.summary,
     alternates: {
-      canonical: `https://lodgic-dev.com/blog/${slug}`,
+      canonical: `${SITE_URL}/blog/${slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.summary,
-      url: `https://lodgic-dev.com/blog/${slug}`,
+      url: `${SITE_URL}/blog/${slug}`,
       siteName: 'Lodgic',
       images: [
         {
@@ -129,7 +130,7 @@ export default async function PostPage({ params }: BlogPageProps) {
     '@type': 'BlogPosting',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://lodgic-dev.com/blog/${post.slug}`,
+      '@id': `${SITE_URL}/blog/${post.slug}`,
     },
     headline: post.title,
     description: post.summary,
@@ -143,7 +144,7 @@ export default async function PostPage({ params }: BlogPageProps) {
       name: 'Lodgic',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://lodgic-dev.com/lodgic-banner.png',
+        url: `${SITE_URL}/lodgic-banner.png`,
       },
     },
     datePublished: new Date(post.date).toISOString(),
@@ -153,11 +154,7 @@ export default async function PostPage({ params }: BlogPageProps) {
 
   return (
     <>
-      <Script
-        key="structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchemaData) }}
-      />
+      <StructuredData id="article-structured-data" data={articleSchemaData} />
 
       <div className="bg-[#f6f7fc] min-h-screen">
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-24 lg:py-28 relative xl:flex xl:gap-8">

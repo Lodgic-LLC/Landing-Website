@@ -52,7 +52,16 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-[72px] md:h-[80px]">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center group" aria-label="Accueil Lodgic">
+            <Link href="/" className="flex items-center gap-2 group" aria-label="Accueil Lodgic">
+              <Image
+                src="/icon_bgtransparent.png"
+                alt=""
+                width={36}
+                height={36}
+                priority
+                className="h-9 w-9 object-contain"
+                aria-hidden="true"
+              />
               <span className="font-sofia-bold text-[#001F45] text-2xl md:text-3xl group-hover:text-[#0b2b63] transition-colors">
                 Lodgic
               </span>

@@ -7,6 +7,8 @@ import Script from 'next/script'
 import { WebVitals } from './web-vitals'
 import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
 import { Analytics } from '@vercel/analytics/next'
+import StructuredData from '@/components/seo/StructuredData'
+import { CONTACT_EMAIL, CONTACT_PHONE, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,22 +23,69 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 })
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Lodgic',
-  image: 'https://lodgic-dev.com/lodgic-banner.png',
-  url: 'https://lodgic-dev.com',
-  email: 'lodgicdev@gmail.com',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Toulouse',
-    addressRegion: 'Occitanie',
-    addressCountry: 'FR',
-  },
-  sameAs: ['https://github.com/lodgic-llc', 'https://linkedin.com/company/lodgic-dev', 'https://x.com/lodgic-dev'],
+  '@graph': [
+    {
+      '@type': ['Organization', 'LocalBusiness'],
+      '@id': `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      legalName: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/icon_bgblanc.png`,
+      image: `${SITE_URL}/lodgic-banner.png`,
+      description: SITE_DESCRIPTION,
+      email: CONTACT_EMAIL,
+      telephone: CONTACT_PHONE,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Toulouse',
+        addressRegion: 'Occitanie',
+        addressCountry: 'FR',
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Toulouse' },
+        { '@type': 'AdministrativeArea', name: 'Occitanie' },
+        { '@type': 'Country', name: 'France' },
+      ],
+      sameAs: [
+        'https://github.com/lodgic-llc',
+        'https://linkedin.com/company/lodgic-dev',
+        'https://x.com/lodgic-dev',
+      ],
+      makesOffer: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Developpement application mobile sur mesure',
+            serviceType: 'Developpement application mobile',
+            areaServed: 'Toulouse, Occitanie, France',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Creation site web sur mesure',
+            serviceType: 'Developpement web',
+            areaServed: 'Toulouse, Occitanie, France',
+          },
+        },
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      name: 'Lodgic Dev',
+      url: SITE_URL,
+      description: SITE_DESCRIPTION,
+      publisher: { '@id': `${SITE_URL}/#organization` },
+      inLanguage: 'fr-FR',
+    },
+  ],
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lodgic-dev.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Développeur Application Mobile Toulouse - Lodgic',
     template: '%s | Lodgic',
@@ -65,7 +114,7 @@ export const metadata: Metadata = {
   ],
   description:
     "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
-  authors: [{ name: 'Lodgic', url: 'https://lodgic-dev.com' }],
+  authors: [{ name: 'Lodgic', url: SITE_URL }],
   creator: 'Lodgic',
   publisher: 'Lodgic',
   category: 'Développement Mobile',
@@ -81,9 +130,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code', // À remplacer par votre code de vérification
   },
   icons: {
     icon: [
@@ -101,7 +147,7 @@ export const metadata: Metadata = {
     images: '/lodgic-banner.png',
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://lodgic-dev.com',
+    url: SITE_URL,
     siteName: 'Lodgic Dev',
   },
   twitter: {
@@ -125,7 +171,7 @@ export const metadata: Metadata = {
       "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
     'whatsapp:image': '/lodgic-banner.png',
     'og:image': '/lodgic-banner.png',
-    'og:url': 'https://lodgic-dev.com',
+    'og:url': SITE_URL,
     'og:site_name': 'Lodgic Dev',
     'og:locale': 'fr_FR',
     'og:type': 'website',
@@ -143,13 +189,9 @@ export default function RootLayout({
   return (
     <html lang="fr" className="" suppressHydrationWarning>
       <head>
-        {/* Scripts Iubenda pour la gestion des cookies */}
-        <Script
-          id="structured-data"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        <StructuredData id="site-structured-data" data={structuredData} />
+        <link rel="alternate" type="text/markdown" href={`${SITE_URL}/llms.txt`} />
+        <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms-full.txt`} />
 
         {/* Google Analytics et Google Ads */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-LV93937W8D" strategy="afterInteractive" />
@@ -172,7 +214,10 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${inter.variable} ${plusJakartaSans.variable} font-inter bg-gray-50 text-gray-800`}>
+      <body
+        suppressHydrationWarning
+        className={`${inter.variable} ${plusJakartaSans.variable} font-inter bg-gray-50 text-gray-800`}
+      >
         <WebVitals />
         <AnalyticsProvider
           config={{

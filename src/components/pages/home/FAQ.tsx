@@ -80,7 +80,7 @@ export default function FAQ() {
       const formDataObj = new FormData(form)
 
       formDataObj.append('_subject', `Nouveau message (FAQ): ${formData.fullName || 'Visiteur'}`)
-      formDataObj.append('_next', 'https://lodgic-dev.com/merci')
+      formDataObj.append('_next', 'https://www.lodgic-dev.com/merci')
       formDataObj.append('_captcha', 'false')
 
       const response = await fetch('https://formsubmit.co/ajax/c1f6460b84bc25bfcdc7f63d038c2dfd', {
@@ -146,9 +146,9 @@ export default function FAQ() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
             {/* Section gauche - Informations de contact */}
             <div className="lg:w-1/2 lg:pr-8 lg:border-r lg:border-gray-300 flex-shrink-0">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-sofia-bold text-[rgb(0,15,69)] mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofia-bold text-[rgb(0,15,69)] mb-6">
                 Commencer un projet
-              </h1>
+              </h2>
               <p className="text-gray-600 mb-8 font-inter">
                 Parlez-nous de vos objectifs technologiques. Notre équipe d'experts est prête à vous accompagner dans la création de solutions sur-mesure.
               </p>

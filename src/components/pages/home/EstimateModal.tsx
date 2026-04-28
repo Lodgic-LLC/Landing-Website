@@ -178,7 +178,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
       formDataObj.append('name', formData.contact.name)
       formDataObj.append('email', formData.contact.email)
       formDataObj.append('_subject', 'Nouvelle estimation de devis')
-      formDataObj.append('_next', 'https://lodgic-dev.com/merci')
+      formDataObj.append('_next', 'https://www.lodgic-dev.com/merci')
       formDataObj.append('_captcha', 'false')
 
       // Add estimate details

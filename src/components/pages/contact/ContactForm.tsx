@@ -131,7 +131,7 @@ export default function ContactForm() {
 
       // Ajouter les champs cachés pour FormSubmit
       formDataObj.append('_subject', `Nouveau message: ${formData.subject}`)
-      formDataObj.append('_next', 'https://lodgic-dev.com/merci')
+      formDataObj.append('_next', 'https://www.lodgic-dev.com/merci')
       formDataObj.append('_captcha', 'false')
 
       // Envoyer les données à FormSubmit

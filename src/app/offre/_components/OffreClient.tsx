@@ -195,9 +195,10 @@ export default function OffreClient() {
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
         {/* decorative bg */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute inset-x-0 top-0 h-[600px] bg-gradient-to-b from-[#f0f3ff] via-[#f6f7fc] to-white" />
-          <div className="absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full bg-[#DBFF00]/15 blur-[120px]" />
-          <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-[#0EA5E9]/10 blur-[100px]" />
+          <div className="absolute inset-x-0 top-0 h-[600px] bg-gradient-to-b from-[#e2e8f4] via-[#edf0fa] to-white" />
+          <div className="absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full bg-[#DBFF00]/20 blur-[120px]" />
+          <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-[#0EA5E9]/15 blur-[100px]" />
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 h-[400px] w-[800px] rounded-full bg-[#001F45]/[0.03] blur-[80px]" />
         </div>
 
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
