@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="w-full bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 overflow-hidden relative">
+    <section className="w-full min-h-screen bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 pb-48 md:pb-72 overflow-hidden relative flex flex-col justify-center">
       {/* Décor de fond subtil */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl opacity-70" />
@@ -319,9 +319,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Dégradé vers le blanc en bas du hero */}
-      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-white pointer-events-none z-10"></div>
     </section>
   )
 }

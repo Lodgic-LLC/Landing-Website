@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import {
   FaArrowRight,
   FaBolt,
@@ -244,7 +247,7 @@ const POSTERS: Record<Project['poster'], () => React.ReactNode> = {
 
 export default function SuccessStories() {
   return (
-    <section id="realisations" className="relative py-20 md:py-28 bg-[#f6f7fc] overflow-hidden">
+    <section id="realisations" className="relative py-24 md:py-32 bg-[#f6f7fc] overflow-hidden">
       {/* Halos décoratifs discrets */}
       <div
         aria-hidden
@@ -252,120 +255,181 @@ export default function SuccessStories() {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#DBFF00]/25 blur-3xl"
+        className="pointer-events-none absolute -bottom-24 -right-24 h-[600px] w-[600px] rounded-full bg-[#DBFF00]/10 blur-[120px]"
       />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="flex flex-col gap-6 mb-12 md:mb-16">
-          <div className="max-w-2xl">
-            <p className="text-xs font-inter font-semibold uppercase tracking-wider text-[#162869]/70">
-              Nos réalisations
-            </p>
-            <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-sofia-bold text-[#001F45] text-balance">
-              Des projets livrés, <br className="hidden md:inline" />
-              utilisés au quotidien.
-            </h2>
-            <p className="mt-4 text-base md:text-lg text-[#162869]/80 font-inter">
-              Applications mobiles, plateformes SaaS et sites sur-mesure — chaque projet est pensé
-              pour résoudre un vrai besoin métier.
-            </p>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-28">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-block px-3 py-1 mb-6 rounded-full bg-[#001F45]/5 text-[#001F45] font-inter text-xs font-semibold uppercase tracking-wider"
+          >
+            Nos réalisations
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-sofia-bold text-[#001F45] pb-2 mb-6"
+          >
+            Des projets livrés, <br className="hidden md:block" />
+            <span className="relative inline-block mt-2">
+              <span className="relative z-10">utilisés au quotidien</span>
+              <span className="absolute bottom-2 left-0 right-0 h-4 bg-[#DBFF00]/60 transform -skew-x-12 z-0" />
+            </span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg md:text-xl text-[#162869]/70 font-inter max-w-2xl mx-auto leading-relaxed"
+          >
+            SaaS, applications métiers ou plateformes mobiles : notre objectif est simple. 
+            Créer des outils fiables qui transforment la façon dont vos utilisateurs travaillent.
+          </motion.p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
-          {projects.map((project) => {
+        {/* Projets */}
+        <div className="space-y-24 md:space-y-40">
+          {projects.map((project, index) => {
             const Poster = POSTERS[project.poster]
             const Icon = project.icon
+            const isEven = index % 2 === 0
+
             return (
-              <Link
+              <motion.div 
                 key={project.id}
-                href={project.link}
-                aria-label={`Découvrir le projet ${project.title}`}
-                className="group relative flex flex-col rounded-2xl bg-white border border-[#001F45]/10 overflow-hidden transition-smooth hover:border-[#001F45]/20 hover:shadow-elevated hover:-translate-y-1"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} // smooth ease-out CSS
+                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center group`}
               >
-                {/* Poster */}
-                <div
-                  className={`relative h-52 md:h-60 bg-gradient-to-br ${ACCENT_GRADIENTS[project.accent]} overflow-hidden`}
-                >
-                  <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur px-2.5 py-1 text-[11px] font-sofia-bold text-[#001F45] shadow-sm">
-                    <span className={`inline-block h-1.5 w-1.5 rounded-full ${ACCENT_DOT[project.accent]}`} aria-hidden />
-                    {project.category}
-                  </div>
-                  <div className="absolute top-4 right-4 z-10 text-[11px] font-inter font-medium text-[#001F45]/70">
-                    {project.year}
-                  </div>
-                  <Poster />
+                
+                {/* Image / Visuel (Mise en valeur) */}
+                <div className="w-full lg:w-1/2 relative perspective-1000">
+                  <Link 
+                    href={project.link}
+                    className="block relative w-full h-[350px] md:h-[450px] lg:h-[550px] rounded-[2.5rem] overflow-hidden shadow-lg group-hover:shadow-[0_20px_60px_-15px_rgba(0,31,69,0.2)] transition-shadow duration-700 bg-white"
+                  >
+                    <div className={`absolute inset-0 bg-gradient-to-br ${ACCENT_GRADIENTS[project.accent]} opacity-40 group-hover:opacity-100 transition-opacity duration-700`} />
+                    
+                    <motion.div 
+                      className="absolute inset-0 flex items-center justify-center transform-gpu"
+                      whileHover={{ scale: 1.05, y: -10 }}
+                      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                      style={{ perspective: 1000 }}
+                    >
+                      <Poster />
+                    </motion.div>
+
+                    {/* Tag / Badges Flottants */}
+                    <div className="absolute top-6 left-6 md:top-8 md:left-8 z-20 flex gap-2">
+                      <div className="inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur px-4 py-2 text-xs font-sofia-bold text-[#001F45] shadow-sm">
+                        <span className={`inline-block h-2 w-2 rounded-full ${ACCENT_DOT[project.accent]}`} aria-hidden />
+                        {project.category}
+                      </div>
+                    </div>
+                  </Link>
                 </div>
 
-                {/* Body */}
-                <div className="flex flex-1 flex-col p-6 md:p-7">
-                  <div className="flex items-start gap-3">
-                    <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${ACCENT_ICON_BG[project.accent]}`}>
-                      <Icon className="h-4 w-4" aria-hidden />
+                {/* Contenu Textuel */}
+                <div className="w-full lg:w-1/2 flex flex-col justify-center">
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className={`flex h-14 w-14 items-center justify-center rounded-2xl ${ACCENT_ICON_BG[project.accent]} shadow-sm`}>
+                      <Icon className="h-6 w-6" aria-hidden />
                     </span>
-                    <div className="flex-1">
-                      <h3 className="text-xl md:text-2xl font-sofia-bold text-[#001F45] leading-tight group-hover:text-[#0b2b63] transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="mt-2 text-sm md:text-[15px] text-[#162869]/85 font-inter leading-relaxed">
-                        {project.description}
-                      </p>
-                    </div>
+                    <span className="text-sm font-inter font-bold text-[#001F45]/30 bg-[#001F45]/5 px-3 py-1 rounded-lg">
+                      {project.year}
+                    </span>
                   </div>
 
-                  <ul className="mt-5 space-y-2.5">
-                    {project.highlights.map((h) => (
-                      <li key={h.id} className="flex items-start gap-2.5 text-sm text-[#162869]/90 font-inter">
-                        <span className={`mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full ring-1 ${ACCENT_RING[project.accent]} bg-white`}>
-                          <span className={`h-1.5 w-1.5 rounded-full ${ACCENT_DOT[project.accent]}`} />
+                  <h3 className="text-3xl md:text-5xl font-sofia-bold text-[#001F45] mb-6 leading-tight">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-lg text-[#162869]/70 font-inter leading-relaxed mb-10 max-w-xl">
+                    {project.description}
+                  </p>
+
+                  {/* Highlights (Liste à puces) */}
+                  <ul className="space-y-4 mb-12">
+                    {project.highlights.map((h, i) => (
+                      <motion.li 
+                        key={h.id}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 + (i * 0.1), duration: 0.5 }}
+                        className="flex items-center gap-4 text-base font-inter font-medium text-[#162869]/90"
+                      >
+                        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ring-1 ${ACCENT_RING[project.accent]} bg-white shadow-sm`}>
+                          <span className={`h-2.5 w-2.5 rounded-full ${ACCENT_DOT[project.accent]}`} />
                         </span>
-                        <span>{h.text}</span>
-                      </li>
+                        {h.text}
+                      </motion.li>
                     ))}
                   </ul>
 
-                  <div className="mt-6 pt-5 border-t border-[#001F45]/5 flex items-center justify-between">
-                    <span className="inline-flex items-center gap-2 text-sm font-sofia-bold text-[#001F45]">
-                      Découvrir ce projet
-                      <FaArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" aria-hidden />
+                  {/* Bouton de découverte du projet (Animé au hover) */}
+                  <Link 
+                    href={project.link}
+                    className="inline-flex items-center gap-4 group/btn self-start"
+                  >
+                    <span className="text-base font-sofia-bold text-[#001F45] relative">
+                      Découvrir l'étude de cas
+                      <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#DBFF00] origin-left scale-x-0 transition-transform duration-300 group-hover/btn:scale-x-100" />
                     </span>
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f6f7fc] text-[#001F45] group-hover:bg-[#001F45] group-hover:text-white transition-colors">
-                      <FaBolt className="h-3.5 w-3.5" aria-hidden />
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#001F45]/10 bg-white text-[#001F45] shadow-sm transition-all duration-300 group-hover/btn:bg-[#001F45] group-hover/btn:text-white group-hover/btn:border-transparent group-hover/btn:ml-2">
+                       <FaArrowRight className="h-4 w-4" aria-hidden />
                     </span>
-                  </div>
+                  </Link>
                 </div>
-              </Link>
+              </motion.div>
             )
           })}
         </div>
 
-        {/* CTA bas de section */}
-        <div className="mt-14 md:mt-20 rounded-3xl bg-[#001F45] text-white p-8 md:p-12 relative overflow-hidden">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#DBFF00]/20 blur-3xl"
-          />
-          <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div>
-              <div className="inline-flex items-center gap-2 text-xs font-inter font-semibold uppercase tracking-wider text-white/70">
-                <FaChartLine className="h-3 w-3" aria-hidden />
-                Prêt à lancer le vôtre ?
-              </div>
-              <h3 className="mt-3 text-2xl md:text-3xl font-sofia-bold text-white text-balance">
-                Chaque grand projet commence par une simple conversation.
-              </h3>
+        {/* MEGA CTA de bas de section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8 }}
+          className="mt-24 md:mt-32 rounded-[2.5rem] bg-[#001F45] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10 p-10 md:p-16 lg:p-20 shadow-2xl"
+        >
+          <div aria-hidden className="pointer-events-none absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full bg-[#DBFF00]/20 blur-[100px]" />
+          <div aria-hidden className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-[#DBFF00]/10 blur-[80px]" />
+          
+          <div className="relative z-10 max-w-2xl text-center md:text-left">
+            <div className="inline-flex items-center gap-2 text-sm font-inter font-semibold uppercase tracking-wider text-white/50 mb-4 bg-white/5 px-4 py-1.5 rounded-full border border-white/10 backdrop-blur-sm">
+              <FaChartLine className="h-3.5 w-3.5 text-[#DBFF00]" aria-hidden />
+              Prêt à lancer le vôtre ?
             </div>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-sofia-bold text-white text-balance leading-tight">
+              Chaque grande application commence par une simple discussion.
+            </h3>
+          </div>
+          
+          <div className="relative z-10 shrink-0">
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-white text-[#001F45] px-6 py-3 font-sofia-bold text-sm hover:bg-white/90 transition-smooth self-start md:self-auto"
+              className="group flex items-center justify-between gap-6 rounded-[1.25rem] bg-[#DBFF00] px-8 py-5 hover:bg-white transition-colors duration-300 shadow-[0_0_40px_rgba(219,255,0,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
             >
-              Discutons-en
-              <FaArrowRight className="h-3 w-3" aria-hidden />
+              <span className="text-[#001F45] font-sofia-bold text-xl">
+                Contactez-nous
+              </span>
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#001F45]/10 text-[#001F45] transition-transform duration-300 group-hover:bg-[#001F45] group-hover:text-white group-hover:translate-x-2">
+                <FaArrowRight className="h-4 w-4" aria-hidden />
+              </span>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
