@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'Lodgic',
     images: [
       {
-        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        url: 'https://lodgic-dev.com/lodgic-banner.png',
         width: 1200,
         height: 630,
         alt: 'Lodgic - Politique de Confidentialité',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Politique de Confidentialité - Lodgic',
     description: 'Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
-    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
+    images: ['https://lodgic-dev.com/lodgic-banner.png'],
   },
 }
 

@@ -23,7 +23,7 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Lodgic',
-  image: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+  image: 'https://lodgic-dev.com/lodgic-banner.png',
   url: 'https://lodgic-dev.com',
   email: 'lodgicdev@gmail.com',
   address: {
@@ -87,28 +87,18 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
     ],
     shortcut: '/favicon.ico',
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
-    other: [
-      {
-        rel: 'android-chrome-192x192',
-        url: '/android-chrome-192x192.png',
-      },
-      {
-        rel: 'android-chrome-512x512',
-        url: '/android-chrome-512x512.png',
-      },
-    ],
   },
   manifest: '/site.webmanifest',
   openGraph: {
     title: 'Développeur Application Mobile Toulouse - Lodgic',
     description:
       "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
-    images: '/FullLogo_Transparent_NoBuffer.png',
+    images: '/lodgic-banner.png',
     type: 'website',
     locale: 'fr_FR',
     url: 'https://lodgic-dev.com',

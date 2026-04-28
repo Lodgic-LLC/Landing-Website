@@ -143,7 +143,7 @@ export default async function PostPage({ params }: BlogPageProps) {
       name: 'Lodgic',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        url: 'https://lodgic-dev.com/lodgic-banner.png',
       },
     },
     datePublished: new Date(post.date).toISOString(),

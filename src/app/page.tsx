@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: 'Lodgic Dev',
     images: [
       {
-        url: 'https://lodgic-dev.com/FullLogo_Transparent.png',
+        url: 'https://lodgic-dev.com/lodgic-banner.png',
         width: 1200,
         height: 630,
         alt: "Développeur Web et Mobile à Toulouse Lodgic",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     title: 'Développeur Web et Mobile Toulouse - Lodgic',
     description:
       "Besoin d'un Développeur Web et Mobile à Toulouse ? Lodgic crée des sites web et applications mobiles sur mesure (React.js, Next.js, React Native).",
-    images: ['https://lodgic-dev.com/FullLogo_Transparent.png'],
+    images: ['https://lodgic-dev.com/lodgic-banner.png'],
   },
 }
 
