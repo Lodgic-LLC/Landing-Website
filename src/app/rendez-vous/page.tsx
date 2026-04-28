@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import RendezVousContent from '@/components/pages/rendez-vous/RendezVousContent'
+import RendezVousRefonteContent from '@/components/pages/rendez-vous/RendezVousRefonteContent'
 import StructuredData from '@/components/seo/StructuredData'
 import { SITE_URL } from '@/lib/site'
 
@@ -50,7 +50,7 @@ const RendezVousPage = () => {
   return (
     <>
       <StructuredData id="rendez-vous-structured-data" data={rendezVousSchema} />
-      <RendezVousContent />
+      <RendezVousRefonteContent />
     </>
   )
 }

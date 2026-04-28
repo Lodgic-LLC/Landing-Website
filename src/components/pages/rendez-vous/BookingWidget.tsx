@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react'
 
+const CALENDLY_URL = 'https://calendly.com/contact-lodgic/appel-consultation-site-web'
+
 const BookingWidget = () => {
   useEffect(() => {
     // Initialise Calendly widget après le chargement du composant
@@ -25,13 +27,13 @@ const BookingWidget = () => {
     <div className="h-full w-full flex flex-col">
       <div
         className="calendly-inline-widget h-[650px] w-full border border-gray-200 rounded-b-lg"
-        data-url="https://calendly.com/contact-lodgic/45min"
+        data-url={CALENDLY_URL}
         style={{ minWidth: '320px' }}
       />
       <div className="p-4 text-center text-sm text-gray-500">
         Si le widget ne s'affiche pas correctement, vous pouvez{' '}
         <a
-          href="https://calendly.com/contact-lodgic/45min"
+          href={CALENDLY_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:underline"
