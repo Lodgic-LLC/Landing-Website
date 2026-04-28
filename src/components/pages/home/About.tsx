@@ -89,11 +89,11 @@ const About = () => {
               return (
                 <motion.div 
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: 50, scale: 0.95 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="group relative p-8 md:p-10 rounded-2xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] transition-all duration-500 overflow-hidden"
+                  transition={{ delay: index * 0.15, duration: 0.7, type: "spring", stiffness: 50 }}
+                  className="group relative p-8 md:p-10 rounded-2xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] hover:border-white/20 transition-colors overflow-hidden"
                 >
                   {/* Effet Reveal local (Glow interne) */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#DBFF00]/10 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />

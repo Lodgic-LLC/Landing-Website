@@ -11,15 +11,11 @@ interface SubmitStatusType {
 
 interface FormErrorsType {
   email?: string
-  phone?: string
 }
 
 export default function FAQ() {
   const [formData, setFormData] = useState({
-    fullName: '',
     email: '',
-    phone: '',
-    company: '',
     message: '',
     consent: false,
   })
@@ -33,14 +29,8 @@ export default function FAQ() {
     return emailRegex.test(email)
   }
 
-  const validatePhone = (phone: string): boolean => {
-    if (!phone.trim()) return true
-    const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/
-    return phoneRegex.test(phone)
-  }
-
   const calculateFormCompletion = () => {
-    const fields = [formData.fullName, formData.email, formData.phone, formData.company, formData.message]
+    const fields = [formData.email, formData.message]
     const filled = fields.filter((f) => f && f.trim() !== '').length
     return Math.round((filled / fields.length) * 100)
   }
@@ -51,9 +41,6 @@ export default function FAQ() {
     const errors: FormErrorsType = {}
     if (!validateEmail(formData.email)) {
       errors.email = "L'adresse email n'est pas valide"
-    }
-    if (formData.phone && !validatePhone(formData.phone)) {
-      errors.phone = "Le numéro de téléphone n'est pas valide (format français attendu)"
     }
 
     if (Object.keys(errors).length > 0) {
@@ -71,7 +58,7 @@ export default function FAQ() {
 
     analytics.trackFormInteraction('contact_form', 'submit', undefined, {
       form_completion: 100,
-      has_phone: !!formData.phone,
+      has_phone: false,
       message_length: formData.message.length,
       subject: 'Demande via FAQ',
     })
@@ -80,7 +67,7 @@ export default function FAQ() {
       const form = e.target as HTMLFormElement
       const formDataObj = new FormData(form)
 
-      formDataObj.append('_subject', `Nouveau message (FAQ): ${formData.fullName || 'Visiteur'}`)
+      formDataObj.append('_subject', `Nouveau message (FAQ): ${formData.email || 'Visiteur'}`)
       formDataObj.append('_next', 'https://www.lodgic-dev.com/merci')
       formDataObj.append('_captcha', 'false')
 
@@ -100,7 +87,7 @@ export default function FAQ() {
           success: true,
           message: 'Votre message a bien été envoyé. Nous revenons vers vous rapidement.',
         })
-        setFormData({ fullName: '', email: '', phone: '', company: '', message: '', consent: false })
+        setFormData({ email: '', message: '', consent: false })
         return
       }
 
@@ -170,54 +157,19 @@ export default function FAQ() {
               className="lg:w-1/2 lg:pl-8 flex-grow"
             >
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Première ligne - Nom complet et Email */}
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <input
-                      type="text"
-                      name="fullName"
-                      placeholder="Nom complet*"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200 text-gray-700 placeholder-gray-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email*"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200 text-gray-700 placeholder-gray-500"
-                      required
-                    />
-                  </div>
-                </div>
-
-                {/* Deuxième ligne - Téléphone et Entreprise */}
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Téléphone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200 text-gray-700 placeholder-gray-500"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      name="company"
-                      placeholder="Entreprise"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300  focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200 text-gray-700 placeholder-gray-500"
-                    />
-                  </div>
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email*"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200 text-gray-700 placeholder-gray-500"
+                    required
+                  />
+                  {formErrors.email && (
+                    <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>
+                  )}
                 </div>
 
                 {/* Zone de texte */}

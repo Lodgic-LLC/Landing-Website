@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import FooterLeadForm from './FooterLeadForm'
 import { motion } from 'framer-motion'
 
 export default function Footer() {
@@ -62,33 +61,13 @@ export default function Footer() {
         </motion.div>
 
         {/* --- MAIN --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_0.9fr_0.9fr] gap-10 lg:gap-16 pb-14 md:pb-20">
-          {/* Col 1 : Lead form */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 pb-14 md:pb-20">
+          {/* Col 1 : Contact */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:pr-6 lg:border-r lg:border-white/10"
-          >
-            <p className="text-xs font-inter font-semibold uppercase tracking-wider text-white/50">
-              Contact rapide
-            </p>
-            <h3 className="mt-2 text-2xl md:text-3xl font-sofia-bold text-white">
-              Une question ?
-            </h3>
-            <p className="mt-2 text-sm text-white/70 font-inter">
-              Envoyez-nous un mot rapide — nous revenons vers vous sous 24 h.
-            </p>
-            <FooterLeadForm />
-          </motion.div>
-
-          {/* Col 2 : Contact */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.3 }}
           >
             <p className="text-xs font-inter font-semibold uppercase tracking-wider text-white/50">
               Nous contacter
