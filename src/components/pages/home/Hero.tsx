@@ -11,27 +11,52 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl opacity-70" />
         <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-[#eaf2ff] via-[#d4e6ff] to-transparent blur-3xl opacity-70" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(219,255,0,0.08),transparent_60%)]" />
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(219,255,0,0.08),transparent_60%)]" 
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8">
           {/* Left column - content */}
           <div className="lg:col-span-6 xl:col-span-5 pt-10 pb-16 lg:pb-24">
-            <h1 className="font-sofia-bold heading text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-6">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+              className="font-sofia-bold heading text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-6"
+            >
               Agence de développement
-            </h1>
+            </motion.h1>
 
-            <h2 className="font-sofia-bold text-[#0EA5E9] text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="font-sofia-bold text-[#0EA5E9] text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+            >
               à Toulouse
-            </h2>
+            </motion.h2>
 
-            <p className="lead text-lg sm:text-xl max-w-2xl mb-8">
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="lead text-lg sm:text-xl max-w-2xl mb-8"
+            >
               Basée à Toulouse, Lodgic conçoit et développe des applications web et mobiles sur mesure
               pour startups et entreprises : de l'idée au deploiement de l'application.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
+            >
               <Link href="/#contact" className="btn-primary inline-flex items-center gap-3">
                 Nous contacter
               </Link>
@@ -41,7 +66,7 @@ export default function Hero() {
               >
                 Nos expertises
               </Link>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right column - Toulouse SVG Map */}

@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import FooterLeadForm from './FooterLeadForm'
+import { motion } from 'framer-motion'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -39,7 +42,13 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* --- TOP BANNER --- */}
-        <div className="pt-14 md:pt-20 pb-8 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="pt-14 md:pt-20 pb-8 text-center"
+        >
           <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.2em] text-[#DBFF00]">
             Contactez-nous
           </p>
@@ -50,12 +59,18 @@ export default function Footer() {
             Un besoin, une question, un cadrage ? Laissez-nous un mot — nous revenons vers vous
             sous 24 heures.
           </p>
-        </div>
+        </motion.div>
 
         {/* --- MAIN --- */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_0.9fr_0.9fr] gap-10 lg:gap-16 pb-14 md:pb-20">
           {/* Col 1 : Lead form */}
-          <div className="lg:pr-6 lg:border-r lg:border-white/10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:pr-6 lg:border-r lg:border-white/10"
+          >
             <p className="text-xs font-inter font-semibold uppercase tracking-wider text-white/50">
               Contact rapide
             </p>
@@ -66,10 +81,15 @@ export default function Footer() {
               Envoyez-nous un mot rapide — nous revenons vers vous sous 24 h.
             </p>
             <FooterLeadForm />
-          </div>
+          </motion.div>
 
           {/* Col 2 : Contact */}
-          <div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <p className="text-xs font-inter font-semibold uppercase tracking-wider text-white/50">
               Nous contacter
             </p>
@@ -117,10 +137,15 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Col 3 : Navigation */}
-          <div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <p className="text-xs font-inter font-semibold uppercase tracking-wider text-white/50">
               Navigation
             </p>
@@ -143,7 +168,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
 
         {/* --- DIVIDER --- */}
