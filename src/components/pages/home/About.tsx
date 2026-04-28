@@ -45,11 +45,41 @@ const About = () => {
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[#DBFF00]/5 rounded-full blur-[120px] -z-10" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#001F45]/80 rounded-full blur-[120px] -z-10" />
 
-      <div className="max-w-7xl mx-auto px-6" ref={scrollRef}>
+      {/* Grille Interactive de fond */}
+      {/* 1. Lignes de la grille (comme dans le Footer) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,1) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+          maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
+        }}
+      />
+      {/* 2. Cellules interactives au survol */}
+      <div 
+        className="absolute inset-0 z-0 flex flex-wrap overflow-hidden" 
+        style={{ 
+          maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 100%)', 
+          WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 100%)' 
+        }}
+        aria-hidden="true"
+      >
+        {Array.from({ length: 600 }).map((_, i) => (
+          <div 
+            key={i} 
+            className="w-16 h-16 pointer-events-auto hover:bg-[#DBFF00]/15 transition-colors duration-500 ease-out"
+          />
+        ))}
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10 pointer-events-none" ref={scrollRef}>
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
           {/* Colonne de gauche - Sticky "Manifesto" */}
-          <div className="lg:w-5/12 flex flex-col relative z-20">
+          <div className="lg:w-5/12 flex flex-col relative z-20 pointer-events-auto">
             <motion.div 
               style={{ y }} 
               className="lg:sticky lg:top-32"
@@ -83,7 +113,7 @@ const About = () => {
           </div>
 
           {/* Colonne de droite - Scrolling Cards minimalistes */}
-          <div className="lg:w-7/12 flex flex-col gap-8 relative z-20">
+          <div className="lg:w-7/12 flex flex-col gap-8 relative z-20 pointer-events-auto">
             {services.map((service, index) => {
               const Icon = service.icon
               return (
