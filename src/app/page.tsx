@@ -116,19 +116,19 @@ export default function Home() {
           <Hero />
         </TrackingSection>
 
-        {/* 1) Qui sommes-nous */}
+        {/* 1) Découvrir notre offre */}
+        <TrackingSection sectionName="offre" trackOnView={true} trackTimeSpent={true}>
+          <Process />
+        </TrackingSection>
+
+        {/* 2) Qui sommes-nous */}
         <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
           <About />
         </TrackingSection>
 
-        {/* 2) Nos réalisations */}
+        {/* 3) Nos réalisations */}
         <TrackingSection sectionName="realisations" trackOnView={true} trackTimeSpent={true}>
           <SuccessStories />
-        </TrackingSection>
-
-        {/* 3) Découvrir notre offre */}
-        <TrackingSection sectionName="offre" trackOnView={true} trackTimeSpent={true}>
-          <Process />
         </TrackingSection>
 
         {/* 4) Une question ? / Contact */}

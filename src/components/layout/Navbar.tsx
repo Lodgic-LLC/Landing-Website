@@ -11,7 +11,7 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigationItems = [
-    { name: 'App mobile', path: '/developpement-application-mobile' },
+    { name: 'Mon appli en 45j', path: '/offre' },
     { name: 'Lodgic Conseils', path: '/blog' },
   ]
 
