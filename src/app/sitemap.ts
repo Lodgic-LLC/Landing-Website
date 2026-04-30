@@ -60,6 +60,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${SITE_URL}/developpement-application-mobile-toulouse`,
+      lastModified: STATIC_LAST_MODIFIED,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/creation-application-mobile-sur-mesure`,
+      lastModified: STATIC_LAST_MODIFIED,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/developpeur-react-native-toulouse`,
+      lastModified: STATIC_LAST_MODIFIED,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/developpement-application-ios-android`,
+      lastModified: STATIC_LAST_MODIFIED,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/agence-web-mobile-toulouse`,
+      lastModified: STATIC_LAST_MODIFIED,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
       url: `${SITE_URL}/projets`,
       lastModified: STATIC_LAST_MODIFIED,
       changeFrequency: 'monthly' as const,
