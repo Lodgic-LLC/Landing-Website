@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/Navbar";
 import Script from "next/script";
 import { WebVitals } from "./web-vitals";
 import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import MotionProvider from "@/components/layout/MotionProvider";
 import { Analytics } from "@vercel/analytics/next";
 import StructuredData from "@/components/seo/StructuredData";
 import {
@@ -249,9 +250,11 @@ export default function RootLayout({
           }}
         >
           <div className="relative w-full">
-            <Navbar />
-            {children}
-            <Footer />
+            <MotionProvider>
+              <Navbar />
+              {children}
+              <Footer />
+            </MotionProvider>
           </div>
         </AnalyticsProvider>
         <Analytics />
