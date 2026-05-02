@@ -65,7 +65,7 @@ export default function Hero() {
                 Nous contacter
               </Link>
               <Link
-                href="/#services"
+                href="/#about"
                 className="inline-flex items-center text-[#001F45] font-sofia-bold border border-[#001F45]/10 rounded-md px-5 py-3 hover:border-[#001F45]/30 hover:bg-[#001F45]/5 transition-smooth"
               >
                 Nos expertises
@@ -77,11 +77,8 @@ export default function Hero() {
           <div className="hidden lg:flex lg:col-span-6 xl:col-span-7 justify-center items-center relative h-full min-h-[500px] w-full">
             <div className="relative w-full max-w-lg aspect-square">
               {/* Blur decorators to give a tech vibe */}
-              <div className="absolute top-10 right-10 w-72 h-72 bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-pulse"></div>
-              <div
-                className="absolute bottom-10 left-10 w-72 h-72 bg-[#DBFF00] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-pulse"
-                style={{ animationDelay: "2s" }}
-              ></div>
+              <div className="absolute top-10 right-10 w-72 h-72 bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-[100px] opacity-20"></div>
+              <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#DBFF00] rounded-full mix-blend-multiply filter blur-[100px] opacity-20"></div>
 
               <div className="relative w-full h-full flex items-center justify-center p-4">
                 <svg
@@ -559,27 +556,6 @@ export default function Hero() {
                       stroke="#001F45"
                       strokeWidth="2"
                     />
-                    <circle
-                      cx="350"
-                      cy="420"
-                      r="5"
-                      fill="none"
-                      stroke="#DBFF00"
-                      strokeWidth="2"
-                    >
-                      <animate
-                        attributeName="r"
-                        values="5; 18"
-                        dur="2s"
-                        repeatCount="indefinite"
-                      />
-                      <animate
-                        attributeName="opacity"
-                        values="1; 0"
-                        dur="2s"
-                        repeatCount="indefinite"
-                      />
-                    </circle>
                   </motion.g>
                 </svg>
 

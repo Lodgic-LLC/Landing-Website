@@ -1,20 +1,25 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import type { ReactNode } from 'react'
+import Link from "next/link";
+import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 
-type HeroVisual = 'devices' | 'platforms' | 'react-native' | 'tailored' | 'agency'
+type HeroVisual =
+  | "devices"
+  | "platforms"
+  | "react-native"
+  | "tailored"
+  | "agency";
 
 interface SeoHeroProps {
-  eyebrow: string
-  title: string
-  highlight: string
-  description: ReactNode
-  badges: string[]
-  primaryCta?: { label: string; href: string }
-  secondaryCta?: { label: string; href: string }
-  visual?: HeroVisual
+  eyebrow: string;
+  title: string;
+  highlight: string;
+  description: ReactNode;
+  badges: string[];
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  visual?: HeroVisual;
 }
 
 export default function SeoHero({
@@ -23,9 +28,9 @@ export default function SeoHero({
   highlight,
   description,
   badges,
-  primaryCta = { label: 'Demander un devis', href: '/#contact' },
-  secondaryCta = { label: 'Voir nos réalisations', href: '/#realisations' },
-  visual = 'devices',
+  primaryCta = { label: "Demander un devis", href: "/#contact" },
+  secondaryCta = { label: "Voir nos réalisations", href: "/#realisations" },
+  visual = "devices",
 }: SeoHeroProps) {
   return (
     <section className="w-full min-h-screen bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 pb-32 md:pb-44 overflow-hidden relative flex flex-col justify-center">
@@ -58,7 +63,7 @@ export default function SeoHero({
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
               className="font-sofia-bold heading text-4xl sm:text-5xl md:text-6xl lg:text-[60px] leading-[1.05] mt-6 mb-4 text-[#001F45]"
             >
               {title}
@@ -67,7 +72,7 @@ export default function SeoHero({
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="font-sofia-bold text-[#0EA5E9] text-2xl sm:text-3xl md:text-4xl mb-6 leading-tight"
             >
               {highlight}
@@ -76,7 +81,7 @@ export default function SeoHero({
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="lead text-lg sm:text-xl max-w-2xl mb-8 text-[#1f3556]"
             >
               {description}
@@ -85,7 +90,7 @@ export default function SeoHero({
             <motion.ul
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35, ease: 'easeOut' }}
+              transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
               className="flex flex-wrap gap-2 mb-8"
             >
               {badges.map((badge) => (
@@ -102,10 +107,13 @@ export default function SeoHero({
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
             >
-              <Link href={primaryCta.href} className="btn-primary inline-flex items-center gap-3">
+              <Link
+                href={primaryCta.href}
+                className="btn-primary inline-flex items-center gap-3"
+              >
                 {primaryCta.label}
               </Link>
               <Link
@@ -121,11 +129,8 @@ export default function SeoHero({
           <div className="hidden lg:flex lg:col-span-6 justify-center items-center relative h-full min-h-[520px] w-full">
             <div className="relative w-full max-w-xl aspect-square">
               {/* Glow halos */}
-              <div className="absolute top-10 right-10 w-72 h-72 bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-pulse" />
-              <div
-                className="absolute bottom-10 left-10 w-72 h-72 bg-[#DBFF00] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-pulse"
-                style={{ animationDelay: '2s' }}
-              />
+              <div className="absolute top-10 right-10 w-72 h-72 bg-[#0EA5E9] rounded-full mix-blend-multiply filter blur-[100px] opacity-20" />
+              <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#DBFF00] rounded-full mix-blend-multiply filter blur-[100px] opacity-20" />
 
               <HeroVisual variant={visual} />
             </div>
@@ -133,21 +138,21 @@ export default function SeoHero({
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function HeroVisual({ variant }: { variant: HeroVisual }) {
-  if (variant === 'platforms') return <PlatformsVisual />
-  if (variant === 'react-native') return <ReactNativeVisual />
-  if (variant === 'tailored') return <TailoredVisual />
-  if (variant === 'agency') return <AgencyVisual />
-  return <DevicesVisual />
+  if (variant === "platforms") return <PlatformsVisual />;
+  if (variant === "react-native") return <ReactNativeVisual />;
+  if (variant === "tailored") return <TailoredVisual />;
+  if (variant === "agency") return <AgencyVisual />;
+  return <DevicesVisual />;
 }
 
 /* ----- VISUALS ----- */
 
 const phoneFrame =
-  'rounded-[36px] border-[3px] border-[#001F45] bg-white shadow-[0_30px_80px_-20px_rgba(0,31,69,0.35)] overflow-hidden'
+  "rounded-[36px] border-[3px] border-[#001F45] bg-white shadow-[0_30px_80px_-20px_rgba(0,31,69,0.35)] overflow-hidden";
 
 function DevicesVisual() {
   return (
@@ -156,7 +161,7 @@ function DevicesVisual() {
       <motion.div
         initial={{ opacity: 0, y: 40, rotate: -6 }}
         animate={{ opacity: 1, y: 0, rotate: -6 }}
-        transition={{ duration: 0.9, delay: 0.4, ease: 'easeOut' }}
+        transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
         className="absolute z-30 w-[210px] h-[420px]"
       >
         <div className={`${phoneFrame} h-full p-3`}>
@@ -197,37 +202,47 @@ function DevicesVisual() {
       <motion.div
         initial={{ opacity: 0, x: -40, y: 20 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
         className="absolute z-40 left-[-2%] top-[8%] rounded-2xl bg-white shadow-xl border border-[#001F45]/10 px-4 py-3 flex items-center gap-3"
       >
         <span className="h-9 w-9 rounded-xl bg-[#DBFF00] flex items-center justify-center text-[#001F45] font-sofia-bold">
           +1
         </span>
         <div>
-          <div className="text-xs font-inter text-[#001F45]/60">Notifications</div>
-          <div className="text-sm font-sofia-bold text-[#001F45]">Nouvel utilisateur</div>
+          <div className="text-xs font-inter text-[#001F45]/60">
+            Notifications
+          </div>
+          <div className="text-sm font-sofia-bold text-[#001F45]">
+            Nouvel utilisateur
+          </div>
         </div>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, x: 40, y: 20 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.85, ease: 'easeOut' }}
+        transition={{ duration: 0.8, delay: 0.85, ease: "easeOut" }}
         className="absolute z-40 right-[-4%] top-[18%] rounded-2xl bg-[#001F45] text-white shadow-xl px-4 py-3"
       >
-        <div className="text-[10px] uppercase tracking-wider font-inter text-white/60">Performance</div>
-        <div className="mt-1 text-2xl font-sofia-bold">98<span className="text-[#DBFF00]">/100</span></div>
+        <div className="text-[10px] uppercase tracking-wider font-inter text-white/60">
+          Performance
+        </div>
+        <div className="mt-1 text-2xl font-sofia-bold">
+          98<span className="text-[#DBFF00]">/100</span>
+        </div>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1, ease: 'easeOut' }}
+        transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
         className="absolute z-40 right-[-2%] bottom-[10%] rounded-2xl bg-white shadow-xl border border-[#001F45]/10 px-4 py-3 max-w-[180px]"
       >
         <div className="flex items-center gap-2 mb-2">
           <div className="h-2 w-2 rounded-full bg-emerald-500" />
-          <span className="text-[10px] uppercase tracking-wider font-inter text-[#001F45]/60">Live</span>
+          <span className="text-[10px] uppercase tracking-wider font-inter text-[#001F45]/60">
+            Live
+          </span>
         </div>
         <div className="flex items-end gap-1 h-8">
           {[40, 65, 50, 80, 55, 95, 70].map((h, i) => (
@@ -264,7 +279,7 @@ function DevicesVisual() {
         </div>
       </motion.div>
     </div>
-  )
+  );
 }
 
 function PlatformsVisual() {
@@ -280,7 +295,9 @@ function PlatformsVisual() {
         <div className={`${phoneFrame} h-full p-3 relative`}>
           <div className="absolute top-3 left-1/2 -translate-x-1/2 h-5 w-20 rounded-full bg-[#001F45]" />
           <div className="h-full rounded-[24px] bg-gradient-to-b from-[#eaf0ff] via-white to-white p-3 pt-7">
-            <div className="text-[9px] font-inter font-bold text-[#001F45]/40 uppercase tracking-widest">iOS · Swift</div>
+            <div className="text-[9px] font-inter font-bold text-[#001F45]/40 uppercase tracking-widest">
+              iOS · Swift
+            </div>
             <div className="mt-2 h-3 w-24 rounded bg-[#001F45]" />
             <div className="mt-1.5 h-1.5 w-16 rounded bg-[#001F45]/30" />
             <div className="mt-3 rounded-2xl bg-[#001F45] p-3">
@@ -316,16 +333,23 @@ function PlatformsVisual() {
         <div className={`${phoneFrame} h-full p-3 relative`}>
           <div className="absolute top-3.5 left-1/2 -translate-x-1/2 h-2 w-2 rounded-full bg-[#001F45]" />
           <div className="h-full rounded-[24px] bg-gradient-to-b from-[#dffde8] via-white to-white p-3 pt-6">
-            <div className="text-[9px] font-inter font-bold text-emerald-700/70 uppercase tracking-widest">Android · Kotlin</div>
+            <div className="text-[9px] font-inter font-bold text-emerald-700/70 uppercase tracking-widest">
+              Android · Kotlin
+            </div>
             <div className="mt-2 h-3 w-28 rounded bg-[#001F45]" />
             <div className="mt-1.5 h-1.5 w-20 rounded bg-[#001F45]/30" />
             <div className="mt-3 grid grid-cols-3 gap-1.5">
               {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="aspect-square rounded-xl bg-emerald-500/15 border border-emerald-500/20" />
+                <div
+                  key={i}
+                  className="aspect-square rounded-xl bg-emerald-500/15 border border-emerald-500/20"
+                />
               ))}
             </div>
             <div className="mt-3 rounded-xl bg-[#001F45] p-3 text-white">
-              <div className="text-[8px] uppercase tracking-wider opacity-60">Material You</div>
+              <div className="text-[8px] uppercase tracking-wider opacity-60">
+                Material You
+              </div>
               <div className="mt-1 h-2 w-20 rounded bg-white" />
               <div className="mt-2 flex gap-1">
                 <span className="h-1.5 flex-1 rounded bg-emerald-400" />
@@ -341,15 +365,21 @@ function PlatformsVisual() {
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 1, type: 'spring' }}
+        transition={{ duration: 0.6, delay: 1, type: "spring" }}
         className="absolute z-40 left-1/2 -translate-x-1/2 top-[2%] rounded-full bg-white shadow-xl border border-[#001F45]/10 px-4 py-2 flex items-center gap-2"
       >
         <span className="h-2 w-2 rounded-full bg-[#DBFF00] shadow-[0_0_10px_rgba(219,255,0,0.9)]" />
-        <span className="text-xs font-sofia-bold text-[#001F45]">iOS &amp; Android natifs</span>
+        <span className="text-xs font-sofia-bold text-[#001F45]">
+          iOS &amp; Android natifs
+        </span>
       </motion.div>
 
       {/* Connecting line */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 400" fill="none">
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        viewBox="0 0 400 400"
+        fill="none"
+      >
         <motion.path
           d="M 110 220 Q 200 280 290 220"
           stroke="#0EA5E9"
@@ -361,7 +391,7 @@ function PlatformsVisual() {
         />
       </svg>
     </div>
-  )
+  );
 }
 
 function ReactNativeVisual() {
@@ -381,12 +411,9 @@ function ReactNativeVisual() {
             <ellipse rx="11" ry="4.2" transform="rotate(60)" />
             <ellipse rx="11" ry="4.2" transform="rotate(120)" />
           </g>
-          <motion.g
-            animate={{ rotate: 360 }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-          >
+          <g>
             <circle cx="11" cy="0" r="0.8" fill="#DBFF00" />
-          </motion.g>
+          </g>
         </svg>
       </motion.div>
 
@@ -399,7 +426,9 @@ function ReactNativeVisual() {
       >
         <div className={`${phoneFrame} h-full p-2.5`}>
           <div className="h-full rounded-[22px] bg-gradient-to-b from-[#eaf0ff] to-white p-2.5">
-            <div className="text-[9px] font-mono text-[#001F45]/50">{'<App />'}</div>
+            <div className="text-[9px] font-mono text-[#001F45]/50">
+              {"<App />"}
+            </div>
             <div className="mt-2 rounded-xl bg-[#001F45] p-2.5">
               <div className="h-1.5 w-10 rounded bg-white/30" />
               <div className="mt-1 h-2 w-14 rounded bg-white" />
@@ -426,7 +455,9 @@ function ReactNativeVisual() {
       >
         <div className={`${phoneFrame} h-full p-2.5`}>
           <div className="h-full rounded-[22px] bg-gradient-to-b from-[#dffde8] to-white p-2.5">
-            <div className="text-[9px] font-mono text-emerald-700/60">{'export default'}</div>
+            <div className="text-[9px] font-mono text-emerald-700/60">
+              {"export default"}
+            </div>
             <div className="mt-2 rounded-xl bg-emerald-600 p-2.5">
               <div className="h-1.5 w-10 rounded bg-white/30" />
               <div className="mt-1 h-2 w-14 rounded bg-white" />
@@ -451,10 +482,11 @@ function ReactNativeVisual() {
         transition={{ duration: 0.8, delay: 1 }}
         className="absolute z-40 top-[2%] left-1/2 -translate-x-1/2 rounded-xl bg-[#001F45] text-white px-4 py-2 shadow-xl font-mono text-xs"
       >
-        <span className="text-[#DBFF00]">const</span> app = <span className="text-[#0EA5E9]">React Native</span>
+        <span className="text-[#DBFF00]">const</span> app ={" "}
+        <span className="text-[#0EA5E9]">React Native</span>
       </motion.div>
     </div>
-  )
+  );
 }
 
 function TailoredVisual() {
@@ -473,16 +505,21 @@ function TailoredVisual() {
             className="absolute inset-0 opacity-30"
             style={{
               backgroundImage:
-                'linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px)',
-              backgroundSize: '24px 24px',
+                "linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px)",
+              backgroundSize: "24px 24px",
             }}
           />
           <div className="relative">
-            <div className="text-[10px] font-mono text-[#DBFF00]/70 tracking-wider">PROJET-MOBILE / V1.0</div>
+            <div className="text-[10px] font-mono text-[#DBFF00]/70 tracking-wider">
+              PROJET-MOBILE / V1.0
+            </div>
             <div className="mt-3 h-[2px] w-20 bg-[#DBFF00]" />
             <div className="mt-6 grid grid-cols-3 gap-3">
               {[0, 1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="rounded border border-white/20 bg-white/5 p-2">
+                <div
+                  key={i}
+                  className="rounded border border-white/20 bg-white/5 p-2"
+                >
                   <div className="h-1.5 w-8 rounded bg-white/30" />
                   <div className="mt-2 h-12 rounded bg-white/10" />
                   <div className="mt-1.5 h-1 w-10 rounded bg-white/20" />
@@ -515,7 +552,9 @@ function TailoredVisual() {
           <div className="h-full rounded-[22px] bg-white p-2.5 flex flex-col">
             <div className="mx-auto h-1 w-10 rounded-full bg-[#001F45]/40" />
             <div className="mt-3 rounded-xl bg-gradient-to-br from-[#DBFF00]/40 to-[#0EA5E9]/30 h-32 p-2 flex flex-col justify-between">
-              <div className="text-[9px] font-sofia-bold text-[#001F45]">SUR MESURE</div>
+              <div className="text-[9px] font-sofia-bold text-[#001F45]">
+                SUR MESURE
+              </div>
               <div className="h-2 w-16 rounded bg-[#001F45]" />
             </div>
             <div className="mt-3 space-y-1.5">
@@ -536,11 +575,15 @@ function TailoredVisual() {
         transition={{ duration: 0.8, delay: 1 }}
         className="absolute z-40 top-[8%] left-[4%] rounded-lg bg-white shadow-xl border border-[#001F45]/10 px-3 py-2"
       >
-        <div className="text-[9px] uppercase font-inter text-[#001F45]/50 tracking-wider">Sur mesure</div>
-        <div className="text-sm font-sofia-bold text-[#001F45]">100% personnalisé</div>
+        <div className="text-[9px] uppercase font-inter text-[#001F45]/50 tracking-wider">
+          Sur mesure
+        </div>
+        <div className="text-sm font-sofia-bold text-[#001F45]">
+          100% personnalisé
+        </div>
       </motion.div>
     </div>
-  )
+  );
 }
 
 function AgencyVisual() {
@@ -570,7 +613,10 @@ function AgencyVisual() {
             </div>
             <div className="mt-4 grid grid-cols-3 gap-2">
               {[0, 1, 2].map((i) => (
-                <div key={i} className="rounded-lg border border-[#001F45]/10 p-2.5">
+                <div
+                  key={i}
+                  className="rounded-lg border border-[#001F45]/10 p-2.5"
+                >
                   <div className="h-2 w-12 rounded bg-[#0EA5E9]" />
                   <div className="mt-1.5 h-3 w-10 rounded bg-[#001F45]" />
                   <div className="mt-1 h-1.5 w-14 rounded bg-[#001F45]/20" />
@@ -628,8 +674,12 @@ function AgencyVisual() {
         transition={{ duration: 0.7, delay: 1 }}
         className="absolute z-40 left-[2%] top-[6%] rounded-2xl bg-white shadow-xl border border-[#001F45]/10 px-3 py-2"
       >
-        <div className="text-[10px] uppercase font-inter text-[#001F45]/50 tracking-wider">Web</div>
-        <div className="text-sm font-sofia-bold text-[#001F45]">Next.js + Prisma</div>
+        <div className="text-[10px] uppercase font-inter text-[#001F45]/50 tracking-wider">
+          Web
+        </div>
+        <div className="text-sm font-sofia-bold text-[#001F45]">
+          Next.js + Prisma
+        </div>
       </motion.div>
 
       <motion.div
@@ -638,9 +688,11 @@ function AgencyVisual() {
         transition={{ duration: 0.7, delay: 1.15 }}
         className="absolute z-40 left-[4%] bottom-[10%] rounded-2xl bg-[#001F45] text-white shadow-xl px-3 py-2"
       >
-        <div className="text-[10px] uppercase font-inter text-white/60 tracking-wider">Mobile</div>
+        <div className="text-[10px] uppercase font-inter text-white/60 tracking-wider">
+          Mobile
+        </div>
         <div className="text-sm font-sofia-bold">React Native + Expo</div>
       </motion.div>
     </div>
-  )
+  );
 }

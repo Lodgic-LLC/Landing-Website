@@ -58,23 +58,14 @@ const About = () => {
       />
 
       {/* ── Yellow halo principal (moins opaque) ── */}
-      <motion.div
+      <div
         aria-hidden="true"
-        animate={{ scale: [1, 1.08, 1], opacity: [0.05, 0.09, 0.05] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute top-1/2 left-1/2 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DBFF00] blur-[130px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DBFF00] opacity-[0.07] blur-[130px]"
       />
       {/* Inner halo (plus concentré) */}
-      <motion.div
+      <div
         aria-hidden="true"
-        animate={{ scale: [1, 1.12, 1], opacity: [0.02, 0.05, 0.02] }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-        className="pointer-events-none absolute top-1/2 left-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DBFF00] blur-[70px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DBFF00] opacity-[0.035] blur-[70px]"
       />
 
       {/* ── Grid overlay (inspiré du footer) ── */}

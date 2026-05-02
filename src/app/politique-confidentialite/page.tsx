@@ -1,70 +1,65 @@
-import { Metadata } from 'next'
-import { FaChevronRight } from 'react-icons/fa'
-import { SITE_URL } from '@/lib/site'
+import { Metadata } from "next";
+import { FaChevronRight } from "react-icons/fa";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: 'Politique de Confidentialité - Lodgic',
+  title: "Politique de Confidentialité - Lodgic",
   description:
-    'Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
+    "Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.",
   alternates: {
     canonical: `${SITE_URL}/politique-confidentialite`,
   },
   openGraph: {
-    title: 'Politique de Confidentialité - Lodgic',
+    title: "Politique de Confidentialité - Lodgic",
     description:
-      'Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
+      "Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.",
     url: `${SITE_URL}/politique-confidentialite`,
-    siteName: 'Lodgic',
+    siteName: "Lodgic",
     images: [
       {
         url: `${SITE_URL}/lodgic-banner.png`,
         width: 1200,
         height: 630,
-        alt: 'Lodgic - Politique de Confidentialité',
+        alt: "Lodgic - Politique de Confidentialité",
       },
     ],
-    locale: 'fr_FR',
-    type: 'website',
+    locale: "fr_FR",
+    type: "website",
   },
   keywords: [
-    'politique de confidentialité',
-    'protection des données',
-    'RGPD',
-    'vie privée',
-    'données personnelles',
-    'Lodgic',
-    'confidentialité',
-    'droits des utilisateurs',
-    'cookies',
+    "politique de confidentialité",
+    "protection des données",
+    "RGPD",
+    "vie privée",
+    "données personnelles",
+    "Lodgic",
+    "confidentialité",
+    "droits des utilisateurs",
+    "cookies",
   ],
   twitter: {
-    card: 'summary_large_image',
-    title: 'Politique de Confidentialité - Lodgic',
-    description: 'Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
+    card: "summary_large_image",
+    title: "Politique de Confidentialité - Lodgic",
+    description:
+      "Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.",
     images: [`${SITE_URL}/lodgic-banner.png`],
   },
-}
+};
 
 export default function PolitiqueConfidentialite() {
-  const lastUpdated = new Date().toLocaleDateString('fr-FR', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
+  const lastUpdated = new Date().toLocaleDateString("fr-FR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 
   return (
     <section className="w-full bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 pb-16 md:pb-24 overflow-hidden relative">
       {/* Décor de fond */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl animate-pulse" />
-        <div
-          className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-[#eaf2ff] via-[#d4e6ff] to-transparent blur-3xl animate-pulse"
-          style={{ animationDelay: '1s' }}
-        />
-        <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-r from-[#DBFF00]/20 to-[#001F45]/10 blur-2xl animate-pulse"
-          style={{ animationDelay: '2s' }}
-        />
+        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-[#eaf2ff] via-[#d4e6ff] to-transparent blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-r from-[#DBFF00]/20 to-[#001F45]/10 blur-2xl" />
       </div>
 
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
@@ -89,19 +84,27 @@ export default function PolitiqueConfidentialite() {
             <ul className="space-y-2 mb-4">
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Nom et prénom</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Nom et prénom
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Adresse email</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Adresse email
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Numéro de téléphone</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Numéro de téléphone
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Informations relatives à votre entreprise</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Informations relatives à votre entreprise
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
@@ -110,23 +113,33 @@ export default function PolitiqueConfidentialite() {
                 </span>
               </li>
             </ul>
-            <p className="text-[#374151] leading-relaxed mb-4">Ces données sont collectées lorsque vous :</p>
+            <p className="text-[#374151] leading-relaxed mb-4">
+              Ces données sont collectées lorsque vous :
+            </p>
             <ul className="space-y-2">
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Remplissez un formulaire de contact</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Remplissez un formulaire de contact
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Prenez rendez-vous via notre site</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Prenez rendez-vous via notre site
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Vous inscrivez à notre newsletter</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Vous inscrivez à notre newsletter
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Naviguez sur notre site (via les cookies)</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Naviguez sur notre site (via les cookies)
+                </span>
               </li>
             </ul>
           </section>
@@ -147,21 +160,28 @@ export default function PolitiqueConfidentialite() {
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Gérer vos rendez-vous</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
-                  Vous envoyer des communications marketing (avec votre consentement)
+                  Gérer vos rendez-vous
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Améliorer notre site et nos services</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Vous envoyer des communications marketing (avec votre
+                  consentement)
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Établir des statistiques de visite</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Améliorer notre site et nos services
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
+                <span className="text-[#374151] leading-relaxed">
+                  Établir des statistiques de visite
+                </span>
               </li>
             </ul>
           </section>
@@ -176,21 +196,28 @@ export default function PolitiqueConfidentialite() {
             <ul className="space-y-2">
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Votre consentement</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">L'exécution d'un contrat auquel vous êtes partie</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
-                  Notre intérêt légitime à développer et promouvoir nos activités
+                  Votre consentement
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Le respect de nos obligations légales</span>
+                <span className="text-[#374151] leading-relaxed">
+                  L'exécution d'un contrat auquel vous êtes partie
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
+                <span className="text-[#374151] leading-relaxed">
+                  Notre intérêt légitime à développer et promouvoir nos
+                  activités
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
+                <span className="text-[#374151] leading-relaxed">
+                  Le respect de nos obligations légales
+                </span>
               </li>
             </ul>
           </section>
@@ -200,11 +227,14 @@ export default function PolitiqueConfidentialite() {
               4. Destinataires des données
             </h2>
             <p className="text-[#374151] leading-relaxed mb-4">
-              Vos données personnelles sont destinées à notre équipe interne. Elles peuvent également être partagées
-              avec des sous-traitants (hébergement, CRM, outils marketing) qui agissent selon nos instructions et pour
-              notre compte.
+              Vos données personnelles sont destinées à notre équipe interne.
+              Elles peuvent également être partagées avec des sous-traitants
+              (hébergement, CRM, outils marketing) qui agissent selon nos
+              instructions et pour notre compte.
             </p>
-            <p className="text-[#374151] leading-relaxed">Nous ne vendons ni ne louons vos données à des tiers.</p>
+            <p className="text-[#374151] leading-relaxed">
+              Nous ne vendons ni ne louons vos données à des tiers.
+            </p>
           </section>
 
           <section>
@@ -212,40 +242,56 @@ export default function PolitiqueConfidentialite() {
               5. Durée de conservation
             </h2>
             <p className="text-[#374151] leading-relaxed">
-              Vos données personnelles sont conservées pour la durée nécessaire à la réalisation des finalités pour
-              lesquelles elles ont été collectées, augmentée des délais légaux de prescription.
+              Vos données personnelles sont conservées pour la durée nécessaire
+              à la réalisation des finalités pour lesquelles elles ont été
+              collectées, augmentée des délais légaux de prescription.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">6. Vos droits</h2>
+            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
+              6. Vos droits
+            </h2>
             <p className="text-[#374151] leading-relaxed mb-4">
-              Conformément à la réglementation applicable, vous disposez des droits suivants :
+              Conformément à la réglementation applicable, vous disposez des
+              droits suivants :
             </p>
             <ul className="space-y-2 mb-4">
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Droit d'accès à vos données</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Droit d'accès à vos données
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Droit de rectification</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Droit de rectification
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Droit à l'effacement (droit à l'oubli)</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Droit à l'effacement (droit à l'oubli)
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Droit à la limitation du traitement</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Droit à la limitation du traitement
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Droit à la portabilité</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Droit à la portabilité
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">Droit d'opposition</span>
+                <span className="text-[#374151] leading-relaxed">
+                  Droit d'opposition
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
@@ -256,12 +302,14 @@ export default function PolitiqueConfidentialite() {
               <li className="flex items-start gap-3">
                 <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
-                  Droit d'introduire une réclamation auprès d'une autorité de contrôle
+                  Droit d'introduire une réclamation auprès d'une autorité de
+                  contrôle
                 </span>
               </li>
             </ul>
             <p className="text-[#374151] leading-relaxed">
-              Pour exercer ces droits, vous pouvez nous contacter à l'adresse email :{' '}
+              Pour exercer ces droits, vous pouvez nous contacter à l'adresse
+              email :{" "}
               <a
                 href="mailto:lodgicdev@gmail.com"
                 className="text-[#E67E22] hover:text-[#E67E22]/80 transition-colors duration-300"
@@ -273,10 +321,13 @@ export default function PolitiqueConfidentialite() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">7. Cookies</h2>
+            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
+              7. Cookies
+            </h2>
             <p className="text-[#374151] leading-relaxed">
-              Notre site utilise des cookies pour améliorer votre expérience de navigation. Vous pouvez configurer votre
-              navigateur pour refuser les cookies ou être alerté lorsque des cookies sont envoyés.
+              Notre site utilise des cookies pour améliorer votre expérience de
+              navigation. Vous pouvez configurer votre navigateur pour refuser
+              les cookies ou être alerté lorsque des cookies sont envoyés.
             </p>
           </section>
 
@@ -285,16 +336,19 @@ export default function PolitiqueConfidentialite() {
               8. Modifications
             </h2>
             <p className="text-[#374151] leading-relaxed">
-              Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Les
-              modifications prendront effet dès leur publication sur le site.
+              Nous nous réservons le droit de modifier cette politique de
+              confidentialité à tout moment. Les modifications prendront effet
+              dès leur publication sur le site.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">9. Contact</h2>
+            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
+              9. Contact
+            </h2>
             <p className="text-[#374151] leading-relaxed">
-              Pour toute question relative à cette politique de confidentialité, vous pouvez nous contacter à l'adresse
-              email :{' '}
+              Pour toute question relative à cette politique de confidentialité,
+              vous pouvez nous contacter à l'adresse email :{" "}
               <a
                 href="mailto:lodgicdev@gmail.com"
                 className="text-[#E67E22] hover:text-[#E67E22]/80 transition-colors duration-300"
@@ -307,5 +361,5 @@ export default function PolitiqueConfidentialite() {
         </div>
       </div>
     </section>
-  )
+  );
 }
