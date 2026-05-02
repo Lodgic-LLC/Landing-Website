@@ -7,7 +7,6 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 
 export default function Hero() {
   const isMobile = useIsMobile();
-  const fadeUpInitial = isMobile ? false : { opacity: 0, y: 30 };
   const pathInitial = isMobile
     ? false
     : { pathLength: 0, fillOpacity: 0, fill: "#ffffff" };
@@ -484,17 +483,14 @@ export default function Hero() {
                 </svg>
 
                 {/* Floating mini-label */}
-                <motion.div
-                  initial={isMobile ? false : { opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.8, duration: 0.5 }}
+                <div
                   className="absolute top-[82%] left-[72%] bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg border border-gray-100 flex items-center gap-2 pointer-events-none"
                 >
                   <div className="w-2 h-2 rounded-full bg-[#DBFF00] shadow-[0_0_8px_rgba(219,255,0,0.8)]" />
                   <span className="font-sofia-bold text-xs text-[#001F45] whitespace-nowrap">
                     Lodgic
                   </span>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
