@@ -1,177 +1,206 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [scrollPosition, setScrollPosition] = useState(0)
-  const pathname = usePathname()
+  const [visible, setVisible] = useState(true);
+  const [atTop, setAtTop] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const lastScrollY = useRef(0);
+  const pathname = usePathname();
 
   const navigationItems = [
-    { name: 'Mon appli en 45j', path: '/offre' },
-    { name: 'Lodgic Conseils', path: '/blog' },
-  ]
+    { name: "Mon appli en 45j", path: "/offre" },
+    { name: "Lodgic Conseils", path: "/blog" },
+  ];
 
   useEffect(() => {
-    const handleSimpleScroll = () => {
-      setScrollPosition(window.scrollY || document.documentElement.scrollTop)
-    }
-    handleSimpleScroll()
-    window.addEventListener('scroll', handleSimpleScroll)
-    return () => window.removeEventListener('scroll', handleSimpleScroll)
-  }, [])
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setAtTop(currentY < 12);
+
+      // Ignore tiny fluctuations
+      if (Math.abs(currentY - lastScrollY.current) < 6) return;
+
+      if (currentY > lastScrollY.current && currentY > 80) {
+        // Scrolling down → hide
+        setVisible(false);
+        setIsMenuOpen(false);
+      } else {
+        // Scrolling up → show
+        setVisible(true);
+      }
+
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
-    setIsMenuOpen(false)
-  }, [pathname])
+    setIsMenuOpen(false);
+  }, [pathname]);
 
-  const handleToggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
-  const isActive = (path: string) => {
-    return pathname === path
-  }
-
-  const isScrolled = scrollPosition > 20
+  const isActive = (path: string) => pathname === path;
 
   return (
-    <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-smooth ${
-        isScrolled
-          ? 'bg-white/85 backdrop-blur-md border-b border-gray-100 shadow-soft'
-          : 'bg-transparent border-b border-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[72px] md:h-[80px]">
+    /* Outer container — full width, pointer-events off so it doesn't block page content */
+    <div className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 pointer-events-none">
+      <motion.div
+        animate={{ y: visible ? 0 : -120, opacity: visible ? 1 : 0 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className="pointer-events-auto w-full max-w-3xl"
+      >
+        {/* Dock pill */}
+        <nav
+          aria-label="Navigation principale"
+          className={`flex items-center justify-between gap-3 rounded-full px-4 py-2.5 transition-all duration-300 ${
+            atTop
+              ? "bg-white/60 backdrop-blur border border-white/40 shadow-sm"
+              : "bg-white/90 backdrop-blur-lg border border-[#001F45]/10 shadow-[0_8px_32px_rgba(0,31,69,0.12)]"
+          }`}
+        >
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center gap-2 group" aria-label="Accueil Lodgic">
-              <Image
-                src="/icon_bgtransparent.png"
-                alt=""
-                width={36}
-                height={36}
-                priority
-                className="h-9 w-9 object-contain"
-                aria-hidden="true"
-              />
-              <span className="font-sofia-bold text-[#001F45] text-2xl md:text-3xl group-hover:text-[#0b2b63] transition-colors">
-                Lodgic
-              </span>
-            </Link>
-          </div>
+          <Link
+            href="/"
+            className="flex shrink-0 items-center gap-2 group"
+            aria-label="Accueil Lodgic"
+          >
+            <Image
+              src="/icon_bgtransparent.png"
+              alt=""
+              width={30}
+              height={30}
+              priority
+              className="h-[30px] w-[30px] object-contain"
+              aria-hidden="true"
+            />
+            <span className="font-sofia-bold text-[#001F45] text-xl leading-none group-hover:text-[#0b2b63] transition-colors">
+              Lodgic
+            </span>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:gap-1 lg:gap-2">
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center gap-0.5">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.path}
-                className={`group relative px-4 py-2 rounded-lg text-sm font-inter font-medium transition-smooth ${
+                className={`relative px-3 py-1.5 rounded-full text-sm font-inter font-medium transition-smooth ${
                   isActive(item.path)
-                    ? 'text-[#001F45] border-b border-[#001F45]/20'
-                    : 'text-[#001F45]/75 border-b border-transparent hover:text-[#001F45] hover:border-[#001F45]/20'
+                    ? "bg-[#001F45]/8 text-[#001F45]"
+                    : "text-[#001F45]/65 hover:text-[#001F45] hover:bg-[#001F45]/5"
                 }`}
               >
-                <span className="relative z-10">{item.name}</span>
-                <span
-                  className={`absolute left-2 bottom-3 h-2 -skew-x-12 rounded-sm bg-[#DBFF00]/55 transition-all duration-300 ${
-                    isActive(item.path)
-                      ? 'w-[calc(100%-1rem)] opacity-100'
-                      : 'w-0 opacity-0 group-hover:w-[calc(100%-1rem)] group-hover:opacity-100'
-                  }`}
-                />
+                {item.name}
               </Link>
             ))}
+          </div>
+
+          {/* Right: CTA + mobile toggle */}
+          <div className="flex items-center gap-2">
             <Link
               href="/#contact"
-              className="ml-2 inline-flex items-center justify-center rounded-lg bg-[#001F45] px-5 py-2.5 text-sm font-inter font-semibold text-white shadow-soft hover:bg-[#0b2b63] hover:shadow-elevated transition-smooth"
+              className="hidden md:inline-flex items-center rounded-full bg-[#001F45] px-4 py-2 text-sm font-inter font-semibold text-white hover:bg-[#0b2b63] transition-smooth"
             >
               Une question ?
             </Link>
-          </div>
 
-          {/* Mobile menu button */}
-          <div className="flex md:hidden">
+            {/* Mobile hamburger */}
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#001F45] text-[#001F45] hover:bg-[#001F45]/5"
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+              className="md:hidden flex h-8 w-8 items-center justify-center rounded-full bg-[#001F45]/6 text-[#001F45] hover:bg-[#001F45]/10 transition-smooth"
               aria-expanded={isMenuOpen}
-              onClick={handleToggleMenu}
               aria-label="Menu principal"
             >
-              <span className="sr-only">Ouvrir le menu principal</span>
-              {isMenuOpen ? (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
+              <AnimatePresence mode="wait" initial={false}>
+                {isMenuOpen ? (
+                  <motion.svg
+                    key="close"
+                    initial={{ rotate: -45, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 45, opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </motion.svg>
+                ) : (
+                  <motion.svg
+                    key="open"
+                    initial={{ rotate: 45, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -45, opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </motion.svg>
+                )}
+              </AnimatePresence>
             </button>
           </div>
-        </div>
-      </div>
+        </nav>
 
-      {/* Mobile menu */}
-      <div
-        className={`md:hidden transition-smooth overflow-hidden ${
-          isMenuOpen ? 'max-h-[440px] opacity-100 border-b border-gray-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="px-4 pt-2 pb-5 space-y-1 bg-white/95 backdrop-blur-md">
-          {navigationItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.path}
-              className={`group relative block px-4 py-3 rounded-lg text-base font-inter font-medium transition-smooth ${
-                isActive(item.path)
-                  ? 'text-[#001F45] border-b border-[#001F45]/20'
-                  : 'text-[#001F45]/85 border-b border-transparent hover:text-[#001F45] hover:border-[#001F45]/20'
-              }`}
+        {/* Mobile dropdown menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -6, scale: 0.97 }}
+              animate={{ opacity: 1, y: 6, scale: 1 }}
+              exit={{ opacity: 0, y: -6, scale: 0.97 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="mt-1 overflow-hidden rounded-2xl border border-[#001F45]/10 bg-white/95 backdrop-blur-lg p-2 shadow-[0_8px_32px_rgba(0,31,69,0.12)]"
             >
-              <span className="relative z-10">{item.name}</span>
-              <span
-                className={`absolute left-4 bottom-4 h-2 -skew-x-12 rounded-sm bg-[#DBFF00]/55 transition-all duration-300 ${
-                  isActive(item.path)
-                    ? 'w-[calc(100%-2rem)] opacity-100'
-                    : 'w-0 opacity-0 group-hover:w-[calc(100%-2rem)] group-hover:opacity-100'
-                }`}
-              />
-            </Link>
-          ))}
-
-          <div className="pt-3">
-            <Link
-              href="/#contact"
-              className="flex items-center justify-center w-full px-4 py-3 rounded-lg text-base font-inter font-semibold bg-[#001F45] text-white hover:bg-[#0b2b63] transition-smooth shadow-soft"
-            >
-              Une question ?
-            </Link>
-          </div>
-        </div>
-      </div>
-    </nav>
-  )
+              {navigationItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.path}
+                  className={`block rounded-xl px-4 py-3 text-sm font-inter font-medium transition-smooth ${
+                    isActive(item.path)
+                      ? "bg-[#001F45]/6 text-[#001F45]"
+                      : "text-[#001F45]/70 hover:bg-[#001F45]/5 hover:text-[#001F45]"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="mt-1 border-t border-[#001F45]/6 pt-1">
+                <Link
+                  href="/#contact"
+                  className="block rounded-xl bg-[#001F45] px-4 py-3 text-center text-sm font-inter font-semibold text-white hover:bg-[#0b2b63] transition-smooth"
+                >
+                  Une question ?
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </div>
+  );
 }
