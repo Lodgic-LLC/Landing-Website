@@ -163,7 +163,7 @@ const About = () => {
                   type: "spring",
                   stiffness: 50,
                 }}
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.04] p-8 backdrop-blur-sm transition-all duration-500 hover:border-white/[0.14] hover:bg-white/[0.07] md:p-10"
+                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.04] p-8 transition-all duration-500 hover:border-white/[0.14] hover:bg-white/[0.07] md:p-10"
               >
                 {/* Card inner glow on hover */}
                 <div

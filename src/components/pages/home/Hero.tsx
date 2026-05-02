@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 pb-48 md:pb-72 overflow-hidden relative flex flex-col justify-center">
+    <section className="w-full min-h-screen bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 pb-20 overflow-hidden relative flex flex-col justify-center">
       {/* Décor de fond subtil */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl opacity-70" />
@@ -600,30 +600,18 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      {/* Scroll hint arrow — truly centered on the page */}
-      <div className="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 animate-[bounce_2.5s_infinite] opacity-35 z-10">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+      {/* Discover CTA — centered at bottom of hero */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <a
+          href="#about"
+          className="group flex flex-col items-center gap-2 text-[#001F45]/50 transition-colors duration-300 hover:text-[#001F45]"
+          aria-label="Découvrir Lodgic"
         >
-          <path
-            d="M12 4v14"
-            stroke="#001F45"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M6 12l6 6 6-6"
-            stroke="#001F45"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+          <span className="font-inter text-xs font-semibold uppercase tracking-[0.18em]">
+            Découvrir Lodgic
+          </span>
+          <span className="h-px w-6 bg-current opacity-40 transition-all duration-300 group-hover:w-10 group-hover:opacity-70" />
+        </a>
       </div>
     </section>
   );
