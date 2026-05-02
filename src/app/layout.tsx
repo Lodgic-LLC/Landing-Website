@@ -3,7 +3,7 @@ import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
-import MotionProvider from "@/components/layout/MotionProvider";
+
 import Script from "next/script";
 import { WebVitals } from "./web-vitals";
 import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
@@ -248,13 +248,11 @@ export default function RootLayout({
             exitIntentEnabled: true,
           }}
         >
-          <MotionProvider>
-            <div className="relative w-full">
-              <Navbar />
-              {children}
-              <Footer />
-            </div>
-          </MotionProvider>
+          <div className="relative w-full">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
         </AnalyticsProvider>
         <Analytics />
       </body>

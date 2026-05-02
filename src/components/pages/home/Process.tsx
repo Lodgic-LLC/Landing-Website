@@ -1,46 +1,72 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { FaArrowRight } from 'react-icons/fa'
-import { motion } from 'framer-motion'
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 type Phase = {
-  number: number
-  name: string
-  range: string
-  color: string
-}
+  number: number;
+  name: string;
+  range: string;
+  color: string;
+};
 
 const PHASES: Phase[] = [
-  { number: 1, name: 'Cadrage', range: 'J1 – J5', color: 'bg-blue-500' },
-  { number: 2, name: 'Design UI/UX', range: 'J6 – J14', color: 'bg-violet-500' },
-  { number: 3, name: 'Développement', range: 'J15 – J35', color: 'bg-emerald-500' },
-  { number: 4, name: 'Tests & recette', range: 'J36 – J42', color: 'bg-amber-500' },
-  { number: 5, name: 'Mise en production', range: 'J43 – J45', color: 'bg-lime-500' },
-]
+  { number: 1, name: "Cadrage", range: "J1 – J5", color: "bg-blue-500" },
+  {
+    number: 2,
+    name: "Design UI/UX",
+    range: "J6 – J14",
+    color: "bg-violet-500",
+  },
+  {
+    number: 3,
+    name: "Développement",
+    range: "J15 – J35",
+    color: "bg-emerald-500",
+  },
+  {
+    number: 4,
+    name: "Tests & recette",
+    range: "J36 – J42",
+    color: "bg-amber-500",
+  },
+  {
+    number: 5,
+    name: "Mise en production",
+    range: "J43 – J45",
+    color: "bg-lime-500",
+  },
+];
 
 const METRICS = [
-  { value: '45 j', label: 'Délai garanti' },
-  { value: 'Budget fixe', label: 'Défini avant de commencer le projet' },
-  { value: '6 mois', label: 'Maintenance incluse après livraison' },
-]
+  { value: "45 j", label: "Délai garanti" },
+  { value: "Budget fixe", label: "Défini avant de commencer le projet" },
+  { value: "6 mois", label: "Maintenance incluse après livraison" },
+];
 
 const INCLUDED = [
-  '1 référent dédié pour tout le suivi',
-  'Réunion hebdo de suivi',
-  '6 mois de maintenance compris',
-  'Transfert du code source',
-]
+  "1 référent dédié pour tout le suivi",
+  "Réunion hebdo de suivi",
+  "6 mois de maintenance compris",
+  "Transfert du code source",
+];
 
 export default function Process() {
+  const isMobile = useIsMobile();
+
   return (
-    <section id="offre" className="relative overflow-hidden py-20 md:py-28 bg-white">
+    <section
+      id="offre"
+      className="relative overflow-hidden py-20 md:py-28 bg-white"
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+        <motion.div
+          initial={isMobile ? false : { opacity: 0, y: 30 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+          viewport={isMobile ? undefined : { once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-3xl"
         >
@@ -51,31 +77,36 @@ export default function Process() {
             Votre application en 45 jours, clé en main.
           </h2>
           <p className="mt-4 max-w-2xl text-base md:text-lg text-[#162869]/85 font-inter">
-            De l'idée à l'app en production. Délai garanti et accompagnement complet.
+            De l'idée à l'app en production. Délai garanti et accompagnement
+            complet.
           </p>
         </motion.div>
 
         {/* Metrics */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
+        <motion.div
+          initial={isMobile ? false : { opacity: 0, scale: 0.95 }}
+          whileInView={isMobile ? undefined : { opacity: 1, scale: 1 }}
+          viewport={isMobile ? undefined : { once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="mt-10 grid grid-cols-1 gap-6 border-y border-[#001F45]/10 py-8 sm:grid-cols-3"
         >
           {METRICS.map((metric) => (
             <div key={metric.label} className="flex flex-col">
-              <span className="text-3xl md:text-4xl font-sofia-bold text-[#001F45]">{metric.value}</span>
-              <span className="mt-1 text-sm text-[#162869]/70 font-inter">{metric.label}</span>
+              <span className="text-3xl md:text-4xl font-sofia-bold text-[#001F45]">
+                {metric.value}
+              </span>
+              <span className="mt-1 text-sm text-[#162869]/70 font-inter">
+                {metric.label}
+              </span>
             </div>
           ))}
         </motion.div>
 
         {/* Timeline visual */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+        <motion.div
+          initial={isMobile ? false : { opacity: 0, y: 40 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+          viewport={isMobile ? undefined : { once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="mt-12"
         >
@@ -89,10 +120,16 @@ export default function Process() {
           <div className="mt-5 flex h-3 w-full overflow-hidden rounded-full bg-[#f6f7fc] ring-1 ring-[#001F45]/10">
             {PHASES.map((phase, index) => (
               <motion.span
-                initial={{ scaleX: 0, originX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 1, delay: 0.3 + (index * 0.15), ease: "circOut" }}
+                initial={isMobile ? false : { scaleX: 0, originX: 0 }}
+                whileInView={isMobile ? undefined : { scaleX: 1 }}
+                viewport={
+                  isMobile ? undefined : { once: true, margin: "-50px" }
+                }
+                transition={{
+                  duration: 1,
+                  delay: 0.3 + index * 0.15,
+                  ease: "circOut",
+                }}
                 key={phase.number}
                 className={`${phase.color} h-full`}
                 style={{ flex: index === 2 ? 3 : index === 1 ? 1.5 : 1 }}
@@ -103,18 +140,25 @@ export default function Process() {
 
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-5">
             {PHASES.map((phase, index) => (
-              <motion.div 
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.6 + (index * 0.1) }}
-                key={phase.number} 
+              <motion.div
+                initial={isMobile ? false : { opacity: 0, y: 15 }}
+                whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+                viewport={isMobile ? undefined : { once: true }}
+                transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+                key={phase.number}
                 className="flex items-center gap-2"
               >
-                <span className={`inline-block h-2 w-2 flex-shrink-0 rounded-full ${phase.color}`} aria-hidden />
+                <span
+                  className={`inline-block h-2 w-2 flex-shrink-0 rounded-full ${phase.color}`}
+                  aria-hidden
+                />
                 <div className="flex flex-col">
-                  <span className="text-xs font-semibold text-[#001F45] font-inter">{phase.name}</span>
-                  <span className="text-[11px] text-[#162869]/70 font-inter">{phase.range}</span>
+                  <span className="text-xs font-semibold text-[#001F45] font-inter">
+                    {phase.name}
+                  </span>
+                  <span className="text-[11px] text-[#162869]/70 font-inter">
+                    {phase.range}
+                  </span>
                 </div>
               </motion.div>
             ))}
@@ -123,10 +167,10 @@ export default function Process() {
 
         {/* Included + CTA */}
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-5">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+          <motion.div
+            initial={isMobile ? false : { opacity: 0, x: -30 }}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+            viewport={isMobile ? undefined : { once: true, margin: "-50px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-3 rounded-2xl border border-[#001F45]/10 bg-[#f6f7fc] p-6 md:p-8"
           >
@@ -138,12 +182,12 @@ export default function Process() {
             </h3>
             <ul className="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               {INCLUDED.map((item, index) => (
-                <motion.li 
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.2 + (index * 0.1) }}
-                  key={item} 
+                <motion.li
+                  initial={isMobile ? false : { opacity: 0, x: -10 }}
+                  whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+                  viewport={isMobile ? undefined : { once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                  key={item}
                   className="flex items-start gap-2 text-[15px] text-[#001F45] font-inter"
                 >
                   <svg
@@ -164,10 +208,10 @@ export default function Process() {
             </ul>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+          <motion.div
+            initial={isMobile ? false : { opacity: 0, x: 30 }}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+            viewport={isMobile ? undefined : { once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="lg:col-span-2 relative overflow-hidden rounded-2xl border border-[#001F45]/15 bg-gradient-to-br from-white via-[#f6f7fc] to-white p-6 md:p-8 shadow-soft"
           >
@@ -196,5 +240,5 @@ export default function Process() {
         </div>
       </div>
     </section>
-  )
+  );
 }
