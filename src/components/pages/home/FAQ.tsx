@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { useAnalytics } from '@/hooks/useAnalytics'
-import { motion } from 'framer-motion'
 
 interface SubmitStatusType {
   success: boolean
@@ -133,11 +132,7 @@ export default function FAQ() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
             {/* Section gauche - Informations de contact */}
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+            <div
               className="lg:w-1/2 lg:pr-8 lg:border-r lg:border-gray-300 flex-shrink-0"
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofia-bold text-[rgb(0,15,69)] mb-6">
@@ -146,14 +141,10 @@ export default function FAQ() {
               <p className="text-gray-600 mb-8 font-inter">
                 Parlez-nous de vos objectifs technologiques. Notre équipe d'experts est prête à vous accompagner dans la création de solutions sur-mesure.
               </p>
-            </motion.div>
+            </div>
 
             {/* Section droite - Formulaire */}
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            <div
               className="lg:w-1/2 lg:pl-8 flex-grow"
             >
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -234,7 +225,7 @@ export default function FAQ() {
                   </div>
                 )}
               </form>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

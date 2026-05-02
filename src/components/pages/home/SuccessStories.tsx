@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-
 const projects = [
   {
     num: "01",
@@ -33,11 +31,7 @@ export default function SuccessStories() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           className="mb-14"
         >
           <span className="inline-block rounded-full border border-[#001F45]/10 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#001F45]/60 shadow-sm">
@@ -49,17 +43,13 @@ export default function SuccessStories() {
           >
             Ce que nous avons bâti.
           </h2>
-        </motion.div>
+        </div>
 
         {/* Project list */}
         <div className="flex flex-col divide-y divide-[#001F45]/8">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={project.href}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link
                 href={project.href}
@@ -112,7 +102,7 @@ export default function SuccessStories() {
                   </svg>
                 </span>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

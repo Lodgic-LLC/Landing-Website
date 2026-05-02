@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -41,11 +40,7 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* --- TOP BANNER --- */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+        <div
           className="pt-14 md:pt-20 pb-8 text-center"
         >
           <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.2em] text-[#DBFF00]">
@@ -58,16 +53,12 @@ export default function Footer() {
             Un besoin, une question, un cadrage ? Laissez-nous un mot — nous revenons vers vous
             sous 24 heures.
           </p>
-        </motion.div>
+        </div>
 
         {/* --- MAIN --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 pb-14 md:pb-20">
           {/* Col 1 : Contact */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <div
           >
             <p className="text-xs font-inter font-semibold uppercase tracking-wider text-white/50">
               Nous contacter
@@ -116,14 +107,10 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Col 3 : Navigation */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+          <div
           >
             <p className="text-xs font-inter font-semibold uppercase tracking-wider text-white/50">
               Navigation
@@ -147,7 +134,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         </div>
 
         {/* --- DIVIDER --- */}

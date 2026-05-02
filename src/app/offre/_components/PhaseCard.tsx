@@ -1,7 +1,4 @@
 'use client'
-
-import { motion } from 'framer-motion'
-
 type PhaseCardProps = {
   index: number
   number: number
@@ -22,11 +19,7 @@ export const PhaseCard = ({
   color,
 }: PhaseCardProps) => {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.5, delay: index * 0.08, ease: 'easeOut' }}
+    <article
       className="group relative rounded-2xl border border-[#001F45]/10 bg-white p-6 md:p-7 transition-smooth hover:border-[#001F45]/20 hover:shadow-soft"
     >
       <div className="flex items-start gap-4 md:gap-5">
@@ -56,6 +49,6 @@ export const PhaseCard = ({
           </ul>
         </div>
       </div>
-    </motion.article>
+    </article>
   )
 }

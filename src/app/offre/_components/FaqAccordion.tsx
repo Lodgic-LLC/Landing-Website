@@ -1,6 +1,4 @@
 'use client'
-
-import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 
 export type FaqItem = {
@@ -39,9 +37,7 @@ export const FaqAccordion = ({ items }: FaqAccordionProps) => {
               <span className="text-[15px] md:text-base font-semibold text-[#001F45]">
                 {item.question}
               </span>
-              <motion.span
-                animate={{ rotate: isOpen ? 45 : 0 }}
-                transition={{ duration: 0.2, ease: 'easeOut' }}
+              <span
                 className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#f6f7fc] text-[#001F45]"
                 aria-hidden
               >
@@ -56,25 +52,21 @@ export const FaqAccordion = ({ items }: FaqAccordionProps) => {
                 >
                   <path d="M12 5v14M5 12h14" />
                 </svg>
-              </motion.span>
+              </span>
             </button>
-            <AnimatePresence initial={false}>
+            <div>
               {isOpen && (
-                <motion.div
+                <div
                   key="content"
                   id={contentId}
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.25, ease: 'easeOut' }}
                   className="overflow-hidden"
                 >
                   <p className="px-5 pb-5 text-[15px] leading-relaxed text-[#162869]/85 md:px-6 md:pb-6">
                     {item.answer}
                   </p>
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
+            </div>
           </div>
         )
       })}

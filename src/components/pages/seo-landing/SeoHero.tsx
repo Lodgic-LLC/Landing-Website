@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
 type HeroVisual =
@@ -38,10 +37,7 @@ export default function SeoHero({
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl opacity-70" />
         <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-[#eaf2ff] via-[#d4e6ff] to-transparent blur-3xl opacity-70" />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
+        <div
           className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(219,255,0,0.08),transparent_60%)]"
         />
       </div>
@@ -50,47 +46,32 @@ export default function SeoHero({
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10">
           {/* Left column */}
           <div className="lg:col-span-6 xl:col-span-6 pt-10">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.05 }}
+            <span
               className="inline-flex items-center gap-2 rounded-full border border-[#001F45]/15 bg-white/70 backdrop-blur px-4 py-1.5 text-xs font-inter font-semibold uppercase tracking-wider text-[#001F45]"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-[#DBFF00] shadow-[0_0_10px_rgba(219,255,0,0.9)]" />
               {eyebrow}
-            </motion.span>
+            </span>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            <h1
               className="font-sofia-bold heading text-4xl sm:text-5xl md:text-6xl lg:text-[60px] leading-[1.05] mt-6 mb-4 text-[#001F45]"
             >
               {title}
-            </motion.h1>
+            </h1>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            <h2
               className="font-sofia-bold text-[#0EA5E9] text-2xl sm:text-3xl md:text-4xl mb-6 leading-tight"
             >
               {highlight}
-            </motion.h2>
+            </h2>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            <div
               className="lead text-lg sm:text-xl max-w-2xl mb-8 text-[#1f3556]"
             >
               {description}
-            </motion.div>
+            </div>
 
-            <motion.ul
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
+            <ul
               className="flex flex-wrap gap-2 mb-8"
             >
               {badges.map((badge) => (
@@ -102,12 +83,9 @@ export default function SeoHero({
                   {badge}
                 </li>
               ))}
-            </motion.ul>
+            </ul>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            <div
               className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
             >
               <Link
@@ -122,7 +100,7 @@ export default function SeoHero({
               >
                 {secondaryCta.label}
               </Link>
-            </motion.div>
+            </div>
           </div>
 
           {/* Right column - visual */}
@@ -158,10 +136,7 @@ function DevicesVisual() {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {/* Phone */}
-      <motion.div
-        initial={{ opacity: 0, y: 40, rotate: -6 }}
-        animate={{ opacity: 1, y: 0, rotate: -6 }}
-        transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
+      <div
         className="absolute z-30 w-[210px] h-[420px]"
       >
         <div className={`${phoneFrame} h-full p-3`}>
@@ -196,13 +171,10 @@ function DevicesVisual() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Floating cards */}
-      <motion.div
-        initial={{ opacity: 0, x: -40, y: 20 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+      <div
         className="absolute z-40 left-[-2%] top-[8%] rounded-2xl bg-white shadow-xl border border-[#001F45]/10 px-4 py-3 flex items-center gap-3"
       >
         <span className="h-9 w-9 rounded-xl bg-[#DBFF00] flex items-center justify-center text-[#001F45] font-sofia-bold">
@@ -216,12 +188,9 @@ function DevicesVisual() {
             Nouvel utilisateur
           </div>
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, x: 40, y: 20 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.85, ease: "easeOut" }}
+      <div
         className="absolute z-40 right-[-4%] top-[18%] rounded-2xl bg-[#001F45] text-white shadow-xl px-4 py-3"
       >
         <div className="text-[10px] uppercase tracking-wider font-inter text-white/60">
@@ -230,12 +199,9 @@ function DevicesVisual() {
         <div className="mt-1 text-2xl font-sofia-bold">
           98<span className="text-[#DBFF00]">/100</span>
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
+      <div
         className="absolute z-40 right-[-2%] bottom-[10%] rounded-2xl bg-white shadow-xl border border-[#001F45]/10 px-4 py-3 max-w-[180px]"
       >
         <div className="flex items-center gap-2 mb-2">
@@ -253,13 +219,10 @@ function DevicesVisual() {
             />
           ))}
         </div>
-      </motion.div>
+      </div>
 
       {/* Tablet behind */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.9, delay: 0.2 }}
+      <div
         className="absolute z-10 right-[6%] bottom-[2%] w-[260px] h-[180px] rounded-2xl border-[3px] border-[#001F45] bg-white shadow-xl rotate-[8deg] overflow-hidden p-3"
       >
         <div className="h-full rounded-xl bg-[#f6f7fc] p-2.5">
@@ -277,7 +240,7 @@ function DevicesVisual() {
           <div className="mt-1.5 h-1.5 w-full rounded bg-[#001F45]/10" />
           <div className="mt-1 h-1.5 w-2/3 rounded bg-[#001F45]/10" />
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -286,10 +249,7 @@ function PlatformsVisual() {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {/* iOS phone */}
-      <motion.div
-        initial={{ opacity: 0, x: -30, rotate: -8 }}
-        animate={{ opacity: 1, x: 0, rotate: -8 }}
-        transition={{ duration: 0.9, delay: 0.4 }}
+      <div
         className="absolute z-20 left-[8%] top-[6%] w-[200px] h-[400px]"
       >
         <div className={`${phoneFrame} h-full p-3 relative`}>
@@ -321,13 +281,10 @@ function PlatformsVisual() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Android phone */}
-      <motion.div
-        initial={{ opacity: 0, x: 30, rotate: 8 }}
-        animate={{ opacity: 1, x: 0, rotate: 8 }}
-        transition={{ duration: 0.9, delay: 0.55 }}
+      <div
         className="absolute z-30 right-[6%] top-[10%] w-[200px] h-[400px]"
       >
         <div className={`${phoneFrame} h-full p-3 relative`}>
@@ -359,20 +316,17 @@ function PlatformsVisual() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Floating badge */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 1, type: "spring" }}
+      <div
         className="absolute z-40 left-1/2 -translate-x-1/2 top-[2%] rounded-full bg-white shadow-xl border border-[#001F45]/10 px-4 py-2 flex items-center gap-2"
       >
         <span className="h-2 w-2 rounded-full bg-[#DBFF00] shadow-[0_0_10px_rgba(219,255,0,0.9)]" />
         <span className="text-xs font-sofia-bold text-[#001F45]">
           iOS &amp; Android natifs
         </span>
-      </motion.div>
+      </div>
 
       {/* Connecting line */}
       <svg
@@ -380,14 +334,11 @@ function PlatformsVisual() {
         viewBox="0 0 400 400"
         fill="none"
       >
-        <motion.path
+        <path
           d="M 110 220 Q 200 280 290 220"
           stroke="#0EA5E9"
           strokeWidth="2"
           strokeDasharray="4 4"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 1.2, delay: 1.1 }}
         />
       </svg>
     </div>
@@ -398,10 +349,7 @@ function ReactNativeVisual() {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {/* Center atom logo */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.7 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.9, delay: 0.4 }}
+      <div
         className="absolute z-30"
       >
         <svg width="200" height="200" viewBox="-12 -12 24 24" fill="none">
@@ -415,13 +363,10 @@ function ReactNativeVisual() {
             <circle cx="11" cy="0" r="0.8" fill="#DBFF00" />
           </g>
         </svg>
-      </motion.div>
+      </div>
 
       {/* Phone left */}
-      <motion.div
-        initial={{ opacity: 0, x: -50, rotate: -10 }}
-        animate={{ opacity: 1, x: 0, rotate: -10 }}
-        transition={{ duration: 0.9, delay: 0.6 }}
+      <div
         className="absolute z-20 left-[2%] bottom-[8%] w-[170px] h-[340px]"
       >
         <div className={`${phoneFrame} h-full p-2.5`}>
@@ -444,13 +389,10 @@ function ReactNativeVisual() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Phone right */}
-      <motion.div
-        initial={{ opacity: 0, x: 50, rotate: 10 }}
-        animate={{ opacity: 1, x: 0, rotate: 10 }}
-        transition={{ duration: 0.9, delay: 0.75 }}
+      <div
         className="absolute z-20 right-[2%] bottom-[8%] w-[170px] h-[340px]"
       >
         <div className={`${phoneFrame} h-full p-2.5`}>
@@ -473,18 +415,15 @@ function ReactNativeVisual() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Code snippet badge */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
+      <div
         className="absolute z-40 top-[2%] left-1/2 -translate-x-1/2 rounded-xl bg-[#001F45] text-white px-4 py-2 shadow-xl font-mono text-xs"
       >
         <span className="text-[#DBFF00]">const</span> app ={" "}
         <span className="text-[#0EA5E9]">React Native</span>
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -493,10 +432,7 @@ function TailoredVisual() {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {/* Blueprint sheet */}
-      <motion.div
-        initial={{ opacity: 0, y: 30, rotate: -3 }}
-        animate={{ opacity: 1, y: 0, rotate: -3 }}
-        transition={{ duration: 0.9, delay: 0.4 }}
+      <div
         className="absolute z-10 w-[420px] h-[420px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
       >
         <div className="w-full h-full rounded-2xl bg-[#001F45] p-6 shadow-2xl relative overflow-hidden">
@@ -539,13 +475,10 @@ function TailoredVisual() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Phone overlay */}
-      <motion.div
-        initial={{ opacity: 0, y: 40, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.9, delay: 0.7 }}
+      <div
         className="absolute z-30 right-[8%] bottom-[6%] w-[180px] h-[360px]"
       >
         <div className={`${phoneFrame} h-full p-2.5`}>
@@ -566,13 +499,10 @@ function TailoredVisual() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Floating measurement */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
+      <div
         className="absolute z-40 top-[8%] left-[4%] rounded-lg bg-white shadow-xl border border-[#001F45]/10 px-3 py-2"
       >
         <div className="text-[9px] uppercase font-inter text-[#001F45]/50 tracking-wider">
@@ -581,7 +511,7 @@ function TailoredVisual() {
         <div className="text-sm font-sofia-bold text-[#001F45]">
           100% personnalisé
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -590,10 +520,7 @@ function AgencyVisual() {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {/* Laptop / browser */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.4 }}
+      <div
         className="absolute z-20 left-1/2 -translate-x-1/2 top-[14%] w-[440px]"
       >
         <div className="rounded-2xl border-[3px] border-[#001F45] bg-white shadow-2xl overflow-hidden">
@@ -639,13 +566,10 @@ function AgencyVisual() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Phone overlay */}
-      <motion.div
-        initial={{ opacity: 0, x: 30, y: 20 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.7 }}
+      <div
         className="absolute z-30 right-[2%] bottom-[4%] w-[170px] h-[330px]"
       >
         <div className={`${phoneFrame} h-full p-2.5`}>
@@ -665,13 +589,10 @@ function AgencyVisual() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Stat badges */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 1 }}
+      <div
         className="absolute z-40 left-[2%] top-[6%] rounded-2xl bg-white shadow-xl border border-[#001F45]/10 px-3 py-2"
       >
         <div className="text-[10px] uppercase font-inter text-[#001F45]/50 tracking-wider">
@@ -680,19 +601,16 @@ function AgencyVisual() {
         <div className="text-sm font-sofia-bold text-[#001F45]">
           Next.js + Prisma
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 1.15 }}
+      <div
         className="absolute z-40 left-[4%] bottom-[10%] rounded-2xl bg-[#001F45] text-white shadow-xl px-3 py-2"
       >
         <div className="text-[10px] uppercase font-inter text-white/60 tracking-wider">
           Mobile
         </div>
         <div className="text-sm font-sofia-bold">React Native + Expo</div>
-      </motion.div>
+      </div>
     </div>
   );
 }

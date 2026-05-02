@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import {
   FiTarget,
   FiPenTool,
@@ -88,13 +87,9 @@ export default function Features() {
 
             {/* Active Step Panel */}
             <div className="relative bg-white rounded-2xl p-8 shadow-[0_10px_40px_rgba(0,31,69,0.06)] border border-gray-100 min-h-[220px] flex items-center">
-              <AnimatePresence mode="wait">
-                <motion.div 
+              <div>
+                <div 
                   key={activeIdx}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
                   className="flex flex-col"
                 >
                   <div className="flex items-center gap-4 mb-4">
@@ -108,8 +103,8 @@ export default function Features() {
                   <p className="text-[#162869]/80 font-inter text-base md:text-lg leading-relaxed">
                     {steps[activeIdx].description}
                   </p>
-                </motion.div>
-              </AnimatePresence>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -127,7 +122,7 @@ export default function Features() {
               {/* Active Orbit Glow */}
               <div className="absolute inset-8 rounded-full border-2 border-transparent">
                 <svg className="absolute inset-0 w-full h-full transform -rotate-90 pointer-events-none" viewBox="0 0 100 100">
-                  <motion.circle 
+                  <circle 
                     cx="50" 
                     cy="50" 
                     r="49" 
@@ -135,9 +130,6 @@ export default function Features() {
                     stroke="#0EA5E9" 
                     strokeWidth="0.5"
                     strokeLinecap="round"
-                    initial={{ strokeDasharray: "0 400" }}
-                    animate={{ strokeDasharray: `${(activeIdx + 1) * 61} 400` }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
                     className="opacity-50"
                   />
                 </svg>
@@ -146,15 +138,11 @@ export default function Features() {
               {/* Center Abstract Graphic */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-tr from-[#F8FAFC] to-[#E0F2FE] flex items-center justify-center shadow-inner z-0">
                 <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg border border-gray-100">
-                  <motion.div
+                  <div
                     key={activeIdx}
-                    initial={{ scale: 0.5, opacity: 0, rotate: -45 }}
-                    animate={{ scale: 1, opacity: 1, rotate: 0 }}
-                    exit={{ scale: 0.5, opacity: 0, rotate: 45 }}
-                    transition={{ duration: 0.4 }}
                   >
                     {React.createElement(steps[activeIdx].icon, { className: "w-8 h-8 text-[#0EA5E9]" })}
-                  </motion.div>
+                  </div>
                 </div>
               </div>
 

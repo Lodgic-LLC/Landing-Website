@@ -1,6 +1,4 @@
 "use client";
-
-import { motion } from "framer-motion";
 import { FaPaintBrush, FaMobileAlt, FaRocket } from "react-icons/fa";
 
 const services = [
@@ -93,11 +91,7 @@ const About = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="mx-auto mb-20 flex max-w-3xl flex-col items-center text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.65 }}
+          <div
             className="flex flex-col items-center"
           >
             <span className="mb-6 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#DBFF00]">
@@ -132,7 +126,7 @@ const About = () => {
                 fiable, scalable et prêt à conquérir votre marché.
               </span>
             </p>
-          </motion.div>
+          </div>
         </div>
 
         {/* Separator */}
@@ -143,17 +137,8 @@ const About = () => {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <motion.article
+              <article
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{
-                  delay: index * 0.15,
-                  duration: 0.7,
-                  type: "spring",
-                  stiffness: 50,
-                }}
                 className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.04] p-8 transition-all duration-500 hover:border-white/[0.14] hover:bg-white/[0.07] md:p-10"
               >
                 {/* Card inner glow on hover */}
@@ -193,7 +178,7 @@ const About = () => {
                     </span>
                   ))}
                 </div>
-              </motion.article>
+              </article>
             );
           })}
         </div>

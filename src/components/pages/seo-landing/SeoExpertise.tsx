@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { FaArrowRight, FaCheck } from 'react-icons/fa'
 import type { ReactNode } from 'react'
 
@@ -54,11 +53,7 @@ export default function SeoExpertise({
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.7 }}
+          <div
             className="lg:col-span-7"
           >
             <span className="inline-flex items-center rounded-full border border-[#001F45]/15 bg-white px-3 py-1 text-xs font-inter font-semibold uppercase tracking-wider text-[#001F45]">
@@ -67,28 +62,20 @@ export default function SeoExpertise({
             <h2 className="mt-5 font-sofia-bold text-3xl md:text-5xl text-[#001F45] leading-[1.1]">
               {heading}
             </h2>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+          <div
             className="lg:col-span-5"
           >
             <p className="text-lg font-inter text-[#162869]/80 leading-relaxed">{intro}</p>
-          </motion.div>
+          </div>
         </div>
 
         {/* Cards */}
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, idx) => (
-            <motion.article
+            <article
               key={card.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.7, delay: idx * 0.08 }}
               className="group relative rounded-2xl border border-[#001F45]/10 bg-white p-7 shadow-soft hover:shadow-[0_25px_60px_-25px_rgba(0,31,69,0.18)] transition-shadow duration-500 overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-40 h-40 bg-[#0EA5E9]/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -108,7 +95,7 @@ export default function SeoExpertise({
                   </li>
                 ))}
               </ul>
-            </motion.article>
+            </article>
           ))}
         </div>
 
@@ -116,11 +103,7 @@ export default function SeoExpertise({
         {(closing || crossLinks) && (
           <div className="mt-16 grid gap-10 lg:grid-cols-12 items-start">
             {closing && (
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
+              <div
                 className="lg:col-span-7 rounded-2xl bg-[#f6f7fc] border border-[#001F45]/10 p-8 md:p-10"
               >
                 <div className="text-[#1f3556] font-inter leading-relaxed text-base md:text-lg [&>p]:mt-4 [&>p:first-child]:mt-0">
@@ -133,15 +116,11 @@ export default function SeoExpertise({
                   {ctaLabel}
                   <FaArrowRight className="h-3 w-3" />
                 </Link>
-              </motion.div>
+              </div>
             )}
 
             {crossLinks && crossLinks.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.1 }}
+              <div
                 className="lg:col-span-5 space-y-3"
               >
                 <p className="text-xs font-inter font-semibold uppercase tracking-wider text-[#001F45]/60">
@@ -162,7 +141,7 @@ export default function SeoExpertise({
                     </div>
                   </Link>
                 ))}
-              </motion.div>
+              </div>
             )}
           </div>
         )}

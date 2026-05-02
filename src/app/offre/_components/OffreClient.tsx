@@ -1,14 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import {
-  motion,
-  useInView,
-  animate,
-  useMotionValue,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 /* ─── Animated counter ──────────────────────────────────────────── */
@@ -23,23 +15,12 @@ function Counter({
   label: string;
   className?: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => Math.round(v));
-
-  useEffect(() => {
-    if (!inView) return;
-    const ctrl = animate(count, value, { duration: 1.6, ease: "easeOut" });
-    return () => ctrl.stop();
-  }, [inView, count, value]);
-
   return (
-    <div ref={ref} className={`flex flex-col ${className}`}>
+    <div className={`flex flex-col ${className}`}>
       <div className="flex items-baseline gap-0.5">
-        <motion.span className="text-4xl md:text-5xl font-sofia-bold text-[#001F45] tabular-nums">
-          {rounded}
-        </motion.span>
+        <span className="text-4xl md:text-5xl font-sofia-bold text-[#001F45] tabular-nums">
+          {value}
+        </span>
         {suffix && (
           <span className="text-4xl md:text-5xl font-sofia-bold text-[#001F45]">
             {suffix}
@@ -64,15 +45,11 @@ function Reveal({
   delay?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+    <div
       className={className}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -174,9 +151,7 @@ function FaqSection() {
               <span className="text-[15px] md:text-base font-semibold text-[#001F45] font-inter">
                 {item.q}
               </span>
-              <motion.span
-                animate={{ rotate: isOpen ? 45 : 0 }}
-                transition={{ duration: 0.2 }}
+              <span
                 className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#f6f7fc] text-[#001F45]"
                 aria-hidden
               >
@@ -191,23 +166,19 @@ function FaqSection() {
                 >
                   <path d="M12 5v14M5 12h14" />
                 </svg>
-              </motion.span>
+              </span>
             </button>
-            <AnimatePresence initial={false}>
+            <div>
               {isOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.25, ease: "easeOut" }}
+                <div
                   className="overflow-hidden"
                 >
                   <p className="px-5 pb-5 text-[15px] leading-relaxed text-[#162869]/85 font-inter md:px-6 md:pb-6">
                     {item.a}
                   </p>
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
+            </div>
           </div>
         );
       })}
@@ -679,59 +650,23 @@ export default function OffreClient() {
                     <span>Jour 45</span>
                   </div>
                   <div className="flex h-3 w-full overflow-hidden rounded-full bg-[#001F45]/5 ring-1 ring-[#001F45]/10">
-                    <motion.span
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.2, ease: "easeOut" }}
+                    <span
                       className="bg-blue-500 h-full origin-left"
                       style={{ flex: 1 }}
                     />
-                    <motion.span
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 1.2,
-                        delay: 0.1,
-                        ease: "easeOut",
-                      }}
+                    <span
                       className="bg-violet-500 h-full origin-left"
                       style={{ flex: 1.5 }}
                     />
-                    <motion.span
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 1.2,
-                        delay: 0.2,
-                        ease: "easeOut",
-                      }}
+                    <span
                       className="bg-emerald-500 h-full origin-left"
                       style={{ flex: 3 }}
                     />
-                    <motion.span
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 1.2,
-                        delay: 0.3,
-                        ease: "easeOut",
-                      }}
+                    <span
                       className="bg-amber-500 h-full origin-left"
                       style={{ flex: 1 }}
                     />
-                    <motion.span
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 1.2,
-                        delay: 0.4,
-                        ease: "easeOut",
-                      }}
+                    <span
                       className="bg-lime-500 h-full origin-left"
                       style={{ flex: 0.5 }}
                     />

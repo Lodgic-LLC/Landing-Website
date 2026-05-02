@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
-import { motion } from "framer-motion";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 type Phase = {
@@ -63,11 +62,7 @@ export default function Process() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div
-          initial={isMobile ? false : { opacity: 0, y: 30 }}
-          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
-          viewport={isMobile ? undefined : { once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+        <div
           className="max-w-3xl"
         >
           <span className="inline-flex items-center rounded-full border border-[#001F45]/15 bg-white px-3 py-1 text-xs font-medium uppercase tracking-wider text-[#001F45]">
@@ -80,14 +75,10 @@ export default function Process() {
             De l'idée à l'app en production. Délai garanti et accompagnement
             complet.
           </p>
-        </motion.div>
+        </div>
 
         {/* Metrics */}
-        <motion.div
-          initial={isMobile ? false : { opacity: 0, scale: 0.95 }}
-          whileInView={isMobile ? undefined : { opacity: 1, scale: 1 }}
-          viewport={isMobile ? undefined : { once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        <div
           className="mt-10 grid grid-cols-1 gap-6 border-y border-[#001F45]/10 py-8 sm:grid-cols-3"
         >
           {METRICS.map((metric) => (
@@ -100,14 +91,10 @@ export default function Process() {
               </span>
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Timeline visual */}
-        <motion.div
-          initial={isMobile ? false : { opacity: 0, y: 40 }}
-          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
-          viewport={isMobile ? undefined : { once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+        <div
           className="mt-12"
         >
           <p className="text-xs font-medium uppercase tracking-wider text-[#162869]/70 font-inter">
@@ -119,17 +106,7 @@ export default function Process() {
 
           <div className="mt-5 flex h-3 w-full overflow-hidden rounded-full bg-[#f6f7fc] ring-1 ring-[#001F45]/10">
             {PHASES.map((phase, index) => (
-              <motion.span
-                initial={isMobile ? false : { scaleX: 0, originX: 0 }}
-                whileInView={isMobile ? undefined : { scaleX: 1 }}
-                viewport={
-                  isMobile ? undefined : { once: true, margin: "-50px" }
-                }
-                transition={{
-                  duration: 1,
-                  delay: 0.3 + index * 0.15,
-                  ease: "circOut",
-                }}
+              <span
                 key={phase.number}
                 className={`${phase.color} h-full`}
                 style={{ flex: index === 2 ? 3 : index === 1 ? 1.5 : 1 }}
@@ -140,11 +117,7 @@ export default function Process() {
 
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-5">
             {PHASES.map((phase, index) => (
-              <motion.div
-                initial={isMobile ? false : { opacity: 0, y: 15 }}
-                whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
-                viewport={isMobile ? undefined : { once: true }}
-                transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+              <div
                 key={phase.number}
                 className="flex items-center gap-2"
               >
@@ -160,18 +133,14 @@ export default function Process() {
                     {phase.range}
                   </span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Included + CTA */}
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-5">
-          <motion.div
-            initial={isMobile ? false : { opacity: 0, x: -30 }}
-            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
-            viewport={isMobile ? undefined : { once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+          <div
             className="lg:col-span-3 rounded-2xl border border-[#001F45]/10 bg-[#f6f7fc] p-6 md:p-8"
           >
             <p className="text-xs font-medium uppercase tracking-wider text-[#162869]/70 font-inter">
@@ -182,11 +151,7 @@ export default function Process() {
             </h3>
             <ul className="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               {INCLUDED.map((item, index) => (
-                <motion.li
-                  initial={isMobile ? false : { opacity: 0, x: -10 }}
-                  whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
-                  viewport={isMobile ? undefined : { once: true }}
-                  transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                <li
                   key={item}
                   className="flex items-start gap-2 text-[15px] text-[#001F45] font-inter"
                 >
@@ -203,16 +168,12 @@ export default function Process() {
                     <path d="M20 6L9 17l-5-5" />
                   </svg>
                   <span>{item}</span>
-                </motion.li>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={isMobile ? false : { opacity: 0, x: 30 }}
-            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
-            viewport={isMobile ? undefined : { once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          <div
             className="lg:col-span-2 relative overflow-hidden rounded-2xl border border-[#001F45]/15 bg-gradient-to-br from-white via-[#f6f7fc] to-white p-6 md:p-8 shadow-soft"
           >
             <div
@@ -236,7 +197,7 @@ export default function Process() {
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
