@@ -139,7 +139,7 @@ export default function FAQ() {
                 Commencer un projet
               </h2>
               <p className="text-gray-600 mb-8 font-inter">
-                Parlez-nous de vos objectifs technologiques. Notre équipe d'experts est prête à vous accompagner dans la création de solutions sur-mesure.
+                Vous avez une idée d'application ou un projet en tête ? Prenez contact avec nous pour discuter de votre projet.
               </p>
             </div>
 

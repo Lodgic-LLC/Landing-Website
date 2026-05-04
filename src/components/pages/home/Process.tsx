@@ -42,13 +42,13 @@ const PHASES: Phase[] = [
 const METRICS = [
   { value: "45 j", label: "Délai garanti" },
   { value: "Budget fixe", label: "Défini avant de commencer le projet" },
-  { value: "6 mois", label: "Maintenance incluse après livraison" },
+  { value: "3 mois", label: "Maintenance incluse après livraison" },
 ];
 
 const INCLUDED = [
   "1 référent dédié pour tout le suivi",
   "Réunion hebdo de suivi",
-  "6 mois de maintenance compris",
+  "3 mois de maintenance compris",
   "Transfert du code source",
 ];
 

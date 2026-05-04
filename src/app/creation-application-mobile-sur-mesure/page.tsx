@@ -209,7 +209,7 @@ export default function CreationApplicationMobileSurMesurePage() {
                   </>
                 ),
                 bullets: [
-                  '6 mois de maintenance inclus',
+                  '3 mois de maintenance inclus',
                   'Itérations sur retours utilisateurs',
                   'Suivi analytics produit',
                   'Évolutions sprintées',
