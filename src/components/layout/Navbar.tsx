@@ -16,6 +16,7 @@ export default function Navbar() {
   const navigationItems = [
     { name: "Mon appli en 45j", path: "/offre" },
     { name: "Lodgic Conseils", path: "/blog" },
+    { name: "IA", path: "/intelligence-artificielle" },
   ];
 
   useEffect(() => {
