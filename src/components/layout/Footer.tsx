@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -143,7 +144,14 @@ export default function Footer() {
         {/* --- BRAND STRIP --- */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 py-8">
           <div className="flex items-center gap-4">
-            <Link href="/" aria-label="Accueil Lodgic" className="group">
+            <Link href="/" aria-label="Accueil Lodgic" className="group flex items-center gap-2">
+              <Image 
+                src="/icon_bgblanc.png" 
+                alt="Lodgic Logo" 
+                width={32} 
+                height={32} 
+                className="rounded group-hover:opacity-90 transition-opacity"
+              />
               <span className="font-sofia-bold text-2xl text-white group-hover:text-[#DBFF00] transition-colors">
                 Lodgic
               </span>

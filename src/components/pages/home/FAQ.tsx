@@ -136,10 +136,10 @@ export default function FAQ() {
               className="lg:w-1/2 lg:pr-8 lg:border-r lg:border-gray-300 flex-shrink-0"
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofia-bold text-[rgb(0,15,69)] mb-6">
-                Commencer un projet
+                Discuter de mon projet
               </h2>
               <p className="text-gray-600 mb-8 font-inter">
-                Vous avez une idée d'application ou un projet en tête ? Prenez contact avec nous pour discuter de votre projet.
+                Vous avez une idée d'application ou un projet en tête ? Prenez contact avec nous pour en discuter.
               </p>
             </div>
 
