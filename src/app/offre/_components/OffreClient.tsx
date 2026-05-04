@@ -815,8 +815,8 @@ export default function OffreClient() {
                 ))}
               </ul>
               {/* Guarantee badge */}
-              <div className="mt-6 flex items-center gap-4 rounded-xl bg-[#001F45] p-4 text-white">
-                <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#DBFF00] text-[#001F45]">
+              <div className="mt-6 flex items-center gap-4 rounded-xl bg-[#001F45]/5 border border-[#001F45]/10 p-4 text-[#001F45]">
+                <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#001F45]/10 text-[#001F45]">
                   <svg
                     viewBox="0 0 24 24"
                     className="h-6 w-6"
@@ -834,7 +834,7 @@ export default function OffreClient() {
                   <p className="text-sm font-sofia-bold">
                     Aucun coût supplémentaire ne vous sera facturé !
                   </p>
-                  <p className="mt-0.5 text-xs font-inter text-white/70">
+                  <p className="mt-0.5 text-xs font-inter text-[#001F45]/70">
                     Nous assumons ces ajustements grâce à notre expérience et à
                     notre capacité à anticiper.
                   </p>
