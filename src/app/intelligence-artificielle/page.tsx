@@ -17,7 +17,7 @@ export default function IAPolicyPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-slate-50 text-[#001F45] pt-32 pb-24 selection:bg-[#DBFF00] selection:text-[#001F45]">
+    <main className="relative overflow-hidden bg-slate-50 text-[#001F45] pt-32 pb-24 selection:bg-[#DBFF00] selection:text-[#001F45]">
       <BreadcrumbStructuredData items={breadcrumbItems} />
       {/* Fines grilles / halos décoratifs */}
       <div
