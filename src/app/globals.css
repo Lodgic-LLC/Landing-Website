@@ -2,24 +2,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Sofia Pro (best if self-hosted). The declarations below will use a local install
-   or any file placed at /public/fonts/*. If you don't host the font, the site will
-   fallback to Plus Jakarta / Inter / system sans. */
-@font-face {
-  font-family: 'Sofia Pro';
-  src: local('Sofia Pro'), local('SofiaPro');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Sofia Pro';
-  src: local('Sofia Pro Bold'), local('SofiaPro-Bold');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -28,7 +10,7 @@ html {
 }
 
 body {
-  font-family: 'Sofia Pro', 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
   color: #0f1b42;
   background-color: #ffffff;
 }
@@ -47,6 +29,61 @@ h3 {
 @keyframes float-soft {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
+}
+
+@keyframes toulouse-path-draw {
+  0% {
+    stroke-dashoffset: 1000;
+    fill-opacity: 0;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+
+@keyframes toulouse-pin-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.toulouse-path {
+  fill: #ffffff;
+  fill-opacity: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: toulouse-path-draw 2s ease-out forwards;
+  transition: fill 0.3s ease;
+}
+
+.toulouse-path:hover {
+  fill: #e5eeff;
+}
+
+.toulouse-pin {
+  transform-origin: 350px 420px;
+  animation: toulouse-pin-pop 0.5s 1.5s cubic-bezier(0.5, 1.5, 0.5, 1) forwards;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toulouse-path,
+  .toulouse-pin {
+    animation: none;
+    fill-opacity: 1;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
 }
 
 @layer utilities {
@@ -93,11 +130,11 @@ h3 {
   }
 
   .font-sofia {
-    font-family: 'Sofia Pro', 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
   }
 
   .font-sofia-bold {
-    font-family: 'Sofia Pro', 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
     font-weight: 700;
   }
 

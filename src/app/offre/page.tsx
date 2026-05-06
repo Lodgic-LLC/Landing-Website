@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import OffreClient from './_components/OffreClient'
 import StructuredData from '@/components/seo/StructuredData'
+import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
 import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -38,9 +39,15 @@ export default function OffrePage() {
     },
   }
 
+  const breadcrumbItems = [
+    { name: 'Accueil', url: SITE_URL },
+    { name: 'Offre', url: `${SITE_URL}/offre` },
+  ]
+
   return (
     <>
       <StructuredData id="offer-structured-data" data={offerSchema} />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
       <OffreClient />
     </>
   )

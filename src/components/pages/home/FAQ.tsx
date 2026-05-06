@@ -147,35 +147,42 @@ export default function FAQ() {
             <div
               className="lg:w-1/2 lg:pl-8 flex-grow"
             >
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                 <div>
+                  <label htmlFor="home-faq-email" className="block text-sm font-medium text-[#001F45] mb-1.5">
+                    Email <span className="text-red-500">*</span>
+                  </label>
                   <input
+                    id="home-faq-email"
                     type="email"
                     name="email"
-                    placeholder="Email*"
+                    autoComplete="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200 text-gray-700 placeholder-gray-500"
+                    aria-invalid={Boolean(formErrors.email)}
+                    aria-describedby={formErrors.email ? 'home-faq-email-error' : undefined}
+                    className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200 text-gray-700"
                     required
                   />
                   {formErrors.email && (
-                    <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>
+                    <p id="home-faq-email-error" className="text-red-500 text-xs mt-1">{formErrors.email}</p>
                   )}
                 </div>
 
-                {/* Zone de texte */}
                 <div>
+                  <label htmlFor="home-faq-message" className="block text-sm font-medium text-[#001F45] mb-1.5">
+                    Comment pouvons-nous vous aider ? <span className="text-red-500">*</span>
+                  </label>
                   <textarea
+                    id="home-faq-message"
                     name="message"
-                    placeholder="Comment pouvons-nous vous aider ?*"
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200 text-gray-700 placeholder-gray-500 resize-vertical"
+                    className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200 text-gray-700 resize-vertical"
                     required
                   />
                 </div>
-                <p className="text-red-500 text-xs">*Champ obligatoire</p>
 
                 {/* Checkbox de consentement */}
                 <div className="flex items-start space-x-3">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import StructuredData from '@/components/seo/StructuredData'
+import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
 import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -39,9 +40,16 @@ export default function ReactNativeFlutterPage() {
     about: ['Développeur React Native Toulouse', 'Flutter', 'framework non natif'],
   }
 
+  const breadcrumbItems = [
+    { name: 'Accueil', url: SITE_URL },
+    { name: 'Développement application mobile', url: `${SITE_URL}/developpement-application-mobile` },
+    { name: 'React Native vs Flutter', url: `${SITE_URL}/developpement-application-mobile/react-native-flutter` },
+  ]
+
   return (
     <>
       <StructuredData id="react-native-flutter-article-schema" data={schema} />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
       <main className="bg-[#f6f7fc] min-h-screen pt-28 pb-20 md:pt-36">
         <div className="max-w-5xl mx-auto px-6">
           <header>

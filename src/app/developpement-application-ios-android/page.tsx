@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import { TrackingSection } from '@/components/analytics/AnalyticsProvider'
 import { PageTracker } from '@/components/analytics/PageTracker'
 import StructuredData from '@/components/seo/StructuredData'
+import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
 import SeoHero from '@/components/pages/seo-landing/SeoHero'
 import SeoExpertise from '@/components/pages/seo-landing/SeoExpertise'
 import { SITE_URL } from '@/lib/site'
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     description:
       "iOS Swift, Android Kotlin ou React Native : Lodgic vous aide à choisir la bonne approche et publie votre application sur l'App Store et Google Play.",
     url: `${SITE_URL}${PAGE_PATH}`,
-    siteName: 'Lodgic Dev',
+    siteName: 'Lodgic',
     images: [
       {
         url: `${SITE_URL}/lodgic-banner.png`,
@@ -71,9 +72,15 @@ export default function DeveloppementApplicationIosAndroidPage() {
     inLanguage: 'fr-FR',
   }
 
+  const breadcrumbItems = [
+    { name: 'Accueil', url: SITE_URL },
+    { name: 'Développement application iOS et Android', url: `${SITE_URL}${PAGE_PATH}` },
+  ]
+
   return (
     <>
       <StructuredData id="seo-ios-android-webpage" data={pageSchema} />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
       <PageTracker
         pageName="SEO - iOS et Android"
         pageCategory="seo_landing"

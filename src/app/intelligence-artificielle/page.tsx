@@ -1,13 +1,24 @@
 import type { Metadata } from 'next'
+import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
+import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: "Notre approche de l'IA | Lodgic",
   description: "Découvrez notre politique d'utilisation de l'Intelligence Artificielle : productivité décuplée, maîtrise architecturale totale et sécurité garantie.",
+  alternates: {
+    canonical: `${SITE_URL}/intelligence-artificielle`,
+  },
 }
 
 export default function IAPolicyPage() {
+  const breadcrumbItems = [
+    { name: 'Accueil', url: SITE_URL },
+    { name: 'Intelligence artificielle', url: `${SITE_URL}/intelligence-artificielle` },
+  ]
+
   return (
     <main className="min-h-screen bg-slate-50 text-[#001F45] pt-32 pb-24 selection:bg-[#DBFF00] selection:text-[#001F45]">
+      <BreadcrumbStructuredData items={breadcrumbItems} />
       {/* Fines grilles / halos décoratifs */}
       <div
         aria-hidden

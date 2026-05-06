@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getAllPosts, getPaginatedPosts, getPopularPosts } from '@/lib/blog'
 import StructuredData from '@/components/seo/StructuredData'
+import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
 import { SITE_URL } from '@/lib/site'
 
 const POSTS_PER_PAGE = 9
@@ -66,6 +67,10 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
   const popularPosts = getPopularPosts().filter((p) => p.slug !== featuredPost?.slug)
 
   const pageNumbers = Array.from({ length: totalPages }, (_, idx) => idx + 1)
+  const breadcrumbItems = [
+    { name: 'Accueil', url: SITE_URL },
+    { name: 'Blog', url: `${SITE_URL}/blog` },
+  ]
   const blogSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
@@ -87,6 +92,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
   return (
     <>
       <StructuredData id="blog-structured-data" data={blogSchema} />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
       <div className="bg-[#f6f7fc] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 lg:py-28">
         <header className="text-center mb-12 md:mb-16">

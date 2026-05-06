@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic'
 import Hero from '@/components/pages/home/Hero'
 import { TrackingSection } from '@/components/analytics/AnalyticsProvider'
 import { PageTracker } from '@/components/analytics/PageTracker'
-import { AdvancedTracker } from '@/components/analytics/AdvancedTracker'
 import StructuredData from '@/components/seo/StructuredData'
 import { SITE_URL } from '@/lib/site'
 
@@ -13,6 +12,7 @@ const About = dynamic(() => import('@/components/pages/home/About'))
 const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
 const Process = dynamic(() => import('@/components/pages/home/Process'))
 const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
+const AdvancedTracker = dynamic(() => import('@/components/analytics/AdvancedTracker').then((m) => m.AdvancedTracker))
 
 export const metadata: Metadata = {
   title: 'Développeur Web et Mobile Toulouse - Lodgic',
@@ -24,15 +24,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Développeur Web et Mobile Toulouse - Lodgic',
     description:
-      "Lodgic, développeur web et mobile à Toulouse, transforme votre idée en site web ou application performante (React.js, Next.js, React Native). Expertise et accompagnement.",
+      'Lodgic, développeur web et mobile à Toulouse, transforme votre idée en site web ou application performante (React.js, Next.js, React Native). Expertise et accompagnement.',
     url: SITE_URL,
-    siteName: 'Lodgic Dev',
+    siteName: 'Lodgic',
     images: [
       {
         url: `${SITE_URL}/lodgic-banner.png`,
         width: 1200,
         height: 630,
-        alt: "Développeur Web et Mobile à Toulouse Lodgic",
+        alt: 'Développeur Web et Mobile à Toulouse Lodgic',
       },
     ],
     locale: 'fr_FR',

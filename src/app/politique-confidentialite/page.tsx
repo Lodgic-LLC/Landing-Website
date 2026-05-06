@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { FaChevronRight } from "react-icons/fa";
+import BreadcrumbStructuredData from "@/components/seo/BreadcrumbStructuredData";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -53,8 +54,14 @@ export default function PolitiqueConfidentialite() {
     year: "numeric",
   });
 
+  const breadcrumbItems = [
+    { name: "Accueil", url: SITE_URL },
+    { name: "Politique de confidentialité", url: `${SITE_URL}/politique-confidentialite` },
+  ];
+
   return (
     <section className="w-full bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 pb-16 md:pb-24 overflow-hidden relative">
+      <BreadcrumbStructuredData items={breadcrumbItems} />
       {/* Décor de fond */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl" />

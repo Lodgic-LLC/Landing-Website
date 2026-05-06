@@ -123,6 +123,7 @@ export default function Footer() {
                 { label: 'Nos réalisations', href: '/#realisations' },
                 { label: 'Notre offre', href: '/offre' },
                 { label: 'Lodgic Conseils', href: '/blog' },
+                { label: 'Contact', href: '/contact' },
               ].map((item) => (
                 <li key={item.label}>
                   <Link

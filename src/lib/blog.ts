@@ -13,6 +13,7 @@ interface BlogFrontmatter {
   slug?: string
   title?: string
   date?: string
+  updatedAt?: string
   author?: string
   summary?: string
   imageUrl?: string
@@ -97,6 +98,7 @@ const parseMarkdownFile = (filename: string): BlogPost => {
     slug: frontmatter.slug ?? slugFromFile,
     title: frontmatter.title ?? slugFromFile,
     date: frontmatter.date ?? new Date().toISOString().slice(0, 10),
+    updatedAt: frontmatter.updatedAt,
     author: frontmatter.author ?? "L'équipe Lodgic",
     summary: frontmatter.summary ?? '',
     imageUrl: frontmatter.imageUrl ?? '/images/hero-app-development.jpg',

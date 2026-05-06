@@ -6,6 +6,7 @@ import { getAllSlugs, getPostBySlug } from '@/lib/blog'
 import MarkdownRenderer from '@/components/blog/MarkdownRenderer'
 import TableOfContents from '@/components/blog/TableOfContents'
 import StructuredData from '@/components/seo/StructuredData'
+import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
 import { SITE_URL } from '@/lib/site'
 
 interface BlogPageProps {
@@ -134,7 +135,12 @@ export default async function PostPage({ params }: BlogPageProps) {
     },
     headline: post.title,
     description: post.summary,
-    image: post.imageUrl,
+    image: {
+      '@type': 'ImageObject',
+      url: post.imageUrl.startsWith('http') ? post.imageUrl : `${SITE_URL}${post.imageUrl}`,
+      width: 1200,
+      height: 630,
+    },
     author: {
       '@type': 'Person',
       name: post.author,
@@ -145,16 +151,26 @@ export default async function PostPage({ params }: BlogPageProps) {
       logo: {
         '@type': 'ImageObject',
         url: `${SITE_URL}/lodgic-banner.png`,
+        width: 1200,
+        height: 630,
       },
     },
     datePublished: new Date(post.date).toISOString(),
-    dateModified: new Date(post.date).toISOString(),
-    articleBody: post.summary,
+    dateModified: new Date(post.updatedAt ?? post.date).toISOString(),
+    articleBody: post.content,
+    inLanguage: 'fr-FR',
   }
+
+  const breadcrumbItems = [
+    { name: 'Accueil', url: SITE_URL },
+    { name: 'Blog', url: `${SITE_URL}/blog` },
+    { name: post.title, url: `${SITE_URL}/blog/${post.slug}` },
+  ]
 
   return (
     <>
       <StructuredData id="article-structured-data" data={articleSchemaData} />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
 
       <div className="bg-[#f6f7fc] min-h-screen">
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-24 lg:py-28 relative xl:flex xl:gap-8">

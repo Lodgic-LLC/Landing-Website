@@ -1,53 +1,53 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import Link from 'next/link'
+import Image from 'next/image'
+import { usePathname } from 'next/navigation'
+import { useEffect, useRef, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Navbar() {
-  const [visible, setVisible] = useState(true);
-  const [atTop, setAtTop] = useState(true);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const lastScrollY = useRef(0);
-  const pathname = usePathname();
+  const [visible, setVisible] = useState(true)
+  const [atTop, setAtTop] = useState(true)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const lastScrollY = useRef(0)
+  const pathname = usePathname()
 
   const navigationItems = [
-    { name: "Mon appli en 45j", path: "/offre" },
-    { name: "Lodgic Conseils", path: "/blog" },
-    { name: "IA", path: "/intelligence-artificielle" },
-  ];
+    { name: 'Mon appli en 45j', path: '/offre' },
+    { name: 'Lodgic Conseils', path: '/blog' },
+    { name: 'IA', path: '/intelligence-artificielle' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentY = window.scrollY;
-      setAtTop(currentY < 12);
+      const currentY = window.scrollY
+      setAtTop(currentY < 12)
 
       // Ignore tiny fluctuations
-      if (Math.abs(currentY - lastScrollY.current) < 6) return;
+      if (Math.abs(currentY - lastScrollY.current) < 6) return
 
       if (currentY > lastScrollY.current && currentY > 80) {
         // Scrolling down → hide
-        setVisible(false);
-        setIsMenuOpen(false);
+        setVisible(false)
+        setIsMenuOpen(false)
       } else {
         // Scrolling up → show
-        setVisible(true);
+        setVisible(true)
       }
 
-      lastScrollY.current = currentY;
-    };
+      lastScrollY.current = currentY
+    }
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
+    setIsMenuOpen(false)
+  }, [pathname])
 
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path: string) => pathname === path
 
   return (
     /* Outer container — full width, pointer-events off so it doesn't block page content */
@@ -62,16 +62,12 @@ export default function Navbar() {
           aria-label="Navigation principale"
           className={`flex items-center justify-between gap-3 rounded-full px-4 py-2.5 transition-all duration-300 ${
             atTop
-              ? "bg-white/60 backdrop-blur border border-white/40 shadow-sm"
-              : "bg-white/90 backdrop-blur-lg border border-[#001F45]/10 shadow-[0_8px_32px_rgba(0,31,69,0.12)]"
+              ? 'bg-white/60 backdrop-blur border border-white/40 shadow-sm'
+              : 'bg-white/90 backdrop-blur-lg border border-[#001F45]/10 shadow-[0_8px_32px_rgba(0,31,69,0.12)]'
           }`}
         >
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex shrink-0 items-center gap-2 group"
-            aria-label="Accueil Lodgic"
-          >
+          <Link href="/" className="flex shrink-0 items-center gap-2 group" aria-label="Accueil Lodgic">
             <Image
               src="/icon_bgtransparent.png"
               alt=""
@@ -94,8 +90,8 @@ export default function Navbar() {
                 href={item.path}
                 className={`relative px-3 py-1.5 rounded-full text-sm font-inter font-medium transition-smooth ${
                   isActive(item.path)
-                    ? "bg-[#001F45]/8 text-[#001F45]"
-                    : "text-[#001F45]/65 hover:text-[#001F45] hover:bg-[#001F45]/5"
+                    ? 'bg-[#001F45]/8 text-[#001F45]'
+                    : 'text-[#001F45]/65 hover:text-[#001F45] hover:bg-[#001F45]/5'
                 }`}
               >
                 {item.name}
@@ -106,7 +102,7 @@ export default function Navbar() {
           {/* Right: CTA + mobile toggle */}
           <div className="flex items-center gap-2">
             <Link
-              href="/#contact"
+              href="/contact"
               className="hidden md:inline-flex items-center rounded-full bg-[#001F45] px-4 py-2 text-sm font-inter font-semibold text-white hover:bg-[#0b2b63] transition-smooth"
             >
               Une question ?
@@ -135,11 +131,7 @@ export default function Navbar() {
                     strokeWidth={2.5}
                     aria-hidden="true"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </motion.svg>
                 ) : (
                   <motion.svg
@@ -155,11 +147,7 @@ export default function Navbar() {
                     strokeWidth={2.5}
                     aria-hidden="true"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                   </motion.svg>
                 )}
               </AnimatePresence>
@@ -174,7 +162,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -6, scale: 0.97 }}
               animate={{ opacity: 1, y: 6, scale: 1 }}
               exit={{ opacity: 0, y: -6, scale: 0.97 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
               className="mt-1 overflow-hidden rounded-2xl border border-[#001F45]/10 bg-white/95 backdrop-blur-lg p-2 shadow-[0_8px_32px_rgba(0,31,69,0.12)]"
             >
               {navigationItems.map((item) => (
@@ -183,8 +171,8 @@ export default function Navbar() {
                   href={item.path}
                   className={`block rounded-xl px-4 py-3 text-sm font-inter font-medium transition-smooth ${
                     isActive(item.path)
-                      ? "bg-[#001F45]/6 text-[#001F45]"
-                      : "text-[#001F45]/70 hover:bg-[#001F45]/5 hover:text-[#001F45]"
+                      ? 'bg-[#001F45]/6 text-[#001F45]'
+                      : 'text-[#001F45]/70 hover:bg-[#001F45]/5 hover:text-[#001F45]'
                   }`}
                 >
                   {item.name}
@@ -192,7 +180,7 @@ export default function Navbar() {
               ))}
               <div className="mt-1 border-t border-[#001F45]/6 pt-1">
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="block rounded-xl bg-[#001F45] px-4 py-3 text-center text-sm font-inter font-semibold text-white hover:bg-[#0b2b63] transition-smooth"
                 >
                   Une question ?
@@ -203,5 +191,5 @@ export default function Navbar() {
         </AnimatePresence>
       </motion.div>
     </div>
-  );
+  )
 }

@@ -258,36 +258,55 @@ export const AdvancedTracker: React.FC<AdvancedTrackerProps> = ({
   }, [analytics, pageName])
 
   useEffect(() => {
-    // Initialiser les métriques de performance
-    if (enablePerformanceTracking) {
-      // Attendre que la page soit complètement chargée
-      if (document.readyState === 'complete') {
-        trackPerformance()
-      } else {
-        window.addEventListener('load', trackPerformance)
+    let idleInterval: ReturnType<typeof setInterval> | null = null
+    let cancelled = false
+
+    const passive: AddEventListenerOptions = { passive: true }
+
+    const setup = () => {
+      if (cancelled) return
+
+      if (enablePerformanceTracking) {
+        if (document.readyState === 'complete') {
+          trackPerformance()
+        } else {
+          window.addEventListener('load', trackPerformance)
+        }
       }
+
+      if (enableMouseTracking) {
+        document.addEventListener('mousemove', trackMouseMovement, passive)
+      }
+
+      if (enableExitIntent) {
+        document.addEventListener('mouseleave', trackExitIntent, passive)
+      }
+
+      document.addEventListener('click', trackClick, passive)
+      document.addEventListener('scroll', trackScroll, passive)
+      document.addEventListener('visibilitychange', trackVisibilityChange)
+      window.addEventListener('error', trackJavaScriptError)
+      window.addEventListener('beforeunload', trackSessionSummary)
+
+      idleInterval = setInterval(checkIdle, 10000)
     }
 
-    // Configurer les event listeners
-    if (enableMouseTracking) {
-      document.addEventListener('mousemove', trackMouseMovement)
-    }
-    
-    if (enableExitIntent) {
-      document.addEventListener('mouseleave', trackExitIntent)
-    }
-    
-    document.addEventListener('click', trackClick)
-    document.addEventListener('scroll', trackScroll)
-    document.addEventListener('visibilitychange', trackVisibilityChange)
-    window.addEventListener('error', trackJavaScriptError)
-    window.addEventListener('beforeunload', trackSessionSummary)
+    // Defer attachment until the browser is idle so we don't compete with FCP/LCP
+    type RequestIdleCallback = (cb: () => void, opts?: { timeout?: number }) => number
+    const ric = (window as unknown as { requestIdleCallback?: RequestIdleCallback })
+      .requestIdleCallback
+    const idleHandle = ric
+      ? ric(setup, { timeout: 2000 })
+      : (window.setTimeout(setup, 1500) as unknown as number)
 
-    // Intervalle pour vérifier l'inactivité
-    const idleInterval = setInterval(checkIdle, 10000) // Vérifier toutes les 10 secondes
-
-    // Nettoyage
     return () => {
+      cancelled = true
+      type CancelIdleCallback = (handle: number) => void
+      const cic = (window as unknown as { cancelIdleCallback?: CancelIdleCallback })
+        .cancelIdleCallback
+      if (cic) cic(idleHandle)
+      else window.clearTimeout(idleHandle)
+
       if (enableMouseTracking) {
         document.removeEventListener('mousemove', trackMouseMovement)
       }
@@ -300,7 +319,7 @@ export const AdvancedTracker: React.FC<AdvancedTrackerProps> = ({
       window.removeEventListener('error', trackJavaScriptError)
       window.removeEventListener('beforeunload', trackSessionSummary)
       window.removeEventListener('load', trackPerformance)
-      clearInterval(idleInterval)
+      if (idleInterval) clearInterval(idleInterval)
     }
   }, [
     enableMouseTracking,

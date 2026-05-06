@@ -11,11 +11,20 @@ import MotionProvider from "@/components/layout/MotionProvider";
 import { Analytics } from "@vercel/analytics/next";
 import StructuredData from "@/components/seo/StructuredData";
 import {
+  ADDRESS_COUNTRY,
+  ADDRESS_LOCALITY,
+  ADDRESS_REGION,
   CONTACT_EMAIL,
   CONTACT_PHONE,
+  GEO_LATITUDE,
+  GEO_LONGITUDE,
+  OPENING_HOURS,
+  POSTAL_CODE,
+  PRICE_RANGE,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
+  STREET_ADDRESS,
 } from "@/lib/site";
 
 const inter = Inter({
@@ -29,61 +38,85 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   weight: ["400", "500", "600", "700", "800"],
 });
+const postalAddress: Record<string, string> = {
+  "@type": "PostalAddress",
+  addressLocality: ADDRESS_LOCALITY,
+  addressRegion: ADDRESS_REGION,
+  addressCountry: ADDRESS_COUNTRY,
+};
+if (STREET_ADDRESS) postalAddress.streetAddress = STREET_ADDRESS;
+if (POSTAL_CODE) postalAddress.postalCode = POSTAL_CODE;
+
+const organizationNode: Record<string, unknown> = {
+  "@type": ["Organization", "ProfessionalService"],
+  "@id": `${SITE_URL}/#organization`,
+  name: SITE_NAME,
+  legalName: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/icon_bgblanc.png`,
+  image: `${SITE_URL}/lodgic-banner.png`,
+  description: SITE_DESCRIPTION,
+  email: CONTACT_EMAIL,
+  telephone: CONTACT_PHONE,
+  priceRange: PRICE_RANGE,
+  address: postalAddress,
+  areaServed: [
+    { "@type": "City", name: "Toulouse" },
+    { "@type": "AdministrativeArea", name: "Occitanie" },
+    { "@type": "Country", name: "France" },
+  ],
+  sameAs: [
+    "https://github.com/lodgic-llc",
+    "https://linkedin.com/company/lodgic-dev",
+    "https://x.com/lodgic-dev",
+  ],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Developpement application mobile sur mesure",
+        serviceType: "Developpement application mobile",
+        areaServed: "Toulouse, Occitanie, France",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Creation site web sur mesure",
+        serviceType: "Developpement web",
+        areaServed: "Toulouse, Occitanie, France",
+      },
+    },
+  ],
+};
+
+if (GEO_LATITUDE && GEO_LONGITUDE) {
+  organizationNode.geo = {
+    "@type": "GeoCoordinates",
+    latitude: GEO_LATITUDE,
+    longitude: GEO_LONGITUDE,
+  };
+}
+
+if (OPENING_HOURS.length > 0) {
+  organizationNode.openingHoursSpecification = OPENING_HOURS.map((slot) => ({
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: slot.dayOfWeek,
+    opens: slot.opens,
+    closes: slot.closes,
+  }));
+}
+
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": ["Organization", "LocalBusiness"],
-      "@id": `${SITE_URL}/#organization`,
-      name: SITE_NAME,
-      legalName: SITE_NAME,
-      url: SITE_URL,
-      logo: `${SITE_URL}/icon_bgblanc.png`,
-      image: `${SITE_URL}/lodgic-banner.png`,
-      description: SITE_DESCRIPTION,
-      email: CONTACT_EMAIL,
-      telephone: CONTACT_PHONE,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Toulouse",
-        addressRegion: "Occitanie",
-        addressCountry: "FR",
-      },
-      areaServed: [
-        { "@type": "City", name: "Toulouse" },
-        { "@type": "AdministrativeArea", name: "Occitanie" },
-        { "@type": "Country", name: "France" },
-      ],
-      sameAs: [
-        "https://github.com/lodgic-llc",
-        "https://linkedin.com/company/lodgic-dev",
-        "https://x.com/lodgic-dev",
-      ],
-      makesOffer: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Developpement application mobile sur mesure",
-            serviceType: "Developpement application mobile",
-            areaServed: "Toulouse, Occitanie, France",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Creation site web sur mesure",
-            serviceType: "Developpement web",
-            areaServed: "Toulouse, Occitanie, France",
-          },
-        },
-      ],
-    },
+    organizationNode,
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
-      name: "Lodgic Dev",
+      name: SITE_NAME,
       url: SITE_URL,
       description: SITE_DESCRIPTION,
       publisher: { "@id": `${SITE_URL}/#organization` },
@@ -158,7 +191,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: SITE_URL,
-    siteName: "Lodgic Dev",
+    siteName: SITE_NAME,
   },
   twitter: {
     card: "summary_large_image",
@@ -182,7 +215,7 @@ export const metadata: Metadata = {
     "whatsapp:image": "/lodgic-banner.png",
     "og:image": "/lodgic-banner.png",
     "og:url": SITE_URL,
-    "og:site_name": "Lodgic Dev",
+    "og:site_name": SITE_NAME,
     "og:locale": "fr_FR",
     "og:type": "website",
     "og:title": "Développeur Application Mobile Toulouse - Lodgic",

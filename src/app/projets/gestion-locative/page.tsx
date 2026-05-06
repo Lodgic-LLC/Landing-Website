@@ -9,6 +9,7 @@ import {
   FaUserCheck,
 } from "react-icons/fa";
 import StructuredData from "@/components/seo/StructuredData";
+import BreadcrumbStructuredData from "@/components/seo/BreadcrumbStructuredData";
 import { SITE_URL } from "@/lib/site";
 
 const screenGroups = [
@@ -106,9 +107,16 @@ export default function GestionLocativePage() {
     creator: { "@type": "Organization", name: "Lodgic" },
   };
 
+  const breadcrumbItems = [
+    { name: "Accueil", url: SITE_URL },
+    { name: "Projets", url: `${SITE_URL}/projets/gestion-locative` },
+    { name: "Gestion locative", url: `${SITE_URL}/projets/gestion-locative` },
+  ];
+
   return (
     <main className="bg-white">
       <StructuredData id="project-gestion-locative" data={projectSchema} />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#f6f7fc] via-white to-[#eaf0ff] pt-28 pb-16 md:pt-36 md:pb-20">

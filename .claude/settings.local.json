@@ -3,7 +3,10 @@
     "allow": [
       "Bash(npx next:*)",
       "Bash(npx tsc *)",
-      "Bash(echo \"EXIT=$?\")"
+      "Bash(echo \"EXIT=$?\")",
+      "WebFetch(domain:lodgic-dev.com)",
+      "Bash(python \"C:/Users/Matheo/.claude/skills/seo/scripts/google_report.py\" --help)",
+      "Bash(python *)"
     ]
   }
 }

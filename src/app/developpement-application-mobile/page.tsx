@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import StructuredData from '@/components/seo/StructuredData'
+import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
+import FAQStructuredData from '@/components/seo/FAQStructuredData'
 import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -26,6 +28,34 @@ export const metadata: Metadata = {
   },
 }
 
+const faqs = [
+  {
+    question: "Combien coûte le développement d'une application mobile à Toulouse ?",
+    answer:
+      "Le coût d'une application mobile sur mesure varie typiquement entre 25 000 € et 80 000 € pour une V1, selon la complexité fonctionnelle, le nombre d'écrans, les intégrations (paiement, push, géolocalisation) et la stack choisie (natif iOS/Android ou React Native). Un cadrage produit préalable permet de chiffrer précisément.",
+  },
+  {
+    question: "Combien de temps faut-il pour développer une application mobile ?",
+    answer:
+      "Une V1 d'application mobile sur mesure prend en général 2 à 4 mois entre le cadrage produit, le design, le développement iOS et Android, et la publication sur l'App Store et Google Play. Notre offre clé en main propose une livraison en 45 jours sur des périmètres ciblés.",
+  },
+  {
+    question: "Faut-il choisir une application native ou React Native ?",
+    answer:
+      "React Native permet de partager 90 % du code entre iOS et Android et d'accélérer le time-to-market. Les applications natives (Swift pour iOS, Kotlin pour Android) restent préférables pour les usages exigeant des performances graphiques élevées ou un accès matériel poussé (BLE, ARKit, traitement vidéo).",
+  },
+  {
+    question: "Travaillez-vous uniquement avec des entreprises toulousaines ?",
+    answer:
+      "Lodgic est implantée à Toulouse et accompagne en priorité les startups et PME d'Occitanie en présentiel. Nous travaillons aussi avec des clients dans toute la France et à l'international en distanciel, en français comme en anglais.",
+  },
+  {
+    question: "Que comprend la maintenance d'une application mobile ?",
+    answer:
+      "La maintenance applicative couvre les mises à jour de sécurité, la compatibilité avec les nouvelles versions iOS et Android, le suivi des stores, la correction des bugs, le monitoring des performances et l'évolution fonctionnelle. Nous proposons des forfaits TMA mensuels après le lancement.",
+  },
+]
+
 export default function DeveloppementApplicationMobilePage() {
   const pageSchema = {
     '@context': 'https://schema.org',
@@ -39,9 +69,16 @@ export default function DeveloppementApplicationMobilePage() {
     inLanguage: 'fr-FR',
   }
 
+  const breadcrumbItems = [
+    { name: 'Accueil', url: SITE_URL },
+    { name: 'Développement application mobile', url: `${SITE_URL}/developpement-application-mobile` },
+  ]
+
   return (
     <>
       <StructuredData id="dev-mobile-webpage-schema" data={pageSchema} />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
+      <FAQStructuredData faqs={faqs} />
       <main className="bg-[#f6f7fc] min-h-screen pt-28 pb-20 md:pt-36">
         <div className="max-w-7xl mx-auto px-6">
           <header className="max-w-4xl">
@@ -100,6 +137,29 @@ export default function DeveloppementApplicationMobilePage() {
                 <h3 className="font-sofia-bold text-lg text-[#001F45]">3. Oublier l'après-lancement</h3>
                 <p className="mt-2">Maintenance, analytics et itérations sont essentiels pour qu'une app reste performante.</p>
               </article>
+            </div>
+          </section>
+
+          <section className="mt-12">
+            <h2 className="font-sofia-bold text-3xl text-[#001F45]">Questions fréquentes</h2>
+            <div className="mt-5 space-y-4">
+              {faqs.map((faq) => (
+                <details
+                  key={faq.question}
+                  className="group rounded-xl border border-[#001F45]/10 bg-white p-5 shadow-soft open:shadow-md"
+                >
+                  <summary className="flex cursor-pointer items-center justify-between gap-4 font-sofia-bold text-lg text-[#001F45]">
+                    <span>{faq.question}</span>
+                    <span
+                      aria-hidden
+                      className="text-[#001F45]/60 transition-transform group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-[#2d4567] leading-relaxed">{faq.answer}</p>
+                </details>
+              ))}
             </div>
           </section>
 

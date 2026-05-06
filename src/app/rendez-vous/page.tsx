@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import RendezVousRefonteContent from '@/components/pages/rendez-vous/RendezVousRefonteContent'
 import StructuredData from '@/components/seo/StructuredData'
+import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
 import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -47,9 +48,15 @@ const RendezVousPage = () => {
     inLanguage: 'fr-FR',
   }
 
+  const breadcrumbItems = [
+    { name: 'Accueil', url: SITE_URL },
+    { name: 'Rendez-vous', url: `${SITE_URL}/rendez-vous` },
+  ]
+
   return (
     <>
       <StructuredData id="rendez-vous-structured-data" data={rendezVousSchema} />
+      <BreadcrumbStructuredData items={breadcrumbItems} />
       <RendezVousRefonteContent />
     </>
   )
