@@ -121,58 +121,65 @@ export default function Process() {
 
         {/* Timeline visual */}
         <div className="mt-12">
-          <p className="text-xs font-medium uppercase tracking-wider text-[#162869]/70 font-inter">
-            Le planning (Survolez une étape pour explorer)
-          </p>
-          <div className="flex items-center justify-between gap-2 md:gap-4 mt-2 mb-4">
-             <h3 className="text-xl md:text-2xl font-sofia-bold text-[#001F45]">
-               5 phases sur 45 jours
-             </h3>
-             <div className="flex-1 h-px bg-[#001F45]/10 hidden md:block" />
+          <div className="flex items-center gap-2 mb-6">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#001F45]/20 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#001F45]/40"></span>
+            </span>
+            <p className="text-sm font-sofia-bold uppercase tracking-widest text-[#001F45]/60">
+              Explorez notre méthode
+            </p>
           </div>
 
-          <div className="mt-5 flex h-4 md:h-6 w-full overflow-hidden rounded-full bg-[#f6f7fc] ring-1 ring-[#001F45]/10">
+          <div className="mt-5 flex h-4 md:h-8 w-full overflow-hidden rounded-full bg-[#f6f7fc] ring-1 ring-[#001F45]/10 shadow-inner">
             {PHASES.map((phase, index) => (
               <motion.div
                 key={phase.number}
                 onMouseEnter={() => setSelectedPhase(phase)}
-                className={`${phase.color} relative h-full transition-all duration-300 cursor-help`}
-                style={{ width: index === 2 ? '40%' : index === 1 ? '20%' : '13.333%' }}
+                onClick={() => setSelectedPhase(phase)}
+                className={`${phase.color} relative h-full transition-all duration-300 cursor-help group/segment`}
+                style={{ width: !isMobile ? (index === 2 ? '40%' : index === 1 ? '20%' : '13.333%') : undefined, flex: isMobile ? 1 : undefined }}
                 whileHover={{ 
-                  scaleY: 1.4,
-                  transition: { type: "spring", stiffness: 400, damping: 15 }
+                  scaleY: 1.6,
+                  transition: { type: "spring", stiffness: 400, damping: 12 }
                 }}
               >
+                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover/segment:opacity-100 transition-opacity" />
                 {selectedPhase?.number === phase.number && (
                   <motion.div 
                     layoutId="active-indicator"
-                    className="absolute inset-x-0 -bottom-1 h-1 bg-[#001F45]/30"
+                    className="absolute inset-x-0 -bottom-1 h-1.5 bg-[#001F45]"
                   />
                 )}
               </motion.div>
             ))}
           </div>
 
-          <div className="mt-8 flex w-full">
+          <div className="mt-8 flex w-full md:flex-row flex-wrap gap-y-6">
             {PHASES.map((phase, index) => (
               <div
                 key={phase.number}
                 onMouseEnter={() => setSelectedPhase(phase)}
-                className="flex flex-col gap-2 group cursor-help pr-2"
-                style={{ width: index === 2 ? '40%' : index === 1 ? '20%' : '13.333%' }}
+                onClick={() => setSelectedPhase(phase)}
+                className="flex flex-col gap-3 group cursor-help pr-4 md:w-auto w-1/2 transition-all duration-300"
+                style={{ 
+                  width: !isMobile ? (index === 2 ? '40%' : index === 1 ? '20%' : '13.333%') : undefined 
+                }}
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3">
                   <span
-                    className={`inline-block h-2.5 w-2.5 flex-shrink-0 rounded-full ${phase.color} shadow-sm transition-all duration-300 ${selectedPhase?.number === phase.number ? 'scale-125 ring-4 ring-[#001F45]/5' : 'group-hover:scale-110'}`}
+                    className={`inline-block h-3.5 w-3.5 flex-shrink-0 rounded-full ${phase.color} shadow-lg transition-all duration-500 ${selectedPhase?.number === phase.number ? 'scale-150 ring-4 ring-[#001F45]/10' : 'group-hover:scale-125 opacity-70 group-hover:opacity-100'}`}
                     aria-hidden
                   />
-                  <span className={`text-[13px] md:text-sm font-sofia-bold text-[#001F45] font-inter transition-colors leading-tight ${selectedPhase?.number === phase.number ? 'text-[#0b2b63]' : 'text-[#162869]/60'}`}>
+                  <span className={`text-[14px] md:text-base font-sofia-bold text-[#001F45] font-inter transition-all duration-300 leading-tight ${selectedPhase?.number === phase.number ? 'translate-x-1' : 'opacity-60 group-hover:opacity-100'}`}>
                     {phase.name}
                   </span>
                 </div>
-                <span className="text-[10px] md:text-[11px] text-[#162869]/40 font-inter pl-4">
-                  {phase.range}
-                </span>
+                <div className={`overflow-hidden transition-all duration-300 ${selectedPhase?.number === phase.number ? 'max-h-10 opacity-100' : 'max-h-0 opacity-0 md:max-h-10 md:opacity-40'}`}>
+                  <span className="text-[11px] md:text-[12px] font-medium tracking-tight text-[#162869] font-inter pl-6">
+                    {phase.range}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
