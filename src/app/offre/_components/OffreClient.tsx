@@ -468,7 +468,7 @@ export default function OffreClient() {
               <CtaButton href="/rendez-vous" variant="primary">
                 Découvrir l&apos;offre avec un membre de l&apos;équipe
               </CtaButton>
-              <CtaButton href="/projets/gestion-locative" variant="secondary">
+              <CtaButton href="/#realisations" variant="secondary">
                 Voir nos réalisations
               </CtaButton>
             </div>

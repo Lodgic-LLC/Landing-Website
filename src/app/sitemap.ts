@@ -15,7 +15,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const projectRoutes = [
     {
-      url: `${SITE_URL}/projets/gestion-locative`,
+      url: `${SITE_URL}/projets/hiking`,
+      lastModified: BUILD_DATE,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/projets/driveapp`,
+      lastModified: BUILD_DATE,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/projets/comptabilite`,
+      lastModified: BUILD_DATE,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/projets/musique`,
       lastModified: BUILD_DATE,
       changeFrequency: "monthly" as const,
       priority: 0.8,
