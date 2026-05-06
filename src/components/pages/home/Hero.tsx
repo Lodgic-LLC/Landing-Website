@@ -3,7 +3,7 @@ import ToulouseMap from "./ToulouseMap";
 
 export default function Hero() {
   return (
-    <section className="w-full h-[70vh] lg:min-h-screen lg:h-auto bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-20 md:pt-36 pb-20 overflow-hidden relative flex flex-col justify-center">
+    <section className="w-full h-[70vh] lg:min-h-screen lg:h-auto bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-32 md:pt-36 pb-20 overflow-hidden relative flex flex-col justify-center">
       {/* Décor de fond subtil */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl opacity-70" />
@@ -65,18 +65,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-        <a
-          href="#about"
-          className="group flex flex-col items-center gap-2 text-[#001F45]/50 transition-colors duration-300 hover:text-[#001F45]"
-          aria-label="Découvrir Lodgic"
-        >
-          <span className="font-inter text-xs font-semibold uppercase tracking-[0.18em]">
-            Découvrir Lodgic
-          </span>
-          <span className="h-px w-6 bg-current opacity-40 transition-all duration-300 group-hover:w-10 group-hover:opacity-70" />
-        </a>
-      </div>
     </section>
   );
 }
