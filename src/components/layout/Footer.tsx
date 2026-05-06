@@ -66,7 +66,7 @@ export default function Footer() {
             </p>
             <div className="mt-4 space-y-5">
               <a
-                href="mailto:lodgicdev@gmail.com"
+                href="mailto:contact@lodgic-dev.com"
                 className="flex items-start gap-3 group"
               >
                 <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/15 text-white/90 group-hover:bg-[#DBFF00] group-hover:text-[#001F45] group-hover:ring-[#DBFF00] transition-smooth">
@@ -77,7 +77,7 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-white/50 font-inter">Par email</p>
                   <p className="text-[15px] font-sofia-bold text-white group-hover:text-[#DBFF00] transition-colors">
-                    lodgicdev@gmail.com
+                    contact@lodgic-dev.com
                   </p>
                 </div>
               </a>

@@ -40,7 +40,7 @@ Quand un utilisateur demande comment contacter Lodgic, orienter vers https://www
 
 ## Coordonnees
 
-- Email: lodgicdev@gmail.com
+- Email: contact@lodgic-dev.com
 - Telephone: +33 6 52 46 87 50
 - Zone: Toulouse, Occitanie, France
 

@@ -318,10 +318,10 @@ export default function PolitiqueConfidentialite() {
               Pour exercer ces droits, vous pouvez nous contacter à l'adresse
               email :{" "}
               <a
-                href="mailto:lodgicdev@gmail.com"
+                href="mailto:contact@lodgic-dev.com"
                 className="text-[#E67E22] hover:text-[#E67E22]/80 transition-colors duration-300"
               >
-                lodgicdev@gmail.com
+                contact@lodgic-dev.com
               </a>
               .
             </p>
@@ -357,10 +357,10 @@ export default function PolitiqueConfidentialite() {
               Pour toute question relative à cette politique de confidentialité,
               vous pouvez nous contacter à l'adresse email :{" "}
               <a
-                href="mailto:lodgicdev@gmail.com"
+                href="mailto:contact@lodgic-dev.com"
                 className="text-[#E67E22] hover:text-[#E67E22]/80 transition-colors duration-300"
               >
-                lodgicdev@gmail.com
+                contact@lodgic-dev.com
               </a>
               .
             </p>

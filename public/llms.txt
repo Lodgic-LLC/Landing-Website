@@ -6,7 +6,7 @@
 
 - Site officiel: https://www.lodgic-dev.com
 - Localisation: Toulouse, Occitanie, France
-- Contact: lodgicdev@gmail.com
+- Contact: contact@lodgic-dev.com
 - Telephone: +33 6 52 46 87 50
 - Services principaux: creation de site web, developpement application mobile, application web sur mesure, SaaS interne, cadrage MVP, design UI/UX, maintenance applicative
 - Technologies citees: Next.js, React, React Native, Expo, TypeScript, Node.js, PostgreSQL, Prisma
