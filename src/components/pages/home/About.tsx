@@ -1,40 +1,36 @@
 "use client";
-import { FaPaintBrush, FaMobileAlt, FaRocket } from "react-icons/fa";
+import { FaPaintBrush, FaMobileAlt, FaRocket, FaChevronRight } from "react-icons/fa";
 
 const services = [
   {
     num: "01",
     title: "Conception UX/UI",
+    subtitle: "L'expérience au service de l'engagement",
     description:
-      "Avant d'écrire la moindre ligne de code, nous concevons des maquettes intuitives et validées avec vous. Chaque écran est pensé pour offrir une expérience fluide et agréable à vos utilisateurs.",
+      "Nous transformons vos idées en parcours utilisateurs fluides et esthétiques. Chaque écran est conçu pour maximiser la rétention et simplifier l'usage complexe, validé par des prototypes interactifs avant tout développement.",
     icon: FaPaintBrush,
-    tags: [
-      "UX Research",
-      "Maquettes interactives",
-      "Design system",
-      "Prototypage",
-    ],
+    tags: ["UX Research", "UI Design", "Design System", "Prototypage"],
+    color: "#DBFF00"
   },
   {
     num: "02",
-    title: "Développement React Native",
+    title: "Développement Mobile",
+    subtitle: "Performance native, vélocité React Native",
     description:
-      "Une seule codebase pour iOS et Android, sans compromis sur la qualité ni la performance. Nous construisons des apps cross-platform rapides, solides et prêtes à évoluer avec votre business.",
+      "Nous développons des applications hybrides haut de gamme avec une seule codebase pour iOS et Android. Résultat : une maintenance simplifiée, des coûts optimisés et une fluidité identique au natif.",
     icon: FaMobileAlt,
-    tags: [
-      "iOS & Android",
-      "React Native",
-      "API & Backend",
-      "Tests approfondis",
-    ],
+    tags: ["iOS & Android", "React Native", "API Cloud", "Infrastructure"],
+    color: "#3b5bdb"
   },
   {
     num: "03",
-    title: "Lancement & Maintenance",
+    title: "Lancement & Suivi",
+    subtitle: "De la publication à la croissance",
     description:
-      "Nous gérons la publication sur l'App Store et Google Play de A à Z. Après le lancement, nous assurons la maintenance et les mises à jour pour que votre app reste performante et à jour.",
+      "Notre accompagnement ne s'arrête pas au code. Nous gérons le déploiement sur les stores (App Store / Play Store) et assurons un monitoring constant pour garantir la stabilité de votre produit.",
     icon: FaRocket,
-    tags: ["App Store", "Google Play", "Mises à jour", "Support continu"],
+    tags: ["ASO Opti", "Maintenance", "Analytics", "Scaling"],
+    color: "#0b2b63"
   },
 ];
 
@@ -42,145 +38,104 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#001F45] py-32"
+      className="relative overflow-hidden bg-[#001F45] py-16 md:py-24"
       aria-labelledby="about-heading"
     >
-      {/* ── Halos décoratifs (inspirés du footer) ── */}
+      {/* ── Background decoration ── */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#DBFF00]/20 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      
+      {/* Simplified Grid Pattern */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 -left-32 h-[30rem] w-[30rem] rounded-full bg-[#3b5bdb]/20 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-[#0b2b63]/30 blur-3xl"
-      />
-
-      {/* ── Yellow halo principal (moins opaque) ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DBFF00] opacity-[0.07] blur-[130px]"
-      />
-      {/* Inner halo (plus concentré) */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DBFF00] opacity-[0.035] blur-[70px]"
-      />
-
-      {/* ── Grid overlay (inspiré du footer) ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.8) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-          maskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 75%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 75%)",
+            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
         }}
-      />
-
-      {/* ── Vignette bords (évite que le halo déborde trop) ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_50%,transparent_40%,#001F45_100%)]"
       />
 
       {/* ── Content ── */}
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        {/* Header */}
-        <div className="mx-auto mb-20 flex max-w-3xl flex-col items-center text-center">
-          <div
-            className="flex flex-col items-center"
-          >
-            <span className="mb-6 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#DBFF00]">
-              Notre ADN
-            </span>
-
+        {/* Header Section */}
+        <div className="mb-16 md:mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
             <h2
               id="about-heading"
-              className="mb-8 text-4xl font-sofia-bold leading-tight text-white md:text-6xl lg:text-7xl"
+              className="text-4xl font-sofia-bold leading-[1.1] text-white md:text-6xl lg:text-7xl"
             >
-              De l&apos;idée à l&apos;app,{" "}
-              <span className="relative inline-block whitespace-nowrap">
-                en 45 jours.
-                <span
-                  aria-hidden="true"
-                  className="absolute bottom-1 left-0 -z-10 h-4 w-full bg-[#DBFF00] opacity-80"
-                />
-              </span>
+              L&apos;artisanat du code <br />
+              <span className="text-white/40 italic">au service de l&apos;impact.</span>
             </h2>
-
-            <p className="font-inter text-lg leading-relaxed text-white/55 md:text-xl">
-              Lodgic est une agence de développement d&apos;applications mobiles
-              basée à{" "}
-              <span className="font-semibold text-white/80">Toulouse</span>,
-              spécialisée dans la création d&apos;apps cross-platform avec{" "}
-              <span className="font-semibold text-white/80">React Native</span>.
-              Nous accompagnons les startups, entrepreneurs et solopreneurs à
-              chaque étape — de la conception UX/UI jusqu&apos;au développement,
-              en passant par le conseil stratégique et la maintenance — pour
-              transformer chaque idée en produit digital{" "}
-              <span className="font-semibold text-white/80">
-                fiable, scalable et prêt à conquérir votre marché.
-              </span>
+            <p className="max-w-md font-inter text-lg leading-relaxed text-white/50 border-l border-[#DBFF00]/30 pl-8">
+              Lodgic est une agence toulousaine dédiée à l'accélération mobile. Nous fusionnons <span className="text-white">excellence technique</span> et <span className="text-white">agilité business</span> pour livrer des produits robustes en un temps record.
             </p>
           </div>
         </div>
 
-        {/* Separator */}
-        <div className="mb-20 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-        {/* Service cards */}
-        <div className="grid gap-6 md:grid-cols-3 lg:gap-8">
+        {/* Vertical Editorial Layout (Replacing Cards) */}
+        <div className="space-y-4 md:space-y-0">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <article
+              <div 
                 key={index}
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.04] p-8 transition-all duration-500 hover:border-white/[0.14] hover:bg-white/[0.07] md:p-10"
+                className="group relative flex flex-col md:flex-row items-start md:items-center py-12 md:py-20 border-t border-white/10 hover:bg-white/[0.02] transition-colors gap-8 md:gap-20"
               >
-                {/* Card inner glow on hover */}
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -top-12 -right-12 h-48 w-48 rounded-full bg-[#DBFF00] opacity-0 blur-[60px] transition-opacity duration-700 group-hover:opacity-10"
-                />
-
-                {/* Card header row */}
-                <div className="mb-10 flex items-center justify-between">
-                  <span className="text-5xl font-sofia-bold text-white/[0.06] transition-colors duration-500 group-hover:text-white/[0.12]">
+                {/* Visual side */}
+                <div className="flex items-center gap-8 md:w-1/3">
+                  <span className="text-6xl md:text-9xl font-sofia-bold text-white/10 transition-colors group-hover:text-[#DBFF00]/15 shrink-0">
                     {service.num}
                   </span>
-                  <div
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 transition-all duration-500 group-hover:border-transparent group-hover:bg-[#DBFF00] group-hover:shadow-[0_0_24px_rgba(219,255,0,0.4)]"
-                    aria-hidden="true"
-                  >
-                    <Icon className="h-6 w-6 text-white/40 transition-colors duration-500 group-hover:text-[#001F45]" />
+                  <div className="h-16 w-16 md:h-24 md:w-24 shrink-0 flex items-center justify-center rounded-2xl md:rounded-[2.5rem] bg-white/5 border border-white/10 transition-all duration-500 group-hover:bg-[#DBFF00] group-hover:shadow-[0_0_40px_rgba(219,255,0,0.2)]">
+                    <Icon className="h-6 w-6 md:h-10 md:w-10 text-[#DBFF00] transition-colors group-hover:text-[#001F45]" />
                   </div>
                 </div>
 
-                <h3 className="mb-4 text-xl font-sofia-bold text-white md:text-2xl">
-                  {service.title}
-                </h3>
-                <p className="font-inter flex-grow text-base leading-relaxed text-white/50 md:text-lg">
-                  {service.description}
-                </p>
+                {/* Content side */}
+                <div className="flex-1 space-y-4">
+                  <div className="space-y-1">
+                    <p className="text-[#DBFF00] text-sm font-sofia-bold uppercase tracking-tighter">
+                      {service.subtitle}
+                    </p>
+                    <h3 className="text-2xl md:text-4xl font-sofia-bold text-white leading-tight">
+                      {service.title}
+                    </h3>
+                  </div>
+                  
+                  <p className="max-w-2xl font-inter text-base md:text-lg leading-relaxed text-white/50 group-hover:text-white/70 transition-colors">
+                    {service.description}
+                  </p>
 
-                {/* Tags */}
-                <div className="mt-auto flex flex-wrap gap-2 border-t border-white/[0.06] pt-8">
-                  {service.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="font-inter rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/40 transition-colors group-hover:border-white/20 group-hover:text-white/60"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {service.tags.map((tag, i) => (
+                      <span key={i} className="text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/30 border border-white/10 px-3 py-1 rounded-md">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </article>
+
+                {/* Action indicator (Desktop only) */}
+                <div className="hidden md:flex opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 text-[#DBFF00]">
+                  <FaChevronRight className="h-8 w-8" />
+                </div>
+              </div>
             );
           })}
+        </div>
+
+        {/* Final CTA Strip */}
+        <div className="mt-20 flex flex-col items-center border-t border-white/10 pt-20 text-center">
+            <h4 className="text-2xl font-sofia-bold text-white mb-6">Prêt à lancer votre projet ?</h4>
+            <a 
+              href="/#contact" 
+              className="inline-flex items-center gap-3 bg-[#DBFF00] text-[#001F45] px-8 py-4 rounded-full font-sofia-bold text-sm hover:scale-105 active:scale-95 transition-all shadow-[0_20px_40px_-10px_rgba(219,255,0,0.3)]"
+            >
+              Démarrer le voyage
+              <FaRocket className="h-4 w-4" />
+            </a>
         </div>
       </div>
     </section>

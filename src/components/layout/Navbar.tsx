@@ -16,7 +16,8 @@ export default function Navbar() {
   const navigationItems = [
     { name: 'Mon appli en 45j', path: '/offre' },
     { name: 'Lodgic Conseils', path: '/blog' },
-    { name: 'IA', path: '/intelligence-artificielle' },
+    { name: "L'IA chez Lodgic", path: "/intelligence-artificielle" },
+
   ]
 
   useEffect(() => {
@@ -55,7 +56,7 @@ export default function Navbar() {
       <motion.div
         animate={{ y: visible ? 0 : -120, opacity: visible ? 1 : 0 }}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        className="pointer-events-auto w-full max-w-3xl"
+        className="pointer-events-auto w-full max-w-4xl"
       >
         {/* Dock pill */}
         <nav
