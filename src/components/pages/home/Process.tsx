@@ -79,7 +79,7 @@ const INCLUDED = [
 
 export default function Process() {
   const isMobile = useIsMobile();
-  const [selectedPhase, setSelectedPhase] = useState<Phase | null>(null);
+  const [selectedPhase, setSelectedPhase] = useState<Phase | null>(PHASES[0]);
 
   return (
     <section

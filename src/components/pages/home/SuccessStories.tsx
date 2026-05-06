@@ -144,13 +144,8 @@ export default function SuccessStories() {
                 </p>
               </div>
 
-              <div className="pointer-events-none relative mt-auto h-[300px] w-full overflow-hidden">
-                <div
-                  aria-hidden
-                  className="absolute -bottom-16 left-1/2 h-[260px] w-[260px] -translate-x-1/2 rounded-full blur-3xl"
-                  style={{ backgroundColor: project.glow }}
-                />
-                <div className="absolute -bottom-10 left-1/2 aspect-square w-[105%] -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-[1.03]">
+              <div className="pointer-events-none relative mt-auto h-[300px] w-full">
+                <div className="absolute bottom-0 left-1/2 h-full w-[95%] -translate-x-1/2 transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-[1.03]">
                   <Image
                     src={project.mockup}
                     alt={`Aperçu de ${project.name}`}

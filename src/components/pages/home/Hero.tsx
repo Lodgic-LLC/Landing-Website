@@ -3,7 +3,7 @@ import ToulouseMap from "./ToulouseMap";
 
 export default function Hero() {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 pb-20 overflow-hidden relative flex flex-col justify-center">
+    <section className="w-full h-[70vh] lg:min-h-screen lg:h-auto bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-20 md:pt-36 pb-20 overflow-hidden relative flex flex-col justify-center">
       {/* Décor de fond subtil */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl opacity-70" />

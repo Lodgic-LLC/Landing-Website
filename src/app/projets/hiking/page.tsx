@@ -182,24 +182,13 @@ export default function HikingProjectPage() {
               <span aria-hidden>←</span> Retour à l&apos;accueil
             </Link>
 
-            <div className="mt-8 flex items-center gap-4">
-              <span className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-[#001F45]/10 md:h-20 md:w-20">
-                <Image
-                  src="/projets/hiking/logo.png"
-                  alt="Logo de Montiva, application mobile de randonnée"
-                  width={80}
-                  height={80}
-                  className="h-full w-full object-contain"
-                />
-              </span>
-              <div>
-                <p className="text-xs font-inter font-bold uppercase tracking-[0.25em] text-[#162869]/60">
-                  Application mobile · Randonnée & Outdoor
-                </p>
-                <h1 className="mt-1 text-4xl font-sofia-bold text-[#001F45] md:text-5xl">
-                  Montiva — Application mobile de randonnée
-                </h1>
-              </div>
+            <div className="mt-8">
+              <p className="text-xs font-inter font-bold uppercase tracking-[0.25em] text-[#162869]/60">
+                Application mobile · Randonnée & Outdoor
+              </p>
+              <h1 className="mt-1 text-4xl font-sofia-bold text-[#001F45] md:text-5xl">
+                Montiva — Application mobile de randonnée
+              </h1>
             </div>
 
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#162869]/85 font-inter md:text-xl">
