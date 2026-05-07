@@ -46,14 +46,22 @@ export const sendAnalyticsEvent = (eventName: string, event: CustomAnalyticsEven
       timestamp: new Date().toISOString(),
     }
 
+    const gtag = window.gtag
+    if (!gtag) {
+      if (globalConfig.debug) {
+        console.warn('⚠️ [Analytics] gtag not available')
+      }
+      return
+    }
+
     // Envoi vers Google Analytics
-    window.gtag('event', eventName, baseParams)
+    gtag('event', eventName, baseParams)
 
     // Envoi vers Google Ads si c'est une conversion
     if (event.category === 'conversion' && 'conversion_type' in event) {
       const conversionEvent = event as any
       if (conversionEvent.conversion_type === 'contact_form') {
-        window.gtag('event', 'conversion', {
+  gtag('event', 'conversion', {
           send_to: 'AW-16908078298/contact_form_conversion',
           value: conversionEvent.conversion_value || 1,
           currency: conversionEvent.conversion_currency || 'EUR',
