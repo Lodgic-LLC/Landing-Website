@@ -1,7 +1,7 @@
 interface Window {
-  gtag: (
+  gtag?: (
     command: string,
-    action: string,
+    action: any,
     params?: {
       send_to?: string
       value?: number
@@ -9,5 +9,7 @@ interface Window {
       [key: string]: any
     }
   ) => void
-  dataLayer: any[]
+  dataLayer?: any[]
 }
+
+declare module "vanilla-cookieconsent/dist/cookieconsent.css";

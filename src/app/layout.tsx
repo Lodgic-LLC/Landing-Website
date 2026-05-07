@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import "vanilla-cookieconsent/dist/cookieconsent.css";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 
-import Script from "next/script";
 import { WebVitals } from "./web-vitals";
 import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
 import MotionProvider from "@/components/layout/MotionProvider";
-import { Analytics } from "@vercel/analytics/next";
+import CookieConsentBanner from "@/components/consent/CookieConsentBanner";
+import ConsentScripts from "@/components/consent/ConsentScripts";
+import ConsentVercelAnalytics from "@/components/consent/ConsentVercelAnalytics";
 import StructuredData from "@/components/seo/StructuredData";
 import {
   ADDRESS_COUNTRY,
@@ -244,34 +246,14 @@ export default function RootLayout({
           href={`${SITE_URL}/llms-full.txt`}
         />
 
-        {/* Google Analytics et Google Ads */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-LV93937W8D"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-LV93937W8D');
-            gtag('config', 'AW-16908078298', {
-              'send_page_view': false
-            });
-          `}
-        </Script>
-
-        {/* Ahrefs Analytics Script */}
-        <Script
-          src="https://analytics.ahrefs.com/analytics.js"
-          data-key="NwAOnm/5ns2EDAKe8YmE8g"
-          strategy="afterInteractive"
-        />
+        {/* Consent-gated analytics/scripts are injected client-side */}
       </head>
       <body
         suppressHydrationWarning
         className={`${inter.variable} ${plusJakartaSans.variable} font-inter bg-gray-50 text-gray-800`}
       >
+        <CookieConsentBanner />
+        <ConsentScripts />
         <WebVitals />
         <AnalyticsProvider
           config={{
@@ -290,7 +272,7 @@ export default function RootLayout({
             </MotionProvider>
           </div>
         </AnalyticsProvider>
-        <Analytics />
+        <ConsentVercelAnalytics />
       </body>
     </html>
   );
