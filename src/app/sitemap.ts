@@ -133,6 +133,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly" as const,
       priority: 0.5,
     },
+    {
+      url: `${SITE_URL}/mentions-legales`,
+      lastModified: BUILD_DATE,
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
+    },
   ];
 
   return [...staticRoutes, ...projectRoutes, ...blogPostRoutes];
