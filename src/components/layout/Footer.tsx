@@ -194,6 +194,12 @@ export default function Footer() {
           <p>© {currentYear} Lodgic. Tous droits réservés.</p>
           <div className="flex items-center gap-5">
             <Link
+              href="/mentions-legales"
+              className="hover:text-white transition-colors"
+            >
+              Mentions légales
+            </Link>
+            <Link
               href="/politique-confidentialite"
               className="hover:text-white transition-colors"
             >

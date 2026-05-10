@@ -96,7 +96,7 @@ export async function POST(request: Request) {
     }))
 
     await resend.emails.send({
-      from: 'Lodgic <hello@lodgic-dev.com>',
+      from: 'Lodgic <contact@lodgic-dev.com>',
       to: email,
       subject: resource.subject,
       html: resource.html,
