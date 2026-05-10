@@ -16,7 +16,7 @@ const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 const PAGE_PATH = '/creation-application-mobile-sur-mesure'
 
 export const metadata: Metadata = {
-  title: 'Création application mobile sur mesure - Lodgic',
+  title: 'Création application mobile sur mesure',
   description:
     "Création application mobile sur mesure : Lodgic, agence à Toulouse, conçoit des apps iOS, Android et React Native uniques, alignées avec votre métier et vos utilisateurs.",
   alternates: { canonical: `${SITE_URL}${PAGE_PATH}` },

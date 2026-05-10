@@ -4,7 +4,7 @@ import BreadcrumbStructuredData from "@/components/seo/BreadcrumbStructuredData"
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Politique de Confidentialité - Lodgic",
+  title: "Politique de Confidentialité",
   description:
     "Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.",
   alternates: {

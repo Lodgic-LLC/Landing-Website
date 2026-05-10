@@ -16,7 +16,7 @@ const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 const PAGE_PATH = '/developpement-application-ios-android'
 
 export const metadata: Metadata = {
-  title: 'Développement application iOS et Android - Lodgic',
+  title: 'Développement application iOS et Android',
   description:
     "Développement application iOS et Android : Lodgic conçoit vos apps Swift, SwiftUI, Kotlin et Jetpack Compose, ou cross-platform React Native, depuis Toulouse.",
   alternates: { canonical: `${SITE_URL}${PAGE_PATH}` },

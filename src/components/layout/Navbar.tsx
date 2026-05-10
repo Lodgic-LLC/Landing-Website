@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Navbar() {
   const [visible, setVisible] = useState(true)
@@ -16,8 +15,7 @@ export default function Navbar() {
   const navigationItems = [
     { name: 'Mon appli en 45j', path: '/offre' },
     { name: 'Lodgic Conseils', path: '/blog' },
-    { name: "L'IA chez Lodgic", path: "/intelligence-artificielle" },
-
+    { name: "L'IA chez Lodgic", path: '/intelligence-artificielle' },
   ]
 
   useEffect(() => {
@@ -25,15 +23,12 @@ export default function Navbar() {
       const currentY = window.scrollY
       setAtTop(currentY < 12)
 
-      // Ignore tiny fluctuations
       if (Math.abs(currentY - lastScrollY.current) < 6) return
 
       if (currentY > lastScrollY.current && currentY > 80) {
-        // Scrolling down → hide
         setVisible(false)
         setIsMenuOpen(false)
       } else {
-        // Scrolling up → show
         setVisible(true)
       }
 
@@ -51,14 +46,15 @@ export default function Navbar() {
   const isActive = (path: string) => pathname === path
 
   return (
-    /* Outer container — full width, pointer-events off so it doesn't block page content */
     <div className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 pointer-events-none">
-      <motion.div
-        animate={{ y: visible ? 0 : -120, opacity: visible ? 1 : 0 }}
-        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      <div
+        style={{
+          transform: visible ? 'translateY(0)' : 'translateY(-120px)',
+          opacity: visible ? 1 : 0,
+          transition: 'transform 350ms cubic-bezier(0.22, 1, 0.36, 1), opacity 350ms cubic-bezier(0.22, 1, 0.36, 1)',
+        }}
         className="pointer-events-auto w-full max-w-4xl"
       >
-        {/* Dock pill */}
         <nav
           aria-label="Navigation principale"
           className={`flex items-center justify-between gap-3 rounded-full px-4 py-2.5 transition-all duration-300 ${
@@ -67,7 +63,6 @@ export default function Navbar() {
               : 'bg-white/90 backdrop-blur-lg border border-[#001F45]/10 shadow-[0_8px_32px_rgba(0,31,69,0.12)]'
           }`}
         >
-          {/* Logo */}
           <Link href="/" className="flex shrink-0 items-center gap-2 group" aria-label="Accueil Lodgic">
             <Image
               src="/icon_bgtransparent.png"
@@ -83,7 +78,6 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop nav links */}
           <div className="hidden md:flex items-center gap-0.5">
             {navigationItems.map((item) => (
               <Link
@@ -100,7 +94,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right: CTA + mobile toggle */}
           <div className="flex items-center gap-2">
             <Link
               href="/contact"
@@ -109,7 +102,6 @@ export default function Navbar() {
               Une question ?
             </Link>
 
-            {/* Mobile hamburger */}
             <button
               type="button"
               onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -117,80 +109,55 @@ export default function Navbar() {
               aria-expanded={isMenuOpen}
               aria-label="Menu principal"
             >
-              <AnimatePresence mode="wait" initial={false}>
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                aria-hidden="true"
+              >
                 {isMenuOpen ? (
-                  <motion.svg
-                    key="close"
-                    initial={{ rotate: -45, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 45, opacity: 0 }}
-                    transition={{ duration: 0.15 }}
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                    aria-hidden="true"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </motion.svg>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <motion.svg
-                    key="open"
-                    initial={{ rotate: 45, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -45, opacity: 0 }}
-                    transition={{ duration: 0.15 }}
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                    aria-hidden="true"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                  </motion.svg>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 )}
-              </AnimatePresence>
+              </svg>
             </button>
           </div>
         </nav>
 
-        {/* Mobile dropdown menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -6, scale: 0.97 }}
-              animate={{ opacity: 1, y: 6, scale: 1 }}
-              exit={{ opacity: 0, y: -6, scale: 0.97 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="mt-1 overflow-hidden rounded-2xl border border-[#001F45]/10 bg-white/95 backdrop-blur-lg p-2 shadow-[0_8px_32px_rgba(0,31,69,0.12)]"
+        <div
+          className={`mt-1 overflow-hidden rounded-2xl border border-[#001F45]/10 bg-white/95 backdrop-blur-lg shadow-[0_8px_32px_rgba(0,31,69,0.12)] transition-all duration-200 ease-out ${
+            isMenuOpen ? 'max-h-96 opacity-100 p-2' : 'max-h-0 opacity-0 p-0 border-transparent'
+          }`}
+          aria-hidden={!isMenuOpen}
+        >
+          {navigationItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.path}
+              className={`block rounded-xl px-4 py-3 text-sm font-inter font-medium transition-smooth ${
+                isActive(item.path)
+                  ? 'bg-[#001F45]/6 text-[#001F45]'
+                  : 'text-[#001F45]/70 hover:bg-[#001F45]/5 hover:text-[#001F45]'
+              }`}
+              tabIndex={isMenuOpen ? 0 : -1}
             >
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.path}
-                  className={`block rounded-xl px-4 py-3 text-sm font-inter font-medium transition-smooth ${
-                    isActive(item.path)
-                      ? 'bg-[#001F45]/6 text-[#001F45]'
-                      : 'text-[#001F45]/70 hover:bg-[#001F45]/5 hover:text-[#001F45]'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="mt-1 border-t border-[#001F45]/6 pt-1">
-                <Link
-                  href="/contact"
-                  className="block rounded-xl bg-[#001F45] px-4 py-3 text-center text-sm font-inter font-semibold text-white hover:bg-[#0b2b63] transition-smooth"
-                >
-                  Une question ?
-                </Link>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
+              {item.name}
+            </Link>
+          ))}
+          <div className="mt-1 border-t border-[#001F45]/6 pt-1">
+            <Link
+              href="/contact"
+              className="block rounded-xl bg-[#001F45] px-4 py-3 text-center text-sm font-inter font-semibold text-white hover:bg-[#0b2b63] transition-smooth"
+              tabIndex={isMenuOpen ? 0 : -1}
+            >
+              Une question ?
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

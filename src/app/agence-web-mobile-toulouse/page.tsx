@@ -16,7 +16,7 @@ const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 const PAGE_PATH = '/agence-web-mobile-toulouse'
 
 export const metadata: Metadata = {
-  title: 'Agence web et mobile Toulouse - Lodgic',
+  title: 'Agence web et mobile Toulouse',
   description:
     "Agence web et mobile à Toulouse : Lodgic conçoit sites web Next.js, applications mobiles iOS / Android et SaaS sur mesure pour startups, PME et grands comptes.",
   alternates: { canonical: `${SITE_URL}${PAGE_PATH}` },

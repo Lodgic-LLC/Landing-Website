@@ -8,6 +8,7 @@ import TableOfContents from '@/components/blog/TableOfContents'
 import StructuredData from '@/components/seo/StructuredData'
 import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
 import { SITE_URL } from '@/lib/site'
+import { getAuthorByName, getAuthorUrl } from '@/data/authors'
 
 interface BlogPageProps {
   params: Promise<{ slug: string }>
@@ -125,6 +126,21 @@ export default async function PostPage({ params }: BlogPageProps) {
   }
 
   const headings = extractHeadings(post.content)
+  const author = getAuthorByName(post.author)
+  const authorUrl = getAuthorUrl(author.slug)
+
+  const authorSchema: Record<string, unknown> = {
+    '@type': 'Person',
+    name: author.name,
+    jobTitle: author.jobTitle,
+    url: authorUrl,
+  }
+  if (author.image) {
+    authorSchema.image = author.image.startsWith('http') ? author.image : `${SITE_URL}${author.image}`
+  }
+  if (author.sameAs && author.sameAs.length > 0) {
+    authorSchema.sameAs = author.sameAs
+  }
 
   const articleSchemaData = {
     '@context': 'https://schema.org',
@@ -141,10 +157,7 @@ export default async function PostPage({ params }: BlogPageProps) {
       width: 1200,
       height: 630,
     },
-    author: {
-      '@type': 'Person',
-      name: post.author,
-    },
+    author: authorSchema,
     publisher: {
       '@type': 'Organization',
       name: 'Lodgic',
@@ -160,6 +173,12 @@ export default async function PostPage({ params }: BlogPageProps) {
     articleBody: post.content,
     inLanguage: 'fr-FR',
   }
+
+  const formattedDate = new Date(post.date).toLocaleDateString('fr-FR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
 
   const breadcrumbItems = [
     { name: 'Accueil', url: SITE_URL },
@@ -191,6 +210,19 @@ export default async function PostPage({ params }: BlogPageProps) {
                 {post.title}
               </h1>
               <p className="text-[#162869] font-inter text-lg mb-6">{post.summary}</p>
+              <div className="flex flex-col xl:flex-row xl:items-center gap-2 xl:gap-4 text-sm text-[#162869]/80 font-inter">
+                <a
+                  href={authorUrl}
+                  rel="author"
+                  className="font-semibold text-[#000f45] hover:underline"
+                >
+                  {author.name}
+                </a>
+                <span className="hidden xl:inline text-[#162869]/40">·</span>
+                <span>{author.jobTitle}</span>
+                <span className="hidden xl:inline text-[#162869]/40">·</span>
+                <time dateTime={new Date(post.date).toISOString()}>{formattedDate}</time>
+              </div>
             </header>
 
             <div className="p-8 md:p-10 pb-0">

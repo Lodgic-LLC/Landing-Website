@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/data/blog/posts";
+import { getAllAuthors } from "@/data/authors";
 
 import { SITE_URL } from "@/lib/site";
 
@@ -11,6 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.updatedAt ?? post.date).toISOString(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
+  }));
+
+  const authorRoutes = getAllAuthors().map((author) => ({
+    url: `${SITE_URL}/auteurs/${author.slug}`,
+    lastModified: BUILD_DATE,
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
   }));
 
   const projectRoutes = [
@@ -135,5 +143,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...staticRoutes, ...projectRoutes, ...blogPostRoutes];
+  return [...staticRoutes, ...projectRoutes, ...blogPostRoutes, ...authorRoutes];
 }

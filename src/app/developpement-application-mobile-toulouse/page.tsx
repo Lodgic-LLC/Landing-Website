@@ -16,7 +16,7 @@ const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 const PAGE_PATH = '/developpement-application-mobile-toulouse'
 
 export const metadata: Metadata = {
-  title: 'Développement application mobile à Toulouse - Lodgic',
+  title: 'Développement application mobile à Toulouse',
   description:
     "Développement application mobile à Toulouse : agence Lodgic conçoit et développe vos applications iOS et Android sur mesure pour startups, PME et grands comptes en région toulousaine.",
   alternates: { canonical: `${SITE_URL}${PAGE_PATH}` },

@@ -15,7 +15,7 @@ const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 const AdvancedTracker = dynamic(() => import('@/components/analytics/AdvancedTracker').then((m) => m.AdvancedTracker))
 
 export const metadata: Metadata = {
-  title: 'Développeur Web et Mobile Toulouse - Lodgic',
+  title: 'Développeur Web et Mobile Toulouse',
   description:
     "Besoin d'un Développeur Web et Mobile à Toulouse ? Lodgic crée des sites web et applications mobiles sur mesure pour startups, entreprises et particuliers.",
   alternates: {

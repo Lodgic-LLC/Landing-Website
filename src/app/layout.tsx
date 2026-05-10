@@ -7,7 +7,6 @@ import Navbar from "@/components/layout/Navbar";
 import Script from "next/script";
 import { WebVitals } from "./web-vitals";
 import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
-import MotionProvider from "@/components/layout/MotionProvider";
 import { Analytics } from "@vercel/analytics/next";
 import StructuredData from "@/components/seo/StructuredData";
 import {
@@ -24,7 +23,9 @@ import {
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
+  SOCIAL_PROFILES,
   STREET_ADDRESS,
+  WIKIDATA_QID,
 } from "@/lib/site";
 
 const inter = Inter({
@@ -66,9 +67,8 @@ const organizationNode: Record<string, unknown> = {
     { "@type": "Country", name: "France" },
   ],
   sameAs: [
-    "https://github.com/lodgic-llc",
-    "https://linkedin.com/company/lodgic-dev",
-    "https://x.com/lodgic-dev",
+    ...SOCIAL_PROFILES,
+    ...(WIKIDATA_QID ? [`https://www.wikidata.org/entity/${WIKIDATA_QID}`] : []),
   ],
   makesOffer: [
     {
@@ -283,11 +283,9 @@ export default function RootLayout({
           }}
         >
           <div className="relative w-full">
-            <MotionProvider>
-              <Navbar />
-              {children}
-              <Footer />
-            </MotionProvider>
+            <Navbar />
+            {children}
+            <Footer />
           </div>
         </AnalyticsProvider>
         <Analytics />

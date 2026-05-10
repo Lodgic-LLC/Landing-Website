@@ -27,3 +27,19 @@ export const OPENING_HOURS: Array<{
 }> = [{ dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '18:00' }]
 
 export const PRICE_RANGE = '€€'
+
+// Wikidata entity QID (e.g. 'Q12345') — laisser vide tant que l'entité n'existe pas.
+// Après création sur https://www.wikidata.org/wiki/Special:NewItem :
+//   - P856 (official website)  → https://www.lodgic-dev.com
+//   - P131 (located in)         → Q7880 (Toulouse)
+//   - P452 (industry)           → Q638328 (software development)
+//   - P17  (country)            → Q142 (France)
+// Une fois l'entité publiée, mettre le QID ici (sans 'https://...', juste 'Qxxxx').
+export const WIKIDATA_QID = ''
+
+export const SOCIAL_PROFILES = [
+  'https://github.com/lodgic-llc',
+  'https://linkedin.com/company/lodgic-dev',
+  'https://x.com/lodgic-dev',
+]
+

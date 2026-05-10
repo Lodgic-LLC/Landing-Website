@@ -16,7 +16,7 @@ const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 const PAGE_PATH = '/developpeur-react-native-toulouse'
 
 export const metadata: Metadata = {
-  title: 'Développeur React Native Toulouse - Lodgic',
+  title: 'Développeur React Native Toulouse',
   description:
     "Développeur React Native à Toulouse : Lodgic conçoit des applications cross-platform iOS et Android performantes en React Native, TypeScript et Expo, avec un seul code base.",
   alternates: { canonical: `${SITE_URL}${PAGE_PATH}` },
