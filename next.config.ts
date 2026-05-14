@@ -103,11 +103,11 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://*.vercel-insights.com https://*.googletagmanager.com https://*.google-analytics.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://*.vercel-insights.com https://*.googletagmanager.com https://*.google-analytics.com https://analytics.ahrefs.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' data: https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",
-              "connect-src 'self' https://*.vercel-insights.com https://*.vercel-analytics.com https://va.vercel-scripts.com https://*.google-analytics.com https://*.googletagmanager.com",
+              "connect-src 'self' https://*.vercel-insights.com https://*.vercel-analytics.com https://va.vercel-scripts.com https://*.google-analytics.com https://*.googletagmanager.com https://analytics.ahrefs.com",
               "frame-src 'self' https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com",
               "frame-ancestors 'self'",
               "base-uri 'self'",
