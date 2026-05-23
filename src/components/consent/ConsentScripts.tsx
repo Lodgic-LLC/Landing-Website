@@ -91,6 +91,11 @@ const ConsentScripts = () => {
 
       if (analyticsAccepted) {
         window.gtag?.("config", GA_MEASUREMENT_ID, { send_page_view: false });
+        window.gtag?.("event", "page_view", {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: window.location.pathname,
+        });
         await loadScript(
           "https://analytics.ahrefs.com/analytics.js",
           AHREFS_SCRIPT_ID,
