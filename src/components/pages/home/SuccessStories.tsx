@@ -32,7 +32,7 @@ const projects: Project[] = [
   },
   {
     slug: "driveapp",
-    name: "Roovo",
+    name: "Fleetly",
     category: "Location de véhicules",
     description:
       "Plateforme mobile de location de voitures : catalogue temps réel, réservation guidée et suivi des trajets en quelques tapes.",
@@ -45,7 +45,7 @@ const projects: Project[] = [
   },
   {
     slug: "comptabilite",
-    name: "Lumio",
+    name: "Klevr",
     category: "Comptabilité & cabinet",
     description:
       "Application mobile pour experts-comptables et clients : tableau de bord, dossiers, documents et messagerie centralisés.",

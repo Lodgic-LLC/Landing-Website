@@ -17,7 +17,7 @@ const APP_THEME = {
 const screens = [
   {
     src: "/projets/comptabilite/accueil.svg",
-    alt: "Tableau de bord Lumio",
+    alt: "Tableau de bord Klevr",
     caption: "Accueil",
   },
   {
@@ -94,15 +94,15 @@ const LUMIO_KEYWORDS = [
 ];
 
 export const metadata: Metadata = {
-  title: "Lumio — Application mobile de comptabilité pour cabinets | Lodgic Toulouse",
+  title: "Klevr — Application mobile de comptabilité pour cabinets | Lodgic Toulouse",
   description:
-    "Découvrez Lumio, application mobile de comptabilité développée par Lodgic : tableau de bord cabinet, suivi clients, documents centralisés et messagerie sécurisée iOS & Android.",
+    "Découvrez Klevr, application mobile de comptabilité développée par Lodgic : tableau de bord cabinet, suivi clients, documents centralisés et messagerie sécurisée iOS & Android.",
   keywords: LUMIO_KEYWORDS,
   alternates: { canonical: `${SITE_URL}/projets/comptabilite` },
   authors: [{ name: "Lodgic", url: SITE_URL }],
   category: "Application mobile",
   openGraph: {
-    title: "Lumio — Application mobile de comptabilité | Lodgic",
+    title: "Klevr — Application mobile de comptabilité | Lodgic",
     description:
       "Application mobile pour experts-comptables : tableau de bord, suivi clients, documents et messagerie. Conçue par Lodgic à Toulouse.",
     url: `${SITE_URL}/projets/comptabilite`,
@@ -112,7 +112,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/lodgic-banner.png`,
         width: 1200,
         height: 630,
-        alt: "Lumio — Application mobile de comptabilité développée par Lodgic",
+        alt: "Klevr — Application mobile de comptabilité développée par Lodgic",
       },
     ],
     locale: "fr_FR",
@@ -120,18 +120,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumio — Application mobile de comptabilité | Lodgic",
+    title: "Klevr — Application mobile de comptabilité | Lodgic",
     description:
       "Application mobile sur mesure pour experts-comptables : dossiers, documents et messagerie intégrée.",
     images: [`${SITE_URL}/lodgic-banner.png`],
   },
 };
 
-export default function LumioProjectPage() {
+export default function KlevrProjectPage() {
   const projectSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Lumio",
+    name: "Klevr",
     description: metadata.description,
     url: `${SITE_URL}/projets/comptabilite`,
     applicationCategory: "BusinessApplication",
@@ -154,7 +154,7 @@ export default function LumioProjectPage() {
   const breadcrumbItems = [
     { name: "Accueil", url: SITE_URL },
     { name: "Projets", url: `${SITE_URL}/#realisations` },
-    { name: "Lumio", url: `${SITE_URL}/projets/comptabilite` },
+    { name: "Klevr", url: `${SITE_URL}/projets/comptabilite` },
   ];
 
   return (
@@ -187,12 +187,12 @@ export default function LumioProjectPage() {
                 Application mobile · Comptabilité & cabinet
               </p>
               <h1 className="mt-2 text-4xl font-sofia-bold text-[#001F45] md:text-5xl lg:text-6xl">
-                Lumio — Application mobile de comptabilité
+                Klevr — Application mobile de comptabilité
               </h1>
             </div>
 
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#162869]/85 font-inter md:text-xl">
-              Lumio est une application mobile dédiée aux experts-comptables et
+              Klevr est une application mobile dédiée aux experts-comptables et
               à leurs clients. Elle centralise les dossiers, les documents et
               les échanges pour fluidifier le quotidien — à la fois côté cabinet
               et côté entreprise. Conçue et développée par Lodgic à Toulouse.
@@ -252,7 +252,7 @@ export default function LumioProjectPage() {
               <div className="relative h-full w-full">
                 <Image
                   src="/projets/comptabilite/accueil.svg"
-                  alt="Aperçu de l'écran d'accueil de Lumio, application mobile de comptabilité"
+                  alt="Aperçu de l'écran d'accueil de Klevr, application mobile de comptabilité"
                   fill
                   priority
                   sizes="(max-width: 1024px) 80vw, 40vw"
@@ -333,7 +333,7 @@ export default function LumioProjectPage() {
               id="lumio-features-heading"
               className="mt-3 text-3xl font-sofia-bold text-[#001F45] md:text-4xl"
             >
-              Ce que Lumio permet de faire.
+              Ce que Klevr permet de faire.
             </h2>
             <p className="mt-4 text-base font-inter leading-relaxed text-[#162869]/75">
               Un périmètre fonctionnel complet pour gérer les dossiers et les
@@ -419,7 +419,7 @@ export default function LumioProjectPage() {
           <div className="lg:col-span-7">
             <div className="rounded-3xl border border-[#001F45]/10 bg-[#f6f7fc] p-6 shadow-soft md:p-8">
               <HomeProjectForm
-                source="Projet Lumio"
+                source="Projet Klevr"
                 emailInputId="lumio-contact-email"
                 messageInputId="lumio-contact-message"
                 consentInputId="lumio-contact-consent"

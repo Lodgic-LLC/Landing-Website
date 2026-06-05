@@ -17,7 +17,7 @@ const APP_THEME = {
 const screens = [
   {
     src: "/projets/driveapp/accueil.svg",
-    alt: "Écran d'accueil Roovo",
+    alt: "Écran d'accueil Fleetly",
     caption: "Accueil",
   },
   {
@@ -42,7 +42,7 @@ const screens = [
   },
   {
     src: "/projets/driveapp/profil.svg",
-    alt: "Profil utilisateur Roovo",
+    alt: "Profil utilisateur Fleetly",
     caption: "Profil",
   },
 ];
@@ -94,15 +94,15 @@ const ROOVO_KEYWORDS = [
 ];
 
 export const metadata: Metadata = {
-  title: "Roovo — Application mobile de location de voitures iOS & Android | Lodgic Toulouse",
+  title: "Fleetly — Application mobile de location de voitures iOS & Android | Lodgic Toulouse",
   description:
-    "Découvrez Roovo, application mobile de location de voitures développée par Lodgic : catalogue temps réel, réservation guidée, suivi des trajets et tableau de bord exploitant pour la gestion de flotte.",
+    "Découvrez Fleetly, application mobile de location de voitures développée par Lodgic : catalogue temps réel, réservation guidée, suivi des trajets et tableau de bord exploitant pour la gestion de flotte.",
   keywords: ROOVO_KEYWORDS,
   alternates: { canonical: `${SITE_URL}/projets/driveapp` },
   authors: [{ name: "Lodgic", url: SITE_URL }],
   category: "Application mobile",
   openGraph: {
-    title: "Roovo — Application mobile de location de voitures | Lodgic",
+    title: "Fleetly — Application mobile de location de voitures | Lodgic",
     description:
       "Application mobile de location de voitures : catalogue, réservation guidée, suivi et tableau de bord exploitant. Conçue par Lodgic à Toulouse.",
     url: `${SITE_URL}/projets/driveapp`,
@@ -112,7 +112,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/lodgic-banner.png`,
         width: 1200,
         height: 630,
-        alt: "Roovo — Application mobile de location de voitures développée par Lodgic",
+        alt: "Fleetly — Application mobile de location de voitures développée par Lodgic",
       },
     ],
     locale: "fr_FR",
@@ -120,18 +120,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Roovo — Application mobile de location de voitures | Lodgic",
+    title: "Fleetly — Application mobile de location de voitures | Lodgic",
     description:
       "Application mobile de location de voitures sur mesure : catalogue, réservation et tableau de bord exploitant.",
     images: [`${SITE_URL}/lodgic-banner.png`],
   },
 };
 
-export default function RoovoProjectPage() {
+export default function FleetlyProjectPage() {
   const projectSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Roovo",
+    name: "Fleetly",
     description: metadata.description,
     url: `${SITE_URL}/projets/driveapp`,
     applicationCategory: "BusinessApplication",
@@ -154,7 +154,7 @@ export default function RoovoProjectPage() {
   const breadcrumbItems = [
     { name: "Accueil", url: SITE_URL },
     { name: "Projets", url: `${SITE_URL}/#realisations` },
-    { name: "Roovo", url: `${SITE_URL}/projets/driveapp` },
+    { name: "Fleetly", url: `${SITE_URL}/projets/driveapp` },
   ];
 
   return (
@@ -187,12 +187,12 @@ export default function RoovoProjectPage() {
                 Application mobile · Location de véhicules
               </p>
               <h1 className="mt-2 text-4xl font-sofia-bold text-[#001F45] md:text-5xl lg:text-6xl">
-                Roovo — Application mobile de location de voitures
+                Fleetly — Application mobile de location de voitures
               </h1>
             </div>
 
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#162869]/85 font-inter md:text-xl">
-              Roovo est une application mobile dédiée à la location de voitures.
+              Fleetly est une application mobile dédiée à la location de voitures.
               Elle centralise le catalogue, la réservation et le suivi pour les
               utilisateurs comme pour l&apos;exploitant — fluide, rapide, sans
               friction. Conçue et développée par Lodgic à Toulouse.
@@ -252,7 +252,7 @@ export default function RoovoProjectPage() {
               <div className="relative h-full w-full">
                 <Image
                   src="/projets/driveapp/accueil.svg"
-                  alt="Aperçu de l'écran d'accueil de Roovo, application mobile de location de voitures"
+                  alt="Aperçu de l'écran d'accueil de Fleetly, application mobile de location de voitures"
                   fill
                   priority
                   sizes="(max-width: 1024px) 80vw, 40vw"
@@ -333,7 +333,7 @@ export default function RoovoProjectPage() {
               id="roovo-features-heading"
               className="mt-3 text-3xl font-sofia-bold text-[#001F45] md:text-4xl"
             >
-              Ce que Roovo permet de faire.
+              Ce que Fleetly permet de faire.
             </h2>
             <p className="mt-4 text-base font-inter leading-relaxed text-[#162869]/75">
               Un périmètre fonctionnel complet pour gérer une flotte au
@@ -419,7 +419,7 @@ export default function RoovoProjectPage() {
           <div className="lg:col-span-7">
             <div className="rounded-3xl border border-[#001F45]/10 bg-[#f6f7fc] p-6 shadow-soft md:p-8">
               <HomeProjectForm
-                source="Projet Roovo"
+                source="Projet Fleetly"
                 emailInputId="roovo-contact-email"
                 messageInputId="roovo-contact-message"
                 consentInputId="roovo-contact-consent"
