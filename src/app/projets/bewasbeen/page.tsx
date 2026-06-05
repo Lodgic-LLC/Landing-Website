@@ -6,113 +6,129 @@ import BreadcrumbStructuredData from "@/components/seo/BreadcrumbStructuredData"
 import { SITE_URL } from "@/lib/site";
 import HomeProjectForm from "@/components/forms/HomeProjectForm";
 import { FaqAccordion, type FaqItem } from "@/components/FaqAccordion";
+import { ScreenshotGallery } from "./_components/ScreenshotGallery";
 
 const APP_THEME = {
-  primary: "#16161E",
-  primaryDeep: "#0B0B14",
-  accent: "#FF3D7F",
-  accentSoft: "#FF7AA8",
+  primary: "#0D1B2A",
+  primaryDeep: "#07111c",
+  accent: "#4F9CF9",
+  accentSoft: "#93C5FD",
 } as const;
 
 const screens = [
   {
-    src: "/projets/musique/accueil.svg",
-    alt: "Tableau de bord Sonara — découvertes et titres recommandés",
+    src: "/projets/bewasbeen/bwb_landing_page.png",
+    alt: "Page d'accueil BewasBeen — présentation de la plateforme",
     caption: "Accueil",
   },
   {
-    src: "/projets/musique/recherche.svg",
-    alt: "Recherche de titres, artistes et albums",
-    caption: "Recherche",
+    src: "/projets/bewasbeen/bwb_professor_dashboard.png",
+    alt: "Tableau de bord enseignant — suivi des élèves et des classes",
+    caption: "Tableau de bord",
   },
   {
-    src: "/projets/musique/bibliotheques.svg",
-    alt: "Bibliothèque musicale personnelle",
-    caption: "Bibliothèque",
+    src: "/projets/bewasbeen/bwb_create_class.png",
+    alt: "Création d'une classe avec code d'accès et QR code",
+    caption: "Créer une classe",
   },
   {
-    src: "/projets/musique/playlist.svg",
-    alt: "Playlist personnalisée avec gestion des titres",
-    caption: "Playlist",
+    src: "/projets/bewasbeen/bwb_play_modes.png",
+    alt: "Sélection du mode d'exercice — dépôt, frappe, audio",
+    caption: "Modes d'exercice",
   },
   {
-    src: "/projets/musique/encours.svg",
-    alt: "Lecteur en cours avec contrôles de lecture",
-    caption: "Lecture en cours",
+    src: "/projets/bewasbeen/bwb_drag_and_drop_mode.png",
+    alt: "Exercice en mode glisser-déposer — conjugaison de verbes",
+    caption: "Glisser-déposer",
   },
   {
-    src: "/projets/musique/profil.svg",
-    alt: "Profil utilisateur et préférences d'écoute",
-    caption: "Profil",
+    src: "/projets/bewasbeen/bwb_typing_mode.png",
+    alt: "Exercice en mode frappe clavier — saisie des formes verbales",
+    caption: "Frappe clavier",
+  },
+  {
+    src: "/projets/bewasbeen/bwb_audio_mode.png",
+    alt: "Exercice en mode audio — reconnaissance des verbes à l'oreille",
+    caption: "Mode audio",
+  },
+  {
+    src: "/projets/bewasbeen/bwb_create_verb_list.png",
+    alt: "Création d'une liste de verbes personnalisée",
+    caption: "Créer une liste",
+  },
+  {
+    src: "/projets/bewasbeen/bwb_verb_list_template.png",
+    alt: "Modèles de listes de verbes prêts à l'emploi",
+    caption: "Modèles de listes",
   },
 ];
 
 const features: FaqItem[] = [
   {
-    question: "Découverte musicale personnalisée",
+    question: "Tableau de bord enseignant",
     answer:
-      "Un fil de recommandations basé sur les habitudes d'écoute et les préférences. Sélections quotidiennes, mixs personnalisés et nouveautés ciblées par genre.",
+      "Les professeurs disposent d'un espace dédié pour créer des classes, inviter des élèves via un code ou un QR code, et suivre la progression individuelle de chacun. Les résultats sont centralisés et exportables au format PDF ou CSV.",
   },
   {
-    question: "Recherche intelligente multi-critères",
+    question: "Listes de verbes personnalisées",
     answer:
-      "Trouvez un titre, un artiste, un album ou une playlist en quelques tapes. Filtres par genre, époque, ambiance ou popularité, avec suggestions au fil de la frappe.",
+      "L'enseignant peut composer ses propres listes de verbes irréguliers à travailler, ou repartir de modèles prêts à l'emploi. Chaque liste est assignable à une classe en quelques clics.",
   },
   {
-    question: "Bibliothèque et favoris synchronisés",
+    question: "Trois modes d'entraînement",
     answer:
-      "Tous les titres aimés, albums sauvegardés et artistes suivis dans un espace centralisé, synchronisé sur tous les appareils en temps réel.",
+      "Les élèves s'exercent selon le mode qui leur convient : glisser-déposer les formes verbales, saisir la conjugaison au clavier, ou reconnaître les verbes à l'oreille en mode audio. Chaque mode adapte sa difficulté automatiquement.",
   },
   {
-    question: "Création et partage de playlists",
+    question: "Suivi de la progression des élèves",
     answer:
-      "Composez vos playlists, ajoutez une pochette personnalisée, organisez l'ordre des titres et partagez le tout en un lien — collaboratif si besoin.",
+      "Chaque session est enregistrée et résumée dans le tableau de bord : taux de réussite par verbe, temps passé, historique des tentatives. L'enseignant identifie rapidement les points à renforcer.",
   },
   {
-    question: "Lecteur fluide et hors-ligne",
+    question: "Accès par code de classe et QR code",
     answer:
-      "Contrôles enrichis, mode hors-ligne, gapless playback, qualité audio adaptative et CarPlay/Android Auto pour une écoute partout.",
+      "Rejoindre une classe est immédiat : l'élève scanne un QR code projeté au tableau ou entre un code court. Pas de compte élève à créer — la friction d'entrée est quasi nulle.",
   },
   {
-    question: "Profil et historique d'écoute",
+    question: "Export et rapports",
     answer:
-      "Statistiques d'écoute, top artistes du mois, titres les plus joués et historique complet pour redécouvrir les sons qui ont marqué l'année.",
+      "Les résultats de classe ou d'un élève en particulier sont exportables en PDF ou CSV pour les bulletins, les réunions parents-professeurs ou le simple suivi pédagogique.",
   },
 ];
 
-const SONARA_KEYWORDS = [
-  "application mobile musique",
-  "développement application streaming",
-  "app musique sur mesure",
-  "création application audio",
-  "React Native musique",
-  "lecteur audio mobile",
-  "playlist app",
-  "application iOS Android musique",
-  "développeur application mobile Toulouse",
+const BWB_KEYWORDS = [
+  "application apprentissage anglais",
+  "verbes irréguliers anglais",
+  "plateforme EdTech",
+  "tableau de bord enseignant",
+  "exercices interactifs anglais",
+  "création application web éducative",
+  "développement plateforme pédagogique",
+  "Next.js TypeScript",
+  "développeur web Toulouse",
   "Lodgic",
 ];
 
 export const metadata: Metadata = {
-  title: "Sonara — Application mobile de musique & streaming | Lodgic Toulouse",
+  title: "BewasBeen — Plateforme EdTech d'apprentissage des verbes irréguliers anglais | Lodgic",
   description:
-    "Découvrez Sonara, application mobile de musique développée par Lodgic : découverte personnalisée, lecteur fluide, playlists collaboratives et bibliothèque synchronisée iOS & Android.",
-  keywords: SONARA_KEYWORDS,
-  alternates: { canonical: `${SITE_URL}/projets/musique` },
+    "Découvrez BewasBeen, plateforme web pédagogique développée par Lodgic : exercices interactifs, tableau de bord enseignant, gestion de classes et suivi de progression pour apprendre les verbes irréguliers anglais.",
+  keywords: BWB_KEYWORDS,
+  alternates: { canonical: `${SITE_URL}/projets/bewasbeen` },
   authors: [{ name: "Lodgic", url: SITE_URL }],
-  category: "Application mobile",
+  category: "Plateforme web",
   openGraph: {
-    title: "Sonara — Application mobile de musique | Lodgic",
+    title: "BewasBeen — Plateforme EdTech pour les verbes irréguliers anglais | Lodgic",
     description:
-      "Application mobile de streaming musical : découverte personnalisée, recherche intelligente, playlists, lecture hors-ligne. Conçue par Lodgic à Toulouse.",
-    url: `${SITE_URL}/projets/musique`,
+      "Plateforme web pédagogique : exercices en glisser-déposer, frappe et audio, tableau de bord enseignant, gestion de classes et suivi de progression. Conçue par Lodgic à Toulouse.",
+    url: `${SITE_URL}/projets/bewasbeen`,
     siteName: "Lodgic",
     images: [
       {
         url: `${SITE_URL}/lodgic-banner.png`,
         width: 1200,
         height: 630,
-        alt: "Sonara — Application mobile de musique développée par Lodgic",
+        alt: "BewasBeen — Plateforme EdTech développée par Lodgic",
       },
     ],
     locale: "fr_FR",
@@ -120,23 +136,23 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sonara — Application mobile de musique | Lodgic",
+    title: "BewasBeen — Plateforme EdTech | Lodgic",
     description:
-      "Application mobile de streaming musical sur mesure : découverte, lecteur, playlists et bibliothèque synchronisée.",
+      "Plateforme web pour apprendre les verbes irréguliers anglais : exercices interactifs, tableau de bord enseignant et suivi de progression.",
     images: [`${SITE_URL}/lodgic-banner.png`],
   },
 };
 
-export default function SonaraProjectPage() {
+export default function BewasBeenProjectPage() {
   const projectSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "Sonara",
+    "@type": "WebApplication",
+    name: "BewasBeen",
     description: metadata.description,
-    url: `${SITE_URL}/projets/musique`,
-    applicationCategory: "MultimediaApplication",
-    applicationSubCategory: "Music",
-    operatingSystem: "iOS, Android",
+    url: "https://irregularverbsonline.com",
+    applicationCategory: "EducationalApplication",
+    applicationSubCategory: "Language Learning",
+    operatingSystem: "Web",
     inLanguage: "fr-FR",
     creator: {
       "@type": "Organization",
@@ -154,15 +170,15 @@ export default function SonaraProjectPage() {
   const breadcrumbItems = [
     { name: "Accueil", url: SITE_URL },
     { name: "Projets", url: `${SITE_URL}/#realisations` },
-    { name: "Sonara", url: `${SITE_URL}/projets/musique` },
+    { name: "BewasBeen", url: `${SITE_URL}/projets/bewasbeen` },
   ];
 
   return (
     <main className="bg-white">
-      <StructuredData id="project-musique" data={projectSchema} />
+      <StructuredData id="project-bewasbeen" data={projectSchema} />
       <BreadcrumbStructuredData items={breadcrumbItems} />
 
-      {/* ── Hero — Lodgic theme ── */}
+      {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#f6f7fc] via-white to-[#eaf0ff] pt-28 pb-20 md:pt-36 md:pb-28">
         <div
           aria-hidden
@@ -184,27 +200,38 @@ export default function SonaraProjectPage() {
 
             <div className="mt-8">
               <p className="text-xs font-inter font-bold uppercase tracking-[0.25em] text-[#162869]/60">
-                Application mobile · Streaming musical
+                Plateforme web · EdTech · Anglais
               </p>
-              <h1 className="mt-2 text-4xl font-sofia-bold text-[#001F45] md:text-5xl lg:text-6xl">
-                Sonara — Application mobile de musique
+              <h1 className="mt-1 text-4xl font-sofia-bold text-[#001F45] md:text-5xl">
+                BewasBeen — Plateforme d&apos;apprentissage des verbes irréguliers
               </h1>
             </div>
 
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#162869]/85 font-inter md:text-xl">
-              Sonara est une application mobile de streaming musical pensée
-              pour offrir une expérience d&apos;écoute fluide et personnalisée :
-              découvertes ciblées, recherche intelligente, playlists et lecteur
-              hors-ligne. Conçue et développée par Lodgic à Toulouse.
+              BewasBeen aide les élèves à maîtriser les verbes irréguliers anglais
+              à travers des exercices interactifs variés. Les enseignants gèrent
+              leurs classes, composent des listes sur mesure et suivent la
+              progression de chaque élève en temps réel. Une plateforme conçue et
+              développée par Lodgic, disponible à{" "}
+              <a
+                href="https://irregularverbsonline.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#4F9CF9] underline underline-offset-2 hover:text-[#3b82f6] transition-colors"
+              >
+                irregularverbsonline.com
+              </a>
+              .
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               {[
-                "React Native",
-                "iOS & Android",
-                "Streaming audio",
-                "Playlists",
-                "Mode hors-ligne",
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Tailwind CSS",
+                "PostgreSQL",
+                "EdTech",
               ].map((tag) => (
                 <span
                   key={tag}
@@ -239,7 +266,7 @@ export default function SonaraProjectPage() {
               style={{ backgroundColor: `${APP_THEME.accent}22` }}
             />
             <div
-              className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-[2.5rem] p-4"
+              className="relative mx-auto aspect-video w-full max-w-lg overflow-hidden rounded-2xl"
               style={{
                 background: `linear-gradient(160deg, ${APP_THEME.primary} 0%, ${APP_THEME.primaryDeep} 100%)`,
               }}
@@ -247,16 +274,16 @@ export default function SonaraProjectPage() {
               <div
                 aria-hidden
                 className="pointer-events-none absolute -top-20 -right-20 h-60 w-60 rounded-full blur-3xl"
-                style={{ backgroundColor: `${APP_THEME.accent}50` }}
+                style={{ backgroundColor: `${APP_THEME.accent}40` }}
               />
-              <div className="relative h-full w-full">
+              <div className="relative h-full w-full p-3">
                 <Image
-                  src="/projets/musique/accueil.svg"
-                  alt="Aperçu de l'écran d'accueil de Sonara, application mobile de musique"
+                  src="/projets/bewasbeen/bwb_landing_page.png"
+                  alt="Aperçu de la page d'accueil de BewasBeen, plateforme d'apprentissage des verbes irréguliers"
                   fill
                   priority
                   sizes="(max-width: 1024px) 80vw, 40vw"
-                  className="object-contain drop-shadow-2xl"
+                  className="object-cover object-top rounded-xl drop-shadow-2xl"
                 />
               </div>
             </div>
@@ -264,62 +291,37 @@ export default function SonaraProjectPage() {
         </div>
       </section>
 
-      {/* ── Screens — App theme conserved ── */}
-      <section className="bg-[#f6f7fc] py-16 md:py-24" aria-labelledby="sonara-screens-heading">
+      {/* ── Screenshots ── */}
+      <section
+        className="bg-[#f6f7fc] py-16 md:py-24"
+        aria-labelledby="bwb-screens-heading"
+      >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#001F45]/50">
-              Écrans
+              Aperçu
             </span>
             <h2
-              id="sonara-screens-heading"
+              id="bwb-screens-heading"
               className="mt-3 text-3xl font-sofia-bold text-[#001F45] md:text-4xl"
             >
-              Une expérience pensée pour les passionnés de musique.
+              Une interface claire pour apprendre efficacement.
             </h2>
             <p className="mt-4 text-base font-inter leading-relaxed text-[#162869]/75">
-              De la découverte au lecteur, chaque écran a été dessiné pour
-              fluidifier l&apos;écoute et inviter à explorer.
+              Du tableau de bord enseignant aux modes d&apos;exercice élève, chaque
+              écran a été pensé pour limiter la friction et maximiser l&apos;engagement.
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {screens.map((screen) => (
-              <div
-                key={screen.src}
-                className="relative overflow-hidden rounded-3xl p-6 transition-transform duration-300 hover:-translate-y-1"
-                style={{
-                  background: `linear-gradient(160deg, ${APP_THEME.primary} 0%, ${APP_THEME.primaryDeep} 100%)`,
-                }}
-              >
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute -top-16 -right-10 h-40 w-40 rounded-full blur-2xl"
-                  style={{ backgroundColor: `${APP_THEME.accent}30` }}
-                />
-                <div className="relative aspect-square w-full">
-                  <Image
-                    src={screen.src}
-                    alt={screen.alt}
-                    fill
-                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
-                    className="object-contain drop-shadow-xl"
-                  />
-                </div>
-                <p className="relative mt-4 text-center text-sm font-sofia-bold text-white">
-                  {screen.caption}
-                </p>
-              </div>
-            ))}
-          </div>
+          <ScreenshotGallery screens={screens} />
         </div>
       </section>
 
-      {/* ── Features FAQ — Lodgic ── */}
+      {/* ── Features FAQ ── */}
       <section
         id="features"
         className="bg-white py-16 md:py-24"
-        aria-labelledby="sonara-features-heading"
+        aria-labelledby="bwb-features-heading"
       >
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
@@ -327,14 +329,14 @@ export default function SonaraProjectPage() {
               Fonctionnalités
             </span>
             <h2
-              id="sonara-features-heading"
+              id="bwb-features-heading"
               className="mt-3 text-3xl font-sofia-bold text-[#001F45] md:text-4xl"
             >
-              Ce que Sonara permet de faire.
+              Ce que BewasBeen permet de faire.
             </h2>
             <p className="mt-4 text-base font-inter leading-relaxed text-[#162869]/75">
-              Un périmètre fonctionnel complet pour offrir une expérience
-              musicale personnalisée et fluide, sur iOS comme sur Android.
+              Des outils pensés pour les enseignants et les élèves, du premier
+              exercice au bilan de fin de séquence.
             </p>
           </div>
 
@@ -342,7 +344,7 @@ export default function SonaraProjectPage() {
         </div>
       </section>
 
-      {/* ── CTA — Lodgic ── */}
+      {/* ── CTA ── */}
       <section className="bg-[#f6f7fc] py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-3xl bg-[#001F45] p-8 text-white md:p-14">
@@ -356,11 +358,11 @@ export default function SonaraProjectPage() {
                   Un projet en tête ?
                 </p>
                 <h2 className="mt-3 text-2xl font-sofia-bold md:text-4xl">
-                  Donnons vie à votre application mobile.
+                  Donnons vie à votre plateforme web.
                 </h2>
                 <p className="mt-3 text-sm font-inter text-white/80 md:text-base">
-                  Cadrage, design, développement et mise en ligne — on
-                  s&apos;occupe de tout, de A à Z.
+                  Design, développement et mise en ligne — on s&apos;occupe de tout,
+                  de A à Z.
                 </p>
               </div>
               <Link
@@ -375,8 +377,11 @@ export default function SonaraProjectPage() {
         </div>
       </section>
 
-      {/* ── Contact — Lodgic ── */}
-      <section id="contact-projet" className="bg-white py-16 md:py-24">
+      {/* ── Contact ── */}
+      <section
+        id="contact-projet"
+        className="bg-white py-16 md:py-24"
+      >
         <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
           <div className="lg:col-span-5">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#001F45]/50">
@@ -386,9 +391,9 @@ export default function SonaraProjectPage() {
               Parlez-nous de votre projet.
             </h2>
             <p className="mt-4 text-base font-inter leading-relaxed text-[#162869]/75">
-              Vous avez une idée d&apos;application mobile, de plateforme ou de
-              logiciel sur mesure ? Décrivez-nous votre besoin, on revient vers
-              vous sous 24h ouvrées.
+              Vous avez une idée de plateforme web, d&apos;application ou de logiciel
+              sur mesure ? Décrivez-nous votre besoin, on revient vers vous sous
+              24h ouvrées.
             </p>
 
             <ul className="mt-8 space-y-4">
@@ -416,10 +421,10 @@ export default function SonaraProjectPage() {
           <div className="lg:col-span-7">
             <div className="rounded-3xl border border-[#001F45]/10 bg-[#f6f7fc] p-6 shadow-soft md:p-8">
               <HomeProjectForm
-                source="Projet Sonara"
-                emailInputId="sonara-contact-email"
-                messageInputId="sonara-contact-message"
-                consentInputId="sonara-contact-consent"
+                source="Projet BewasBeen"
+                emailInputId="bwb-contact-email"
+                messageInputId="bwb-contact-message"
+                consentInputId="bwb-contact-consent"
               />
             </div>
           </div>
