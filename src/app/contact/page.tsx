@@ -16,7 +16,6 @@ import {
   POSTAL_CODE,
   SITE_NAME,
   SITE_URL,
-  STREET_ADDRESS,
 } from '@/lib/site'
 
 const PAGE_PATH = '/contact'
@@ -53,13 +52,9 @@ const formatDayRange = (days: string[]): string => {
   return `${dayLabel[days[0]] ?? days[0]} – ${dayLabel[days[days.length - 1]] ?? days[days.length - 1]}`
 }
 
-const fullAddress = [STREET_ADDRESS, [POSTAL_CODE, ADDRESS_LOCALITY].filter(Boolean).join(' ')]
-  .filter(Boolean)
-  .join(', ')
+const fullAddress = [POSTAL_CODE, ADDRESS_LOCALITY].filter(Boolean).join(' ')
 
-const mapsQuery = STREET_ADDRESS
-  ? encodeURIComponent(`${STREET_ADDRESS}, ${POSTAL_CODE} ${ADDRESS_LOCALITY}`)
-  : encodeURIComponent(`Lodgic, ${ADDRESS_LOCALITY}`)
+const mapsQuery = encodeURIComponent(`Lodgic, ${ADDRESS_LOCALITY}`)
 
 export default function ContactPage() {
   const breadcrumbItems = [
@@ -113,7 +108,6 @@ export default function ContactPage() {
                       <div>
                         <p className="font-semibold text-[#001F45]">Adresse</p>
                         <address className="not-italic">
-                          {STREET_ADDRESS && <span className="block">{STREET_ADDRESS}</span>}
                           <span className="block">
                             {[POSTAL_CODE, ADDRESS_LOCALITY].filter(Boolean).join(' ')}
                             {ADDRESS_REGION && ` · ${ADDRESS_REGION}`}

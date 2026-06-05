@@ -26,7 +26,6 @@ import {
   SITE_NAME,
   SITE_URL,
   SOCIAL_PROFILES,
-  STREET_ADDRESS,
   WIKIDATA_QID,
 } from '@/lib/site'
 
@@ -47,7 +46,6 @@ const postalAddress: Record<string, string> = {
   addressRegion: ADDRESS_REGION,
   addressCountry: ADDRESS_COUNTRY,
 }
-if (STREET_ADDRESS) postalAddress.streetAddress = STREET_ADDRESS
 if (POSTAL_CODE) postalAddress.postalCode = POSTAL_CODE
 
 const organizationNode: Record<string, unknown> = {

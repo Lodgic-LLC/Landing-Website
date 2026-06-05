@@ -8,7 +8,6 @@ export const CONTACT_EMAIL = 'contact@lodgic-dev.com'
 export const CONTACT_PHONE = '+33652468750'
 
 // NAP — à compléter avec les vraies valeurs (sinon laisser vide, le schema les omet)
-export const STREET_ADDRESS = '11 Impasse Pierre Maurand'
 export const POSTAL_CODE = '31000'
 export const ADDRESS_LOCALITY = 'Toulouse'
 export const ADDRESS_REGION = 'Occitanie'
