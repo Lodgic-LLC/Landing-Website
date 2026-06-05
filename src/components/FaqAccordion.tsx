@@ -32,7 +32,7 @@ export const FaqAccordion = ({ items }: FaqAccordionProps) => {
               onClick={() => handleToggle(index)}
               aria-expanded={isOpen}
               aria-controls={contentId}
-              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left md:px-6 md:py-5"
+              className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left md:px-6 md:py-5"
             >
               <span className="text-[15px] md:text-base font-semibold text-[#001F45]">
                 {item.question}

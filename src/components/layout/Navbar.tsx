@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -13,8 +14,8 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigationItems = [
-    { name: 'Lodgic Conseils', path: '/blog' },
     { name: "L'IA chez Lodgic", path: '/intelligence-artificielle' },
+    { name: 'Lodgic Conseils', path: '/blog' },
   ]
 
   useEffect(() => {
@@ -78,18 +79,30 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-0.5">
-            {navigationItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                className={`relative px-3 py-1.5 rounded-full text-sm font-inter font-medium transition-smooth ${
-                  isActive(item.path)
-                    ? 'bg-[#001F45]/8 text-[#001F45]'
-                    : 'text-[#001F45]/65 hover:text-[#001F45] hover:bg-[#001F45]/5'
-                }`}
-              >
-                {item.name}
-              </Link>
+            <Link
+              href="/"
+              className={`relative px-3 py-1.5 rounded-full text-sm font-inter font-medium transition-smooth ${
+                isActive('/')
+                  ? 'bg-[#001F45]/8 text-[#001F45]'
+                  : 'text-[#001F45]/65 hover:text-[#001F45] hover:bg-[#001F45]/5'
+              }`}
+            >
+              Accueil
+            </Link>
+            {navigationItems.map((item, index) => (
+              <React.Fragment key={item.name}>
+                {index === 1 && <span className="h-4 w-px bg-[#001F45]/20" aria-hidden />}
+                <Link
+                  href={item.path}
+                  className={`relative px-3 py-1.5 rounded-full text-sm font-inter font-medium transition-smooth ${
+                    isActive(item.path)
+                      ? 'bg-[#001F45]/8 text-[#001F45]'
+                      : 'text-[#001F45]/65 hover:text-[#001F45] hover:bg-[#001F45]/5'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </React.Fragment>
             ))}
           </div>
 
@@ -132,19 +145,32 @@ export default function Navbar() {
           }`}
           aria-hidden={!isMenuOpen}
         >
-          {navigationItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.path}
-              className={`block rounded-xl px-4 py-3 text-sm font-inter font-medium transition-smooth ${
-                isActive(item.path)
-                  ? 'bg-[#001F45]/6 text-[#001F45]'
-                  : 'text-[#001F45]/70 hover:bg-[#001F45]/5 hover:text-[#001F45]'
-              }`}
-              tabIndex={isMenuOpen ? 0 : -1}
-            >
-              {item.name}
-            </Link>
+          <Link
+            href="/"
+            className={`block rounded-xl px-4 py-3 text-sm font-inter font-medium transition-smooth ${
+              isActive('/')
+                ? 'bg-[#001F45]/6 text-[#001F45]'
+                : 'text-[#001F45]/70 hover:bg-[#001F45]/5 hover:text-[#001F45]'
+            }`}
+            tabIndex={isMenuOpen ? 0 : -1}
+          >
+            Accueil
+          </Link>
+          {navigationItems.map((item, index) => (
+            <React.Fragment key={item.name}>
+              {index === 1 && <div className="my-1 h-px bg-[#001F45]/6" />}
+              <Link
+                href={item.path}
+                className={`block rounded-xl px-4 py-3 text-sm font-inter font-medium transition-smooth ${
+                  isActive(item.path)
+                    ? 'bg-[#001F45]/6 text-[#001F45]'
+                    : 'text-[#001F45]/70 hover:bg-[#001F45]/5 hover:text-[#001F45]'
+                }`}
+                tabIndex={isMenuOpen ? 0 : -1}
+              >
+                {item.name}
+              </Link>
+            </React.Fragment>
           ))}
           <div className="mt-1 border-t border-[#001F45]/6 pt-1">
             <Link

@@ -10,8 +10,6 @@ import {
   ADDRESS_REGION,
   CONTACT_EMAIL,
   CONTACT_PHONE,
-  GEO_LATITUDE,
-  GEO_LONGITUDE,
   OPENING_HOURS,
   POSTAL_CODE,
   SITE_NAME,
@@ -53,8 +51,6 @@ const formatDayRange = (days: string[]): string => {
 }
 
 const fullAddress = [POSTAL_CODE, ADDRESS_LOCALITY].filter(Boolean).join(' ')
-
-const mapsQuery = encodeURIComponent(`Lodgic, ${ADDRESS_LOCALITY}`)
 
 export default function ContactPage() {
   const breadcrumbItems = [
@@ -168,22 +164,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="overflow-hidden rounded-2xl border border-[#001F45]/10 bg-white shadow-soft">
-                <iframe
-                  title={`Localisation de ${SITE_NAME} à ${ADDRESS_LOCALITY}`}
-                  src={
-                    GEO_LATITUDE && GEO_LONGITUDE
-                      ? `https://maps.google.com/maps?q=${GEO_LATITUDE},${GEO_LONGITUDE}&z=16&output=embed`
-                      : `https://maps.google.com/maps?q=${mapsQuery}&z=15&output=embed`
-                  }
-                  width="100%"
-                  height="300"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                />
-              </div>
             </aside>
 
             <section className="rounded-2xl border border-[#001F45]/10 bg-white p-6 md:p-8 shadow-soft">
