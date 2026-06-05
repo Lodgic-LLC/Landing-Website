@@ -37,7 +37,7 @@ const faqs = [
   {
     question: "Combien de temps faut-il pour développer une application mobile ?",
     answer:
-      "Une V1 d'application mobile sur mesure prend en général 2 à 4 mois entre le cadrage produit, le design, le développement iOS et Android, et la publication sur l'App Store et Google Play. Notre offre clé en main propose une livraison en 45 jours sur des périmètres ciblés.",
+      "Une V1 d'application mobile sur mesure prend en général 2 à 4 mois entre le cadrage produit, le design, le développement iOS et Android, et la publication sur l'App Store et Google Play.",
   },
   {
     question: "Faut-il choisir une application native ou React Native ?",

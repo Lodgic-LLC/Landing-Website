@@ -10,7 +10,6 @@ import { SITE_URL } from '@/lib/site'
 
 const About = dynamic(() => import('@/components/pages/home/About'))
 const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
-const Process = dynamic(() => import('@/components/pages/home/Process'))
 const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 const AdvancedTracker = dynamic(() => import('@/components/analytics/AdvancedTracker').then((m) => m.AdvancedTracker))
 
@@ -116,12 +115,7 @@ export default function Home() {
           <Hero />
         </TrackingSection>
 
-        {/* 1) Découvrir notre offre */}
-        <TrackingSection sectionName="offre" trackOnView={true} trackTimeSpent={true}>
-          <Process />
-        </TrackingSection>
-
-        {/* 2) Qui sommes-nous */}
+        {/* 1) Qui sommes-nous */}
         <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
           <About />
         </TrackingSection>

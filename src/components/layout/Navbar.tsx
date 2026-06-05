@@ -13,7 +13,6 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigationItems = [
-    { name: 'Mon appli en 45j', path: '/offre' },
     { name: 'Lodgic Conseils', path: '/blog' },
     { name: "L'IA chez Lodgic", path: '/intelligence-artificielle' },
   ]

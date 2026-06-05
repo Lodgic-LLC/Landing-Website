@@ -71,7 +71,7 @@ export default function IAPolicyPage() {
             L'arrivée des assistants IA dans le développement logiciel a profondément changé la manière dont les agences livrent un produit. Chez Lodgic, nous avons fait un choix clair : <strong className="text-[#001F45]">tirer parti de cette accélération sans en subir les pièges</strong>. L'IA ne remplace ni l'expérience d'un développeur, ni le sens du produit, ni la rigueur d'une revue de code. Elle vient simplement supprimer les heures perdues sur la plomberie répétitive pour nous permettre de concentrer notre temps là où il compte vraiment : l'architecture, la qualité, et la valeur livrée.
           </p>
           <p className="mt-5 text-base md:text-lg text-[#001F45]/80 font-inter leading-relaxed">
-            Cette page documente notre politique d'utilisation de l'IA, les outils que nous employons, les garde-fous que nous posons, et la manière dont nous protégeons votre code et vos données. Elle s'adresse autant aux clients qui se demandent &laquo;&nbsp;est-ce que mon application va finir copiée-collée par un robot ?&nbsp;&raquo; qu'à ceux qui veulent comprendre comment nous tenons un délai de 45 jours sur des produits complexes.
+            Cette page documente notre politique d'utilisation de l'IA, les garde-fous que nous posons, et la manière dont nous protégeons votre code et vos données. Elle s'adresse autant aux clients qui se demandent &laquo;&nbsp;est-ce que mon application va finir copiée-collée par un robot ?&nbsp;&raquo; qu'à ceux qui veulent comprendre comment des ingénieurs expérimentés livrent des produits complexes dans les délais.
           </p>
         </section>
 
@@ -86,10 +86,10 @@ export default function IAPolicyPage() {
             <div className="flex-1 pt-2 md:pt-4">
               <h3 className="text-2xl md:text-3xl font-sofia-bold text-[#001F45] mb-4">Productivité encadrée</h3>
               <p className="text-[#001F45]/70 font-inter leading-relaxed text-base md:text-lg">
-                L'IA est un outil redoutable pour générer de la base rapidement (boilerplate) et accélérer le développement. Nous l'utilisons pour réduire drastiquement les délais de livraison et vous offrir un résultat concret plus vite, tout en restant dans un cadre strictement défini par nos développeurs humains.
+                En tant qu'ingénieurs, nous intégrons l'IA comme un levier de productivité : elle accélère les tâches répétitives et nous libère du temps pour ce qui exige vraiment notre expertise. Le résultat, c'est une vélocité accrue sans compromis sur la rigueur.
               </p>
               <p className="mt-3 text-[#001F45]/70 font-inter leading-relaxed text-base md:text-lg">
-                Concrètement, l'IA prend en charge les tâches à faible enjeu cognitif : composants React de base, types TypeScript, schémas de base de données dérivés d'un modèle existant, tests unitaires de premier niveau, JSDoc et migrations Prisma triviales. Sur un cycle de 45 jours, ce gain représente entre 20&nbsp;% et 30&nbsp;% du temps de développement, que nous réinvestissons dans la conception, les tests sur device réel et la finition UX.
+                Concrètement, l'IA prend en charge les tâches à faible enjeu cognitif : composants de base, types, schémas de données, tests unitaires de premier niveau. Ce gain — entre 20&nbsp;% et 30&nbsp;% du temps de développement — est réinvesti dans la conception, les tests sur device réel et la finition UX.
               </p>
             </div>
           </div>
@@ -156,12 +156,12 @@ export default function IAPolicyPage() {
               05
             </div>
             <div className="flex-1 pt-2 md:pt-4">
-              <h3 className="text-2xl md:text-3xl font-sofia-bold text-[#001F45] mb-4">Les outils que nous utilisons</h3>
+              <h3 className="text-2xl md:text-3xl font-sofia-bold text-[#001F45] mb-4">L'IA au service de l'ingénierie</h3>
               <p className="text-[#001F45]/70 font-inter leading-relaxed text-base md:text-lg">
-                Nous travaillons avec les outils les plus matures du marché, sélectionnés pour leur qualité de sortie et leurs garanties contractuelles : <strong className="text-[#001F45]">Claude Code</strong> et <strong className="text-[#001F45]">Cursor</strong> pour l'écriture de code, <strong className="text-[#001F45]">GitHub Copilot</strong> pour l'autocomplétion en ligne, <strong className="text-[#001F45]">v0</strong> pour itérer rapidement sur certaines maquettes UI, et des modèles spécialisés pour la rédaction de tests.
+                Nous sélectionnons des assistants IA matures pour leurs garanties contractuelles et leur qualité de sortie. Chaque outil est configuré avec une politique de rétention zéro, l'apprentissage désactivé et un périmètre d'accès limité aux dépôts du projet en cours.
               </p>
               <p className="mt-3 text-[#001F45]/70 font-inter leading-relaxed text-base md:text-lg">
-                Chaque outil est configuré avec une politique de rétention zéro, l'apprentissage désactivé, et un périmètre d'accès limité aux dépôts du projet en cours. Si votre infrastructure ou votre conformité l'exige, nous pouvons travailler entièrement sans assistant IA — la méthode et le délai s'adaptent en conséquence.
+                Notre posture reste celle d'ingénieurs : l'IA est un levier, pas un pilote automatique. Nous définissons les contraintes, nous évaluons les sorties, et c'est toujours un ingénieur Lodgic qui valide avant de pousser en production. Si votre infrastructure ou votre conformité l'exige, nous pouvons travailler entièrement sans assistant IA — la méthode s'adapte en conséquence.
               </p>
             </div>
           </div>
@@ -177,8 +177,8 @@ export default function IAPolicyPage() {
             </p>
           </div>
           <div className="shrink-0">
-            <a href="/offre" className="inline-flex h-12 items-center justify-center rounded-full bg-[#001F45] px-8 text-sm font-inter font-semibold text-white hover:bg-[#0b2b63] transition-colors">
-              Découvrir nos offres
+            <a href="/rendez-vous" className="inline-flex h-12 items-center justify-center rounded-full bg-[#001F45] px-8 text-sm font-inter font-semibold text-white hover:bg-[#0b2b63] transition-colors">
+              Prendre rendez-vous
             </a>
           </div>
         </div>

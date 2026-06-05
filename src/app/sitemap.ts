@@ -56,12 +56,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${SITE_URL}/offre`,
-      lastModified: BUILD_DATE,
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-    },
-    {
       url: `${SITE_URL}/rendez-vous`,
       lastModified: BUILD_DATE,
       changeFrequency: "monthly" as const,

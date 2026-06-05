@@ -21,7 +21,7 @@ export const FaqAccordion = ({ items }: FaqAccordionProps) => {
     <div className="flex flex-col gap-3">
       {items.map((item, index) => {
         const isOpen = openIndex === index
-        const contentId = `faq-offre-${index}`
+        const contentId = `faq-accordion-${index}`
         return (
           <div
             key={item.question}

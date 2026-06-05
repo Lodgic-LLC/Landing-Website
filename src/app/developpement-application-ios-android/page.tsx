@@ -10,7 +10,6 @@ import { SITE_URL } from '@/lib/site'
 
 const About = dynamic(() => import('@/components/pages/home/About'))
 const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
-const Process = dynamic(() => import('@/components/pages/home/Process'))
 const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 
 const PAGE_PATH = '/developpement-application-ios-android'
@@ -265,9 +264,6 @@ export default function DeveloppementApplicationIosAndroidPage() {
           />
         </TrackingSection>
 
-        <TrackingSection sectionName="offre" trackOnView={true} trackTimeSpent={true}>
-          <Process />
-        </TrackingSection>
 
         <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
           <About />

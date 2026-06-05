@@ -5,7 +5,7 @@ import StructuredData from "@/components/seo/StructuredData";
 import BreadcrumbStructuredData from "@/components/seo/BreadcrumbStructuredData";
 import { SITE_URL } from "@/lib/site";
 import HomeProjectForm from "@/components/forms/HomeProjectForm";
-import { FaqAccordion, type FaqItem } from "@/app/offre/_components/FaqAccordion";
+import { FaqAccordion, type FaqItem } from "@/components/FaqAccordion";
 
 const APP_THEME = {
   primary: "#1F4D3A",
@@ -365,7 +365,7 @@ export default function HikingProjectPage() {
                 </h2>
                 <p className="mt-3 text-sm font-inter text-white/80 md:text-base">
                   Cadrage, design, développement et mise en ligne — on
-                  s&apos;occupe de tout, en 45 jours.
+                  s&apos;occupe de tout, de A à Z.
                 </p>
               </div>
               <Link
@@ -402,7 +402,7 @@ export default function HikingProjectPage() {
             <ul className="mt-8 space-y-4">
               {[
                 "Échange initial offert et sans engagement",
-                "Cadrage en 45 jours, propriété complète du code",
+                "Propriété complète du code livré",
                 "Une équipe dédiée, basée à Toulouse",
               ].map((item) => (
                 <li

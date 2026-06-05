@@ -171,12 +171,6 @@ export default function ContactPage() {
                   >
                     Prendre rendez-vous
                   </Link>
-                  <Link
-                    href="/offre"
-                    className="rounded-md border border-[#001F45]/20 bg-white px-4 py-2.5 text-sm font-semibold text-[#001F45] hover:border-[#001F45]/40 transition-colors"
-                  >
-                    Voir notre offre
-                  </Link>
                 </div>
               </div>
 

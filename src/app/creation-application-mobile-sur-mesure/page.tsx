@@ -10,7 +10,6 @@ import { SITE_URL } from '@/lib/site'
 
 const About = dynamic(() => import('@/components/pages/home/About'))
 const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
-const Process = dynamic(() => import('@/components/pages/home/Process'))
 const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 
 const PAGE_PATH = '/creation-application-mobile-sur-mesure'
@@ -233,7 +232,7 @@ export default function CreationApplicationMobileSurMesurePage() {
                 <p>
                   Le <strong>coût d'une création d'application mobile sur mesure</strong> dépend du périmètre, du
                   nombre d'écrans, des intégrations et du choix natif vs cross-platform. Nous vous communiquons un{' '}
-                  <strong>budget fixe avant le démarrage</strong> et un délai garanti à 45 jours pour les MVP.
+                  <strong>budget fixe avant le démarrage</strong> et un calendrier de livraison défini dès le départ.
                 </p>
                 <p>
                   Lodgic est une <strong>agence de développement application mobile à Toulouse</strong> qui intervient
@@ -262,9 +261,6 @@ export default function CreationApplicationMobileSurMesurePage() {
           />
         </TrackingSection>
 
-        <TrackingSection sectionName="offre" trackOnView={true} trackTimeSpent={true}>
-          <Process />
-        </TrackingSection>
 
         <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
           <About />
