@@ -122,6 +122,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${SITE_URL}/integration-ia`,
+      lastModified: BUILD_DATE,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
       url: `${SITE_URL}/blog`,
       lastModified: blogPosts[0]?.date
         ? new Date(blogPosts[0].updatedAt ?? blogPosts[0].date).toISOString()

@@ -9,6 +9,7 @@ import StructuredData from '@/components/seo/StructuredData'
 import { SITE_URL } from '@/lib/site'
 
 const About = dynamic(() => import('@/components/pages/home/About'))
+const Services = dynamic(() => import('@/components/pages/home/Services'))
 const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
 const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 const AdvancedTracker = dynamic(() => import('@/components/analytics/AdvancedTracker').then((m) => m.AdvancedTracker))
@@ -118,6 +119,11 @@ export default function Home() {
         {/* 1) Qui sommes-nous */}
         <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
           <About />
+        </TrackingSection>
+
+        {/* 2) Nos services */}
+        <TrackingSection sectionName="services" trackOnView={true} trackTimeSpent={true}>
+          <Services />
         </TrackingSection>
 
         {/* 3) Nos réalisations */}

@@ -13,7 +13,8 @@
       "PowerShell($r = Invoke-WebRequest -Uri \"https://lodgic-dev.com\" -UseBasicParsing; Write-Output \\(\"Status: \" + $r.StatusCode\\); Write-Output \\(\"Length: \" + $r.RawContentLength\\); Write-Output \"---HEADERS---\"; $r.Headers | Format-Table -AutoSize | Out-String)",
       "PowerShell(try { \\(Invoke-WebRequest -Uri \"https://lodgic-dev.com/robots.txt\" -UseBasicParsing\\).Content } catch { \"ROBOTS.TXT MISSING: \" + $_.Exception.Message })",
       "PowerShell(try { \\(Invoke-WebRequest -Uri \"https://lodgic-dev.com/sitemap.xml\" -UseBasicParsing\\).Content } catch { \"SITEMAP MISSING: \" + $_.Exception.Message })",
-      "PowerShell(try { \\(Invoke-WebRequest -Uri \"https://lodgic-dev.com/llms.txt\" -UseBasicParsing\\).Content.Substring\\(0, [Math]::Min\\(2000, \\(Invoke-WebRequest -Uri \"https://lodgic-dev.com/llms.txt\" -UseBasicParsing\\).Content.Length\\)\\) } catch { \"LLMS.TXT MISSING: \" + $_.Exception.Message })"
+      "PowerShell(try { \\(Invoke-WebRequest -Uri \"https://lodgic-dev.com/llms.txt\" -UseBasicParsing\\).Content.Substring\\(0, [Math]::Min\\(2000, \\(Invoke-WebRequest -Uri \"https://lodgic-dev.com/llms.txt\" -UseBasicParsing\\).Content.Length\\)\\) } catch { \"LLMS.TXT MISSING: \" + $_.Exception.Message })",
+      "Bash(node verify2.cjs)"
     ]
   }
 }
