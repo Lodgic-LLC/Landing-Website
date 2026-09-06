@@ -3,211 +3,221 @@ import Link from "next/link";
 
 type Project = {
   name: string;
-  category: string;
+  sector: string;
   href: string;
   url?: string;
-  tags: string[];
-  intro: string;
-  challenge: string;
-  answer: string;
-  highlights: { title: string; text: string }[];
-  screens: { src: string; alt: string; caption: string }[];
+  external: boolean;
+  summary: string;
+  /** Chiffres vérifiables du projet livré */
+  metrics: { value: string; label: string }[];
+  /** Briques techniques réellement construites */
+  features: { title: string; text: string }[];
+  /** Décision d'architecture notable */
+  architecture: { title: string; text: string };
+  stack: string[];
+  screen: { src: string; alt: string; caption: string };
 };
 
 const projects: Project[] = [
   {
     name: "Alliance-TRAVAUX",
-    category: "Rénovation & travaux · Toulouse",
+    sector: "Rénovation & travaux · Toulouse",
     href: "https://alliance-travaux.fr",
     url: "alliance-travaux.fr",
-    tags: ["React", "Tailwind CSS", "SEO local"],
-    intro:
-      "Le site vitrine d'un collectif d'artisans toulousains, que j'ai conçu et développé : présentation des expertises, mise en avant des chantiers et captation de demandes de devis.",
-    challenge:
-      "Un collectif de maîtres d'œuvre et d'artisans devait inspirer confiance à des particuliers qui engagent plusieurs dizaines de milliers d'euros de travaux — sans site, et face à des concurrents nationaux très référencés.",
-    answer:
-      "J'ai construit un site orienté conversion : les réalisations et les avis clients occupent le premier écran, chaque expertise a sa section, et la demande de devis reste accessible partout. Le référencement local cible Toulouse et son agglomération.",
-    highlights: [
+    external: true,
+    summary:
+      "Le site d'un collectif d'artisans toulousains : deux arborescences de contenu, un tunnel de demande de devis et un socle SEO local couvrant l'agglomération.",
+    metrics: [
+      { value: "23", label: "pages générées" },
+      { value: "22", label: "communes ciblées" },
+      { value: "12", label: "métiers référencés" },
+    ],
+    features: [
       {
-        title: "Devis en ligne comme point d'entrée",
-        text: "Le parcours mène au formulaire depuis chaque section, avec le numéro de téléphone en second recours.",
+        title: "Deux arborescences typées",
+        text: "Douze pages métier (maçon, plaquiste, électricien…) et quatre pages service générées depuis un même schéma de données, avec routage imbriqué et navigation croisée entre les deux.",
       },
       {
-        title: "Preuves visibles d'emblée",
-        text: "Photos de chantiers, note Google et engagements affichés dès le premier écran pour lever les objections.",
+        title: "Tunnel de demande de devis",
+        text: "Formulaire multi-étapes relié à une API d'envoi, avec validation côté client et serveur, états de chargement et confirmation — accessible depuis chaque section du site.",
       },
       {
-        title: "Référencement local",
-        text: "Pages structurées par expertise et données de l'entreprise balisées pour les recherches à Toulouse et alentour.",
+        title: "Balisage Schema.org complet",
+        text: "HomeAndConstructionBusiness, OfferCatalog des six prestations, FAQPage et GeoCircle listant les 22 communes : le référencement local s'appuie sur des données structurées, pas sur du remplissage de mots-clés.",
       },
     ],
-    screens: [
-      {
-        src: "/projets/alliance-travaux/at_accueil.jpg",
-        alt: "Page d'accueil du site Alliance-TRAVAUX : rénovation clé en main à Toulouse",
-        caption: "Page d'accueil",
-      },
-      {
-        src: "/projets/alliance-travaux/at_services.jpg",
-        alt: "Section des expertises du site Alliance-TRAVAUX : extension, surélévation, rénovation",
-        caption: "Les expertises",
-      },
-    ],
+    architecture: {
+      title: "Chargement découpé par domaine",
+      text: "Le bundle est séparé en chunks distincts (framework, routeur, icônes, application) pour que la page d'accueil ne télécharge que ce dont elle a besoin. Le reste arrive à la navigation.",
+    },
+    stack: ["React", "Vite", "React Router", "Schema.org"],
+    screen: {
+      src: "/projets/alliance-travaux/at_accueil.jpg",
+      alt: "Page d'accueil du site Alliance-TRAVAUX",
+      caption: "Page d'accueil et entrée du tunnel de devis",
+    },
   },
   {
     name: "BewasBeen",
-    category: "EdTech · Apprentissage de l'anglais",
+    sector: "EdTech · Apprentissage de l'anglais",
     href: "/projets/bewasbeen",
-    tags: ["Next.js", "TypeScript", "PostgreSQL"],
-    intro:
-      "Une plateforme web pédagogique pour l'apprentissage des verbes irréguliers anglais, que j'ai conçue et développée de bout en bout pour les enseignants et leurs classes.",
-    challenge:
-      "Les enseignants n'avaient aucun outil pour faire travailler les verbes irréguliers en autonomie et suivre les résultats. Les solutions existantes imposaient la création d'un compte à chaque élève — une friction rédhibitoire en classe.",
-    answer:
-      "J'ai construit un espace enseignant complet (classes, listes de verbes, suivi individuel) et un accès élève sans inscription : un QR code projeté au tableau ou un code court suffit pour rejoindre une session.",
-    highlights: [
+    url: "bewasbeen.com",
+    external: false,
+    summary:
+      "Une plateforme pédagogique complète : espace enseignant, gestion de classes, trois moteurs d'exercices et suivi individuel des élèves.",
+    metrics: [
+      { value: "3", label: "moteurs d'exercice" },
+      { value: "2", label: "rôles applicatifs" },
+      { value: "0", label: "compte élève requis" },
+    ],
+    features: [
       {
-        title: "Trois modes d'entraînement",
-        text: "Glisser-déposer, frappe clavier et reconnaissance audio, avec une difficulté qui s'adapte à l'élève.",
+        title: "Trois moteurs d'exercice",
+        text: "Glisser-déposer, saisie clavier et reconnaissance audio. Chaque mode a sa propre logique de validation et de correction, avec une difficulté qui s'ajuste aux réponses de l'élève.",
       },
       {
-        title: "Tableau de bord enseignant",
-        text: "Progression par élève et par verbe, historique des tentatives, exports PDF et CSV pour les bulletins.",
+        title: "Espace enseignant et gestion de classes",
+        text: "Création de classes, composition de listes de verbes personnalisées ou à partir de modèles, affectation aux groupes, et suivi par élève : taux de réussite par verbe, temps passé, historique des tentatives.",
       },
       {
-        title: "Entrée en classe sans friction",
-        text: "Aucun compte élève à créer : code de classe ou QR code, et l'exercice démarre.",
+        title: "Exports PDF et CSV",
+        text: "Génération de rapports par classe ou par élève pour les bulletins et les réunions parents-professeurs, produits côté serveur à partir des sessions enregistrées.",
       },
     ],
-    screens: [
-      {
-        src: "/projets/bewasbeen/bwb_professor_dashboard.png",
-        alt: "Tableau de bord enseignant de BewasBeen : suivi des classes et des élèves",
-        caption: "Tableau de bord enseignant",
-      },
-      {
-        src: "/projets/bewasbeen/bwb_play_modes.png",
-        alt: "Écran de sélection des modes d'exercice de BewasBeen",
-        caption: "Modes d'exercice",
-      },
-    ],
+    architecture: {
+      title: "Accès élève sans authentification",
+      text: "Plutôt qu'un compte par élève, une session s'ouvre via un code court ou un QR code projeté au tableau. Le modèle de données rattache les résultats à la classe et à l'élève sans jamais créer d'identifiants — moins de friction en cours, et pas de données de mineurs à gérer.",
+    },
+    stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+    screen: {
+      src: "/projets/bewasbeen/bwb_professor_dashboard.png",
+      alt: "Tableau de bord enseignant de BewasBeen",
+      caption: "Tableau de bord enseignant",
+    },
   },
 ];
 
-function CaseStudy({ project }: { project: Project }) {
-  const external = project.href.startsWith("http");
+function CaseStudy({ project, index }: { project: Project; index: number }) {
+  const Cta = project.external ? "a" : Link;
+  const ctaProps = project.external
+    ? { href: project.href, target: "_blank", rel: "noopener noreferrer" }
+    : { href: project.href };
 
   return (
-    <article className="overflow-hidden rounded-xl border border-[#E6E1D8] bg-[#23211F]">
-      <div className="grid items-start gap-8 p-6 sm:p-8 lg:grid-cols-2 lg:gap-12 lg:p-10">
-        {/* Colonne texte */}
-        <div className="flex flex-col">
-          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#C2542D]">
-            {project.category}
+    <article className="overflow-hidden rounded-xl border border-[#E6E1D8] bg-white">
+      {/* En-tête */}
+      <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-[#E6E1D8] bg-[#F8F6F2] px-6 py-5 md:px-8">
+        <div>
+          <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#C2542D]">
+            {project.sector}
           </p>
-          <h3 className="mt-2 text-3xl font-sofia-bold text-white md:text-4xl">
+          <h3 className="mt-1.5 text-2xl md:text-3xl font-sofia-bold text-[#2E2B28]">
             {project.name}
           </h3>
+        </div>
+        <p className="mono text-xs text-[#6B655D]">
+          {String(index + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
+        </p>
+      </div>
 
-          <p className="mt-4 text-base leading-relaxed text-white/80 font-inter">
-            {project.intro}
+      <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
+        {/* Colonne gauche : le travail */}
+        <div className="p-6 md:p-8 lg:border-r lg:border-[#E6E1D8]">
+          <p className="text-[15px] leading-relaxed text-[#6B655D] font-inter">
+            {project.summary}
           </p>
 
-          <p className="mt-5 border-l-2 border-[#C2542D] pl-4 text-sm md:text-[15px] leading-relaxed text-white/70 font-inter">
-            <span className="font-sofia-bold text-white">Le besoin — </span>
-            {project.challenge}
-          </p>
+          {/* Chiffres */}
+          <dl className="mt-6 grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-[#E6E1D8] bg-[#E6E1D8]">
+            {project.metrics.map((m) => (
+              <div key={m.label} className="bg-white px-3 py-3.5 text-center">
+                <dt className="sr-only">{m.label}</dt>
+                <dd>
+                  <span className="block font-sofia-bold text-2xl text-[#C2542D]">{m.value}</span>
+                  <span className="mt-0.5 block text-[11px] leading-tight text-[#6B655D] font-inter">
+                    {m.label}
+                  </span>
+                </dd>
+              </div>
+            ))}
+          </dl>
 
-          <ul className="mt-6 grid gap-2.5 border-t border-white/10 pt-5">
-            {project.highlights.map((item) => (
-              <li key={item.title} className="flex items-start gap-2.5">
-                <svg
-                  className="mt-[3px] h-3.5 w-3.5 shrink-0 text-[#C2542D]"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={3}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden
-                >
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-                <span className="text-sm leading-relaxed text-white/80 font-inter">
-                  <span className="font-sofia-bold text-white">{item.title}</span>
-                  {' — '}
-                  {item.text}
-                </span>
+          {/* Fonctionnalités développées */}
+          <p className="mt-7 text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#6B655D]">
+            Ce que j&apos;ai développé
+          </p>
+          <ul className="mt-4 space-y-4">
+            {project.features.map((f) => (
+              <li key={f.title} className="border-l-2 border-[#E6E1D8] pl-4">
+                <p className="font-sofia-bold text-[15px] text-[#2E2B28]">{f.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-[#6B655D] font-inter">{f.text}</p>
               </li>
             ))}
           </ul>
+        </div>
 
-          <div className="mt-7 flex flex-wrap items-center gap-3">
-            {external ? (
-              <a
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-[#C2542D] px-6 py-3 text-sm font-inter font-semibold text-white transition-colors hover:bg-[#A34322]"
-              >
-                Voir le site en ligne
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M7 17L17 7M7 7h10v10" />
-                </svg>
-              </a>
-            ) : (
-              <Link
-                href={project.href}
-                className="inline-flex items-center gap-2 rounded-lg bg-[#C2542D] px-6 py-3 text-sm font-inter font-semibold text-white transition-colors hover:bg-[#A34322]"
-              >
-                Voir l&apos;étude de cas
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
-            )}
+        {/* Colonne droite : visuel + décision technique */}
+        <div className="flex flex-col p-6 md:p-8">
+          <figure>
+            <div className="overflow-hidden rounded-lg border border-[#E6E1D8]">
+              <div className="flex items-center gap-1.5 border-b border-[#E6E1D8] bg-[#F8F6F2] px-3 py-2">
+                <span className="h-2 w-2 rounded-full bg-[#2E2B28]/15" />
+                <span className="h-2 w-2 rounded-full bg-[#2E2B28]/15" />
+                <span className="h-2 w-2 rounded-full bg-[#2E2B28]/15" />
+                <div className="mx-2 flex-1 truncate rounded bg-white px-3 py-0.5 mono text-[9px] text-[#6B655D]">
+                  {project.url}
+                </div>
+              </div>
+              <div className="relative aspect-[2940/1604] w-full bg-[#F8F6F2]">
+                <Image
+                  src={project.screen.src}
+                  alt={project.screen.alt}
+                  fill
+                  loading={index === 0 ? undefined : "lazy"}
+                  sizes="(max-width: 1024px) 92vw, 45vw"
+                  className="object-contain object-top"
+                />
+              </div>
+            </div>
+            <figcaption className="mt-2 text-xs text-[#6B655D] font-inter">
+              {project.screen.caption}
+            </figcaption>
+          </figure>
+
+          {/* Décision d'architecture */}
+          <div className="mt-6 rounded-lg bg-[#F8F6F2] p-5">
+            <p className="mono text-[10px] uppercase tracking-[0.14em] text-[#C2542D]">
+              Décision technique
+            </p>
+            <p className="mt-2 font-sofia-bold text-[15px] text-[#2E2B28]">
+              {project.architecture.title}
+            </p>
+            <p className="mt-1.5 text-sm leading-relaxed text-[#6B655D] font-inter">
+              {project.architecture.text}
+            </p>
+          </div>
+
+          <div className="mt-auto pt-6">
             <div className="flex flex-wrap gap-1.5">
-              {project.tags.map((tag) => (
+              {project.stack.map((t) => (
                 <span
-                  key={tag}
-                  className="rounded border border-white/20 bg-white/8 px-2.5 py-1 text-[11px] font-inter font-medium text-white/80"
+                  key={t}
+                  className="rounded border border-[#E6E1D8] bg-white px-2.5 py-1 mono text-[11px] text-[#6B655D]"
                 >
-                  {tag}
+                  {t}
                 </span>
               ))}
             </div>
+            <Cta
+              {...ctaProps}
+              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#C2542D] px-5 py-2.5 text-sm font-inter font-semibold text-white transition-colors hover:bg-[#A34322]"
+            >
+              {project.external ? "Voir le site en ligne" : "Voir l'étude de cas"}
+              <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                {project.external ? <path d="M7 17L17 7M7 7h10v10" /> : <path d="M5 12h14M12 5l7 7-7 7" />}
+              </svg>
+            </Cta>
           </div>
-        </div>
-
-        {/* Colonne visuels */}
-        <div className="flex flex-col gap-5 lg:gap-6">
-          {project.screens.slice(0, 1).map((screen, index) => (
-            <figure key={screen.src} className="group">
-              <div className="overflow-hidden rounded-xl border border-white/10">
-                <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/8 px-3 py-2">
-                  <span className="h-2 w-2 rounded-full bg-white/20" />
-                  <span className="h-2 w-2 rounded-full bg-white/20" />
-                  <span className="h-2 w-2 rounded-full bg-white/20" />
-                  <div className="mx-2 flex-1 truncate rounded bg-white/10 px-3 py-0.5 text-[9px] font-inter text-white/40">
-                    {project.url ?? `${project.name.toLowerCase()}.com`}
-                  </div>
-                </div>
-                <div className="relative aspect-[2940/1604] w-full overflow-hidden bg-white/5">
-                  <Image
-                    src={screen.src}
-                    alt={screen.alt}
-                    fill
-                    loading={index === 0 ? undefined : "lazy"}
-                    sizes="(max-width: 1024px) 92vw, 45vw"
-                    className="object-contain object-top transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                </div>
-              </div>
-              <figcaption className="mt-2.5 text-xs font-inter text-white/50">
-                {screen.caption}
-              </figcaption>
-            </figure>
-          ))}
         </div>
       </div>
     </article>
@@ -221,24 +231,25 @@ export default function SuccessStories() {
       className="bg-white py-20 md:py-28 border-t border-[#E6E1D8]"
       aria-labelledby="realisations-heading"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10 max-w-3xl">
-          <p className="eyebrow eyebrow-left">Études de cas</p>
+          <p className="eyebrow eyebrow-left">Réalisations</p>
           <h2
             id="realisations-heading"
-            className="mt-2 text-4xl font-sofia-bold text-[#2E2B28] md:text-5xl text-balance"
+            className="mt-3 text-4xl md:text-5xl font-sofia-bold text-[#2E2B28] tracking-tight text-balance"
           >
-            Des réalisations, de l&apos;idée à la mise en ligne
+            Ce que j&apos;ai construit, brique par brique
           </h2>
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-[#6B655D] font-inter">
-            Plutôt qu&apos;un catalogue, des projets racontés en détail : le problème posé, les
-            décisions techniques prises et ce qu&apos;ils font aujourd&apos;hui.
+          <p className="mt-4 text-lg leading-relaxed text-[#6B655D] font-inter">
+            Pas des captures d&apos;écran commentées : les fonctionnalités réellement
+            développées, les décisions d&apos;architecture derrière, et ce que ça donne en
+            production.
           </p>
         </div>
 
-        <div className="space-y-8 md:space-y-10">
-          {projects.map((project) => (
-            <CaseStudy key={project.name} project={project} />
+        <div className="space-y-8">
+          {projects.map((project, i) => (
+            <CaseStudy key={project.name} project={project} index={i} />
           ))}
         </div>
       </div>
