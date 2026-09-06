@@ -9,7 +9,7 @@ type Screen = {
   caption: string
 }
 
-const PRIMARY = '#0D1B2A'
+const PRIMARY = '#23211F'
 const PRIMARY_DEEP = '#07111c'
 const ACCENT = '#4F9CF9'
 
@@ -49,7 +49,7 @@ export function ScreenshotGallery({ screens }: { screens: Screen[] }) {
             key={screen.src}
             type="button"
             onClick={() => setLightbox(idx)}
-            className="group relative overflow-hidden rounded-2xl text-left transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F9CF9]"
+            className="group relative overflow-hidden rounded-2xl text-left transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2542D]"
             style={{ background: `linear-gradient(160deg, ${PRIMARY} 0%, ${PRIMARY_DEEP} 100%)` }}
             aria-label={`Agrandir : ${screen.caption}`}
           >

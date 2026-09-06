@@ -35,8 +35,6 @@ export default function SeoHero({
     <section className="w-full min-h-screen bg-[#F8F6F2] pt-24 md:pt-36 pb-32 md:pb-44 overflow-hidden relative flex flex-col justify-center">
       {/* Decor de fond */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full opacity-70" />
-        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full opacity-70" />
         <div
           className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(194,84,45,0.08),transparent_60%)]"
         />
@@ -107,8 +105,6 @@ export default function SeoHero({
           <div className="hidden lg:flex lg:col-span-6 justify-center items-center relative h-full min-h-[520px] w-full">
             <div className="relative w-full max-w-xl aspect-square">
               {/* Glow halos */}
-              <div className="absolute top-10 right-10 w-72 h-72 bg-[#C2542D] rounded-full filter opacity-20" />
-              <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#C2542D] rounded-full filter opacity-20" />
 
               <HeroVisual variant={visual} />
             </div>
@@ -595,7 +591,7 @@ function AgencyVisual() {
       <div
         className="absolute z-40 left-[2%] top-[6%] rounded-2xl bg-white shadow-xl border border-[#2E2B28]/10 px-3 py-2"
       >
-        <div className="text-[10px] uppercase font-inter text-[#2E2B28]/50 tracking-wider">
+        <div className="text-[10px] uppercase font-inter font-semibold text-[#6B655D] tracking-wider">
           Web
         </div>
         <div className="text-sm font-sofia-bold text-[#2E2B28]">
@@ -606,7 +602,7 @@ function AgencyVisual() {
       <div
         className="absolute z-40 left-[4%] bottom-[10%] rounded-2xl bg-[#2E2B28] text-white shadow-xl px-3 py-2"
       >
-        <div className="text-[10px] uppercase font-inter text-white/60 tracking-wider">
+        <div className="text-[10px] uppercase font-inter font-semibold text-white/75 tracking-wider">
           Mobile
         </div>
         <div className="text-sm font-sofia-bold">React Native + Expo</div>

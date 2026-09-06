@@ -110,7 +110,7 @@ export default function CreationApplicationMobileSurMesurePage() {
 
         <TrackingSection sectionName="expertise" trackOnView={true} trackTimeSpent={true}>
           <SeoExpertise
-            eyebrow="Notre méthode sur mesure"
+            eyebrow="Ma méthode sur mesure"
             heading={
               <>
                 Une <span className="text-[#C2542D]">application sur mesure</span>, c'est d'abord une bonne
@@ -178,8 +178,8 @@ export default function CreationApplicationMobileSurMesurePage() {
                 title: 'Intégrer vos outils existants',
                 body: (
                   <>
-                    Une app sur mesure se connecte à votre CRM, votre ERP, votre Stripe, votre HubSpot. Nous
-                    développons les <strong>API et intégrations</strong> nécessaires pour que tout communique.
+                    Une app sur mesure se connecte à votre CRM, votre ERP, votre Stripe, votre HubSpot. Je
+                    développe les <strong>API et intégrations</strong> nécessaires pour que tout communique.
                   </>
                 ),
                 bullets: [
@@ -194,7 +194,7 @@ export default function CreationApplicationMobileSurMesurePage() {
                 title: 'Livrer avec le code source',
                 body: (
                   <>
-                    Votre application sur mesure vous appartient. Nous livrons le <strong>code source complet</strong>,
+                    Votre application sur mesure vous appartient. Je livre le <strong>code source complet</strong>,
                     la documentation technique et les comptes développeurs Apple/Google.
                   </>
                 ),
@@ -231,7 +231,7 @@ export default function CreationApplicationMobileSurMesurePage() {
                 </p>
                 <p>
                   Le <strong>coût d'une création d'application mobile sur mesure</strong> dépend du périmètre, du
-                  nombre d'écrans, des intégrations et du choix natif vs cross-platform. Nous vous communiquons un{' '}
+                  nombre d'écrans, des intégrations et du choix natif vs cross-platform. Je vous communique un{' '}
                   <strong>budget fixe avant le démarrage</strong> et un calendrier de livraison défini dès le départ.
                 </p>
                 <p>
@@ -245,7 +245,7 @@ export default function CreationApplicationMobileSurMesurePage() {
               {
                 title: 'Développement application mobile à Toulouse',
                 href: '/developpement-application-mobile-toulouse',
-                description: 'Notre approche locale pour les projets mobiles en région toulousaine.',
+                description: 'Mon approche locale pour les projets mobiles en région toulousaine.',
               },
               {
                 title: 'Application iOS et Android',
@@ -255,7 +255,7 @@ export default function CreationApplicationMobileSurMesurePage() {
               {
                 title: 'Agence web et mobile à Toulouse',
                 href: '/agence-web-mobile-toulouse',
-                description: 'Une seule équipe pour vos projets web ET mobile.',
+                description: 'Un seul interlocuteur pour vos projets web ET mobile.',
               },
             ]}
           />

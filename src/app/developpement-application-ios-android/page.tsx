@@ -131,7 +131,7 @@ export default function DeveloppementApplicationIosAndroidPage() {
                 title: 'Application iOS native (Swift / SwiftUI)',
                 body: (
                   <>
-                    Pour des apps premium ou hyper performantes (audio temps réel, AR, jeux), nous développons en{' '}
+                    Pour des apps premium ou hyper performantes (audio temps réel, AR, jeux), je développe en{' '}
                     <strong>Swift</strong> et <strong>SwiftUI</strong>. Compatible iPhone, iPad, Apple Watch et
                     CarPlay.
                   </>
@@ -148,7 +148,7 @@ export default function DeveloppementApplicationIosAndroidPage() {
                 title: 'Application Android native (Kotlin)',
                 body: (
                   <>
-                    Sur Android, nous travaillons en <strong>Kotlin</strong> et <strong>Jetpack Compose</strong>.
+                    Sur Android, je travaille en <strong>Kotlin</strong> et <strong>Jetpack Compose</strong>.
                     Material You, Material 3, support tablette et déploiement Google Play sans accroc.
                   </>
                 ),
@@ -165,7 +165,7 @@ export default function DeveloppementApplicationIosAndroidPage() {
                 body: (
                   <>
                     Quand l'enjeu est le time-to-market et le coût, <strong>React Native</strong> ou <strong>Flutter</strong>{' '}
-                    permettent de livrer iOS et Android avec une seule équipe.
+                    permettent de livrer iOS et Android avec un seul interlocuteur.
                   </>
                 ),
                 bullets: [
@@ -180,7 +180,7 @@ export default function DeveloppementApplicationIosAndroidPage() {
                 title: 'Design system iOS + Android',
                 body: (
                   <>
-                    Nous adaptons l'expérience à chaque plateforme : <strong>Human Interface Guidelines</strong> côté
+                    Je adapte l'expérience à chaque plateforme : <strong>Human Interface Guidelines</strong> côté
                     iOS, <strong>Material Design 3</strong> côté Android. Vos utilisateurs se sentent chez eux.
                   </>
                 ),
@@ -233,13 +233,13 @@ export default function DeveloppementApplicationIosAndroidPage() {
                   premium, le natif s'impose.
                 </p>
                 <p>
-                  Lodgic vous accompagne dans <strong>ce choix technique</strong>, sans religion. Notre équipe maîtrise
-                  Swift, Kotlin, React Native et Flutter. Nous recommandons l'outil qui sert votre projet, pas celui
+                  Lodgic vous accompagne dans <strong>ce choix technique</strong>, sans religion. Je maîtrise
+                  Swift, Kotlin, React Native et Flutter. Je recommande l'outil qui sert votre projet, pas celui
                   qu'on aimerait vendre.
                 </p>
                 <p>
                   Le <strong>développement d'application iOS et Android</strong> est aussi un sujet de conformité :
-                  RGPD, App Tracking Transparency, Privacy Manifests Apple, Data Safety Google. Nous gérons ces
+                  RGPD, App Tracking Transparency, Privacy Manifests Apple, Data Safety Google. Je gère ces
                   obligations pour que votre app passe les reviews du premier coup.
                 </p>
               </>
@@ -248,7 +248,7 @@ export default function DeveloppementApplicationIosAndroidPage() {
               {
                 title: 'Développeur React Native Toulouse',
                 href: '/developpeur-react-native-toulouse',
-                description: 'Notre expertise sur la stack cross-platform la plus mature.',
+                description: 'Mon expertise sur la stack cross-platform la plus mature.',
               },
               {
                 title: 'Création application mobile sur mesure',

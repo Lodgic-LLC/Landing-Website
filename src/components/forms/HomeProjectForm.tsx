@@ -98,7 +98,7 @@ export default function HomeProjectForm({
         })
         setSubmitStatus({
           success: true,
-          message: 'Votre message a bien été envoyé. Nous revenons vers vous rapidement.',
+          message: 'Votre message a bien été envoyé. Je reviens vers vous rapidement.',
         })
         setFormData({ email: '', message: '', consent: false })
         return

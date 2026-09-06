@@ -9,7 +9,7 @@ import { FaqAccordion, type FaqItem } from "@/components/FaqAccordion";
 import { ScreenshotGallery } from "./_components/ScreenshotGallery";
 
 const APP_THEME = {
-  primary: "#0D1B2A",
+  primary: "#23211F",
   primaryDeep: "#07111c",
   accent: "#4F9CF9",
   accentSoft: "#93C5FD",
@@ -209,7 +209,7 @@ export default function BewasBeenProjectPage() {
                 href="https://irregularverbsonline.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#4F9CF9] underline underline-offset-2 hover:text-[#3b82f6] transition-colors"
+                className="text-[#C2542D] underline underline-offset-2 hover:text-[#A34322] transition-colors"
               >
                 irregularverbsonline.com
               </a>

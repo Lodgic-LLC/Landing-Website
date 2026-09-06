@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Développeur React Native Toulouse - Lodgic',
     description:
-      "Agence React Native à Toulouse. Une seule équipe TypeScript pour vos applications iOS et Android, livrées en quelques semaines.",
+      "Agence React Native à Toulouse. Un seul interlocuteur TypeScript pour vos applications iOS et Android, livrées en quelques semaines.",
     url: `${SITE_URL}${PAGE_PATH}`,
     siteName: 'Lodgic',
     images: [
@@ -89,7 +89,7 @@ export default function DeveloppeurReactNativeToulousePage() {
           <SeoHero
             eyebrow="React Native · TypeScript · Expo"
             title="Développeur React Native à Toulouse"
-            highlight="Une seule équipe, deux apps natives"
+            highlight="Un seul interlocuteur, deux apps natives"
             description={
               <>
                 Vous cherchez un <strong>développeur React Native à Toulouse</strong> ? Lodgic conçoit des
@@ -124,7 +124,7 @@ export default function DeveloppeurReactNativeToulousePage() {
                 title: 'React Native + Expo : la stack moderne',
                 body: (
                   <>
-                    Nous travaillons sur <strong>Expo SDK</strong> et le <strong>New Architecture</strong> de React
+                    Je travaille sur <strong>Expo SDK</strong> et le <strong>New Architecture</strong> de React
                     Native (Fabric, TurboModules). Performance native, hot reload instantané, OTA updates sans
                     repasser par les stores.
                   </>
@@ -173,8 +173,8 @@ export default function DeveloppeurReactNativeToulousePage() {
                 title: 'Backend TypeScript intégré',
                 body: (
                   <>
-                    Nous développons aussi votre backend en <strong>NestJS</strong>, <strong>Prisma</strong> et
-                    PostgreSQL. Une seule équipe React Native + backend, hébergement EU et RGPD-friendly.
+                    Je développe aussi votre backend en <strong>NestJS</strong>, <strong>Prisma</strong> et
+                    PostgreSQL. Un seul interlocuteur, React Native et backend, hébergement EU et RGPD-friendly.
                   </>
                 ),
                 bullets: [
@@ -205,7 +205,7 @@ export default function DeveloppeurReactNativeToulousePage() {
                 title: 'Audit & refonte React Native',
                 body: (
                   <>
-                    Vous avez déjà une application React Native ? Nous réalisons des <strong>audits techniques</strong>{' '}
+                    Vous avez déjà une application React Native ? Je réalise des <strong>audits techniques</strong>{' '}
                     (perf, sécurité, dépendances) et accompagnons vos refontes vers le New Arch.
                   </>
                 ),
@@ -231,7 +231,7 @@ export default function DeveloppeurReactNativeToulousePage() {
                 </p>
                 <p>
                   Que vous lanciez un MVP B2C, une app interne pour vos commerciaux ou une refonte complète d'une
-                  application existante, notre <strong>équipe React Native à Toulouse</strong> vous accompagne du
+                  application existante, mon <strong>expertise React Native à Toulouse</strong> vous accompagne du
                   cadrage à la mise en production.
                 </p>
               </>
@@ -245,12 +245,12 @@ export default function DeveloppeurReactNativeToulousePage() {
               {
                 title: 'Développement application mobile à Toulouse',
                 href: '/developpement-application-mobile-toulouse',
-                description: 'Notre offre globale mobile pour la région toulousaine.',
+                description: 'Mon offre globale mobile pour la région toulousaine.',
               },
               {
                 title: 'Création application mobile sur mesure',
                 href: '/creation-application-mobile-sur-mesure',
-                description: 'Notre méthode pour les projets mobiles 100% personnalisés.',
+                description: 'Ma méthode pour les projets mobiles 100% personnalisés.',
               },
             ]}
           />

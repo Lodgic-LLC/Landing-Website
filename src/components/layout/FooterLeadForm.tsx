@@ -65,7 +65,7 @@ export default function FooterLeadForm() {
         aria-live="polite"
         className="mt-5 rounded-xl border border-[#C2542D]/40 bg-[#C2542D]/10 px-5 py-4 text-sm text-[#C2542D] font-inter"
       >
-        ✓ Merci ! Votre demande a bien été reçue. Nous revenons vers vous sous 24 h.
+        ✓ Merci ! Votre demande a bien été reçue. Je reviens vers vous sous 24 h.
       </div>
     )
   }

@@ -86,7 +86,7 @@ export default function ContactForm() {
         })
         setSubmitStatus({
           success: true,
-          message: 'Votre message a bien été envoyé. Nous revenons vers vous rapidement.',
+          message: 'Votre message a bien été envoyé. Je reviens vers vous rapidement.',
         })
         setFormData({
           name: '',

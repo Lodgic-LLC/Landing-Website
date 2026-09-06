@@ -93,7 +93,7 @@ export default function DeveloppementApplicationMobileToulousePage() {
             highlight="iOS, Android et cross-platform sur mesure"
             description={
               <>
-                Lodgic est une <strong>agence de développement application mobile à Toulouse</strong>. Nous concevons
+                Lodgic est une <strong>agence de développement application mobile à Toulouse</strong>. Je conçois
                 des applications natives iOS, Android et hybrides React Native pour les startups, PME et grands comptes
                 de la région toulousaine et d'Occitanie.
               </>
@@ -111,7 +111,7 @@ export default function DeveloppementApplicationMobileToulousePage() {
 
         <TrackingSection sectionName="expertise" trackOnView={true} trackTimeSpent={true}>
           <SeoExpertise
-            eyebrow="Notre expertise mobile à Toulouse"
+            eyebrow="Mon expertise mobile à Toulouse"
             heading={
               <>
                 Une agence mobile <span className="text-[#C2542D]">implantée à Toulouse</span>, pour vos projets iOS et
@@ -120,7 +120,7 @@ export default function DeveloppementApplicationMobileToulousePage() {
             }
             intro={
               <>
-                Du quartier des Carmes à la Cité de l'espace, nous accompagnons les acteurs toulousains dans la{' '}
+                Du quartier des Carmes à la Cité de l'espace, je accompagne les acteurs toulousains dans la{' '}
                 <strong>création d'application mobile sur mesure</strong>. Réunions sur place, échanges en français,
                 équipe à proximité : on travaille avec vous, pas pour vous.
               </>
@@ -180,7 +180,7 @@ export default function DeveloppementApplicationMobileToulousePage() {
                 title: 'API, backend et infrastructure cloud',
                 body: (
                   <>
-                    Une application mobile, c'est aussi un backend solide. Nous construisons des API <strong>NestJS</strong>,{' '}
+                    Une application mobile, c'est aussi un backend solide. Je construis des API <strong>NestJS</strong>,{' '}
                     <strong>Prisma</strong> et bases <strong>PostgreSQL</strong> hébergées sur Vercel, AWS ou Scaleway.
                   </>
                 ),
@@ -212,7 +212,7 @@ export default function DeveloppementApplicationMobileToulousePage() {
                 title: 'TMA et évolution continue',
                 body: (
                   <>
-                    Une <strong>application mobile à Toulouse</strong> ne s'arrête pas à la mise en ligne. Nous assurons
+                    Une <strong>application mobile à Toulouse</strong> ne s'arrête pas à la mise en ligne. Je assure
                     la TMA, les mises à jour iOS/Android annuelles et l'évolution de votre produit.
                   </>
                 ),
@@ -232,7 +232,7 @@ export default function DeveloppementApplicationMobileToulousePage() {
                   PCI-DSS, accessibilité RGAA), et choisir la bonne stack avant la première sprint planning.
                 </p>
                 <p>
-                  Notre méthode : un <strong>atelier de cadrage gratuit</strong> dans nos bureaux ou les vôtres, à
+                  Ma méthode : un <strong>atelier de cadrage gratuit</strong> chez vous ou en visio, à
                   Toulouse intra-muros ou en périphérie (Blagnac, Colomiers, Labège, Balma). Vous repartez avec une
                   estimation budgétaire, un planning, et le bon framework — natif, React Native ou Flutter selon vos
                   besoins.
@@ -240,7 +240,7 @@ export default function DeveloppementApplicationMobileToulousePage() {
                 <p>
                   Lodgic intervient pour des projets <strong>application iOS</strong>, <strong>application Android</strong>,
                   applications hybrides <strong>React Native</strong>, mais aussi sur la partie backend, web et
-                  infrastructure cloud associée. Une seule équipe, basée à Toulouse, pour toute la chaîne.
+                  infrastructure cloud associée. Un seul interlocuteur, basé à Toulouse, pour toute la chaîne.
                 </p>
               </>
             }
@@ -248,7 +248,7 @@ export default function DeveloppementApplicationMobileToulousePage() {
               {
                 title: 'Création application mobile sur mesure',
                 href: '/creation-application-mobile-sur-mesure',
-                description: 'Notre approche du développement 100% personnalisé pour startups et PME.',
+                description: 'Mon approche du développement 100% personnalisé pour startups et PME.',
               },
               {
                 title: 'Développeur React Native Toulouse',

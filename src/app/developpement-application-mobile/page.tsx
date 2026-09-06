@@ -47,12 +47,12 @@ const faqs = [
   {
     question: "Travaillez-vous uniquement avec des entreprises toulousaines ?",
     answer:
-      "Lodgic est implantée à Toulouse et accompagne en priorité les startups et PME d'Occitanie en présentiel. Nous travaillons aussi avec des clients dans toute la France et à l'international en distanciel, en français comme en anglais.",
+      "Lodgic est implantée à Toulouse et accompagne en priorité les startups et PME d'Occitanie en présentiel. Je travaille aussi avec des clients dans toute la France et à l'international en distanciel, en français comme en anglais.",
   },
   {
     question: "Que comprend la maintenance d'une application mobile ?",
     answer:
-      "La maintenance applicative couvre les mises à jour de sécurité, la compatibilité avec les nouvelles versions iOS et Android, le suivi des stores, la correction des bugs, le monitoring des performances et l'évolution fonctionnelle. Nous proposons des forfaits TMA mensuels après le lancement.",
+      "La maintenance applicative couvre les mises à jour de sécurité, la compatibilité avec les nouvelles versions iOS et Android, le suivi des stores, la correction des bugs, le monitoring des performances et l'évolution fonctionnelle. Je propose des forfaits TMA mensuels après le lancement.",
   },
 ]
 

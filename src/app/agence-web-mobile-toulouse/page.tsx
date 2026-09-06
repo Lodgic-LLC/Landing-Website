@@ -90,10 +90,10 @@ export default function AgenceWebMobileToulousePage() {
           <SeoHero
             eyebrow="Agence digitale · Toulouse"
             title="Agence web et mobile à Toulouse"
-            highlight="Sites, apps et SaaS, par une seule équipe"
+            highlight="Sites, apps et SaaS, par un seul interlocuteur"
             description={
               <>
-                Lodgic est une <strong>agence web et mobile à Toulouse</strong>. Nous concevons sites internet
+                Lodgic est une <strong>agence web et mobile à Toulouse</strong>. Je conçois sites internet
                 Next.js, applications iOS et Android, plateformes SaaS et logiciels métier — pour startups, PME et
                 grands comptes en Occitanie comme partout en France.
               </>
@@ -179,7 +179,7 @@ export default function AgenceWebMobileToulousePage() {
                 title: 'Design UI/UX & branding',
                 body: (
                   <>
-                    Notre studio interne crée logos, design systems, maquettes Figma et brand guidelines. Une
+                    Je crée logos, design systems, maquettes Figma et brand guidelines. Une
                     cohérence visuelle web ↔ mobile, du logo à la dernière icône.
                   </>
                 ),
@@ -195,7 +195,7 @@ export default function AgenceWebMobileToulousePage() {
                 title: 'SaaS, plateformes et outils internes',
                 body: (
                   <>
-                    Vous voulez digitaliser un process métier ? Nous concevons des <strong>SaaS sur mesure</strong>{' '}
+                    Vous voulez digitaliser un process métier ? Je conçois des <strong>SaaS sur mesure</strong>{' '}
                     (multi-tenant, paiement abonnement, tableau de bord) et des outils internes pour vos équipes.
                   </>
                 ),
@@ -231,7 +231,7 @@ export default function AgenceWebMobileToulousePage() {
                   du tracking ? Avec Lodgic, on s'en occupe — on est à la fois côté web et côté mobile.
                 </p>
                 <p>
-                  Notre équipe travaille pour des startups financées, des PME industrielles, des cabinets de conseil
+                  Je travaille pour des startups financées, des PME industrielles, des cabinets de conseil
                   et des collectivités. <strong>De Toulouse à Paris, Bordeaux et Montpellier</strong>, on intervient
                   partout en France, en privilégiant les rendez-vous en présentiel pour les acteurs locaux.
                 </p>
@@ -246,7 +246,7 @@ export default function AgenceWebMobileToulousePage() {
               {
                 title: 'Développement application mobile à Toulouse',
                 href: '/developpement-application-mobile-toulouse',
-                description: 'Le volet mobile de notre agence : iOS, Android et React Native.',
+                description: 'Le volet mobile de mon activité : iOS, Android et React Native.',
               },
               {
                 title: 'Application iOS et Android',
