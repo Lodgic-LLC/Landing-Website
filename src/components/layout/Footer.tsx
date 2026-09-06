@@ -55,7 +55,7 @@ export default function Footer() {
                 </div>
               </a>
 
-              <a href="tel:+33652468750" className="flex items-start gap-3 group">
+              <a href="tel:+33643517157" className="flex items-start gap-3 group">
                 <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/15 text-white/90 group-hover:bg-[#C2542D] group-hover:text-white group-hover:ring-[#C2542D] transition-smooth">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4" aria-hidden>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
@@ -64,7 +64,7 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-white/50 font-inter">Par téléphone</p>
                   <p className="text-[15px] font-sofia-bold text-white group-hover:text-[#C2542D] transition-colors">
-                    06 52 46 87 50
+                    06 43 51 71 57
                   </p>
                 </div>
               </a>

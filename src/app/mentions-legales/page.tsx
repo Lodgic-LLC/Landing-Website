@@ -33,7 +33,7 @@ export default function MentionsLegalesPage() {
               <br />
               Email : contact@lodgic-dev.com
               <br />
-              Téléphone : 06 52 46 87 50
+              Téléphone : 06 43 51 71 57
             </p>
           </section>
 

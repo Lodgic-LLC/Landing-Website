@@ -5,7 +5,8 @@ export const SITE_DESCRIPTION =
   'Agence de developpement web et mobile a Toulouse. Lodgic conçoit des sites web, applications mobiles et logiciels sur mesure pour startups, PME et entrepreneurs.'
 
 export const CONTACT_EMAIL = 'contact@lodgic-dev.com'
-export const CONTACT_PHONE = '+33652468750'
+export const CONTACT_PHONE = '+33643517157'
+export const CONTACT_PHONE_DISPLAY = '06 43 51 71 57'
 
 // NAP — à compléter avec les vraies valeurs (sinon laisser vide, le schema les omet)
 export const POSTAL_CODE = '31000'

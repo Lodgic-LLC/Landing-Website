@@ -10,6 +10,7 @@ import {
   ADDRESS_REGION,
   CONTACT_EMAIL,
   CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
   OPENING_HOURS,
   POSTAL_CODE,
   SITE_NAME,
@@ -121,7 +122,7 @@ export default function ContactPage() {
                         href={`tel:${CONTACT_PHONE}`}
                         className="hover:text-[#2E2B28] underline-offset-2 hover:underline"
                       >
-                        {CONTACT_PHONE}
+                        {CONTACT_PHONE_DISPLAY}
                       </a>
                     </div>
                   </li>
