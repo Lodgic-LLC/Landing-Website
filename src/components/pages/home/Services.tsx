@@ -8,19 +8,22 @@ const services = [
     icon: FiSmartphone,
     title: 'Applications mobiles',
     description:
-      "Des applications iOS et Android pensées pour vos utilisateurs : conception, développement React Native et publication sur les stores. Une seule base de code, deux plateformes.",
+      "Des applications iOS et Android pensées pour vos utilisateurs, en React Native : une seule base de code, deux plateformes.",
+    items: ['Publication App Store & Play Store', 'Notifications, hors-ligne, paiement', 'Reprise d\'une app existante'],
   },
   {
     icon: FiGlobe,
     title: 'Sites & plateformes web',
     description:
-      "Sites vitrines, plateformes métier ou espaces clients développés sur mesure en Next.js. Rapides, référencés, et pensés pour convertir vos visiteurs.",
+      "Sites vitrines, plateformes métier ou espaces clients développés sur mesure en Next.js, rapides et référencés.",
+    items: ['Site vitrine orienté conversion', 'Espace client ou back-office', 'SEO technique et performance'],
   },
   {
     icon: FiLayers,
     title: 'Logiciels métier',
     description:
-      "CRM, back-offices et outils internes taillés pour vos processus. Je pars de votre façon de travailler, pas d'un modèle générique.",
+      "CRM, back-offices et outils internes taillés pour vos processus, pas pour un modèle générique.",
+    items: ['Automatisation de tâches répétitives', 'Connexion à vos outils existants', 'Tableaux de bord et exports'],
   },
 ]
 
@@ -28,7 +31,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="bg-white py-20 md:py-28 border-t border-[#E6E1D8]"
+      className="bg-[#F8F6F2] py-20 md:py-28 border-t border-[#E6E1D8]"
       aria-labelledby="services-heading"
     >
       <div className="mx-auto max-w-6xl px-6">
@@ -54,13 +57,24 @@ export default function Services() {
                   <Icon className="h-6 w-6" />
                 </div>
 
-                <h3 className="text-2xl md:text-[1.75rem] font-sofia-bold text-[#2E2B28] mb-4 text-balance">
+                <h3 className="text-[1.4rem] md:text-2xl font-sofia-bold text-[#2E2B28] mb-3">
                   {service.title}
                 </h3>
 
-                <p className="text-[#6B655D]/75 font-inter text-base leading-relaxed">
+                <p className="mb-5 text-[#6B655D] font-inter text-[15px] leading-relaxed">
                   {service.description}
                 </p>
+
+                <ul className="mt-auto space-y-2 border-t border-[#E6E1D8] pt-5">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-[#2E2B28] font-inter">
+                      <svg className="mt-[3px] h-3.5 w-3.5 shrink-0 text-[#C2542D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                        <path d="M20 6L9 17l-5-5" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
 
               </article>
             )

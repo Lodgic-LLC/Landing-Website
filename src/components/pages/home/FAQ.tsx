@@ -18,13 +18,13 @@ const reassurance = [
 export default function FAQ() {
   return (
     <section
-      className="relative py-16 sm:py-20 md:py-24 bg-white overflow-hidden border-t border-gray-200"
+      className="relative py-20 md:py-28 bg-[#F8F6F2] overflow-hidden border-t border-[#E6E1D8]"
       id="contact"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
-            <div className="lg:w-1/2 lg:pr-8 lg:border-r lg:border-gray-300 flex-shrink-0">
+            <div className="lg:w-1/2 lg:pr-8 lg:border-r lg:border-[#E6E1D8] flex-shrink-0">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofia-bold text-[#2E2B28] mb-6 text-balance">
                 Discuter de mon projet
               </h2>
@@ -62,7 +62,7 @@ export default function FAQ() {
                 ))}
               </ul>
 
-              <div className="mt-10 border-t border-gray-200 pt-6">
+              <div className="mt-10 border-t border-[#E6E1D8] pt-6">
                 <p className="text-sm text-gray-500 font-inter">
                   Vous préférez écrire directement ?
                 </p>

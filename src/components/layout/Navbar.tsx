@@ -14,8 +14,9 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigationItems = [
-    { name: 'Pourquoi un ingénieur', path: '/#expertise' },
     { name: 'Réalisations', path: '/#realisations' },
+    { name: 'Services', path: '/#services' },
+    { name: 'Méthode', path: '/#methode' },
     { name: 'Lodgic Conseils', path: '/blog' },
   ]
 

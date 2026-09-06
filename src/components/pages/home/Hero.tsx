@@ -52,7 +52,7 @@ export default function Hero() {
               ))}
             </ul>
 
-            <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-3">
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#C2542D] px-7 py-3.5 font-inter font-semibold text-white transition-colors hover:bg-[#A34322]"
@@ -62,16 +62,30 @@ export default function Hero() {
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </Link>
-              <a
-                href="mailto:contact@lodgic-dev.com"
+              <Link
+                href="/#realisations"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#2E2B28]/20 bg-white px-7 py-3.5 font-inter font-semibold text-[#2E2B28] transition-colors hover:border-[#2E2B28]/40"
               >
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l9 6 9-6M5 6h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z" />
-                </svg>
+                Voir mes réalisations
+              </Link>
+            </div>
+
+            <p className="mt-5 text-sm text-[#6B655D] font-inter">
+              Ou directement :{' '}
+              <a
+                href="mailto:contact@lodgic-dev.com"
+                className="font-sofia-bold text-[#2E2B28] underline underline-offset-2 decoration-[#C2542D]/40 hover:decoration-[#C2542D]"
+              >
                 contact@lodgic-dev.com
               </a>
-            </div>
+              {' · '}
+              <a
+                href="tel:+33643517157"
+                className="font-sofia-bold text-[#2E2B28] underline underline-offset-2 decoration-[#C2542D]/40 hover:decoration-[#C2542D]"
+              >
+                06 43 51 71 57
+              </a>
+            </p>
           </div>
 
           {/* Fiche technique : du concret, pas de décor */}
@@ -84,8 +98,8 @@ export default function Hero() {
               <dl className="mt-5 divide-y divide-[#E6E1D8]">
                 {stack.map((item) => (
                   <div key={item.label} className="py-3.5 sm:flex sm:items-baseline sm:justify-between sm:gap-6">
-                    <dt className="text-sm font-inter text-[#6B655D]">{item.label}</dt>
-                    <dd className="mt-0.5 text-[15px] font-sofia-bold text-[#2E2B28] sm:mt-0 sm:text-right">
+                    <dt className="shrink-0 text-sm font-inter text-[#6B655D]">{item.label}</dt>
+                    <dd className="mt-0.5 text-[15px] font-sofia-bold text-[#2E2B28] sm:mt-0 sm:text-right sm:min-w-0">
                       {item.value}
                     </dd>
                   </div>

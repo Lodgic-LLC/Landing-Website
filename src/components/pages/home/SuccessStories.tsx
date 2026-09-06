@@ -99,54 +99,50 @@ function CaseStudy({ project }: { project: Project }) {
 
   return (
     <article className="overflow-hidden rounded-xl border border-[#E6E1D8] bg-[#23211F]">
-      <div className="grid items-start gap-10 p-7 sm:p-10 lg:grid-cols-2 lg:gap-14 lg:p-12">
+      <div className="grid items-start gap-8 p-6 sm:p-8 lg:grid-cols-2 lg:gap-12 lg:p-10">
         {/* Colonne texte */}
         <div className="flex flex-col">
           <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#C2542D]">
             {project.category}
           </p>
-          <h3 className="mt-2 text-4xl font-sofia-bold text-white md:text-5xl">
+          <h3 className="mt-2 text-3xl font-sofia-bold text-white md:text-4xl">
             {project.name}
           </h3>
 
-          <p className="mt-5 text-base md:text-lg leading-relaxed text-white/80 font-inter">
+          <p className="mt-4 text-base leading-relaxed text-white/80 font-inter">
             {project.intro}
           </p>
 
-          <dl className="mt-8 space-y-6">
-            <div>
-              <dt className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/45 font-inter">
-                Le besoin
-              </dt>
-              <dd className="mt-2 text-sm md:text-base leading-relaxed text-white/75 font-inter">
-                {project.challenge}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/45 font-inter">
-                Ma réponse
-              </dt>
-              <dd className="mt-2 text-sm md:text-base leading-relaxed text-white/75 font-inter">
-                {project.answer}
-              </dd>
-            </div>
-          </dl>
+          <p className="mt-5 border-l-2 border-[#C2542D] pl-4 text-sm md:text-[15px] leading-relaxed text-white/70 font-inter">
+            <span className="font-sofia-bold text-white">Le besoin — </span>
+            {project.challenge}
+          </p>
 
-          <ul className="mt-8 space-y-4 border-t border-white/10 pt-8">
+          <ul className="mt-6 grid gap-2.5 border-t border-white/10 pt-5">
             {project.highlights.map((item) => (
-              <li key={item.title} className="flex gap-3">
-                <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#C2542D]" />
-                <div>
-                  <p className="text-[15px] font-sofia-bold text-white">{item.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-white/65 font-inter">
-                    {item.text}
-                  </p>
-                </div>
+              <li key={item.title} className="flex items-start gap-2.5">
+                <svg
+                  className="mt-[3px] h-3.5 w-3.5 shrink-0 text-[#C2542D]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={3}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                <span className="text-sm leading-relaxed text-white/80 font-inter">
+                  <span className="font-sofia-bold text-white">{item.title}</span>
+                  {' — '}
+                  {item.text}
+                </span>
               </li>
             ))}
           </ul>
 
-          <div className="mt-9 flex flex-wrap items-center gap-3">
+          <div className="mt-7 flex flex-wrap items-center gap-3">
             {external ? (
               <a
                 href={project.href}
@@ -185,7 +181,7 @@ function CaseStudy({ project }: { project: Project }) {
 
         {/* Colonne visuels */}
         <div className="flex flex-col gap-5 lg:gap-6">
-          {project.screens.map((screen, index) => (
+          {project.screens.slice(0, 1).map((screen, index) => (
             <figure key={screen.src} className="group">
               <div className="overflow-hidden rounded-xl border border-white/10">
                 <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/8 px-3 py-2">
@@ -222,11 +218,11 @@ export default function SuccessStories() {
   return (
     <section
       id="realisations"
-      className="bg-[#F8F6F2] py-20 md:py-28 border-t border-[#E6E1D8]"
+      className="bg-white py-20 md:py-28 border-t border-[#E6E1D8]"
       aria-labelledby="realisations-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 max-w-3xl">
+        <div className="mb-10 max-w-3xl">
           <p className="eyebrow eyebrow-left">Études de cas</p>
           <h2
             id="realisations-heading"
@@ -240,7 +236,7 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        <div className="space-y-10 md:space-y-14">
+        <div className="space-y-8 md:space-y-10">
           {projects.map((project) => (
             <CaseStudy key={project.name} project={project} />
           ))}
