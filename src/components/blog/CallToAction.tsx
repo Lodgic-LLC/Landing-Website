@@ -61,7 +61,7 @@ export function CallToAction({
   return (
     <div className="my-10 rounded-xl border border-gray-200 bg-white p-5 md:p-6 shadow-sm">
       <h3 className="m-0 text-xl font-semibold text-[#000f45]">{title}</h3>
-      <p className="mt-2 mb-0 text-[15px] text-[#162869]">{description}</p>
+      <p className="mt-2 mb-0 text-[15px] text-[#475D80]">{description}</p>
 
       <div className="mt-4 flex flex-col gap-2 sm:flex-row">
         <input
@@ -77,7 +77,7 @@ export function CallToAction({
         <button
           onClick={handleSubmit}
           disabled={status === 'loading'}
-          className="h-11 rounded-lg bg-[#000f45] px-5 text-[15px] font-medium text-white transition hover:bg-[#162869] disabled:cursor-not-allowed disabled:opacity-70"
+          className="h-11 rounded-lg bg-[#000f45] px-5 text-[15px] font-medium text-white transition hover:bg-[#475D80] disabled:cursor-not-allowed disabled:opacity-70"
           type="button"
         >
           {status === 'loading' ? 'Envoi...' : buttonLabel}

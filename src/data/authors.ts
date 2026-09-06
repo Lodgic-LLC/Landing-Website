@@ -14,8 +14,8 @@ const AUTHORS: Record<string, Author> = {
   'yann-rouquie': {
     slug: 'yann-rouquie',
     name: 'Yann Rouquie',
-    jobTitle: 'Co-fondateur & Lead Developer',
-    bio: "Co-fondateur de Lodgic, Yann conçoit et développe des applications web et mobiles sur mesure depuis Toulouse. Spécialiste React Native, Next.js et architectures TypeScript modernes, il accompagne startups et PME de l'idée à la mise en production.",
+    jobTitle: 'Ingénieur en informatique · Développeur web & mobile',
+    bio: "Ingénieur en informatique, Yann conçoit et développe des applications web et mobiles sur mesure depuis Toulouse. Spécialiste React Native, Next.js et architectures TypeScript modernes, il accompagne startups et PME de l'architecture jusqu'à la mise en production.",
     sameAs: [
       'https://linkedin.com/in/yann-rouquie',
       'https://github.com/lodgic-llc',

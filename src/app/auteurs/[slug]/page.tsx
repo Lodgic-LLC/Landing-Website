@@ -90,17 +90,17 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
       <StructuredData id="author-structured-data" data={personSchema} />
       <BreadcrumbStructuredData items={breadcrumbItems} />
 
-      <main className="bg-[#f6f7fc] min-h-screen pt-32 pb-24">
+      <main className="bg-[#F5F8FC] min-h-screen pt-32 pb-24">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-12 shadow-sm">
-            <p className="text-sm font-inter font-semibold uppercase tracking-[0.2em] text-[#001F45]/60 mb-4">
+            <p className="text-sm font-inter font-semibold uppercase tracking-[0.2em] text-[#0F2647]/60 mb-4">
               Auteur
             </p>
-            <h1 className="text-3xl md:text-4xl font-sofia-bold text-[#001F45] mb-2">
+            <h1 className="text-3xl md:text-4xl font-sofia-bold text-[#0F2647] mb-2">
               {author.name}
             </h1>
-            <p className="text-base text-[#162869]/80 font-inter mb-6">{author.jobTitle}</p>
-            <p className="text-[#001F45]/80 font-inter leading-relaxed">{author.bio}</p>
+            <p className="text-base text-[#475D80]/80 font-inter mb-6">{author.jobTitle}</p>
+            <p className="text-[#0F2647]/80 font-inter leading-relaxed">{author.bio}</p>
 
             {author.sameAs && author.sameAs.length > 0 && (
               <div className="mt-6 flex flex-wrap gap-3">
@@ -112,7 +112,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
                       href={url}
                       rel="me noopener"
                       target="_blank"
-                      className="inline-flex items-center rounded-full border border-[#001F45]/15 bg-white px-4 py-1.5 text-xs font-inter font-medium text-[#001F45] hover:border-[#001F45]/40 transition-colors"
+                      className="inline-flex items-center rounded-full border border-[#0F2647]/15 bg-white px-4 py-1.5 text-xs font-inter font-medium text-[#0F2647] hover:border-[#0F2647]/40 transition-colors"
                     >
                       {host}
                     </a>
@@ -124,24 +124,24 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
 
           {posts.length > 0 && (
             <section className="mt-12">
-              <h2 className="text-2xl font-sofia-bold text-[#001F45] mb-6">
+              <h2 className="text-2xl font-sofia-bold text-[#0F2647] mb-6">
                 Articles de {author.name}
               </h2>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {posts.map((post) => (
                   <li
                     key={post.slug}
-                    className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#001F45]/40 transition-colors"
+                    className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#0F2647]/40 transition-colors"
                   >
-                    <span className="inline-block px-3 py-1 text-xs font-semibold text-[#000f45] bg-[#DBFF00] rounded-full mb-3">
+                    <span className="inline-block px-3 py-1 text-xs font-semibold text-[#000f45] bg-[#2E8FFF] rounded-full mb-3">
                       {post.category}
                     </span>
-                    <h3 className="text-lg font-sofia-bold text-[#001F45] mb-2 leading-tight">
+                    <h3 className="text-lg font-sofia-bold text-[#0F2647] mb-2 leading-tight">
                       <Link href={`/blog/${post.slug}`} className="hover:underline">
                         {post.title}
                       </Link>
                     </h3>
-                    <p className="text-sm text-[#162869]/75 font-inter">{post.summary}</p>
+                    <p className="text-sm text-[#475D80]/75 font-inter">{post.summary}</p>
                   </li>
                 ))}
               </ul>

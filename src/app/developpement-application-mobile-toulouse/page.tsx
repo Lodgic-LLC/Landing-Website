@@ -114,7 +114,7 @@ export default function DeveloppementApplicationMobileToulousePage() {
             eyebrow="Notre expertise mobile à Toulouse"
             heading={
               <>
-                Une agence mobile <span className="text-[#0EA5E9]">implantée à Toulouse</span>, pour vos projets iOS et
+                Une agence mobile <span className="text-[#2E8FFF]">implantée à Toulouse</span>, pour vos projets iOS et
                 Android.
               </>
             }

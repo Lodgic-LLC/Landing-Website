@@ -63,7 +63,7 @@ export default function FooterLeadForm() {
       <div
         role="status"
         aria-live="polite"
-        className="mt-5 rounded-xl border border-[#DBFF00]/40 bg-[#DBFF00]/10 px-5 py-4 text-sm text-[#DBFF00] font-inter"
+        className="mt-5 rounded-xl border border-[#2E8FFF]/40 bg-[#2E8FFF]/10 px-5 py-4 text-sm text-[#2E8FFF] font-inter"
       >
         ✓ Merci ! Votre demande a bien été reçue. Nous revenons vers vous sous 24 h.
       </div>
@@ -80,15 +80,15 @@ export default function FooterLeadForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full rounded-lg border border-white/15 bg-white/5 backdrop-blur-sm px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-[#DBFF00] focus:ring-2 focus:ring-[#DBFF00]/20 transition-smooth"
+          className="w-full rounded-lg border border-white/15 bg-white/5 backdrop-blur-sm px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-[#2E8FFF] focus:ring-2 focus:ring-[#2E8FFF]/20 transition-smooth"
         />
         <textarea
           name="message"
-          placeholder="Comment pouvons-nous vous aider ?"
+          placeholder="Comment puis-je vous aider ?"
           rows={3}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full rounded-lg border border-white/15 bg-white/5 backdrop-blur-sm px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-[#DBFF00] focus:ring-2 focus:ring-[#DBFF00]/20 transition-smooth resize-none"
+          className="w-full rounded-lg border border-white/15 bg-white/5 backdrop-blur-sm px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-[#2E8FFF] focus:ring-2 focus:ring-[#2E8FFF]/20 transition-smooth resize-none"
         />
       </div>
 
@@ -99,14 +99,14 @@ export default function FooterLeadForm() {
             checked={consent}
             onChange={(e) => setConsent(e.target.checked)}
             required
-            className="mt-0.5 h-4 w-4 rounded border-white/30 bg-white/5 text-[#DBFF00] focus:ring-[#DBFF00]/40 focus:ring-offset-0"
+            className="mt-0.5 h-4 w-4 rounded border-white/30 bg-white/5 text-[#2E8FFF] focus:ring-[#2E8FFF]/40 focus:ring-offset-0"
           />
           <span>J'accepte de soumettre mes données à des fins commerciales</span>
         </label>
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#DBFF00] px-6 py-3 text-[#001F45] font-inter font-semibold hover:bg-white hover:shadow-elevated transition-smooth disabled:opacity-60 disabled:cursor-not-allowed"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#2E8FFF] px-6 py-3 text-white font-inter font-semibold hover:bg-[#1B6FD4] hover:shadow-elevated transition-smooth disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {status === 'loading' ? (
             <>

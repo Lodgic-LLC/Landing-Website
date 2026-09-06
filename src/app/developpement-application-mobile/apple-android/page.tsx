@@ -49,10 +49,10 @@ export default function AppleAndroidPage() {
     <>
       <StructuredData id="ios-android-article-schema" data={schema} />
       <BreadcrumbStructuredData items={breadcrumbItems} />
-      <main className="bg-[#f6f7fc] min-h-screen pt-28 pb-20 md:pt-36">
+      <main className="bg-[#F5F8FC] min-h-screen pt-28 pb-20 md:pt-36">
         <div className="max-w-5xl mx-auto px-6">
           <header>
-            <h1 className="font-sofia-bold text-4xl md:text-5xl text-[#001F45]">
+            <h1 className="font-sofia-bold text-4xl md:text-5xl text-[#0F2647]">
               Développement application iOS et Android : Swift vs Android Studio
             </h1>
             <p className="mt-5 text-lg text-[#243b5a] leading-relaxed">
@@ -63,8 +63,8 @@ export default function AppleAndroidPage() {
           </header>
 
           <section className="mt-10 grid gap-5 md:grid-cols-2">
-            <article className="rounded-xl bg-white border border-[#001F45]/10 p-6">
-              <h2 className="font-sofia-bold text-2xl text-[#001F45]">Côté Apple (Swift)</h2>
+            <article className="rounded-xl bg-white border border-[#0F2647]/10 p-6">
+              <h2 className="font-sofia-bold text-2xl text-[#0F2647]">Côté Apple (Swift)</h2>
               <ul className="mt-3 space-y-2 text-[#2d4567]">
                 <li>- Environnement très contrôlé</li>
                 <li>- Directives App Store strictes</li>
@@ -72,8 +72,8 @@ export default function AppleAndroidPage() {
                 <li>- Très bonne stabilité sur iPhone/iPad</li>
               </ul>
             </article>
-            <article className="rounded-xl bg-white border border-[#001F45]/10 p-6">
-              <h2 className="font-sofia-bold text-2xl text-[#001F45]">Côté Android (Android Studio)</h2>
+            <article className="rounded-xl bg-white border border-[#0F2647]/10 p-6">
+              <h2 className="font-sofia-bold text-2xl text-[#0F2647]">Côté Android (Android Studio)</h2>
               <ul className="mt-3 space-y-2 text-[#2d4567]">
                 <li>- Forte variété d'appareils</li>
                 <li>- Plus de scénarios de test à couvrir</li>
@@ -83,8 +83,8 @@ export default function AppleAndroidPage() {
             </article>
           </section>
 
-          <section className="mt-8 rounded-2xl border border-[#001F45]/10 bg-white p-6">
-            <h2 className="font-sofia-bold text-2xl text-[#001F45]">Quel impact sur votre projet ?</h2>
+          <section className="mt-8 rounded-2xl border border-[#0F2647]/10 bg-white p-6">
+            <h2 className="font-sofia-bold text-2xl text-[#0F2647]">Quel impact sur votre projet ?</h2>
             <p className="mt-3 text-[#2d4567] leading-relaxed">
               Le budget et le planning dépendent du niveau de personnalisation, des intégrations tierces et de votre
               besoin de synchronisation entre plateformes. Pour une création application mobile sur mesure, un cadrage
@@ -92,8 +92,8 @@ export default function AppleAndroidPage() {
             </p>
           </section>
 
-          <section className="mt-6 rounded-2xl border border-[#0EA5E9]/20 bg-[#f8fbff] p-6">
-            <h2 className="font-sofia-bold text-2xl text-[#001F45]">Comment choisir simplement ?</h2>
+          <section className="mt-6 rounded-2xl border border-[#2E8FFF]/20 bg-[#f8fbff] p-6">
+            <h2 className="font-sofia-bold text-2xl text-[#0F2647]">Comment choisir simplement ?</h2>
             <ul className="mt-4 space-y-3 text-[#2d4567]">
               <li>
                 - Si votre audience est surtout iPhone au lancement, commencer par iOS peut accélérer la première mise
@@ -109,8 +109,8 @@ export default function AppleAndroidPage() {
             </ul>
           </section>
 
-          <section className="mt-6 rounded-2xl border border-[#001F45]/10 bg-white p-6">
-            <h2 className="font-sofia-bold text-2xl text-[#001F45]">Vulgarisation rapide</h2>
+          <section className="mt-6 rounded-2xl border border-[#0F2647]/10 bg-white p-6">
+            <h2 className="font-sofia-bold text-2xl text-[#0F2647]">Vulgarisation rapide</h2>
             <p className="mt-3 text-[#2d4567] leading-relaxed">
               Pensez iOS et Android comme deux maisons voisines avec des règles de construction différentes. Le design
               global peut se ressembler, mais les fondations techniques et les vérifications avant publication ne sont
@@ -121,7 +121,7 @@ export default function AppleAndroidPage() {
           <div className="mt-10">
             <Link
               href="/developpement-application-mobile"
-              className="inline-flex items-center rounded-lg bg-[#001F45] px-5 py-3 text-white font-semibold hover:bg-[#0d2f6b] transition-smooth"
+              className="inline-flex items-center rounded-lg bg-[#0F2647] px-5 py-3 text-white font-semibold hover:bg-[#0d2f6b] transition-smooth"
             >
               Retour au guide mobile
             </Link>

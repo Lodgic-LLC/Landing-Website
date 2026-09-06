@@ -1,57 +1,73 @@
 'use client'
 
+const credentials = [
+  { label: 'Diplôme', value: "Ingénieur en informatique" },
+  { label: 'Spécialités', value: 'React Native · Next.js · TypeScript' },
+  { label: 'Base', value: 'Toulouse, Occitanie' },
+]
+
 const About = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#001F45] py-20 md:py-32"
+      className="relative overflow-hidden bg-[#0A1628] py-20 md:py-32"
       aria-labelledby="about-heading"
     >
-      {/* Éléments décoratifs en arrière-plan */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 grid-technical opacity-100" />
       <div
-        className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20"
-        aria-hidden="true"
-      >
-        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-[#DBFF00] blur-[120px] opacity-10" />
-        <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-blue-500 blur-[120px] opacity-10" />
-      </div>
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse at 20% 0%, rgba(46,143,255,0.16) 0%, transparent 55%), radial-gradient(ellipse at 100% 100%, rgba(46,143,255,0.10) 0%, transparent 50%)',
+        }}
+      />
 
-      <div className="mx-auto max-w-5xl px-6 relative z-10">
-        <div className="flex flex-col items-center">
-          <h2
-            id="about-heading"
-            className="text-4xl md:text-6xl font-sofia-bold text-white mb-16 text-center tracking-tight"
-          >
-            Qui sommes-nous <span className="text-[#DBFF00]">?</span>
-          </h2>
+      <div className="relative z-10 mx-auto max-w-5xl px-6">
+        <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.22em] text-[#2E8FFF]">
+          Qui je suis
+        </p>
 
-          <div className="relative">
-            {/* Guillemet décoratif */}
-            <div className="absolute -left-4 md:-left-12 -top-8 text-6xl md:text-8xl font-sofia-bold text-[#DBFF00]/10 select-none">
-              “
-            </div>
+        <h2
+          id="about-heading"
+          className="mt-3 max-w-3xl text-4xl md:text-5xl lg:text-6xl font-sofia-bold text-white tracking-tight text-balance"
+        >
+          Ingénieur en informatique,
+          <br className="hidden sm:block" /> pas générateur de code.
+        </h2>
 
-            <div className="space-y-8 font-inter text-lg md:text-2xl leading-relaxed text-white/80 text-center max-w-4xl mx-auto">
-              <p className="relative z-10">
-                Lodgic est une agence de développement d’applications mobiles basée à Toulouse, spécialisée dans la
-                création d’apps cross-platform avec React Native. Nous accompagnons les startups, entrepreneurs et
-                solopreneurs à chaque étape, de la conception UX/UI jusqu’au développement, en passant par le conseil
-                stratégique et la maintenance.
-              </p>
-
-              <div className="py-10 my-10 border-y border-white/10 relative group">
-                <div className="absolute inset-0 bg-white/[0.02] -mx-4 rounded-3xl scale-95 group-hover:scale-100 transition-transform duration-500" />
-                <p className="relative z-10 font-sofia-bold text-white text-xl md:text-2xl lg:text-3xl tracking-tight leading-tight">
-                  Chez Lodgic, nous mettons un point d’honneur à offrir un accompagnement sur-mesure, pour transformer
-                  chaque idée en produit digital fiable, scalable et prêt à conquérir votre marché !
-                </p>
-              </div>
-            </div>
-
-            <div className="absolute -right-4 md:-right-12 -bottom-8 text-6xl md:text-8xl font-sofia-bold text-[#DBFF00]/10 select-none rotate-180">
-              “
-            </div>
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+          <div className="space-y-6 font-inter text-lg leading-relaxed text-white/75">
+            <p>
+              Je m&apos;appelle Yann Rouquié. Je suis ingénieur en informatique et je conçois
+              des applications web et mobiles sur mesure depuis Toulouse — de l&apos;architecture
+              jusqu&apos;à la mise en production.
+            </p>
+            <p>
+              Écrire du code n&apos;est plus la partie difficile : n&apos;importe qui peut aujourd&apos;hui
+              produire un écran qui fonctionne à la démo. Ce qui reste difficile, c&apos;est de savoir
+              <span className="text-white"> pourquoi </span>
+une solution tient quand les données grossissent, quand deux utilisateurs écrivent
+              en même temps, quand la facture d&apos;hébergement arrive — et de pouvoir la corriger
+              six mois plus tard.
+            </p>
+            <p>
+              C&apos;est exactement ce que sanctionne une formation d&apos;ingénieur : algorithmique,
+              structures de données, bases de données, réseaux, sécurité. Ce sont les fondations
+              qui font la différence entre un prototype et un produit que vous pouvez exploiter.
+            </p>
           </div>
+
+          <dl className="space-y-5 self-start rounded-2xl border border-[#1E3455] bg-[#12233D]/70 p-6 backdrop-blur">
+            {credentials.map((item) => (
+              <div key={item.label}>
+                <dt className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-white/40">
+                  {item.label}
+                </dt>
+                <dd className="mt-1 font-sofia-bold text-white">{item.value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>

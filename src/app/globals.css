@@ -2,6 +2,23 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* ---- Palette : ingénierie logicielle ----
+   Navy profond en base, un seul accent (cyan technique).
+   Le lime #DBFF00 est abandonné : trop marketing pour un discours d'ingénieur. */
+:root {
+  --ink: #0A1628;          /* fond sombre profond */
+  --ink-soft: #12233D;     /* surfaces sombres secondaires */
+  --ink-line: #1E3455;     /* filets sur fond sombre */
+  --navy: #0F2647;         /* texte principal sur clair */
+  --navy-muted: #475D80;   /* texte secondaire */
+  --accent: #2E8FFF;       /* accent unique : bleu technique */
+  --accent-deep: #1B6FD4;  /* accent au survol */
+  --accent-soft: #E8F1FF;  /* fond d'accent très clair */
+  --surface: #FFFFFF;
+  --surface-alt: #F5F8FC;  /* fond de section clair */
+  --hairline: #E2E9F2;     /* filets sur fond clair */
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -11,13 +28,13 @@ html {
 
 body {
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-  color: #0f1b42;
-  background-color: #ffffff;
+  color: var(--navy);
+  background-color: var(--surface);
 }
 
 ::selection {
-  background-color: #DBFF00;
-  color: #001F45;
+  background-color: var(--accent);
+  color: #ffffff;
 }
 
 h1,
@@ -199,21 +216,38 @@ h3 {
 
   /* Common design system helpers for the new aesthetic */
   .heading {
-    color: #001F45;
+    color: var(--navy);
     line-height: 1.03;
   }
 
   .lead {
-    color: #162869;
-    opacity: 0.9;
+    color: var(--navy-muted);
   }
 
   .btn-primary {
-    background-color: #001F45;
+    background-color: var(--accent);
     color: #ffffff;
     padding: 0.875rem 1.75rem;
-    border-radius: 0.75rem;
+    border-radius: 0.65rem;
     font-weight: 600;
+    transition: background-color 200ms ease;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--accent-deep);
+  }
+
+  /* Filet technique : léger quadrillage pour les fonds sombres */
+  .grid-technical {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-feature-settings: "tnum" 1;
   }
 }
 

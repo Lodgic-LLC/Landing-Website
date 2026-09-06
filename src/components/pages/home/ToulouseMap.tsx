@@ -23,11 +23,11 @@ export default function ToulouseMap() {
     <svg
       viewBox="0 0 500 500"
       className="w-full h-full drop-shadow-xl"
-      style={{ filter: 'drop-shadow(0px 10px 25px rgba(0,31,69,0.08))' }}
+      style={{ filter: 'drop-shadow(0px 10px 25px rgba(15,38,71,0.08))' }}
       aria-hidden
     >
       <g
-        stroke="#001F45"
+        stroke="#0F2647"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -46,8 +46,8 @@ export default function ToulouseMap() {
           cx="350"
           cy="420"
           r="5"
-          fill="#DBFF00"
-          stroke="#001F45"
+          fill="#2E8FFF"
+          stroke="#0F2647"
           strokeWidth="2"
         />
       </g>

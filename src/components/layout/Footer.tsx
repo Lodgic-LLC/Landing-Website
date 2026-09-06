@@ -7,7 +7,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden bg-[#001F45] text-white">
+    <footer className="relative overflow-hidden bg-[#0F2647] text-white">
       {/* Fines grilles / halos décoratifs */}
       <div
         aria-hidden
@@ -26,11 +26,11 @@ export default function Footer() {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-40 -right-32 h-[28rem] w-[28rem] rounded-full bg-[#DBFF00]/10 blur-3xl"
+        className="pointer-events-none absolute -bottom-40 -right-32 h-[28rem] w-[28rem] rounded-full bg-[#2E8FFF]/10 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/3 right-1/4 h-64 w-64 rounded-full bg-[#0b2b63]/40 blur-3xl"
+        className="pointer-events-none absolute top-1/3 right-1/4 h-64 w-64 rounded-full bg-[#1B6FD4]/40 blur-3xl"
       />
 
       {/* Bordure lumineuse haute */}
@@ -44,14 +44,14 @@ export default function Footer() {
         <div
           className="pt-14 md:pt-20 pb-8 text-center"
         >
-          <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.2em] text-[#DBFF00]">
-            Contactez-nous
+          <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.2em] text-[#2E8FFF]">
+            Me contacter
           </p>
           <h2 className="mt-3 text-balance text-3xl md:text-5xl font-sofia-bold text-white">
             Parlons de votre projet.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm md:text-base text-white/70 font-inter">
-            Un besoin, une question, un cadrage ? Laissez-nous un mot — nous revenons vers vous
+            Un besoin, une question, un cadrage ? Écrivez-moi — je vous réponds
             sous 24 heures.
           </p>
         </div>
@@ -62,35 +62,35 @@ export default function Footer() {
           <div
           >
             <p className="text-xs font-inter font-semibold uppercase tracking-wider text-white/50">
-              Nous contacter
+              Me contacter
             </p>
             <div className="mt-4 space-y-5">
               <a
                 href="mailto:contact@lodgic-dev.com"
                 className="flex items-start gap-3 group"
               >
-                <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/15 text-white/90 group-hover:bg-[#DBFF00] group-hover:text-[#001F45] group-hover:ring-[#DBFF00] transition-smooth">
+                <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/15 text-white/90 group-hover:bg-[#2E8FFF] group-hover:text-white group-hover:ring-[#2E8FFF] transition-smooth">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4" aria-hidden>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l9 6 9-6M5 6h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z" />
                   </svg>
                 </span>
                 <div>
                   <p className="text-xs text-white/50 font-inter">Par email</p>
-                  <p className="text-[15px] font-sofia-bold text-white group-hover:text-[#DBFF00] transition-colors">
+                  <p className="text-[15px] font-sofia-bold text-white group-hover:text-[#2E8FFF] transition-colors">
                     contact@lodgic-dev.com
                   </p>
                 </div>
               </a>
 
               <a href="tel:+33652468750" className="flex items-start gap-3 group">
-                <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/15 text-white/90 group-hover:bg-[#DBFF00] group-hover:text-[#001F45] group-hover:ring-[#DBFF00] transition-smooth">
+                <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/15 text-white/90 group-hover:bg-[#2E8FFF] group-hover:text-white group-hover:ring-[#2E8FFF] transition-smooth">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4" aria-hidden>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
                   </svg>
                 </span>
                 <div>
                   <p className="text-xs text-white/50 font-inter">Par téléphone</p>
-                  <p className="text-[15px] font-sofia-bold text-white group-hover:text-[#DBFF00] transition-colors">
+                  <p className="text-[15px] font-sofia-bold text-white group-hover:text-[#2E8FFF] transition-colors">
                     06 52 46 87 50
                   </p>
                 </div>
@@ -119,17 +119,17 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm font-inter">
               {[
                 { label: 'Accueil', href: '/' },
-                { label: 'Qui sommes-nous ?', href: '/#about' },
-                { label: 'Nos réalisations', href: '/#realisations' },
+                { label: 'Qui je suis', href: '/#about' },
+                { label: 'Réalisations', href: '/#realisations' },
                 { label: 'Lodgic Conseils', href: '/blog' },
                 { label: 'Contact', href: '/contact' },
               ].map((item) => (
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="inline-flex items-center gap-2 text-white/75 hover:text-[#DBFF00] transition-colors group"
+                    className="inline-flex items-center gap-2 text-white/75 hover:text-[#2E8FFF] transition-colors group"
                   >
-                    <span className="inline-block h-1 w-1 rounded-full bg-white/30 group-hover:bg-[#DBFF00] transition-colors" />
+                    <span className="inline-block h-1 w-1 rounded-full bg-white/30 group-hover:bg-[#2E8FFF] transition-colors" />
                     {item.label}
                   </Link>
                 </li>
@@ -152,13 +152,13 @@ export default function Footer() {
                 height={32} 
                 className="rounded group-hover:opacity-90 transition-opacity"
               />
-              <span className="font-sofia-bold text-2xl text-white group-hover:text-[#DBFF00] transition-colors">
+              <span className="font-sofia-bold text-2xl text-white group-hover:text-[#2E8FFF] transition-colors">
                 Lodgic
               </span>
             </Link>
             <span className="h-6 w-px bg-white/15" aria-hidden />
             <p className="text-sm text-white/60 font-inter">
-              Applications mobiles &amp; web sur-mesure · Toulouse
+              Ingénieur en informatique · Applications web &amp; mobiles · Toulouse
             </p>
           </div>
 
@@ -168,7 +168,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Lodgic"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/15 text-white hover:bg-[#DBFF00] hover:text-[#001F45] hover:ring-[#DBFF00] transition-smooth"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/15 text-white hover:bg-[#2E8FFF] hover:text-white hover:ring-[#2E8FFF] transition-smooth"
             >
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                 <path d="M20.447 20.452h-3.554V14.87c0-1.332-.025-3.045-1.857-3.045-1.86 0-2.144 1.45-2.144 2.95v5.677H9.339V9h3.413v1.561h.049c.476-.9 1.636-1.85 3.368-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.063 2.063 0 110-4.126 2.063 2.063 0 010 4.126zM7.115 20.452H3.558V9h3.557v11.452z" />
@@ -179,7 +179,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook Lodgic"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/15 text-white hover:bg-[#DBFF00] hover:text-[#001F45] hover:ring-[#DBFF00] transition-smooth"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/15 text-white hover:bg-[#2E8FFF] hover:text-white hover:ring-[#2E8FFF] transition-smooth"
             >
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                 <path d="M22 12.073C22 6.505 17.523 2 12 2S2 6.505 2 12.073C2 17.104 5.657 21.272 10.438 22v-7.03H7.898V12.07h2.54V9.845c0-2.52 1.492-3.91 3.777-3.91 1.094 0 2.238.198 2.238.198v2.476h-1.26c-1.242 0-1.63.774-1.63 1.567v1.894h2.773l-.443 2.901h-2.33V22C18.343 21.272 22 17.104 22 12.073z" />

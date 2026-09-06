@@ -3,15 +3,15 @@ import HomeProjectForm from '@/components/forms/HomeProjectForm'
 const reassurance = [
   {
     title: 'Un échange, pas un devis automatique',
-    text: "On commence par comprendre votre besoin. Vous repartez avec un avis honnête, même si votre projet ne nous concerne pas.",
+    text: "Je commence par comprendre votre besoin. Vous repartez avec un avis honnête, même si votre projet ne me concerne pas.",
   },
   {
     title: 'Réponse sous 24 heures',
-    text: 'Un interlocuteur unique vous répond directement, du premier message jusqu’à la mise en ligne.',
+    text: 'Je vous réponds personnellement — pas un commercial, pas un formulaire de suivi.',
   },
   {
     title: 'Un cadrage avant de chiffrer',
-    text: 'Périmètre, contraintes et budget sont posés à l’écrit avant tout développement. Pas de mauvaise surprise en cours de route.',
+    text: 'Périmètre, contraintes techniques et budget posés à l’écrit avant la première ligne de code. Pas de mauvaise surprise en cours de route.',
   },
 ]
 
@@ -29,8 +29,8 @@ export default function FAQ() {
                 Discuter de mon projet
               </h2>
               <p className="text-gray-600 mb-10 font-inter text-lg leading-relaxed">
-                Vous avez une idée d&apos;application ou un projet en tête ? Prenez contact
-                avec nous pour en discuter.
+                Vous avez une idée d&apos;application ou un projet en tête ? Écrivez-moi, je vous
+                réponds sous 24 heures.
               </p>
 
               <ul className="space-y-7">
@@ -38,7 +38,7 @@ export default function FAQ() {
                   <li key={item.title} className="flex gap-4">
                     <span
                       aria-hidden
-                      className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#001F45] text-[#DBFF00]"
+                      className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2E8FFF] text-white"
                     >
                       <svg
                         className="h-3.5 w-3.5"
@@ -53,7 +53,7 @@ export default function FAQ() {
                       </svg>
                     </span>
                     <div>
-                      <p className="font-sofia-bold text-[#001F45] text-[17px]">{item.title}</p>
+                      <p className="font-sofia-bold text-[#0F2647] text-[17px]">{item.title}</p>
                       <p className="mt-1.5 text-gray-600 font-inter leading-relaxed">
                         {item.text}
                       </p>
@@ -68,7 +68,7 @@ export default function FAQ() {
                 </p>
                 <a
                   href="mailto:contact@lodgic-dev.com"
-                  className="mt-1 inline-block font-sofia-bold text-[#001F45] hover:text-[#0EA5E9] transition-colors"
+                  className="mt-1 inline-block font-sofia-bold text-[#0F2647] hover:text-[#2E8FFF] transition-colors"
                 >
                   contact@lodgic-dev.com
                 </a>

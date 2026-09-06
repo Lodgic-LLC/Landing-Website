@@ -10,11 +10,11 @@ const project = {
   glow: "rgba(79,156,249,0.25)",
   tags: ["Next.js", "TypeScript", "PostgreSQL"],
   intro:
-    "Une plateforme web pédagogique pour l'apprentissage des verbes irréguliers anglais, conçue et développée de bout en bout pour les enseignants et leurs classes.",
+    "Une plateforme web pédagogique pour l'apprentissage des verbes irréguliers anglais, que j'ai conçue et développée de bout en bout pour les enseignants et leurs classes.",
   challenge:
     "Les enseignants n'avaient aucun outil pour faire travailler les verbes irréguliers en autonomie et suivre les résultats. Les solutions existantes imposaient la création d'un compte à chaque élève — une friction rédhibitoire en classe.",
   answer:
-    "Nous avons construit un espace enseignant complet (classes, listes de verbes, suivi individuel) et un accès élève sans inscription : un QR code projeté au tableau ou un code court suffit pour rejoindre une session.",
+    "J'ai construit un espace enseignant complet (classes, listes de verbes, suivi individuel) et un accès élève sans inscription : un QR code projeté au tableau ou un code court suffit pour rejoindre une session.",
   highlights: [
     {
       title: "Trois modes d'entraînement",
@@ -47,32 +47,32 @@ export default function SuccessStories() {
   return (
     <section
       id="realisations"
-      className="relative overflow-hidden bg-[#f6f7fc] py-24 md:py-32"
+      className="relative overflow-hidden bg-[#F5F8FC] py-24 md:py-32"
       aria-labelledby="realisations-heading"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 -left-28 h-[28rem] w-[28rem] rounded-full bg-[#001F45]/5 blur-3xl"
+        className="pointer-events-none absolute -top-32 -left-28 h-[28rem] w-[28rem] rounded-full bg-[#0F2647]/5 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-32 -right-24 h-[32rem] w-[32rem] rounded-full bg-[#DBFF00]/20 blur-[110px]"
+        className="pointer-events-none absolute -bottom-32 -right-24 h-[32rem] w-[32rem] rounded-full bg-[#2E8FFF]/20 blur-[110px]"
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#001F45]/50 font-inter">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0F2647]/50 font-inter">
             Étude de cas
           </p>
           <h2
             id="realisations-heading"
-            className="mt-2 text-4xl font-sofia-bold text-[#001F45] md:text-5xl text-balance"
+            className="mt-2 text-4xl font-sofia-bold text-[#0F2647] md:text-5xl text-balance"
           >
             Une réalisation, de l&apos;idée à la mise en ligne
           </h2>
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-[#162869]/75 font-inter">
-            Plutôt qu&apos;un catalogue, voici un projet raconté en détail : le problème posé, la
-            réponse apportée et ce que la plateforme fait aujourd&apos;hui.
+          <p className="mt-4 text-base md:text-lg leading-relaxed text-[#475D80]/75 font-inter">
+            Plutôt qu&apos;un catalogue, un projet raconté en détail : le problème posé, les
+            décisions techniques prises et ce que la plateforme fait aujourd&apos;hui.
           </p>
         </div>
 
@@ -116,7 +116,7 @@ export default function SuccessStories() {
                 </div>
                 <div>
                   <dt className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/45 font-inter">
-                    Notre réponse
+                    Ma réponse
                   </dt>
                   <dd className="mt-2 text-sm md:text-base leading-relaxed text-white/75 font-inter">
                     {project.answer}
@@ -145,7 +145,7 @@ export default function SuccessStories() {
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <Link
                   href={project.href}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#DBFF00] px-6 py-3 text-sm font-inter font-semibold text-[#001F45] transition-smooth hover:bg-white"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#2E8FFF] px-6 py-3 text-sm font-inter font-semibold text-white transition-smooth hover:bg-[#1B6FD4]"
                 >
                   Voir l&apos;étude de cas
                   <svg

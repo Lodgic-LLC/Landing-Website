@@ -9,22 +9,23 @@ import StructuredData from '@/components/seo/StructuredData'
 import { SITE_URL } from '@/lib/site'
 
 const About = dynamic(() => import('@/components/pages/home/About'))
+const Expertise = dynamic(() => import('@/components/pages/home/Expertise'))
 const Services = dynamic(() => import('@/components/pages/home/Services'))
 const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
 const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 const AdvancedTracker = dynamic(() => import('@/components/analytics/AdvancedTracker').then((m) => m.AdvancedTracker))
 
 export const metadata: Metadata = {
-  title: 'Développeur Web et Mobile Toulouse',
+  title: 'Développeur Web et Mobile Toulouse — Ingénieur en informatique',
   description:
-    "Besoin d'un Développeur Web et Mobile à Toulouse ? Lodgic crée des sites web et applications mobiles sur mesure pour startups, entreprises et particuliers.",
+    "Ingénieur en informatique à Toulouse, je conçois et développe vos applications web et mobiles sur mesure : architecture, développement et mise en production.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     title: 'Développeur Web et Mobile Toulouse - Lodgic',
     description:
-      'Lodgic, développeur web et mobile à Toulouse, transforme votre idée en site web ou application performante (React.js, Next.js, React Native). Expertise et accompagnement.',
+      "Ingénieur en informatique à Toulouse, je conçois et développe des sites web et applications mobiles sur mesure (React.js, Next.js, React Native), de l'architecture à la mise en production.",
     url: SITE_URL,
     siteName: 'Lodgic',
     images: [
@@ -39,6 +40,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   keywords: [
+    'Ingénieur informatique Toulouse',
     'Développeur Web et Mobile Toulouse',
     'Agence développement web et mobile Toulouse',
     'Création site web Toulouse',
@@ -72,7 +74,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Développeur Web et Mobile Toulouse - Lodgic',
     description:
-      "Besoin d'un Développeur Web et Mobile à Toulouse ? Lodgic crée des sites web et applications mobiles sur mesure (React.js, Next.js, React Native).",
+      "Ingénieur en informatique à Toulouse : conception et développement d'applications web et mobiles sur mesure (React.js, Next.js, React Native).",
     images: [`${SITE_URL}/lodgic-banner.png`],
   },
 }
@@ -121,17 +123,22 @@ export default function Home() {
           <About />
         </TrackingSection>
 
-        {/* 2) Nos services */}
+        {/* 2) Pourquoi un ingénieur */}
+        <TrackingSection sectionName="expertise" trackOnView={true} trackTimeSpent={true}>
+          <Expertise />
+        </TrackingSection>
+
+        {/* 3) Nos services */}
         <TrackingSection sectionName="services" trackOnView={true} trackTimeSpent={true}>
           <Services />
         </TrackingSection>
 
-        {/* 3) Nos réalisations */}
+        {/* 4) Nos réalisations */}
         <TrackingSection sectionName="realisations" trackOnView={true} trackTimeSpent={true}>
           <SuccessStories />
         </TrackingSection>
 
-        {/* 4) Une question ? / Contact */}
+        {/* 5) Une question ? / Contact */}
         <TrackingSection sectionName="faq" trackOnView={true} trackTimeSpent={true}>
           <FAQ />
         </TrackingSection>

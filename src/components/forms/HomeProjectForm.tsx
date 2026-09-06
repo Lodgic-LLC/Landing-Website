@@ -138,7 +138,7 @@ export default function HomeProjectForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       <div>
-        <label htmlFor={emailInputId} className="block text-sm font-medium text-[#001F45] mb-1.5">
+        <label htmlFor={emailInputId} className="block text-sm font-medium text-[#0F2647] mb-1.5">
           Email <span className="text-red-500">*</span>
         </label>
         <input
@@ -161,8 +161,8 @@ export default function HomeProjectForm({
       </div>
 
       <div>
-        <label htmlFor={messageInputId} className="block text-sm font-medium text-[#001F45] mb-1.5">
-          Comment pouvons-nous vous aider ? <span className="text-red-500">*</span>
+        <label htmlFor={messageInputId} className="block text-sm font-medium text-[#0F2647] mb-1.5">
+          Comment puis-je vous aider ? <span className="text-red-500">*</span>
         </label>
         <textarea
           id={messageInputId}
@@ -202,7 +202,7 @@ export default function HomeProjectForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#DBFF00] hover:bg-[#caeb00] text-black font-semibold py-4 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9ACD32] focus:ring-offset-2 text-lg font-sofia cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+        className="w-full bg-[#2E8FFF] hover:bg-[#caeb00] text-black font-semibold py-4 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9ACD32] focus:ring-offset-2 text-lg font-sofia cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {isSubmitting ? 'Envoi en cours…' : 'Envoyer'}
       </button>

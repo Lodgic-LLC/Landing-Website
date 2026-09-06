@@ -114,8 +114,8 @@ export default function DeveloppementApplicationIosAndroidPage() {
             eyebrow="iOS, Android ou les deux ?"
             heading={
               <>
-                Choisir entre <span className="text-[#0EA5E9]">application native</span> et{' '}
-                <span className="text-[#0EA5E9]">cross-platform</span>, sans se tromper.
+                Choisir entre <span className="text-[#2E8FFF]">application native</span> et{' '}
+                <span className="text-[#2E8FFF]">cross-platform</span>, sans se tromper.
               </>
             }
             intro={

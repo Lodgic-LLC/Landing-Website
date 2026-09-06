@@ -113,7 +113,7 @@ export default function CreationApplicationMobileSurMesurePage() {
             eyebrow="Notre méthode sur mesure"
             heading={
               <>
-                Une <span className="text-[#0EA5E9]">application sur mesure</span>, c'est d'abord une bonne
+                Une <span className="text-[#2E8FFF]">application sur mesure</span>, c'est d'abord une bonne
                 question : à quoi doit-elle servir ?
               </>
             }

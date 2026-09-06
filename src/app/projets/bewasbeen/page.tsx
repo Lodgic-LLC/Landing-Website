@@ -179,35 +179,35 @@ export default function BewasBeenProjectPage() {
       <BreadcrumbStructuredData items={breadcrumbItems} />
 
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#f6f7fc] via-white to-[#eaf0ff] pt-28 pb-20 md:pt-36 md:pb-28">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#F5F8FC] via-white to-[#eaf0ff] pt-28 pb-20 md:pt-36 md:pb-28">
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#001F45]/5 blur-3xl"
+          className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#0F2647]/5 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#DBFF00]/20 blur-3xl"
+          className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#2E8FFF]/20 blur-3xl"
         />
 
         <div className="relative mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
           <article className="lg:col-span-7">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm font-inter font-medium text-[#162869]/70 transition-colors hover:text-[#001F45]"
+              className="inline-flex items-center gap-2 text-sm font-inter font-medium text-[#475D80]/70 transition-colors hover:text-[#0F2647]"
             >
               <span aria-hidden>←</span> Retour à l&apos;accueil
             </Link>
 
             <div className="mt-8">
-              <p className="text-xs font-inter font-bold uppercase tracking-[0.25em] text-[#162869]/60">
+              <p className="text-xs font-inter font-bold uppercase tracking-[0.25em] text-[#475D80]/60">
                 Plateforme web · EdTech · Anglais
               </p>
-              <h1 className="mt-1 text-4xl font-sofia-bold text-[#001F45] md:text-5xl">
+              <h1 className="mt-1 text-4xl font-sofia-bold text-[#0F2647] md:text-5xl">
                 BewasBeen — Plateforme d&apos;apprentissage des verbes irréguliers
               </h1>
             </div>
 
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#162869]/85 font-inter md:text-xl">
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#475D80]/85 font-inter md:text-xl">
               BewasBeen aide les élèves à maîtriser les verbes irréguliers anglais
               à travers des exercices interactifs variés. Les enseignants gèrent
               leurs classes, composent des listes sur mesure et suivent la
@@ -235,7 +235,7 @@ export default function BewasBeenProjectPage() {
               ].map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-[#001F45]/10 bg-white px-3 py-1.5 text-xs font-inter font-medium text-[#001F45]/70 shadow-sm"
+                  className="rounded-full border border-[#0F2647]/10 bg-white px-3 py-1.5 text-xs font-inter font-medium text-[#0F2647]/70 shadow-sm"
                 >
                   {tag}
                 </span>
@@ -245,14 +245,14 @@ export default function BewasBeenProjectPage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="#contact-projet"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#001F45] px-6 py-3.5 text-sm font-sofia-bold text-white shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0b2b63]"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0F2647] px-6 py-3.5 text-sm font-sofia-bold text-white shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1B6FD4]"
               >
                 Lancer un projet similaire
                 <span aria-hidden>→</span>
               </Link>
               <Link
                 href="#features"
-                className="inline-flex items-center gap-2 rounded-xl border border-[#001F45]/15 bg-white px-6 py-3.5 text-sm font-sofia-bold text-[#001F45] shadow-soft transition-all duration-300 hover:border-[#001F45]/40"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#0F2647]/15 bg-white px-6 py-3.5 text-sm font-sofia-bold text-[#0F2647] shadow-soft transition-all duration-300 hover:border-[#0F2647]/40"
               >
                 Voir les fonctionnalités
               </Link>
@@ -293,21 +293,21 @@ export default function BewasBeenProjectPage() {
 
       {/* ── Screenshots ── */}
       <section
-        className="bg-[#f6f7fc] py-16 md:py-24"
+        className="bg-[#F5F8FC] py-16 md:py-24"
         aria-labelledby="bwb-screens-heading"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#001F45]/50">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#0F2647]/50">
               Aperçu
             </span>
             <h2
               id="bwb-screens-heading"
-              className="mt-3 text-3xl font-sofia-bold text-[#001F45] md:text-4xl"
+              className="mt-3 text-3xl font-sofia-bold text-[#0F2647] md:text-4xl"
             >
               Une interface claire pour apprendre efficacement.
             </h2>
-            <p className="mt-4 text-base font-inter leading-relaxed text-[#162869]/75">
+            <p className="mt-4 text-base font-inter leading-relaxed text-[#475D80]/75">
               Du tableau de bord enseignant aux modes d&apos;exercice élève, chaque
               écran a été pensé pour limiter la friction et maximiser l&apos;engagement.
             </p>
@@ -325,16 +325,16 @@ export default function BewasBeenProjectPage() {
       >
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#001F45]/50">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#0F2647]/50">
               Fonctionnalités
             </span>
             <h2
               id="bwb-features-heading"
-              className="mt-3 text-3xl font-sofia-bold text-[#001F45] md:text-4xl"
+              className="mt-3 text-3xl font-sofia-bold text-[#0F2647] md:text-4xl"
             >
               Ce que BewasBeen permet de faire.
             </h2>
-            <p className="mt-4 text-base font-inter leading-relaxed text-[#162869]/75">
+            <p className="mt-4 text-base font-inter leading-relaxed text-[#475D80]/75">
               Des outils pensés pour les enseignants et les élèves, du premier
               exercice au bilan de fin de séquence.
             </p>
@@ -345,12 +345,12 @@ export default function BewasBeenProjectPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[#f6f7fc] py-16 md:py-20">
+      <section className="bg-[#F5F8FC] py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-[#001F45] p-8 text-white md:p-14">
+          <div className="relative overflow-hidden rounded-3xl bg-[#0F2647] p-8 text-white md:p-14">
             <div
               aria-hidden
-              className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#DBFF00]/25 blur-3xl"
+              className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#2E8FFF]/25 blur-3xl"
             />
             <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-xl">
@@ -367,7 +367,7 @@ export default function BewasBeenProjectPage() {
               </div>
               <Link
                 href="/rendez-vous"
-                className="inline-flex items-center gap-2 self-start rounded-xl bg-[#DBFF00] px-6 py-3.5 text-sm font-sofia-bold text-[#001F45] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white md:self-auto"
+                className="inline-flex items-center gap-2 self-start rounded-xl bg-[#2E8FFF] px-6 py-3.5 text-sm font-sofia-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1B6FD4] md:self-auto"
               >
                 Réserver un échange
                 <span aria-hidden>→</span>
@@ -384,13 +384,13 @@ export default function BewasBeenProjectPage() {
       >
         <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
           <div className="lg:col-span-5">
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#001F45]/50">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#0F2647]/50">
               Prendre contact
             </span>
-            <h2 className="mt-3 text-3xl font-sofia-bold text-[#001F45] md:text-4xl">
+            <h2 className="mt-3 text-3xl font-sofia-bold text-[#0F2647] md:text-4xl">
               Parlez-nous de votre projet.
             </h2>
-            <p className="mt-4 text-base font-inter leading-relaxed text-[#162869]/75">
+            <p className="mt-4 text-base font-inter leading-relaxed text-[#475D80]/75">
               Vous avez une idée de plateforme web, d&apos;application ou de logiciel
               sur mesure ? Décrivez-nous votre besoin, on revient vers vous sous
               24h ouvrées.
@@ -404,10 +404,10 @@ export default function BewasBeenProjectPage() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-sm font-inter text-[#001F45]"
+                  className="flex items-start gap-3 text-sm font-inter text-[#0F2647]"
                 >
                   <span
-                    className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#DBFF00] text-[#001F45]"
+                    className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#2E8FFF] text-white"
                     aria-hidden
                   >
                     ✓
@@ -419,7 +419,7 @@ export default function BewasBeenProjectPage() {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="rounded-3xl border border-[#001F45]/10 bg-[#f6f7fc] p-6 shadow-soft md:p-8">
+            <div className="rounded-3xl border border-[#0F2647]/10 bg-[#F5F8FC] p-6 shadow-soft md:p-8">
               <HomeProjectForm
                 source="Projet BewasBeen"
                 emailInputId="bwb-contact-email"

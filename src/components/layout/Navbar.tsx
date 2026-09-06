@@ -14,6 +14,7 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigationItems = [
+    { name: 'Pourquoi un ingénieur', path: '/#expertise' },
     { name: 'Réalisations', path: '/#realisations' },
     { name: 'Lodgic Conseils', path: '/blog' },
   ]
@@ -60,7 +61,7 @@ export default function Navbar() {
           className={`flex items-center justify-between gap-3 rounded-full px-4 py-2.5 transition-all duration-300 ${
             atTop
               ? 'bg-white/60 backdrop-blur border border-white/40 shadow-sm'
-              : 'bg-white/90 backdrop-blur-lg border border-[#001F45]/10 shadow-[0_8px_32px_rgba(0,31,69,0.12)]'
+              : 'bg-white/90 backdrop-blur-lg border border-[#0F2647]/10 shadow-[0_8px_32px_rgba(15,38,71,0.12)]'
           }`}
         >
           <Link href="/" className="flex shrink-0 items-center gap-2 group" aria-label="Accueil Lodgic">
@@ -73,7 +74,7 @@ export default function Navbar() {
               className="h-[30px] w-[30px] object-contain"
               aria-hidden="true"
             />
-            <span className="font-sofia-bold text-[#001F45] text-xl leading-none group-hover:text-[#0b2b63] transition-colors">
+            <span className="font-sofia-bold text-[#0F2647] text-xl leading-none group-hover:text-[#1B6FD4] transition-colors">
               Lodgic
             </span>
           </Link>
@@ -83,21 +84,21 @@ export default function Navbar() {
               href="/"
               className={`relative px-3 py-1.5 rounded-full text-sm font-inter font-medium transition-smooth ${
                 isActive('/')
-                  ? 'bg-[#001F45]/8 text-[#001F45]'
-                  : 'text-[#001F45]/65 hover:text-[#001F45] hover:bg-[#001F45]/5'
+                  ? 'bg-[#0F2647]/8 text-[#0F2647]'
+                  : 'text-[#0F2647]/65 hover:text-[#0F2647] hover:bg-[#0F2647]/5'
               }`}
             >
               Accueil
             </Link>
             {navigationItems.map((item, index) => (
               <React.Fragment key={item.name}>
-                {index === 1 && <span className="h-4 w-px bg-[#001F45]/20" aria-hidden />}
+                {index === 1 && <span className="h-4 w-px bg-[#0F2647]/20" aria-hidden />}
                 <Link
                   href={item.path}
                   className={`relative px-3 py-1.5 rounded-full text-sm font-inter font-medium transition-smooth ${
                     isActive(item.path)
-                      ? 'bg-[#001F45]/8 text-[#001F45]'
-                      : 'text-[#001F45]/65 hover:text-[#001F45] hover:bg-[#001F45]/5'
+                      ? 'bg-[#0F2647]/8 text-[#0F2647]'
+                      : 'text-[#0F2647]/65 hover:text-[#0F2647] hover:bg-[#0F2647]/5'
                   }`}
                 >
                   {item.name}
@@ -109,7 +110,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <Link
               href="/contact"
-              className="hidden md:inline-flex items-center rounded-full bg-[#001F45] px-4 py-2 text-sm font-inter font-semibold text-white hover:bg-[#0b2b63] transition-smooth"
+              className="hidden md:inline-flex items-center rounded-full bg-[#2E8FFF] px-4 py-2 text-sm font-inter font-semibold text-white hover:bg-[#1B6FD4] transition-smooth"
             >
               Une question ?
             </Link>
@@ -117,7 +118,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setIsMenuOpen((prev) => !prev)}
-              className="md:hidden flex h-8 w-8 items-center justify-center rounded-full bg-[#001F45]/6 text-[#001F45] hover:bg-[#001F45]/10 transition-smooth"
+              className="md:hidden flex h-8 w-8 items-center justify-center rounded-full bg-[#0F2647]/6 text-[#0F2647] hover:bg-[#0F2647]/10 transition-smooth"
               aria-expanded={isMenuOpen}
               aria-label="Menu principal"
             >
@@ -140,7 +141,7 @@ export default function Navbar() {
         </nav>
 
         <div
-          className={`mt-1 overflow-hidden rounded-2xl border border-[#001F45]/10 bg-white/95 backdrop-blur-lg shadow-[0_8px_32px_rgba(0,31,69,0.12)] transition-all duration-200 ease-out ${
+          className={`mt-1 overflow-hidden rounded-2xl border border-[#0F2647]/10 bg-white/95 backdrop-blur-lg shadow-[0_8px_32px_rgba(15,38,71,0.12)] transition-all duration-200 ease-out ${
             isMenuOpen ? 'max-h-96 opacity-100 p-2' : 'max-h-0 opacity-0 p-0 border-transparent'
           }`}
           aria-hidden={!isMenuOpen}
@@ -149,8 +150,8 @@ export default function Navbar() {
             href="/"
             className={`block rounded-xl px-4 py-3 text-sm font-inter font-medium transition-smooth ${
               isActive('/')
-                ? 'bg-[#001F45]/6 text-[#001F45]'
-                : 'text-[#001F45]/70 hover:bg-[#001F45]/5 hover:text-[#001F45]'
+                ? 'bg-[#0F2647]/6 text-[#0F2647]'
+                : 'text-[#0F2647]/70 hover:bg-[#0F2647]/5 hover:text-[#0F2647]'
             }`}
             tabIndex={isMenuOpen ? 0 : -1}
           >
@@ -158,13 +159,13 @@ export default function Navbar() {
           </Link>
           {navigationItems.map((item, index) => (
             <React.Fragment key={item.name}>
-              {index === 1 && <div className="my-1 h-px bg-[#001F45]/6" />}
+              {index === 1 && <div className="my-1 h-px bg-[#0F2647]/6" />}
               <Link
                 href={item.path}
                 className={`block rounded-xl px-4 py-3 text-sm font-inter font-medium transition-smooth ${
                   isActive(item.path)
-                    ? 'bg-[#001F45]/6 text-[#001F45]'
-                    : 'text-[#001F45]/70 hover:bg-[#001F45]/5 hover:text-[#001F45]'
+                    ? 'bg-[#0F2647]/6 text-[#0F2647]'
+                    : 'text-[#0F2647]/70 hover:bg-[#0F2647]/5 hover:text-[#0F2647]'
                 }`}
                 tabIndex={isMenuOpen ? 0 : -1}
               >
@@ -172,10 +173,10 @@ export default function Navbar() {
               </Link>
             </React.Fragment>
           ))}
-          <div className="mt-1 border-t border-[#001F45]/6 pt-1">
+          <div className="mt-1 border-t border-[#0F2647]/6 pt-1">
             <Link
               href="/contact"
-              className="block rounded-xl bg-[#001F45] px-4 py-3 text-center text-sm font-inter font-semibold text-white hover:bg-[#0b2b63] transition-smooth"
+              className="block rounded-xl bg-[#2E8FFF] px-4 py-3 text-center text-sm font-inter font-semibold text-white hover:bg-[#1B6FD4] transition-smooth"
               tabIndex={isMenuOpen ? 0 : -1}
             >
               Une question ?

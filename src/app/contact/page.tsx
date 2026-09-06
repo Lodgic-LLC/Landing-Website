@@ -78,13 +78,13 @@ export default function ContactPage() {
       <StructuredData id="contact-structured-data" data={contactSchema} />
       <BreadcrumbStructuredData items={breadcrumbItems} />
 
-      <main className="bg-[#f6f7fc] min-h-screen pt-28 pb-20 md:pt-36">
+      <main className="bg-[#F5F8FC] min-h-screen pt-28 pb-20 md:pt-36">
         <div className="max-w-7xl mx-auto px-6">
           <header className="max-w-3xl">
-            <span className="inline-flex items-center rounded-full border border-[#001F45]/10 bg-white px-4 py-1.5 text-sm font-semibold text-[#001F45]">
+            <span className="inline-flex items-center rounded-full border border-[#0F2647]/10 bg-white px-4 py-1.5 text-sm font-semibold text-[#0F2647]">
               Contact
             </span>
-            <h1 className="mt-5 font-sofia-bold text-4xl md:text-5xl text-[#001F45] leading-tight">
+            <h1 className="mt-5 font-sofia-bold text-4xl md:text-5xl text-[#0F2647] leading-tight">
               Discutons de votre projet.
             </h1>
             <p className="mt-5 text-lg text-[#1f3556] leading-relaxed">
@@ -95,14 +95,14 @@ export default function ContactPage() {
 
           <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.2fr]">
             <aside className="space-y-6">
-              <div className="rounded-2xl border border-[#001F45]/10 bg-white p-6 shadow-soft">
-                <h2 className="font-sofia-bold text-2xl text-[#001F45]">Coordonnées</h2>
+              <div className="rounded-2xl border border-[#0F2647]/10 bg-white p-6 shadow-soft">
+                <h2 className="font-sofia-bold text-2xl text-[#0F2647]">Coordonnées</h2>
                 <ul className="mt-4 space-y-4 text-[#2d4567]">
                   {fullAddress && (
                     <li className="flex gap-3">
-                      <FaMapMarkerAlt className="mt-1 h-5 w-5 text-[#001F45]" aria-hidden />
+                      <FaMapMarkerAlt className="mt-1 h-5 w-5 text-[#0F2647]" aria-hidden />
                       <div>
-                        <p className="font-semibold text-[#001F45]">Adresse</p>
+                        <p className="font-semibold text-[#0F2647]">Adresse</p>
                         <address className="not-italic">
                           <span className="block">
                             {[POSTAL_CODE, ADDRESS_LOCALITY].filter(Boolean).join(' ')}
@@ -114,24 +114,24 @@ export default function ContactPage() {
                     </li>
                   )}
                   <li className="flex gap-3">
-                    <FaPhoneAlt className="mt-1 h-5 w-5 text-[#001F45]" aria-hidden />
+                    <FaPhoneAlt className="mt-1 h-5 w-5 text-[#0F2647]" aria-hidden />
                     <div>
-                      <p className="font-semibold text-[#001F45]">Téléphone</p>
+                      <p className="font-semibold text-[#0F2647]">Téléphone</p>
                       <a
                         href={`tel:${CONTACT_PHONE}`}
-                        className="hover:text-[#001F45] underline-offset-2 hover:underline"
+                        className="hover:text-[#0F2647] underline-offset-2 hover:underline"
                       >
                         {CONTACT_PHONE}
                       </a>
                     </div>
                   </li>
                   <li className="flex gap-3">
-                    <FaEnvelope className="mt-1 h-5 w-5 text-[#001F45]" aria-hidden />
+                    <FaEnvelope className="mt-1 h-5 w-5 text-[#0F2647]" aria-hidden />
                     <div>
-                      <p className="font-semibold text-[#001F45]">Email</p>
+                      <p className="font-semibold text-[#0F2647]">Email</p>
                       <a
                         href={`mailto:${CONTACT_EMAIL}`}
-                        className="hover:text-[#001F45] underline-offset-2 hover:underline"
+                        className="hover:text-[#0F2647] underline-offset-2 hover:underline"
                       >
                         {CONTACT_EMAIL}
                       </a>
@@ -139,9 +139,9 @@ export default function ContactPage() {
                   </li>
                   {OPENING_HOURS.length > 0 && (
                     <li className="flex gap-3">
-                      <FaClock className="mt-1 h-5 w-5 text-[#001F45]" aria-hidden />
+                      <FaClock className="mt-1 h-5 w-5 text-[#0F2647]" aria-hidden />
                       <div>
-                        <p className="font-semibold text-[#001F45]">Horaires</p>
+                        <p className="font-semibold text-[#0F2647]">Horaires</p>
                         <ul className="space-y-1">
                           {OPENING_HOURS.map((slot, idx) => (
                             <li key={idx}>
@@ -157,7 +157,7 @@ export default function ContactPage() {
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link
                     href="/rendez-vous"
-                    className="rounded-md bg-[#001F45] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#001F45]/90 transition-colors"
+                    className="rounded-md bg-[#0F2647] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#0F2647]/90 transition-colors"
                   >
                     Prendre rendez-vous
                   </Link>
@@ -166,8 +166,8 @@ export default function ContactPage() {
 
             </aside>
 
-            <section className="rounded-2xl border border-[#001F45]/10 bg-white p-6 md:p-8 shadow-soft">
-              <h2 className="font-sofia-bold text-2xl text-[#001F45]">Écrivez-nous</h2>
+            <section className="rounded-2xl border border-[#0F2647]/10 bg-white p-6 md:p-8 shadow-soft">
+              <h2 className="font-sofia-bold text-2xl text-[#0F2647]">Écrivez-nous</h2>
               <p className="mt-2 text-[#2d4567]">
                 Décrivez brièvement votre projet : nous revenons vers vous avec une première lecture sous 24 heures
                 ouvrées.

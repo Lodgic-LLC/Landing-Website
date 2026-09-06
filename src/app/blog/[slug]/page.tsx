@@ -191,7 +191,7 @@ export default async function PostPage({ params }: BlogPageProps) {
       <StructuredData id="article-structured-data" data={articleSchemaData} />
       <BreadcrumbStructuredData items={breadcrumbItems} />
 
-      <div className="bg-[#f6f7fc] min-h-screen">
+      <div className="bg-[#F5F8FC] min-h-screen">
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-24 lg:py-28 relative xl:flex xl:gap-8">
           <div className="hidden xl:block sticky top-24 z-10 w-60 xl:w-72 flex-shrink-0 self-start h-[calc(100vh-theme(spacing.24)-theme(spacing.28))] overflow-y-auto">
             <aside className="pr-4">
@@ -202,15 +202,15 @@ export default async function PostPage({ params }: BlogPageProps) {
           <article className="bg-white rounded-none border border-gray-200 hover:border-[#000f45]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group flex-grow max-w-none xl:max-w-4xl mx-auto xl:mx-0">
             <header className="p-8 md:p-10 text-center xl:text-left border-b border-gray-100">
               <div className="mb-4">
-                <span className="inline-block px-4 py-2 text-sm font-semibold text-[#000f45] bg-[#DBFF00] rounded-full">
+                <span className="inline-block px-4 py-2 text-sm font-semibold text-[#000f45] bg-[#2E8FFF] rounded-full">
                   {post.category}
                 </span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-sofia-bold text-[#000f45] mb-6 leading-tight">
                 {post.title}
               </h1>
-              <p className="text-[#162869] font-inter text-lg mb-6">{post.summary}</p>
-              <div className="flex flex-col xl:flex-row xl:items-center gap-2 xl:gap-4 text-sm text-[#162869]/80 font-inter">
+              <p className="text-[#475D80] font-inter text-lg mb-6">{post.summary}</p>
+              <div className="flex flex-col xl:flex-row xl:items-center gap-2 xl:gap-4 text-sm text-[#475D80]/80 font-inter">
                 <a
                   href={authorUrl}
                   rel="author"
@@ -218,9 +218,9 @@ export default async function PostPage({ params }: BlogPageProps) {
                 >
                   {author.name}
                 </a>
-                <span className="hidden xl:inline text-[#162869]/40">·</span>
+                <span className="hidden xl:inline text-[#475D80]/40">·</span>
                 <span>{author.jobTitle}</span>
-                <span className="hidden xl:inline text-[#162869]/40">·</span>
+                <span className="hidden xl:inline text-[#475D80]/40">·</span>
                 <time dateTime={new Date(post.date).toISOString()}>{formattedDate}</time>
               </div>
             </header>

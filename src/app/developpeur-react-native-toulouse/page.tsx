@@ -107,7 +107,7 @@ export default function DeveloppeurReactNativeToulousePage() {
             eyebrow="Expertise React Native"
             heading={
               <>
-                Pourquoi <span className="text-[#0EA5E9]">React Native</span> ? Parce qu'on ne paie pas deux fois
+                Pourquoi <span className="text-[#2E8FFF]">React Native</span> ? Parce qu'on ne paie pas deux fois
                 la même app.
               </>
             }

@@ -114,7 +114,7 @@ export default function AgenceWebMobileToulousePage() {
             eyebrow="Web + Mobile : un seul partenaire"
             heading={
               <>
-                Une <span className="text-[#0EA5E9]">agence à Toulouse</span> qui couvre tout votre stack digital.
+                Une <span className="text-[#2E8FFF]">agence à Toulouse</span> qui couvre tout votre stack digital.
               </>
             }
             intro={

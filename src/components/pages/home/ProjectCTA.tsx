@@ -30,14 +30,14 @@ export default function ProjectCTA() {
   return (
     <div className="bg-white overflow-hidden">
       <div className="w-full">
-        <div className="relative bg-gradient-to-r from-[#001432] via-[#001F45] to-[#001432] py-5 overflow-hidden border-y border-white/5">
+        <div className="relative bg-gradient-to-r from-[#001432] via-[#0F2647] to-[#001432] py-5 overflow-hidden border-y border-white/5">
           <div className="flex animate-scroll mask-fade-x">
             {languages.map((language, index) => (
               <div key={`first-${index}`} className="flex-shrink-0 flex items-center px-6">
                 <span className="text-white/90 font-inter font-medium whitespace-nowrap text-sm tracking-wide">
                   {language}
                 </span>
-                <span className="inline-block w-1 h-1 rounded-full bg-[#DBFF00]/60 ml-6" />
+                <span className="inline-block w-1 h-1 rounded-full bg-[#2E8FFF]/60 ml-6" />
               </div>
             ))}
             {languages.map((language, index) => (
@@ -45,7 +45,7 @@ export default function ProjectCTA() {
                 <span className="text-white/90 font-inter font-medium whitespace-nowrap text-sm tracking-wide">
                   {language}
                 </span>
-                <span className="inline-block w-1 h-1 rounded-full bg-[#DBFF00]/60 ml-6" />
+                <span className="inline-block w-1 h-1 rounded-full bg-[#2E8FFF]/60 ml-6" />
               </div>
             ))}
           </div>

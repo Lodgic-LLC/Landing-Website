@@ -129,7 +129,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label htmlFor="contact-name" className="block text-sm font-medium text-[#001F45] mb-1.5">
+          <label htmlFor="contact-name" className="block text-sm font-medium text-[#0F2647] mb-1.5">
             Nom et prénom <span className="text-red-500">*</span>
           </label>
           <input
@@ -152,7 +152,7 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="contact-email" className="block text-sm font-medium text-[#001F45] mb-1.5">
+          <label htmlFor="contact-email" className="block text-sm font-medium text-[#0F2647] mb-1.5">
             Email <span className="text-red-500">*</span>
           </label>
           <input
@@ -177,7 +177,7 @@ export default function ContactForm() {
 
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label htmlFor="contact-phone" className="block text-sm font-medium text-[#001F45] mb-1.5">
+          <label htmlFor="contact-phone" className="block text-sm font-medium text-[#0F2647] mb-1.5">
             Téléphone
           </label>
           <input
@@ -192,7 +192,7 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="contact-subject" className="block text-sm font-medium text-[#001F45] mb-1.5">
+          <label htmlFor="contact-subject" className="block text-sm font-medium text-[#0F2647] mb-1.5">
             Sujet
           </label>
           <select
@@ -213,7 +213,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="contact-message" className="block text-sm font-medium text-[#001F45] mb-1.5">
+        <label htmlFor="contact-message" className="block text-sm font-medium text-[#0F2647] mb-1.5">
           Votre message <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -249,7 +249,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#DBFF00] hover:bg-[#caeb00] text-black font-semibold py-4 px-6 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9ACD32] focus:ring-offset-2 text-lg cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+        className="w-full bg-[#2E8FFF] hover:bg-[#caeb00] text-black font-semibold py-4 px-6 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9ACD32] focus:ring-offset-2 text-lg cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {isSubmitting ? 'Envoi en cours…' : 'Envoyer le message'}
       </button>
