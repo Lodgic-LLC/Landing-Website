@@ -10,23 +10,11 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#0A1628] py-20 md:py-32"
+      className="bg-[#23211F] py-20 md:py-28"
       aria-labelledby="about-heading"
     >
-      <div aria-hidden className="pointer-events-none absolute inset-0 grid-technical opacity-100" />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(ellipse at 20% 0%, rgba(46,143,255,0.16) 0%, transparent 55%), radial-gradient(ellipse at 100% 100%, rgba(46,143,255,0.10) 0%, transparent 50%)',
-        }}
-      />
-
-      <div className="relative z-10 mx-auto max-w-5xl px-6">
-        <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.22em] text-[#2E8FFF]">
-          Qui je suis
-        </p>
+      <div className="mx-auto max-w-5xl px-6">
+        <p className="eyebrow eyebrow-left">Qui je suis</p>
 
         <h2
           id="about-heading"
@@ -46,7 +34,7 @@ const About = () => {
             <p>
               Écrire du code n&apos;est plus la partie difficile : n&apos;importe qui peut aujourd&apos;hui
               produire un écran qui fonctionne à la démo. Ce qui reste difficile, c&apos;est de savoir
-              <span className="text-white"> pourquoi </span>
+              <strong className="font-sofia-bold text-white no-underline"> pourquoi </strong>
 une solution tient quand les données grossissent, quand deux utilisateurs écrivent
               en même temps, quand la facture d&apos;hébergement arrive — et de pouvoir la corriger
               six mois plus tard.
@@ -58,7 +46,7 @@ une solution tient quand les données grossissent, quand deux utilisateurs écri
             </p>
           </div>
 
-          <dl className="space-y-5 self-start rounded-2xl border border-[#1E3455] bg-[#12233D]/70 p-6 backdrop-blur">
+          <dl className="space-y-5 self-start rounded-xl border border-[#45403A] bg-[#33302C] p-6">
             {credentials.map((item) => (
               <div key={item.label}>
                 <dt className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-white/40">

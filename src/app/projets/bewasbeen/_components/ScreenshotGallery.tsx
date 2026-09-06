@@ -55,7 +55,7 @@ export function ScreenshotGallery({ screens }: { screens: Screen[] }) {
           >
             <div
               aria-hidden
-              className="pointer-events-none absolute -top-16 -right-10 h-40 w-40 rounded-full blur-2xl"
+              className="pointer-events-none absolute -top-16 -right-10 h-40 w-40 rounded-full"
               style={{ backgroundColor: `${ACCENT}25` }}
             />
             <div className="relative aspect-video w-full overflow-hidden rounded-t-2xl">
@@ -68,7 +68,7 @@ export function ScreenshotGallery({ screens }: { screens: Screen[] }) {
               />
               {/* Zoom hint */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/20">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#0F2647] opacity-0 shadow-lg transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 scale-75">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#2E2B28] opacity-0 shadow-lg transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 scale-75">
                   <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="11" cy="11" r="8" />
                     <path d="m21 21-4.35-4.35M11 8v6M8 11h6" />

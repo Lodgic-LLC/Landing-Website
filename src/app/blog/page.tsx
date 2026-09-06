@@ -93,17 +93,17 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
     <>
       <StructuredData id="blog-structured-data" data={blogSchema} />
       <BreadcrumbStructuredData items={breadcrumbItems} />
-      <div className="bg-[#F5F8FC] min-h-screen">
+      <div className="bg-[#F8F6F2] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 lg:py-28">
         <header className="text-center mb-12 md:mb-16">
           <h1 className="text-4xl md:text-5xl font-sofia-bold text-[#000f45] mb-4">
             Lodgic{' '}
             <span className="relative inline-block">
               <span className="relative z-10">Conseils</span>
-              <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#2E8FFF] to-[#2E8FFF]/60 transform -skew-x-12 z-0"></span>
+              <span className="absolute bottom-2 left-0 right-0 h-3 bg-[#F8F6F2]/60 transform -skew-x-12 z-0"></span>
             </span>
           </h1>
-          <p className="text-lg font-inter text-[#475D80] max-w-2xl mx-auto">
+          <p className="text-lg font-inter text-[#6B655D] max-w-2xl mx-auto">
             Articles, guides et retours d&apos;expérience sur le développement web, mobile, le design et le SEO.
           </p>
         </header>
@@ -127,17 +127,17 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                 </div>
                 <div className="p-6 md:p-10">
                   <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="inline-block px-4 py-1.5 text-sm font-semibold text-[#000f45] bg-[#2E8FFF] rounded-full">
+                    <span className="inline-block px-4 py-1.5 text-sm font-semibold text-[#000f45] bg-[#C2542D] rounded-full">
                       {featuredPost.category}
                     </span>
-                    <span className="text-sm text-[#475D80]/80 font-inter">
+                    <span className="text-sm text-[#6B655D]/80 font-inter">
                       {formatDate(featuredPost.date)}
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-4xl font-sofia-bold text-[#000f45] mb-4 leading-tight group-hover:text-[#475D80] transition-colors">
+                  <h3 className="text-2xl md:text-4xl font-sofia-bold text-[#000f45] mb-4 leading-tight group-hover:text-[#6B655D] transition-colors">
                     {featuredPost.title}
                   </h3>
-                  <p className="text-[#475D80] font-inter text-base md:text-lg mb-6 max-w-3xl">
+                  <p className="text-[#6B655D] font-inter text-base md:text-lg mb-6 max-w-3xl">
                     {featuredPost.summary}
                   </p>
                   <span className="inline-flex items-center gap-2 text-base font-inter font-semibold text-[#0b57d0] group-hover:underline">
@@ -169,7 +169,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
 
             {posts.length === 0 ? (
               <div className="bg-white border border-gray-200 p-8 text-center">
-                <p className="text-[#475D80] font-inter">Aucun article pour le moment.</p>
+                <p className="text-[#6B655D] font-inter">Aucun article pour le moment.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
@@ -193,14 +193,14 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                           <span className="text-xs uppercase tracking-wide text-[#000f45] font-semibold font-inter">
                             {post.category}
                           </span>
-                          <span className="text-xs text-[#475D80]/70 font-inter">
+                          <span className="text-xs text-[#6B655D]/70 font-inter">
                             {formatDate(post.date)}
                           </span>
                         </div>
-                        <h3 className="text-lg md:text-xl font-sofia-bold text-[#0b143d] leading-snug mb-3 line-clamp-2 group-hover:text-[#475D80] transition-colors">
+                        <h3 className="text-lg md:text-xl font-sofia-bold text-[#0b143d] leading-snug mb-3 line-clamp-2 group-hover:text-[#6B655D] transition-colors">
                           {post.title}
                         </h3>
-                        <p className="text-sm text-[#475D80]/80 font-inter line-clamp-3 mb-4 flex-grow">
+                        <p className="text-sm text-[#6B655D]/80 font-inter line-clamp-3 mb-4 flex-grow">
                           {post.summary}
                         </p>
                         <span className="inline-flex items-center gap-2 text-sm font-inter font-medium text-[#0b57d0] group-hover:underline mt-auto">
@@ -281,7 +281,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                 Articles populaires
               </h2>
               {popularPosts.length === 0 ? (
-                <p className="text-sm text-[#475D80]/80 font-inter">
+                <p className="text-sm text-[#6B655D]/80 font-inter">
                   Aucun article populaire pour le moment.
                 </p>
               ) : (
@@ -290,7 +290,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                     <li key={post.slug} className="group">
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="block border-l-2 border-[#2E8FFF] pl-4 py-1 hover:border-[#000f45] transition-colors"
+                        className="block border-l-2 border-[#C2542D] pl-4 py-1 hover:border-[#000f45] transition-colors"
                       >
                         <span className="block text-xs uppercase tracking-wide text-[#000f45]/70 font-inter mb-1">
                           {post.category}

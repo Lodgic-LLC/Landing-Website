@@ -193,10 +193,10 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-[#FFFFFF] rounded-xl shadow-xl overflow-hidden border border-gray-200 hover:border-[#2E8FFF]/50 hover:shadow-2xl transition-shadow duration-300">
+    <div className="bg-[#FFFFFF] rounded-xl shadow-xl overflow-hidden border border-gray-200 hover:border-[#C2542D]/50 hover:shadow-2xl transition-shadow duration-300">
       <div className="p-8">
         <h2 className="text-2xl font-bold text-[#111827] mb-8 flex items-center">
-          <div className="w-8 h-1 bg-gradient-to-r from-[#2E8FFF] to-[#2E8FFF]/70 mr-3 rounded-full"></div>
+          <div className="w-8 h-1 bg-gradient-to-r from-[#C2542D] to-[#C2542D]/70 mr-3 rounded-full"></div>
           Envoyez-nous un message
         </h2>
 
@@ -208,7 +208,7 @@ export default function ContactForm() {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                  <FaUser className="h-4 w-4 text-gray-400 group-focus-within:text-[#2E8FFF] transition-colors duration-200" />
+                  <FaUser className="h-4 w-4 text-gray-400 group-focus-within:text-[#C2542D] transition-colors duration-200" />
                 </div>
                 <input
                   type="text"
@@ -218,7 +218,7 @@ export default function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => handleFieldFocus('name')}
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#2E8FFF] focus:border-[#2E8FFF] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500"
+                  className="w-full pl-10 pr-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#C2542D] focus:border-[#C2542D] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500"
                   placeholder="Votre nom"
                 />
               </div>
@@ -230,7 +230,7 @@ export default function ContactForm() {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                  <FaEnvelope className="h-4 w-4 text-gray-400 group-focus-within:text-[#2E8FFF] transition-colors duration-200" />
+                  <FaEnvelope className="h-4 w-4 text-gray-400 group-focus-within:text-[#C2542D] transition-colors duration-200" />
                 </div>
                 <input
                   type="text"
@@ -240,8 +240,8 @@ export default function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => handleFieldFocus('email')}
                   required
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#2E8FFF] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500 ${
-                    formErrors.email ? 'border-red-500 focus:border-red-500' : 'border-[#D1D5DB] focus:border-[#2E8FFF]'
+                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#C2542D] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500 ${
+                    formErrors.email ? 'border-red-500 focus:border-red-500' : 'border-[#D1D5DB] focus:border-[#C2542D]'
                   }`}
                   placeholder="Votre adresse email"
                 />
@@ -263,7 +263,7 @@ export default function ContactForm() {
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                <FaPhone className="h-4 w-4 text-gray-400 group-focus-within:text-[#2E8FFF] transition-colors duration-200" />
+                <FaPhone className="h-4 w-4 text-gray-400 group-focus-within:text-[#C2542D] transition-colors duration-200" />
               </div>
               <input
                 type="tel"
@@ -273,8 +273,8 @@ export default function ContactForm() {
                 onChange={handleChange}
                 onFocus={() => handleFieldFocus('phone')}
                 required
-                className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#2E8FFF] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500 ${
-                  formErrors.phone ? 'border-red-500 focus:border-red-500' : 'border-[#D1D5DB] focus:border-[#2E8FFF]'
+                className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#C2542D] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500 ${
+                  formErrors.phone ? 'border-red-500 focus:border-red-500' : 'border-[#D1D5DB] focus:border-[#C2542D]'
                 }`}
                 placeholder="Votre numéro de téléphone"
               />
@@ -295,7 +295,7 @@ export default function ContactForm() {
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                <FaFileAlt className="h-4 w-4 text-gray-400 group-focus-within:text-[#2E8FFF] transition-colors duration-200" />
+                <FaFileAlt className="h-4 w-4 text-gray-400 group-focus-within:text-[#C2542D] transition-colors duration-200" />
               </div>
               <input
                 type="text"
@@ -305,7 +305,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 onFocus={() => handleFieldFocus('subject')}
                 required
-                className="w-full pl-10 pr-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#2E8FFF] focus:border-[#2E8FFF] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500"
+                className="w-full pl-10 pr-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#C2542D] focus:border-[#C2542D] outline-none transition-all bg-white text-[#111827] placeholder:text-gray-500"
                 placeholder="L'objet de votre message"
               />
             </div>
@@ -323,7 +323,7 @@ export default function ContactForm() {
               onFocus={() => handleFieldFocus('message')}
               required
               rows={6}
-              className="w-full px-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#2E8FFF] focus:border-[#2E8FFF] outline-none transition-all resize-none bg-white text-[#111827] placeholder:text-gray-500"
+              className="w-full px-4 py-3 border border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#C2542D] focus:border-[#C2542D] outline-none transition-all resize-none bg-white text-[#111827] placeholder:text-gray-500"
               placeholder="Décrivez votre projet ou votre demande en détail..."
             ></textarea>
           </div>
@@ -332,7 +332,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-[#2E8FFF] hover:bg-[#2E8FFF]/90 text-[#FFFFFF] font-semibold py-3.5 px-8 rounded-lg transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer w-full sm:w-auto"
+              className="bg-[#C2542D] hover:bg-[#C2542D]/90 text-[#FFFFFF] font-semibold py-3.5 px-8 rounded-lg transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer w-full sm:w-auto"
             >
               {isSubmitting ? (
                 <>

@@ -25,7 +25,7 @@ export const FaqAccordion = ({ items }: FaqAccordionProps) => {
         return (
           <div
             key={item.question}
-            className="overflow-hidden rounded-2xl border border-[#0F2647]/10 bg-white"
+            className="overflow-hidden rounded-2xl border border-[#2E2B28]/10 bg-white"
           >
             <button
               type="button"
@@ -34,11 +34,11 @@ export const FaqAccordion = ({ items }: FaqAccordionProps) => {
               aria-controls={contentId}
               className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left md:px-6 md:py-5"
             >
-              <span className="text-[15px] md:text-base font-semibold text-[#0F2647]">
+              <span className="text-[15px] md:text-base font-semibold text-[#2E2B28]">
                 {item.question}
               </span>
               <span
-                className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#F5F8FC] text-[#0F2647]"
+                className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#F8F6F2] text-[#2E2B28]"
                 aria-hidden
               >
                 <svg
@@ -61,7 +61,7 @@ export const FaqAccordion = ({ items }: FaqAccordionProps) => {
                   id={contentId}
                   className="overflow-hidden"
                 >
-                  <p className="px-5 pb-5 text-[15px] leading-relaxed text-[#475D80]/85 md:px-6 md:pb-6">
+                  <p className="px-5 pb-5 text-[15px] leading-relaxed text-[#6B655D]/85 md:px-6 md:pb-6">
                     {item.answer}
                   </p>
                 </div>

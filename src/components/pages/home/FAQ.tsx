@@ -25,7 +25,7 @@ export default function FAQ() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
             <div className="lg:w-1/2 lg:pr-8 lg:border-r lg:border-gray-300 flex-shrink-0">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofia-bold text-[rgb(0,15,69)] mb-6 text-balance">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofia-bold text-[#2E2B28] mb-6 text-balance">
                 Discuter de mon projet
               </h2>
               <p className="text-gray-600 mb-10 font-inter text-lg leading-relaxed">
@@ -38,7 +38,7 @@ export default function FAQ() {
                   <li key={item.title} className="flex gap-4">
                     <span
                       aria-hidden
-                      className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2E8FFF] text-white"
+                      className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#C2542D] text-white"
                     >
                       <svg
                         className="h-3.5 w-3.5"
@@ -53,7 +53,7 @@ export default function FAQ() {
                       </svg>
                     </span>
                     <div>
-                      <p className="font-sofia-bold text-[#0F2647] text-[17px]">{item.title}</p>
+                      <p className="font-sofia-bold text-[#2E2B28] text-[17px]">{item.title}</p>
                       <p className="mt-1.5 text-gray-600 font-inter leading-relaxed">
                         {item.text}
                       </p>
@@ -68,7 +68,7 @@ export default function FAQ() {
                 </p>
                 <a
                   href="mailto:contact@lodgic-dev.com"
-                  className="mt-1 inline-block font-sofia-bold text-[#0F2647] hover:text-[#2E8FFF] transition-colors"
+                  className="mt-1 inline-block font-sofia-bold text-[#2E2B28] hover:text-[#C2542D] transition-colors"
                 >
                   contact@lodgic-dev.com
                 </a>

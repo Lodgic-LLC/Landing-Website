@@ -1,18 +1,18 @@
 import type { ReactNode } from 'react'
 
-const NAVY = '#0F2647'
-const INK = '#475D80'
-const SURFACE = '#F5F8FC'
+const NAVY = '#2E2B28'
+const INK = '#6B655D'
+const SURFACE = '#F8F6F2'
 
 type FrameProps = { children: ReactNode; title?: string }
 
 export const PhoneFrame = ({ children, title }: FrameProps) => {
   return (
     <div className="mx-auto w-[260px] md:w-[280px]">
-      <div className="relative rounded-[44px] border border-[#0F2647]/15 bg-[#0a1a33] p-2 shadow-[0_20px_60px_-20px_rgba(15,38,71,0.4)]">
+      <div className="relative rounded-[44px] border border-[#2E2B28]/15 bg-[#0a1a33] p-2 shadow-[0_20px_60px_-20px_rgba(35,33,31,0.4)]">
         <div className="absolute left-1/2 top-1 -translate-x-1/2 h-6 w-28 rounded-b-2xl bg-[#0a1a33]" />
         <div className="relative overflow-hidden rounded-[36px] bg-white">
-          <div className="flex items-center justify-between px-5 pt-3 pb-1 text-[10px] font-medium text-[#0F2647]/70">
+          <div className="flex items-center justify-between px-5 pt-3 pb-1 text-[10px] font-medium text-[#2E2B28]/70">
             <span>9:41</span>
             <span>●●● 100%</span>
           </div>
@@ -20,7 +20,7 @@ export const PhoneFrame = ({ children, title }: FrameProps) => {
         </div>
       </div>
       {title ? (
-        <p className="mt-3 text-center text-xs text-[#475D80]/70">{title}</p>
+        <p className="mt-3 text-center text-xs text-[#6B655D]/70">{title}</p>
       ) : null}
     </div>
   )
@@ -28,20 +28,20 @@ export const PhoneFrame = ({ children, title }: FrameProps) => {
 
 export const BrowserFrame = ({ children, title, url = 'lodgic-app.com' }: FrameProps & { url?: string }) => {
   return (
-    <div className="overflow-hidden rounded-2xl border border-[#0F2647]/10 bg-white shadow-[0_20px_60px_-30px_rgba(15,38,71,0.35)]">
-      <div className="flex items-center gap-2 border-b border-[#0F2647]/10 bg-[#F5F8FC] px-4 py-2">
+    <div className="overflow-hidden rounded-2xl border border-[#2E2B28]/10 bg-white shadow-[0_20px_60px_-30px_rgba(35,33,31,0.35)]">
+      <div className="flex items-center gap-2 border-b border-[#2E2B28]/10 bg-[#F8F6F2] px-4 py-2">
         <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
         <div className="ml-3 flex-1">
-          <div className="mx-auto w-3/5 truncate rounded-md border border-[#0F2647]/10 bg-white px-3 py-1 text-center text-[11px] text-[#475D80]/80">
+          <div className="mx-auto w-3/5 truncate rounded-md border border-[#2E2B28]/10 bg-white px-3 py-1 text-center text-[11px] text-[#6B655D]/80">
             {url}
           </div>
         </div>
       </div>
       <div className="p-4 md:p-5">{children}</div>
       {title ? (
-        <div className="border-t border-[#0F2647]/10 bg-[#F5F8FC] px-4 py-2 text-center text-xs text-[#475D80]/70">
+        <div className="border-t border-[#2E2B28]/10 bg-[#F8F6F2] px-4 py-2 text-center text-xs text-[#6B655D]/70">
           {title}
         </div>
       ) : null}
@@ -82,14 +82,14 @@ export const HousePhoneScreen = () => (
         ['Chauffe-eau', 'Studio 5', 'En cours'],
         ['Clé perdue', 'T3 - Rangueil', 'Nouveau'],
       ].map(([title, place, status]) => (
-        <div key={title} className="rounded-lg border border-[#0F2647]/10 p-2">
+        <div key={title} className="rounded-lg border border-[#2E2B28]/10 p-2">
           <p className="text-[11px] font-medium" style={{ color: NAVY }}>
             {title}
           </p>
           <p className="text-[10px]" style={{ color: INK + 'B3' }}>
             {place}
           </p>
-          <span className="mt-1 inline-block rounded-full bg-[#0F2647]/5 px-2 py-0.5 text-[9px]" style={{ color: NAVY }}>
+          <span className="mt-1 inline-block rounded-full bg-[#2E2B28]/5 px-2 py-0.5 text-[9px]" style={{ color: NAVY }}>
             {status}
           </span>
         </div>
@@ -99,7 +99,7 @@ export const HousePhoneScreen = () => (
     <div className="mt-auto grid grid-cols-4 gap-2 pt-3">
       {['Accueil', 'Biens', 'Paiements', 'Plus'].map((tab, i) => (
         <div key={tab} className="flex flex-col items-center text-[9px]" style={{ color: i === 0 ? NAVY : INK + '99' }}>
-          <div className={`h-1 w-6 rounded-full ${i === 0 ? 'bg-[#0F2647]' : 'bg-transparent'}`} />
+          <div className={`h-1 w-6 rounded-full ${i === 0 ? 'bg-[#2E2B28]' : 'bg-transparent'}`} />
           <span className="mt-1">{tab}</span>
         </div>
       ))}
@@ -116,7 +116,7 @@ export const HouseTenantScreen = () => (
       Mon logement
     </p>
 
-    <div className="mt-3 rounded-xl border border-[#0F2647]/10 p-3">
+    <div className="mt-3 rounded-xl border border-[#2E2B28]/10 p-3">
       <p className="text-[11px]" style={{ color: INK + 'B3' }}>
         Prochain loyer
       </p>
@@ -133,7 +133,7 @@ export const HouseTenantScreen = () => (
     </p>
     <div className="mt-2 grid grid-cols-2 gap-2">
       {['Plomberie', 'Électricité', 'Chauffage', 'Autre'].map((c) => (
-        <div key={c} className="rounded-lg border border-[#0F2647]/10 p-2 text-[11px]" style={{ color: NAVY }}>
+        <div key={c} className="rounded-lg border border-[#2E2B28]/10 p-2 text-[11px]" style={{ color: NAVY }}>
           {c}
         </div>
       ))}
@@ -143,10 +143,10 @@ export const HouseTenantScreen = () => (
       Messages
     </p>
     <div className="mt-2 space-y-2">
-      <div className="rounded-lg bg-[#0F2647]/5 p-2 text-[11px]" style={{ color: NAVY }}>
+      <div className="rounded-lg bg-[#2E2B28]/5 p-2 text-[11px]" style={{ color: NAVY }}>
         Votre intervention est planifiée pour demain 10h.
       </div>
-      <div className="rounded-lg border border-[#0F2647]/10 p-2 text-[11px]" style={{ color: NAVY }}>
+      <div className="rounded-lg border border-[#2E2B28]/10 p-2 text-[11px]" style={{ color: NAVY }}>
         Merci, à demain !
       </div>
     </div>
@@ -155,7 +155,7 @@ export const HouseTenantScreen = () => (
 
 export const RhDashboardScreen = () => (
   <div className="grid grid-cols-12 gap-3">
-    <div className="col-span-3 rounded-xl border border-[#0F2647]/10 bg-[#F5F8FC] p-3">
+    <div className="col-span-3 rounded-xl border border-[#2E2B28]/10 bg-[#F8F6F2] p-3">
       <p className="text-[11px] font-semibold" style={{ color: NAVY }}>
         RH
       </p>
@@ -192,7 +192,7 @@ export const RhDashboardScreen = () => (
           ['Notes de frais', '27', '−2'],
           ['Nouveaux arrivants', '3', 'ce mois'],
         ].map(([label, value, diff]) => (
-          <div key={label} className="rounded-lg border border-[#0F2647]/10 p-2">
+          <div key={label} className="rounded-lg border border-[#2E2B28]/10 p-2">
             <p className="text-[10px]" style={{ color: INK + 'B3' }}>
               {label}
             </p>
@@ -205,7 +205,7 @@ export const RhDashboardScreen = () => (
           </div>
         ))}
       </div>
-      <div className="rounded-lg border border-[#0F2647]/10 p-3">
+      <div className="rounded-lg border border-[#2E2B28]/10 p-3">
         <p className="text-[11px] font-semibold" style={{ color: NAVY }}>
           Demandes récentes
         </p>
@@ -238,8 +238,8 @@ export const RhExpensesScreen = () => (
         12 en attente de validation
       </span>
     </div>
-    <div className="mt-3 overflow-hidden rounded-lg border border-[#0F2647]/10">
-      <div className="grid grid-cols-5 bg-[#F5F8FC] px-3 py-2 text-[10px] font-medium" style={{ color: INK + 'B3' }}>
+    <div className="mt-3 overflow-hidden rounded-lg border border-[#2E2B28]/10">
+      <div className="grid grid-cols-5 bg-[#F8F6F2] px-3 py-2 text-[10px] font-medium" style={{ color: INK + 'B3' }}>
         <span>Collaborateur</span>
         <span>Catégorie</span>
         <span>Montant</span>
@@ -253,7 +253,7 @@ export const RhExpensesScreen = () => (
         ['Julia Renaud', 'Fourniture', '45,20 €', '11 mars', 'En attente'],
         ['Louis Pernod', 'Déplacement', '142,00 €', '09 mars', 'Validée'],
       ].map((row) => (
-        <div key={row[0]} className="grid grid-cols-5 border-t border-[#0F2647]/10 px-3 py-2 text-[11px]" style={{ color: NAVY }}>
+        <div key={row[0]} className="grid grid-cols-5 border-t border-[#2E2B28]/10 px-3 py-2 text-[11px]" style={{ color: NAVY }}>
           {row.map((cell, i) => (
             <span key={i}>{cell}</span>
           ))}
@@ -281,7 +281,7 @@ export const RhMobileScreen = () => (
     </div>
     <div className="mt-3 grid grid-cols-3 gap-2">
       {['Poser un congé', 'Note de frais', 'Mes documents'].map((a) => (
-        <div key={a} className="rounded-lg border border-[#0F2647]/10 p-2 text-[10px]" style={{ color: NAVY }}>
+        <div key={a} className="rounded-lg border border-[#2E2B28]/10 p-2 text-[10px]" style={{ color: NAVY }}>
           {a}
         </div>
       ))}
@@ -290,7 +290,7 @@ export const RhMobileScreen = () => (
       Demandes en cours
     </p>
     <div className="mt-2 space-y-2">
-      <div className="rounded-lg border border-[#0F2647]/10 p-2">
+      <div className="rounded-lg border border-[#2E2B28]/10 p-2">
         <p className="text-[11px] font-medium" style={{ color: NAVY }}>
           Congés — 3 jours
         </p>
@@ -298,7 +298,7 @@ export const RhMobileScreen = () => (
           15 au 17 mars · En attente
         </p>
       </div>
-      <div className="rounded-lg border border-[#0F2647]/10 p-2">
+      <div className="rounded-lg border border-[#2E2B28]/10 p-2">
         <p className="text-[11px] font-medium" style={{ color: NAVY }}>
           Note de frais — 248,90 €
         </p>
@@ -319,7 +319,7 @@ export const RhMobileScreen = () => (
 
 export const ShopHomeScreen = () => (
   <div>
-    <div className="flex items-center justify-between border-b border-[#0F2647]/10 pb-2 text-[11px]" style={{ color: INK + 'B3' }}>
+    <div className="flex items-center justify-between border-b border-[#2E2B28]/10 pb-2 text-[11px]" style={{ color: INK + 'B3' }}>
       <span>Livraison offerte dès 80 € · Retour gratuit 30 jours</span>
       <span>FR ▾ · Aide · Mon compte</span>
     </div>
@@ -358,7 +358,7 @@ export const ShopHomeScreen = () => (
         ['Bottines Nina', '239 €', '-20%'],
         ['Ceinture Lune', '64 €', ''],
       ].map(([title, price, tag]) => (
-        <div key={title} className="rounded-lg border border-[#0F2647]/10 p-2">
+        <div key={title} className="rounded-lg border border-[#2E2B28]/10 p-2">
           <div className="h-16 rounded-md" style={{ background: SURFACE }} />
           <div className="mt-1 flex items-center justify-between text-[10px]" style={{ color: INK + 'B3' }}>
             <span>{tag}</span>
@@ -387,16 +387,16 @@ export const ShopCheckoutScreen = () => (
           ['Sac cabas Léo', '1 × 149 €'],
           ['Écharpe Oslo', '1 × 89 €'],
         ].map(([t, q]) => (
-          <div key={t} className="flex items-center justify-between rounded-lg border border-[#0F2647]/10 p-2 text-[11px]" style={{ color: NAVY }}>
+          <div key={t} className="flex items-center justify-between rounded-lg border border-[#2E2B28]/10 p-2 text-[11px]" style={{ color: NAVY }}>
             <span>{t}</span>
             <span>{q}</span>
           </div>
         ))}
-        <div className="rounded-lg bg-[#0F2647]/5 p-2 text-[11px]" style={{ color: NAVY }}>
+        <div className="rounded-lg bg-[#2E2B28]/5 p-2 text-[11px]" style={{ color: NAVY }}>
           Code promo · PRINTEMPS10 appliqué — -23,80 €
         </div>
       </div>
-      <div className="col-span-2 rounded-lg border border-[#0F2647]/10 p-3 text-[11px]" style={{ color: NAVY }}>
+      <div className="col-span-2 rounded-lg border border-[#2E2B28]/10 p-3 text-[11px]" style={{ color: NAVY }}>
         <div className="flex items-center justify-between">
           <span>Sous-total</span>
           <span>238 €</span>
@@ -405,7 +405,7 @@ export const ShopCheckoutScreen = () => (
           <span>Livraison</span>
           <span>Offerte</span>
         </div>
-        <div className="mt-2 border-t border-[#0F2647]/10 pt-2 font-semibold">
+        <div className="mt-2 border-t border-[#2E2B28]/10 pt-2 font-semibold">
           <div className="flex items-center justify-between">
             <span>Total</span>
             <span>214,20 €</span>
@@ -510,7 +510,7 @@ export const HousePaymentScreen = () => (
           <div
             key={i}
             className="w-full rounded-t"
-            style={{ height: h, background: i === 5 ? NAVY : '#0F264733' }}
+            style={{ height: h, background: i === 5 ? NAVY : '#2E2B2833' }}
           />
         ))}
       </div>
@@ -524,7 +524,7 @@ export const HousePaymentScreen = () => (
         ['Studio 5 — Rangueil', '720 €', 'Retard 4 j'],
         ['T3 — Minimes', '980 €', 'Retard 2 j'],
       ].map(([t, amt, state]) => (
-        <div key={t} className="flex items-center justify-between rounded-lg border border-[#0F2647]/10 p-2">
+        <div key={t} className="flex items-center justify-between rounded-lg border border-[#2E2B28]/10 p-2">
           <div>
             <p className="text-[11px] font-medium" style={{ color: NAVY }}>
               {t}
@@ -558,7 +558,7 @@ export const RhLeaveCalendarScreen = () => (
         </p>
       </div>
       <div className="flex gap-2">
-        <button className="rounded-lg border border-[#0F2647]/10 bg-white px-3 py-1 text-[11px]" style={{ color: NAVY }}>
+        <button className="rounded-lg border border-[#2E2B28]/10 bg-white px-3 py-1 text-[11px]" style={{ color: NAVY }}>
           Filtrer
         </button>
         <button className="rounded-lg px-3 py-1 text-[11px] font-medium text-white" style={{ background: NAVY }}>
@@ -567,8 +567,8 @@ export const RhLeaveCalendarScreen = () => (
       </div>
     </div>
 
-    <div className="mt-3 overflow-hidden rounded-lg border border-[#0F2647]/10">
-      <div className="grid grid-cols-[120px_repeat(20,minmax(0,1fr))] bg-[#F5F8FC] px-2 py-1 text-[9px] font-medium" style={{ color: INK + 'B3' }}>
+    <div className="mt-3 overflow-hidden rounded-lg border border-[#2E2B28]/10">
+      <div className="grid grid-cols-[120px_repeat(20,minmax(0,1fr))] bg-[#F8F6F2] px-2 py-1 text-[9px] font-medium" style={{ color: INK + 'B3' }}>
         <span>Collaborateur</span>
         {Array.from({ length: 20 }, (_, i) => (
           <span key={i} className="text-center">
@@ -587,7 +587,7 @@ export const RhLeaveCalendarScreen = () => (
         const color =
           row.type === 'leave' ? NAVY : row.type === 'remote' ? '#6366F1' : '#F97316'
         return (
-          <div key={row.name} className="grid grid-cols-[120px_repeat(20,minmax(0,1fr))] items-center border-t border-[#0F2647]/10 px-2 py-1 text-[10px]" style={{ color: NAVY }}>
+          <div key={row.name} className="grid grid-cols-[120px_repeat(20,minmax(0,1fr))] items-center border-t border-[#2E2B28]/10 px-2 py-1 text-[10px]" style={{ color: NAVY }}>
             <span className="font-medium">{row.name}</span>
             {Array.from({ length: 20 }, (_, i) => {
               const inside = i >= row.start && i < row.start + row.span
@@ -595,7 +595,7 @@ export const RhLeaveCalendarScreen = () => (
                 <div key={i} className="px-0.5">
                   <div
                     className="h-3 rounded"
-                    style={{ background: inside ? color : '#0F264711' }}
+                    style={{ background: inside ? color : '#2E2B2811' }}
                   />
                 </div>
               )
@@ -644,14 +644,14 @@ export const RhOnboardingScreen = () => (
         ['Matériel & accès', 4, 5, NAVY],
         ['Formation', 2, 4, '#6366F1'],
       ].map(([label, done, total, color]) => (
-        <div key={String(label)} className="rounded-lg border border-[#0F2647]/10 p-3">
+        <div key={String(label)} className="rounded-lg border border-[#2E2B28]/10 p-3">
           <p className="text-[10px]" style={{ color: INK + 'B3' }}>
             {label}
           </p>
           <p className="text-base font-semibold" style={{ color: NAVY }}>
             {done} / {total}
           </p>
-          <div className="mt-2 h-1.5 w-full rounded-full bg-[#0F264711]">
+          <div className="mt-2 h-1.5 w-full rounded-full bg-[#2E2B2811]">
             <div
               className="h-full rounded-full"
               style={{
@@ -675,7 +675,7 @@ export const RhOnboardingScreen = () => (
         ['Formation outillage produit', false],
         ['Rendez-vous RH J+30', false],
       ].map(([t, done]) => (
-        <div key={String(t)} className="flex items-center justify-between rounded-lg border border-[#0F2647]/10 px-3 py-2 text-[11px]" style={{ color: NAVY }}>
+        <div key={String(t)} className="flex items-center justify-between rounded-lg border border-[#2E2B28]/10 px-3 py-2 text-[11px]" style={{ color: NAVY }}>
           <span className="flex items-center gap-2">
             <span
               className="inline-flex h-4 w-4 items-center justify-center rounded border"
@@ -711,7 +711,7 @@ export const ShopProductScreen = () => (
         </div>
         <div className="mt-2 grid grid-cols-4 gap-1.5">
           {[0, 1, 2, 3].map((i) => (
-            <div key={i} className="h-10 rounded bg-white ring-1 ring-[#0F2647]/10" />
+            <div key={i} className="h-10 rounded bg-white ring-1 ring-[#2E2B28]/10" />
           ))}
         </div>
       </div>
@@ -734,7 +734,7 @@ export const ShopProductScreen = () => (
           </p>
           <div className="mt-1 flex gap-1.5">
             {['#3b2a20', '#000', '#cfc4b6'].map((c) => (
-              <span key={c} className="h-4 w-4 rounded-full ring-1 ring-[#0F2647]/20" style={{ background: c }} />
+              <span key={c} className="h-4 w-4 rounded-full ring-1 ring-[#2E2B28]/20" style={{ background: c }} />
             ))}
           </div>
         </div>
@@ -776,8 +776,8 @@ export const ShopCategoryScreen = () => (
         Nouveautés · Sacs
       </p>
       <div className="flex gap-2 text-[11px]" style={{ color: NAVY }}>
-        <span className="rounded-full border border-[#0F2647]/10 px-2 py-0.5">Trier · Popularité ▾</span>
-        <span className="rounded-full border border-[#0F2647]/10 px-2 py-0.5">Filtrer</span>
+        <span className="rounded-full border border-[#2E2B28]/10 px-2 py-0.5">Trier · Popularité ▾</span>
+        <span className="rounded-full border border-[#2E2B28]/10 px-2 py-0.5">Filtrer</span>
       </div>
     </div>
     <div className="mt-3 grid grid-cols-4 gap-3">
@@ -791,7 +791,7 @@ export const ShopCategoryScreen = () => (
         ['Tote Sol', '59 €', '', '#eee7dd'],
         ['Besace Jour', '139 €', '', '#d9d1c6'],
       ].map(([title, price, tag, color]) => (
-        <div key={String(title)} className="rounded-lg border border-[#0F2647]/10 p-2">
+        <div key={String(title)} className="rounded-lg border border-[#2E2B28]/10 p-2">
           <div className="relative h-20 rounded-md" style={{ background: String(color) }}>
             {tag ? (
               <span className="absolute left-1 top-1 rounded-full bg-white px-1.5 text-[9px] font-semibold" style={{ color: NAVY }}>
@@ -812,25 +812,25 @@ export const ShopCategoryScreen = () => (
       ))}
     </div>
     <div className="mt-3 flex items-center justify-center gap-2 text-[11px]" style={{ color: NAVY }}>
-      <span className="rounded border border-[#0F2647]/15 px-2 py-0.5">‹</span>
-      <span className="rounded bg-[#0F2647] px-2 py-0.5 text-white">1</span>
-      <span className="rounded border border-[#0F2647]/15 px-2 py-0.5">2</span>
-      <span className="rounded border border-[#0F2647]/15 px-2 py-0.5">3</span>
-      <span className="rounded border border-[#0F2647]/15 px-2 py-0.5">›</span>
+      <span className="rounded border border-[#2E2B28]/15 px-2 py-0.5">‹</span>
+      <span className="rounded bg-[#2E2B28] px-2 py-0.5 text-white">1</span>
+      <span className="rounded border border-[#2E2B28]/15 px-2 py-0.5">2</span>
+      <span className="rounded border border-[#2E2B28]/15 px-2 py-0.5">3</span>
+      <span className="rounded border border-[#2E2B28]/15 px-2 py-0.5">›</span>
     </div>
   </div>
 )
 
 /* Composition multi-device pour mise en scène hero */
 export const DeviceScene = ({ children }: { children: ReactNode }) => (
-  <div className="relative rounded-3xl p-6 md:p-10 ring-1 ring-[#0F2647]/5 bg-gradient-to-br from-[#eaf0ff] via-white to-[#F5F8FC] overflow-hidden">
+  <div className="relative rounded-3xl p-6 md:p-10 ring-1 ring-[#2E2B28]/5 bg-gradient-to-br from-[#eaf0ff] via-white to-[#F8F6F2] overflow-hidden">
     <div
       aria-hidden
-      className="pointer-events-none absolute -top-20 -right-20 h-72 w-72 rounded-full bg-[#0F2647]/5 blur-3xl"
+      className="pointer-events-none absolute -top-20 -right-20 h-72 w-72 rounded-full bg-[#2E2B28]/5"
     />
     <div
       aria-hidden
-      className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-[#2E8FFF]/20 blur-3xl"
+      className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-[#C2542D]/20"
     />
     <div className="relative">{children}</div>
   </div>

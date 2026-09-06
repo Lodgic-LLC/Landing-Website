@@ -79,13 +79,13 @@ export default function DeveloppementApplicationMobilePage() {
       <StructuredData id="dev-mobile-webpage-schema" data={pageSchema} />
       <BreadcrumbStructuredData items={breadcrumbItems} />
       <FAQStructuredData faqs={faqs} />
-      <main className="bg-[#F5F8FC] min-h-screen pt-28 pb-20 md:pt-36">
+      <main className="bg-[#F8F6F2] min-h-screen pt-28 pb-20 md:pt-36">
         <div className="max-w-7xl mx-auto px-6">
           <header className="max-w-4xl">
-            <span className="inline-flex items-center rounded-full border border-[#0F2647]/10 bg-white px-4 py-1.5 text-sm font-semibold text-[#0F2647]">
+            <span className="inline-flex items-center rounded-full border border-[#2E2B28]/10 bg-white px-4 py-1.5 text-sm font-semibold text-[#2E2B28]">
               Guide mobile
             </span>
-            <h1 className="mt-5 font-sofia-bold text-4xl md:text-5xl text-[#0F2647] leading-tight">
+            <h1 className="mt-5 font-sofia-bold text-4xl md:text-5xl text-[#2E2B28] leading-tight">
               Développement application mobile à Toulouse : les points clés avant de lancer votre projet
             </h1>
             <p className="mt-5 text-lg text-[#1f3556] leading-relaxed max-w-3xl">
@@ -96,8 +96,8 @@ export default function DeveloppementApplicationMobilePage() {
           </header>
 
           <section className="mt-10 grid gap-6 md:grid-cols-2">
-            <article className="rounded-2xl border border-[#0F2647]/10 bg-white p-6 shadow-soft">
-              <h2 className="font-sofia-bold text-2xl text-[#0F2647]">Ce qui fait la différence sur un projet mobile</h2>
+            <article className="rounded-2xl border border-[#2E2B28]/10 bg-white p-6 shadow-soft">
+              <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Ce qui fait la différence sur un projet mobile</h2>
               <ul className="mt-4 space-y-3 text-[#2d4567]">
                 <li>- Cadrage produit précis avant le développement</li>
                 <li>- Priorisation d'une roadmap réaliste</li>
@@ -112,8 +112,8 @@ export default function DeveloppementApplicationMobilePage() {
               </p>
             </article>
 
-            <article className="rounded-2xl border border-[#0F2647]/10 bg-white p-6 shadow-soft">
-              <h2 className="font-sofia-bold text-2xl text-[#0F2647]">Pourquoi se faire accompagner ?</h2>
+            <article className="rounded-2xl border border-[#2E2B28]/10 bg-white p-6 shadow-soft">
+              <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Pourquoi se faire accompagner ?</h2>
               <p className="mt-4 text-[#2d4567] leading-relaxed">
                 Une agence web et mobile Toulouse peut sécuriser les choix techniques et éviter les erreurs coûteuses
                 (mauvaise stack, dette technique précoce, délais sous-estimés). L'objectif est d'aligner votre budget
@@ -122,37 +122,37 @@ export default function DeveloppementApplicationMobilePage() {
             </article>
           </section>
 
-          <section className="mt-8 rounded-2xl border border-[#0F2647]/10 bg-white p-6 shadow-soft">
-            <h2 className="font-sofia-bold text-2xl text-[#0F2647]">Les 3 erreurs les plus fréquentes</h2>
+          <section className="mt-8 rounded-2xl border border-[#2E2B28]/10 bg-white p-6 shadow-soft">
+            <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Les 3 erreurs les plus fréquentes</h2>
             <div className="mt-4 grid gap-4 md:grid-cols-3 text-[#2d4567]">
-              <article className="rounded-xl bg-[#f8fbff] border border-[#0F2647]/10 p-4">
-                <h3 className="font-sofia-bold text-lg text-[#0F2647]">1. Vouloir tout faire d'un coup</h3>
+              <article className="rounded-xl bg-[#f8fbff] border border-[#2E2B28]/10 p-4">
+                <h3 className="font-sofia-bold text-lg text-[#2E2B28]">1. Vouloir tout faire d'un coup</h3>
                 <p className="mt-2">Un périmètre trop large rallonge les délais et augmente les coûts sans garantie de résultat.</p>
               </article>
-              <article className="rounded-xl bg-[#f8fbff] border border-[#0F2647]/10 p-4">
-                <h3 className="font-sofia-bold text-lg text-[#0F2647]">2. Négliger le parcours utilisateur</h3>
+              <article className="rounded-xl bg-[#f8fbff] border border-[#2E2B28]/10 p-4">
+                <h3 className="font-sofia-bold text-lg text-[#2E2B28]">2. Négliger le parcours utilisateur</h3>
                 <p className="mt-2">Une app peut être techniquement bonne mais inutilisable si l'expérience est confuse.</p>
               </article>
-              <article className="rounded-xl bg-[#f8fbff] border border-[#0F2647]/10 p-4">
-                <h3 className="font-sofia-bold text-lg text-[#0F2647]">3. Oublier l'après-lancement</h3>
+              <article className="rounded-xl bg-[#f8fbff] border border-[#2E2B28]/10 p-4">
+                <h3 className="font-sofia-bold text-lg text-[#2E2B28]">3. Oublier l'après-lancement</h3>
                 <p className="mt-2">Maintenance, analytics et itérations sont essentiels pour qu'une app reste performante.</p>
               </article>
             </div>
           </section>
 
           <section className="mt-12">
-            <h2 className="font-sofia-bold text-3xl text-[#0F2647]">Questions fréquentes</h2>
+            <h2 className="font-sofia-bold text-3xl text-[#2E2B28]">Questions fréquentes</h2>
             <div className="mt-5 space-y-4">
               {faqs.map((faq) => (
                 <details
                   key={faq.question}
-                  className="group rounded-xl border border-[#0F2647]/10 bg-white p-5 shadow-soft open:shadow-md"
+                  className="group rounded-xl border border-[#2E2B28]/10 bg-white p-5 shadow-soft open:shadow-md"
                 >
-                  <summary className="flex cursor-pointer items-center justify-between gap-4 font-sofia-bold text-lg text-[#0F2647]">
+                  <summary className="flex cursor-pointer items-center justify-between gap-4 font-sofia-bold text-lg text-[#2E2B28]">
                     <span>{faq.question}</span>
                     <span
                       aria-hidden
-                      className="text-[#0F2647]/60 transition-transform group-open:rotate-45"
+                      className="text-[#2E2B28]/60 transition-transform group-open:rotate-45"
                     >
                       +
                     </span>
@@ -164,11 +164,11 @@ export default function DeveloppementApplicationMobilePage() {
           </section>
 
           <section className="mt-12">
-            <h2 className="font-sofia-bold text-3xl text-[#0F2647]">Aller plus loin</h2>
+            <h2 className="font-sofia-bold text-3xl text-[#2E2B28]">Aller plus loin</h2>
             <div className="mt-5 grid gap-4 md:grid-cols-2">
               <Link
                 href="/developpement-application-mobile/apple-android"
-                className="rounded-xl border border-[#0F2647]/15 bg-white p-5 text-[#0F2647] hover:border-[#0F2647]/35 transition-smooth"
+                className="rounded-xl border border-[#2E2B28]/15 bg-white p-5 text-[#2E2B28] hover:border-[#2E2B28]/35 transition-smooth"
               >
                 <p className="font-sofia-bold text-xl">Apple vs Android</p>
                 <p className="mt-2 text-[#2d4567]">
@@ -178,7 +178,7 @@ export default function DeveloppementApplicationMobilePage() {
 
               <Link
                 href="/developpement-application-mobile/react-native-flutter"
-                className="rounded-xl border border-[#0F2647]/15 bg-white p-5 text-[#0F2647] hover:border-[#0F2647]/35 transition-smooth"
+                className="rounded-xl border border-[#2E2B28]/15 bg-white p-5 text-[#2E2B28] hover:border-[#2E2B28]/35 transition-smooth"
               >
                 <p className="font-sofia-bold text-xl">React Native vs Flutter</p>
                 <p className="mt-2 text-[#2d4567]">

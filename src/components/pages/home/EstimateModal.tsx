@@ -265,7 +265,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div
-              className="bg-[#2E8FFF] h-2 rounded-full transition-all duration-300"
+              className="bg-[#C2542D] h-2 rounded-full transition-all duration-300"
               style={{ width: `${(currentStep / totalSteps) * 100}%` }}
             ></div>
           </div>
@@ -284,7 +284,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                   onClick={() => setFormData({ ...formData, projectType: 'website' })}
                   className={`p-6 border-2 rounded-lg transition-all duration-200 flex cursor-pointer flex-col items-center space-y-3 ${
                     formData.projectType === 'website'
-                      ? 'border-[#2E8FFF] bg-[#2E8FFF]/10'
+                      ? 'border-[#C2542D] bg-[#C2542D]/10'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -295,7 +295,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                   onClick={() => setFormData({ ...formData, projectType: 'mobile' })}
                   className={`p-6 border-2 rounded-lg transition-all duration-200 flex cursor-pointer flex-col items-center space-y-3 ${
                     formData.projectType === 'mobile'
-                      ? 'border-[#2E8FFF] bg-[#2E8FFF]/10'
+                      ? 'border-[#C2542D] bg-[#C2542D]/10'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -324,7 +324,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                         onClick={() => setFormData({ ...formData, websiteType: type.key as any })}
                         className={`p-4 border-2 rounded-lg transition-all duration-200 text-left cursor-pointer ${
                           formData.websiteType === type.key
-                            ? 'border-[#2E8FFF] bg-[#2E8FFF]/10'
+                            ? 'border-[#C2542D] bg-[#C2542D]/10'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}
                       >
@@ -365,7 +365,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                               })
                             }
                           }}
-                          className="mr-3 h-4 w-4 text-[#2E8FFF] border-gray-300 rounded focus:ring-[#2E8FFF]"
+                          className="mr-3 h-4 w-4 text-[#C2542D] border-gray-300 rounded focus:ring-[#C2542D]"
                         />
                         <span className="font-medium text-gray-900">{platform.label}</span>
                       </label>
@@ -391,7 +391,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                     onClick={() => setFormData({ ...formData, complexity: complexity.key as any })}
                     className={`w-full p-4 border-2 rounded-lg transition-all duration-200 text-left cursor-pointer ${
                       formData.complexity === complexity.key
-                        ? 'border-[#2E8FFF] bg-[#2E8FFF]/10'
+                        ? 'border-[#C2542D] bg-[#C2542D]/10'
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                   >
@@ -422,7 +422,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                     key={feature.key}
                     className={`flex items-start p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 ${
                       formData.features[feature.key as keyof typeof formData.features]
-                        ? 'border-[#2E8FFF] bg-[#2E8FFF]/10'
+                        ? 'border-[#C2542D] bg-[#C2542D]/10'
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                   >
@@ -438,7 +438,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                           },
                         })
                       }
-                      className="mt-1 mr-3 h-4 w-4 text-[#2E8FFF] border-gray-300 rounded focus:ring-[#2E8FFF]"
+                      className="mt-1 mr-3 h-4 w-4 text-[#C2542D] border-gray-300 rounded focus:ring-[#C2542D]"
                     />
                     <div className="flex-1">
                       <div className="flex items-center space-x-2">
@@ -462,7 +462,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                   onClick={() => setFormData({ ...formData, timeline: 'standard' })}
                   className={`w-full p-4 border-2 rounded-lg transition-all duration-200 text-left cursor-pointer ${
                     formData.timeline === 'standard'
-                      ? 'border-[#2E8FFF] bg-[#2E8FFF]/10'
+                      ? 'border-[#C2542D] bg-[#C2542D]/10'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -478,7 +478,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                   onClick={() => setFormData({ ...formData, timeline: 'asap' })}
                   className={`w-full p-4 border-2 rounded-lg transition-all duration-200 text-left cursor-pointer ${
                     formData.timeline === 'asap'
-                      ? 'border-[#2E8FFF] bg-[#2E8FFF]/10'
+                      ? 'border-[#C2542D] bg-[#C2542D]/10'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -535,7 +535,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                       {formData.timeline === 'standard' ? '4-12 semaines' : '1-4 semaines (Express)'}
                     </span>
                   </div>
-                  <div className="border-t pt-2 flex justify-between text-lg font-bold text-black bg-[#2E8FFF] px-4 py-2 rounded-lg">
+                  <div className="border-t pt-2 flex justify-between text-lg font-bold text-black bg-[#C2542D] px-4 py-2 rounded-lg">
                     <span>Prix estimé:</span>
                     <span>{calculatePrice().toLocaleString()}€ HT</span>
                   </div>
@@ -563,7 +563,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                             contact: { ...formData.contact, name: e.target.value },
                           })
                         }
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2E8FFF] focus:border-[#2E8FFF] outline-none"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2542D] focus:border-[#C2542D] outline-none"
                         placeholder="Votre nom"
                       />
                     </div>
@@ -586,7 +586,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                             contact: { ...formData.contact, email: e.target.value },
                           })
                         }
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2E8FFF] focus:border-[#2E8FFF] outline-none"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2542D] focus:border-[#C2542D] outline-none"
                         placeholder="votre@email.com"
                       />
                     </div>
@@ -596,7 +596,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#2E8FFF] hover:bg-[#2E8FFF]/80 text-black font-semibold py-3 px-6 rounded-lg transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center cursor-pointer"
+                  className="w-full bg-[#C2542D] hover:bg-[#C2542D]/80 text-black font-semibold py-3 px-6 rounded-lg transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>
@@ -663,7 +663,7 @@ export default function EstimateModal({ isOpen, onClose }: EstimateModalProps) {
             <button
               onClick={handleNext}
               disabled={!canGoNext}
-              className="flex items-center bg-[#2E8FFF] hover:bg-[#2E8FFF]/80 text-black cursor-pointer font-medium py-2 px-4 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              className="flex items-center bg-[#C2542D] hover:bg-[#C2542D]/80 text-black cursor-pointer font-medium py-2 px-4 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             >
               Suivant
               <FaArrowRight className="ml-2" />

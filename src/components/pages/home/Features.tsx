@@ -65,42 +65,42 @@ export default function Features() {
   }, [isHovered])
 
   return (
-    <section className="py-20 md:py-32 bg-[#F5F8FC] overflow-hidden" id="expertises">
+    <section className="py-20 md:py-32 bg-[#F8F6F2] overflow-hidden" id="expertises">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
           {/* Left Side: Context & Active Step Details */}
           <div className="lg:w-5/12 w-full flex flex-col pt-10">
-            <span className="text-[#2E8FFF] font-sofia-bold uppercase tracking-wider text-sm mb-3 block">
+            <span className="text-[#C2542D] font-sofia-bold uppercase tracking-wider text-sm mb-3 block">
               Cycle de vie produit
             </span>
-            <h2 className="text-3xl md:text-5xl font-sofia-bold text-[#0F2647] mb-6 leading-tight">
-              Un produit vivant, en amélioration <span className="relative inline-block text-[#0F2647]">
+            <h2 className="text-3xl md:text-5xl font-sofia-bold text-[#2E2B28] mb-6 leading-tight">
+              Un produit vivant, en amélioration <span className="relative inline-block text-[#2E2B28]">
                 constante
-                <span className="absolute bottom-2 left-0 right-0 h-3 bg-[#2E8FFF]/20 transform -skew-x-12 -z-10" />
+                <span className="absolute bottom-2 left-0 right-0 h-3 bg-[#C2542D]/20 transform -skew-x-12 -z-10" />
               </span>.
             </h2>
-            <p className="text-lg font-inter text-[#475D80]/70 mb-10 leading-relaxed">
+            <p className="text-lg font-inter text-[#6B655D]/70 mb-10 leading-relaxed">
               Nous ne livrons pas de simples "projets". Nous concevons des plateformes technologiques pensées pour évoluer, s'adapter et grandir avec votre entreprise.
             </p>
 
             {/* Active Step Panel */}
-            <div className="relative bg-white rounded-2xl p-8 shadow-[0_10px_40px_rgba(15,38,71,0.06)] border border-gray-100 min-h-[220px] flex items-center">
+            <div className="relative bg-white rounded-2xl p-8 shadow-[0_10px_40px_rgba(35,33,31,0.06)] border border-gray-100 min-h-[220px] flex items-center">
               <div>
                 <div 
                   key={activeIdx}
                   className="flex flex-col"
                 >
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="text-4xl font-sofia-bold text-[#2E8FFF]/20">
+                    <span className="text-4xl font-sofia-bold text-[#C2542D]/20">
                       {steps[activeIdx].id}
                     </span>
-                    <h3 className="text-2xl font-sofia-bold text-[#0F2647]">
+                    <h3 className="text-2xl font-sofia-bold text-[#2E2B28]">
                       {steps[activeIdx].title}
                     </h3>
                   </div>
-                  <p className="text-[#475D80]/80 font-inter text-base md:text-lg leading-relaxed">
+                  <p className="text-[#6B655D]/80 font-inter text-base md:text-lg leading-relaxed">
                     {steps[activeIdx].description}
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export default function Features() {
                     cy="50" 
                     r="49" 
                     fill="none" 
-                    stroke="#2E8FFF" 
+                    stroke="#C2542D" 
                     strokeWidth="0.5"
                     strokeLinecap="round"
                     className="opacity-50"
@@ -136,12 +136,12 @@ export default function Features() {
               </div>
 
               {/* Center Abstract Graphic */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-tr from-[#F5F8FC] to-[#E0F2FE] flex items-center justify-center shadow-inner z-0">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-tr from-[#F8F6F2] to-[#E0F2FE] flex items-center justify-center shadow-inner z-0">
                 <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg border border-gray-100">
                   <div
                     key={activeIdx}
                   >
-                    {React.createElement(steps[activeIdx].icon, { className: "w-8 h-8 text-[#2E8FFF]" })}
+                    {React.createElement(steps[activeIdx].icon, { className: "w-8 h-8 text-[#C2542D]" })}
                   </div>
                 </div>
               </div>
@@ -162,21 +162,21 @@ export default function Features() {
                       
                       {/* Interaction hint for the Next Step */}
                       {isNext && (
-                        <div className="absolute -top-6 whitespace-nowrap text-xs font-sofia-bold text-[#2E8FFF] animate-bounce px-2 py-1 bg-white rounded-md shadow-sm border border-[#2E8FFF]/20 z-20 pointer-events-none">
+                        <div className="absolute -top-6 whitespace-nowrap text-xs font-sofia-bold text-[#C2542D] animate-bounce px-2 py-1 bg-white rounded-md shadow-sm border border-[#C2542D]/20 z-20 pointer-events-none">
                           Suivant ↓
                         </div>
                       )}
 
                       {/* Active ping ring */}
                       {isActive && (
-                        <div className="absolute inset-0 rounded-full bg-[#2E8FFF] animate-ping opacity-30" style={{ animationDuration: '2s' }}></div>
+                        <div className="absolute inset-0 rounded-full bg-[#C2542D] animate-ping opacity-30" style={{ animationDuration: '2s' }}></div>
                       )}
                       
                       {/* Node Circle */}
                       <div className={`relative w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg border-4 transition-all duration-500 ${
                         isActive 
-                          ? 'bg-[#2E8FFF] border-white scale-125 z-50 text-white' 
-                          : 'bg-white border-gray-100 text-[#0F2647] hover:border-[#2E8FFF] hover:scale-110'
+                          ? 'bg-[#C2542D] border-white scale-125 z-50 text-white' 
+                          : 'bg-white border-gray-100 text-[#2E2B28] hover:border-[#C2542D] hover:scale-110'
                       }`}>
                         <Icon className="w-5 h-5 md:w-6 md:h-6" />
                       </div>
@@ -185,7 +185,7 @@ export default function Features() {
                       <div className={`absolute hidden md:block w-32 px-2 ${step.labelPos} transition-opacity duration-300 ${
                         isActive ? 'opacity-100 font-sofia-bold' : 'opacity-40 font-inter group-hover:opacity-80'
                       }`}>
-                        <span className={`text-sm ${isActive ? 'text-[#2E8FFF]' : 'text-[#0F2647]'}`}>
+                        <span className={`text-sm ${isActive ? 'text-[#C2542D]' : 'text-[#2E2B28]'}`}>
                           {step.title}
                         </span>
                       </div>

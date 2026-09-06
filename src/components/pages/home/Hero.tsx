@@ -1,59 +1,42 @@
 import Link from "next/link";
-import ToulouseMap from "./ToulouseMap";
+
+const proofs = [
+  "Diplômé ingénieur en informatique",
+  "Un seul interlocuteur, du devis à la livraison",
+  "Réponse sous 24 heures",
+];
+
+const stack = [
+  { label: "Mobile", value: "React Native · Expo" },
+  { label: "Web", value: "Next.js · React · TypeScript" },
+  { label: "Back-end", value: "Node.js · PostgreSQL" },
+  { label: "Zone", value: "Toulouse et Occitanie" },
+];
 
 export default function Hero() {
   return (
-    <section className="w-full h-[70vh] lg:min-h-screen lg:h-auto bg-gradient-to-br from-[#F5F8FC] via-[#f0f4ff] to-[#e8f0ff] pt-32 md:pt-36 pb-20 overflow-hidden relative flex flex-col justify-center">
-      {/* Décor de fond subtil */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl opacity-70" />
-        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-[#eaf2ff] via-[#d4e6ff] to-transparent blur-3xl opacity-70" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(219,255,0,0.08),transparent_60%)]" />
-      </div>
+    <section className="w-full bg-[#F8F6F2] pt-32 md:pt-36 pb-16 md:pb-24 border-b border-[#E6E1D8]">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-7">
+            <p className="eyebrow eyebrow-left">Ingénieur en informatique · Toulouse</p>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8">
-          <div className="lg:col-span-6 xl:col-span-5 pt-10 pb-16 lg:pb-24">
-            <p className="inline-flex items-center gap-2 rounded-full border border-[#0F2647]/10 bg-white/70 px-3.5 py-1.5 text-xs font-inter font-medium text-[#0F2647]/70 backdrop-blur mb-6">
-              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[#2E8FFF] shadow-[0_0_8px_rgba(46,143,255,0.9)]" />
-              Ingénieur en informatique · Toulouse
-            </p>
-
-            <h1 className="font-sofia-bold heading text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-6 text-balance">
-              Développeur web &amp; mobile,{' '}
-              <span className="text-[#2E8FFF]">ingénieur en informatique</span>
+            <h1 className="mt-4 font-sofia-bold heading text-4xl sm:text-5xl lg:text-[56px] text-balance">
+              Développeur web &amp; mobile à Toulouse,{" "}
+              <span className="text-[#C2542D]">ingénieur en informatique</span>
             </h1>
 
-            <p className="lead text-lg sm:text-xl max-w-2xl mb-8">
-              Je suis Yann Rouquié, ingénieur en informatique basé à Toulouse. Je conçois
-              et développe vos applications web et mobiles sur mesure — de l&apos;architecture
-              au déploiement, avec un seul interlocuteur : moi.
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#6B655D] font-inter">
+              Je suis Yann Rouquié. Je conçois et développe vos applications web et
+              mobiles sur mesure — de l&apos;architecture au déploiement, avec un seul
+              interlocuteur : moi.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Link
-                href="/contact"
-                className="btn-primary inline-flex items-center gap-3"
-              >
-                Discuter de votre projet
-              </Link>
-              <Link
-                href="/#realisations"
-                className="inline-flex items-center text-[#0F2647] font-sofia-bold border border-[#0F2647]/10 rounded-md px-5 py-3 hover:border-[#0F2647]/30 hover:bg-[#0F2647]/5 transition-smooth"
-              >
-                Voir nos réalisations
-              </Link>
-            </div>
-
-            <ul className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[#0F2647]/10 pt-6 text-sm font-inter text-[#0F2647]/70">
-              {[
-                'Diplômé ingénieur en informatique',
-                'React Native · Next.js · TypeScript',
-                'Réponse sous 24 h',
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-2">
+            <ul className="mt-7 space-y-2.5">
+              {proofs.map((item) => (
+                <li key={item} className="flex items-center gap-2.5 text-[15px] font-inter text-[#2E2B28]">
                   <svg
-                    className="h-4 w-4 shrink-0 text-[#2E8FFF]"
+                    className="h-4 w-4 shrink-0 text-[#C2542D]"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -68,29 +51,57 @@ export default function Hero() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#C2542D] px-7 py-3.5 font-inter font-semibold text-white transition-colors hover:bg-[#A34322]"
+              >
+                Discuter de votre projet
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Link>
+              <a
+                href="mailto:contact@lodgic-dev.com"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#2E2B28]/20 bg-white px-7 py-3.5 font-inter font-semibold text-[#2E2B28] transition-colors hover:border-[#2E2B28]/40"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l9 6 9-6M5 6h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z" />
+                </svg>
+                contact@lodgic-dev.com
+              </a>
+            </div>
           </div>
 
-          {/* Right column - Toulouse SVG Map (lg+ only, statically rendered) */}
-          <div className="hidden lg:flex lg:col-span-6 xl:col-span-7 justify-center items-center relative h-full min-h-[500px] w-full">
-            <div className="relative w-full max-w-lg aspect-square">
-              <div className="absolute top-10 right-10 w-72 h-72 bg-[#2E8FFF] rounded-full mix-blend-multiply filter blur-[100px] opacity-20" />
-              <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#2E8FFF] rounded-full mix-blend-multiply filter blur-[100px] opacity-20" />
+          {/* Fiche technique : du concret, pas de décor */}
+          <div className="lg:col-span-5">
+            <div className="rounded-xl border border-[#E6E1D8] bg-white p-7">
+              <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#6B655D]">
+                Ce avec quoi je travaille
+              </p>
 
-              <div className="relative w-full h-full flex items-center justify-center p-4">
-                <ToulouseMap />
+              <dl className="mt-5 divide-y divide-[#E6E1D8]">
+                {stack.map((item) => (
+                  <div key={item.label} className="py-3.5 sm:flex sm:items-baseline sm:justify-between sm:gap-6">
+                    <dt className="text-sm font-inter text-[#6B655D]">{item.label}</dt>
+                    <dd className="mt-0.5 text-[15px] font-sofia-bold text-[#2E2B28] sm:mt-0 sm:text-right">
+                      {item.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
 
-                <div className="absolute top-[82%] left-[72%] bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg border border-gray-100 flex items-center gap-2 pointer-events-none">
-                  <div className="w-2 h-2 rounded-full bg-[#2E8FFF] shadow-[0_0_8px_rgba(46,143,255,0.8)]" />
-                  <span className="font-sofia-bold text-xs text-[#0F2647] whitespace-nowrap">
-                    Lodgic
-                  </span>
-                </div>
+              <div className="mt-5 border-t border-[#E6E1D8] pt-5">
+                <p className="text-sm leading-relaxed text-[#6B655D] font-inter">
+                  Chaque projet est cadré à l&apos;écrit avant la première ligne de code :
+                  périmètre, contraintes techniques et budget.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </section>
   );
 }

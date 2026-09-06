@@ -5,9 +5,6 @@ const project = {
   name: "BewasBeen",
   category: "EdTech · Apprentissage de l'anglais",
   href: "/projets/bewasbeen",
-  bg: "#0D1B2A",
-  accent: "#4F9CF9",
-  glow: "rgba(79,156,249,0.25)",
   tags: ["Next.js", "TypeScript", "PostgreSQL"],
   intro:
     "Une plateforme web pédagogique pour l'apprentissage des verbes irréguliers anglais, que j'ai conçue et développée de bout en bout pour les enseignants et leurs classes.",
@@ -47,54 +44,32 @@ export default function SuccessStories() {
   return (
     <section
       id="realisations"
-      className="relative overflow-hidden bg-[#F5F8FC] py-24 md:py-32"
+      className="bg-[#F8F6F2] py-20 md:py-28 border-t border-[#E6E1D8]"
       aria-labelledby="realisations-heading"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-32 -left-28 h-[28rem] w-[28rem] rounded-full bg-[#0F2647]/5 blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-32 -right-24 h-[32rem] w-[32rem] rounded-full bg-[#2E8FFF]/20 blur-[110px]"
-      />
-
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0F2647]/50 font-inter">
-            Étude de cas
-          </p>
+          <p className="eyebrow eyebrow-left">Étude de cas</p>
           <h2
             id="realisations-heading"
-            className="mt-2 text-4xl font-sofia-bold text-[#0F2647] md:text-5xl text-balance"
+            className="mt-2 text-4xl font-sofia-bold text-[#2E2B28] md:text-5xl text-balance"
           >
             Une réalisation, de l&apos;idée à la mise en ligne
           </h2>
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-[#475D80]/75 font-inter">
+          <p className="mt-4 text-base md:text-lg leading-relaxed text-[#6B655D]/75 font-inter">
             Plutôt qu&apos;un catalogue, un projet raconté en détail : le problème posé, les
             décisions techniques prises et ce que la plateforme fait aujourd&apos;hui.
           </p>
         </div>
 
         <article
-          className="relative overflow-hidden rounded-3xl shadow-elevated"
-          style={{ backgroundColor: project.bg }}
+          className="overflow-hidden rounded-xl border border-[#E6E1D8]"
+          style={{ backgroundColor: "#23211F" }}
         >
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at 90% -10%, ${project.glow} 0%, transparent 55%), radial-gradient(circle at -10% 110%, rgba(255,255,255,0.08) 0%, transparent 50%)`,
-            }}
-          />
-
-          <div className="relative z-10 grid items-start gap-10 p-7 sm:p-10 lg:grid-cols-2 lg:gap-14 lg:p-14">
+          <div className="grid items-start gap-10 p-7 sm:p-10 lg:grid-cols-2 lg:gap-14 lg:p-12">
             {/* Colonne texte */}
             <div className="flex flex-col">
-              <p
-                className="text-[11px] font-bold uppercase tracking-[0.22em]"
-                style={{ color: project.accent }}
-              >
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#C2542D]">
                 {project.category}
               </p>
               <h3 className="mt-2 text-4xl font-sofia-bold text-white md:text-5xl">
@@ -129,8 +104,7 @@ export default function SuccessStories() {
                   <li key={item.title} className="flex gap-3">
                     <span
                       aria-hidden
-                      className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full"
-                      style={{ backgroundColor: project.accent }}
+                      className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#C2542D]"
                     />
                     <div>
                       <p className="text-[15px] font-sofia-bold text-white">{item.title}</p>
@@ -145,7 +119,7 @@ export default function SuccessStories() {
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <Link
                   href={project.href}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#2E8FFF] px-6 py-3 text-sm font-inter font-semibold text-white transition-smooth hover:bg-[#1B6FD4]"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#C2542D] px-6 py-3 text-sm font-inter font-semibold text-white transition-smooth hover:bg-[#A34322]"
                 >
                   Voir l&apos;étude de cas
                   <svg
@@ -165,7 +139,7 @@ export default function SuccessStories() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-inter font-medium text-white/85 backdrop-blur-md"
+                      className="rounded border border-white/20 bg-white/8 px-2.5 py-1 text-[11px] font-inter font-medium text-white/80"
                     >
                       {tag}
                     </span>
@@ -179,7 +153,7 @@ export default function SuccessStories() {
               {project.screens.map((screen, index) => (
                 <figure key={screen.src} className="group">
                   <div className="overflow-hidden rounded-xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
-                    <div className="flex items-center gap-1.5 border-b border-white/8 bg-white/8 px-3 py-2 backdrop-blur-sm">
+                    <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/8 px-3 py-2">
                       <span className="h-2 w-2 rounded-full bg-white/20" />
                       <span className="h-2 w-2 rounded-full bg-white/20" />
                       <span className="h-2 w-2 rounded-full bg-white/20" />

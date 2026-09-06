@@ -60,61 +60,59 @@ export default function PolitiqueConfidentialite() {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-br from-[#F5F8FC] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 pb-16 md:pb-24 overflow-hidden relative">
+    <section className="w-full bg-[#F8F6F2] pt-24 md:pt-36 pb-16 md:pb-24 overflow-hidden relative">
       <BreadcrumbStructuredData items={breadcrumbItems} />
       {/* Décor de fond */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-[#eaf2ff] via-[#d4e6ff] to-transparent blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-r from-[#2E8FFF]/20 to-[#0F2647]/10 blur-2xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-r from-[#C2542D]/20 to-[#2E2B28]/10" />
       </div>
 
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
         <div className="mb-12 text-center">
-          <h1 className="font-bricolage-grotesque-bold text-[#0F2647] text-3xl md:text-4xl lg:text-5xl mb-4">
+          <h1 className="font-bricolage-grotesque-bold text-[#2E2B28] text-3xl md:text-4xl lg:text-5xl mb-4">
             Politique de Confidentialité
           </h1>
-          <p className="font-inter text-[#475D80] text-sm md:text-base mb-6 opacity-90">
+          <p className="font-inter text-[#6B655D] text-sm md:text-base mb-6 opacity-90">
             Dernière mise à jour : {lastUpdated}
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#2E8FFF] to-[#2E8FFF]/60 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-[#F8F6F2]/60 mx-auto rounded-full"></div>
         </div>
 
-        <div className="bg-white/90 backdrop-blur-sm p-8 sm:p-10 md:p-12 rounded-xl shadow-xl border border-[#0F2647]/10 hover:border-[#2E8FFF]/50 transition-all duration-300 space-y-10 hover:shadow-2xl">
+        <div className="bg-white/90 backdrop-blur-sm p-8 sm:p-10 md:p-12 rounded-xl shadow-xl border border-[#2E2B28]/10 hover:border-[#C2542D]/50 transition-all duration-300 space-y-10 hover:shadow-2xl">
           <section>
-            <h2 className="font-bricolage-grotesque-bold text-[#0F2647] text-2xl mb-6 pb-2 border-b border-[#2E8FFF]/30">
+            <h2 className="font-bricolage-grotesque-bold text-[#2E2B28] text-2xl mb-6 pb-2 border-b border-[#C2542D]/30">
               1. Collecte des données personnelles
             </h2>
-            <p className="font-inter text-[#475D80] leading-relaxed mb-4">
+            <p className="font-inter text-[#6B655D] leading-relaxed mb-4">
               Lodgic peut collecter les données personnelles suivantes :
             </p>
             <ul className="space-y-2 mb-4">
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Nom et prénom
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Adresse email
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Numéro de téléphone
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Informations relatives à votre entreprise
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Données de connexion et de navigation sur le site
                 </span>
@@ -125,25 +123,25 @@ export default function PolitiqueConfidentialite() {
             </p>
             <ul className="space-y-2">
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Remplissez un formulaire de contact
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Prenez rendez-vous via notre site
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Vous inscrivez à notre newsletter
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Naviguez sur notre site (via les cookies)
                 </span>
@@ -160,32 +158,32 @@ export default function PolitiqueConfidentialite() {
             </p>
             <ul className="space-y-2">
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Répondre à vos demandes de contact ou d'information
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Gérer vos rendez-vous
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Vous envoyer des communications marketing (avec votre
                   consentement)
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Améliorer notre site et nos services
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Établir des statistiques de visite
                 </span>
@@ -202,26 +200,26 @@ export default function PolitiqueConfidentialite() {
             </p>
             <ul className="space-y-2">
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Votre consentement
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   L'exécution d'un contrat auquel vous êtes partie
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Notre intérêt légitime à développer et promouvoir nos
                   activités
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Le respect de nos obligations légales
                 </span>
@@ -265,49 +263,49 @@ export default function PolitiqueConfidentialite() {
             </p>
             <ul className="space-y-2 mb-4">
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Droit d'accès à vos données
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Droit de rectification
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Droit à l'effacement (droit à l'oubli)
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Droit à la limitation du traitement
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Droit à la portabilité
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Droit d'opposition
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Droit de retirer votre consentement à tout moment
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#2E8FFF] mt-1.5 flex-shrink-0" />
+                <FaChevronRight className="w-3 h-3 text-[#C2542D] mt-1.5 flex-shrink-0" />
                 <span className="text-[#374151] leading-relaxed">
                   Droit d'introduire une réclamation auprès d'une autorité de
                   contrôle
@@ -319,7 +317,7 @@ export default function PolitiqueConfidentialite() {
               email :{" "}
               <a
                 href="mailto:contact@lodgic-dev.com"
-                className="text-[#2E8FFF] hover:text-[#2E8FFF]/80 transition-colors duration-300"
+                className="text-[#C2542D] hover:text-[#C2542D]/80 transition-colors duration-300"
               >
                 contact@lodgic-dev.com
               </a>
@@ -358,7 +356,7 @@ export default function PolitiqueConfidentialite() {
               vous pouvez nous contacter à l'adresse email :{" "}
               <a
                 href="mailto:contact@lodgic-dev.com"
-                className="text-[#2E8FFF] hover:text-[#2E8FFF]/80 transition-colors duration-300"
+                className="text-[#C2542D] hover:text-[#C2542D]/80 transition-colors duration-300"
               >
                 contact@lodgic-dev.com
               </a>

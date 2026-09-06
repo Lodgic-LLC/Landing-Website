@@ -63,7 +63,7 @@ export default function FooterLeadForm() {
       <div
         role="status"
         aria-live="polite"
-        className="mt-5 rounded-xl border border-[#2E8FFF]/40 bg-[#2E8FFF]/10 px-5 py-4 text-sm text-[#2E8FFF] font-inter"
+        className="mt-5 rounded-xl border border-[#C2542D]/40 bg-[#C2542D]/10 px-5 py-4 text-sm text-[#C2542D] font-inter"
       >
         ✓ Merci ! Votre demande a bien été reçue. Nous revenons vers vous sous 24 h.
       </div>
@@ -80,7 +80,7 @@ export default function FooterLeadForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full rounded-lg border border-white/15 bg-white/5 backdrop-blur-sm px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-[#2E8FFF] focus:ring-2 focus:ring-[#2E8FFF]/20 transition-smooth"
+          className="w-full rounded-lg border border-white/15 bg-white/5 backdrop-blur-sm px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-[#C2542D] focus:ring-2 focus:ring-[#C2542D]/20 transition-smooth"
         />
         <textarea
           name="message"
@@ -88,7 +88,7 @@ export default function FooterLeadForm() {
           rows={3}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full rounded-lg border border-white/15 bg-white/5 backdrop-blur-sm px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-[#2E8FFF] focus:ring-2 focus:ring-[#2E8FFF]/20 transition-smooth resize-none"
+          className="w-full rounded-lg border border-white/15 bg-white/5 backdrop-blur-sm px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-[#C2542D] focus:ring-2 focus:ring-[#C2542D]/20 transition-smooth resize-none"
         />
       </div>
 
@@ -99,14 +99,14 @@ export default function FooterLeadForm() {
             checked={consent}
             onChange={(e) => setConsent(e.target.checked)}
             required
-            className="mt-0.5 h-4 w-4 rounded border-white/30 bg-white/5 text-[#2E8FFF] focus:ring-[#2E8FFF]/40 focus:ring-offset-0"
+            className="mt-0.5 h-4 w-4 rounded border-white/30 bg-white/5 text-[#C2542D] focus:ring-[#C2542D]/40 focus:ring-offset-0"
           />
           <span>J'accepte de soumettre mes données à des fins commerciales</span>
         </label>
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#2E8FFF] px-6 py-3 text-white font-inter font-semibold hover:bg-[#1B6FD4] hover:shadow-elevated transition-smooth disabled:opacity-60 disabled:cursor-not-allowed"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#C2542D] px-6 py-3 text-white font-inter font-semibold hover:bg-[#A34322] hover:shadow-elevated transition-smooth disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {status === 'loading' ? (
             <>

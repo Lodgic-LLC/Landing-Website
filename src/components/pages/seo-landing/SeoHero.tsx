@@ -32,13 +32,13 @@ export default function SeoHero({
   visual = "devices",
 }: SeoHeroProps) {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-br from-[#F5F8FC] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 pb-32 md:pb-44 overflow-hidden relative flex flex-col justify-center">
+    <section className="w-full min-h-screen bg-[#F8F6F2] pt-24 md:pt-36 pb-32 md:pb-44 overflow-hidden relative flex flex-col justify-center">
       {/* Decor de fond */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl opacity-70" />
-        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-[#eaf2ff] via-[#d4e6ff] to-transparent blur-3xl opacity-70" />
+        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full opacity-70" />
+        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full opacity-70" />
         <div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(46,143,255,0.08),transparent_60%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(194,84,45,0.08),transparent_60%)]"
         />
       </div>
 
@@ -47,20 +47,20 @@ export default function SeoHero({
           {/* Left column */}
           <div className="lg:col-span-6 xl:col-span-6 pt-10">
             <span
-              className="inline-flex items-center gap-2 rounded-full border border-[#0F2647]/15 bg-white/70 backdrop-blur px-4 py-1.5 text-xs font-inter font-semibold uppercase tracking-wider text-[#0F2647]"
+              className="inline-flex items-center gap-2 rounded-full border border-[#2E2B28]/15 bg-white/70 backdrop-blur px-4 py-1.5 text-xs font-inter font-semibold uppercase tracking-wider text-[#2E2B28]"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[#2E8FFF] shadow-[0_0_10px_rgba(46,143,255,0.9)]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#C2542D] shadow-[0_0_10px_rgba(194,84,45,0.9)]" />
               {eyebrow}
             </span>
 
             <h1
-              className="font-sofia-bold heading text-4xl sm:text-5xl md:text-6xl lg:text-[60px] leading-[1.05] mt-6 mb-4 text-[#0F2647]"
+              className="font-sofia-bold heading text-4xl sm:text-5xl md:text-6xl lg:text-[60px] leading-[1.05] mt-6 mb-4 text-[#2E2B28]"
             >
               {title}
             </h1>
 
             <h2
-              className="font-sofia-bold text-[#2E8FFF] text-2xl sm:text-3xl md:text-4xl mb-6 leading-tight"
+              className="font-sofia-bold text-[#C2542D] text-2xl sm:text-3xl md:text-4xl mb-6 leading-tight"
             >
               {highlight}
             </h2>
@@ -77,9 +77,9 @@ export default function SeoHero({
               {badges.map((badge) => (
                 <li
                   key={badge}
-                  className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-3.5 py-1.5 border border-[#0F2647]/10 text-sm font-inter text-[#0F2647] shadow-sm"
+                  className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-3.5 py-1.5 border border-[#2E2B28]/10 text-sm font-inter text-[#2E2B28] shadow-sm"
                 >
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#2E8FFF]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#C2542D]" />
                   {badge}
                 </li>
               ))}
@@ -96,7 +96,7 @@ export default function SeoHero({
               </Link>
               <Link
                 href={secondaryCta.href}
-                className="inline-flex items-center text-[#0F2647] font-sofia-bold border border-[#0F2647]/10 rounded-md px-5 py-3 hover:border-[#0F2647]/30 hover:bg-[#0F2647]/5 transition-smooth"
+                className="inline-flex items-center text-[#2E2B28] font-sofia-bold border border-[#2E2B28]/10 rounded-md px-5 py-3 hover:border-[#2E2B28]/30 hover:bg-[#2E2B28]/5 transition-smooth"
               >
                 {secondaryCta.label}
               </Link>
@@ -107,8 +107,8 @@ export default function SeoHero({
           <div className="hidden lg:flex lg:col-span-6 justify-center items-center relative h-full min-h-[520px] w-full">
             <div className="relative w-full max-w-xl aspect-square">
               {/* Glow halos */}
-              <div className="absolute top-10 right-10 w-72 h-72 bg-[#2E8FFF] rounded-full mix-blend-multiply filter blur-[100px] opacity-20" />
-              <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#2E8FFF] rounded-full mix-blend-multiply filter blur-[100px] opacity-20" />
+              <div className="absolute top-10 right-10 w-72 h-72 bg-[#C2542D] rounded-full filter opacity-20" />
+              <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#C2542D] rounded-full filter opacity-20" />
 
               <HeroVisual variant={visual} />
             </div>
@@ -130,7 +130,7 @@ function HeroVisual({ variant }: { variant: HeroVisual }) {
 /* ----- VISUALS ----- */
 
 const phoneFrame =
-  "rounded-[36px] border-[3px] border-[#0F2647] bg-white shadow-[0_30px_80px_-20px_rgba(15,38,71,0.35)] overflow-hidden";
+  "rounded-[36px] border-[3px] border-[#2E2B28] bg-white shadow-[0_30px_80px_-20px_rgba(35,33,31,0.35)] overflow-hidden";
 
 function DevicesVisual() {
   return (
@@ -140,34 +140,34 @@ function DevicesVisual() {
         className="absolute z-30 w-[210px] h-[420px]"
       >
         <div className={`${phoneFrame} h-full p-3`}>
-          <div className="h-full rounded-[24px] bg-gradient-to-b from-[#eaf0ff] via-white to-white p-3 flex flex-col">
-            <div className="mx-auto h-1.5 w-12 rounded-full bg-[#0F2647]/40" />
+          <div className="h-full rounded-[24px] bg-[#F8F6F2] p-3 flex flex-col">
+            <div className="mx-auto h-1.5 w-12 rounded-full bg-[#2E2B28]/40" />
             <div className="mt-4 flex items-center justify-between">
               <div>
-                <div className="h-2 w-16 rounded bg-[#0F2647]/80" />
-                <div className="mt-1.5 h-1.5 w-12 rounded bg-[#0F2647]/30" />
+                <div className="h-2 w-16 rounded bg-[#2E2B28]/80" />
+                <div className="mt-1.5 h-1.5 w-12 rounded bg-[#2E2B28]/30" />
               </div>
-              <div className="h-7 w-7 rounded-full bg-[#0F2647]" />
+              <div className="h-7 w-7 rounded-full bg-[#2E2B28]" />
             </div>
-            <div className="mt-4 rounded-2xl bg-[#0F2647] p-3 text-white">
+            <div className="mt-4 rounded-2xl bg-[#2E2B28] p-3 text-white">
               <div className="h-1.5 w-10 rounded bg-white/40" />
               <div className="mt-2 h-3 w-20 rounded bg-white" />
               <div className="mt-1 h-1.5 w-14 rounded bg-white/30" />
             </div>
             <div className="mt-3 grid grid-cols-2 gap-2">
-              <div className="h-14 rounded-xl bg-[#2E8FFF]/15" />
-              <div className="h-14 rounded-xl bg-[#2E8FFF]/60" />
-              <div className="h-14 rounded-xl bg-[#0F2647]/10" />
-              <div className="h-14 rounded-xl bg-[#0F2647]/10" />
+              <div className="h-14 rounded-xl bg-[#C2542D]/15" />
+              <div className="h-14 rounded-xl bg-[#C2542D]/60" />
+              <div className="h-14 rounded-xl bg-[#2E2B28]/10" />
+              <div className="h-14 rounded-xl bg-[#2E2B28]/10" />
             </div>
             <div className="mt-3 space-y-1.5">
-              <div className="h-2 w-full rounded bg-[#0F2647]/15" />
-              <div className="h-2 w-3/4 rounded bg-[#0F2647]/15" />
+              <div className="h-2 w-full rounded bg-[#2E2B28]/15" />
+              <div className="h-2 w-3/4 rounded bg-[#2E2B28]/15" />
             </div>
             <div className="mt-auto flex justify-center gap-2 pb-2">
-              <div className="h-1.5 w-6 rounded-full bg-[#0F2647]" />
-              <div className="h-1.5 w-1.5 rounded-full bg-[#0F2647]/30" />
-              <div className="h-1.5 w-1.5 rounded-full bg-[#0F2647]/30" />
+              <div className="h-1.5 w-6 rounded-full bg-[#2E2B28]" />
+              <div className="h-1.5 w-1.5 rounded-full bg-[#2E2B28]/30" />
+              <div className="h-1.5 w-1.5 rounded-full bg-[#2E2B28]/30" />
             </div>
           </div>
         </div>
@@ -175,38 +175,38 @@ function DevicesVisual() {
 
       {/* Floating cards */}
       <div
-        className="absolute z-40 left-[-2%] top-[8%] rounded-2xl bg-white shadow-xl border border-[#0F2647]/10 px-4 py-3 flex items-center gap-3"
+        className="absolute z-40 left-[-2%] top-[8%] rounded-2xl bg-white shadow-xl border border-[#2E2B28]/10 px-4 py-3 flex items-center gap-3"
       >
-        <span className="h-9 w-9 rounded-xl bg-[#2E8FFF] flex items-center justify-center text-white font-sofia-bold">
+        <span className="h-9 w-9 rounded-xl bg-[#C2542D] flex items-center justify-center text-white font-sofia-bold">
           +1
         </span>
         <div>
-          <div className="text-xs font-inter text-[#0F2647]/60">
+          <div className="text-xs font-inter text-[#2E2B28]/60">
             Notifications
           </div>
-          <div className="text-sm font-sofia-bold text-[#0F2647]">
+          <div className="text-sm font-sofia-bold text-[#2E2B28]">
             Nouvel utilisateur
           </div>
         </div>
       </div>
 
       <div
-        className="absolute z-40 right-[-4%] top-[18%] rounded-2xl bg-[#0F2647] text-white shadow-xl px-4 py-3"
+        className="absolute z-40 right-[-4%] top-[18%] rounded-2xl bg-[#2E2B28] text-white shadow-xl px-4 py-3"
       >
         <div className="text-[10px] uppercase tracking-wider font-inter text-white/60">
           Performance
         </div>
         <div className="mt-1 text-2xl font-sofia-bold">
-          98<span className="text-[#2E8FFF]">/100</span>
+          98<span className="text-[#C2542D]">/100</span>
         </div>
       </div>
 
       <div
-        className="absolute z-40 right-[-2%] bottom-[10%] rounded-2xl bg-white shadow-xl border border-[#0F2647]/10 px-4 py-3 max-w-[180px]"
+        className="absolute z-40 right-[-2%] bottom-[10%] rounded-2xl bg-white shadow-xl border border-[#2E2B28]/10 px-4 py-3 max-w-[180px]"
       >
         <div className="flex items-center gap-2 mb-2">
           <div className="h-2 w-2 rounded-full bg-emerald-500" />
-          <span className="text-[10px] uppercase tracking-wider font-inter text-[#0F2647]/60">
+          <span className="text-[10px] uppercase tracking-wider font-inter text-[#2E2B28]/60">
             Live
           </span>
         </div>
@@ -214,7 +214,7 @@ function DevicesVisual() {
           {[40, 65, 50, 80, 55, 95, 70].map((h, i) => (
             <span
               key={i}
-              className="flex-1 rounded-sm bg-[#2E8FFF]"
+              className="flex-1 rounded-sm bg-[#C2542D]"
               style={{ height: `${h}%`, opacity: 0.4 + i * 0.08 }}
             />
           ))}
@@ -223,22 +223,22 @@ function DevicesVisual() {
 
       {/* Tablet behind */}
       <div
-        className="absolute z-10 right-[6%] bottom-[2%] w-[260px] h-[180px] rounded-2xl border-[3px] border-[#0F2647] bg-white shadow-xl rotate-[8deg] overflow-hidden p-3"
+        className="absolute z-10 right-[6%] bottom-[2%] w-[260px] h-[180px] rounded-2xl border-[3px] border-[#2E2B28] bg-white shadow-xl rotate-[8deg] overflow-hidden p-3"
       >
-        <div className="h-full rounded-xl bg-[#F5F8FC] p-2.5">
+        <div className="h-full rounded-xl bg-[#F8F6F2] p-2.5">
           <div className="flex items-center gap-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#0F2647]/30" />
-            <span className="h-1.5 w-1.5 rounded-full bg-[#0F2647]/30" />
-            <span className="h-1.5 w-1.5 rounded-full bg-[#0F2647]/30" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#2E2B28]/30" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#2E2B28]/30" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#2E2B28]/30" />
           </div>
-          <div className="mt-2.5 h-2 w-20 rounded bg-[#0F2647]" />
+          <div className="mt-2.5 h-2 w-20 rounded bg-[#2E2B28]" />
           <div className="mt-1.5 grid grid-cols-3 gap-1.5">
-            <div className="h-10 rounded bg-white border border-[#0F2647]/10" />
-            <div className="h-10 rounded bg-[#2E8FFF]/15" />
-            <div className="h-10 rounded bg-white border border-[#0F2647]/10" />
+            <div className="h-10 rounded bg-white border border-[#2E2B28]/10" />
+            <div className="h-10 rounded bg-[#C2542D]/15" />
+            <div className="h-10 rounded bg-white border border-[#2E2B28]/10" />
           </div>
-          <div className="mt-1.5 h-1.5 w-full rounded bg-[#0F2647]/10" />
-          <div className="mt-1 h-1.5 w-2/3 rounded bg-[#0F2647]/10" />
+          <div className="mt-1.5 h-1.5 w-full rounded bg-[#2E2B28]/10" />
+          <div className="mt-1 h-1.5 w-2/3 rounded bg-[#2E2B28]/10" />
         </div>
       </div>
     </div>
@@ -253,30 +253,30 @@ function PlatformsVisual() {
         className="absolute z-20 left-[8%] top-[6%] w-[200px] h-[400px]"
       >
         <div className={`${phoneFrame} h-full p-3 relative`}>
-          <div className="absolute top-3 left-1/2 -translate-x-1/2 h-5 w-20 rounded-full bg-[#0F2647]" />
-          <div className="h-full rounded-[24px] bg-gradient-to-b from-[#eaf0ff] via-white to-white p-3 pt-7">
-            <div className="text-[9px] font-inter font-bold text-[#0F2647]/40 uppercase tracking-widest">
+          <div className="absolute top-3 left-1/2 -translate-x-1/2 h-5 w-20 rounded-full bg-[#2E2B28]" />
+          <div className="h-full rounded-[24px] bg-[#F8F6F2] p-3 pt-7">
+            <div className="text-[9px] font-inter font-bold text-[#2E2B28]/40 uppercase tracking-widest">
               iOS · Swift
             </div>
-            <div className="mt-2 h-3 w-24 rounded bg-[#0F2647]" />
-            <div className="mt-1.5 h-1.5 w-16 rounded bg-[#0F2647]/30" />
-            <div className="mt-3 rounded-2xl bg-[#0F2647] p-3">
+            <div className="mt-2 h-3 w-24 rounded bg-[#2E2B28]" />
+            <div className="mt-1.5 h-1.5 w-16 rounded bg-[#2E2B28]/30" />
+            <div className="mt-3 rounded-2xl bg-[#2E2B28] p-3">
               <div className="h-1.5 w-10 rounded bg-white/30" />
               <div className="mt-1.5 h-2.5 w-16 rounded bg-white" />
               <div className="mt-3 flex justify-between">
-                <div className="h-6 w-6 rounded-md bg-[#2E8FFF]" />
+                <div className="h-6 w-6 rounded-md bg-[#C2542D]" />
                 <div className="h-6 w-6 rounded-md bg-white/20" />
                 <div className="h-6 w-6 rounded-md bg-white/20" />
               </div>
             </div>
             <div className="mt-3 space-y-2">
-              <div className="rounded-lg border border-[#0F2647]/10 p-2">
-                <div className="h-1.5 w-12 rounded bg-[#0F2647]/60" />
-                <div className="mt-1 h-1 w-20 rounded bg-[#0F2647]/20" />
+              <div className="rounded-lg border border-[#2E2B28]/10 p-2">
+                <div className="h-1.5 w-12 rounded bg-[#2E2B28]/60" />
+                <div className="mt-1 h-1 w-20 rounded bg-[#2E2B28]/20" />
               </div>
-              <div className="rounded-lg border border-[#0F2647]/10 p-2">
-                <div className="h-1.5 w-14 rounded bg-[#0F2647]/60" />
-                <div className="mt-1 h-1 w-16 rounded bg-[#0F2647]/20" />
+              <div className="rounded-lg border border-[#2E2B28]/10 p-2">
+                <div className="h-1.5 w-14 rounded bg-[#2E2B28]/60" />
+                <div className="mt-1 h-1 w-16 rounded bg-[#2E2B28]/20" />
               </div>
             </div>
           </div>
@@ -288,13 +288,13 @@ function PlatformsVisual() {
         className="absolute z-30 right-[6%] top-[10%] w-[200px] h-[400px]"
       >
         <div className={`${phoneFrame} h-full p-3 relative`}>
-          <div className="absolute top-3.5 left-1/2 -translate-x-1/2 h-2 w-2 rounded-full bg-[#0F2647]" />
-          <div className="h-full rounded-[24px] bg-gradient-to-b from-[#dffde8] via-white to-white p-3 pt-6">
+          <div className="absolute top-3.5 left-1/2 -translate-x-1/2 h-2 w-2 rounded-full bg-[#2E2B28]" />
+          <div className="h-full rounded-[24px] bg-[#F8F6F2] p-3 pt-6">
             <div className="text-[9px] font-inter font-bold text-emerald-700/70 uppercase tracking-widest">
               Android · Kotlin
             </div>
-            <div className="mt-2 h-3 w-28 rounded bg-[#0F2647]" />
-            <div className="mt-1.5 h-1.5 w-20 rounded bg-[#0F2647]/30" />
+            <div className="mt-2 h-3 w-28 rounded bg-[#2E2B28]" />
+            <div className="mt-1.5 h-1.5 w-20 rounded bg-[#2E2B28]/30" />
             <div className="mt-3 grid grid-cols-3 gap-1.5">
               {Array.from({ length: 6 }).map((_, i) => (
                 <div
@@ -303,7 +303,7 @@ function PlatformsVisual() {
                 />
               ))}
             </div>
-            <div className="mt-3 rounded-xl bg-[#0F2647] p-3 text-white">
+            <div className="mt-3 rounded-xl bg-[#2E2B28] p-3 text-white">
               <div className="text-[8px] uppercase tracking-wider opacity-60">
                 Material You
               </div>
@@ -320,10 +320,10 @@ function PlatformsVisual() {
 
       {/* Floating badge */}
       <div
-        className="absolute z-40 left-1/2 -translate-x-1/2 top-[2%] rounded-full bg-white shadow-xl border border-[#0F2647]/10 px-4 py-2 flex items-center gap-2"
+        className="absolute z-40 left-1/2 -translate-x-1/2 top-[2%] rounded-full bg-white shadow-xl border border-[#2E2B28]/10 px-4 py-2 flex items-center gap-2"
       >
-        <span className="h-2 w-2 rounded-full bg-[#2E8FFF] shadow-[0_0_10px_rgba(46,143,255,0.9)]" />
-        <span className="text-xs font-sofia-bold text-[#0F2647]">
+        <span className="h-2 w-2 rounded-full bg-[#C2542D] shadow-[0_0_10px_rgba(194,84,45,0.9)]" />
+        <span className="text-xs font-sofia-bold text-[#2E2B28]">
           iOS &amp; Android natifs
         </span>
       </div>
@@ -336,7 +336,7 @@ function PlatformsVisual() {
       >
         <path
           d="M 110 220 Q 200 280 290 220"
-          stroke="#2E8FFF"
+          stroke="#C2542D"
           strokeWidth="2"
           strokeDasharray="4 4"
         />
@@ -353,14 +353,14 @@ function ReactNativeVisual() {
         className="absolute z-30"
       >
         <svg width="200" height="200" viewBox="-12 -12 24 24" fill="none">
-          <circle cx="0" cy="0" r="2.05" fill="#2E8FFF" />
-          <g stroke="#2E8FFF" strokeWidth="0.7" fill="none">
+          <circle cx="0" cy="0" r="2.05" fill="#C2542D" />
+          <g stroke="#C2542D" strokeWidth="0.7" fill="none">
             <ellipse rx="11" ry="4.2" />
             <ellipse rx="11" ry="4.2" transform="rotate(60)" />
             <ellipse rx="11" ry="4.2" transform="rotate(120)" />
           </g>
           <g>
-            <circle cx="11" cy="0" r="0.8" fill="#2E8FFF" />
+            <circle cx="11" cy="0" r="0.8" fill="#C2542D" />
           </g>
         </svg>
       </div>
@@ -371,21 +371,21 @@ function ReactNativeVisual() {
       >
         <div className={`${phoneFrame} h-full p-2.5`}>
           <div className="h-full rounded-[22px] bg-gradient-to-b from-[#eaf0ff] to-white p-2.5">
-            <div className="text-[9px] font-mono text-[#0F2647]/50">
+            <div className="text-[9px] font-mono text-[#2E2B28]/50">
               {"<App />"}
             </div>
-            <div className="mt-2 rounded-xl bg-[#0F2647] p-2.5">
+            <div className="mt-2 rounded-xl bg-[#2E2B28] p-2.5">
               <div className="h-1.5 w-10 rounded bg-white/30" />
               <div className="mt-1 h-2 w-14 rounded bg-white" />
             </div>
             <div className="mt-2 space-y-1.5">
-              <div className="h-1.5 w-full rounded bg-[#0F2647]/15" />
-              <div className="h-1.5 w-2/3 rounded bg-[#0F2647]/15" />
-              <div className="h-1.5 w-3/4 rounded bg-[#0F2647]/15" />
+              <div className="h-1.5 w-full rounded bg-[#2E2B28]/15" />
+              <div className="h-1.5 w-2/3 rounded bg-[#2E2B28]/15" />
+              <div className="h-1.5 w-3/4 rounded bg-[#2E2B28]/15" />
             </div>
             <div className="mt-2 grid grid-cols-2 gap-1.5">
-              <div className="h-10 rounded bg-[#2E8FFF]/15" />
-              <div className="h-10 rounded bg-[#2E8FFF]/50" />
+              <div className="h-10 rounded bg-[#C2542D]/15" />
+              <div className="h-10 rounded bg-[#C2542D]/50" />
             </div>
           </div>
         </div>
@@ -405,13 +405,13 @@ function ReactNativeVisual() {
               <div className="mt-1 h-2 w-14 rounded bg-white" />
             </div>
             <div className="mt-2 space-y-1.5">
-              <div className="h-1.5 w-full rounded bg-[#0F2647]/15" />
-              <div className="h-1.5 w-3/4 rounded bg-[#0F2647]/15" />
-              <div className="h-1.5 w-2/3 rounded bg-[#0F2647]/15" />
+              <div className="h-1.5 w-full rounded bg-[#2E2B28]/15" />
+              <div className="h-1.5 w-3/4 rounded bg-[#2E2B28]/15" />
+              <div className="h-1.5 w-2/3 rounded bg-[#2E2B28]/15" />
             </div>
             <div className="mt-2 grid grid-cols-2 gap-1.5">
               <div className="h-10 rounded bg-emerald-500/15" />
-              <div className="h-10 rounded bg-[#2E8FFF]/50" />
+              <div className="h-10 rounded bg-[#C2542D]/50" />
             </div>
           </div>
         </div>
@@ -419,10 +419,10 @@ function ReactNativeVisual() {
 
       {/* Code snippet badge */}
       <div
-        className="absolute z-40 top-[2%] left-1/2 -translate-x-1/2 rounded-xl bg-[#0F2647] text-white px-4 py-2 shadow-xl font-mono text-xs"
+        className="absolute z-40 top-[2%] left-1/2 -translate-x-1/2 rounded-xl bg-[#2E2B28] text-white px-4 py-2 shadow-xl font-mono text-xs"
       >
-        <span className="text-[#2E8FFF]">const</span> app ={" "}
-        <span className="text-[#2E8FFF]">React Native</span>
+        <span className="text-[#C2542D]">const</span> app ={" "}
+        <span className="text-[#C2542D]">React Native</span>
       </div>
     </div>
   );
@@ -435,7 +435,7 @@ function TailoredVisual() {
       <div
         className="absolute z-10 w-[420px] h-[420px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
       >
-        <div className="w-full h-full rounded-2xl bg-[#0F2647] p-6 shadow-2xl relative overflow-hidden">
+        <div className="w-full h-full rounded-2xl bg-[#2E2B28] p-6 shadow-2xl relative overflow-hidden">
           {/* Grid */}
           <div
             className="absolute inset-0 opacity-30"
@@ -446,10 +446,10 @@ function TailoredVisual() {
             }}
           />
           <div className="relative">
-            <div className="text-[10px] font-mono text-[#2E8FFF]/70 tracking-wider">
+            <div className="text-[10px] font-mono text-[#C2542D]/70 tracking-wider">
               PROJET-MOBILE / V1.0
             </div>
-            <div className="mt-3 h-[2px] w-20 bg-[#2E8FFF]" />
+            <div className="mt-3 h-[2px] w-20 bg-[#C2542D]" />
             <div className="mt-6 grid grid-cols-3 gap-3">
               {[0, 1, 2, 3, 4, 5].map((i) => (
                 <div
@@ -463,7 +463,7 @@ function TailoredVisual() {
               ))}
             </div>
             <div className="mt-4 flex gap-3">
-              <div className="rounded border border-[#2E8FFF]/40 bg-[#2E8FFF]/10 px-2 py-1 text-[10px] font-mono text-[#2E8FFF]">
+              <div className="rounded border border-[#C2542D]/40 bg-[#C2542D]/10 px-2 py-1 text-[10px] font-mono text-[#C2542D]">
                 CADRAGE
               </div>
               <div className="rounded border border-white/20 bg-white/5 px-2 py-1 text-[10px] font-mono text-white/60">
@@ -483,18 +483,18 @@ function TailoredVisual() {
       >
         <div className={`${phoneFrame} h-full p-2.5`}>
           <div className="h-full rounded-[22px] bg-white p-2.5 flex flex-col">
-            <div className="mx-auto h-1 w-10 rounded-full bg-[#0F2647]/40" />
-            <div className="mt-3 rounded-xl bg-gradient-to-br from-[#2E8FFF]/40 to-[#2E8FFF]/30 h-32 p-2 flex flex-col justify-between">
-              <div className="text-[9px] font-sofia-bold text-[#0F2647]">
+            <div className="mx-auto h-1 w-10 rounded-full bg-[#2E2B28]/40" />
+            <div className="mt-3 rounded-xl bg-gradient-to-br from-[#C2542D]/40 to-[#C2542D]/30 h-32 p-2 flex flex-col justify-between">
+              <div className="text-[9px] font-sofia-bold text-[#2E2B28]">
                 SUR MESURE
               </div>
-              <div className="h-2 w-16 rounded bg-[#0F2647]" />
+              <div className="h-2 w-16 rounded bg-[#2E2B28]" />
             </div>
             <div className="mt-3 space-y-1.5">
-              <div className="h-1.5 w-full rounded bg-[#0F2647]/15" />
-              <div className="h-1.5 w-2/3 rounded bg-[#0F2647]/15" />
+              <div className="h-1.5 w-full rounded bg-[#2E2B28]/15" />
+              <div className="h-1.5 w-2/3 rounded bg-[#2E2B28]/15" />
             </div>
-            <div className="mt-auto rounded-xl bg-[#0F2647] py-2 text-center text-[10px] font-sofia-bold text-white">
+            <div className="mt-auto rounded-xl bg-[#2E2B28] py-2 text-center text-[10px] font-sofia-bold text-white">
               Lancer
             </div>
           </div>
@@ -503,12 +503,12 @@ function TailoredVisual() {
 
       {/* Floating measurement */}
       <div
-        className="absolute z-40 top-[8%] left-[4%] rounded-lg bg-white shadow-xl border border-[#0F2647]/10 px-3 py-2"
+        className="absolute z-40 top-[8%] left-[4%] rounded-lg bg-white shadow-xl border border-[#2E2B28]/10 px-3 py-2"
       >
-        <div className="text-[9px] uppercase font-inter text-[#0F2647]/50 tracking-wider">
+        <div className="text-[9px] uppercase font-inter text-[#2E2B28]/50 tracking-wider">
           Sur mesure
         </div>
-        <div className="text-sm font-sofia-bold text-[#0F2647]">
+        <div className="text-sm font-sofia-bold text-[#2E2B28]">
           100% personnalisé
         </div>
       </div>
@@ -523,45 +523,45 @@ function AgencyVisual() {
       <div
         className="absolute z-20 left-1/2 -translate-x-1/2 top-[14%] w-[440px]"
       >
-        <div className="rounded-2xl border-[3px] border-[#0F2647] bg-white shadow-2xl overflow-hidden">
-          <div className="flex items-center gap-1.5 px-3 py-2.5 bg-[#F5F8FC] border-b border-[#0F2647]/10">
+        <div className="rounded-2xl border-[3px] border-[#2E2B28] bg-white shadow-2xl overflow-hidden">
+          <div className="flex items-center gap-1.5 px-3 py-2.5 bg-[#F8F6F2] border-b border-[#2E2B28]/10">
             <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
             <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
-            <span className="ml-3 h-2.5 w-40 rounded bg-white ring-1 ring-[#0F2647]/10" />
+            <span className="ml-3 h-2.5 w-40 rounded bg-white ring-1 ring-[#2E2B28]/10" />
           </div>
           <div className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <div className="h-3 w-32 rounded bg-[#0F2647]" />
-                <div className="mt-1.5 h-2 w-24 rounded bg-[#0F2647]/30" />
+                <div className="h-3 w-32 rounded bg-[#2E2B28]" />
+                <div className="mt-1.5 h-2 w-24 rounded bg-[#2E2B28]/30" />
               </div>
-              <div className="h-8 w-24 rounded-md bg-[#0F2647]" />
+              <div className="h-8 w-24 rounded-md bg-[#2E2B28]" />
             </div>
             <div className="mt-4 grid grid-cols-3 gap-2">
               {[0, 1, 2].map((i) => (
                 <div
                   key={i}
-                  className="rounded-lg border border-[#0F2647]/10 p-2.5"
+                  className="rounded-lg border border-[#2E2B28]/10 p-2.5"
                 >
-                  <div className="h-2 w-12 rounded bg-[#2E8FFF]" />
-                  <div className="mt-1.5 h-3 w-10 rounded bg-[#0F2647]" />
-                  <div className="mt-1 h-1.5 w-14 rounded bg-[#0F2647]/20" />
+                  <div className="h-2 w-12 rounded bg-[#C2542D]" />
+                  <div className="mt-1.5 h-3 w-10 rounded bg-[#2E2B28]" />
+                  <div className="mt-1 h-1.5 w-14 rounded bg-[#2E2B28]/20" />
                 </div>
               ))}
             </div>
-            <div className="mt-3 rounded-lg border border-[#0F2647]/10 p-3 space-y-2">
+            <div className="mt-3 rounded-lg border border-[#2E2B28]/10 p-3 space-y-2">
               <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-[#2E8FFF]" />
-                <div className="h-2 w-32 rounded bg-[#0F2647]/30" />
+                <span className="h-2 w-2 rounded-full bg-[#C2542D]" />
+                <div className="h-2 w-32 rounded bg-[#2E2B28]/30" />
               </div>
               <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-[#2E8FFF]" />
-                <div className="h-2 w-24 rounded bg-[#0F2647]/30" />
+                <span className="h-2 w-2 rounded-full bg-[#C2542D]" />
+                <div className="h-2 w-24 rounded bg-[#2E2B28]/30" />
               </div>
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                <div className="h-2 w-28 rounded bg-[#0F2647]/30" />
+                <div className="h-2 w-28 rounded bg-[#2E2B28]/30" />
               </div>
             </div>
           </div>
@@ -574,18 +574,18 @@ function AgencyVisual() {
       >
         <div className={`${phoneFrame} h-full p-2.5`}>
           <div className="h-full rounded-[22px] bg-gradient-to-b from-[#eaf0ff] to-white p-2.5">
-            <div className="mx-auto h-1 w-10 rounded-full bg-[#0F2647]/40" />
-            <div className="mt-3 h-2 w-16 rounded bg-[#0F2647]" />
-            <div className="mt-1 h-1.5 w-12 rounded bg-[#0F2647]/30" />
-            <div className="mt-3 rounded-xl bg-[#0F2647] p-2.5">
+            <div className="mx-auto h-1 w-10 rounded-full bg-[#2E2B28]/40" />
+            <div className="mt-3 h-2 w-16 rounded bg-[#2E2B28]" />
+            <div className="mt-1 h-1.5 w-12 rounded bg-[#2E2B28]/30" />
+            <div className="mt-3 rounded-xl bg-[#2E2B28] p-2.5">
               <div className="h-1.5 w-8 rounded bg-white/30" />
               <div className="mt-1.5 h-2.5 w-14 rounded bg-white" />
             </div>
             <div className="mt-2 grid grid-cols-2 gap-1.5">
-              <div className="h-10 rounded bg-[#2E8FFF]/15" />
-              <div className="h-10 rounded bg-[#2E8FFF]/50" />
-              <div className="h-10 rounded bg-[#0F2647]/10" />
-              <div className="h-10 rounded bg-[#0F2647]/10" />
+              <div className="h-10 rounded bg-[#C2542D]/15" />
+              <div className="h-10 rounded bg-[#C2542D]/50" />
+              <div className="h-10 rounded bg-[#2E2B28]/10" />
+              <div className="h-10 rounded bg-[#2E2B28]/10" />
             </div>
           </div>
         </div>
@@ -593,18 +593,18 @@ function AgencyVisual() {
 
       {/* Stat badges */}
       <div
-        className="absolute z-40 left-[2%] top-[6%] rounded-2xl bg-white shadow-xl border border-[#0F2647]/10 px-3 py-2"
+        className="absolute z-40 left-[2%] top-[6%] rounded-2xl bg-white shadow-xl border border-[#2E2B28]/10 px-3 py-2"
       >
-        <div className="text-[10px] uppercase font-inter text-[#0F2647]/50 tracking-wider">
+        <div className="text-[10px] uppercase font-inter text-[#2E2B28]/50 tracking-wider">
           Web
         </div>
-        <div className="text-sm font-sofia-bold text-[#0F2647]">
+        <div className="text-sm font-sofia-bold text-[#2E2B28]">
           Next.js + Prisma
         </div>
       </div>
 
       <div
-        className="absolute z-40 left-[4%] bottom-[10%] rounded-2xl bg-[#0F2647] text-white shadow-xl px-3 py-2"
+        className="absolute z-40 left-[4%] bottom-[10%] rounded-2xl bg-[#2E2B28] text-white shadow-xl px-3 py-2"
       >
         <div className="text-[10px] uppercase font-inter text-white/60 tracking-wider">
           Mobile
