@@ -1,24 +1,26 @@
 'use client'
 
 import Link from 'next/link'
-import { FiCpu, FiCode, FiArrowRight } from 'react-icons/fi'
+import { FiSmartphone, FiGlobe, FiLayers, FiArrowRight } from 'react-icons/fi'
 
 const services = [
   {
-    icon: FiCpu,
-    title: 'Intégration IA',
+    icon: FiSmartphone,
+    title: 'Applications mobiles',
     description:
-      "Nous aidons à intégrer l'IA dans votre entreprise en mettant en place des automatisations et des solutions personnalisées selon le besoin de vos clients et collaborateurs.",
-    href: '/integration-ia',
-    cta: 'En savoir plus',
+      "Des applications iOS et Android pensées pour vos utilisateurs : conception, développement React Native et mise en ligne sur les stores. Une seule base de code, deux plateformes.",
   },
   {
-    icon: FiCode,
-    title: 'Développement web et mobile',
+    icon: FiGlobe,
+    title: 'Sites & plateformes web',
     description:
-      "Nous développons sur-mesure vos applications ou site web. Cela peut être un CRM, un site vitrine, une application simple ou complexe, on relève tous les défis.",
-    href: null,
-    cta: null,
+      "Sites vitrines, plateformes métier ou espaces clients développés sur mesure en Next.js. Rapides, référencés et pensés pour convertir vos visiteurs.",
+  },
+  {
+    icon: FiLayers,
+    title: 'Logiciels métier',
+    description:
+      "CRM, back-offices et outils internes taillés pour vos processus. Nous partons de votre façon de travailler, pas d'un modèle générique.",
   },
 ]
 
@@ -48,7 +50,7 @@ export default function Services() {
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 md:gap-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
           {services.map((service) => {
             const Icon = service.icon
             return (
@@ -60,25 +62,14 @@ export default function Services() {
                   <Icon className="h-7 w-7" />
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-sofia-bold text-[#001F45] mb-4">
+                <h3 className="text-2xl md:text-[1.75rem] font-sofia-bold text-[#001F45] mb-4 text-balance">
                   {service.title}
                 </h3>
 
-                <p className="text-[#162869]/75 font-inter text-base md:text-lg leading-relaxed">
+                <p className="text-[#162869]/75 font-inter text-base leading-relaxed">
                   {service.description}
                 </p>
 
-                {service.href && service.cta && (
-                  <div className="mt-8 pt-2">
-                    <Link
-                      href={service.href}
-                      className="inline-flex items-center gap-2 rounded-full bg-[#001F45] px-6 py-3 text-sm font-inter font-semibold text-white transition-colors hover:bg-[#0b2b63]"
-                    >
-                      {service.cta}
-                      <FiArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </div>
-                )}
               </article>
             )
           })}

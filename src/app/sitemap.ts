@@ -23,25 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const projectRoutes = [
     {
-      url: `${SITE_URL}/projets/hiking`,
-      lastModified: BUILD_DATE,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/projets/driveapp`,
-      lastModified: BUILD_DATE,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/projets/comptabilite`,
-      lastModified: BUILD_DATE,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/projets/musique`,
+      url: `${SITE_URL}/projets/bewasbeen`,
       lastModified: BUILD_DATE,
       changeFrequency: "monthly" as const,
       priority: 0.8,
@@ -111,18 +93,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}/agence-web-mobile-toulouse`,
-      lastModified: BUILD_DATE,
-      changeFrequency: "monthly" as const,
-      priority: 0.85,
-    },
-    {
-      url: `${SITE_URL}/intelligence-artificielle`,
-      lastModified: BUILD_DATE,
-      changeFrequency: "monthly" as const,
-      priority: 0.85,
-    },
-    {
-      url: `${SITE_URL}/integration-ia`,
       lastModified: BUILD_DATE,
       changeFrequency: "monthly" as const,
       priority: 0.85,

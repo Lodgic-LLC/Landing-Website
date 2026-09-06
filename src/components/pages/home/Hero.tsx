@@ -14,34 +14,60 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8">
           <div className="lg:col-span-6 xl:col-span-5 pt-10 pb-16 lg:pb-24">
-            <h1 className="font-sofia-bold heading text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-6">
-              Agence de développement
+            <p className="inline-flex items-center gap-2 rounded-full border border-[#001F45]/10 bg-white/70 px-3.5 py-1.5 text-xs font-inter font-medium text-[#001F45]/70 backdrop-blur mb-6">
+              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[#DBFF00] shadow-[0_0_8px_rgba(219,255,0,0.9)]" />
+              Studio de développement basé à Toulouse
+            </p>
+
+            <h1 className="font-sofia-bold heading text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-6 text-balance">
+              Agence de développement{' '}
+              <span className="text-[#0EA5E9]">à Toulouse</span>
             </h1>
 
-            <h2 className="font-sofia-bold text-[#0EA5E9] text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
-              à Toulouse
-            </h2>
-
             <p className="lead text-lg sm:text-xl max-w-2xl mb-8">
-              Basée à Toulouse, Lodgic conçoit et développe des applications web
-              et mobiles sur mesure pour startups et entreprises : de l'idée au
-              deploiement de l'application.
+              Lodgic conçoit et développe des applications web et mobiles sur
+              mesure pour startups et entreprises : de l&apos;idée au déploiement,
+              avec un interlocuteur unique du premier cadrage à la mise en ligne.
             </p>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="btn-primary inline-flex items-center gap-3"
               >
-                Nous contacter
+                Discuter de votre projet
               </Link>
               <Link
-                href="/#about"
+                href="/#realisations"
                 className="inline-flex items-center text-[#001F45] font-sofia-bold border border-[#001F45]/10 rounded-md px-5 py-3 hover:border-[#001F45]/30 hover:bg-[#001F45]/5 transition-smooth"
               >
-                Nos expertises
+                Voir nos réalisations
               </Link>
             </div>
+
+            <ul className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[#001F45]/10 pt-6 text-sm font-inter text-[#001F45]/70">
+              {[
+                'React Native · Next.js',
+                'Développement sur mesure',
+                'Réponse sous 24 h',
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <svg
+                    className="h-4 w-4 shrink-0 text-[#0EA5E9]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Right column - Toulouse SVG Map (lg+ only, statically rendered) */}
