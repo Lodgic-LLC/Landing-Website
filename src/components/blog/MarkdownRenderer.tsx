@@ -14,7 +14,7 @@ const proseClasses = [
   'prose prose-lg max-w-none',
   'font-inter',
   'prose-p:text-[#6B655D]/90 prose-p:leading-8 prose-p:my-5',
-  'prose-headings:font-sofia-bold prose-headings:tracking-tight prose-headings:text-[#000f45]',
+  'prose-headings:font-sofia-bold prose-headings:tracking-tight prose-headings:text-[#2E2B28]',
   'prose-h2:scroll-mt-28',
 ].join(' ')
 

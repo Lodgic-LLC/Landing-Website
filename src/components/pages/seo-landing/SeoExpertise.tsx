@@ -41,14 +41,6 @@ export default function SeoExpertise({
   return (
     <section className="relative py-24 md:py-32 bg-white overflow-hidden">
       {/* Decor */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 right-[-200px] h-[480px] w-[480px] rounded-full bg-[#C2542D]/8"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-[-220px] left-[-160px] h-[480px] w-[480px] rounded-full bg-[#C2542D]/15"
-      />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
@@ -86,10 +78,10 @@ export default function SeoExpertise({
                 <div className="h-[1px] flex-1 bg-gradient-to-r from-[#2E2B28]/15 to-transparent" />
               </div>
               <h3 className="font-sofia-bold text-xl md:text-2xl text-[#2E2B28] leading-snug">{card.title}</h3>
-              <div className="mt-3 text-[#2d4567] font-inter leading-relaxed">{card.body}</div>
+              <div className="mt-3 text-[#6B655D] font-inter leading-relaxed">{card.body}</div>
               <ul className="mt-5 space-y-2">
                 {card.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2.5 text-sm font-inter text-[#1f3556]">
+                  <li key={b} className="flex items-start gap-2.5 text-sm font-inter text-[#2E2B28]">
                     <FaCheck className="mt-1 h-3 w-3 text-[#C2542D] flex-shrink-0" />
                     <span>{b}</span>
                   </li>
@@ -106,7 +98,7 @@ export default function SeoExpertise({
               <div
                 className="lg:col-span-7 rounded-2xl bg-[#F8F6F2] border border-[#2E2B28]/10 p-8 md:p-10"
               >
-                <div className="text-[#1f3556] font-inter leading-relaxed text-base md:text-lg [&>p]:mt-4 [&>p:first-child]:mt-0">
+                <div className="text-[#2E2B28] font-inter leading-relaxed text-base md:text-lg [&>p]:mt-4 [&>p:first-child]:mt-0">
                   {closing}
                 </div>
                 <Link
@@ -135,7 +127,7 @@ export default function SeoExpertise({
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <p className="font-sofia-bold text-base text-[#2E2B28]">{link.title}</p>
-                        <p className="mt-1 text-sm text-[#2d4567] font-inter leading-relaxed">{link.description}</p>
+                        <p className="mt-1 text-sm text-[#6B655D] font-inter leading-relaxed">{link.description}</p>
                       </div>
                       <FaArrowRight className="mt-1 h-3 w-3 text-[#2E2B28]/50 group-hover:text-[#2E2B28] group-hover:translate-x-1 transition-all" />
                     </div>

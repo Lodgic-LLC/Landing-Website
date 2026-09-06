@@ -60,7 +60,7 @@ export function CallToAction({
 
   return (
     <div className="my-10 rounded-xl border border-gray-200 bg-white p-5 md:p-6 shadow-sm">
-      <h3 className="m-0 text-xl font-semibold text-[#000f45]">{title}</h3>
+      <h3 className="m-0 text-xl font-semibold text-[#2E2B28]">{title}</h3>
       <p className="mt-2 mb-0 text-[15px] text-[#6B655D]">{description}</p>
 
       <div className="mt-4 flex flex-col gap-2 sm:flex-row">
@@ -71,13 +71,13 @@ export function CallToAction({
           onChange={(e) => setEmail(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
           disabled={status === 'loading'}
-          className="h-11 flex-1 rounded-lg border border-gray-300 px-3 text-[15px] text-[#0f1b42] outline-none transition-colors focus:border-[#000f45]"
+          className="h-11 flex-1 rounded-lg border border-gray-300 px-3 text-[15px] text-[#2E2B28] outline-none transition-colors focus:border-[#2E2B28]"
           aria-label="Adresse email"
         />
         <button
           onClick={handleSubmit}
           disabled={status === 'loading'}
-          className="h-11 rounded-lg bg-[#000f45] px-5 text-[15px] font-medium text-white transition hover:bg-[#6B655D] disabled:cursor-not-allowed disabled:opacity-70"
+          className="h-11 rounded-lg bg-[#2E2B28] px-5 text-[15px] font-medium text-white transition hover:bg-[#6B655D] disabled:cursor-not-allowed disabled:opacity-70"
           type="button"
         >
           {status === 'loading' ? 'Envoi...' : buttonLabel}

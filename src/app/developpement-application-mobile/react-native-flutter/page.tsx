@@ -56,7 +56,7 @@ export default function ReactNativeFlutterPage() {
             <h1 className="font-sofia-bold text-4xl md:text-5xl text-[#2E2B28]">
               React Native, Flutter et frameworks non natifs : que choisir ?
             </h1>
-            <p className="mt-5 text-lg text-[#243b5a] leading-relaxed">
+            <p className="mt-5 text-lg text-[#6B655D] leading-relaxed">
               Pour beaucoup d'entreprises, une base de code partagée est le meilleur compromis. Un développeur React
               Native Toulouse peut livrer rapidement une application iOS et Android tout en conservant de bonnes
               performances sur les usages classiques.
@@ -66,20 +66,20 @@ export default function ReactNativeFlutterPage() {
           <section className="mt-10 grid gap-5 md:grid-cols-3">
             <article className="rounded-xl bg-white border border-[#2E2B28]/10 p-5">
               <h2 className="font-sofia-bold text-xl text-[#2E2B28]">React Native</h2>
-              <p className="mt-3 text-[#2d4567]">
+              <p className="mt-3 text-[#6B655D]">
                 Excellent choix si votre équipe maîtrise déjà JavaScript/TypeScript et souhaite un time-to-market
                 rapide.
               </p>
             </article>
             <article className="rounded-xl bg-white border border-[#2E2B28]/10 p-5">
               <h2 className="font-sofia-bold text-xl text-[#2E2B28]">Flutter</h2>
-              <p className="mt-3 text-[#2d4567]">
+              <p className="mt-3 text-[#6B655D]">
                 Très bon rendu UI et cohérence visuelle, avec un écosystème solide pour des interfaces riches.
               </p>
             </article>
             <article className="rounded-xl bg-white border border-[#2E2B28]/10 p-5">
               <h2 className="font-sofia-bold text-xl text-[#2E2B28]">Natif pur</h2>
-              <p className="mt-3 text-[#2d4567]">
+              <p className="mt-3 text-[#6B655D]">
                 Pertinent pour des besoins très spécifiques en performance, hardware ou fonctionnalités avancées.
               </p>
             </article>
@@ -87,7 +87,7 @@ export default function ReactNativeFlutterPage() {
 
           <section className="mt-6 rounded-2xl border border-[#2E2B28]/10 bg-white p-6">
             <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Quelle option pour quel contexte ?</h2>
-            <div className="mt-4 grid gap-4 md:grid-cols-2 text-[#2d4567]">
+            <div className="mt-4 grid gap-4 md:grid-cols-2 text-[#6B655D]">
               <article className="rounded-xl bg-[#f8fbff] border border-[#2E2B28]/10 p-4">
                 <h3 className="font-sofia-bold text-lg text-[#2E2B28]">Si vous devez aller vite</h3>
                 <p className="mt-2">
@@ -105,7 +105,7 @@ export default function ReactNativeFlutterPage() {
 
           <section className="mt-8 rounded-2xl border border-[#C2542D]/20 bg-[#C2542D]/8 p-6">
             <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Recommandation pragmatique</h2>
-            <p className="mt-3 text-[#2d4567] leading-relaxed">
+            <p className="mt-3 text-[#6B655D] leading-relaxed">
               Le meilleur choix dépend de votre roadmap, de vos ressources internes et de vos contraintes de budget.
               Une agence web et mobile Toulouse peut vous aider à objectiver ce choix selon vos priorités business, pas
               uniquement selon la mode technique du moment.
@@ -114,7 +114,7 @@ export default function ReactNativeFlutterPage() {
 
           <section className="mt-6 rounded-2xl border border-[#2E2B28]/10 bg-white p-6">
             <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Version vulgarisée</h2>
-            <p className="mt-3 text-[#2d4567] leading-relaxed">
+            <p className="mt-3 text-[#6B655D] leading-relaxed">
               React Native et Flutter sont comme une langue commune pour parler à iOS et Android en même temps. Le
               natif, lui, consiste à parler la langue de chaque plateforme séparément. La langue commune va souvent
               plus vite au démarrage ; la langue native devient pertinente quand les besoins techniques sont très
@@ -125,7 +125,7 @@ export default function ReactNativeFlutterPage() {
           <div className="mt-10">
             <Link
               href="/developpement-application-mobile"
-              className="inline-flex items-center rounded-lg bg-[#2E2B28] px-5 py-3 text-white font-semibold hover:bg-[#0d2f6b] transition-smooth"
+              className="inline-flex items-center rounded-lg bg-[#2E2B28] px-5 py-3 text-white font-semibold hover:bg-[#A34322] transition-smooth"
             >
               Retour au guide mobile
             </Link>

@@ -133,7 +133,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
                     key={post.slug}
                     className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#2E2B28]/40 transition-colors"
                   >
-                    <span className="inline-block px-3 py-1 text-xs font-semibold text-[#000f45] bg-[#C2542D] rounded-full mb-3">
+                    <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-[#C2542D] rounded-full mb-3">
                       {post.category}
                     </span>
                     <h3 className="text-lg font-sofia-bold text-[#2E2B28] mb-2 leading-tight">

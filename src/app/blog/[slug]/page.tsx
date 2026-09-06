@@ -199,14 +199,14 @@ export default async function PostPage({ params }: BlogPageProps) {
             </aside>
           </div>
 
-          <article className="bg-white rounded-none border border-gray-200 hover:border-[#000f45]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group flex-grow max-w-none xl:max-w-4xl mx-auto xl:mx-0">
+          <article className="bg-white rounded-none border border-gray-200 hover:border-[#2E2B28]/50 hover:shadow-2xl transition-all transform hover:-translate-y-1.5 group flex-grow max-w-none xl:max-w-4xl mx-auto xl:mx-0">
             <header className="p-8 md:p-10 text-center xl:text-left border-b border-gray-100">
               <div className="mb-4">
-                <span className="inline-block px-4 py-2 text-sm font-semibold text-[#000f45] bg-[#C2542D] rounded-full">
+                <span className="inline-block px-4 py-2 text-sm font-semibold text-white bg-[#C2542D] rounded-full">
                   {post.category}
                 </span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-sofia-bold text-[#000f45] mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-sofia-bold text-[#2E2B28] mb-6 leading-tight">
                 {post.title}
               </h1>
               <p className="text-[#6B655D] font-inter text-lg mb-6">{post.summary}</p>
@@ -214,7 +214,7 @@ export default async function PostPage({ params }: BlogPageProps) {
                 <a
                   href={authorUrl}
                   rel="author"
-                  className="font-semibold text-[#000f45] hover:underline"
+                  className="font-semibold text-[#2E2B28] hover:underline"
                 >
                   {author.name}
                 </a>

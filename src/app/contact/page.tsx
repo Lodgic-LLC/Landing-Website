@@ -87,7 +87,7 @@ export default function ContactPage() {
             <h1 className="mt-5 font-sofia-bold text-4xl md:text-5xl text-[#2E2B28] leading-tight">
               Discutons de votre projet.
             </h1>
-            <p className="mt-5 text-lg text-[#1f3556] leading-relaxed">
+            <p className="mt-5 text-lg text-[#2E2B28] leading-relaxed">
               Une idée d'application, un site web à refondre ou un logiciel sur mesure ? Écrivez-nous, passez nous voir
               ou planifiez un appel, nous revenons vers vous sous 24 heures ouvrées.
             </p>
@@ -97,7 +97,7 @@ export default function ContactPage() {
             <aside className="space-y-6">
               <div className="rounded-2xl border border-[#2E2B28]/10 bg-white p-6 shadow-soft">
                 <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Coordonnées</h2>
-                <ul className="mt-4 space-y-4 text-[#2d4567]">
+                <ul className="mt-4 space-y-4 text-[#6B655D]">
                   {fullAddress && (
                     <li className="flex gap-3">
                       <FaMapMarkerAlt className="mt-1 h-5 w-5 text-[#2E2B28]" aria-hidden />
@@ -168,7 +168,7 @@ export default function ContactPage() {
 
             <section className="rounded-2xl border border-[#2E2B28]/10 bg-white p-6 md:p-8 shadow-soft">
               <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Écrivez-nous</h2>
-              <p className="mt-2 text-[#2d4567]">
+              <p className="mt-2 text-[#6B655D]">
                 Décrivez brièvement votre projet : nous revenons vers vous avec une première lecture sous 24 heures
                 ouvrées.
               </p>

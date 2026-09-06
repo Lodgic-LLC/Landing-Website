@@ -96,7 +96,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
       <div className="bg-[#F8F6F2] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 lg:py-28">
         <header className="text-center mb-12 md:mb-16">
-          <h1 className="text-4xl md:text-5xl font-sofia-bold text-[#000f45] mb-4">
+          <h1 className="text-4xl md:text-5xl font-sofia-bold text-[#2E2B28] mb-4">
             Lodgic{' '}
             <span className="relative inline-block">
               <span className="relative z-10">Conseils</span>
@@ -113,7 +113,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
             <h2 id="featured-heading" className="sr-only">
               Article à la une
             </h2>
-            <article className="bg-white border border-gray-200 hover:border-[#000f45]/50 hover:shadow-2xl transition-all group">
+            <article className="bg-white border border-gray-200 hover:border-[#2E2B28]/50 hover:shadow-2xl transition-all group">
               <Link href={`/blog/${featuredPost.slug}`} className="block">
                 <div className="relative w-full aspect-[16/7] overflow-hidden">
                   <Image
@@ -127,14 +127,14 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                 </div>
                 <div className="p-6 md:p-10">
                   <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="inline-block px-4 py-1.5 text-sm font-semibold text-[#000f45] bg-[#C2542D] rounded-full">
+                    <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-[#C2542D] rounded-full">
                       {featuredPost.category}
                     </span>
                     <span className="text-sm text-[#6B655D]/80 font-inter">
                       {formatDate(featuredPost.date)}
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-4xl font-sofia-bold text-[#000f45] mb-4 leading-tight group-hover:text-[#6B655D] transition-colors">
+                  <h3 className="text-2xl md:text-4xl font-sofia-bold text-[#2E2B28] mb-4 leading-tight group-hover:text-[#6B655D] transition-colors">
                     {featuredPost.title}
                   </h3>
                   <p className="text-[#6B655D] font-inter text-base md:text-lg mb-6 max-w-3xl">
@@ -162,7 +162,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
           <section className="lg:col-span-8" aria-labelledby="posts-heading">
             <h2
               id="posts-heading"
-              className="text-2xl md:text-3xl font-sofia-bold text-[#000f45] mb-8"
+              className="text-2xl md:text-3xl font-sofia-bold text-[#2E2B28] mb-8"
             >
               Tous les articles
             </h2>
@@ -176,7 +176,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                 {posts.map((post) => (
                   <article
                     key={post.slug}
-                    className="bg-white border border-gray-200 hover:border-[#000f45]/50 hover:shadow-xl transition-all duration-300 group flex flex-col"
+                    className="bg-white border border-gray-200 hover:border-[#2E2B28]/50 hover:shadow-xl transition-all duration-300 group flex flex-col"
                   >
                     <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
                       <div className="relative w-full aspect-[16/10] overflow-hidden">
@@ -190,14 +190,14 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                       </div>
                       <div className="p-5 md:p-6 flex flex-col flex-grow">
                         <div className="flex items-center gap-3 mb-3">
-                          <span className="text-xs uppercase tracking-wide text-[#000f45] font-semibold font-inter">
+                          <span className="text-xs uppercase tracking-wide text-[#2E2B28] font-semibold font-inter">
                             {post.category}
                           </span>
                           <span className="text-xs text-[#6B655D]/70 font-inter">
                             {formatDate(post.date)}
                           </span>
                         </div>
-                        <h3 className="text-lg md:text-xl font-sofia-bold text-[#0b143d] leading-snug mb-3 line-clamp-2 group-hover:text-[#6B655D] transition-colors">
+                        <h3 className="text-lg md:text-xl font-sofia-bold text-[#23211F] leading-snug mb-3 line-clamp-2 group-hover:text-[#6B655D] transition-colors">
                           {post.title}
                         </h3>
                         <p className="text-sm text-[#6B655D]/80 font-inter line-clamp-3 mb-4 flex-grow">
@@ -235,7 +235,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                 {page > 1 && (
                   <Link
                     href={buildPageLink(page - 1)}
-                    className="px-4 py-2 border border-[#000f45]/30 text-[#000f45] font-inter text-sm hover:bg-[#000f45] hover:text-white transition-colors"
+                    className="px-4 py-2 border border-[#2E2B28]/30 text-[#2E2B28] font-inter text-sm hover:bg-[#2E2B28] hover:text-white transition-colors"
                     aria-label="Page précédente"
                   >
                     Précédent
@@ -251,8 +251,8 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                       aria-label={`Page ${n}`}
                       className={`px-4 py-2 text-sm font-inter border transition-colors ${
                         isActive
-                          ? 'bg-[#000f45] text-white border-[#000f45]'
-                          : 'bg-white text-[#000f45] border-[#000f45]/30 hover:bg-[#000f45] hover:text-white'
+                          ? 'bg-[#2E2B28] text-white border-[#2E2B28]'
+                          : 'bg-white text-[#2E2B28] border-[#2E2B28]/30 hover:bg-[#2E2B28] hover:text-white'
                       }`}
                     >
                       {n}
@@ -262,7 +262,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                 {page < totalPages && (
                   <Link
                     href={buildPageLink(page + 1)}
-                    className="px-4 py-2 border border-[#000f45]/30 text-[#000f45] font-inter text-sm hover:bg-[#000f45] hover:text-white transition-colors"
+                    className="px-4 py-2 border border-[#2E2B28]/30 text-[#2E2B28] font-inter text-sm hover:bg-[#2E2B28] hover:text-white transition-colors"
                     aria-label="Page suivante"
                   >
                     Suivant
@@ -276,7 +276,7 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
             <div className="sticky top-24 bg-white border border-gray-200 p-6 md:p-8">
               <h2
                 id="popular-heading"
-                className="text-xl md:text-2xl font-sofia-bold text-[#000f45] mb-6"
+                className="text-xl md:text-2xl font-sofia-bold text-[#2E2B28] mb-6"
               >
                 Articles populaires
               </h2>
@@ -290,12 +290,12 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
                     <li key={post.slug} className="group">
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="block border-l-2 border-[#C2542D] pl-4 py-1 hover:border-[#000f45] transition-colors"
+                        className="block border-l-2 border-[#C2542D] pl-4 py-1 hover:border-[#2E2B28] transition-colors"
                       >
-                        <span className="block text-xs uppercase tracking-wide text-[#000f45]/70 font-inter mb-1">
+                        <span className="block text-xs uppercase tracking-wide text-[#2E2B28]/70 font-inter mb-1">
                           {post.category}
                         </span>
-                        <span className="block text-sm md:text-base font-inter font-medium text-[#0b143d] group-hover:text-[#0b57d0] transition-colors">
+                        <span className="block text-sm md:text-base font-inter font-medium text-[#23211F] group-hover:text-[#0b57d0] transition-colors">
                           {post.title}
                         </span>
                       </Link>

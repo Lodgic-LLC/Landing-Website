@@ -16,26 +16,26 @@ import Link from 'next/link'
 const RendezVousRefonteContent = () => {
   const processSteps = [
     {
-      title: 'Vous choisissez votre creneau',
-      description: 'Selectionnez un horaire qui vous convient, sans aller-retour par email.',
+      title: 'Vous choisissez votre créneau',
+      description: 'Sélectionnez un horaire qui vous convient, sans aller-retour par email.',
       icon: FaCalendarAlt,
     },
     {
-      title: 'On echange en visio',
+      title: 'On échange en visio',
       description: 'Nous cadrons vos objectifs, vos contraintes et vos priorites business.',
       icon: FaVideo,
     },
     {
       title: 'Vous recevez une vision claire',
-      description: "Plan d'action, recommandations techniques et prochaines etapes concretes.",
+      description: "Plan d'action, recommandations techniques et prochaines étapes concrètes.",
       icon: FaFileAlt,
     },
   ]
 
   const highlights = [
-    'Consultation strategique offerte et sans engagement',
-    'Conseils orientes conversion, SEO et performance',
-    'Vision realiste des delais et de la complexite',
+    'Consultation stratégique offerte et sans engagement',
+    'Conseils orientés conversion, SEO et performance',
+    'Vision réaliste des délais et de la complexité',
     'Un interlocuteur technique qui parle aussi business',
   ]
 
@@ -43,32 +43,28 @@ const RendezVousRefonteContent = () => {
     {
       question: 'Combien de temps dure le rendez-vous ?',
       answer:
-        "La session dure en moyenne 30 a 45 minutes, selon la complexite de votre besoin. L'objectif est de repartir avec des decisions claires.",
+        "La session dure en moyenne 30 à 45 minutes, selon la complexité de votre besoin. L'objectif est de repartir avec des décisions claires.",
     },
     {
       question: 'Le rendez-vous est-il gratuit ?',
       answer:
-        "Oui, cette premiere consultation est offerte. Elle nous permet de comprendre votre contexte et de vous orienter vers la meilleure strategie.",
+        "Oui, cette première consultation est offerte. Elle nous permet de comprendre votre contexte et de vous orienter vers la meilleure stratégie.",
     },
     {
       question: 'Comment se deroule le rendez-vous ?',
       answer:
-        "Apres reservation, vous recevez automatiquement un lien de visioconference. Nous analysons vos objectifs et construisons un plan d'action adapte.",
+        "Après reservation, vous recevez automatiquement un lien de visioconference. Nous analysons vos objectifs et construisons un plan d'action adapté.",
     },
     {
       question: 'Puis-je modifier ou annuler ma reservation ?',
       answer:
-        'Oui, le lien de confirmation recu par email permet de deplacer ou annuler facilement votre creneau.',
+        'Oui, le lien de confirmation recu par email permet de deplacer ou annuler facilement votre créneau.',
     },
   ]
 
   return (
     <main className="min-h-screen bg-[#F8F6F2]">
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-20">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-[#C2542D]/20" />
-          <div className="absolute -bottom-36 -left-20 h-96 w-96 rounded-full bg-[#C2542D]/20" />
-        </div>
 
         <div className="relative mx-auto grid w-full max-w-7xl gap-8 px-6 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-7">
@@ -76,11 +72,11 @@ const RendezVousRefonteContent = () => {
               Appel de consultation
             </span>
             <h1 className="mt-6 font-sofia-bold text-4xl leading-tight text-[#2E2B28] sm:text-5xl lg:text-6xl">
-              Reservez un rendez-vous strategique pour votre site web
+              Réservez un rendez-vous stratégique pour votre site web
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#243b5a] sm:text-xl">
-              En un seul echange, nous clarifions vos objectifs, le bon perimetre fonctionnel et la meilleure
-              approche pour livrer un site performant, moderne et pense pour convertir.
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#6B655D] sm:text-xl">
+              En un seul échange, nous clarifions vos objectifs, le bon périmètre fonctionnel et la meilleure
+              approche pour livrer un site performant, moderne et pensé pour convertir.
             </p>
             <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <Link href="#booking-widget" className="btn-primary inline-flex items-center gap-3">
@@ -102,7 +98,7 @@ const RendezVousRefonteContent = () => {
               <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Pourquoi prendre ce rendez-vous ?</h2>
               <ul className="mt-6 space-y-4">
                 {highlights.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[#233a5a]">
+                  <li key={item} className="flex items-start gap-3 text-[#6B655D]">
                     <span className="mt-0.5 rounded-full bg-[#C2542D]/50 p-1.5 text-white">
                       <FaCheckCircle className="h-3.5 w-3.5" />
                     </span>
@@ -111,9 +107,9 @@ const RendezVousRefonteContent = () => {
                 ))}
               </ul>
               <div className="mt-6 rounded-2xl border border-[#C2542D]/20 bg-[#C2542D]/10 p-4">
-                <p className="text-sm text-[#11406a]">
-                  Chaque creneau est prepare avec soin pour vous donner des recommandations actionnables des le
-                  premier echange.
+                <p className="text-sm text-[#A34322]">
+                  Chaque créneau est préparé avec soin pour vous donner des recommandations actionnables des le
+                  premier échange.
                 </p>
               </div>
             </div>
@@ -144,10 +140,10 @@ const RendezVousRefonteContent = () => {
                         </div>
                         <div>
                           <p className="text-xs font-semibold uppercase tracking-wider text-[#C2542D]">
-                            Etape {index + 1}
+                            Étape {index + 1}
                           </p>
                           <h3 className="mt-1 font-sofia-bold text-lg text-[#2E2B28]">{step.title}</h3>
-                          <p className="mt-1 text-sm leading-relaxed text-[#2b4262]">{step.description}</p>
+                          <p className="mt-1 text-sm leading-relaxed text-[#6B655D]">{step.description}</p>
                         </div>
                       </div>
                     </article>
@@ -156,9 +152,9 @@ const RendezVousRefonteContent = () => {
               </div>
 
               <div className="mt-7 rounded-2xl border border-[#2E2B28]/10 bg-white p-4">
-                <p className="text-sm text-[#30496b]">
-                  Si votre projet n'est pas encore totalement defini, ce rendez-vous est justement concu pour vous
-                  aider a prioriser les bonnes decisions.
+                <p className="text-sm text-[#6B655D]">
+                  Si votre projet n'est pas encore totalement défini, ce rendez-vous est justement concu pour vous
+                  aider a prioriser les bonnes décisions.
                 </p>
               </div>
             </div>
@@ -167,10 +163,10 @@ const RendezVousRefonteContent = () => {
               <div className="border-b border-[#2E2B28]/8 bg-[#2E2B28] px-6 py-5 text-white">
                 <h3 className="flex items-center gap-2 font-sofia-bold text-2xl">
                   <FaHandshake className="h-5 w-5 text-[#C2542D]" />
-                  Reservez votre consultation
+                  Réservez votre consultation
                 </h3>
                 <p className="mt-1 text-white/80">
-                  Choisissez votre creneau en ligne et recevez la confirmation instantanement.
+                  Choisissez votre créneau en ligne et recevez la confirmation instantanément.
                 </p>
               </div>
               <BookingWidget />
@@ -180,10 +176,6 @@ const RendezVousRefonteContent = () => {
       </section>
 
       <section className="relative bg-white py-20">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-20 right-0 h-64 w-64 rounded-full bg-[#C2542D]/10" />
-          <div className="absolute -bottom-28 left-0 h-80 w-80 rounded-full bg-[#C2542D]/15" />
-        </div>
         <div className="mx-auto w-full max-w-5xl px-6">
           <div className="relative rounded-3xl border border-[#2E2B28]/10 bg-gradient-to-br from-[#f8fbff] via-white to-[#f2f7ff] px-6 py-10 text-center shadow-[0_20px_40px_rgba(35,33,31,0.06)] md:px-10">
             <span className="inline-flex items-center rounded-full border border-[#C2542D]/20 bg-white px-4 py-1.5 text-sm font-semibold text-[#C2542D]">

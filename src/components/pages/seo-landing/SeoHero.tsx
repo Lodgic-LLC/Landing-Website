@@ -66,7 +66,7 @@ export default function SeoHero({
             </h2>
 
             <div
-              className="lead text-lg sm:text-xl max-w-2xl mb-8 text-[#1f3556]"
+              className="lead text-lg sm:text-xl max-w-2xl mb-8 text-[#2E2B28]"
             >
               {description}
             </div>

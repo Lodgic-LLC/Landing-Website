@@ -88,7 +88,7 @@ export default function DeveloppementApplicationMobilePage() {
             <h1 className="mt-5 font-sofia-bold text-4xl md:text-5xl text-[#2E2B28] leading-tight">
               Développement application mobile à Toulouse : les points clés avant de lancer votre projet
             </h1>
-            <p className="mt-5 text-lg text-[#1f3556] leading-relaxed max-w-3xl">
+            <p className="mt-5 text-lg text-[#2E2B28] leading-relaxed max-w-3xl">
               Une création application mobile sur mesure ne se résume pas au design de quelques écrans. Il faut cadrer
               les objectifs business, choisir la bonne stack et prioriser les fonctionnalités qui apportent de la
               valeur dès la première version.
@@ -98,14 +98,14 @@ export default function DeveloppementApplicationMobilePage() {
           <section className="mt-10 grid gap-6 md:grid-cols-2">
             <article className="rounded-2xl border border-[#2E2B28]/10 bg-white p-6 shadow-soft">
               <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Ce qui fait la différence sur un projet mobile</h2>
-              <ul className="mt-4 space-y-3 text-[#2d4567]">
+              <ul className="mt-4 space-y-3 text-[#6B655D]">
                 <li>- Cadrage produit précis avant le développement</li>
                 <li>- Priorisation d'une roadmap réaliste</li>
                 <li>- UX pensée pour l'usage mobile réel</li>
                 <li>- Performance et stabilité dès le MVP</li>
                 <li>- Suivi analytics pour améliorer les versions suivantes</li>
               </ul>
-              <p className="mt-4 text-[#2d4567] leading-relaxed">
+              <p className="mt-4 text-[#6B655D] leading-relaxed">
                 En version simple : mieux vaut une petite application claire, rapide et utile qu'une grosse version
                 pleine d'options peu utilisées. Le bon réflexe est de lancer une V1 ciblée, puis d'améliorer avec les
                 retours des vrais utilisateurs.
@@ -114,7 +114,7 @@ export default function DeveloppementApplicationMobilePage() {
 
             <article className="rounded-2xl border border-[#2E2B28]/10 bg-white p-6 shadow-soft">
               <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Pourquoi se faire accompagner ?</h2>
-              <p className="mt-4 text-[#2d4567] leading-relaxed">
+              <p className="mt-4 text-[#6B655D] leading-relaxed">
                 Une agence web et mobile Toulouse peut sécuriser les choix techniques et éviter les erreurs coûteuses
                 (mauvaise stack, dette technique précoce, délais sous-estimés). L'objectif est d'aligner votre budget
                 avec un plan d'exécution concret.
@@ -124,7 +124,7 @@ export default function DeveloppementApplicationMobilePage() {
 
           <section className="mt-8 rounded-2xl border border-[#2E2B28]/10 bg-white p-6 shadow-soft">
             <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Les 3 erreurs les plus fréquentes</h2>
-            <div className="mt-4 grid gap-4 md:grid-cols-3 text-[#2d4567]">
+            <div className="mt-4 grid gap-4 md:grid-cols-3 text-[#6B655D]">
               <article className="rounded-xl bg-[#f8fbff] border border-[#2E2B28]/10 p-4">
                 <h3 className="font-sofia-bold text-lg text-[#2E2B28]">1. Vouloir tout faire d'un coup</h3>
                 <p className="mt-2">Un périmètre trop large rallonge les délais et augmente les coûts sans garantie de résultat.</p>
@@ -157,7 +157,7 @@ export default function DeveloppementApplicationMobilePage() {
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 text-[#2d4567] leading-relaxed">{faq.answer}</p>
+                  <p className="mt-3 text-[#6B655D] leading-relaxed">{faq.answer}</p>
                 </details>
               ))}
             </div>
@@ -171,7 +171,7 @@ export default function DeveloppementApplicationMobilePage() {
                 className="rounded-xl border border-[#2E2B28]/15 bg-white p-5 text-[#2E2B28] hover:border-[#2E2B28]/35 transition-smooth"
               >
                 <p className="font-sofia-bold text-xl">Apple vs Android</p>
-                <p className="mt-2 text-[#2d4567]">
+                <p className="mt-2 text-[#6B655D]">
                   Les différences entre une application iOS (Swift) et une application Android (Android Studio/Kotlin).
                 </p>
               </Link>
@@ -181,7 +181,7 @@ export default function DeveloppementApplicationMobilePage() {
                 className="rounded-xl border border-[#2E2B28]/15 bg-white p-5 text-[#2E2B28] hover:border-[#2E2B28]/35 transition-smooth"
               >
                 <p className="font-sofia-bold text-xl">React Native vs Flutter</p>
-                <p className="mt-2 text-[#2d4567]">
+                <p className="mt-2 text-[#6B655D]">
                   Quel framework non natif choisir pour accélérer votre mise sur le marché sans sacrifier la qualité.
                 </p>
               </Link>

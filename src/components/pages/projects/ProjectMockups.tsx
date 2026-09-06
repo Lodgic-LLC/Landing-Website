@@ -9,8 +9,8 @@ type FrameProps = { children: ReactNode; title?: string }
 export const PhoneFrame = ({ children, title }: FrameProps) => {
   return (
     <div className="mx-auto w-[260px] md:w-[280px]">
-      <div className="relative rounded-[44px] border border-[#2E2B28]/15 bg-[#0a1a33] p-2 shadow-[0_20px_60px_-20px_rgba(35,33,31,0.4)]">
-        <div className="absolute left-1/2 top-1 -translate-x-1/2 h-6 w-28 rounded-b-2xl bg-[#0a1a33]" />
+      <div className="relative rounded-[44px] border border-[#2E2B28]/15 bg-[#23211F] p-2 shadow-[0_20px_60px_-20px_rgba(35,33,31,0.4)]">
+        <div className="absolute left-1/2 top-1 -translate-x-1/2 h-6 w-28 rounded-b-2xl bg-[#23211F]" />
         <div className="relative overflow-hidden rounded-[36px] bg-white">
           <div className="flex items-center justify-between px-5 pt-3 pb-1 text-[10px] font-medium text-[#2E2B28]/70">
             <span>9:41</span>
@@ -824,14 +824,6 @@ export const ShopCategoryScreen = () => (
 /* Composition multi-device pour mise en scène hero */
 export const DeviceScene = ({ children }: { children: ReactNode }) => (
   <div className="relative rounded-3xl p-6 md:p-10 ring-1 ring-[#2E2B28]/5 bg-gradient-to-br from-[#eaf0ff] via-white to-[#F8F6F2] overflow-hidden">
-    <div
-      aria-hidden
-      className="pointer-events-none absolute -top-20 -right-20 h-72 w-72 rounded-full bg-[#2E2B28]/5"
-    />
-    <div
-      aria-hidden
-      className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-[#C2542D]/20"
-    />
     <div className="relative">{children}</div>
   </div>
 )

@@ -180,14 +180,6 @@ export default function BewasBeenProjectPage() {
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#F8F6F2] via-white to-[#eaf0ff] pt-28 pb-20 md:pt-36 md:pb-28">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#2E2B28]/5"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#C2542D]/20"
-        />
 
         <div className="relative mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
           <article className="lg:col-span-7">
@@ -348,10 +340,6 @@ export default function BewasBeenProjectPage() {
       <section className="bg-[#F8F6F2] py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-3xl bg-[#2E2B28] p-8 text-white md:p-14">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#C2542D]/25"
-            />
             <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="max-w-xl">
                 <p className="text-xs font-inter font-bold uppercase tracking-[0.25em] text-white/60">
