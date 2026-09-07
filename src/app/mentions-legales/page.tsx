@@ -27,13 +27,31 @@ export default function MentionsLegalesPage() {
               Éditeur du site
             </h2>
             <p className="text-[#374151] leading-relaxed">
-              Lodgic
+              Yann Rouquié, entrepreneur individuel exerçant sous le nom commercial Lodgic
               <br />
-              Toulouse, Occitanie
+              Entreprise individuelle (régime de la micro-entreprise)
+              <br />
+              SIREN : {/* TODO : remplacer par les 9 chiffres du SIREN avant la mise en ligne */}
+              <span className="rounded bg-[#FBEFE9] px-2 py-0.5 font-semibold text-[#A34322]">
+                à compléter
+              </span>
+              <br />
+              Toulouse, Occitanie, France
               <br />
               Email : contact@lodgic-dev.com
               <br />
               Téléphone : 06 43 51 71 57
+              <br />
+              Directeur de la publication : Yann Rouquié
+            </p>
+          </section>
+
+          <section className="space-y-2">
+            <h2 className="font-bricolage-grotesque-bold text-[#2E2B28] text-2xl">
+              TVA
+            </h2>
+            <p className="text-[#374151] leading-relaxed">
+              TVA non applicable, article 293 B du Code général des impôts.
             </p>
           </section>
 
@@ -47,6 +65,21 @@ export default function MentionsLegalesPage() {
               440 N Barranca Ave #4133
               <br />
               Covina, CA 91723, États-Unis
+            </p>
+          </section>
+
+          <section className="space-y-2">
+            <h2 className="font-bricolage-grotesque-bold text-[#2E2B28] text-2xl">
+              Médiation de la consommation
+            </h2>
+            <p className="text-[#374151] leading-relaxed">
+              Conformément à l&apos;article L.612-1 du Code de la consommation, tout client
+              particulier peut recourir gratuitement à un médiateur de la consommation en vue
+              de la résolution amiable d&apos;un litige.{' '}
+              <span className="rounded bg-[#FBEFE9] px-2 py-0.5 font-semibold text-[#A34322]">
+                Médiateur à désigner
+              </span>{' '}
+              {/* TODO : adhérer à un médiateur de la consommation et indiquer ici son nom, son adresse et son site */}
             </p>
           </section>
 

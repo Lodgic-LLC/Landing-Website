@@ -150,17 +150,6 @@ export default function Footer() {
                 <path d="M20.447 20.452h-3.554V14.87c0-1.332-.025-3.045-1.857-3.045-1.86 0-2.144 1.45-2.144 2.95v5.677H9.339V9h3.413v1.561h.049c.476-.9 1.636-1.85 3.368-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.063 2.063 0 110-4.126 2.063 2.063 0 010 4.126zM7.115 20.452H3.558V9h3.557v11.452z" />
               </svg>
             </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook Lodgic"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/15 text-white hover:bg-[#C2542D] hover:text-white hover:ring-[#C2542D] transition-smooth"
-            >
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                <path d="M22 12.073C22 6.505 17.523 2 12 2S2 6.505 2 12.073C2 17.104 5.657 21.272 10.438 22v-7.03H7.898V12.07h2.54V9.845c0-2.52 1.492-3.91 3.777-3.91 1.094 0 2.238.198 2.238.198v2.476h-1.26c-1.242 0-1.63.774-1.63 1.567v1.894h2.773l-.443 2.901h-2.33V22C18.343 21.272 22 17.104 22 12.073z" />
-              </svg>
-            </a>
           </div>
         </div>
 

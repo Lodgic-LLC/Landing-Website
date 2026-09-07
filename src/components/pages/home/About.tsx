@@ -13,6 +13,25 @@ const credentials = [
   { label: 'Zone', value: 'Toulouse · à distance partout en France' },
 ]
 
+/** Ce que cinq ans en environnement critique laissent comme réflexes. */
+const habits = [
+  {
+    tag: 'Réflexe 01',
+    title: 'Je teste avant de livrer',
+    text: "Dans l'aéro, on ne découvre pas un bug en production. Je garde cette habitude, même pour un site vitrine.",
+  },
+  {
+    tag: 'Réflexe 02',
+    title: "J'écris ce que je fais",
+    text: 'Un projet non documenté est un projet perdu quand son auteur part. Le vôtre est documenté dès le premier jour.',
+  },
+  {
+    tag: 'Réflexe 03',
+    title: 'Je mesure au lieu de supposer',
+    text: 'Temps de chargement, erreurs, usage réel : des chiffres, pas des impressions. Vous les recevez à la livraison.',
+  },
+]
+
 const guarantees = [
   {
     theme: 'Fiabilité',
@@ -137,6 +156,20 @@ export default function About() {
                 votre besoin est celle qui écrit le code, qui vous répond quand quelque chose
                 cloche, et qui sera encore là dans six mois.
               </p>
+            </div>
+
+            <div className="mt-8 grid gap-px overflow-hidden rounded-xl border border-[#45403A] bg-[#45403A] sm:grid-cols-3">
+              {habits.map((h) => (
+                <div key={h.title} className="bg-[#33302C] p-5">
+                  <p className="mono text-[10px] uppercase tracking-[0.14em] text-[#E08A63]">
+                    {h.tag}
+                  </p>
+                  <p className="mt-2.5 font-sofia-bold text-[15px] text-white">{h.title}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-white/65 font-inter">
+                    {h.text}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
