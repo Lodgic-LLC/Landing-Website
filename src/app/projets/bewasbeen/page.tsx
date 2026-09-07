@@ -4,9 +4,9 @@ import Link from "next/link";
 import StructuredData from "@/components/seo/StructuredData";
 import BreadcrumbStructuredData from "@/components/seo/BreadcrumbStructuredData";
 import { SITE_URL } from "@/lib/site";
-import ProjectForm from '@/components/forms/ProjectForm';
-import { FaqAccordion, type FaqItem } from "@/components/FaqAccordion";
-import ProjectGallery from '@/components/ProjectGallery';
+import Formulaire from '@/components/Formulaire';
+import { Accordeon, type FaqItem } from "@/components/Accordeon";
+import Galerie from '@/components/Galerie';
 
 const APP_THEME = {
   primary: "#23211F",
@@ -17,47 +17,47 @@ const APP_THEME = {
 
 const screens = [
   {
-    src: "/projets/bewasbeen/bwb_landing_page.png",
+    src: "/projets/bewasbeen/bwb_landing_page.jpg",
     alt: "Page d'accueil BewasBeen — présentation de la plateforme",
     caption: "Accueil",
   },
   {
-    src: "/projets/bewasbeen/bwb_professor_dashboard.png",
+    src: "/projets/bewasbeen/bwb_professor_dashboard.jpg",
     alt: "Tableau de bord enseignant — suivi des élèves et des classes",
     caption: "Tableau de bord",
   },
   {
-    src: "/projets/bewasbeen/bwb_create_class.png",
+    src: "/projets/bewasbeen/bwb_create_class.jpg",
     alt: "Création d'une classe avec code d'accès et QR code",
     caption: "Créer une classe",
   },
   {
-    src: "/projets/bewasbeen/bwb_play_modes.png",
+    src: "/projets/bewasbeen/bwb_play_modes.jpg",
     alt: "Sélection du mode d'exercice — dépôt, frappe, audio",
     caption: "Modes d'exercice",
   },
   {
-    src: "/projets/bewasbeen/bwb_drag_and_drop_mode.png",
+    src: "/projets/bewasbeen/bwb_drag_and_drop_mode.jpg",
     alt: "Exercice en mode glisser-déposer — conjugaison de verbes",
     caption: "Glisser-déposer",
   },
   {
-    src: "/projets/bewasbeen/bwb_typing_mode.png",
+    src: "/projets/bewasbeen/bwb_typing_mode.jpg",
     alt: "Exercice en mode frappe clavier — saisie des formes verbales",
     caption: "Frappe clavier",
   },
   {
-    src: "/projets/bewasbeen/bwb_audio_mode.png",
+    src: "/projets/bewasbeen/bwb_audio_mode.jpg",
     alt: "Exercice en mode audio — reconnaissance des verbes à l'oreille",
     caption: "Mode audio",
   },
   {
-    src: "/projets/bewasbeen/bwb_create_verb_list.png",
+    src: "/projets/bewasbeen/bwb_create_verb_list.jpg",
     alt: "Création d'une liste de verbes personnalisée",
     caption: "Créer une liste",
   },
   {
-    src: "/projets/bewasbeen/bwb_verb_list_template.png",
+    src: "/projets/bewasbeen/bwb_verb_list_template.jpg",
     alt: "Modèles de listes de verbes prêts à l'emploi",
     caption: "Modèles de listes",
   },
@@ -270,7 +270,7 @@ export default function BewasBeenProjectPage() {
               />
               <div className="relative h-full w-full p-3">
                 <Image
-                  src="/projets/bewasbeen/bwb_landing_page.png"
+                  src="/projets/bewasbeen/bwb_landing_page.jpg"
                   alt="Aperçu de la page d'accueil de BewasBeen, plateforme d'apprentissage des verbes irréguliers"
                   fill
                   priority
@@ -305,7 +305,7 @@ export default function BewasBeenProjectPage() {
             </p>
           </div>
 
-          <ProjectGallery screens={screens} url="bewasbeen.com" />
+          <Galerie screens={screens} url="bewasbeen.com" />
         </div>
       </section>
 
@@ -332,7 +332,7 @@ export default function BewasBeenProjectPage() {
             </p>
           </div>
 
-          <FaqAccordion items={features} />
+          <Accordeon items={features} />
         </div>
       </section>
 
@@ -408,7 +408,7 @@ export default function BewasBeenProjectPage() {
 
           <div className="lg:col-span-7">
             <div className="rounded-3xl border border-[#2E2B28]/10 bg-[#F8F6F2] p-6 shadow-soft md:p-8">
-              <ProjectForm source="projet-bewasbeen" />
+              <Formulaire source="projet-bewasbeen" />
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import SeoLandingPage from '@/components/pages/seo-landing/SeoLandingPage'
+import PageSeo from '@/components/PageSeo'
 import { buildSeoMetadata } from '@/lib/seo'
 
 const PATH = '/creation-site-internet-toulouse'
@@ -23,7 +23,7 @@ export const metadata = buildSeoMetadata({
 
 export default function Page() {
   return (
-    <SeoLandingPage
+    <PageSeo
       path={PATH}
       name={NAME}
       description={DESCRIPTION}

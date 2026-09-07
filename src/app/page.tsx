@@ -2,16 +2,16 @@ import React from 'react'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
-import Hero from '@/components/pages/home/Hero'
+import Hero from '@/app/_sections/Accueil'
 import { PageTracker } from '@/components/analytics/PageTracker'
 import StructuredData from '@/components/seo/StructuredData'
 import { SITE_URL } from '@/lib/site'
 
-const About = dynamic(() => import('@/components/pages/home/About'))
-const Services = dynamic(() => import('@/components/pages/home/Services'))
-const Method = dynamic(() => import('@/components/pages/home/Method'))
-const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
-const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
+const About = dynamic(() => import('@/app/_sections/APropos'))
+const Services = dynamic(() => import('@/app/_sections/Services'))
+const Method = dynamic(() => import('@/app/_sections/Methode'))
+const SuccessStories = dynamic(() => import('@/app/_sections/Realisations'))
+const FAQ = dynamic(() => import('@/app/_sections/Contact'))
 
 export const metadata: Metadata = {
   title: 'Développeur web, mobile et logiciel à Toulouse',
