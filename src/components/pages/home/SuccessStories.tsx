@@ -10,6 +10,16 @@ type Project = {
   summary: string;
   /** Chiffres vérifiables du projet livré */
   metrics: { value: string; label: string }[];
+  /** Mesure avant/après, avec sa source */
+  measured?: {
+    label: string;
+    before: string;
+    after: string;
+    scores: { name: string; value: string }[];
+    source: string;
+  };
+  /** Mot du client, une fois obtenu */
+  quote?: { text: string; author: string; role: string };
   /** Briques techniques réellement construites */
   features: { title: string; text: string }[];
   /** Décision d'architecture notable */
@@ -26,29 +36,45 @@ const projects: Project[] = [
     url: "alliance-travaux.fr",
     external: true,
     summary:
-      "Le site d'un collectif d'artisans toulousains : deux arborescences de contenu, un formulaire de demande de devis et un socle SEO local couvrant l'agglomération.",
+      "Refonte complète du site d'un collectif d'artisans toulousains : structure repensée pour la conversion, contenu et référencement local retravaillés, performances remises à niveau.",
     metrics: [
       { value: "23", label: "pages générées" },
       { value: "22", label: "communes ciblées" },
       { value: "12", label: "métiers référencés" },
     ],
+    measured: {
+      label: "Affichage de la page d'accueil",
+      before: "5,8 s",
+      after: "0,7 s",
+      scores: [
+        { name: "Performance", value: "88" },
+        { name: "Accessibilité", value: "93" },
+        { name: "Bonnes pratiques", value: "96" },
+        { name: "SEO", value: "100" },
+      ],
+      source: "Google PageSpeed Insights, 7 septembre 2026",
+    },
     features: [
       {
-        title: "Deux arborescences typées",
-        text: "Douze pages métier (maçon, plaquiste, électricien…) et quatre pages service générées depuis un même schéma de données, avec routage imbriqué et navigation croisée entre les deux.",
+        title: "Structure repensée pour la conversion",
+        text: "Douze pages métier et quatre pages service générées depuis un même schéma de données, avec navigation croisée. Chaque parcours mène au devis, du premier écran à la dernière section.",
       },
       {
         title: "Formulaire de demande de devis",
         text: "Validation des champs, états de chargement et message de confirmation, envoi par un service d'e-mail transactionnel — accessible depuis chaque section du site, avec le téléphone en second recours.",
       },
       {
-        title: "Balisage Schema.org complet",
-        text: "HomeAndConstructionBusiness, OfferCatalog des six prestations, FAQPage et GeoCircle listant les 22 communes : le référencement local s'appuie sur des données structurées, pas sur du remplissage de mots-clés.",
+        title: "Référencement local repris de zéro",
+        text: "Balisage Schema.org complet — HomeAndConstructionBusiness, catalogue des six prestations, FAQ et zone d'intervention sur 22 communes. Résultat mesuré : 100/100 au SEO technique sur PageSpeed.",
+      },
+      {
+        title: "Sécurité et dépendances remises à niveau",
+        text: "Accès et identifiants sortis du code et placés côté serveur, formulaire protégé contre les envois automatisés, bibliothèques mises à jour vers des versions sans vulnérabilité connue.",
       },
     ],
     architecture: {
-      title: "Chargement découpé par domaine",
-      text: "Le bundle est séparé en chunks distincts (framework, routeur, icônes, application) pour que la page d'accueil ne télécharge que ce dont elle a besoin. Le reste arrive à la navigation.",
+      title: "Divisé par huit le temps d'affichage",
+      text: "Le site mettait 5,8 secondes à afficher son contenu principal — un visiteur sur deux part avant. J'ai découpé le chargement par domaine, compressé les images et supprimé le superflu : l'affichage tombe à 0,7 seconde.",
     },
     stack: ["React", "Vite", "React Router", "Schema.org"],
     screen: {
@@ -142,6 +168,39 @@ function CaseStudy({ project, index }: { project: Project; index: number }) {
             ))}
           </dl>
 
+          {/* Mesure avant / après */}
+          {project.measured && (
+            <div className="mt-6 overflow-hidden rounded-lg border border-[#E6E1D8]">
+              <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 bg-[#FBEFE9] px-5 py-4">
+                <div>
+                  <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.14em] text-[#A34322]">
+                    {project.measured.label}
+                  </p>
+                  <p className="mt-1.5 flex items-baseline gap-2.5 font-sofia-bold">
+                    <span className="text-lg text-[#6B655D] line-through decoration-[#C2542D]/50">
+                      {project.measured.before}
+                    </span>
+                    <svg className="h-3.5 w-3.5 text-[#C2542D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    <span className="text-2xl text-[#C2542D]">{project.measured.after}</span>
+                  </p>
+                </div>
+                <dl className="flex flex-wrap gap-x-5 gap-y-2">
+                  {project.measured.scores.map((sc) => (
+                    <div key={sc.name} className="text-center">
+                      <dt className="text-[10px] font-inter text-[#6B655D]">{sc.name}</dt>
+                      <dd className="mono text-base font-semibold text-[#2E2B28]">{sc.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+              <p className="border-t border-[#E6E1D8] bg-white px-5 py-2 text-[11px] font-inter text-[#6B655D]">
+                {project.measured.source} — vérifiable publiquement
+              </p>
+            </div>
+          )}
+
           {/* Fonctionnalités développées */}
           <p className="mt-7 text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#6B655D]">
             Ce que j&apos;ai développé
@@ -196,6 +255,19 @@ function CaseStudy({ project, index }: { project: Project; index: number }) {
               {project.architecture.text}
             </p>
           </div>
+
+          {project.quote && (
+            <figure className="mt-6 border-l-2 border-[#C2542D] pl-4">
+              <blockquote className="text-[15px] italic leading-relaxed text-[#2E2B28] font-inter">
+                « {project.quote.text} »
+              </blockquote>
+              <figcaption className="mt-2 text-xs font-inter text-[#6B655D]">
+                <span className="font-sofia-bold not-italic text-[#2E2B28]">{project.quote.author}</span>
+                {" — "}
+                {project.quote.role}
+              </figcaption>
+            </figure>
+          )}
 
           <div className="mt-auto pt-6">
             <div className="flex flex-wrap gap-1.5">

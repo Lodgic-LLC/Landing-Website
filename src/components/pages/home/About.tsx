@@ -7,6 +7,7 @@ const PORTRAIT_SRC = '/portrait-yann.jpg'
 const hasPortrait = fs.existsSync(path.join(process.cwd(), 'public', PORTRAIT_SRC))
 
 const credentials = [
+  { label: 'Parcours', value: '5 ans en production · spatial et aéronautique' },
   { label: 'Formation', value: 'Ingénieur diplômé en informatique' },
   { label: 'Technologies', value: 'React · Next.js · React Native · Node.js' },
   { label: 'Zone', value: 'Toulouse · à distance partout en France' },
@@ -83,6 +84,17 @@ export default function About() {
               <figcaption className="border-t border-[#45403A] px-5 py-3">
                 <p className="font-sofia-bold text-white">Yann Rouquié</p>
                 <p className="text-xs text-white/55 font-inter">Ingénieur en informatique · Toulouse</p>
+                <a
+                  href="https://linkedin.com/in/yann-rouquie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-1.5 text-xs font-inter text-white/60 underline underline-offset-2 hover:text-[#E08A63]"
+                >
+                  Mon parcours sur LinkedIn
+                  <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M7 17L17 7M7 7h10v10" />
+                  </svg>
+                </a>
               </figcaption>
             </figure>
 
@@ -109,22 +121,21 @@ export default function About() {
             </h2>
             <div className="mt-6 space-y-5 font-inter text-lg leading-relaxed text-white/75">
               <p>
-                Je conçois et développe des sites, des applications et des logiciels sur
-                mesure depuis Toulouse, pour des entreprises locales et des porteurs de
-                projet. Je travaille seul : la personne à qui vous expliquez votre besoin
-                est celle qui écrit le code.
+                J&apos;ai passé cinq ans à développer des logiciels en production dans le{' '}
+                <strong className="font-sofia-bold text-white">spatial et l&apos;aéronautique</strong> :
+                architecture, applications métier, back-end et front-end, traitement de
+                données, optimisation et automatisation. Des secteurs où on ne livre pas
+                quelque chose qui « marche à peu près ».
               </p>
               <p>
-                Une formation d&apos;ingénieur, concrètement, ça sert à quoi ? À savoir{' '}
-                <strong className="font-sofia-bold text-white">pourquoi</strong> une solution
-                tient — quand les données grossissent, quand deux personnes modifient la
-                même fiche en même temps, quand la facture d&apos;hébergement arrive. Et à
-                pouvoir la corriger dans six mois sans tout refaire.
+                J&apos;ai quitté ce monde-là pour travailler avec des entreprises d&apos;ici.
+                J&apos;applique les mêmes exigences à un site vitrine de cinq pages qu&apos;à un
+                outil interne : c&apos;est la seule façon que je connaisse de développer.
               </p>
               <p>
-                J&apos;utilise les outils d&apos;IA au quotidien, comme tout développeur sérieux.
-                Ils écrivent vite ; ils ne répondent de rien. Juger ce qu&apos;ils produisent,
-                le tester et le maintenir, c&apos;est mon métier.
+                Je travaille seul, et c&apos;est volontaire. La personne à qui vous expliquez
+                votre besoin est celle qui écrit le code, qui vous répond quand quelque chose
+                cloche, et qui sera encore là dans six mois.
               </p>
             </div>
           </div>

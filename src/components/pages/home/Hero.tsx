@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const proofs = [
-  "Ingénieur diplômé en informatique",
+  "5 ans de développement en production dans le spatial et l'aéronautique",
   "Un seul interlocuteur, du devis à la mise en ligne : moi",
   "Réponse sous 24 heures",
 ];
@@ -10,7 +10,7 @@ const practical = [
   { label: "Sites web", value: "Next.js · React" },
   { label: "Applications mobiles", value: "React Native · iOS et Android" },
   { label: "Logiciels métier", value: "Node.js · PostgreSQL" },
-  { label: "Où", value: "Toulouse, et à distance partout en France" },
+  { label: "Premier échange", value: "Visio, téléphone ou sur place à Toulouse" },
 ];
 
 export default function Hero() {
@@ -27,9 +27,10 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#6B655D] font-inter">
-              Je m&apos;appelle Yann Rouquié. Vous m&apos;expliquez votre besoin, je vous dis ce qui
-              est faisable, en combien de temps et pour quel budget. Puis je le construis,
-              du premier écran à la mise en ligne.
+              Je m&apos;appelle Yann Rouquié. Après cinq ans à développer des logiciels pour le
+              spatial et l&apos;aéronautique, je mets la même exigence au service des entreprises
+              de Toulouse. Vous m&apos;expliquez votre besoin, je vous dis ce qui est faisable,
+              en combien de temps et pour quel budget.
             </p>
 
             <ul className="mt-7 space-y-2.5">
