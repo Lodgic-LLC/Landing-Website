@@ -1,3 +1,11 @@
+import fs from 'node:fs'
+import path from 'node:path'
+import Image from 'next/image'
+
+/** Déposer le portrait ici (format portrait, ~1200×1500 px) : il s'affiche automatiquement au prochain build. */
+const PORTRAIT_SRC = '/portrait-yann.jpg'
+const hasPortrait = fs.existsSync(path.join(process.cwd(), 'public', PORTRAIT_SRC))
+
 const credentials = [
   { label: 'Formation', value: 'Ingénieur diplômé en informatique' },
   { label: 'Technologies', value: 'React · Next.js · React Native · Node.js' },
@@ -48,7 +56,48 @@ export default function About() {
     >
       <div className="mx-auto max-w-6xl px-6">
         {/* Identité */}
-        <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+          {/* Portrait + fiche */}
+          <div className="order-last lg:order-first">
+            <figure className="overflow-hidden rounded-xl border border-[#45403A] bg-[#33302C]">
+              {hasPortrait ? (
+                <div className="relative aspect-[4/5] w-full">
+                  <Image
+                    src={PORTRAIT_SRC}
+                    alt="Yann Rouquié, ingénieur en informatique et développeur à Toulouse"
+                    fill
+                    sizes="(max-width: 1024px) 92vw, 36vw"
+                    className="object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="aspect-[4/5] w-full p-3">
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-[#5A544C]">
+                    <span className="font-sofia-bold text-6xl text-white/20">YR</span>
+                    <span className="mono text-[10px] uppercase tracking-[0.14em] text-white/40">
+                      Portrait à venir
+                    </span>
+                  </div>
+                </div>
+              )}
+              <figcaption className="border-t border-[#45403A] px-5 py-3">
+                <p className="font-sofia-bold text-white">Yann Rouquié</p>
+                <p className="text-xs text-white/55 font-inter">Ingénieur en informatique · Toulouse</p>
+              </figcaption>
+            </figure>
+
+            <dl className="mt-5 space-y-4 rounded-xl border border-[#45403A] bg-[#33302C] p-5">
+              {credentials.map((item) => (
+                <div key={item.label}>
+                  <dt className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-white/40">
+                    {item.label}
+                  </dt>
+                  <dd className="mt-1 font-sofia-bold text-white">{item.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
           <div>
             <p className="eyebrow eyebrow-left">Qui je suis</p>
             <h2
@@ -79,17 +128,6 @@ export default function About() {
               </p>
             </div>
           </div>
-
-          <dl className="space-y-5 self-start rounded-xl border border-[#45403A] bg-[#33302C] p-6">
-            {credentials.map((item) => (
-              <div key={item.label}>
-                <dt className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-white/40">
-                  {item.label}
-                </dt>
-                <dd className="mt-1 font-sofia-bold text-white">{item.value}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
 
         {/* Ce que vous obtenez */}
