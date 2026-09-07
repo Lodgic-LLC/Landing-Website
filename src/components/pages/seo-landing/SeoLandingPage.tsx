@@ -1,6 +1,5 @@
 import type { ComponentProps } from 'react'
 import dynamic from 'next/dynamic'
-import { TrackingSection } from '@/components/analytics/AnalyticsProvider'
 import { PageTracker } from '@/components/analytics/PageTracker'
 import StructuredData from '@/components/seo/StructuredData'
 import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
@@ -63,19 +62,14 @@ export default function SeoLandingPage({
         additionalData={{ page_type: 'seo_landing', target_keyword: trackingKeyword }}
       />
       <main>
-        <TrackingSection sectionName="hero" trackOnView={true} trackTimeSpent={true}>
           <SeoHero
             primaryCta={{ label: 'Expliquer mon projet', href: '/contact' }}
             secondaryCta={{ label: 'Voir mes réalisations', href: '/#realisations' }}
             {...hero}
           />
-        </TrackingSection>
 
-        <TrackingSection sectionName="expertise" trackOnView={true} trackTimeSpent={true}>
           <SeoExpertise ctaLabel="Expliquer mon projet" ctaHref="/contact" {...expertise} />
-        </TrackingSection>
 
-        <TrackingSection sectionName="faq" trackOnView={true} trackTimeSpent={true}>
           <section className="border-t border-[#E6E1D8] bg-[#F8F6F2] py-20 md:py-24" aria-labelledby="faq-heading">
             <div className="mx-auto max-w-3xl px-6">
               <p className="eyebrow eyebrow-left">Questions fréquentes</p>
@@ -103,19 +97,12 @@ export default function SeoLandingPage({
               </div>
             </div>
           </section>
-        </TrackingSection>
 
-        <TrackingSection sectionName="realisations" trackOnView={true} trackTimeSpent={true}>
           <SuccessStories />
-        </TrackingSection>
 
-        <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
           <About />
-        </TrackingSection>
 
-        <TrackingSection sectionName="contact" trackOnView={true} trackTimeSpent={true}>
           <Contact />
-        </TrackingSection>
       </main>
     </>
   )

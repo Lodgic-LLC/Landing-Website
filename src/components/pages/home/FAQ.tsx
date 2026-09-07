@@ -1,4 +1,4 @@
-import HomeProjectForm from '@/components/forms/HomeProjectForm'
+import ProjectForm from '@/components/forms/ProjectForm'
 
 const reassurance = [
   {
@@ -76,7 +76,7 @@ export default function FAQ() {
             </div>
 
             <div className="lg:w-1/2 lg:pl-8 flex-grow">
-              <HomeProjectForm source="FAQ" />
+              <ProjectForm source="accueil" />
             </div>
           </div>
         </div>

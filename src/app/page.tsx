@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import Hero from '@/components/pages/home/Hero'
-import { TrackingSection } from '@/components/analytics/AnalyticsProvider'
 import { PageTracker } from '@/components/analytics/PageTracker'
 import StructuredData from '@/components/seo/StructuredData'
 import { SITE_URL } from '@/lib/site'
@@ -13,7 +12,6 @@ const Services = dynamic(() => import('@/components/pages/home/Services'))
 const Method = dynamic(() => import('@/components/pages/home/Method'))
 const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
 const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
-const AdvancedTracker = dynamic(() => import('@/components/analytics/AdvancedTracker').then((m) => m.AdvancedTracker))
 
 export const metadata: Metadata = {
   title: 'Développeur web, mobile et logiciel à Toulouse',
@@ -104,44 +102,23 @@ export default function Home() {
           location: 'toulouse',
         }}
       />
-      <AdvancedTracker
-        pageName="Home"
-        enableExitIntent={true}
-        enableMouseTracking={true}
-        enableIdleTracking={true}
-        enablePerformanceTracking={true}
-        idleTimeout={45000}
-        mouseTrackingThreshold={300}
-      />
       <main>
-        <TrackingSection sectionName="hero" trackOnView={true} trackTimeSpent={true}>
           <Hero />
-        </TrackingSection>
 
         {/* 1) Ce que j'ai livré — les preuves d'abord */}
-        <TrackingSection sectionName="realisations" trackOnView={true} trackTimeSpent={true}>
           <SuccessStories />
-        </TrackingSection>
 
         {/* 2) Ce que je fais */}
-        <TrackingSection sectionName="services" trackOnView={true} trackTimeSpent={true}>
           <Services />
-        </TrackingSection>
 
         {/* 3) Qui je suis et pourquoi un ingénieur */}
-        <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
           <About />
-        </TrackingSection>
 
         {/* 4) Comment ça se passe */}
-        <TrackingSection sectionName="methode" trackOnView={true} trackTimeSpent={true}>
           <Method />
-        </TrackingSection>
 
         {/* 5) Contact */}
-        <TrackingSection sectionName="contact" trackOnView={true} trackTimeSpent={true}>
           <FAQ />
-        </TrackingSection>
       </main>
     </>
   )

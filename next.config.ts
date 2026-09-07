@@ -1,13 +1,4 @@
 import type { NextConfig } from 'next'
-import createMDX from '@next/mdx'
-
-const withMDX = createMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-  },
-})
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -48,7 +39,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['react-icons'],
@@ -119,7 +109,7 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' data: https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",
-              "connect-src 'self' https://*.vercel-insights.com https://*.vercel-analytics.com https://va.vercel-scripts.com https://*.google-analytics.com https://*.googletagmanager.com https://analytics.ahrefs.com",
+              "connect-src 'self' https://formsubmit.co https://*.vercel-insights.com https://*.vercel-analytics.com https://va.vercel-scripts.com https://*.google-analytics.com https://*.googletagmanager.com https://analytics.ahrefs.com",
               "frame-src 'self' https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com",
               "frame-ancestors 'self'",
               "base-uri 'self'",
@@ -168,4 +158,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default withMDX(nextConfig)
+export default nextConfig

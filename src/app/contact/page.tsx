@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
 import StructuredData from '@/components/seo/StructuredData'
 import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
-import ContactForm from './_components/ContactForm'
+import ProjectForm, { FULL_FIELDS } from '@/components/forms/ProjectForm'
 import {
   ADDRESS_COUNTRY,
   ADDRESS_LOCALITY,
@@ -174,7 +174,7 @@ export default function ContactPage() {
                 ouvrées.
               </p>
               <div className="mt-6">
-                <ContactForm />
+                <ProjectForm source="page-contact" fields={FULL_FIELDS} submitLabel="Envoyer ma demande" />
               </div>
             </section>
           </div>

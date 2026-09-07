@@ -1,34 +1,23 @@
 'use client'
 
-import { useAnalytics } from '@/hooks/useAnalytics'
 import { useEffect } from 'react'
+import { trackPageView } from '@/lib/analytics'
 
 interface PageTrackerProps {
   pageName: string
   pageCategory?: string
-  additionalData?: Record<string, any>
+  additionalData?: Record<string, string | number | boolean>
 }
 
-export const PageTracker: React.FC<PageTrackerProps> = ({
-  pageName,
-  pageCategory = 'page',
-  additionalData = {}
-}) => {
-  const analytics = useAnalytics({
-    pageName,
-    enableAutoTracking: true,
-    enableScrollTracking: true,
-    enableTimeTracking: true,
-    enableExitTracking: true,
-  })
-
+/** Signale la consultation d'une page. N'affiche rien. */
+export function PageTracker({ pageName, pageCategory = 'page', additionalData }: PageTrackerProps) {
   useEffect(() => {
-    // Tracker l'arrivée sur la page avec des données supplémentaires
-    analytics.trackPageView(pageName, {
-      page_category: pageCategory,
-      ...additionalData,
-    })
-  }, [analytics, pageName, pageCategory, additionalData])
+    trackPageView(pageName, { page_category: pageCategory, ...additionalData })
+    // Une seule fois par page : les données annexes ne changent pas en cours de route.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pageName])
 
-  return null // Ce composant n'affiche rien, il sert uniquement au tracking
-} 
+  return null
+}
+
+export default PageTracker

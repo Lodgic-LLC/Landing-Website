@@ -4,7 +4,7 @@ import Link from "next/link";
 import StructuredData from "@/components/seo/StructuredData";
 import BreadcrumbStructuredData from "@/components/seo/BreadcrumbStructuredData";
 import { SITE_URL } from "@/lib/site";
-import HomeProjectForm from "@/components/forms/HomeProjectForm";
+import ProjectForm from '@/components/forms/ProjectForm';
 import { FaqAccordion, type FaqItem } from "@/components/FaqAccordion";
 import { ScreenshotGallery } from "./_components/ScreenshotGallery";
 
@@ -408,12 +408,7 @@ export default function BewasBeenProjectPage() {
 
           <div className="lg:col-span-7">
             <div className="rounded-3xl border border-[#2E2B28]/10 bg-[#F8F6F2] p-6 shadow-soft md:p-8">
-              <HomeProjectForm
-                source="Projet BewasBeen"
-                emailInputId="bwb-contact-email"
-                messageInputId="bwb-contact-message"
-                consentInputId="bwb-contact-consent"
-              />
+              <ProjectForm source="projet-bewasbeen" />
             </div>
           </div>
         </div>

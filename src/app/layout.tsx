@@ -6,7 +6,6 @@ import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
 
 import { WebVitals } from './web-vitals'
-import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
 import CookieConsentBanner from '@/components/consent/CookieConsentBanner'
 import ConsentScripts from '@/components/consent/ConsentScripts'
 import ConsentVercelAnalytics from '@/components/consent/ConsentVercelAnalytics'
@@ -259,21 +258,11 @@ export default function RootLayout({
         <CookieConsentBanner />
         <ConsentScripts />
         <WebVitals />
-        <AnalyticsProvider
-          config={{
-            debug: process.env.NODE_ENV === 'development',
-            enableAutoTracking: true,
-            scrollThreshold: 25,
-            timeThreshold: 10,
-            exitIntentEnabled: true,
-          }}
-        >
           <div className="relative w-full">
             <Navbar />
             {children}
             <Footer />
           </div>
-        </AnalyticsProvider>
         <ConsentVercelAnalytics />
       </body>
     </html>
