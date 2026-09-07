@@ -14,22 +14,40 @@ import { useState, type ComponentProps, type ReactNode } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { FaCheck, FaArrowRight } from 'react-icons/fa'
-import HeroVisual, { type HeroVisualName } from './MaquettesSeo'
+import MaquetteNavigateur from './MaquetteNavigateur'
+import type { PageService } from '@/content/pages-service'
 import PageTracker from '@/components/analytics/PageTracker'
 import StructuredData from '@/components/seo/StructuredData'
 import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
 import FAQStructuredData from '@/components/seo/FAQStructuredData'
 import { SITE_URL } from '@/lib/site'
 
+/** Rend un texte où **ce qui est entre astérisques** apparaît en gras. */
+function Texte({ children }: { children: string }) {
+  return (
+    <>
+      {children.split(/(\*\*[^*]+\*\*)/g).map((bout, i) =>
+        bout.startsWith('**') && bout.endsWith('**') ? (
+          <strong key={i} className="font-sofia-bold">
+            {bout.slice(2, -2)}
+          </strong>
+        ) : (
+          bout
+        ),
+      )}
+    </>
+  )
+}
+
 interface SeoHeroProps {
   eyebrow: string;
   title: string;
   highlight: string;
-  description: ReactNode;
+  description: string;
   badges: string[];
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
-  visual?: HeroVisualName;
+
 }
 
 function Bandeau({
@@ -40,7 +58,6 @@ function Bandeau({
   badges,
   primaryCta = { label: "Demander un devis", href: "/#contact" },
   secondaryCta = { label: "Voir nos réalisations", href: "/#realisations" },
-  visual = "devices",
 }: SeoHeroProps) {
   return (
     <section className="w-full min-h-screen bg-[#F8F6F2] pt-24 md:pt-36 pb-32 md:pb-44 overflow-hidden relative flex flex-col justify-center">
@@ -77,7 +94,7 @@ function Bandeau({
             <div
               className="lead text-lg sm:text-xl max-w-2xl mb-8 text-[#2E2B28]"
             >
-              {description}
+              <Texte>{description}</Texte>
             </div>
 
             <ul
@@ -117,7 +134,7 @@ function Bandeau({
             <div className="relative w-full max-w-xl aspect-square">
               {/* Glow halos */}
 
-              <HeroVisual variant={visual} />
+              <MaquetteNavigateur />
             </div>
           </div>
         </div>
@@ -129,7 +146,7 @@ function Bandeau({
 export interface SeoExpertiseCard {
   num: string
   title: string
-  body: ReactNode
+  body: string
   bullets: string[]
 }
 
@@ -141,10 +158,10 @@ export interface SeoCrossLink {
 
 interface SeoExpertiseProps {
   eyebrow: string
-  heading: ReactNode
-  intro: ReactNode
+  heading: string
+  intro: string
   cards: SeoExpertiseCard[]
-  closing?: ReactNode
+  closing?: string[]
   crossLinks?: SeoCrossLink[]
   ctaLabel?: string
   ctaHref?: string
@@ -174,14 +191,16 @@ function Expertises({
               {eyebrow}
             </span>
             <h2 className="mt-5 font-sofia-bold text-3xl md:text-5xl text-[#2E2B28] leading-[1.1]">
-              {heading}
+              <Texte>{heading}</Texte>
             </h2>
           </div>
 
           <div
             className="lg:col-span-5"
           >
-            <p className="text-lg font-inter text-[#6B655D]/80 leading-relaxed">{intro}</p>
+            <p className="text-lg font-inter text-[#6B655D]/80 leading-relaxed">
+              <Texte>{intro}</Texte>
+            </p>
           </div>
         </div>
 
@@ -200,7 +219,9 @@ function Expertises({
                 <div className="h-[1px] flex-1 bg-gradient-to-r from-[#2E2B28]/15 to-transparent" />
               </div>
               <h3 className="font-sofia-bold text-xl md:text-2xl text-[#2E2B28] leading-snug">{card.title}</h3>
-              <div className="mt-3 text-[#6B655D] font-inter leading-relaxed">{card.body}</div>
+              <p className="mt-3 text-[#6B655D] font-inter leading-relaxed">
+                <Texte>{card.body}</Texte>
+              </p>
               <ul className="mt-5 space-y-2">
                 {card.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-sm font-inter text-[#2E2B28]">
@@ -220,8 +241,12 @@ function Expertises({
               <div
                 className="lg:col-span-7 rounded-2xl bg-[#F8F6F2] border border-[#2E2B28]/10 p-8 md:p-10"
               >
-                <div className="text-[#2E2B28] font-inter leading-relaxed text-base md:text-lg [&>p]:mt-4 [&>p:first-child]:mt-0">
-                  {closing}
+                <div className="text-[#2E2B28] font-inter leading-relaxed text-base md:text-lg">
+                  {closing.map((paragraphe, i) => (
+                    <p key={i} className={i > 0 ? 'mt-4' : undefined}>
+                      <Texte>{paragraphe}</Texte>
+                    </p>
+                  ))}
                 </div>
                 <Link
                   href={ctaHref}
@@ -273,28 +298,11 @@ export interface SeoFaq {
   answer: string
 }
 
-interface SeoLandingPageProps {
-  /** Chemin de la page, avec le slash initial */
-  path: string
-  /** Nom lisible, utilisé dans le fil d'Ariane et le schéma WebPage */
-  name: string
-  description: string
-  trackingKeyword: string
-  hero: ComponentProps<typeof Bandeau>
-  expertise: ComponentProps<typeof Expertises>
-  faqs: SeoFaq[]
-}
-
-export default function PageSeo({
-  path,
-  name,
-  description,
-  trackingKeyword,
-  hero,
-  expertise,
-  faqs,
-}: SeoLandingPageProps) {
+export default function PageSeo({ page }: { page: PageService }) {
+  const { name, description, hero, expertise, faqs } = page
+  const path = `/${page.slug}`
   const url = `${SITE_URL}${path}`
+  const trackingKeyword = page.slug.replace(/-/g, '_')
   const pageSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',

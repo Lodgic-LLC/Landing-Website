@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
+import { PAGES_SERVICE } from "@/content/pages-service";
 
 const BUILD_DATE = new Date();
 
@@ -19,11 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route("", 1.0, "weekly"),
     route("contact", 0.9),
     route("projets/bewasbeen", 0.8),
-    route("creation-site-internet-toulouse", 0.9),
-    route("developpement-application-mobile-toulouse", 0.9),
-    route("logiciel-sur-mesure-toulouse", 0.9),
-    route("developpeur-react-native-toulouse", 0.8),
-    route("developpement-application-ios-android", 0.8),
+    ...PAGES_SERVICE.map((page) => route(page.slug, 0.85)),
     route("politique-confidentialite", 0.4, "yearly"),
     route("mentions-legales", 0.4, "yearly"),
   ];
