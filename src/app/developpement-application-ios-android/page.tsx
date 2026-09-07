@@ -1,282 +1,132 @@
-import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
-import { TrackingSection } from '@/components/analytics/AnalyticsProvider'
-import { PageTracker } from '@/components/analytics/PageTracker'
-import StructuredData from '@/components/seo/StructuredData'
-import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
-import SeoHero from '@/components/pages/seo-landing/SeoHero'
-import SeoExpertise from '@/components/pages/seo-landing/SeoExpertise'
-import { SITE_URL } from '@/lib/site'
+import SeoLandingPage from '@/components/pages/seo-landing/SeoLandingPage'
+import { buildSeoMetadata } from '@/lib/seo'
 
-const About = dynamic(() => import('@/components/pages/home/About'))
-const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
-const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
+const PATH = '/developpement-application-ios-android'
+const NAME = "Développement d'application iOS et Android"
+const DESCRIPTION =
+  "Publier une application sur l'App Store et Google Play : ce que ça implique, ce que je prends en charge, et ce que vous devrez garder à jour. Développeur indépendant à Toulouse, ingénieur en informatique."
 
-const PAGE_PATH = '/developpement-application-ios-android'
-
-export const metadata: Metadata = {
-  title: 'Développement application iOS et Android',
-  description:
-    "Développement application iOS et Android : Lodgic conçoit vos apps Swift, SwiftUI, Kotlin et Jetpack Compose, ou cross-platform React Native, depuis Toulouse.",
-  alternates: { canonical: `${SITE_URL}${PAGE_PATH}` },
-  openGraph: {
-    title: 'Développement application iOS et Android - Lodgic',
-    description:
-      "iOS Swift, Android Kotlin ou React Native : Lodgic vous aide à choisir la bonne approche et publie votre application sur l'App Store et Google Play.",
-    url: `${SITE_URL}${PAGE_PATH}`,
-    siteName: 'Lodgic',
-    images: [
-      {
-        url: `${SITE_URL}/lodgic-banner.png`,
-        width: 1200,
-        height: 630,
-        alt: 'Développement application iOS et Android - Lodgic',
-      },
-    ],
-    locale: 'fr_FR',
-    type: 'website',
-  },
+export const metadata = buildSeoMetadata({
+  path: PATH,
+  title: NAME,
+  description: DESCRIPTION,
   keywords: [
-    'Développement application iOS et Android',
-    'Application iOS Toulouse',
-    'Application Android Toulouse',
-    'Développeur iOS Swift',
-    'Développeur Android Kotlin',
-    'App Store et Google Play',
-    'Application native vs cross-platform',
-    'Développeur SwiftUI',
-    'Développeur Jetpack Compose',
-    'Publication App Store',
-    'Publication Google Play',
+    'développement application iOS Android',
+    'publier application App Store',
+    'publier application Google Play',
+    'développeur iOS Toulouse',
+    'développeur Android Toulouse',
+    'validation App Store',
   ],
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Développement application iOS et Android - Lodgic',
-    description:
-      "Application iOS native (Swift / SwiftUI) ou Android native (Kotlin / Jetpack Compose), ou React Native cross-platform.",
-    images: [`${SITE_URL}/lodgic-banner.png`],
-  },
-}
+})
 
-export default function DeveloppementApplicationIosAndroidPage() {
-  const pageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': `${SITE_URL}${PAGE_PATH}#webpage`,
-    url: `${SITE_URL}${PAGE_PATH}`,
-    name: 'Développement application iOS et Android - Lodgic',
-    description: metadata.description,
-    isPartOf: { '@id': `${SITE_URL}/#website` },
-    about: { '@id': `${SITE_URL}/#organization` },
-    inLanguage: 'fr-FR',
-  }
-
-  const breadcrumbItems = [
-    { name: 'Accueil', url: SITE_URL },
-    { name: 'Développement application iOS et Android', url: `${SITE_URL}${PAGE_PATH}` },
-  ]
-
+export default function Page() {
   return (
-    <>
-      <StructuredData id="seo-ios-android-webpage" data={pageSchema} />
-      <BreadcrumbStructuredData items={breadcrumbItems} />
-      <PageTracker
-        pageName="SEO - iOS et Android"
-        pageCategory="seo_landing"
-        additionalData={{ page_type: 'seo_landing', target_keyword: 'developpement_application_ios_android' }}
-      />
-      <main>
-        <TrackingSection sectionName="hero" trackOnView={true} trackTimeSpent={true}>
-          <SeoHero
-            eyebrow="iOS · Android · Cross-platform"
-            title="Développement application iOS et Android"
-            highlight="Native, hybride ou les deux"
-            description={
-              <>
-                Lodgic développe vos applications <strong>iOS (Swift / SwiftUI)</strong>, <strong>Android (Kotlin /
-                Jetpack Compose)</strong> et <strong>React Native</strong>. Une seule agence pour publier sur l'App
-                Store et Google Play, avec la techno qui sert votre projet.
-              </>
-            }
-            badges={[
-              'Swift / SwiftUI',
-              'Kotlin / Jetpack Compose',
-              'React Native cross-platform',
-              'App Store + Google Play',
-              'TestFlight & Internal Testing',
-            ]}
-            visual="platforms"
-          />
-        </TrackingSection>
-
-        <TrackingSection sectionName="expertise" trackOnView={true} trackTimeSpent={true}>
-          <SeoExpertise
-            eyebrow="iOS, Android ou les deux ?"
-            heading={
-              <>
-                Choisir entre <span className="text-[#C2542D]">application native</span> et{' '}
-                <span className="text-[#C2542D]">cross-platform</span>, sans se tromper.
-              </>
-            }
-            intro={
-              <>
-                Le <strong>développement d'une application iOS et Android</strong> ne suit pas une recette unique. On
-                analyse votre projet et on recommande la bonne stack — natif iOS, natif Android, React Native ou un
-                mix.
-              </>
-            }
-            cards={[
-              {
-                num: 'iOS',
-                title: 'Application iOS native (Swift / SwiftUI)',
-                body: (
-                  <>
-                    Pour des apps premium ou hyper performantes (audio temps réel, AR, jeux), je développe en{' '}
-                    <strong>Swift</strong> et <strong>SwiftUI</strong>. Compatible iPhone, iPad, Apple Watch et
-                    CarPlay.
-                  </>
-                ),
-                bullets: [
-                  'Swift 5 / SwiftUI / UIKit',
-                  'Apple Pay, Sign in with Apple',
-                  'CoreData, CloudKit, HealthKit',
-                  'Publication App Store',
-                ],
-              },
-              {
-                num: 'AND',
-                title: 'Application Android native (Kotlin)',
-                body: (
-                  <>
-                    Sur Android, je travaille en <strong>Kotlin</strong> et <strong>Jetpack Compose</strong>.
-                    Material You, Material 3, support tablette et déploiement Google Play sans accroc.
-                  </>
-                ),
-                bullets: [
-                  'Kotlin / Coroutines / Flow',
-                  'Jetpack Compose & Material 3',
-                  'WorkManager, Room, DataStore',
-                  'Publication Google Play Console',
-                ],
-              },
-              {
-                num: 'X',
-                title: 'Cross-platform React Native & Flutter',
-                body: (
-                  <>
-                    Quand l'enjeu est le time-to-market et le coût, <strong>React Native</strong> ou <strong>Flutter</strong>{' '}
-                    permettent de livrer iOS et Android avec un seul interlocuteur.
-                  </>
-                ),
-                bullets: [
-                  'React Native / Expo / TypeScript',
-                  'Flutter / Dart',
-                  'Modules natifs sur mesure',
-                  'CI/CD partagée iOS et Android',
-                ],
-              },
-              {
-                num: 'UX',
-                title: 'Design system iOS + Android',
-                body: (
-                  <>
-                    Je adapte l'expérience à chaque plateforme : <strong>Human Interface Guidelines</strong> côté
-                    iOS, <strong>Material Design 3</strong> côté Android. Vos utilisateurs se sentent chez eux.
-                  </>
-                ),
-                bullets: [
-                  'Human Interface Guidelines',
-                  'Material Design 3',
-                  'Dark mode et accessibilité',
-                  'Adaptive layouts (iPad, tablette)',
-                ],
-              },
-              {
-                num: 'STORE',
-                title: 'Publication App Store et Google Play',
-                body: (
-                  <>
-                    Création des comptes développeurs Apple et Google, fiches store optimisées (ASO), screenshots,
-                    soumission, gestion des reviews et conformité <strong>App Tracking Transparency / Data Safety</strong>.
-                  </>
-                ),
-                bullets: [
-                  'Apple Developer Program',
-                  'Google Play Console',
-                  'ASO multi-langues',
-                  'Conformité ATT, Privacy Manifest, Data Safety',
-                ],
-              },
-              {
-                num: 'TEST',
-                title: 'TestFlight, Internal Testing & QA',
-                body: (
-                  <>
-                    Avant la mise en production, beta testing avec <strong>TestFlight (iOS)</strong> et <strong>Internal
-                    Testing (Android)</strong>. Tests automatisés Detox, Maestro ou Appium pour les parcours critiques.
-                  </>
-                ),
-                bullets: [
-                  'TestFlight + Internal Testing',
-                  'Tests E2E (Detox / Maestro)',
-                  'Tests d\'accessibilité',
-                  'QA manuel sur device cloud',
-                ],
-              },
-            ]}
-            closing={
-              <>
-                <p>
-                  Faut-il développer en <strong>natif iOS et Android</strong> ou en cross-platform ? La réponse dépend
-                  de quatre critères : la performance attendue, l'accès aux APIs natives, le budget et le time-to-market.
-                  Pour un MVP startup, React Native sera souvent le bon choix. Pour une app qui mise sur l'expérience
-                  premium, le natif s'impose.
-                </p>
-                <p>
-                  Lodgic vous accompagne dans <strong>ce choix technique</strong>, sans religion. Je maîtrise
-                  Swift, Kotlin, React Native et Flutter. Je recommande l'outil qui sert votre projet, pas celui
-                  qu'on aimerait vendre.
-                </p>
-                <p>
-                  Le <strong>développement d'application iOS et Android</strong> est aussi un sujet de conformité :
-                  RGPD, App Tracking Transparency, Privacy Manifests Apple, Data Safety Google. Je gère ces
-                  obligations pour que votre app passe les reviews du premier coup.
-                </p>
-              </>
-            }
-            crossLinks={[
-              {
-                title: 'Développeur React Native Toulouse',
-                href: '/developpeur-react-native-toulouse',
-                description: 'Mon expertise sur la stack cross-platform la plus mature.',
-              },
-              {
-                title: 'Création application mobile sur mesure',
-                href: '/creation-application-mobile-sur-mesure',
-                description: 'Une app pensée autour de votre métier, en natif ou hybride.',
-              },
-              {
-                title: 'Apple vs Android — guide technique',
-                href: '/developpement-application-mobile/apple-android',
-                description: 'Comparatif détaillé des écosystèmes iOS et Android.',
-              },
-            ]}
-          />
-        </TrackingSection>
-
-
-        <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
-          <About />
-        </TrackingSection>
-
-        <TrackingSection sectionName="realisations" trackOnView={true} trackTimeSpent={true}>
-          <SuccessStories />
-        </TrackingSection>
-
-        <TrackingSection sectionName="faq" trackOnView={true} trackTimeSpent={true}>
-          <FAQ />
-        </TrackingSection>
-      </main>
-    </>
+    <SeoLandingPage
+      path={PATH}
+      name={NAME}
+      description={DESCRIPTION}
+      trackingKeyword="developpement_application_ios_android"
+      hero={{
+        eyebrow: 'App Store et Google Play · Toulouse',
+        title: "Développement d'application iOS et Android",
+        highlight: 'et tout ce qu’il faut pour être publié',
+        description: (
+          <>
+            Développer l’application est une chose ; la faire accepter par Apple, la publier sur Google Play et la garder
+            en ligne malgré les mises à jour des systèmes en est une autre. Voici ce que je prends en charge,{' '}
+            <strong>de bout en bout</strong>.
+          </>
+        ),
+        badges: ['App Store', 'Google Play', 'Validation Apple', 'Mises à jour iOS et Android', 'Toulouse et à distance'],
+        visual: 'platforms',
+      }}
+      expertise={{
+        eyebrow: 'Publier, et rester publié',
+        heading: (
+          <>
+            Ce qui se passe entre « l’app est finie » et{' '}
+            <span className="text-[#C2542D]">« l’app est dans le store »</span>.
+          </>
+        ),
+        intro:
+          'C’est l’étape que les devis oublient et qui fait perdre des semaines : comptes développeur, règles d’Apple, fiches, permissions, tests sur appareils. Je la connais et je la prends en charge.',
+        cards: [
+          {
+            num: '01',
+            title: 'Comptes développeur',
+            body: 'Apple et Google exigent chacun un compte, avec des justificatifs d’entreprise et des frais. Je les crée à votre nom — l’application vous appartient, pas à moi — et je vous explique ce qu’il faut renouveler.',
+            bullets: ['Compte Apple Developer (99 $ par an)', 'Compte Google Play (25 $ une fois)', 'Ouverts au nom de votre entreprise', 'Vous gardez tous les accès'],
+          },
+          {
+            num: '02',
+            title: 'Les règles d’Apple et de Google',
+            body: 'Apple refuse des applications tous les jours : bouton de suppression de compte manquant, permissions mal expliquées, paiement hors des règles. Je conçois l’application pour passer du premier coup.',
+            bullets: ['Règles de l’App Store appliquées dès la conception', 'Textes de permissions rédigés correctement', 'Paiement conforme aux règles des stores', 'Réponses aux refus, s’il y en a'],
+          },
+          {
+            num: '03',
+            title: 'iPhone et Android ne se ressemblent pas',
+            body: 'Bouton retour, menus, notifications, partage : chaque système a ses habitudes. Je respecte celles de chacun, pour que l’application paraisse naturelle à vos utilisateurs des deux côtés.',
+            bullets: ['Navigation propre à chaque système', 'Notifications configurées pour iOS et Android', 'Partage, appareil photo, fichiers', 'Tailles d’écran et tablettes'],
+          },
+          {
+            num: '04',
+            title: 'Tests sur de vrais appareils',
+            body: 'Un simulateur ne dit pas si l’app rame sur un Android à 150 €. Je teste sur des téléphones réels, récents et anciens, et vous recevez une version test installable sur le vôtre.',
+            bullets: ['Version test TestFlight et Android', 'Appareils anciens et récents', 'Réseau lent et mode avion', 'Suivi des plantages après publication'],
+          },
+          {
+            num: '05',
+            title: 'Fiche store et visibilité',
+            body: 'Nom, captures d’écran, description, mots-clés : la fiche fait la moitié des téléchargements. Je la prépare avec vous, en pensant à ce que vos clients tapent réellement.',
+            bullets: ['Captures d’écran par appareil', 'Description et mots-clés', 'Icône et visuels aux bons formats', 'Fiche en français, et en anglais si besoin'],
+          },
+          {
+            num: '06',
+            title: 'Rester en ligne dans deux ans',
+            body: 'Chaque automne, iOS et Android changent. Une application jamais mise à jour finit par planter ou par être retirée. Je prévois ces mises à jour, et je vous dis à l’avance ce qu’elles coûtent.',
+            bullets: ['Mises à jour annuelles iOS et Android', 'Dépendances tenues à jour', 'Alertes de plantage traitées', 'Forfait de suivi clair, sans surprise'],
+          },
+        ],
+        closing: (
+          <>
+            <p>
+              Je développe en <strong>React Native</strong>, ce qui me permet de livrer les deux versions à partir d’un
+              seul code — le détail est sur la page dédiée. Le résultat : une application sur les deux stores à partir de{' '}
+              <strong>6 000 €</strong>, en <strong>2 à 4 mois</strong>, avec un prix fixé par écrit avant de commencer.
+            </p>
+            <p>Basé à Toulouse, je travaille aussi bien sur place qu’à distance.</p>
+          </>
+        ),
+        crossLinks: [
+          { title: 'Développement d’application mobile à Toulouse', href: '/developpement-application-mobile-toulouse', description: 'Les six chantiers d’une application, du cadrage à la publication.' },
+          { title: 'Développeur React Native à Toulouse', href: '/developpeur-react-native-toulouse', description: 'Pourquoi un seul code pour les deux plateformes, et quand je le déconseille.' },
+          { title: 'Logiciel sur mesure à Toulouse', href: '/logiciel-sur-mesure-toulouse', description: 'Quand le besoin est un outil interne plutôt qu’une application publique.' },
+        ],
+      }}
+      faqs={[
+        {
+          question: 'Combien de temps prend la validation par Apple ?',
+          answer:
+            'En général un à trois jours, parfois plus si Apple demande des précisions. Je prépare l’application pour éviter les motifs de refus les plus fréquents, et je réponds aux éventuelles demandes d’Apple à votre place.',
+        },
+        {
+          question: 'Dois-je créer moi-même les comptes développeur ?',
+          answer:
+            'Non, je m’en charge, mais ils sont ouverts au nom de votre entreprise et vous en gardez les accès. Comptez 99 $ par an chez Apple et 25 $ une fois chez Google, réglés directement par vous.',
+        },
+        {
+          question: 'Que se passe-t-il si Apple refuse l’application ?',
+          answer:
+            'Un refus indique précisément la règle concernée. Je corrige et je resoumets, sans coût supplémentaire pour vous quand le motif relève de mon travail. C’est rare quand les règles sont appliquées dès la conception.',
+        },
+        {
+          question: 'Combien coûte le maintien d’une application chaque année ?',
+          answer:
+            'Cela dépend de l’application ; je le chiffre au cadrage et vous le connaissez avant de signer. Le suivi couvre les mises à jour iOS et Android annuelles, les dépendances et les corrections, plus les frais de compte Apple et Google.',
+        },
+      ]}
+    />
   )
 }

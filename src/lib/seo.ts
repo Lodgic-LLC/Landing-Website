@@ -1,0 +1,36 @@
+import type { Metadata } from 'next'
+import { SITE_NAME, SITE_URL } from '@/lib/site'
+
+interface SeoMetadataInput {
+  path: string
+  title: string
+  description: string
+  keywords: string[]
+}
+
+/** Métadonnées complètes d'une page d'atterrissage : canonique, Open Graph, Twitter. */
+export function buildSeoMetadata({ path, title, description, keywords }: SeoMetadataInput): Metadata {
+  const url = `${SITE_URL}${path}`
+  const fullTitle = `${title} — ${SITE_NAME}`
+  return {
+    title,
+    description,
+    keywords,
+    alternates: { canonical: url },
+    openGraph: {
+      title: fullTitle,
+      description,
+      url,
+      siteName: SITE_NAME,
+      images: [{ url: `${SITE_URL}/lodgic-banner.png`, width: 1200, height: 630, alt: fullTitle }],
+      locale: 'fr_FR',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: fullTitle,
+      description,
+      images: [`${SITE_URL}/lodgic-banner.png`],
+    },
+  }
+}

@@ -1,274 +1,134 @@
-import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
-import { TrackingSection } from '@/components/analytics/AnalyticsProvider'
-import { PageTracker } from '@/components/analytics/PageTracker'
-import StructuredData from '@/components/seo/StructuredData'
-import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
-import SeoHero from '@/components/pages/seo-landing/SeoHero'
-import SeoExpertise from '@/components/pages/seo-landing/SeoExpertise'
-import { SITE_URL } from '@/lib/site'
+import SeoLandingPage from '@/components/pages/seo-landing/SeoLandingPage'
+import { buildSeoMetadata } from '@/lib/seo'
 
-const About = dynamic(() => import('@/components/pages/home/About'))
-const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
-const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
+const PATH = '/developpeur-react-native-toulouse'
+const NAME = 'Développeur React Native à Toulouse'
+const DESCRIPTION =
+  "Ingénieur indépendant à Toulouse, spécialisé React Native et Expo : une application iPhone et Android à partir d'un seul code. Je vous explique ce que ça vous fait gagner, et les cas où je vous le déconseille."
 
-const PAGE_PATH = '/developpeur-react-native-toulouse'
-
-export const metadata: Metadata = {
-  title: 'Développeur React Native Toulouse',
-  description:
-    "Développeur React Native à Toulouse : Lodgic conçoit des applications cross-platform iOS et Android performantes en React Native, TypeScript et Expo, avec un seul code base.",
-  alternates: { canonical: `${SITE_URL}${PAGE_PATH}` },
-  openGraph: {
-    title: 'Développeur React Native Toulouse - Lodgic',
-    description:
-      "Agence React Native à Toulouse. Un seul interlocuteur TypeScript pour vos applications iOS et Android, livrées en quelques semaines.",
-    url: `${SITE_URL}${PAGE_PATH}`,
-    siteName: 'Lodgic',
-    images: [
-      {
-        url: `${SITE_URL}/lodgic-banner.png`,
-        width: 1200,
-        height: 630,
-        alt: 'Développeur React Native Toulouse - Lodgic',
-      },
-    ],
-    locale: 'fr_FR',
-    type: 'website',
-  },
+export const metadata = buildSeoMetadata({
+  path: PATH,
+  title: NAME,
+  description: DESCRIPTION,
   keywords: [
-    'Développeur React Native Toulouse',
-    'Agence React Native Toulouse',
-    'Freelance React Native Toulouse',
-    'Application React Native',
-    'Expo développeur Toulouse',
-    'Développement cross-platform Toulouse',
-    'TypeScript React Native',
-    'Application iOS Android React Native',
-    'Lead React Native France',
-    'Refonte React Native',
+    'développeur React Native Toulouse',
+    'freelance React Native Toulouse',
+    'application React Native',
+    'développeur Expo Toulouse',
+    'application cross-platform Toulouse',
+    'reprise application React Native',
   ],
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Développeur React Native Toulouse - Lodgic',
-    description:
-      "Lodgic, équipe React Native à Toulouse. iOS et Android avec un seul code base, en TypeScript / Expo.",
-    images: [`${SITE_URL}/lodgic-banner.png`],
-  },
-}
+})
 
-export default function DeveloppeurReactNativeToulousePage() {
-  const pageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': `${SITE_URL}${PAGE_PATH}#webpage`,
-    url: `${SITE_URL}${PAGE_PATH}`,
-    name: 'Développeur React Native Toulouse - Lodgic',
-    description: metadata.description,
-    isPartOf: { '@id': `${SITE_URL}/#website` },
-    about: { '@id': `${SITE_URL}/#organization` },
-    inLanguage: 'fr-FR',
-  }
-
-  const breadcrumbItems = [
-    { name: 'Accueil', url: SITE_URL },
-    { name: 'Développeur React Native Toulouse', url: `${SITE_URL}${PAGE_PATH}` },
-  ]
-
+export default function Page() {
   return (
-    <>
-      <StructuredData id="seo-react-native-webpage" data={pageSchema} />
-      <BreadcrumbStructuredData items={breadcrumbItems} />
-      <PageTracker
-        pageName="SEO - React Native Toulouse"
-        pageCategory="seo_landing"
-        additionalData={{ page_type: 'seo_landing', target_keyword: 'developpeur_react_native_toulouse' }}
-      />
-      <main>
-        <TrackingSection sectionName="hero" trackOnView={true} trackTimeSpent={true}>
-          <SeoHero
-            eyebrow="React Native · TypeScript · Expo"
-            title="Développeur React Native à Toulouse"
-            highlight="Un seul interlocuteur, deux apps natives"
-            description={
-              <>
-                Vous cherchez un <strong>développeur React Native à Toulouse</strong> ? Lodgic conçoit des
-                applications cross-platform iOS et Android en <strong>React Native, TypeScript et Expo</strong>. Un
-                seul code, deux apps, un budget maîtrisé.
-              </>
-            }
-            badges={['React Native 0.74+', 'Expo SDK', 'TypeScript strict', 'Reanimated', 'OTA updates']}
-            visual="react-native"
-          />
-        </TrackingSection>
-
-        <TrackingSection sectionName="expertise" trackOnView={true} trackTimeSpent={true}>
-          <SeoExpertise
-            eyebrow="Expertise React Native"
-            heading={
-              <>
-                Pourquoi <span className="text-[#C2542D]">React Native</span> ? Parce qu'on ne paie pas deux fois
-                la même app.
-              </>
-            }
-            intro={
-              <>
-                <strong>React Native</strong> permet de partager 90% du code entre iOS et Android. Résultat : un budget
-                quasi divisé par deux, une seule base de code à maintenir, et des releases simultanées sur les deux
-                stores.
-              </>
-            }
-            cards={[
-              {
-                num: 'RN',
-                title: 'React Native + Expo : la stack moderne',
-                body: (
-                  <>
-                    Je travaille sur <strong>Expo SDK</strong> et le <strong>New Architecture</strong> de React
-                    Native (Fabric, TurboModules). Performance native, hot reload instantané, OTA updates sans
-                    repasser par les stores.
-                  </>
-                ),
-                bullets: [
-                  'Expo SDK 50+ avec EAS Build',
-                  'New Architecture (Fabric, Turbo)',
-                  'Reanimated 3 pour des animations 60fps',
-                  'OTA updates via EAS Update',
-                ],
-              },
-              {
-                num: 'TS',
-                title: 'TypeScript strict de bout en bout',
-                body: (
-                  <>
-                    100% TypeScript, du composant React Native à l'API NestJS. Typage partagé entre client et serveur,
-                    moins de bugs en production, refactor serein.
-                  </>
-                ),
-                bullets: [
-                  'TypeScript strict mode',
-                  'Validation Zod / tRPC',
-                  'Types partagés client/serveur',
-                  'ESLint + Prettier configurés',
-                ],
-              },
-              {
-                num: 'UI',
-                title: 'UI native, animations 60fps',
-                body: (
-                  <>
-                    React Native ne veut pas dire mauvaise UX. Avec <strong>Reanimated</strong>, gestures natifs,
-                    Skia et Lottie, vos écrans sont aussi fluides qu'une app Swift ou Kotlin.
-                  </>
-                ),
-                bullets: [
-                  'Reanimated 3 + Gesture Handler',
-                  'React Native Skia',
-                  'Lottie pour les micro-animations',
-                  'Performance audit Hermes',
-                ],
-              },
-              {
-                num: 'API',
-                title: 'Backend TypeScript intégré',
-                body: (
-                  <>
-                    Je développe aussi votre backend en <strong>NestJS</strong>, <strong>Prisma</strong> et
-                    PostgreSQL. Un seul interlocuteur, React Native et backend, hébergement EU et RGPD-friendly.
-                  </>
-                ),
-                bullets: [
-                  'NestJS / Prisma / PostgreSQL',
-                  'Authentification JWT, OAuth, magic link',
-                  'Hébergement Vercel, AWS, Scaleway',
-                  'Webhooks Stripe & RevenueCat',
-                ],
-              },
-              {
-                num: 'CI/CD',
-                title: 'EAS Build, CI/CD et stores',
-                body: (
-                  <>
-                    Builds iOS et Android automatisés avec <strong>EAS Build</strong>, distribution interne via
-                    TestFlight et Internal Testing, soumission automatique App Store et Google Play.
-                  </>
-                ),
-                bullets: [
-                  'EAS Build & EAS Submit',
-                  'TestFlight + Internal Testing',
-                  'Versioning sémantique automatique',
-                  'GitHub Actions workflows',
-                ],
-              },
-              {
-                num: 'Audit',
-                title: 'Audit & refonte React Native',
-                body: (
-                  <>
-                    Vous avez déjà une application React Native ? Je réalise des <strong>audits techniques</strong>{' '}
-                    (perf, sécurité, dépendances) et accompagnons vos refontes vers le New Arch.
-                  </>
-                ),
-                bullets: [
-                  'Audit perf & bundle size',
-                  'Migration vers le New Arch',
-                  'Mise à jour SDK Expo',
-                  'Reprise de code legacy',
-                ],
-              },
-            ]}
-            closing={
-              <>
-                <p>
-                  Pourquoi choisir un <strong>développeur React Native à Toulouse</strong> plutôt qu'une équipe offshore ?
-                  Parce que la qualité d'une app mobile dépend autant de la communication que du code. À Toulouse, on
-                  parle français, on travaille sur le même fuseau horaire et on peut se voir en présentiel.
-                </p>
-                <p>
-                  React Native n'est pas un compromis. <strong>Discord, Shopify, Microsoft Office, Coinbase</strong> et
-                  même certaines parties de Facebook tournent en React Native. La techno est mature, la communauté est
-                  immense et le ROI est imbattable pour qui veut deux applications natives au prix d'une.
-                </p>
-                <p>
-                  Que vous lanciez un MVP B2C, une app interne pour vos commerciaux ou une refonte complète d'une
-                  application existante, mon <strong>expertise React Native à Toulouse</strong> vous accompagne du
-                  cadrage à la mise en production.
-                </p>
-              </>
-            }
-            crossLinks={[
-              {
-                title: 'Développement application iOS et Android',
-                href: '/developpement-application-ios-android',
-                description: 'Comparer React Native, Flutter et le développement natif Swift / Kotlin.',
-              },
-              {
-                title: 'Développement application mobile à Toulouse',
-                href: '/developpement-application-mobile-toulouse',
-                description: 'Mon offre globale mobile pour la région toulousaine.',
-              },
-              {
-                title: 'Création application mobile sur mesure',
-                href: '/creation-application-mobile-sur-mesure',
-                description: 'Ma méthode pour les projets mobiles 100% personnalisés.',
-              },
-            ]}
-          />
-        </TrackingSection>
-
-
-        <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
-          <About />
-        </TrackingSection>
-
-        <TrackingSection sectionName="realisations" trackOnView={true} trackTimeSpent={true}>
-          <SuccessStories />
-        </TrackingSection>
-
-        <TrackingSection sectionName="faq" trackOnView={true} trackTimeSpent={true}>
-          <FAQ />
-        </TrackingSection>
-      </main>
-    </>
+    <SeoLandingPage
+      path={PATH}
+      name={NAME}
+      description={DESCRIPTION}
+      trackingKeyword="developpeur_react_native_toulouse"
+      hero={{
+        eyebrow: 'React Native · Toulouse',
+        title: 'Développeur React Native à Toulouse',
+        highlight: 'une application, deux plateformes, un seul code',
+        description: (
+          <>
+            React Native permet de développer <strong>une seule fois</strong> pour iPhone et Android. C’est ce que
+            j’utilise pour la plupart des applications que je livre — et je vous explique ici pourquoi, ce que ça vous
+            fait gagner, et les rares cas où je vous le déconseillerais.
+          </>
+        ),
+        badges: ['React Native · Expo', 'TypeScript', 'iPhone et Android', 'Correctifs sans passer par les stores', 'Reprise d’app existante'],
+        visual: 'react-native',
+      }}
+      expertise={{
+        eyebrow: 'Pourquoi React Native',
+        heading: (
+          <>
+            Ce que React Native change pour vous, <span className="text-[#C2542D]">concrètement</span>.
+          </>
+        ),
+        intro:
+          'Ce n’est pas un choix de développeur pour se faire plaisir : c’est ce qui divise le budget et le délai par presque deux, tout en gardant une application que vos utilisateurs ne distinguent pas d’une app classique.',
+        cards: [
+          {
+            num: '01',
+            title: 'Un code pour les deux',
+            body: 'Chaque écran est développé une fois et fonctionne sur iPhone et Android. Une correction ou une nouvelle fonction sort des deux côtés le même jour.',
+            bullets: ['Budget et délai réduits', 'Mêmes fonctions sur les deux stores', 'Une seule base à maintenir', 'Sorties simultanées'],
+          },
+          {
+            num: '02',
+            title: 'Correctifs en quelques minutes',
+            body: 'Avec Expo, je peux corriger un texte ou un bug sans repasser par la validation d’Apple, qui prend parfois plusieurs jours. Vos utilisateurs ont la correction à la prochaine ouverture.',
+            bullets: ['Petits correctifs déployés sans attente', 'Retour en arrière possible', 'Versions store pour les gros changements', 'Historique de chaque publication'],
+          },
+          {
+            num: '03',
+            title: 'Ce que vos utilisateurs voient',
+            body: 'Boutons, listes, transitions : React Native utilise les composants réels de chaque système. L’application se comporte comme une app iPhone sur iPhone et comme une app Android sur Android.',
+            bullets: ['Composants natifs, pas une page web déguisée', 'Gestes et animations fluides', 'Règles de chaque plateforme respectées', 'Fonctionne hors connexion'],
+          },
+          {
+            num: '04',
+            title: 'Accès à tout le téléphone',
+            body: 'Appareil photo, GPS, notifications, Bluetooth, Face ID : tout ce que le téléphone sait faire est accessible. Quand un besoin très précis sort du cadre, j’écris le pont natif nécessaire.',
+            bullets: ['Caméra, GPS, notifications, biométrie', 'Paiement intégré', 'Modules natifs sur mesure si besoin', 'Compatible tablettes'],
+          },
+          {
+            num: '05',
+            title: 'Quand je le déconseille',
+            body: 'Jeu en 3D, traitement vidéo lourd, application très liée à une seule plateforme : là, le développement natif pur est plus adapté. Je vous le dirai au cadrage, et je vous orienterai vers la bonne personne.',
+            bullets: ['Jeux et 3D en temps réel', 'Traitement vidéo ou audio intensif', 'Intégrations système très spécifiques', 'Je vous oriente plutôt que de forcer'],
+          },
+          {
+            num: '06',
+            title: 'Reprise d’une app React Native',
+            body: 'Vous avez déjà une application React Native développée par quelqu’un d’autre ? Je l’audite, je mets à jour ses dépendances et je reprends la maintenance — ou je vous dis honnêtement si elle est à refaire.',
+            bullets: ['Audit du code et des versions', 'Mise à jour Expo et React Native', 'Reprise de la publication sur les stores', 'Documentation pour la suite'],
+          },
+        ],
+        closing: (
+          <>
+            <p>
+              Je développe en <strong>React Native et TypeScript</strong>, avec un serveur Node.js et PostgreSQL derrière
+              quand l’application en a besoin. C’est la même stack que sur le web : je peux livrer une application et son
+              espace d’administration avec une seule logique, et un seul interlocuteur.
+            </p>
+            <p>
+              Une application React Native démarre à <strong>6 000 €</strong> et se livre en <strong>2 à 4 mois</strong>. Le
+              prix est fixé par écrit au cadrage.
+            </p>
+          </>
+        ),
+        crossLinks: [
+          { title: 'Développement d’application mobile à Toulouse', href: '/developpement-application-mobile-toulouse', description: 'Les six chantiers d’une application, du cadrage à la publication.' },
+          { title: 'Application iOS et Android', href: '/developpement-application-ios-android', description: 'Comptes développeur, règles d’Apple, fiche store : ce qu’il faut pour être publié.' },
+          { title: 'Création de site internet à Toulouse', href: '/creation-site-internet-toulouse', description: 'Quand un site bien fait suffit, avant de penser application.' },
+        ],
+      }}
+      faqs={[
+        {
+          question: 'React Native, c’est moins bien qu’une « vraie » application ?',
+          answer:
+            'Non. React Native produit une application installée depuis les stores, qui utilise les composants réels du téléphone. Des applications utilisées par des millions de personnes sont construites ainsi. La différence se joue sur des cas très spécifiques — jeux 3D, traitement vidéo lourd — que je vous signale au cadrage.',
+        },
+        {
+          question: 'Peut-on publier sur l’App Store et Google Play avec React Native ?',
+          answer:
+            'Oui, exactement comme n’importe quelle application. Je m’occupe des comptes développeur, de la fiche et de la validation d’Apple. Les mises à jour importantes passent par les stores ; les petits correctifs peuvent être déployés directement.',
+        },
+        {
+          question: 'Que se passe-t-il quand Apple ou Google change quelque chose ?',
+          answer:
+            'Chaque année, les systèmes évoluent et une application doit suivre pour rester en ligne. Je prévois ces mises à jour dans le suivi, et je vous dis à l’avance ce qu’elles coûtent. Rien ne vous tombe dessus sans prévenir.',
+        },
+        {
+          question: 'Un autre développeur pourra-t-il reprendre l’application ?',
+          answer:
+            'Oui. React Native et TypeScript sont parmi les technologies les plus répandues : le code est lisible, documenté, et vous en êtes propriétaire. Votre application ne dépend pas de moi pour exister.',
+        },
+      ]}
+    />
   )
 }

@@ -18,8 +18,11 @@
 - [Accueil](https://www.lodgic-dev.com) : présentation, réalisations, services et prix planchers, méthode, contact
 - [Contact](https://www.lodgic-dev.com/contact) : formulaire, e-mail et téléphone
 - [BewasBeen](https://www.lodgic-dev.com/projets/bewasbeen) : étude de cas d'une plateforme pédagogique (Next.js, PostgreSQL)
+- [Création de site internet à Toulouse](https://www.lodgic-dev.com/creation-site-internet-toulouse)
 - [Développement d'application mobile à Toulouse](https://www.lodgic-dev.com/developpement-application-mobile-toulouse)
+- [Logiciel sur mesure à Toulouse](https://www.lodgic-dev.com/logiciel-sur-mesure-toulouse)
 - [Développeur React Native à Toulouse](https://www.lodgic-dev.com/developpeur-react-native-toulouse)
+- [Application iOS et Android](https://www.lodgic-dev.com/developpement-application-ios-android)
 
 ## Réalisations
 

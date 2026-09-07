@@ -63,6 +63,12 @@ const nextConfig: NextConfig = {
       { source: '/auteurs/:slug*', destination: '/', permanent: true },
       { source: '/rendez-vous', destination: '/contact', permanent: true },
       { source: '/rendez-vous/:path*', destination: '/contact', permanent: true },
+      // Pages SEO fusionnées ou réorientées
+      { source: '/agence-web-mobile-toulouse', destination: '/', permanent: true },
+      { source: '/creation-application-mobile-sur-mesure', destination: '/developpement-application-mobile-toulouse', permanent: true },
+      { source: '/developpement-application-mobile', destination: '/developpement-application-mobile-toulouse', permanent: true },
+      { source: '/developpement-application-mobile/apple-android', destination: '/developpement-application-ios-android', permanent: true },
+      { source: '/developpement-application-mobile/react-native-flutter', destination: '/developpeur-react-native-toulouse', permanent: true },
       {
         source: '/:path*',
         has: [
