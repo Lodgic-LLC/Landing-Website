@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import ProjectGallery from "./ProjectGallery";
 
 type Project = {
   name: string;
@@ -25,7 +25,7 @@ type Project = {
   /** Décision d'architecture notable */
   architecture: { title: string; text: string };
   stack: string[];
-  screen: { src: string; alt: string; caption: string };
+  screens: { src: string; alt: string; caption: string }[];
 };
 
 const projects: Project[] = [
@@ -77,11 +77,33 @@ const projects: Project[] = [
       text: "Le site mettait 5,8 secondes à afficher son contenu principal — un visiteur sur deux part avant. J'ai découpé le chargement par domaine, compressé les images et supprimé le superflu : l'affichage tombe à 0,7 seconde.",
     },
     stack: ["React", "Vite", "React Router", "Schema.org"],
-    screen: {
-      src: "/projets/alliance-travaux/at_accueil.jpg",
-      alt: "Page d'accueil du site Alliance-TRAVAUX",
-      caption: "Page d'accueil et accès au formulaire de devis",
-    },
+    screens: [
+      {
+        src: "/projets/alliance-travaux/at_accueil.jpg",
+        alt: "Page d'accueil du site Alliance-TRAVAUX",
+        caption: "Page d'accueil : preuves et devis dès le premier écran",
+      },
+      {
+        src: "/projets/alliance-travaux/at_metiers.jpg",
+        alt: "Grille des douze corps de métier du site Alliance-TRAVAUX",
+        caption: "Les 12 pages métier, générées depuis un même schéma",
+      },
+      {
+        src: "/projets/alliance-travaux/at_page_metier.jpg",
+        alt: "Page métier maçonnerie du site Alliance-TRAVAUX",
+        caption: "Une page métier : titre local, sommaire, appel à l'action",
+      },
+      {
+        src: "/projets/alliance-travaux/at_services.jpg",
+        alt: "Page des formules d'accompagnement du site Alliance-TRAVAUX",
+        caption: "Les formules d'accompagnement",
+      },
+      {
+        src: "/projets/alliance-travaux/at_devis.jpg",
+        alt: "Formulaire de demande de devis du site Alliance-TRAVAUX",
+        caption: "Le formulaire de devis et la zone d'intervention",
+      },
+    ],
   },
   {
     name: "BewasBeen",
@@ -115,11 +137,23 @@ const projects: Project[] = [
       text: "Plutôt qu'un compte par élève, une session s'ouvre via un code court ou un QR code projeté au tableau. Le modèle de données rattache les résultats à la classe et à l'élève sans jamais créer d'identifiants — moins de friction en cours, et pas de données de mineurs à gérer.",
     },
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
-    screen: {
-      src: "/projets/bewasbeen/bwb_professor_dashboard.png",
-      alt: "Tableau de bord enseignant de BewasBeen",
-      caption: "Tableau de bord enseignant",
-    },
+    screens: [
+      {
+        src: "/projets/bewasbeen/bwb_professor_dashboard.png",
+        alt: "Tableau de bord enseignant de BewasBeen",
+        caption: "Tableau de bord enseignant",
+      },
+      {
+        src: "/projets/bewasbeen/bwb_play_modes.png",
+        alt: "Choix du mode d'exercice sur BewasBeen",
+        caption: "Les trois modes d'entraînement",
+      },
+      {
+        src: "/projets/bewasbeen/bwb_create_class.png",
+        alt: "Création d'une classe avec code d'accès sur BewasBeen",
+        caption: "Création d'une classe et code d'accès",
+      },
+    ],
   },
 ];
 
@@ -217,31 +251,11 @@ function CaseStudy({ project, index }: { project: Project; index: number }) {
 
         {/* Colonne droite : visuel + décision technique */}
         <div className="flex flex-col p-6 md:p-8">
-          <figure>
-            <div className="overflow-hidden rounded-lg border border-[#E6E1D8]">
-              <div className="flex items-center gap-1.5 border-b border-[#E6E1D8] bg-[#F8F6F2] px-3 py-2">
-                <span className="h-2 w-2 rounded-full bg-[#2E2B28]/15" />
-                <span className="h-2 w-2 rounded-full bg-[#2E2B28]/15" />
-                <span className="h-2 w-2 rounded-full bg-[#2E2B28]/15" />
-                <div className="mx-2 flex-1 truncate rounded bg-white px-3 py-0.5 mono text-[9px] text-[#6B655D]">
-                  {project.url}
-                </div>
-              </div>
-              <div className="relative aspect-[2940/1604] w-full bg-[#F8F6F2]">
-                <Image
-                  src={project.screen.src}
-                  alt={project.screen.alt}
-                  fill
-                  loading={index === 0 ? undefined : "lazy"}
-                  sizes="(max-width: 1024px) 92vw, 45vw"
-                  className="object-contain object-top"
-                />
-              </div>
-            </div>
-            <figcaption className="mt-2 text-xs text-[#6B655D] font-inter">
-              {project.screen.caption}
-            </figcaption>
-          </figure>
+          <ProjectGallery
+            screens={project.screens}
+            url={project.url}
+            priority={index === 0}
+          />
 
           {/* Décision d'architecture */}
           <div className="mt-6 rounded-lg bg-[#F8F6F2] p-5">
