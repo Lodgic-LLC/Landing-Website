@@ -16,7 +16,6 @@ export default function Navbar() {
     { name: 'Réalisations', path: '/#realisations' },
     { name: 'Services', path: '/#services' },
     { name: 'Méthode', path: '/#methode' },
-    { name: 'Lodgic Conseils', path: '/blog' },
   ]
 
   useEffect(() => {

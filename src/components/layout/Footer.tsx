@@ -93,7 +93,6 @@ export default function Footer() {
                 { label: 'Accueil', href: '/' },
                 { label: 'Qui je suis', href: '/#about' },
                 { label: 'Réalisations', href: '/#realisations' },
-                { label: 'Lodgic Conseils', href: '/blog' },
                 { label: 'Contact', href: '/contact' },
               ].map((item) => (
                 <li key={item.label}>

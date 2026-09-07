@@ -349,15 +349,15 @@ export default function BewasBeenProjectPage() {
                   Donnons vie à votre plateforme web.
                 </h2>
                 <p className="mt-3 text-sm font-inter text-white/80 md:text-base">
-                  Design, développement et mise en ligne — on s&apos;occupe de tout,
+                  Design, développement et mise en ligne — je m&apos;occupe de tout,
                   de A à Z.
                 </p>
               </div>
               <Link
-                href="/rendez-vous"
+                href="/contact"
                 className="inline-flex items-center gap-2 self-start rounded-xl bg-[#C2542D] px-6 py-3.5 text-sm font-sofia-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A34322] md:self-auto"
               >
-                Réserver un échange
+                Parler de votre projet
                 <span aria-hidden>→</span>
               </Link>
             </div>

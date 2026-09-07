@@ -156,12 +156,12 @@ export default function ContactPage() {
                 </ul>
 
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <Link
-                    href="/rendez-vous"
-                    className="rounded-md bg-[#2E2B28] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#2E2B28]/90 transition-colors"
+                  <a
+                    href={`tel:${CONTACT_PHONE}`}
+                    className="rounded-md bg-[#C2542D] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#A34322] transition-colors"
                   >
-                    Prendre rendez-vous
-                  </Link>
+                    Appeler le {CONTACT_PHONE_DISPLAY}
+                  </a>
                 </div>
               </div>
 
