@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ProjectGallery from "./ProjectGallery";
+import ProjectGallery from "@/components/ProjectGallery";
 
 type Project = {
   name: string;

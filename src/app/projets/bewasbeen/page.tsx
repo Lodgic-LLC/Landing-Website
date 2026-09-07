@@ -6,7 +6,7 @@ import BreadcrumbStructuredData from "@/components/seo/BreadcrumbStructuredData"
 import { SITE_URL } from "@/lib/site";
 import ProjectForm from '@/components/forms/ProjectForm';
 import { FaqAccordion, type FaqItem } from "@/components/FaqAccordion";
-import { ScreenshotGallery } from "./_components/ScreenshotGallery";
+import ProjectGallery from '@/components/ProjectGallery';
 
 const APP_THEME = {
   primary: "#23211F",
@@ -305,7 +305,7 @@ export default function BewasBeenProjectPage() {
             </p>
           </div>
 
-          <ScreenshotGallery screens={screens} />
+          <ProjectGallery screens={screens} url="bewasbeen.com" />
         </div>
       </section>
 
