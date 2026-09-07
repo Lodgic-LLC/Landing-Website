@@ -8,7 +8,7 @@ const services = [
     icon: FiGlobe,
     title: 'Sites web',
     href: '/creation-site-internet-toulouse',
-    price: 'À partir de 1 500 €',
+    price: 'À partir de 1 500 €',
     description:
       "Un site vitrine, une page de prise de rendez-vous, un espace client. Rapide, trouvé sur Google, et que vous pouvez faire évoluer sans repartir de zéro.",
     items: [
@@ -21,7 +21,7 @@ const services = [
     icon: FiSmartphone,
     title: 'Applications mobiles',
     href: '/developpement-application-mobile-toulouse',
-    price: 'À partir de 6 000 €',
+    price: 'À partir de 6 000 €',
     description:
       "Une application iOS et Android à partir d'un seul code, publiée sur les stores. Pour vos clients, ou pour vos équipes sur le terrain.",
     items: [
@@ -34,7 +34,7 @@ const services = [
     icon: FiLayers,
     title: 'Logiciels métier',
     href: '/logiciel-sur-mesure-toulouse',
-    price: 'À partir de 4 000 €',
+    price: 'À partir de 4 000 €',
     description:
       "Un outil qui fait exactement ce dont votre activité a besoin : planning, suivi de dossiers, devis, tableau de bord. À la place des tableurs et des ressaisies.",
     items: [

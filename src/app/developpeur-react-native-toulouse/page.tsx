@@ -96,7 +96,7 @@ export default function Page() {
               espace d’administration avec une seule logique, et un seul interlocuteur.
             </p>
             <p>
-              Une application React Native démarre à <strong>6 000 €</strong> et se livre en <strong>2 à 4 mois</strong>. Le
+              Une application React Native démarre à <strong>6 000 €</strong> et se livre en <strong>2 à 4 mois</strong>. Le
               prix est fixé par écrit au cadrage.
             </p>
           </>

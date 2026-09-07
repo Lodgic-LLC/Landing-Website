@@ -4,7 +4,7 @@ import { buildSeoMetadata } from '@/lib/seo'
 const PATH = '/creation-site-internet-toulouse'
 const NAME = 'Création de site internet à Toulouse'
 const DESCRIPTION =
-  "Développeur indépendant à Toulouse : je crée votre site internet sur mesure, rapide et trouvé sur Google, à partir de 1 500 €. Vous modifiez vos textes vous-même. Livraison en 3 à 5 semaines."
+  "Développeur indépendant à Toulouse : je crée votre site internet sur mesure, rapide et trouvé sur Google, à partir de 1 500 €. Vous modifiez vos textes vous-même. Livraison en 3 à 5 semaines."
 
 export const metadata = buildSeoMetadata({
   path: PATH,
@@ -36,10 +36,10 @@ export default function Page() {
           <>
             Un site qui explique ce que vous faites, se charge vite sur un téléphone, remonte sur Google quand on cherche
             votre métier à Toulouse, et amène les visiteurs à vous écrire ou à vous appeler. C’est ce que je construis,
-            sur mesure, <strong>à partir de 1 500 €</strong>.
+            sur mesure, <strong>à partir de 1 500 €</strong>.
           </>
         ),
-        badges: ['À partir de 1 500 €', '3 à 5 semaines', 'Trouvé sur Google', 'Vous modifiez vos textes', 'Toulouse et à distance'],
+        badges: ['À partir de 1 500 €', '3 à 5 semaines', 'Trouvé sur Google', 'Vous modifiez vos textes', 'Toulouse et à distance'],
         visual: 'agency',
       }}
       expertise={{
@@ -50,7 +50,7 @@ export default function Page() {
           </>
         ),
         intro:
-          'Les sites à 300 € existent. Ils se ressemblent tous, ils sont lents, et Google ne les montre à personne. Voici ce que je fais différemment, et pourquoi ça change le nombre d’appels que vous recevez.',
+          'Les sites à 300 € existent. Ils se ressemblent tous, ils sont lents, et Google ne les montre à personne. Voici ce que je fais différemment, et pourquoi ça change le nombre d’appels que vous recevez.',
         cards: [
           {
             num: '01',
@@ -92,7 +92,7 @@ export default function Page() {
         closing: (
           <>
             <p>
-              Un site vitrine démarre à <strong>1 500 €</strong> et se livre en <strong>3 à 5 semaines</strong>. Le prix
+              Un site vitrine démarre à <strong>1 500 €</strong> et se livre en <strong>3 à 5 semaines</strong>. Le prix
               dépend du nombre de pages et des fonctions (prise de rendez-vous, espace client, catalogue) : il est fixé par
               écrit après un premier échange, et il ne bouge pas ensuite.
             </p>
@@ -111,7 +111,7 @@ export default function Page() {
         {
           question: 'Combien coûte un site internet ?',
           answer:
-            'À partir de 1 500 € pour un site vitrine de quelques pages avec formulaire de contact. Un site avec prise de rendez-vous, espace client ou catalogue coûte plus ; je vous donne un prix ferme par écrit après un premier échange.',
+            'À partir de 1 500 € pour un site vitrine de quelques pages avec formulaire de contact. Un site avec prise de rendez-vous, espace client ou catalogue coûte plus ; je vous donne un prix ferme par écrit après un premier échange.',
         },
         {
           question: 'Combien de temps pour créer un site ?',

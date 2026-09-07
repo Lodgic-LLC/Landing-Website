@@ -56,7 +56,7 @@ export default function Page() {
             num: '01',
             title: 'Comptes développeur',
             body: 'Apple et Google exigent chacun un compte, avec des justificatifs d’entreprise et des frais. Je les crée à votre nom — l’application vous appartient, pas à moi — et je vous explique ce qu’il faut renouveler.',
-            bullets: ['Compte Apple Developer (99 $ par an)', 'Compte Google Play (25 $ une fois)', 'Ouverts au nom de votre entreprise', 'Vous gardez tous les accès'],
+            bullets: ['Compte Apple Developer (99 $ par an)', 'Compte Google Play (25 $ une fois)', 'Ouverts au nom de votre entreprise', 'Vous gardez tous les accès'],
           },
           {
             num: '02',
@@ -73,7 +73,7 @@ export default function Page() {
           {
             num: '04',
             title: 'Tests sur de vrais appareils',
-            body: 'Un simulateur ne dit pas si l’app rame sur un Android à 150 €. Je teste sur des téléphones réels, récents et anciens, et vous recevez une version test installable sur le vôtre.',
+            body: 'Un simulateur ne dit pas si l’app rame sur un Android à 150 €. Je teste sur des téléphones réels, récents et anciens, et vous recevez une version test installable sur le vôtre.',
             bullets: ['Version test TestFlight et Android', 'Appareils anciens et récents', 'Réseau lent et mode avion', 'Suivi des plantages après publication'],
           },
           {
@@ -94,7 +94,7 @@ export default function Page() {
             <p>
               Je développe en <strong>React Native</strong>, ce qui me permet de livrer les deux versions à partir d’un
               seul code — le détail est sur la page dédiée. Le résultat : une application sur les deux stores à partir de{' '}
-              <strong>6 000 €</strong>, en <strong>2 à 4 mois</strong>, avec un prix fixé par écrit avant de commencer.
+              <strong>6 000 €</strong>, en <strong>2 à 4 mois</strong>, avec un prix fixé par écrit avant de commencer.
             </p>
             <p>Basé à Toulouse, je travaille aussi bien sur place qu’à distance.</p>
           </>
@@ -114,7 +114,7 @@ export default function Page() {
         {
           question: 'Dois-je créer moi-même les comptes développeur ?',
           answer:
-            'Non, je m’en charge, mais ils sont ouverts au nom de votre entreprise et vous en gardez les accès. Comptez 99 $ par an chez Apple et 25 $ une fois chez Google, réglés directement par vous.',
+            'Non, je m’en charge, mais ils sont ouverts au nom de votre entreprise et vous en gardez les accès. Comptez 99 $ par an chez Apple et 25 $ une fois chez Google, réglés directement par vous.',
         },
         {
           question: 'Que se passe-t-il si Apple refuse l’application ?',

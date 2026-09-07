@@ -4,7 +4,7 @@ import { buildSeoMetadata } from '@/lib/seo'
 const PATH = '/logiciel-sur-mesure-toulouse'
 const NAME = 'Logiciel sur mesure à Toulouse'
 const DESCRIPTION =
-  "Développeur indépendant à Toulouse : je conçois le logiciel métier qui remplace vos tableurs et vos ressaisies — planning, suivi de dossiers, devis, tableau de bord. À partir de 4 000 €, connecté à vos outils actuels."
+  "Développeur indépendant à Toulouse : je conçois le logiciel métier qui remplace vos tableurs et vos ressaisies — planning, suivi de dossiers, devis, tableau de bord. À partir de 4 000 €, connecté à vos outils actuels."
 
 export const metadata = buildSeoMetadata({
   path: PATH,
@@ -38,7 +38,7 @@ export default function Page() {
             logiciel générique auquel il faudrait vous adapter.
           </>
         ),
-        badges: ['À partir de 4 000 €', 'Remplace les tableurs', 'Connecté à vos outils', 'Accessible partout', 'Toulouse et à distance'],
+        badges: ['À partir de 4 000 €', 'Remplace les tableurs', 'Connecté à vos outils', 'Accessible partout', 'Toulouse et à distance'],
         visual: 'tailored',
       }}
       expertise={{
@@ -91,7 +91,7 @@ export default function Page() {
         closing: (
           <>
             <p>
-              Un logiciel métier démarre à <strong>4 000 €</strong> pour un outil simple — un suivi de dossiers avec
+              Un logiciel métier démarre à <strong>4 000 €</strong> pour un outil simple — un suivi de dossiers avec
               quelques écrans, par exemple. Le prix exact est fixé par écrit après le cadrage. Je livre par étapes : vous
               utilisez une première version utile rapidement, et on complète ensuite.
             </p>
@@ -111,7 +111,7 @@ export default function Page() {
         {
           question: 'Un logiciel sur mesure, n’est-ce pas trop cher pour une petite entreprise ?',
           answer:
-            'Un outil simple démarre à 4 000 €. Si vous ou vos salariés perdez une heure par jour en ressaisies, en recherches dans des tableurs ou en erreurs à rattraper, faites le calcul sur un an : c’est souvent rentabilisé en quelques mois.',
+            'Un outil simple démarre à 4 000 €. Si vous ou vos salariés perdez une heure par jour en ressaisies, en recherches dans des tableurs ou en erreurs à rattraper, faites le calcul sur un an : c’est souvent rentabilisé en quelques mois.',
         },
         {
           question: 'Pourquoi ne pas prendre un logiciel du commerce ?',

@@ -9,7 +9,7 @@
 - Ville : Toulouse, Occitanie — interventions à distance partout en France
 - E-mail : contact@lodgic-dev.com
 - Téléphone : +33 6 43 51 71 57
-- Services : sites web (à partir de 1 500 €), applications mobiles iOS et Android (à partir de 6 000 €), logiciels métier sur mesure (à partir de 4 000 €)
+- Services : sites web (à partir de 1 500 €), applications mobiles iOS et Android (à partir de 6 000 €), logiciels métier sur mesure (à partir de 4 000 €)
 - Technologies : Next.js, React, React Native, TypeScript, Node.js, PostgreSQL
 - Délais habituels : site vitrine 3 à 5 semaines, application mobile 2 à 4 mois ; réponse à toute demande sous 24 heures
 

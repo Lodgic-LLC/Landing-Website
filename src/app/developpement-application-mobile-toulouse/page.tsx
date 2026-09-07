@@ -4,7 +4,7 @@ import { buildSeoMetadata } from '@/lib/seo'
 const PATH = '/developpement-application-mobile-toulouse'
 const NAME = "Développement d'application mobile à Toulouse"
 const DESCRIPTION =
-  "Développeur indépendant à Toulouse, ingénieur en informatique : je conçois et développe votre application iPhone et Android, de l'idée à la publication sur les stores. À partir de 6 000 €, prix fixé par écrit avant de commencer."
+  "Développeur indépendant à Toulouse, ingénieur en informatique : je conçois et développe votre application iPhone et Android, de l'idée à la publication sur les stores. À partir de 6 000 €, prix fixé par écrit avant de commencer."
 
 export const metadata = buildSeoMetadata({
   path: PATH,
@@ -38,7 +38,7 @@ export default function Page() {
             la publie sur les stores. Un seul interlocuteur, un prix fixé à l’avance.
           </>
         ),
-        badges: ['iPhone et Android', 'À partir de 6 000 €', '2 à 4 mois', 'Publication sur les stores', 'Toulouse et à distance'],
+        badges: ['iPhone et Android', 'À partir de 6 000 €', '2 à 4 mois', 'Publication sur les stores', 'Toulouse et à distance'],
         visual: 'devices',
       }}
       expertise={{
@@ -91,7 +91,7 @@ export default function Page() {
         closing: (
           <>
             <p>
-              Une application mobile simple démarre à <strong>6 000 €</strong> et se livre en <strong>2 à 4 mois</strong>.
+              Une application mobile simple démarre à <strong>6 000 €</strong> et se livre en <strong>2 à 4 mois</strong>.
               Le montant exact est fixé par écrit après le cadrage, avant la première ligne de code — il ne bouge pas en
               cours de route, sauf si vous changez le périmètre.
             </p>
@@ -112,7 +112,7 @@ export default function Page() {
         {
           question: 'Combien coûte une application mobile ?',
           answer:
-            'À partir de 6 000 € pour une application simple, iPhone et Android compris. Le prix dépend du nombre d’écrans, des fonctions (paiement, notifications, hors-ligne) et du serveur nécessaire. Il est fixé par écrit après le cadrage et ne change pas ensuite.',
+            'À partir de 6 000 € pour une application simple, iPhone et Android compris. Le prix dépend du nombre d’écrans, des fonctions (paiement, notifications, hors-ligne) et du serveur nécessaire. Il est fixé par écrit après le cadrage et ne change pas ensuite.',
         },
         {
           question: 'Combien de temps faut-il pour développer une application ?',
