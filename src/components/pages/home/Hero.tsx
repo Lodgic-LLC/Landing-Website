@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const proofs = [
-  "5 ans de développement en production dans le spatial et l'aéronautique",
-  "Un seul interlocuteur, du devis à la mise en ligne : moi",
+  "5 ans en production dans le spatial et l'aéronautique",
+  "Un seul interlocuteur, du devis à la mise en ligne",
   "Réponse sous 24 heures",
 ];
 
@@ -28,10 +28,8 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#6B655D] font-inter">
-              Je m&apos;appelle Yann Rouquié. Après cinq ans à développer des logiciels pour le
-              spatial et l&apos;aéronautique, je mets la même exigence au service des entreprises
-              de Toulouse. Vous m&apos;expliquez votre besoin, je vous dis ce qui est faisable,
-              en combien de temps et pour quel budget.
+              Yann Rouquié. Cinq ans à développer des logiciels pour le spatial et
+              l&apos;aéronautique, aujourd&apos;hui au service des entreprises de Toulouse.
             </p>
 
             <ul className="mt-7 space-y-2.5">

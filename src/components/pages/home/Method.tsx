@@ -3,25 +3,25 @@ const steps = [
     n: '01',
     title: 'Premier échange',
     duration: '30 minutes',
-    text: "Vous m'expliquez ce que vous voulez obtenir, vos contraintes et votre budget. Je vous dis ce qui est réaliste et ce qui ne l'est pas.",
+    text: "Vous expliquez ce que vous voulez obtenir. Je vous dis ce qui est réaliste.",
   },
   {
     n: '02',
     title: 'Cadrage écrit',
     duration: '3 à 5 jours',
-    text: "Je rédige le périmètre fonctionnel, les choix techniques et le planning. Vous validez ce document avant que la moindre ligne soit écrite.",
+    text: "Périmètre, choix techniques, planning et prix. Vous validez avant que je commence.",
   },
   {
     n: '03',
     title: 'Développement',
     duration: 'Selon le projet',
-    text: "Vous testez le produit chaque semaine sur un lien privé. Les ajustements se font au fil de l'eau, pas le jour de la livraison.",
+    text: "Vous testez chaque semaine sur un lien privé. Les ajustements se font au fil de l'eau.",
   },
   {
     n: '04',
     title: 'Mise en ligne',
     duration: '1 semaine',
-    text: "Déploiement, mise en place du suivi et passation. Vous recevez les accès, la documentation et le code : le projet vous appartient.",
+    text: "Vous recevez les accès, la documentation et le code. Le projet vous appartient.",
   },
 ]
 
@@ -42,8 +42,7 @@ export default function Method() {
             Quatre étapes, et vous savez toujours où en est le projet
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[#6B655D] font-inter">
-            Pas de devis opaque ni de tunnel de plusieurs mois sans nouvelles. Le périmètre
-            et le budget sont posés à l&apos;écrit avant de commencer.
+            Périmètre et budget posés à l&apos;écrit avant de commencer.
           </p>
         </div>
 
@@ -65,8 +64,7 @@ export default function Method() {
         </ol>
 
         <p className="mt-6 text-sm text-[#6B655D] font-inter">
-          Un site vitrine se livre en général en 3 à 5 semaines, une application mobile en 2 à
-          4 mois. Le cadrage précise le calendrier de votre projet.
+          Un site en 3 à 5 semaines, une application mobile en 2 à 4 mois.
         </p>
       </div>
     </section>

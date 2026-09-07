@@ -3,15 +3,15 @@ import ProjectForm from '@/components/forms/ProjectForm'
 const reassurance = [
   {
     title: 'Un échange, pas un devis automatique',
-    text: "Je commence par comprendre ce que vous voulez obtenir. Vous repartez avec un avis honnête, même si la bonne réponse n'est pas de développer quelque chose.",
+    text: "Vous repartez avec un avis honnête, même si la bonne réponse n'est pas de développer.",
   },
   {
     title: 'Réponse sous 24 heures',
-    text: "C'est moi qui vous réponds, pas un commercial ni un robot. Et c'est moi qui développerai ensuite.",
+    text: "C'est moi qui réponds, et moi qui développerai ensuite.",
   },
   {
     title: 'Un cadrage avant de chiffrer',
-    text: 'Périmètre, contraintes techniques et budget posés à l’écrit avant la première ligne de code. Pas de mauvaise surprise en cours de route.',
+    text: 'Périmètre et budget posés à l’écrit avant la première ligne de code.',
   },
 ]
 
@@ -29,8 +29,7 @@ export default function FAQ() {
                 Expliquez-moi votre projet
               </h2>
               <p className="text-[#6B655D] mb-10 font-inter text-lg leading-relaxed">
-                Un site à créer, une application en tête, un outil qui vous manque ? Décrivez-le
-                en quelques lignes, même approximatives. Je vous réponds sous 24 heures.
+                Décrivez-le en quelques lignes, même approximatives. Réponse sous 24 heures.
               </p>
 
               <ul className="space-y-7">

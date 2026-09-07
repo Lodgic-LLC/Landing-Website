@@ -36,7 +36,7 @@ const projects: Project[] = [
     url: "alliance-travaux.fr",
     external: true,
     summary:
-      "Refonte complète du site d'un collectif d'artisans toulousains : structure repensée pour la conversion, contenu et référencement local retravaillés, performances remises à niveau.",
+      "Refonte complète du site d'un collectif d'artisans toulousains.",
     metrics: [
       { value: "23", label: "pages générées" },
       { value: "22", label: "communes ciblées" },
@@ -57,24 +57,24 @@ const projects: Project[] = [
     features: [
       {
         title: "Structure repensée pour la conversion",
-        text: "Douze pages métier et quatre pages service générées depuis un même schéma de données, avec navigation croisée. Chaque parcours mène au devis, du premier écran à la dernière section.",
+        text: "12 pages métier et 4 pages service générées depuis un même schéma. Chaque parcours mène au devis.",
       },
       {
-        title: "Formulaire de demande de devis",
-        text: "Validation des champs, états de chargement et message de confirmation, envoi par un service d'e-mail transactionnel — accessible depuis chaque section du site, avec le téléphone en second recours.",
+        title: "Formulaire de devis",
+        text: "Accessible depuis chaque section, avec validation des champs et confirmation immédiate.",
       },
       {
         title: "Référencement local repris de zéro",
-        text: "Balisage Schema.org complet — HomeAndConstructionBusiness, catalogue des six prestations, FAQ et zone d'intervention sur 22 communes. Résultat mesuré : 100/100 au SEO technique sur PageSpeed.",
+        text: "Balisage Schema.org complet sur 22 communes. Résultat : 100/100 au SEO technique.",
       },
       {
-        title: "Sécurité et dépendances remises à niveau",
-        text: "Accès et identifiants sortis du code et placés côté serveur, formulaire protégé contre les envois automatisés, bibliothèques mises à jour vers des versions sans vulnérabilité connue.",
+        title: "Sécurité remise à niveau",
+        text: "Identifiants sortis du code, formulaire protégé, dépendances mises à jour.",
       },
     ],
     architecture: {
       title: "Divisé par huit le temps d'affichage",
-      text: "Le site mettait 5,8 secondes à afficher son contenu principal — un visiteur sur deux part avant. J'ai découpé le chargement par domaine, compressé les images et supprimé le superflu : l'affichage tombe à 0,7 seconde.",
+      text: "5,8 secondes, c'est un visiteur sur deux qui part avant de voir la page. Chargement découpé, images compressées, superflu supprimé.",
     },
     stack: ["React", "Vite", "React Router", "Schema.org"],
     screens: [
@@ -112,7 +112,7 @@ const projects: Project[] = [
     url: "bewasbeen.com",
     external: false,
     summary:
-      "Une plateforme pédagogique complète : espace enseignant, gestion de classes, trois moteurs d'exercices et suivi individuel des élèves.",
+      "Plateforme pédagogique : espace enseignant, classes et suivi individuel des élèves.",
     metrics: [
       { value: "3", label: "moteurs d'exercice" },
       { value: "2", label: "rôles applicatifs" },
@@ -121,20 +121,20 @@ const projects: Project[] = [
     features: [
       {
         title: "Trois moteurs d'exercice",
-        text: "Glisser-déposer, saisie clavier et reconnaissance audio. Chaque mode a sa propre logique de validation et de correction, avec une difficulté qui s'ajuste aux réponses de l'élève.",
+        text: "Glisser-déposer, clavier et audio. La difficulté s'ajuste aux réponses de l'élève.",
       },
       {
-        title: "Espace enseignant et gestion de classes",
-        text: "Création de classes, composition de listes de verbes personnalisées ou à partir de modèles, affectation aux groupes, et suivi par élève : taux de réussite par verbe, temps passé, historique des tentatives.",
+        title: "Espace enseignant",
+        text: "Classes, listes de verbes personnalisées, suivi par élève : réussite, temps passé, historique.",
       },
       {
         title: "Exports PDF et CSV",
-        text: "Génération de rapports par classe ou par élève pour les bulletins et les réunions parents-professeurs, produits côté serveur à partir des sessions enregistrées.",
+        text: "Rapports par classe ou par élève, pour les bulletins et les réunions parents-professeurs.",
       },
     ],
     architecture: {
-      title: "Accès élève sans authentification",
-      text: "Plutôt qu'un compte par élève, une session s'ouvre via un code court ou un QR code projeté au tableau. Le modèle de données rattache les résultats à la classe et à l'élève sans jamais créer d'identifiants — moins de friction en cours, et pas de données de mineurs à gérer.",
+      title: "Accès élève sans compte",
+      text: "Un code court ou un QR code projeté au tableau suffit. Aucun identifiant créé : pas de friction en cours, pas de données de mineurs à gérer.",
     },
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
     screens: [
@@ -327,9 +327,8 @@ export default function SuccessStories() {
             Ce que j&apos;ai construit, brique par brique
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[#6B655D] font-inter">
-            Pas des captures d&apos;écran commentées : les fonctionnalités réellement
-            développées, les décisions d&apos;architecture derrière, et ce que ça donne en
-            production.
+            Les fonctionnalités développées, les décisions techniques derrière, et les
+            résultats mesurés.
           </p>
         </div>
 

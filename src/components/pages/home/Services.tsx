@@ -10,7 +10,7 @@ const services = [
     href: '/creation-site-internet-toulouse',
     price: 'À partir de 1 500 €',
     description:
-      "Un site vitrine, une page de prise de rendez-vous, un espace client. Rapide, trouvé sur Google, et que vous pouvez faire évoluer sans repartir de zéro.",
+      "Site vitrine, prise de rendez-vous, espace client. Rapide, trouvé sur Google, et que vous faites évoluer vous-même.",
     items: [
       'Conçu pour être trouvé sur Google',
       'Formulaire de contact ou de devis',
@@ -23,7 +23,7 @@ const services = [
     href: '/developpement-application-mobile-toulouse',
     price: 'À partir de 6 000 €',
     description:
-      "Une application iOS et Android à partir d'un seul code, publiée sur les stores. Pour vos clients, ou pour vos équipes sur le terrain.",
+      "iOS et Android à partir d'un seul code, publiée sur les stores. Pour vos clients ou vos équipes.",
     items: [
       'Publication App Store et Google Play',
       'Notifications, mode hors-ligne, paiement',
@@ -36,7 +36,7 @@ const services = [
     href: '/logiciel-sur-mesure-toulouse',
     price: 'À partir de 4 000 €',
     description:
-      "Un outil qui fait exactement ce dont votre activité a besoin : planning, suivi de dossiers, devis, tableau de bord. À la place des tableurs et des ressaisies.",
+      "Planning, suivi de dossiers, devis, tableau de bord. À la place des tableurs et des ressaisies.",
     items: [
       'Remplace vos fichiers Excel partagés',
       'Connecté à vos outils actuels',
@@ -62,9 +62,8 @@ export default function Services() {
             Ce que je développe, et à partir de combien
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-[#6B655D] font-inter">
-            Trois types de projets, un même fonctionnement : on cadre ensemble, je chiffre
-            précisément, puis je construis. Les prix ci-dessous sont des planchers pour un
-            projet simple.
+            On cadre ensemble, je chiffre, puis je construis. Prix planchers pour un projet
+            simple.
           </p>
         </div>
 
@@ -118,8 +117,8 @@ export default function Services() {
 
         <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-xl text-sm leading-relaxed text-[#6B655D] font-inter">
-            Votre besoin ne rentre dans aucune case, ou vous ne savez pas encore ce qu&apos;il
-            vous faut ? C&apos;est justement à ça que sert le premier échange.
+            Votre besoin ne rentre dans aucune case ? C&apos;est à ça que sert le premier
+            échange.
           </p>
           <Link
             href="/contact"

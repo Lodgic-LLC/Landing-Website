@@ -18,17 +18,17 @@ const habits = [
   {
     tag: 'Réflexe 01',
     title: 'Je teste avant de livrer',
-    text: "Dans l'aéro, on ne découvre pas un bug en production. Je garde cette habitude, même pour un site vitrine.",
+    text: "Dans l'aéro, on ne découvre pas un bug en production.",
   },
   {
     tag: 'Réflexe 02',
     title: "J'écris ce que je fais",
-    text: 'Un projet non documenté est un projet perdu quand son auteur part. Le vôtre est documenté dès le premier jour.',
+    text: 'Un projet non documenté est perdu quand son auteur part.',
   },
   {
     tag: 'Réflexe 03',
     title: 'Je mesure au lieu de supposer',
-    text: 'Temps de chargement, erreurs, usage réel : des chiffres, pas des impressions. Vous les recevez à la livraison.',
+    text: 'Chargement, erreurs, usage réel : des chiffres, pas des impressions.',
   },
 ]
 
@@ -140,21 +140,14 @@ export default function About() {
             </h2>
             <div className="mt-6 space-y-5 font-inter text-lg leading-relaxed text-white/75">
               <p>
-                J&apos;ai passé cinq ans à développer des logiciels en production dans le{' '}
-                <strong className="font-sofia-bold text-white">spatial et l&apos;aéronautique</strong> :
-                architecture, applications métier, back-end et front-end, traitement de
-                données, optimisation et automatisation. Des secteurs où on ne livre pas
-                quelque chose qui « marche à peu près ».
+                Cinq ans à développer des logiciels en production dans le{' '}
+                <strong className="font-sofia-bold text-white">spatial et l&apos;aéronautique</strong>.
+                Des secteurs où on ne livre pas quelque chose qui « marche à peu près ».
               </p>
               <p>
-                J&apos;ai quitté ce monde-là pour travailler avec des entreprises d&apos;ici.
-                J&apos;applique les mêmes exigences à un site vitrine de cinq pages qu&apos;à un
-                outil interne : c&apos;est la seule façon que je connaisse de développer.
-              </p>
-              <p>
-                Je travaille seul, et c&apos;est volontaire. La personne à qui vous expliquez
-                votre besoin est celle qui écrit le code, qui vous répond quand quelque chose
-                cloche, et qui sera encore là dans six mois.
+                J&apos;applique les mêmes exigences à un site de cinq pages qu&apos;à un outil
+                interne. Je travaille seul : la personne à qui vous expliquez votre besoin est
+                celle qui écrit le code, et qui sera encore là dans six mois.
               </p>
             </div>
 
@@ -181,8 +174,8 @@ export default function About() {
               Ce que vous obtenez, quel que soit le projet
             </h3>
             <p className="mt-4 text-base leading-relaxed text-white/70 font-inter">
-              Ce ne sont pas des options. C&apos;est la façon dont je travaille sur chaque
-              site, application ou logiciel que je livre — même les petits.
+              Pas des options : la façon dont je travaille sur chaque projet, même les
+              petits.
             </p>
           </div>
 
