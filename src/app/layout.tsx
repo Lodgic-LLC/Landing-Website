@@ -17,9 +17,13 @@ import {
   ADDRESS_REGION,
   CONTACT_EMAIL,
   CONTACT_PHONE,
+  GOOGLE_BUSINESS_URL,
   GEO_LATITUDE,
   GEO_LONGITUDE,
   OPENING_HOURS,
+  OWNER_NAME,
+  OWNER_TITLE,
+  PERSON_PROFILES,
   POSTAL_CODE,
   PRICE_RANGE,
   SITE_DESCRIPTION,
@@ -66,25 +70,32 @@ const organizationNode: Record<string, unknown> = {
     { '@type': 'AdministrativeArea', name: 'Occitanie' },
     { '@type': 'Country', name: 'France' },
   ],
-  sameAs: [...SOCIAL_PROFILES, ...(WIKIDATA_QID ? [`https://www.wikidata.org/entity/${WIKIDATA_QID}`] : [])],
+  founder: { '@id': `${SITE_URL}/#person` },
+  employee: { '@id': `${SITE_URL}/#person` },
+  numberOfEmployees: { '@type': 'QuantitativeValue', value: 1 },
+  sameAs: [
+    ...SOCIAL_PROFILES,
+    ...(GOOGLE_BUSINESS_URL ? [GOOGLE_BUSINESS_URL] : []),
+    ...(WIKIDATA_QID ? [`https://www.wikidata.org/entity/${WIKIDATA_QID}`] : []),
+  ],
   makesOffer: [
     {
       '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: 'Developpement application mobile sur mesure',
-        serviceType: 'Developpement application mobile',
-        areaServed: 'Toulouse, Occitanie, France',
-      },
+      itemOffered: { '@type': 'Service', name: 'Création de site internet sur mesure', serviceType: 'Développement web', areaServed: 'Toulouse, Occitanie, France' },
+      priceSpecification: { '@type': 'PriceSpecification', minPrice: 1500, priceCurrency: 'EUR' },
+      url: `${SITE_URL}/creation-site-internet-toulouse`,
     },
     {
       '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: 'Creation site web sur mesure',
-        serviceType: 'Developpement web',
-        areaServed: 'Toulouse, Occitanie, France',
-      },
+      itemOffered: { '@type': 'Service', name: "Développement d'application mobile iOS et Android", serviceType: 'Développement application mobile', areaServed: 'Toulouse, Occitanie, France' },
+      priceSpecification: { '@type': 'PriceSpecification', minPrice: 6000, priceCurrency: 'EUR' },
+      url: `${SITE_URL}/developpement-application-mobile-toulouse`,
+    },
+    {
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: 'Développement de logiciel métier sur mesure', serviceType: 'Développement logiciel', areaServed: 'Toulouse, Occitanie, France' },
+      priceSpecification: { '@type': 'PriceSpecification', minPrice: 4000, priceCurrency: 'EUR' },
+      url: `${SITE_URL}/logiciel-sur-mesure-toulouse`,
     },
   ],
 }
@@ -106,10 +117,25 @@ if (OPENING_HOURS.length > 0) {
   }))
 }
 
+const personNode = {
+  '@type': 'Person',
+  '@id': `${SITE_URL}/#person`,
+  name: OWNER_NAME,
+  jobTitle: OWNER_TITLE,
+  url: SITE_URL,
+  email: CONTACT_EMAIL,
+  telephone: CONTACT_PHONE,
+  worksFor: { '@id': `${SITE_URL}/#organization` },
+  address: postalAddress,
+  sameAs: PERSON_PROFILES,
+  knowsAbout: ['Next.js', 'React', 'React Native', 'TypeScript', 'Node.js', 'PostgreSQL'],
+}
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
     organizationNode,
+    personNode,
     {
       '@type': 'WebSite',
       '@id': `${SITE_URL}/#website`,

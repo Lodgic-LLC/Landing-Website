@@ -39,6 +39,13 @@ export const PRICE_RANGE = '€€'
 // Une fois l'entité publiée, mettre le QID ici (sans 'https://...', juste 'Qxxxx').
 export const WIKIDATA_QID = ''
 
+// Profils personnels de Yann (schéma Person)
+export const PERSON_PROFILES = ['https://linkedin.com/in/yann-rouquie']
+
+// Fiche Google Business Profile — laisser vide tant que le lien n'est pas fourni :
+// le schéma et le pied de page l'omettent automatiquement.
+export const GOOGLE_BUSINESS_URL = ''
+
 export const SOCIAL_PROFILES = [
   'https://github.com/lodgic-llc',
   'https://linkedin.com/company/lodgic-dev',

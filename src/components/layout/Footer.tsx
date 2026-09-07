@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { GOOGLE_BUSINESS_URL } from '@/lib/site'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -77,6 +78,16 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-white/50 font-inter">Localisation</p>
                   <p className="text-[15px] font-sofia-bold text-white">Toulouse, Occitanie</p>
+                  {GOOGLE_BUSINESS_URL && (
+                    <a
+                      href={GOOGLE_BUSINESS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 inline-block text-xs font-inter text-white/60 underline underline-offset-2 hover:text-[#E08A63]"
+                    >
+                      Voir ma fiche Google
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
