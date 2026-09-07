@@ -3,8 +3,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import Hero from '@/app/_sections/Accueil'
-import { PageTracker } from '@/components/analytics/PageTracker'
-import StructuredData from '@/components/seo/StructuredData'
+import JsonLd from '@/components/JsonLd'
 import { SITE_URL } from '@/lib/site'
 
 const About = dynamic(() => import('@/app/_sections/APropos'))
@@ -92,16 +91,7 @@ export default function Home() {
 
   return (
     <>
-      <StructuredData id="home-structured-data" data={homeSchema} />
-      <PageTracker
-        pageName="Home"
-        pageCategory="landing_page"
-        additionalData={{
-          page_type: 'homepage',
-          business_type: 'web_and_mobile_development',
-          location: 'toulouse',
-        }}
-      />
+      <JsonLd id="home-structured-data" data={homeSchema} />
       <main>
           <Hero />
 

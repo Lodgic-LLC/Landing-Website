@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import StructuredData from '@/components/seo/StructuredData'
-import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
+import JsonLd, { filAriane } from '@/components/JsonLd'
 import Formulaire from '@/components/Formulaire'
 import Galerie from '@/components/Galerie'
 import { Accordeon, type FaqItem } from '@/components/Accordeon'
@@ -98,13 +97,11 @@ export default function Page() {
 
   return (
     <main>
-      <StructuredData id="projet-bewasbeen" data={schema} />
-      <BreadcrumbStructuredData
-        items={[
+      <JsonLd id="projet-bewasbeen" data={schema} />
+      <JsonLd data={filAriane([
           { name: 'Accueil', url: SITE_URL },
           { name: 'BewasBeen', url: `${SITE_URL}${PATH}` },
-        ]}
-      />
+        ])} />
 
       {/* Présentation */}
       <section className="border-b border-[#E6E1D8] bg-[#F8F6F2] pt-32 pb-16 md:pt-36 md:pb-20">

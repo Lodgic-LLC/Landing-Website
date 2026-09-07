@@ -16,10 +16,7 @@ import dynamic from 'next/dynamic'
 import { FaCheck, FaArrowRight } from 'react-icons/fa'
 import MaquetteNavigateur from './MaquetteNavigateur'
 import type { PageService } from '@/content/pages-service'
-import PageTracker from '@/components/analytics/PageTracker'
-import StructuredData from '@/components/seo/StructuredData'
-import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
-import FAQStructuredData from '@/components/seo/FAQStructuredData'
+import JsonLd, { filAriane, faq } from '@/components/JsonLd'
 import { SITE_URL } from '@/lib/site'
 
 /** Rend un texte où **ce qui est entre astérisques** apparaît en gras. */
@@ -317,14 +314,9 @@ export default function PageSeo({ page }: { page: PageService }) {
 
   return (
     <>
-      <StructuredData id={`seo-${trackingKeyword}-webpage`} data={pageSchema} />
-      <BreadcrumbStructuredData items={[{ name: 'Accueil', url: SITE_URL }, { name, url }]} />
-      <FAQStructuredData faqs={faqs} />
-      <PageTracker
-        pageName={`SEO - ${name}`}
-        pageCategory="seo_landing"
-        additionalData={{ page_type: 'seo_landing', target_keyword: trackingKeyword }}
-      />
+      <JsonLd id={`seo-${trackingKeyword}-webpage`} data={pageSchema} />
+      <JsonLd data={filAriane([{ name: 'Accueil', url: SITE_URL }, { name, url }])} />
+      <JsonLd data={faq(faqs)} />
       <main>
           <Bandeau
             primaryCta={{ label: 'Expliquer mon projet', href: '/contact' }}

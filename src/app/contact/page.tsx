@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
-import StructuredData from '@/components/seo/StructuredData'
-import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
+import JsonLd, { filAriane } from '@/components/JsonLd'
 import Formulaire, { FULL_FIELDS } from '@/components/Formulaire'
 import {
   ADDRESS_COUNTRY,
@@ -76,8 +75,8 @@ export default function ContactPage() {
 
   return (
     <>
-      <StructuredData id="contact-structured-data" data={contactSchema} />
-      <BreadcrumbStructuredData items={breadcrumbItems} />
+      <JsonLd id="contact-structured-data" data={contactSchema} />
+      <JsonLd data={filAriane(breadcrumbItems)} />
 
       <main className="bg-[#F8F6F2] min-h-screen pt-28 pb-20 md:pt-36">
         <div className="max-w-7xl mx-auto px-6">

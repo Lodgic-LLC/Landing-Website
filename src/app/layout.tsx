@@ -5,11 +5,11 @@ import 'vanilla-cookieconsent/dist/cookieconsent.css'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 
-import { WebVitals } from './web-vitals'
-import CookieConsentBanner from '@/components/consent/CookieConsentBanner'
-import ConsentScripts from '@/components/consent/ConsentScripts'
-import ConsentVercelAnalytics from '@/components/consent/ConsentVercelAnalytics'
-import StructuredData from '@/components/seo/StructuredData'
+import { WebVitals } from '@/components/WebVitals'
+import CookieConsentBanner from '@/components/CookieConsentBanner'
+import ConsentScripts from '@/components/ConsentScripts'
+import ConsentVercelAnalytics from '@/components/ConsentVercelAnalytics'
+import JsonLd from '@/components/JsonLd'
 import {
   ADDRESS_COUNTRY,
   ADDRESS_LOCALITY,
@@ -245,7 +245,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="" suppressHydrationWarning>
       <head>
-        <StructuredData id="site-structured-data" data={structuredData} />
+        <JsonLd id="site-structured-data" data={structuredData} />
         <link rel="alternate" type="text/markdown" href={`${SITE_URL}/llms.txt`} />
         <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms-full.txt`} />
 

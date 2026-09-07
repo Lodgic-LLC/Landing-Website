@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { FaChevronRight } from "react-icons/fa";
-import BreadcrumbStructuredData from "@/components/seo/BreadcrumbStructuredData";
 import { SITE_URL } from "@/lib/site";
+import JsonLd, { filAriane } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: "Politique de Confidentialité",
@@ -61,7 +61,7 @@ export default function PolitiqueConfidentialite() {
 
   return (
     <section className="w-full bg-[#F8F6F2] pt-24 md:pt-36 pb-16 md:pb-24 overflow-hidden relative">
-      <BreadcrumbStructuredData items={breadcrumbItems} />
+      <JsonLd data={filAriane(breadcrumbItems)} />
       {/* Décor de fond */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-r from-[#C2542D]/20 to-[#2E2B28]/10" />
