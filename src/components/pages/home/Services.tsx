@@ -1,29 +1,44 @@
 'use client'
 
 import Link from 'next/link'
-import { FiSmartphone, FiGlobe, FiLayers, FiArrowRight } from 'react-icons/fi'
+import { FiGlobe, FiSmartphone, FiLayers, FiArrowRight } from 'react-icons/fi'
 
 const services = [
   {
-    icon: FiSmartphone,
-    title: 'Applications mobiles',
+    icon: FiGlobe,
+    title: 'Sites web',
+    price: 'À partir de 1 500 €',
     description:
-      "Des applications iOS et Android pensées pour vos utilisateurs, en React Native : une seule base de code, deux plateformes.",
-    items: ['Publication App Store & Play Store', 'Notifications, hors-ligne, paiement', 'Reprise d\'une app existante'],
+      "Un site vitrine, une page de prise de rendez-vous, un espace client. Rapide, trouvé sur Google, et que vous pouvez faire évoluer sans repartir de zéro.",
+    items: [
+      'Conçu pour être trouvé sur Google',
+      'Formulaire de contact ou de devis',
+      'Vous modifiez vos textes vous-même',
+    ],
   },
   {
-    icon: FiGlobe,
-    title: 'Sites & plateformes web',
+    icon: FiSmartphone,
+    title: 'Applications mobiles',
+    price: 'À partir de 6 000 €',
     description:
-      "Sites vitrines, plateformes métier ou espaces clients développés sur mesure en Next.js, rapides et référencés.",
-    items: ['Site vitrine orienté conversion', 'Espace client ou back-office', 'SEO technique et performance'],
+      "Une application iOS et Android à partir d'un seul code, publiée sur les stores. Pour vos clients, ou pour vos équipes sur le terrain.",
+    items: [
+      'Publication App Store et Google Play',
+      'Notifications, mode hors-ligne, paiement',
+      "Reprise ou refonte d'une application existante",
+    ],
   },
   {
     icon: FiLayers,
     title: 'Logiciels métier',
+    price: 'À partir de 4 000 €',
     description:
-      "CRM, back-offices et outils internes taillés pour vos processus, pas pour un modèle générique.",
-    items: ['Automatisation de tâches répétitives', 'Connexion à vos outils existants', 'Tableaux de bord et exports'],
+      "Un outil qui fait exactement ce dont votre activité a besoin : planning, suivi de dossiers, devis, tableau de bord. À la place des tableurs et des ressaisies.",
+    items: [
+      'Remplace vos fichiers Excel partagés',
+      'Connecté à vos outils actuels',
+      'Accessible du bureau comme du terrain',
+    ],
   },
 ]
 
@@ -35,14 +50,19 @@ export default function Services() {
       aria-labelledby="services-heading"
     >
       <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center mb-14 md:mb-20">
-          <p className="eyebrow justify-center mb-3">Ce que je fais</p>
+        <div className="max-w-3xl mb-12 md:mb-14">
+          <p className="eyebrow eyebrow-left">Services</p>
           <h2
             id="services-heading"
-            className="text-4xl md:text-6xl font-sofia-bold text-[#2E2B28] tracking-tight"
+            className="mt-3 text-4xl md:text-5xl font-sofia-bold text-[#2E2B28] tracking-tight text-balance"
           >
-            Mes services
+            Ce que je développe, et à partir de combien
           </h2>
+          <p className="mt-4 text-lg leading-relaxed text-[#6B655D] font-inter">
+            Trois types de projets, un même fonctionnement : on cadre ensemble, je chiffre
+            précisément, puis je construis. Les prix ci-dessous sont des planchers pour un
+            projet simple.
+          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
@@ -53,11 +73,16 @@ export default function Services() {
                 key={service.title}
                 className="group relative flex flex-col rounded-xl border border-[#E6E1D8] bg-white p-8 transition-colors duration-200 hover:border-[#C2542D]/40"
               >
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-[#FBEFE9] text-[#C2542D]">
-                  <Icon className="h-6 w-6" />
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#FBEFE9] text-[#C2542D]">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <p className="rounded-md border border-[#E6E1D8] bg-[#F8F6F2] px-2.5 py-1 text-xs font-inter font-semibold text-[#2E2B28]">
+                    {service.price}
+                  </p>
                 </div>
 
-                <h3 className="text-[1.4rem] md:text-2xl font-sofia-bold text-[#2E2B28] mb-3">
+                <h3 className="mt-6 text-[1.4rem] md:text-2xl font-sofia-bold text-[#2E2B28] mb-3">
                   {service.title}
                 </h3>
 
@@ -75,18 +100,21 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-
               </article>
             )
           })}
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-xl text-sm leading-relaxed text-[#6B655D] font-inter">
+            Votre besoin ne rentre dans aucune case, ou vous ne savez pas encore ce qu&apos;il
+            vous faut ? C&apos;est justement à ça que sert le premier échange.
+          </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#C2542D] px-8 py-4 text-base font-inter font-semibold text-white transition-colors hover:bg-[#A34322]"
+            className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-[#C2542D] px-7 py-3.5 text-base font-inter font-semibold text-white transition-colors hover:bg-[#A34322]"
           >
-            Discuter de votre projet
+            Parler de votre projet
             <FiArrowRight className="h-4 w-4" />
           </Link>
         </div>

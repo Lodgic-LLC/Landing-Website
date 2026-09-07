@@ -15,7 +15,7 @@ const AUTHORS: Record<string, Author> = {
     slug: 'yann-rouquie',
     name: 'Yann Rouquie',
     jobTitle: 'Ingénieur en informatique · Développeur web & mobile',
-    bio: "Ingénieur en informatique, Yann conçoit et développe des applications web et mobiles sur mesure depuis Toulouse. Spécialiste React Native, Next.js et architectures TypeScript modernes, il accompagne startups et PME de l'architecture jusqu'à la mise en production.",
+    bio: "Ingénieur en informatique, Yann conçoit et développe des sites web, des applications mobiles et des logiciels sur mesure depuis Toulouse, pour des TPE, PME et porteurs de projet. Il travaille seul, du cadrage à la mise en ligne.",
     sameAs: [
       'https://linkedin.com/in/yann-rouquie',
       'https://github.com/lodgic-llc',

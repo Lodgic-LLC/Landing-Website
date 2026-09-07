@@ -3,7 +3,7 @@ const steps = [
     n: '01',
     title: 'Premier échange',
     duration: '30 minutes',
-    text: "On parle de votre besoin, de vos contraintes et de votre budget. Vous repartez avec un avis honnête, même si votre projet ne me concerne pas.",
+    text: "Vous m'expliquez ce que vous voulez obtenir, vos contraintes et votre budget. Je vous dis ce qui est réaliste et ce qui ne l'est pas.",
   },
   {
     n: '02',
@@ -15,7 +15,7 @@ const steps = [
     n: '03',
     title: 'Développement',
     duration: 'Selon le projet',
-    text: "Vous voyez le produit avancer chaque semaine sur un lien de préproduction. Les ajustements se font au fil de l'eau, pas à la livraison.",
+    text: "Vous testez le produit chaque semaine sur un lien privé. Les ajustements se font au fil de l'eau, pas le jour de la livraison.",
   },
   {
     n: '04',

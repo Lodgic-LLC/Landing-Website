@@ -16,14 +16,14 @@ const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
 const AdvancedTracker = dynamic(() => import('@/components/analytics/AdvancedTracker').then((m) => m.AdvancedTracker))
 
 export const metadata: Metadata = {
-  title: 'Développeur Web et Mobile Toulouse — Ingénieur en informatique',
+  title: 'Développeur web, mobile et logiciel à Toulouse',
   description:
-    "Ingénieur en informatique à Toulouse, je conçois et développe vos applications web et mobiles sur mesure : architecture, développement et mise en production.",
+    "Yann Rouquié, ingénieur en informatique à Toulouse. Sites web, applications mobiles et logiciels sur mesure pour TPE, PME et porteurs de projet — du cadrage à la mise en ligne.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: 'Développeur Web et Mobile Toulouse - Lodgic',
+    title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     description:
       "Ingénieur en informatique à Toulouse, je conçois et développe des sites web et applications mobiles sur mesure (React.js, Next.js, React Native), de l'architecture à la mise en production.",
     url: SITE_URL,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/lodgic-banner.png`,
         width: 1200,
         height: 630,
-        alt: 'Développeur Web et Mobile à Toulouse Lodgic',
+        alt: 'Yann Rouquié, développeur web, mobile et logiciel à Toulouse',
       },
     ],
     locale: 'fr_FR',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   keywords: [
     'Ingénieur informatique Toulouse',
     'Développeur Web et Mobile Toulouse',
-    'Agence développement web et mobile Toulouse',
+    'Développeur freelance Toulouse',
     'Création site web Toulouse',
     'Création application mobile Toulouse',
     'Développeur web Toulouse',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     'Développement application iOS Toulouse',
     'Développeur React.js Toulouse',
     'Développeur React Native Toulouse',
-    'Agence web et mobile Toulouse',
+    'Logiciel sur mesure Toulouse',
     'Freelance développeur web Toulouse',
     'Freelance développeur mobile Toulouse',
     'React.js',
@@ -67,12 +67,12 @@ export const metadata: Metadata = {
     'développeur web',
     'développeur application',
     'développeur mobile',
-    'agence développement',
+    'développeur logiciel sur mesure',
     'Toulouse',
   ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Développeur Web et Mobile Toulouse - Lodgic',
+    title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     description:
       "Ingénieur en informatique à Toulouse : conception et développement d'applications web et mobiles sur mesure (React.js, Next.js, React Native).",
     images: [`${SITE_URL}/lodgic-banner.png`],

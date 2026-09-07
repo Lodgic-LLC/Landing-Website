@@ -3,11 +3,11 @@ import HomeProjectForm from '@/components/forms/HomeProjectForm'
 const reassurance = [
   {
     title: 'Un échange, pas un devis automatique',
-    text: "Je commence par comprendre votre besoin. Vous repartez avec un avis honnête, même si votre projet ne me concerne pas.",
+    text: "Je commence par comprendre ce que vous voulez obtenir. Vous repartez avec un avis honnête, même si la bonne réponse n'est pas de développer quelque chose.",
   },
   {
     title: 'Réponse sous 24 heures',
-    text: 'Je vous réponds personnellement — pas un commercial, pas un formulaire de suivi.',
+    text: "C'est moi qui vous réponds, pas un commercial ni un robot. Et c'est moi qui développerai ensuite.",
   },
   {
     title: 'Un cadrage avant de chiffrer',
@@ -26,11 +26,11 @@ export default function FAQ() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
             <div className="lg:w-1/2 lg:pr-8 lg:border-r lg:border-[#E6E1D8] flex-shrink-0">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-sofia-bold text-[#2E2B28] mb-6 text-balance">
-                Discuter de mon projet
+                Expliquez-moi votre projet
               </h2>
-              <p className="text-gray-600 mb-10 font-inter text-lg leading-relaxed">
-                Vous avez une idée d&apos;application ou un projet en tête ? Écrivez-moi, je vous
-                réponds sous 24 heures.
+              <p className="text-[#6B655D] mb-10 font-inter text-lg leading-relaxed">
+                Un site à créer, une application en tête, un outil qui vous manque ? Décrivez-le
+                en quelques lignes, même approximatives. Je vous réponds sous 24 heures.
               </p>
 
               <ul className="space-y-7">
@@ -54,7 +54,7 @@ export default function FAQ() {
                     </span>
                     <div>
                       <p className="font-sofia-bold text-[#2E2B28] text-[17px]">{item.title}</p>
-                      <p className="mt-1.5 text-gray-600 font-inter leading-relaxed">
+                      <p className="mt-1.5 text-[#6B655D] font-inter leading-relaxed">
                         {item.text}
                       </p>
                     </div>
@@ -63,7 +63,7 @@ export default function FAQ() {
               </ul>
 
               <div className="mt-10 border-t border-[#E6E1D8] pt-6">
-                <p className="text-sm text-gray-500 font-inter">
+                <p className="text-sm text-[#6B655D] font-inter">
                   Vous préférez écrire directement ?
                 </p>
                 <a

@@ -131,7 +131,7 @@ export default function Footer() {
             </Link>
             <span className="h-6 w-px bg-white/15" aria-hidden />
             <p className="text-sm text-white/60 font-inter">
-              Ingénieur en informatique · Applications web &amp; mobiles · Toulouse
+              Ingénieur en informatique · Sites, applications &amp; logiciels · Toulouse
             </p>
           </div>
 

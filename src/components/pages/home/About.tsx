@@ -1,7 +1,7 @@
 const credentials = [
-  { label: 'Formation', value: 'Ingénieur en informatique' },
-  { label: 'Stack', value: 'React Native · Next.js · TypeScript' },
-  { label: 'Base', value: 'Toulouse, Occitanie' },
+  { label: 'Formation', value: 'Ingénieur diplômé en informatique' },
+  { label: 'Technologies', value: 'React · Next.js · React Native · Node.js' },
+  { label: 'Zone', value: 'Toulouse · à distance partout en France' },
 ]
 
 const comparison = [
@@ -43,21 +43,27 @@ export default function About() {
               id="about-heading"
               className="mt-3 text-4xl md:text-5xl font-sofia-bold text-white tracking-tight text-balance"
             >
-              Ingénieur en informatique,
-              <br className="hidden sm:block" /> pas générateur de code.
+              Yann Rouquié,
+              <br className="hidden sm:block" /> ingénieur en informatique.
             </h2>
             <div className="mt-6 space-y-5 font-inter text-lg leading-relaxed text-white/75">
               <p>
-                Je m&apos;appelle Yann Rouquié. Je conçois et développe des applications web
-                et mobiles sur mesure depuis Toulouse — de l&apos;architecture jusqu&apos;à la
-                mise en production.
+                Je conçois et développe des sites, des applications et des logiciels sur
+                mesure depuis Toulouse, pour des entreprises locales et des porteurs de
+                projet. Je travaille seul : la personne à qui vous expliquez votre besoin
+                est celle qui écrit le code.
               </p>
               <p>
-                Écrire du code n&apos;est plus la partie difficile. Ce qui reste difficile, c&apos;est
-                de savoir{' '}
+                Une formation d&apos;ingénieur, concrètement, ça sert à quoi ? À savoir{' '}
                 <strong className="font-sofia-bold text-white">pourquoi</strong> une solution
-                tient quand les données grossissent, quand la facture d&apos;hébergement arrive —
-                et de pouvoir la corriger six mois plus tard.
+                tient — quand les données grossissent, quand deux personnes modifient la
+                même fiche en même temps, quand la facture d&apos;hébergement arrive. Et à
+                pouvoir la corriger dans six mois sans tout refaire.
+              </p>
+              <p>
+                J&apos;utilise les outils d&apos;IA au quotidien, comme tout développeur sérieux.
+                Ils écrivent vite ; ils ne répondent de rien. Juger ce qu&apos;ils produisent,
+                le tester et le maintenir, c&apos;est mon métier.
               </p>
             </div>
           </div>

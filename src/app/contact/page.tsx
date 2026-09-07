@@ -20,14 +20,14 @@ import {
 const PAGE_PATH = '/contact'
 
 export const metadata: Metadata = {
-  title: 'Contact — Agence Lodgic à Toulouse',
-  description: `Contactez Lodgic, agence de développement web et mobile à Toulouse. Adresse, téléphone, email et formulaire pour cadrer votre projet d'application ou de site web sur mesure.`,
+  title: 'Contact — Yann Rouquié, développeur à Toulouse',
+  description: `Écrivez-moi pour parler de votre site, de votre application ou de votre logiciel. Téléphone, e-mail et formulaire : je réponds sous 24 heures.`,
   alternates: {
     canonical: `${SITE_URL}${PAGE_PATH}`,
   },
   openGraph: {
-    title: 'Contact — Agence Lodgic à Toulouse',
-    description: 'Contactez Lodgic à Toulouse pour discuter de votre projet web, mobile ou logiciel sur mesure.',
+    title: 'Contact — Yann Rouquié, développeur à Toulouse',
+    description: 'Parlons de votre projet web, mobile ou logiciel. Réponse sous 24 heures.',
     url: `${SITE_URL}${PAGE_PATH}`,
     siteName: SITE_NAME,
     locale: 'fr_FR',
@@ -89,8 +89,8 @@ export default function ContactPage() {
               Discutons de votre projet.
             </h1>
             <p className="mt-5 text-lg text-[#2E2B28] leading-relaxed">
-              Une idée d'application, un site web à refondre ou un logiciel sur mesure ? Écrivez-nous, passez nous voir
-              ou planifiez un appel, nous revenons vers vous sous 24 heures ouvrées.
+              Un site à créer, une application en tête ou un logiciel qui vous manque ? Écrivez-moi, passez me voir
+              ou appelez-moi : je vous réponds sous 24 heures ouvrées.
             </p>
           </header>
 
@@ -168,9 +168,9 @@ export default function ContactPage() {
             </aside>
 
             <section className="rounded-2xl border border-[#2E2B28]/10 bg-white p-6 md:p-8 shadow-soft">
-              <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Écrivez-nous</h2>
+              <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Écrivez-moi</h2>
               <p className="mt-2 text-[#6B655D]">
-                Décrivez brièvement votre projet : nous revenons vers vous avec une première lecture sous 24 heures
+                Décrivez brièvement votre projet : je vous réponds avec une première lecture sous 24 heures
                 ouvrées.
               </p>
               <div className="mt-6">
