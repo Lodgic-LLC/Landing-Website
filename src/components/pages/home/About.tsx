@@ -4,26 +4,38 @@ const credentials = [
   { label: 'Zone', value: 'Toulouse · à distance partout en France' },
 ]
 
-const comparison = [
+const guarantees = [
   {
-    theme: 'Quand ça casse',
-    generated: "Le bug est renvoyé à l'IA en espérant une correction, souvent au prix d'une régression ailleurs.",
-    engineered: "Je lis la pile d'appels, j'isole la cause et je corrige à la source, avec un test qui empêche le retour du bug.",
+    theme: 'Fiabilité',
+    items: [
+      'Les parcours importants sont testés automatiquement',
+      'Un bug est corrigé à sa source, pas contourné',
+      'Les erreurs en production me sont signalées avant que vous les voyiez',
+    ],
   },
   {
-    theme: 'Quand ça grandit',
-    generated: "Ce qui tient à 50 utilisateurs s'effondre à 5 000 : requêtes en boucle, absence d'index, tout recalculé.",
-    engineered: 'Modèle de données, index et cache pensés avant la première ligne. La montée en charge est prévue, pas subie.',
+    theme: 'Montée en charge',
+    items: [
+      'Base de données conçue pour grandir avec vous',
+      'Temps de chargement mesurés, pas supposés',
+      'Hébergement dimensionné à votre usage réel',
+    ],
   },
   {
     theme: 'Sécurité et données',
-    generated: "Contrôles d'accès côté navigateur, secrets exposés, données personnelles sans base légale.",
-    engineered: 'Autorisations vérifiées côté serveur, secrets isolés, traitement conforme au RGPD. Traité au cadrage.',
+    items: [
+      "Droits d'accès vérifiés côté serveur, pas seulement à l'écran",
+      'Données personnelles traitées selon le RGPD',
+      'Mots de passe et clés jamais écrits dans le code',
+    ],
   },
   {
-    theme: 'Dans six mois',
-    generated: 'Personne ne sait comment le projet fonctionne. Une évolution revient souvent à tout réécrire.',
-    engineered: "Architecture documentée, code typé et testé. Vous pouvez reprendre le projet, avec moi ou avec quelqu'un d'autre.",
+    theme: 'Reprise et propriété',
+    items: [
+      'Code lisible et documenté pour un autre développeur',
+      'Vous êtes propriétaire du code et de tous les accès',
+      'Historique complet de chaque modification',
+    ],
   },
 ]
 
@@ -80,56 +92,41 @@ export default function About() {
           </dl>
         </div>
 
-        {/* Comparaison */}
+        {/* Ce que vous obtenez */}
         <div className="mt-16 border-t border-[#45403A] pt-12 md:mt-20 md:pt-14">
           <div className="max-w-3xl">
             <h3 className="text-2xl md:text-3xl font-sofia-bold text-white tracking-tight text-balance">
-              L&apos;IA écrit du code. Elle ne répond pas de ce qu&apos;elle écrit.
+              Ce que vous obtenez, quel que soit le projet
             </h3>
             <p className="mt-4 text-base leading-relaxed text-white/70 font-inter">
-              J&apos;utilise moi-même ces outils tous les jours : ils font gagner un temps réel.
-              La différence est dans la capacité à juger ce qui sort, à en répondre en
-              production et à le maintenir.
+              Ce ne sont pas des options. C&apos;est la façon dont je travaille sur chaque
+              site, application ou logiciel que je livre — même les petits.
             </p>
           </div>
 
-          <div className="mt-9 overflow-hidden rounded-xl border border-[#45403A]">
-            <div className="hidden md:grid md:grid-cols-[minmax(0,0.6fr)_minmax(0,1.2fr)_minmax(0,1.2fr)] border-b border-[#45403A] bg-[#33302C]">
-              <div className="px-5 py-3" />
-              <div className="px-5 py-3">
-                <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.14em] text-white/45">
-                  Code généré sans expertise
-                </p>
-              </div>
-              <div className="border-l border-[#45403A] px-5 py-3">
-                <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.14em] text-[#E08A63]">
-                  Développé par un ingénieur
-                </p>
-              </div>
-            </div>
-
-            {comparison.map((row, index) => (
-              <div
-                key={row.theme}
-                className={`grid md:grid-cols-[minmax(0,0.6fr)_minmax(0,1.2fr)_minmax(0,1.2fr)] ${
-                  index > 0 ? 'border-t border-[#45403A]' : ''
-                }`}
-              >
-                <div className="px-5 pt-5 pb-1 md:py-5">
-                  <p className="font-sofia-bold text-white text-[15px]">{row.theme}</p>
-                </div>
-                <div className="px-5 py-3 md:py-5">
-                  <p className="md:hidden mb-1.5 text-[11px] font-inter font-semibold uppercase tracking-[0.14em] text-white/40">
-                    Sans expertise
-                  </p>
-                  <p className="text-sm leading-relaxed text-white/55 font-inter">{row.generated}</p>
-                </div>
-                <div className="border-t border-[#45403A] bg-[#2B2724] px-5 py-3 md:border-t-0 md:border-l md:py-5">
-                  <p className="md:hidden mb-1.5 text-[11px] font-inter font-semibold uppercase tracking-[0.14em] text-[#E08A63]">
-                    Avec un ingénieur
-                  </p>
-                  <p className="text-sm leading-relaxed text-white/85 font-inter">{row.engineered}</p>
-                </div>
+          <div className="mt-9 grid gap-px overflow-hidden rounded-xl border border-[#45403A] bg-[#45403A] sm:grid-cols-2 lg:grid-cols-4">
+            {guarantees.map((g) => (
+              <div key={g.theme} className="bg-[#23211F] p-6">
+                <p className="mono text-[10px] uppercase tracking-[0.14em] text-[#E08A63]">{g.theme}</p>
+                <ul className="mt-4 space-y-3">
+                  {g.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <svg
+                        className="mt-[3px] h-3.5 w-3.5 shrink-0 text-[#E08A63]"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={3}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden
+                      >
+                        <path d="M20 6L9 17l-5-5" />
+                      </svg>
+                      <span className="text-sm leading-relaxed text-white/80 font-inter">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
