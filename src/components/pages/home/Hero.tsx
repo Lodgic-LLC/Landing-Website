@@ -6,11 +6,12 @@ const proofs = [
   "Réponse sous 24 heures",
 ];
 
-const practical = [
-  { label: "Sites web", value: "Next.js · React" },
-  { label: "Applications mobiles", value: "React Native · iOS et Android" },
-  { label: "Logiciels métier", value: "Node.js · PostgreSQL" },
-  { label: "Premier échange", value: "Visio, téléphone ou sur place à Toulouse" },
+/** Scores relevés sur Google PageSpeed Insights, vérifiables publiquement. */
+const scores = [
+  { name: "Perf.", value: "88" },
+  { name: "Access.", value: "93" },
+  { name: "Pratiques", value: "96" },
+  { name: "SEO", value: "100" },
 ];
 
 export default function Hero() {
@@ -89,30 +90,81 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* En pratique : de l'information, pas du décor */}
+          {/* Une preuve chiffrée plutôt qu'une liste de technologies */}
           <div className="lg:col-span-5">
-            <div className="rounded-xl border border-[#E6E1D8] bg-white p-7">
-              <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#6B655D]">
-                En pratique
-              </p>
-
-              <dl className="mt-5 divide-y divide-[#E6E1D8]">
-                {practical.map((item) => (
-                  <div key={item.label} className="py-3.5 sm:flex sm:items-baseline sm:justify-between sm:gap-6">
-                    <dt className="shrink-0 text-sm font-inter text-[#6B655D]">{item.label}</dt>
-                    <dd className="mt-0.5 text-[15px] font-sofia-bold text-[#2E2B28] sm:mt-0 sm:text-right sm:min-w-0">
-                      {item.value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-
-              <div className="mt-5 border-t border-[#E6E1D8] pt-5">
-                <p className="text-sm leading-relaxed text-[#6B655D] font-inter">
-                  Vous n&apos;avez pas besoin de connaître ces noms. Ce sont des technologies
-                  répandues et durables : votre projet ne dépend pas de moi pour exister, un
-                  autre développeur saura le reprendre.
+            <div className="overflow-hidden rounded-xl border border-[#E6E1D8] bg-white">
+              <div className="border-b border-[#E6E1D8] px-7 pt-6 pb-5">
+                <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#C2542D]">
+                  Dernière réalisation
                 </p>
+                <p className="mt-2 font-sofia-bold text-xl text-[#2E2B28]">
+                  Alliance-TRAVAUX
+                </p>
+                <p className="mt-0.5 text-sm text-[#6B655D] font-inter">
+                  Collectif d&apos;artisans, Toulouse — refonte complète
+                </p>
+              </div>
+
+              <div className="px-7 py-6">
+                <p className="text-sm text-[#6B655D] font-inter">Temps d&apos;affichage</p>
+                <p className="mt-1.5 flex items-baseline gap-3 font-sofia-bold">
+                  <span className="text-xl text-[#6B655D] line-through decoration-[#C2542D]/50">
+                    5,8 s
+                  </span>
+                  <svg
+                    className="h-4 w-4 shrink-0 text-[#C2542D]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={3}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                  <span className="text-4xl text-[#C2542D]">0,7 s</span>
+                </p>
+
+                <dl className="mt-6 grid grid-cols-4 gap-px overflow-hidden rounded-lg border border-[#E6E1D8] bg-[#E6E1D8]">
+                  {scores.map((score) => (
+                    <div key={score.name} className="bg-[#F8F6F2] px-2 py-3 text-center">
+                      <dt className="text-[10px] leading-tight text-[#6B655D] font-inter">
+                        {score.name}
+                      </dt>
+                      <dd className="mono mt-0.5 text-lg font-semibold text-[#2E2B28]">
+                        {score.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+
+                <p className="mt-3 text-[11px] leading-relaxed text-[#6B655D] font-inter">
+                  Google PageSpeed Insights, 7 septembre 2026
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#E6E1D8] bg-[#F8F6F2] px-7 py-4">
+                <a
+                  href="https://alliance-travaux.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-inter font-semibold text-[#2E2B28] hover:text-[#C2542D]"
+                >
+                  Voir le site
+                  <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M7 17L17 7M7 7h10v10" />
+                  </svg>
+                </a>
+                <Link
+                  href="/#realisations"
+                  className="inline-flex items-center gap-1.5 text-sm font-inter font-semibold text-[#C2542D] hover:text-[#A34322]"
+                >
+                  Mes autres réalisations
+                  <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>
