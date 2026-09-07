@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -118,13 +117,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 py-8">
           <div className="flex items-center gap-4">
             <Link href="/" aria-label="Accueil Lodgic" className="group flex items-center gap-2">
-              <Image 
-                src="/icon_bgtransparent.png" 
-                alt="Lodgic Logo" 
-                width={32} 
-                height={32} 
-                className="rounded group-hover:opacity-90 transition-opacity"
-              />
+              <span aria-hidden className="inline-block h-2.5 w-2.5 rounded-[3px] bg-[#C2542D]" />
               <span className="font-sofia-bold text-2xl text-white group-hover:text-[#C2542D] transition-colors">
                 Lodgic
               </span>

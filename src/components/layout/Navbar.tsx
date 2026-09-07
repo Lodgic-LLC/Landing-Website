@@ -2,7 +2,6 @@
 
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 
@@ -66,15 +65,7 @@ export default function Navbar() {
           }`}
         >
           <Link href="/" className="flex shrink-0 items-center gap-2 group" aria-label="Accueil Lodgic">
-            <Image
-              src="/icon_bgtransparent.png"
-              alt=""
-              width={30}
-              height={30}
-              priority
-              className="h-[30px] w-[30px] object-contain"
-              aria-hidden="true"
-            />
+            <span aria-hidden className="inline-block h-2.5 w-2.5 rounded-[3px] bg-[#C2542D]" />
             <span className="font-sofia-bold text-[#2E2B28] text-xl leading-none group-hover:text-[#A34322] transition-colors">
               Lodgic
             </span>
