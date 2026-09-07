@@ -26,7 +26,7 @@ const projects: Project[] = [
     url: "alliance-travaux.fr",
     external: true,
     summary:
-      "Le site d'un collectif d'artisans toulousains : deux arborescences de contenu, un tunnel de demande de devis et un socle SEO local couvrant l'agglomération.",
+      "Le site d'un collectif d'artisans toulousains : deux arborescences de contenu, un formulaire de demande de devis et un socle SEO local couvrant l'agglomération.",
     metrics: [
       { value: "23", label: "pages générées" },
       { value: "22", label: "communes ciblées" },
@@ -38,8 +38,8 @@ const projects: Project[] = [
         text: "Douze pages métier (maçon, plaquiste, électricien…) et quatre pages service générées depuis un même schéma de données, avec routage imbriqué et navigation croisée entre les deux.",
       },
       {
-        title: "Tunnel de demande de devis",
-        text: "Formulaire multi-étapes relié à une API d'envoi, avec validation côté client et serveur, états de chargement et confirmation — accessible depuis chaque section du site.",
+        title: "Formulaire de demande de devis",
+        text: "Validation des champs, états de chargement et message de confirmation, envoi par un service d'e-mail transactionnel — accessible depuis chaque section du site, avec le téléphone en second recours.",
       },
       {
         title: "Balisage Schema.org complet",
@@ -54,7 +54,7 @@ const projects: Project[] = [
     screen: {
       src: "/projets/alliance-travaux/at_accueil.jpg",
       alt: "Page d'accueil du site Alliance-TRAVAUX",
-      caption: "Page d'accueil et entrée du tunnel de devis",
+      caption: "Page d'accueil et accès au formulaire de devis",
     },
   },
   {
