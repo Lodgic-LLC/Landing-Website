@@ -10,14 +10,15 @@ export default function Hero() {
           <div className="lg:col-span-6">
             <p className="eyebrow eyebrow-left">Ingénieur en informatique · Toulouse</p>
 
-            <h1 className="mt-4 font-sofia-bold heading text-4xl sm:text-5xl lg:text-[54px] text-balance">
-              Développeur à Toulouse :{" "}
-              <span className="text-[#C2542D]">sites web, applications mobiles et logiciels sur mesure</span>
+            <h1 className="mt-4 font-sofia-bold heading text-4xl sm:text-5xl lg:text-[52px] text-balance">
+              Un projet à lancer&nbsp;?
+              <br />
+              <span className="text-[#C2542D]">Parlons-en avant d&apos;écrire du code.</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#6B655D] font-inter">
-              Yann Rouquié. Cinq ans à développer des logiciels pour le spatial et
-              l&apos;aéronautique, aujourd&apos;hui au service des entreprises de Toulouse.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#6B655D] font-inter">
+              Yann Rouquié, ingénieur passé par le spatial et l&apos;aéronautique. Je conçois
+              aujourd&apos;hui les sites, applications et logiciels des entreprises de Toulouse.
             </p>
 
             <ul className="mt-7 space-y-2.5">
