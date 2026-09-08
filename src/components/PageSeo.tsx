@@ -54,7 +54,7 @@ function Bandeau({
   description,
   badges,
   primaryCta = { label: "Demander un devis", href: "/#contact" },
-  secondaryCta = { label: "Voir nos réalisations", href: "/#realisations" },
+  secondaryCta = { label: "Voir nos réalisations", href: "/realisations" },
 }: SeoHeroProps) {
   return (
     <section className="w-full min-h-screen bg-[#F8F6F2] pt-24 md:pt-36 pb-32 md:pb-44 overflow-hidden relative flex flex-col justify-center">
@@ -320,7 +320,7 @@ export default function PageSeo({ page }: { page: PageService }) {
       <main>
           <Bandeau
             primaryCta={{ label: 'Expliquer mon projet', href: '/contact' }}
-            secondaryCta={{ label: 'Voir mes réalisations', href: '/#realisations' }}
+            secondaryCta={{ label: 'Voir mes réalisations', href: '/realisations' }}
             {...hero}
           />
 

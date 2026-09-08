@@ -52,7 +52,7 @@ export default function Hero() {
                 </svg>
               </Link>
               <Link
-                href="/#realisations"
+                href="/realisations"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#2E2B28]/20 bg-white px-7 py-3.5 font-inter font-semibold text-[#2E2B28] transition-colors hover:border-[#2E2B28]/40"
               >
                 Voir ce que j&apos;ai déjà livré
@@ -85,7 +85,7 @@ export default function Hero() {
             <div className="grid gap-3">
               {/* Visuel principal */}
               <Link
-                href="/#realisations"
+                href="/realisations"
                 className="group relative block overflow-hidden rounded-xl border border-[#E6E1D8] shadow-[0_18px_40px_-24px_rgba(35,33,31,0.35)]"
               >
                 <Image
@@ -120,7 +120,7 @@ export default function Hero() {
                 {galerieAccueil.vignettes.map((vignette) => (
                   <Link
                     key={vignette.src}
-                    href="/#realisations"
+                    href="/realisations"
                     className="group relative block aspect-[4/3] overflow-hidden rounded-lg border border-[#E6E1D8]"
                   >
                     <Image

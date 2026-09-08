@@ -18,6 +18,7 @@ const route = (
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     route("", 1.0, "weekly"),
+    route("realisations", 0.9),
     route("contact", 0.9),
     route("projets/bewasbeen", 0.8),
     ...PAGES_SERVICE.map((page) => route(page.slug, 0.85)),

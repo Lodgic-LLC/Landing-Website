@@ -13,7 +13,7 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navigationItems = [
-    { name: 'Réalisations', path: '/#realisations' },
+    { name: 'Réalisations', path: '/realisations' },
     { name: 'Services', path: '/#services' },
     { name: 'Méthode', path: '/#methode' },
   ]

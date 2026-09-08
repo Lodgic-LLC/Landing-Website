@@ -107,7 +107,7 @@ export default function Page() {
       <section className="border-b border-[#E6E1D8] bg-[#F8F6F2] pt-32 pb-16 md:pt-36 md:pb-20">
         <div className="mx-auto max-w-6xl px-6">
           <Link
-            href="/#realisations"
+            href="/realisations"
             className="inline-flex items-center gap-2 text-sm font-inter text-[#6B655D] transition-colors hover:text-[#2E2B28]"
           >
             <span aria-hidden>←</span> Toutes mes réalisations
