@@ -6,8 +6,8 @@ export default function Hero() {
   return (
     <section className="w-full bg-[#F8F6F2] pt-32 md:pt-36 pb-16 md:pb-24 border-b border-[#E6E1D8]">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-7">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-6">
             <p className="eyebrow eyebrow-left">Ingénieur en informatique · Toulouse</p>
 
             <h1 className="mt-4 font-sofia-bold heading text-4xl sm:text-5xl lg:text-[54px] text-balance">
@@ -77,12 +77,12 @@ export default function Hero() {
           </div>
 
           {/* Galerie : ce que j'ai livré, en images */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-6">
             <div className="grid gap-3">
               {/* Visuel principal */}
               <Link
                 href="/#realisations"
-                className="group relative block overflow-hidden rounded-xl border border-[#E6E1D8]"
+                className="group relative block overflow-hidden rounded-xl border border-[#E6E1D8] shadow-[0_18px_40px_-24px_rgba(35,33,31,0.35)]"
               >
                 <Image
                   src={galerieAccueil.principale.src}
@@ -90,20 +90,29 @@ export default function Hero() {
                   width={1960}
                   height={1069}
                   priority
-                  sizes="(max-width: 1024px) 92vw, 42vw"
-                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  sizes="(max-width: 1024px) 92vw, 48vw"
+                  className="w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-                <div
-                  aria-hidden
-                  className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#23211F]/80 to-transparent"
-                />
-                <p className="absolute bottom-3 left-4 text-sm font-inter font-medium text-white">
-                  {galerieAccueil.principale.legende}
-                </p>
+                <div className="flex items-center justify-between gap-4 border-t border-[#E6E1D8] bg-white px-4 py-3">
+                  <div>
+                    <p className="font-sofia-bold text-[#2E2B28]">
+                      {galerieAccueil.principale.titre}
+                    </p>
+                    <p className="text-xs text-[#6B655D] font-inter">
+                      {galerieAccueil.principale.legende}
+                    </p>
+                  </div>
+                  <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-inter font-semibold text-[#C2542D] group-hover:text-[#A34322]">
+                    Voir le projet
+                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
               </Link>
 
-              {/* Trois vignettes */}
-              <div className="grid grid-cols-4 gap-3">
+              {/* Deux vignettes et l'accès aux réalisations */}
+              <div className="grid grid-cols-3 gap-3">
                 {galerieAccueil.vignettes.map((vignette) => (
                   <Link
                     key={vignette.src}
@@ -115,26 +124,25 @@ export default function Hero() {
                       alt={vignette.alt}
                       width={1960}
                       height={1069}
-                      sizes="(max-width: 1024px) 30vw, 14vw"
-                      className="aspect-[4/3] h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                      sizes="(max-width: 1024px) 30vw, 16vw"
+                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                     />
                     <div
                       aria-hidden
-                      className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#23211F]/75 to-transparent"
+                      className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-[#23211F]/80 to-transparent"
                     />
-                    <p className="absolute bottom-1.5 left-2 text-[11px] font-inter font-medium text-white">
+                    <p className="absolute bottom-2 left-2.5 text-xs font-inter font-medium text-white">
                       {vignette.legende}
                     </p>
                   </Link>
                 ))}
 
-                {/* Accès à toutes les réalisations */}
                 <Link
                   href="/#realisations"
-                  className="group flex aspect-[4/3] flex-col items-center justify-center gap-1.5 rounded-lg bg-[#23211F] p-2 text-center transition-colors hover:bg-[#33302C]"
+                  className="group flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-lg bg-[#23211F] p-3 text-center transition-colors hover:bg-[#33302C]"
                 >
                   <svg
-                    className="h-5 w-5 text-[#C2542D]"
+                    className="h-6 w-6 text-[#C2542D]"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -148,8 +156,10 @@ export default function Hero() {
                     <rect x="3" y="14" width="7" height="7" rx="1" />
                     <rect x="14" y="14" width="7" height="7" rx="1" />
                   </svg>
-                  <span className="text-[11px] font-inter font-medium leading-tight text-white">
-                    Mes réalisations
+                  <span className="text-xs font-inter font-medium leading-tight text-white">
+                    Toutes mes
+                    <br />
+                    réalisations
                   </span>
                 </Link>
               </div>

@@ -21,7 +21,8 @@ export const galerieAccueil = {
   principale: {
     src: '/projets/alliance-travaux/at_accueil.jpg',
     alt: "Page d'accueil du site Alliance-TRAVAUX",
-    legende: 'Alliance-TRAVAUX · Toulouse',
+    titre: 'Alliance-TRAVAUX',
+    legende: 'Collectif d’artisans, Toulouse — refonte complète',
   },
   vignettes: [
     {
@@ -33,11 +34,6 @@ export const galerieAccueil = {
       src: '/projets/bewasbeen/bwb_professor_dashboard.jpg',
       alt: 'Tableau de bord enseignant de la plateforme BewasBeen',
       legende: 'BewasBeen',
-    },
-    {
-      src: '/projets/alliance-travaux/at_devis.jpg',
-      alt: 'Formulaire de demande de devis du site Alliance-TRAVAUX',
-      legende: 'Devis en ligne',
     },
   ],
 }
