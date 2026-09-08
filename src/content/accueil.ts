@@ -18,6 +18,8 @@ export const preuves = [
  * Toutes mènent à la section « Réalisations ».
  */
 export const galerieAccueil = {
+  /** Libellé affiché au-dessus de la galerie. */
+  intitule: 'Dernier projet livré',
   principale: {
     src: '/projets/alliance-travaux/at_accueil.jpg',
     alt: "Page d'accueil du site Alliance-TRAVAUX",
@@ -28,12 +30,12 @@ export const galerieAccueil = {
     {
       src: '/projets/alliance-travaux/at_metiers.jpg',
       alt: 'Grille des douze corps de métier du site Alliance-TRAVAUX',
-      legende: '12 métiers',
+      legende: '12 pages métier',
     },
     {
-      src: '/projets/bewasbeen/bwb_professor_dashboard.jpg',
-      alt: 'Tableau de bord enseignant de la plateforme BewasBeen',
-      legende: 'BewasBeen',
+      src: '/projets/alliance-travaux/at_page_metier.jpg',
+      alt: 'Page métier maçonnerie du site Alliance-TRAVAUX',
+      legende: 'Page métier',
     },
   ],
 }

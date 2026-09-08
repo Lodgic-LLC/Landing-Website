@@ -78,6 +78,9 @@ export default function Hero() {
 
           {/* Galerie : ce que j'ai livré, en images */}
           <div className="lg:col-span-6">
+            <p className="mb-3 text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#C2542D]">
+              {galerieAccueil.intitule}
+            </p>
             <div className="grid gap-3">
               {/* Visuel principal */}
               <Link
@@ -137,8 +140,10 @@ export default function Hero() {
                   </Link>
                 ))}
 
-                <Link
-                  href="/#realisations"
+                <a
+                  href="https://alliance-travaux.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-lg bg-[#23211F] p-3 text-center transition-colors hover:bg-[#33302C]"
                 >
                   <svg
@@ -151,17 +156,14 @@ export default function Hero() {
                     strokeLinejoin="round"
                     aria-hidden
                   >
-                    <rect x="3" y="3" width="7" height="7" rx="1" />
-                    <rect x="14" y="3" width="7" height="7" rx="1" />
-                    <rect x="3" y="14" width="7" height="7" rx="1" />
-                    <rect x="14" y="14" width="7" height="7" rx="1" />
+                    <path d="M7 17L17 7M7 7h10v10" />
                   </svg>
                   <span className="text-xs font-inter font-medium leading-tight text-white">
-                    Toutes mes
+                    Voir le site
                     <br />
-                    réalisations
+                    en ligne
                   </span>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
