@@ -13,13 +13,34 @@ export const preuves = [
 ];
 
 // —— Accueil
-/** Scores relevés sur Google PageSpeed Insights, vérifiables publiquement. */
-export const scoresPageSpeed = [
-  { name: "Perf.", value: "88" },
-  { name: "Access.", value: "93" },
-  { name: "Pratiques", value: "96" },
-  { name: "SEO", value: "100" },
-];
+/**
+ * Images du bandeau d'accueil : une grande, trois vignettes.
+ * Toutes mènent à la section « Réalisations ».
+ */
+export const galerieAccueil = {
+  principale: {
+    src: '/projets/alliance-travaux/at_accueil.jpg',
+    alt: "Page d'accueil du site Alliance-TRAVAUX",
+    legende: 'Alliance-TRAVAUX · Toulouse',
+  },
+  vignettes: [
+    {
+      src: '/projets/alliance-travaux/at_metiers.jpg',
+      alt: 'Grille des douze corps de métier du site Alliance-TRAVAUX',
+      legende: '12 métiers',
+    },
+    {
+      src: '/projets/bewasbeen/bwb_professor_dashboard.jpg',
+      alt: 'Tableau de bord enseignant de la plateforme BewasBeen',
+      legende: 'BewasBeen',
+    },
+    {
+      src: '/projets/alliance-travaux/at_devis.jpg',
+      alt: 'Formulaire de demande de devis du site Alliance-TRAVAUX',
+      legende: 'Devis en ligne',
+    },
+  ],
+}
 
 // —— Services
 export type NomIcone = 'web' | 'mobile' | 'logiciel'

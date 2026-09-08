@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { preuves, scoresPageSpeed } from '@/content/accueil'
+import { galerieAccueil, preuves } from '@/content/accueil'
 
 export default function Hero() {
   return (
@@ -75,80 +76,81 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Une preuve chiffrée plutôt qu'une liste de technologies */}
+          {/* Galerie : ce que j'ai livré, en images */}
           <div className="lg:col-span-5">
-            <div className="overflow-hidden rounded-xl border border-[#E6E1D8] bg-white">
-              <div className="border-b border-[#E6E1D8] px-7 pt-6 pb-5">
-                <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#C2542D]">
-                  Dernière réalisation
+            <div className="grid gap-3">
+              {/* Visuel principal */}
+              <Link
+                href="/#realisations"
+                className="group relative block overflow-hidden rounded-xl border border-[#E6E1D8]"
+              >
+                <Image
+                  src={galerieAccueil.principale.src}
+                  alt={galerieAccueil.principale.alt}
+                  width={1960}
+                  height={1069}
+                  priority
+                  sizes="(max-width: 1024px) 92vw, 42vw"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#23211F]/80 to-transparent"
+                />
+                <p className="absolute bottom-3 left-4 text-sm font-inter font-medium text-white">
+                  {galerieAccueil.principale.legende}
                 </p>
-                <p className="mt-2 font-sofia-bold text-xl text-[#2E2B28]">
-                  Alliance-TRAVAUX
-                </p>
-                <p className="mt-0.5 text-sm text-[#6B655D] font-inter">
-                  Collectif d&apos;artisans, Toulouse — refonte complète
-                </p>
-              </div>
+              </Link>
 
-              <div className="px-7 py-6">
-                <p className="text-sm text-[#6B655D] font-inter">Temps d&apos;affichage</p>
-                <p className="mt-1.5 flex items-baseline gap-3 font-sofia-bold">
-                  <span className="text-xl text-[#6B655D] line-through decoration-[#C2542D]/50">
-                    5,8 s
-                  </span>
+              {/* Trois vignettes */}
+              <div className="grid grid-cols-4 gap-3">
+                {galerieAccueil.vignettes.map((vignette) => (
+                  <Link
+                    key={vignette.src}
+                    href="/#realisations"
+                    className="group relative block aspect-[4/3] overflow-hidden rounded-lg border border-[#E6E1D8]"
+                  >
+                    <Image
+                      src={vignette.src}
+                      alt={vignette.alt}
+                      width={1960}
+                      height={1069}
+                      sizes="(max-width: 1024px) 30vw, 14vw"
+                      className="aspect-[4/3] h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
+                    <div
+                      aria-hidden
+                      className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#23211F]/75 to-transparent"
+                    />
+                    <p className="absolute bottom-1.5 left-2 text-[11px] font-inter font-medium text-white">
+                      {vignette.legende}
+                    </p>
+                  </Link>
+                ))}
+
+                {/* Accès à toutes les réalisations */}
+                <Link
+                  href="/#realisations"
+                  className="group flex aspect-[4/3] flex-col items-center justify-center gap-1.5 rounded-lg bg-[#23211F] p-2 text-center transition-colors hover:bg-[#33302C]"
+                >
                   <svg
-                    className="h-4 w-4 shrink-0 text-[#C2542D]"
+                    className="h-5 w-5 text-[#C2542D]"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth={3}
+                    strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     aria-hidden
                   >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
+                    <rect x="3" y="3" width="7" height="7" rx="1" />
+                    <rect x="14" y="3" width="7" height="7" rx="1" />
+                    <rect x="3" y="14" width="7" height="7" rx="1" />
+                    <rect x="14" y="14" width="7" height="7" rx="1" />
                   </svg>
-                  <span className="text-4xl text-[#C2542D]">0,7 s</span>
-                </p>
-
-                <dl className="mt-6 grid grid-cols-4 gap-px overflow-hidden rounded-lg border border-[#E6E1D8] bg-[#E6E1D8]">
-                  {scoresPageSpeed.map((score) => (
-                    <div key={score.name} className="bg-[#F8F6F2] px-2 py-3 text-center">
-                      <dt className="text-[10px] leading-tight text-[#6B655D] font-inter">
-                        {score.name}
-                      </dt>
-                      <dd className="mono mt-0.5 text-lg font-semibold text-[#2E2B28]">
-                        {score.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-
-                <p className="mt-3 text-[11px] leading-relaxed text-[#6B655D] font-inter">
-                  Google PageSpeed Insights, 7 septembre 2026
-                </p>
-              </div>
-
-              <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#E6E1D8] bg-[#F8F6F2] px-7 py-4">
-                <a
-                  href="https://alliance-travaux.fr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-inter font-semibold text-[#2E2B28] hover:text-[#C2542D]"
-                >
-                  Voir le site
-                  <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M7 17L17 7M7 7h10v10" />
-                  </svg>
-                </a>
-                <Link
-                  href="/#realisations"
-                  className="inline-flex items-center gap-1.5 text-sm font-inter font-semibold text-[#C2542D] hover:text-[#A34322]"
-                >
-                  Mes autres réalisations
-                  <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
+                  <span className="text-[11px] font-inter font-medium leading-tight text-white">
+                    Mes réalisations
+                  </span>
                 </Link>
               </div>
             </div>
