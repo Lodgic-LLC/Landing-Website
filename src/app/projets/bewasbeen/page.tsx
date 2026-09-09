@@ -104,7 +104,7 @@ export default function Page() {
         ])} />
 
       {/* Présentation */}
-      <section className="border-b border-[#E6E1D8] bg-[#F8F6F2] pt-32 pb-16 md:pt-36 md:pb-20">
+      <section className="border-b border-[#E6E1D8] bg-[#F8F6F2] pt-28 pb-12 md:pt-32 md:pb-16">
         <div className="mx-auto max-w-6xl px-6">
           <Link
             href="/realisations"
@@ -155,7 +155,7 @@ export default function Page() {
       </section>
 
       {/* Le besoin et la réponse */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white py-12 md:py-16">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 md:gap-14">
           <div>
             <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#6B655D]">
@@ -182,7 +182,7 @@ export default function Page() {
       </section>
 
       {/* Captures */}
-      <section className="border-t border-[#E6E1D8] bg-[#F8F6F2] py-16 md:py-20" aria-labelledby="captures">
+      <section className="border-t border-[#E6E1D8] bg-[#F8F6F2] py-12 md:py-16" aria-labelledby="captures">
         <div className="mx-auto max-w-4xl px-6">
           <h2 id="captures" className="text-3xl md:text-4xl font-sofia-bold text-[#2E2B28] tracking-tight">
             La plateforme en images
@@ -197,7 +197,7 @@ export default function Page() {
       </section>
 
       {/* Fonctionnalités */}
-      <section className="bg-white py-16 md:py-20" aria-labelledby="fonctionnalites">
+      <section className="bg-white py-12 md:py-16" aria-labelledby="fonctionnalites">
         <div className="mx-auto max-w-3xl px-6">
           <h2
             id="fonctionnalites"
@@ -212,7 +212,7 @@ export default function Page() {
       </section>
 
       {/* Contact */}
-      <section className="border-t border-[#E6E1D8] bg-[#F8F6F2] py-16 md:py-20" aria-labelledby="contact-projet">
+      <section className="border-t border-[#E6E1D8] bg-[#F8F6F2] py-12 md:py-16" aria-labelledby="contact-projet">
         <div className="mx-auto grid max-w-5xl gap-10 px-6 md:grid-cols-2 md:gap-14">
           <div>
             <h2

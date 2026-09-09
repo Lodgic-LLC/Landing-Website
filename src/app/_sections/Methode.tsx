@@ -5,7 +5,7 @@ export default function Method() {
   return (
     <section
       id="methode"
-      className="bg-white py-20 md:py-28 border-t border-[#E6E1D8]"
+      className="bg-white py-14 md:py-20 border-t border-[#E6E1D8]"
       aria-labelledby="methode-heading"
     >
       <div className="mx-auto max-w-6xl px-6">

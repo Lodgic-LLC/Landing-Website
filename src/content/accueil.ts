@@ -8,7 +8,7 @@
 /** Ce sur quoi je m'engage, affiché sous l'accroche. */
 export const engagements = [
   'Prix transparent avant de commencer',
-  'Conseils et optimisation de l’architecture de votre projet',
+  'Conseils et optimisation de l’architecture',
   'Présentation régulière de l’avancée des développements',
   'Vous êtes propriétaire : le code et les accès vous appartiennent',
 ]

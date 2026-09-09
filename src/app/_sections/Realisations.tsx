@@ -7,7 +7,7 @@ export default function Realisations() {
   return (
     <section
       id="realisations"
-      className="border-t border-[#E6E1D8] bg-white py-20 md:py-28"
+      className="border-t border-[#E6E1D8] bg-white py-14 md:py-20"
       aria-labelledby="realisations-heading"
     >
       <div className="mx-auto max-w-6xl px-6">
@@ -21,7 +21,7 @@ export default function Realisations() {
           </h2>
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
           {PROJETS.map((projet) => (
             <Link
               key={projet.name}

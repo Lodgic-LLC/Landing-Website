@@ -12,7 +12,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-[#23211F] py-20 md:py-28"
+      className="bg-[#23211F] py-14 md:py-20"
       aria-labelledby="about-heading"
     >
       <div className="mx-auto max-w-6xl px-6">

@@ -4,7 +4,7 @@ import { reassurance } from '@/content/accueil'
 export default function FAQ() {
   return (
     <section
-      className="relative py-20 md:py-28 bg-[#F8F6F2] overflow-hidden border-t border-[#E6E1D8]"
+      className="relative py-14 md:py-20 bg-[#F8F6F2] overflow-hidden border-t border-[#E6E1D8]"
       id="contact"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

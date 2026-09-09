@@ -4,7 +4,7 @@ import { engagements, galerieAccueil } from '@/content/accueil'
 
 export default function Hero() {
   return (
-    <section className="w-full bg-[#F8F6F2] pt-32 md:pt-36 pb-16 md:pb-24 border-b border-[#E6E1D8]">
+    <section className="w-full bg-[#F8F6F2] pt-28 md:pt-32 pb-12 md:pb-16 border-b border-[#E6E1D8]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-6">

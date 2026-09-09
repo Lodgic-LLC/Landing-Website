@@ -34,7 +34,7 @@ export default function Page() {
         ])}
       />
 
-      <section className="border-b border-[#E6E1D8] bg-[#F8F6F2] pt-32 pb-14 md:pt-36 md:pb-16">
+      <section className="border-b border-[#E6E1D8] bg-[#F8F6F2] pt-28 pb-10 md:pt-32 md:pb-12">
         <div className="mx-auto max-w-6xl px-6">
           <p className="eyebrow eyebrow-left">Réalisations</p>
           <h1 className="mt-3 text-4xl md:text-5xl font-sofia-bold text-[#2E2B28] tracking-tight text-balance">
@@ -55,7 +55,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="border-t border-[#E6E1D8] bg-[#F8F6F2] py-16 md:py-20" aria-labelledby="contact-realisations">
+      <section className="border-t border-[#E6E1D8] bg-[#F8F6F2] py-12 md:py-16" aria-labelledby="contact-realisations">
         <div className="mx-auto grid max-w-5xl gap-10 px-6 md:grid-cols-2 md:gap-14">
           <div>
             <h2

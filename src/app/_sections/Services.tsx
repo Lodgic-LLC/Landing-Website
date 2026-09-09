@@ -11,11 +11,11 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="bg-[#F8F6F2] py-20 md:py-28 border-t border-[#E6E1D8]"
+      className="bg-[#F8F6F2] py-14 md:py-20 border-t border-[#E6E1D8]"
       aria-labelledby="services-heading"
     >
       <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-3xl mb-12 md:mb-14">
+        <div className="max-w-3xl mb-9 md:mb-10">
           <p className="eyebrow eyebrow-left">Services</p>
           <h2
             id="services-heading"
