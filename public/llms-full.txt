@@ -30,7 +30,7 @@ Les prix sont des planchers pour un projet simple ; le montant exact est fixé p
 
 ## Réalisations
 
-- Alliance-TRAVAUX (https://alliance-travaux.fr) : site d'un collectif d'artisans toulousains. 23 pages sur deux arborescences (12 métiers, 4 services), formulaire de devis, balisage Schema.org (HomeAndConstructionBusiness, OfferCatalog, FAQPage, GeoCircle sur 22 communes), bundle découpé par domaine. React, Vite, React Router.
+- Alliance-TRAVAUX (https://alliance-travaux.fr) : site d'un collectif d'artisans toulousains. 25 pages sur deux arborescences (12 métiers, 3 services), formulaire de devis, balisage Schema.org (HomeAndConstructionBusiness, OfferCatalog, FAQPage, GeoCircle sur 16 communes), bundle découpé par domaine. React, Vite, React Router.
 - BewasBeen : plateforme pédagogique pour l'apprentissage des verbes irréguliers anglais. Espace enseignant, gestion de classes, trois moteurs d'exercice (glisser-déposer, clavier, audio), suivi par élève, exports PDF et CSV, accès élève sans compte par code ou QR code. Next.js, TypeScript, PostgreSQL, Prisma.
 
 ## Réponses types

@@ -41,9 +41,9 @@ export const PROJETS: Projet[] = [
     summary:
       "Refonte complète du site d'un collectif d'artisans toulousains.",
     metrics: [
-      { value: "23", label: "pages générées" },
-      { value: "22", label: "communes ciblées" },
-      { value: "12", label: "métiers référencés" },
+      { value: "25", label: "pages en ligne" },
+      { value: "16", label: "communes ciblées" },
+      { value: "12", label: "pages métier" },
     ],
     measured: {
       label: "Affichage de la page d'accueil",
@@ -60,7 +60,7 @@ export const PROJETS: Projet[] = [
     features: [
       {
         title: "Structure repensée pour la conversion",
-        text: "12 pages métier et 4 pages service générées depuis un même schéma. Chaque parcours mène au devis.",
+        text: "12 pages métier et 3 pages service générées depuis un même schéma. Chaque parcours mène au devis.",
       },
       {
         title: "Formulaire de devis",
@@ -68,7 +68,7 @@ export const PROJETS: Projet[] = [
       },
       {
         title: "Référencement local repris de zéro",
-        text: "Balisage Schema.org complet sur 22 communes. Résultat : 100/100 au SEO technique.",
+        text: "Balisage Schema.org complet sur 16 communes de l'agglomération. Résultat : 100/100 au SEO technique.",
       },
       {
         title: "Sécurité remise à niveau",
@@ -117,9 +117,9 @@ export const PROJETS: Projet[] = [
     summary:
       "Plateforme pédagogique : espace enseignant, classes et suivi individuel des élèves.",
     metrics: [
-      { value: "3", label: "moteurs d'exercice" },
-      { value: "2", label: "rôles applicatifs" },
-      { value: "0", label: "compte élève requis" },
+      { value: "+200", label: "classes créées" },
+      { value: "+2 000", label: "exercices réalisés" },
+      { value: "3", label: "modes d'entraînement" },
     ],
     features: [
       {

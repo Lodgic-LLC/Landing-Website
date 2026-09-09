@@ -125,6 +125,18 @@ export default function Page() {
                 trois moteurs d’exercice et suivi individuel des élèves.
               </p>
 
+              <a
+                href="https://bewasbeen.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#C2542D] px-5 py-2.5 text-sm font-inter font-semibold text-white transition-colors hover:bg-[#A34322]"
+              >
+                Voir le site en ligne
+                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M7 17L17 7M7 7h10v10" />
+                </svg>
+              </a>
+
               <div className="mt-7 flex flex-wrap gap-1.5">
                 {stack.map((techno) => (
                   <span

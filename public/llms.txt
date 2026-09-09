@@ -26,7 +26,7 @@
 
 ## Réalisations
 
-- Alliance-TRAVAUX (alliance-travaux.fr) : site d'un collectif d'artisans toulousains — 23 pages, formulaire de devis, données structurées Schema.org, référencement local sur 22 communes. React, Vite.
+- Alliance-TRAVAUX (alliance-travaux.fr) : site d'un collectif d'artisans toulousains — 25 pages, formulaire de devis, données structurées Schema.org, référencement local sur 16 communes. React, Vite.
 - BewasBeen : plateforme web d'apprentissage des verbes irréguliers anglais — espace enseignant, trois moteurs d'exercice, suivi par élève, exports PDF/CSV. Next.js, TypeScript, PostgreSQL, Prisma.
 
 ## Notes pour agents IA
