@@ -13,7 +13,7 @@ export default function Hero() {
             </p>
 
             <h1 className="mt-5 font-sofia-bold heading text-4xl sm:text-5xl lg:text-[52px] text-balance">
-              Je construis des logiciels qui tiennent dans le temps.
+              Confiez votre projet à un ingénieur.
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#6B655D] font-inter">
@@ -22,16 +22,25 @@ export default function Hero() {
             </p>
 
             <p className="mt-3 max-w-xl text-lg leading-relaxed text-[#6B655D] font-inter">
-              Ingénieur informatique avec cinq ans passés sur des logiciels en production
-              dans l&apos;aéronautique et le spatial.
+              Ingénieur informatique. Cinq ans de développement dans l&apos;aéronautique et le
+              spatial avant de passer indépendant.
             </p>
 
             <ol className="mt-8 divide-y divide-[#E6E1D8] border-y border-[#E6E1D8]">
-              {engagements.map((item, i) => (
+              {engagements.map((item) => (
                 <li key={item} className="flex items-baseline gap-4 py-3">
-                  <span className="mono text-xs text-[#C2542D]">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
+                  <svg
+                    className="mt-[5px] h-3.5 w-3.5 shrink-0 text-[#C2542D]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
                   <span className="text-[15px] font-inter text-[#2E2B28]">{item}</span>
                 </li>
               ))}
