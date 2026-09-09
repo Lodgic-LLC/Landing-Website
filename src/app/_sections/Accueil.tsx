@@ -8,22 +8,13 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-6">
-            <p className="mono text-xs uppercase tracking-[0.18em] text-[#6B655D]">
-              Toulouse · Indépendant
-            </p>
-
-            <h1 className="mt-5 font-sofia-bold heading text-4xl sm:text-5xl lg:text-[52px] text-balance">
+            <h1 className="font-sofia-bold heading text-4xl sm:text-5xl lg:text-[52px] text-balance">
               Confiez votre projet à un ingénieur.
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#6B655D] font-inter">
               Sites, applications mobiles, outils métier. Du premier contact à la livraison,
               et les années qui suivent.
-            </p>
-
-            <p className="mt-3 max-w-xl text-lg leading-relaxed text-[#6B655D] font-inter">
-              Ingénieur informatique. Cinq ans de développement dans l&apos;aéronautique et le
-              spatial avant de passer indépendant.
             </p>
 
             <ol className="mt-8 divide-y divide-[#E6E1D8] border-y border-[#E6E1D8]">
