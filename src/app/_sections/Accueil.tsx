@@ -14,7 +14,7 @@ export default function Hero() {
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#6B655D] font-inter">
               Sites, applications mobiles, outils métier. Du premier contact à la livraison,
-              et les années qui suivent.
+              vous savez toujours où en est votre projet.
             </p>
 
             <ol className="mt-8 divide-y divide-[#E6E1D8] border-y border-[#E6E1D8]">
