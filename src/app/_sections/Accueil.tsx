@@ -17,9 +17,13 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#6B655D] font-inter">
-              Sites, applications mobiles, outils métier. Du premier cadrage à la mise en
-              ligne, et les années qui suivent. Ingénieur, cinq ans passés sur des logiciels
-              en production dans l&apos;aéronautique et le spatial.
+              Sites, applications mobiles, outils métier. Du premier contact à la livraison,
+              et les années qui suivent.
+            </p>
+
+            <p className="mt-3 max-w-xl text-lg leading-relaxed text-[#6B655D] font-inter">
+              Ingénieur informatique avec cinq ans passés sur des logiciels en production
+              dans l&apos;aéronautique et le spatial.
             </p>
 
             <ol className="mt-8 divide-y divide-[#E6E1D8] border-y border-[#E6E1D8]">
@@ -51,22 +55,6 @@ export default function Hero() {
               </Link>
             </div>
 
-            <p className="mt-5 text-sm text-[#6B655D] font-inter">
-              Ou directement :{" "}
-              <a
-                href="mailto:contact@lodgic-dev.com"
-                className="font-sofia-bold text-[#2E2B28] underline underline-offset-2 decoration-[#C2542D]/40 hover:decoration-[#C2542D]"
-              >
-                contact@lodgic-dev.com
-              </a>
-              {" · "}
-              <a
-                href="tel:+33643517157"
-                className="font-sofia-bold text-[#2E2B28] underline underline-offset-2 decoration-[#C2542D]/40 hover:decoration-[#C2542D]"
-              >
-                06 43 51 71 57
-              </a>
-            </p>
           </div>
 
           {/* Galerie : ce que j'ai livré, en images */}

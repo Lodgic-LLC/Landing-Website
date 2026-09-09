@@ -7,9 +7,10 @@
 
 /** Ce sur quoi je m'engage, affiché sous l'accroche. */
 export const engagements = [
-  'Cadrage écrit et chiffré avant de commencer',
-  'Vous testez le produit chaque semaine',
-  'Le code et les accès vous appartiennent',
+  'Prix transparent avant de commencer',
+  'Conseils et optimisation de l’architecture de votre projet',
+  'Présentation régulière de l’avancée des développements',
+  'Vous êtes propriétaire : le code et les accès vous appartiennent',
 ]
 
 /**
