@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { galerieAccueil, preuves } from '@/content/accueil'
+import { engagements, galerieAccueil } from '@/content/accueil'
 
 export default function Hero() {
   return (
@@ -8,38 +8,30 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-6">
-            <p className="eyebrow eyebrow-left">Ingénieur en informatique · Toulouse</p>
+            <p className="mono text-xs uppercase tracking-[0.18em] text-[#6B655D]">
+              Toulouse · Indépendant
+            </p>
 
-            <h1 className="mt-4 font-sofia-bold heading text-4xl sm:text-5xl lg:text-[52px] text-balance">
-              Un projet à lancer&nbsp;?
-              <br />
-              <span className="text-[#C2542D]">Parlons-en avant d&apos;écrire du code.</span>
+            <h1 className="mt-5 font-sofia-bold heading text-4xl sm:text-5xl lg:text-[52px] text-balance">
+              Je construis des logiciels qui tiennent dans le temps.
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#6B655D] font-inter">
-              Yann Rouquié, ingénieur passé par le spatial et l&apos;aéronautique. Je conçois
-              aujourd&apos;hui les sites, applications et logiciels des entreprises de Toulouse.
+              Sites, applications mobiles, outils métier. Du premier cadrage à la mise en
+              ligne, et les années qui suivent. Ingénieur, cinq ans passés sur des logiciels
+              en production dans l&apos;aéronautique et le spatial.
             </p>
 
-            <ul className="mt-7 space-y-2.5">
-              {preuves.map((item) => (
-                <li key={item} className="flex items-center gap-2.5 text-[15px] font-inter text-[#2E2B28]">
-                  <svg
-                    className="h-4 w-4 shrink-0 text-[#C2542D]"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden
-                  >
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
-                  {item}
+            <ol className="mt-8 divide-y divide-[#E6E1D8] border-y border-[#E6E1D8]">
+              {engagements.map((item, i) => (
+                <li key={item} className="flex items-baseline gap-4 py-3">
+                  <span className="mono text-xs text-[#C2542D]">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="text-[15px] font-inter text-[#2E2B28]">{item}</span>
                 </li>
               ))}
-            </ul>
+            </ol>
 
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
               <Link

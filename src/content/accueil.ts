@@ -5,17 +5,15 @@
  * guillemets change, la mise en page reste dans les composants.
  */
 
-// —— Accueil
-export const preuves = [
-  "5 ans en production dans le spatial et l'aéronautique",
-  "Un seul interlocuteur, du devis à la mise en ligne",
-  "Réponse sous 24 heures",
-];
+/** Ce sur quoi je m'engage, affiché sous l'accroche. */
+export const engagements = [
+  'Cadrage écrit et chiffré avant de commencer',
+  'Vous testez le produit chaque semaine',
+  'Le code et les accès vous appartiennent',
+]
 
-// —— Accueil
 /**
- * Images du bandeau d'accueil : une grande, trois vignettes.
- * Toutes mènent à la section « Réalisations ».
+ * Images du bandeau d'accueil : une grande, deux vignettes.
  */
 export const galerieAccueil = {
   /** Libellé affiché au-dessus de la galerie. */
@@ -40,7 +38,6 @@ export const galerieAccueil = {
   ],
 }
 
-// —— Services
 export type NomIcone = 'web' | 'mobile' | 'logiciel'
 
 export const services: {
@@ -92,15 +89,12 @@ export const services: {
   },
 ]
 
-// —— APropos
 export const ficheIdentite = [
   { label: 'Parcours', value: '5 ans en production · spatial et aéronautique' },
   { label: 'Formation', value: 'Ingénieur diplômé en informatique' },
   { label: 'Technologies', value: 'React · Next.js · React Native · Node.js' },
   { label: 'Zone', value: 'Toulouse · à distance partout en France' },
 ]
-
-// —— APropos
 
 /** Ce que cinq ans en environnement critique laissent comme réflexes. */
 export const reflexes = [
@@ -121,7 +115,6 @@ export const reflexes = [
   },
 ]
 
-// —— APropos
 export const garanties = [
   {
     theme: 'Fiabilité',
@@ -157,7 +150,6 @@ export const garanties = [
   },
 ]
 
-// —— Methode
 export const etapes = [
   {
     n: '01',
@@ -185,7 +177,6 @@ export const etapes = [
   },
 ]
 
-// —— Contact
 export const reassurance = [
   {
     title: 'Un échange, pas un devis automatique',
