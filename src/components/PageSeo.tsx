@@ -1,5 +1,3 @@
-'use client'
-
 /**
  * Gabarit des pages d'atterrissage (une par service).
  *
@@ -7,10 +5,9 @@
  *   Bandeau      le haut de page : titre, description, badges, maquette
  *   Expertises   les six cartes détaillant la prestation
  *
- * Les maquettes décoratives sont dans MaquettesSeo.tsx.
+ * La maquette décorative est dans MaquetteNavigateur.tsx.
  */
 
-import { useState, type ComponentProps, type ReactNode } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { FaCheck, FaArrowRight } from 'react-icons/fa'
@@ -53,8 +50,8 @@ function Bandeau({
   highlight,
   description,
   badges,
-  primaryCta = { label: "Demander un devis", href: "/#contact" },
-  secondaryCta = { label: "Voir nos réalisations", href: "/realisations" },
+  primaryCta = { label: "Expliquer mon projet", href: "/contact" },
+  secondaryCta = { label: "Voir mes réalisations", href: "/realisations" },
 }: SeoHeroProps) {
   return (
     <section className="w-full min-h-screen bg-[#F8F6F2] pt-24 md:pt-36 pb-32 md:pb-44 overflow-hidden relative flex flex-col justify-center">
@@ -83,7 +80,7 @@ function Bandeau({
             </h1>
 
             <h2
-              className="font-sofia-bold text-[#C2542D] text-2xl sm:text-3xl md:text-4xl mb-6 leading-tight"
+              className="font-sofia-bold text-[#B54A26] text-2xl sm:text-3xl md:text-4xl mb-6 leading-tight"
             >
               {highlight}
             </h2>
@@ -172,7 +169,7 @@ function Expertises({
   closing,
   crossLinks,
   ctaLabel = 'Discuter de votre projet',
-  ctaHref = '/#contact',
+  ctaHref = '/contact',
 }: SeoExpertiseProps) {
   return (
     <section className="relative py-24 md:py-32 bg-white overflow-hidden">
@@ -203,7 +200,7 @@ function Expertises({
 
         {/* Cards */}
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {cards.map((card, idx) => (
+          {cards.map((card) => (
             <article
               key={card.title}
               className="group relative rounded-2xl border border-[#2E2B28]/10 bg-white p-7 shadow-soft hover:shadow-[0_25px_60px_-25px_rgba(35,33,31,0.18)] transition-shadow duration-500 overflow-hidden"
@@ -222,7 +219,7 @@ function Expertises({
               <ul className="mt-5 space-y-2">
                 {card.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-sm font-inter text-[#2E2B28]">
-                    <FaCheck className="mt-1 h-3 w-3 text-[#C2542D] flex-shrink-0" />
+                    <FaCheck className="mt-1 h-3 w-3 text-[#B54A26] flex-shrink-0" />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -342,7 +339,7 @@ export default function PageSeo({ page }: { page: PageService }) {
                       {faq.question}
                       <span
                         aria-hidden
-                        className="mono shrink-0 text-lg leading-none text-[#C2542D] transition-transform group-open:rotate-45"
+                        className="mono shrink-0 text-lg leading-none text-[#B54A26] transition-transform group-open:rotate-45"
                       >
                         +
                       </span>
@@ -356,9 +353,9 @@ export default function PageSeo({ page }: { page: PageService }) {
 
           <SuccessStories />
 
-          <About />
+          <About fond="creme" />
 
-          <Contact />
+          <Contact fond="blanc" />
       </main>
     </>
   )

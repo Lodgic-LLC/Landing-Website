@@ -10,8 +10,8 @@ const ConsentVercelAnalytics = () => {
     if (typeof window === "undefined") return;
 
     const updateConsent = async () => {
-      const module = await import("vanilla-cookieconsent");
-      const CookieConsent = module.default ?? module;
+      const cc = await import("vanilla-cookieconsent");
+      const CookieConsent = cc.default ?? cc;
       setEnabled(CookieConsent.acceptedCategory("analytics"));
     };
 

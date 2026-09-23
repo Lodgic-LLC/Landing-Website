@@ -57,8 +57,8 @@ const organizationNode: Record<string, unknown> = {
   name: SITE_NAME,
   legalName: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/icon_bgblanc.png`,
-  image: `${SITE_URL}/lodgic-banner.png`,
+  logo: `${SITE_URL}/web-app-manifest-512x512.png`,
+  image: `${SITE_URL}/opengraph-image`,
   description: SITE_DESCRIPTION,
   email: CONTACT_EMAIL,
   telephone: CONTACT_PHONE,
@@ -169,9 +169,9 @@ export const metadata: Metadata = {
     'Lodgic',
   ],
   description:
-    "Yann Rouquié, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
-  authors: [{ name: 'Yann Rouquié', url: SITE_URL }],
-  creator: 'Yann Rouquié',
+    "Yann, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
+  authors: [{ name: 'Yann', url: SITE_URL }],
+  creator: 'Yann',
   publisher: 'Lodgic',
   category: 'Développement web et mobile',
   classification: 'Business',
@@ -199,8 +199,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     description:
-      "Yann Rouquié, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
-    images: '/lodgic-banner.png',
+      "Yann, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
     type: 'website',
     locale: 'fr_FR',
     url: SITE_URL,
@@ -210,30 +209,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     description:
-      "Yann Rouquié, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
-    images: '/lodgic-banner.png',
-    creator: '@lodgic',
-    site: '@lodgic',
-  },
-  other: {
-    'instagram:card': 'summary_large_image',
-    'instagram:title': 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
-    'instagram:description':
-      "Yann Rouquié, développeur à Toulouse : sites web, applications mobiles et logiciels sur mesure, du cadrage à la mise en ligne.",
-    'instagram:image': '/lodgic-banner.png',
-    'whatsapp:card': 'summary_large_image',
-    'whatsapp:title': 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
-    'whatsapp:description':
-      "Yann Rouquié, développeur à Toulouse : sites web, applications mobiles et logiciels sur mesure, du cadrage à la mise en ligne.",
-    'whatsapp:image': '/lodgic-banner.png',
-    'og:image': '/lodgic-banner.png',
-    'og:url': SITE_URL,
-    'og:site_name': SITE_NAME,
-    'og:locale': 'fr_FR',
-    'og:type': 'website',
-    'og:title': 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
-    'og:description':
-      "Yann Rouquié, développeur à Toulouse : sites web, applications mobiles et logiciels sur mesure, du cadrage à la mise en ligne.",
+      "Yann, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
   },
 }
 
@@ -243,7 +219,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className="" suppressHydrationWarning>
+    <html lang="fr" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <JsonLd id="site-structured-data" data={structuredData} />
         <link rel="alternate" type="text/markdown" href={`${SITE_URL}/llms.txt`} />

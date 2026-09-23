@@ -5,7 +5,7 @@ export default function Method() {
   return (
     <section
       id="methode"
-      className="bg-white py-14 md:py-20 border-t border-[#E6E1D8]"
+      className="bg-[#F8F6F2] py-14 md:py-20 border-t border-[#E6E1D8]"
       aria-labelledby="methode-heading"
     >
       <div className="mx-auto max-w-6xl px-6">
@@ -26,7 +26,7 @@ export default function Method() {
           {etapes.map((step) => (
             <li key={step.n} className="flex flex-col bg-white p-6 md:p-7">
               <div className="flex items-baseline justify-between gap-3">
-                <span className="mono text-sm font-semibold text-[#C2542D]">{step.n}</span>
+                <span className="mono text-sm font-semibold text-[#B54A26]">{step.n}</span>
                 <span className="text-[11px] font-inter font-medium uppercase tracking-[0.12em] text-[#6B655D]">
                   {step.duration}
                 </span>

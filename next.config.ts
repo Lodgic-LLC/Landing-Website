@@ -1,47 +1,17 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
+  // Racine explicite : le dossier parent contient un package-lock.json parasite
+  // qui fausse sinon la détection automatique de Turbopack.
+  turbopack: { root: __dirname },
   poweredByHeader: false,
-  compress: true,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
+    // Toutes les images sont locales : pas de domaine distant autorisé.
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'source.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.worldvectorlogo.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'seeklogo.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'raw.githubusercontent.com',
-      },
-    ],
   },
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['react-icons'],
     webVitalsAttribution: ['CLS', 'LCP', 'INP', 'FCP', 'TTFB'],
     scrollRestoration: true,
   },
@@ -118,14 +88,6 @@ const nextConfig: NextConfig = {
               "upgrade-insecure-requests",
             ].join('; '),
           },
-          {
-            key: 'Server',
-            value: '',
-          },
-          {
-            key: 'X-Powered-By',
-            value: '',
-          },
         ],
       },
       {
@@ -135,10 +97,6 @@ const nextConfig: NextConfig = {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
           },
-          {
-            key: 'Server',
-            value: '',
-          },
         ],
       },
       {
@@ -147,10 +105,6 @@ const nextConfig: NextConfig = {
           {
             key: 'Content-Type',
             value: 'application/xml',
-          },
-          {
-            key: 'Server',
-            value: '',
           },
         ],
       },

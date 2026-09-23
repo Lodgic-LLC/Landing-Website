@@ -7,8 +7,8 @@ const CookieConsentBanner = () => {
     if (typeof window === "undefined") return;
 
     const initConsent = async () => {
-      const module = await import("vanilla-cookieconsent");
-      const CookieConsent = module.default ?? module;
+      const cc = await import("vanilla-cookieconsent");
+      const CookieConsent = cc.default ?? cc;
 
       CookieConsent.run({
       revision: 1,
@@ -58,10 +58,11 @@ const CookieConsentBanner = () => {
             consentModal: {
               title: "Votre confidentialité compte",
               description:
-                "Nous utilisons des cookies pour mesurer l’audience, améliorer l’expérience et soutenir nos campagnes marketing. Vous pouvez choisir les catégories que vous acceptez.",
+                "J’utilise des cookies pour mesurer l’audience du site et suivre mes campagnes publicitaires. Vous choisissez ce que vous acceptez.",
               acceptAllBtn: "Tout accepter",
               acceptNecessaryBtn: "Tout refuser",
               showPreferencesBtn: "Personnaliser",
+              footer: '<a href="/politique-confidentialite">Politique de confidentialité</a>',
             },
             preferencesModal: {
               title: "Préférences de cookies",
@@ -73,7 +74,7 @@ const CookieConsentBanner = () => {
                 {
                   title: "Résumé",
                   description:
-                    "Nous utilisons uniquement les cookies nécessaires pour faire fonctionner le site. Les cookies analytics et marketing servent à mesurer la performance et à optimiser les campagnes.",
+                    "Seuls les cookies nécessaires au fonctionnement du site sont déposés sans votre accord. Les autres servent à mesurer l’audience et à suivre mes campagnes publicitaires.",
                 },
                 {
                   title: "Cookies nécessaires",
@@ -84,19 +85,19 @@ const CookieConsentBanner = () => {
                 {
                   title: "Mesure d’audience",
                   description:
-                    "Google Analytics, Ahrefs Analytics et Vercel Analytics nous aident à comprendre l’usage du site et à améliorer vos parcours.",
+                    "Google Analytics, Ahrefs et Vercel Analytics m’aident à comprendre comment le site est utilisé et à l’améliorer.",
                   linkedCategory: "analytics",
                 },
                 {
                   title: "Marketing",
                   description:
-                    "Google Ads nous permet d’optimiser les campagnes et d’attribuer les conversions.",
+                    "Google Ads me permet de mesurer l’efficacité de mes annonces et d’attribuer les demandes de contact.",
                   linkedCategory: "marketing",
                 },
                 {
                   title: "Plus d’informations",
                   description:
-                    "Vous pouvez modifier vos préférences à tout moment depuis le bas de page.",
+                    "Vous pouvez modifier vos préférences à tout moment depuis le lien « Gérer les cookies » en bas de page. Le détail est dans la <a href=\"/politique-confidentialite\">politique de confidentialité</a>.",
                 },
               ],
             },

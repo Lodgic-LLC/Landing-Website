@@ -19,6 +19,8 @@ export const engagements = [
 export const galerieAccueil = {
   /** Libellé affiché au-dessus de la galerie. */
   intitule: 'Dernier projet livré',
+  /** Page de l'étude de cas. */
+  href: '/projets/alliance-travaux',
   principale: {
     src: '/projets/alliance-travaux/at_accueil.jpg',
     alt: "Page d'accueil du site Alliance-TRAVAUX",
@@ -44,111 +46,65 @@ export type NomIcone = 'web' | 'mobile' | 'logiciel'
 export const services: {
   icone: NomIcone
   title: string
-  price: string
   href: string
+  /** Le délai habituel, affiché en étiquette. */
+  delai: string
+  /** Une phrase : à qui ça sert. */
   description: string
+  /** Trois points courts. */
   items: string[]
+  /** Texte du bouton, propre à la catégorie. */
+  cta: string
 }[] = [
   {
     icone: 'web',
     title: 'Sites web',
     href: '/creation-site-internet-toulouse',
-    price: 'À partir de 1 500 €',
-    description:
-      "Site vitrine, prise de rendez-vous, espace client. Rapide, trouvé sur Google, et que vous faites évoluer vous-même.",
-    items: [
-      'Conçu pour être trouvé sur Google',
-      'Formulaire de contact ou de devis',
-      'Vous modifiez vos textes vous-même',
-    ],
+    delai: '3 à 5 semaines',
+    description: 'Pour être trouvé sur Google et transformer un visiteur en client.',
+    items: ['Site vitrine ou catalogue', 'Formulaire de contact ou de devis', 'Vous modifiez vos textes'],
+    cta: 'Créer mon site',
   },
   {
     icone: 'mobile',
     title: 'Applications mobiles',
     href: '/developpement-application-mobile-toulouse',
-    price: 'À partir de 6 000 €',
-    description:
-      "iOS et Android à partir d'un seul code, publiée sur les stores. Pour vos clients ou vos équipes.",
-    items: [
-      'Publication App Store et Google Play',
-      'Notifications, mode hors-ligne, paiement',
-      "Reprise ou refonte d'une application existante",
-    ],
+    delai: '2 à 4 mois',
+    description: 'Pour vos clients ou vos équipes, sur iPhone et Android.',
+    items: ['Publiée sur les stores', 'Notifications et paiement', 'Reprise de l’existant'],
+    cta: 'Lancer mon application',
   },
   {
     icone: 'logiciel',
     title: 'Logiciels métier',
     href: '/logiciel-sur-mesure-toulouse',
-    price: 'À partir de 4 000 €',
-    description:
-      "Planning, suivi de dossiers, devis, tableau de bord. À la place des tableurs et des ressaisies.",
-    items: [
-      'Remplace vos fichiers Excel partagés',
-      'Connecté à vos outils actuels',
-      'Accessible du bureau comme du terrain',
-    ],
+    delai: 'Selon le projet',
+    description: 'Pour remplacer les tableurs partagés et les ressaisies.',
+    items: ['Planning et suivi de dossiers', 'Connecté à vos outils', 'Du bureau comme du terrain'],
+    cta: 'Étudier mon besoin',
   },
 ]
 
+/** Deux phrases de présentation, affichées sous le titre. */
+export const presentation = [
+  'Cinq ans à développer des logiciels en production dans le spatial et l’aéronautique, des secteurs où rien ne se livre « à peu près ».',
+  'Je travaille seul : la personne qui cadre votre projet est celle qui écrit le code, et qui sera encore là dans six mois.',
+]
+
+/** Quatre faits, affichés sur une ligne. */
 export const ficheIdentite = [
-  { label: 'Parcours', value: '5 ans en production · spatial et aéronautique' },
+  { label: 'Parcours', value: '5 ans en production, spatial et aéronautique' },
   { label: 'Formation', value: 'Ingénieur diplômé en informatique' },
   { label: 'Technologies', value: 'React · Next.js · React Native · Node.js' },
-  { label: 'Zone', value: 'Toulouse · à distance partout en France' },
+  { label: 'Zone', value: 'Toulouse, et à distance partout en France' },
 ]
 
-/** Ce que cinq ans en environnement critique laissent comme réflexes. */
-export const reflexes = [
-  {
-    tag: 'Réflexe 01',
-    title: 'Je teste avant de livrer',
-    text: "Dans l'aéro, on ne découvre pas un bug en production.",
-  },
-  {
-    tag: 'Réflexe 02',
-    title: "J'écris ce que je fais",
-    text: 'Un projet non documenté est perdu quand son auteur part.',
-  },
-  {
-    tag: 'Réflexe 03',
-    title: 'Je mesure au lieu de supposer',
-    text: 'Chargement, erreurs, usage réel : des chiffres, pas des impressions.',
-  },
-]
-
+/** Ce que vous obtenez quel que soit le projet : une garantie par thème. */
 export const garanties = [
-  {
-    theme: 'Fiabilité',
-    items: [
-      'Les parcours importants sont testés automatiquement',
-      'Un bug est corrigé à sa source, pas contourné',
-      'Les erreurs en production me sont signalées avant que vous les voyiez',
-    ],
-  },
-  {
-    theme: 'Montée en charge',
-    items: [
-      'Base de données conçue pour grandir avec vous',
-      'Temps de chargement mesurés, pas supposés',
-      'Hébergement dimensionné à votre usage réel',
-    ],
-  },
-  {
-    theme: 'Sécurité et données',
-    items: [
-      "Droits d'accès vérifiés côté serveur, pas seulement à l'écran",
-      'Données personnelles traitées selon le RGPD',
-      'Mots de passe et clés jamais écrits dans le code',
-    ],
-  },
-  {
-    theme: 'Reprise et propriété',
-    items: [
-      'Code lisible et documenté pour un autre développeur',
-      'Vous êtes propriétaire du code et de tous les accès',
-      'Historique complet de chaque modification',
-    ],
-  },
+  { theme: 'Fiabilité', text: 'Les parcours importants sont testés automatiquement avant chaque livraison.' },
+  { theme: 'Montée en charge', text: 'Base de données et hébergement dimensionnés pour grandir avec vous.' },
+  { theme: 'Sécurité', text: 'Droits vérifiés côté serveur, données personnelles traitées selon le RGPD.' },
+  { theme: 'Propriété', text: 'Le code, la documentation et tous les accès vous appartiennent.' },
 ]
 
 export const etapes = [

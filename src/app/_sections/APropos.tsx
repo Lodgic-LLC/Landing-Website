@@ -1,151 +1,87 @@
 import Image from 'next/image'
-import { ficheIdentite, reflexes, garanties } from '@/content/accueil'
+import { ficheIdentite, garanties, presentation } from '@/content/accueil'
 
 /**
  * Portrait : déposer le fichier dans public/portrait-yann.jpg,
- * puis passer AFFICHER_PORTRAIT à true.
+ * puis passer AFFICHER_PORTRAIT à true. Sans photo, rien ne signale son absence.
  */
 const PORTRAIT_SRC = '/portrait-yann.jpg'
 const AFFICHER_PORTRAIT = false
 
-export default function About() {
+/** Bandeau compact : qui je suis en deux phrases, quatre faits, quatre garanties. */
+export default function About({ fond = 'blanc' }: { fond?: 'blanc' | 'creme' }) {
   return (
     <section
       id="about"
-      className="bg-[#23211F] py-14 md:py-20"
+      className={`${fond === 'blanc' ? 'bg-white' : 'bg-[#F8F6F2]'} border-t border-[#E6E1D8] py-14 md:py-20`}
       aria-labelledby="about-heading"
     >
       <div className="mx-auto max-w-6xl px-6">
-        {/* Identité */}
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          {/* Portrait + fiche */}
-          <div className="order-last lg:order-first">
-            <figure className="overflow-hidden rounded-xl border border-[#45403A] bg-[#33302C]">
-              {AFFICHER_PORTRAIT ? (
-                <div className="relative aspect-[4/5] w-full">
-                  <Image
-                    src={PORTRAIT_SRC}
-                    alt="Yann Rouquié, ingénieur en informatique et développeur à Toulouse"
-                    fill
-                    sizes="(max-width: 1024px) 92vw, 36vw"
-                    className="object-cover"
-                  />
-                </div>
-              ) : (
-                <div className="aspect-[4/5] w-full p-3">
-                  <div className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-[#5A544C]">
-                    <span className="font-sofia-bold text-6xl text-white/20">YR</span>
-                    <span className="mono text-[10px] uppercase tracking-[0.14em] text-white/40">
-                      Portrait à venir
-                    </span>
-                  </div>
-                </div>
-              )}
-              <figcaption className="border-t border-[#45403A] px-5 py-3">
-                <p className="font-sofia-bold text-white">Yann Rouquié</p>
-                <p className="text-xs text-white/55 font-inter">Ingénieur en informatique · Toulouse</p>
-                <a
-                  href="https://linkedin.com/in/yann-rouquie"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center gap-1.5 text-xs font-inter text-white/60 underline underline-offset-2 hover:text-[#E08A63]"
-                >
-                  Mon parcours sur LinkedIn
-                  <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M7 17L17 7M7 7h10v10" />
-                  </svg>
-                </a>
-              </figcaption>
-            </figure>
+        <div className="flex gap-6 md:gap-8">
+          {AFFICHER_PORTRAIT && (
+            <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-[#E6E1D8] md:h-28 md:w-28">
+              <Image
+                src={PORTRAIT_SRC}
+                alt="Yann, ingénieur en informatique et développeur à Toulouse"
+                fill
+                sizes="112px"
+                className="object-cover"
+              />
+            </div>
+          )}
 
-            <dl className="mt-5 space-y-4 rounded-xl border border-[#45403A] bg-[#33302C] p-5">
-              {ficheIdentite.map((item) => (
-                <div key={item.label}>
-                  <dt className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-white/40">
-                    {item.label}
-                  </dt>
-                  <dd className="mt-1 font-sofia-bold text-white">{item.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-
-          <div>
+          <div className="max-w-3xl">
             <p className="eyebrow eyebrow-left">Qui je suis</p>
             <h2
               id="about-heading"
-              className="mt-3 text-4xl md:text-5xl font-sofia-bold text-white tracking-tight text-balance"
+              className="mt-3 text-3xl md:text-4xl font-sofia-bold text-[#2E2B28] tracking-tight text-balance"
             >
-              Yann Rouquié,
-              <br className="hidden sm:block" /> ingénieur en informatique.
+              Yann, ingénieur en informatique.
             </h2>
-            <div className="mt-6 space-y-5 font-inter text-lg leading-relaxed text-white/75">
-              <p>
-                Cinq ans à développer des logiciels en production dans le{' '}
-                <strong className="font-sofia-bold text-white">spatial et l&apos;aéronautique</strong>.
-                Des secteurs où on ne livre pas quelque chose qui « marche à peu près ».
+            {presentation.map((texte) => (
+              <p key={texte} className="mt-4 text-[17px] leading-relaxed text-[#6B655D] font-inter">
+                {texte}
               </p>
-              <p>
-                J&apos;applique les mêmes exigences à un site de cinq pages qu&apos;à un outil
-                interne. Je travaille seul : la personne à qui vous expliquez votre besoin est
-                celle qui écrit le code, et qui sera encore là dans six mois.
-              </p>
-            </div>
-
-            <div className="mt-8 grid gap-px overflow-hidden rounded-xl border border-[#45403A] bg-[#45403A] sm:grid-cols-3">
-              {reflexes.map((h: (typeof reflexes)[number]) => (
-                <div key={h.title} className="bg-[#33302C] p-5">
-                  <p className="mono text-[10px] uppercase tracking-[0.14em] text-[#E08A63]">
-                    {h.tag}
-                  </p>
-                  <p className="mt-2.5 font-sofia-bold text-[15px] text-white">{h.title}</p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-white/65 font-inter">
-                    {h.text}
-                  </p>
-                </div>
-              ))}
-            </div>
+            ))}
+            <a
+              href="https://linkedin.com/in/yann-rouquie"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-inter font-semibold text-[#B54A26] hover:text-[#A34322]"
+            >
+              Mon parcours sur LinkedIn
+              <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </a>
           </div>
         </div>
 
-        {/* Ce que vous obtenez */}
-        <div className="mt-16 border-t border-[#45403A] pt-12 md:mt-20 md:pt-14">
-          <div className="max-w-3xl">
-            <h3 className="text-2xl md:text-3xl font-sofia-bold text-white tracking-tight text-balance">
-              Ce que vous obtenez, quel que soit le projet
-            </h3>
-            <p className="mt-4 text-base leading-relaxed text-white/70 font-inter">
-              Pas des options : la façon dont je travaille sur chaque projet, même les
-              petits.
-            </p>
-          </div>
+        {/* Quatre faits sur une ligne */}
+        <dl className="mt-8 grid gap-x-8 gap-y-4 border-y border-[#E6E1D8] py-5 sm:grid-cols-2 lg:grid-cols-4">
+          {ficheIdentite.map((item) => (
+            <div key={item.label}>
+              <dt className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#6B655D]">
+                {item.label}
+              </dt>
+              <dd className="mt-1 text-[15px] font-sofia-bold text-[#2E2B28]">{item.value}</dd>
+            </div>
+          ))}
+        </dl>
 
-          <div className="mt-9 grid gap-px overflow-hidden rounded-xl border border-[#45403A] bg-[#45403A] sm:grid-cols-2 lg:grid-cols-4">
+        {/* Ce que vous obtenez : une garantie par thème */}
+        <div className="mt-10">
+          <h3 className="text-lg font-sofia-bold text-[#2E2B28]">
+            Ce que vous obtenez, quel que soit le projet
+          </h3>
+          <ul className="mt-4 grid gap-px overflow-hidden rounded-xl border border-[#E6E1D8] bg-[#E6E1D8] sm:grid-cols-2 lg:grid-cols-4">
             {garanties.map((g) => (
-              <div key={g.theme} className="bg-[#23211F] p-6">
-                <p className="mono text-[10px] uppercase tracking-[0.14em] text-[#E08A63]">{g.theme}</p>
-                <ul className="mt-4 space-y-3">
-                  {g.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5">
-                      <svg
-                        className="mt-[3px] h-3.5 w-3.5 shrink-0 text-[#E08A63]"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={3}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden
-                      >
-                        <path d="M20 6L9 17l-5-5" />
-                      </svg>
-                      <span className="text-sm leading-relaxed text-white/80 font-inter">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <li key={g.theme} className="bg-white p-5">
+                <p className="mono text-[10px] uppercase tracking-[0.14em] text-[#B54A26]">{g.theme}</p>
+                <p className="mt-2 text-sm leading-relaxed text-[#2E2B28] font-inter">{g.text}</p>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

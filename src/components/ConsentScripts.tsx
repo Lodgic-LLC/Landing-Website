@@ -47,7 +47,7 @@ const ensureGtag = () => {
     window.dataLayer = [];
   }
   if (!window.gtag) {
-    window.gtag = function gtag(...args: any[]) {
+    window.gtag = function gtag(...args: unknown[]) {
       window.dataLayer?.push(args);
     };
   }
@@ -65,8 +65,8 @@ const ConsentScripts = () => {
     if (typeof window === "undefined") return;
 
     const applyConsent = async () => {
-      const module = await import("vanilla-cookieconsent");
-      const CookieConsent = module.default ?? module;
+      const cc = await import("vanilla-cookieconsent");
+      const CookieConsent = cc.default ?? cc;
 
       const analyticsAccepted = CookieConsent.acceptedCategory("analytics");
       const marketingAccepted = CookieConsent.acceptedCategory("marketing");

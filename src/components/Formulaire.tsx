@@ -47,18 +47,20 @@ export default function Formulaire({
 }: ProjectFormProps) {
   const [values, setValues] = useState<Record<string, string>>({})
   const [consent, setConsent] = useState(false)
-  const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({})
+  const [honey, setHoney] = useState('')
+  const [errors, setErrors] = useState<Partial<Record<FieldName | 'consent', string>>>({})
   const [status, setStatus] = useState<{ ok: boolean; message: string } | null>(null)
   const [sending, setSending] = useState(false)
 
   function validate() {
-    const found: Partial<Record<FieldName, string>> = {}
+    const found: Partial<Record<FieldName | 'consent', string>> = {}
     for (const field of fields) {
       const value = (values[field.name] ?? '').trim()
       if (field.required && !value) found[field.name] = 'Ce champ est requis'
       else if (field.name === 'email' && value && !isValidEmail(value))
         found[field.name] = "Cette adresse email n'est pas valide"
     }
+    if (!consent) found.consent = 'Cochez cette case pour que je puisse vous répondre'
     return found
   }
 
@@ -75,7 +77,7 @@ export default function Formulaire({
       const response = await fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...values, _subject: `Nouveau message — ${source}` }),
+        body: JSON.stringify({ ...values, _honey: honey, _subject: `Nouveau message — ${source}` }),
       })
       if (!response.ok) throw new Error(`Réponse ${response.status}`)
 
@@ -83,6 +85,7 @@ export default function Formulaire({
       setStatus({ ok: true, message: 'Message envoyé. Je vous réponds sous 24 heures.' })
       setValues({})
       setConsent(false)
+      setHoney('')
     } catch {
       setStatus({
         ok: false,
@@ -116,7 +119,7 @@ export default function Formulaire({
           <div key={field.name}>
             <label htmlFor={id} className="mb-1.5 block text-sm font-inter font-medium text-[#2E2B28]">
               {field.label}
-              {field.required && <span className="text-[#C2542D]"> *</span>}
+              {field.required && <span className="text-[#B54A26]"> *</span>}
             </label>
 
             {field.type === 'textarea' ? (
@@ -126,7 +129,7 @@ export default function Formulaire({
             )}
 
             {error && (
-              <p id={`${id}-error`} className="mt-1.5 text-sm text-[#C2542D] font-inter">
+              <p id={`${id}-error`} className="mt-1.5 text-sm text-[#B54A26] font-inter">
                 {error}
               </p>
             )}
@@ -134,18 +137,46 @@ export default function Formulaire({
         )
       })}
 
-      <label className="flex items-start gap-2.5 text-sm text-[#6B655D] font-inter">
+      <div>
+        <label className="flex items-start gap-2.5 text-sm text-[#6B655D] font-inter">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => {
+              setConsent(e.target.checked)
+              if (e.target.checked) setErrors((prev) => ({ ...prev, consent: undefined }))
+            }}
+            aria-invalid={Boolean(errors.consent)}
+            aria-describedby={errors.consent ? 'field-consent-error' : undefined}
+            className={`mt-0.5 h-4 w-4 shrink-0 rounded text-[#B54A26] focus:ring-[#C2542D]/30 ${
+              errors.consent ? 'border-[#C2542D] ring-1 ring-[#C2542D]' : 'border-[#E6E1D8]'
+            }`}
+          />
+          <span>
+            J&apos;accepte que mes informations soient utilisées pour répondre à ma demande.
+          </span>
+        </label>
+        {errors.consent && (
+          <p id="field-consent-error" className="mt-1.5 text-sm text-[#B54A26] font-inter">
+            {errors.consent}
+          </p>
+        )}
+      </div>
+
+      {/* Piège à robots : invisible pour un humain, rempli par les scripts de spam.
+          Formsubmit ignore silencieusement tout envoi où ce champ est renseigné. */}
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="field-honey">Ne pas remplir</label>
         <input
-          type="checkbox"
-          checked={consent}
-          onChange={(e) => setConsent(e.target.checked)}
-          required
-          className="mt-0.5 h-4 w-4 shrink-0 rounded border-[#E6E1D8] text-[#C2542D] focus:ring-[#C2542D]/30"
+          id="field-honey"
+          type="text"
+          name="_honey"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honey}
+          onChange={(e) => setHoney(e.target.value)}
         />
-        <span>
-          J&apos;accepte que mes informations soient utilisées pour répondre à ma demande.
-        </span>
-      </label>
+      </div>
 
       <button
         type="submit"

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
 import JsonLd, { filAriane } from '@/components/JsonLd'
 import Formulaire, { FULL_FIELDS } from '@/components/Formulaire'
@@ -19,13 +18,13 @@ import {
 const PAGE_PATH = '/contact'
 
 export const metadata: Metadata = {
-  title: 'Contact — Yann Rouquié, développeur à Toulouse',
+  title: 'Contact — Yann, développeur à Toulouse',
   description: `Écrivez-moi pour parler de votre site, de votre application ou de votre logiciel. Téléphone, e-mail et formulaire : je réponds sous 24 heures.`,
   alternates: {
     canonical: `${SITE_URL}${PAGE_PATH}`,
   },
   openGraph: {
-    title: 'Contact — Yann Rouquié, développeur à Toulouse',
+    title: 'Contact — Yann, développeur à Toulouse',
     description: 'Parlons de votre projet web, mobile ou logiciel. Réponse sous 24 heures.',
     url: `${SITE_URL}${PAGE_PATH}`,
     siteName: SITE_NAME,
@@ -88,7 +87,7 @@ export default function ContactPage() {
               Discutons de votre projet.
             </h1>
             <p className="mt-5 text-lg text-[#2E2B28] leading-relaxed">
-              Un site à créer, une application en tête ou un logiciel qui vous manque ? Écrivez-moi, passez me voir
+              Un site à créer, une application en tête ou un logiciel qui vous manque ? Écrivez-moi
               ou appelez-moi : je vous réponds sous 24 heures ouvrées.
             </p>
           </header>

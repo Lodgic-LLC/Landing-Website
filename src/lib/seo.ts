@@ -22,7 +22,6 @@ export function buildSeoMetadata({ path, title, description, keywords }: SeoMeta
       description,
       url,
       siteName: SITE_NAME,
-      images: [{ url: `${SITE_URL}/lodgic-banner.png`, width: 1200, height: 630, alt: fullTitle }],
       locale: 'fr_FR',
       type: 'website',
     },
@@ -30,7 +29,6 @@ export function buildSeoMetadata({ path, title, description, keywords }: SeoMeta
       card: 'summary_large_image',
       title: fullTitle,
       description,
-      images: [`${SITE_URL}/lodgic-banner.png`],
     },
   }
 }

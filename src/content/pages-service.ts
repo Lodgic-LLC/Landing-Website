@@ -142,7 +142,7 @@ export const PAGES_SERVICE: PageService[] = [
       ],
       closing: [
         'Un site vitrine démarre à **1 500 €** et se livre en **3 à 5 semaines**. Le prix dépend du nombre de pages et des fonctions (prise de rendez-vous, espace client, catalogue) : il est fixé par écrit après un premier échange, et il ne bouge pas ensuite.',
-        'Le site d’**Alliance-TRAVAUX**, un collectif d’artisans toulousains, est un exemple de ce que je livre : 25 pages, formulaire de devis, référencement local sur 16 communes.',
+        'Le site d’**Alliance-TRAVAUX**, un collectif d’artisans toulousains, est un exemple de ce que je livre : 31 pages, formulaire de devis, référencement local sur 16 communes.',
       ],
       crossLinks: [
         {

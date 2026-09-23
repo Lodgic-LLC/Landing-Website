@@ -1,15 +1,8 @@
+type GtagParams = Record<string, unknown>
+
 interface Window {
-  gtag?: (
-    command: string,
-    action: any,
-    params?: {
-      send_to?: string
-      value?: number
-      currency?: string
-      [key: string]: any
-    }
-  ) => void
-  dataLayer?: any[]
+  gtag?: (command: string, action: string | Date, params?: GtagParams) => void
+  dataLayer?: unknown[]
 }
 
-declare module "vanilla-cookieconsent/dist/cookieconsent.css";
+declare module 'vanilla-cookieconsent/dist/cookieconsent.css'

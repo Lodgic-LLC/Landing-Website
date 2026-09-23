@@ -1,6 +1,5 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import Hero from '@/app/_sections/Accueil'
 import JsonLd from '@/components/JsonLd'
@@ -10,12 +9,12 @@ const About = dynamic(() => import('@/app/_sections/APropos'))
 const Services = dynamic(() => import('@/app/_sections/Services'))
 const Method = dynamic(() => import('@/app/_sections/Methode'))
 const SuccessStories = dynamic(() => import('@/app/_sections/Realisations'))
-const FAQ = dynamic(() => import('@/app/_sections/Contact'))
+const Contact = dynamic(() => import('@/app/_sections/Contact'))
 
 export const metadata: Metadata = {
   title: 'Développeur web, mobile et logiciel à Toulouse',
   description:
-    "Yann Rouquié, ingénieur en informatique à Toulouse. Sites web, applications mobiles et logiciels sur mesure pour TPE, PME et porteurs de projet — du cadrage à la mise en ligne.",
+    "Yann, ingénieur en informatique à Toulouse. Sites web, applications mobiles et logiciels sur mesure pour TPE, PME et porteurs de projet — du cadrage à la mise en ligne.",
   alternates: {
     canonical: SITE_URL,
   },
@@ -25,14 +24,6 @@ export const metadata: Metadata = {
       "Ingénieur en informatique à Toulouse, je conçois et développe des sites web et applications mobiles sur mesure (React.js, Next.js, React Native), de l'architecture à la mise en production.",
     url: SITE_URL,
     siteName: 'Lodgic',
-    images: [
-      {
-        url: `${SITE_URL}/lodgic-banner.png`,
-        width: 1200,
-        height: 630,
-        alt: 'Yann Rouquié, développeur web, mobile et logiciel à Toulouse',
-      },
-    ],
     locale: 'fr_FR',
     type: 'website',
   },
@@ -72,7 +63,6 @@ export const metadata: Metadata = {
     title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     description:
       "Ingénieur en informatique à Toulouse : conception et développement d'applications web et mobiles sur mesure (React.js, Next.js, React Native).",
-    images: [`${SITE_URL}/lodgic-banner.png`],
   },
 }
 
@@ -82,7 +72,7 @@ export default function Home() {
     '@type': 'WebPage',
     '@id': `${SITE_URL}/#webpage`,
     url: SITE_URL,
-    name: 'Developpeur Web et Mobile Toulouse - Lodgic',
+    name: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     description: metadata.description,
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
@@ -102,13 +92,13 @@ export default function Home() {
           <Services />
 
         {/* 3) Qui je suis et pourquoi un ingénieur */}
-          <About />
+          <About fond="blanc" />
 
         {/* 4) Comment ça se passe */}
           <Method />
 
         {/* 5) Contact */}
-          <FAQ />
+          <Contact fond="blanc" />
       </main>
     </>
   )

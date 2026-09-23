@@ -2,8 +2,8 @@ export const SITE_URL = 'https://www.lodgic-dev.com'
 export const SITE_NAME = 'Lodgic'
 
 export const SITE_DESCRIPTION =
-  "Yann Rouquié, ingénieur en informatique à Toulouse. Conception et développement de sites web, d'applications mobiles et de logiciels sur mesure pour les TPE, PME et porteurs de projet."
-export const OWNER_NAME = 'Yann Rouquié'
+  "Yann, ingénieur en informatique à Toulouse. Conception et développement de sites web, d'applications mobiles et de logiciels sur mesure pour les TPE, PME et porteurs de projet."
+export const OWNER_NAME = 'Yann'
 export const OWNER_TITLE = 'Ingénieur en informatique · Développeur web, mobile et logiciel'
 
 export const CONTACT_EMAIL = 'contact@lodgic-dev.com'
@@ -49,6 +49,5 @@ export const GOOGLE_BUSINESS_URL = ''
 export const SOCIAL_PROFILES = [
   'https://github.com/lodgic-llc',
   'https://linkedin.com/company/lodgic-dev',
-  'https://x.com/lodgic-dev',
 ]
 

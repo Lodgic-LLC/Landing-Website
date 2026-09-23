@@ -1,10 +1,10 @@
 import Formulaire from '@/components/Formulaire'
 import { reassurance } from '@/content/accueil'
 
-export default function FAQ() {
+export default function Contact({ fond = 'creme' }: { fond?: 'blanc' | 'creme' }) {
   return (
     <section
-      className="relative py-14 md:py-20 bg-[#F8F6F2] overflow-hidden border-t border-[#E6E1D8]"
+      className={`relative py-14 md:py-20 ${fond === 'blanc' ? 'bg-white' : 'bg-[#F8F6F2]'} overflow-hidden border-t border-[#E6E1D8]`}
       id="contact"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -53,7 +53,7 @@ export default function FAQ() {
                 </p>
                 <a
                   href="mailto:contact@lodgic-dev.com"
-                  className="mt-1 inline-block font-sofia-bold text-[#2E2B28] hover:text-[#C2542D] transition-colors"
+                  className="mt-1 inline-block font-sofia-bold text-[#2E2B28] hover:text-[#B54A26] transition-colors"
                 >
                   contact@lodgic-dev.com
                 </a>

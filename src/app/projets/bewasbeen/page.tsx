@@ -154,7 +154,7 @@ export default function Page() {
                 <div key={c.libelle} className="bg-white px-3 py-5 text-center">
                   <dt className="sr-only">{c.libelle}</dt>
                   <dd>
-                    <span className="block font-sofia-bold text-3xl text-[#C2542D]">{c.valeur}</span>
+                    <span className="block font-sofia-bold text-3xl text-[#B54A26]">{c.valeur}</span>
                     <span className="mt-1 block text-[11px] leading-tight text-[#6B655D] font-inter">
                       {c.libelle}
                     </span>
@@ -180,7 +180,7 @@ export default function Page() {
             </p>
           </div>
           <div>
-            <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#C2542D]">
+            <p className="text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#B54A26]">
               Ma réponse
             </p>
             <p className="mt-3 leading-relaxed text-[#2E2B28] font-inter">

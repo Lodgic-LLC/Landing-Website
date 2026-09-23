@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route("", 1.0, "weekly"),
     route("realisations", 0.9),
     route("contact", 0.9),
+    route("projets/alliance-travaux", 0.8),
     route("projets/bewasbeen", 0.8),
     ...PAGES_SERVICE.map((page) => route(page.slug, 0.85)),
     route("politique-confidentialite", 0.4, "yearly"),

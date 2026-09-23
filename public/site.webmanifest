@@ -1,7 +1,8 @@
 {
-  "name": "Lodgic - Agence web et mobile Toulouse",
+  "name": "Lodgic — Yann Rouquié, développeur web, mobile et logiciel à Toulouse",
   "short_name": "Lodgic",
-  "description": "Agence de developpement web et mobile a Toulouse.",
+  "description": "Ingénieur en informatique à Toulouse : sites web, applications mobiles et logiciels sur mesure.",
+  "lang": "fr",
   "start_url": "/",
   "scope": "/",
   "icons": [
@@ -18,7 +19,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#001F45",
-  "background_color": "#ffffff",
+  "theme_color": "#F8F6F2",
+  "background_color": "#F8F6F2",
   "display": "standalone"
 }

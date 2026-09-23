@@ -4,6 +4,8 @@ import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
+import { trackClick } from '@/lib/analytics'
+import { CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from '@/lib/site'
 
 export default function Navbar() {
   const [visible, setVisible] = useState(true)
@@ -39,9 +41,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
-    setIsMenuOpen(false)
-  }, [pathname])
+  const fermerMenu = () => setIsMenuOpen(false)
 
   const isActive = (path: string) => pathname === path
 
@@ -99,11 +99,24 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
+            {/* Téléphone : le numéro s'affiche sur grand écran, l'icône seule ailleurs. */}
+            <a
+              href={`tel:${CONTACT_PHONE}`}
+              onClick={() => trackClick('telephone-navbar')}
+              aria-label={`Appeler le ${CONTACT_PHONE_DISPLAY}`}
+              className="inline-flex h-9 items-center gap-2 rounded-full border border-[#2E2B28]/15 bg-white/70 px-3 text-sm font-inter font-semibold text-[#2E2B28] transition-smooth hover:border-[#2E2B28]/30 hover:bg-white"
+            >
+              <svg className="h-3.5 w-3.5 text-[#B54A26]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+              </svg>
+              <span className="hidden lg:inline">{CONTACT_PHONE_DISPLAY}</span>
+            </a>
+
             <Link
               href="/contact"
               className="hidden md:inline-flex items-center rounded-full bg-[#C2542D] px-4 py-2 text-sm font-inter font-semibold text-white hover:bg-[#A34322] transition-smooth"
             >
-              Une question ?
+              Expliquer mon projet
             </Link>
 
             <button
@@ -145,6 +158,7 @@ export default function Navbar() {
                 : 'text-[#2E2B28]/70 hover:bg-[#2E2B28]/5 hover:text-[#2E2B28]'
             }`}
             tabIndex={isMenuOpen ? 0 : -1}
+            onClick={fermerMenu}
           >
             Accueil
           </Link>
@@ -159,6 +173,7 @@ export default function Navbar() {
                     : 'text-[#2E2B28]/70 hover:bg-[#2E2B28]/5 hover:text-[#2E2B28]'
                 }`}
                 tabIndex={isMenuOpen ? 0 : -1}
+                onClick={fermerMenu}
               >
                 {item.name}
               </Link>
@@ -169,8 +184,9 @@ export default function Navbar() {
               href="/contact"
               className="block rounded-xl bg-[#C2542D] px-4 py-3 text-center text-sm font-inter font-semibold text-white hover:bg-[#A34322] transition-smooth"
               tabIndex={isMenuOpen ? 0 : -1}
+              onClick={fermerMenu}
             >
-              Une question ?
+              Expliquer mon projet
             </Link>
           </div>
         </div>

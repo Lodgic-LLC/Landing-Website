@@ -21,7 +21,7 @@ export default function Hero() {
               {engagements.map((item) => (
                 <li key={item} className="flex items-baseline gap-4 py-3">
                   <svg
-                    className="mt-[5px] h-3.5 w-3.5 shrink-0 text-[#C2542D]"
+                    className="mt-[5px] h-3.5 w-3.5 shrink-0 text-[#B54A26]"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -59,13 +59,13 @@ export default function Hero() {
 
           {/* Galerie : ce que j'ai livré, en images */}
           <div className="lg:col-span-6">
-            <p className="mb-3 text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#C2542D]">
+            <p className="mb-3 text-[11px] font-inter font-semibold uppercase tracking-[0.16em] text-[#B54A26]">
               {galerieAccueil.intitule}
             </p>
             <div className="grid gap-3">
               {/* Visuel principal */}
               <Link
-                href="/realisations"
+                href={galerieAccueil.href}
                 className="group relative block overflow-hidden rounded-xl border border-[#E6E1D8] shadow-[0_18px_40px_-24px_rgba(35,33,31,0.35)]"
               >
                 <Image
@@ -86,7 +86,7 @@ export default function Hero() {
                       {galerieAccueil.principale.legende}
                     </p>
                   </div>
-                  <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-inter font-semibold text-[#C2542D] group-hover:text-[#A34322]">
+                  <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-inter font-semibold text-[#B54A26] group-hover:text-[#A34322]">
                     Voir le projet
                     <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                       <path d="M5 12h14M12 5l7 7-7 7" />
@@ -100,7 +100,7 @@ export default function Hero() {
                 {galerieAccueil.vignettes.map((vignette) => (
                   <Link
                     key={vignette.src}
-                    href="/realisations"
+                    href={galerieAccueil.href}
                     className="group relative block aspect-[4/3] overflow-hidden rounded-lg border border-[#E6E1D8]"
                   >
                     <Image
@@ -128,7 +128,7 @@ export default function Hero() {
                   className="group flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-lg bg-[#23211F] p-3 text-center transition-colors hover:bg-[#33302C]"
                 >
                   <svg
-                    className="h-6 w-6 text-[#C2542D]"
+                    className="h-6 w-6 text-[#B54A26]"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"

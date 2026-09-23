@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const lienEmail = (
   <Link
     href={`mailto:${CONTACT_EMAIL}`}
-    className="font-semibold text-[#C2542D] underline underline-offset-2 hover:text-[#A34322]"
+    className="font-semibold text-[#B54A26] underline underline-offset-2 hover:text-[#A34322]"
   >
     {CONTACT_EMAIL}
   </Link>
@@ -90,7 +90,7 @@ const sections: SectionLegale[] = [
   {
     titre: '7. Cookies',
     paragraphes: [
-      "Le site dépose des cookies de mesure d'audience uniquement après votre accord, demandé lors de votre première visite. Vous pouvez modifier ce choix à tout moment depuis les réglages de votre navigateur.",
+      "Le site dépose des cookies de mesure d'audience uniquement après votre accord, demandé lors de votre première visite. Vous pouvez modifier ce choix à tout moment depuis le lien « Gérer les cookies » en bas de chaque page, ou depuis les réglages de votre navigateur.",
       "Les cookies strictement nécessaires au fonctionnement du site ne requièrent pas de consentement.",
     ],
   },
