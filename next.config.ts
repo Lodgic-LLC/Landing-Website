@@ -1,62 +1,34 @@
 import type { NextConfig } from 'next'
-import createMDX from '@next/mdx'
-
-const withMDX = createMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-  },
-})
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
+  // Racine explicite : le dossier parent contient un package-lock.json parasite
+  // qui fausse sinon la détection automatique de Turbopack.
+  turbopack: { root: __dirname },
   poweredByHeader: false,
-  compress: true,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
+    // Toutes les images sont locales : pas de domaine distant autorisé.
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'source.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.worldvectorlogo.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'seeklogo.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'raw.githubusercontent.com',
-      },
-    ],
   },
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['react-icons'],
     webVitalsAttribution: ['CLS', 'LCP', 'INP', 'FCP', 'TTFB'],
     scrollRestoration: true,
   },
   async redirects() {
     return [
+      // Pages retirées : le blog et la prise de rendez-vous
+      { source: '/blog', destination: '/', permanent: true },
+      { source: '/blog/:slug*', destination: '/', permanent: true },
+      { source: '/auteurs/:slug*', destination: '/', permanent: true },
+      { source: '/rendez-vous', destination: '/contact', permanent: true },
+      { source: '/rendez-vous/:path*', destination: '/contact', permanent: true },
+      // Pages SEO fusionnées ou réorientées
+      { source: '/agence-web-mobile-toulouse', destination: '/', permanent: true },
+      { source: '/creation-application-mobile-sur-mesure', destination: '/developpement-application-mobile-toulouse', permanent: true },
+      { source: '/developpement-application-mobile', destination: '/developpement-application-mobile-toulouse', permanent: true },
+      { source: '/developpement-application-mobile/apple-android', destination: '/developpement-application-ios-android', permanent: true },
+      { source: '/developpement-application-mobile/react-native-flutter', destination: '/developpeur-react-native-toulouse', permanent: true },
       {
         source: '/:path*',
         has: [
@@ -107,7 +79,7 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' data: https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",
-              "connect-src 'self' https://*.vercel-insights.com https://*.vercel-analytics.com https://va.vercel-scripts.com https://*.google-analytics.com https://*.googletagmanager.com https://analytics.ahrefs.com",
+              "connect-src 'self' https://formsubmit.co https://*.vercel-insights.com https://*.vercel-analytics.com https://va.vercel-scripts.com https://*.google-analytics.com https://*.googletagmanager.com https://analytics.ahrefs.com",
               "frame-src 'self' https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com",
               "frame-ancestors 'self'",
               "base-uri 'self'",
@@ -115,14 +87,6 @@ const nextConfig: NextConfig = {
               "object-src 'none'",
               "upgrade-insecure-requests",
             ].join('; '),
-          },
-          {
-            key: 'Server',
-            value: '',
-          },
-          {
-            key: 'X-Powered-By',
-            value: '',
           },
         ],
       },
@@ -133,10 +97,6 @@ const nextConfig: NextConfig = {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
           },
-          {
-            key: 'Server',
-            value: '',
-          },
         ],
       },
       {
@@ -146,14 +106,10 @@ const nextConfig: NextConfig = {
             key: 'Content-Type',
             value: 'application/xml',
           },
-          {
-            key: 'Server',
-            value: '',
-          },
         ],
       },
     ]
   },
 }
 
-export default withMDX(nextConfig)
+export default nextConfig

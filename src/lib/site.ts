@@ -2,10 +2,13 @@ export const SITE_URL = 'https://www.lodgic-dev.com'
 export const SITE_NAME = 'Lodgic'
 
 export const SITE_DESCRIPTION =
-  'Agence de developpement web et mobile a Toulouse. Lodgic conçoit des sites web, applications mobiles et logiciels sur mesure pour startups, PME et entrepreneurs.'
+  "Yann, ingénieur en informatique à Toulouse. Conception et développement de sites web, d'applications mobiles et de logiciels sur mesure pour les TPE, PME et porteurs de projet."
+export const OWNER_NAME = 'Yann'
+export const OWNER_TITLE = 'Ingénieur en informatique · Développeur web, mobile et logiciel'
 
 export const CONTACT_EMAIL = 'contact@lodgic-dev.com'
-export const CONTACT_PHONE = '+33652468750'
+export const CONTACT_PHONE = '+33643517157'
+export const CONTACT_PHONE_DISPLAY = '06 43 51 71 57'
 
 // NAP — à compléter avec les vraies valeurs (sinon laisser vide, le schema les omet)
 export const POSTAL_CODE = '31000'
@@ -36,9 +39,15 @@ export const PRICE_RANGE = '€€'
 // Une fois l'entité publiée, mettre le QID ici (sans 'https://...', juste 'Qxxxx').
 export const WIKIDATA_QID = ''
 
+// Profils personnels de Yann (schéma Person)
+export const PERSON_PROFILES = ['https://linkedin.com/in/yann-rouquie']
+
+// Fiche Google Business Profile — laisser vide tant que le lien n'est pas fourni :
+// le schéma et le pied de page l'omettent automatiquement.
+export const GOOGLE_BUSINESS_URL = ''
+
 export const SOCIAL_PROFILES = [
   'https://github.com/lodgic-llc',
   'https://linkedin.com/company/lodgic-dev',
-  'https://x.com/lodgic-dev',
 ]
 

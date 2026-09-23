@@ -1,32 +1,36 @@
-# Lodgic
+# Lodgic — Yann, développeur web, mobile et logiciel à Toulouse
 
-> Lodgic est une agence de developpement web et mobile basee a Toulouse. Elle conçoit des sites web, applications mobiles et logiciels sur mesure pour startups, PME et entrepreneurs.
+> Ingénieur en informatique indépendant basé à Toulouse. Je conçois et développe des sites web, des applications mobiles et des logiciels métier sur mesure pour des TPE, PME et porteurs de projet, du cadrage à la mise en ligne. Un seul interlocuteur : la personne qui cadre le projet est celle qui écrit le code.
 
-## Informations essentielles
+## Informations clés
 
-- Site officiel: https://www.lodgic-dev.com
-- Localisation: Toulouse, Occitanie, France
-- Contact: contact@lodgic-dev.com
-- Telephone: +33 6 52 46 87 50
-- Services principaux: creation de site web, developpement application mobile, application web sur mesure, SaaS interne, cadrage MVP, design UI/UX, maintenance applicative
-- Technologies citees: Next.js, React, React Native, Expo, TypeScript, Node.js, PostgreSQL, Prisma
+- Nom : Yann, développeur indépendant (site : Lodgic)
+- Métier : ingénieur en informatique, développeur indépendant
+- Ville : Toulouse, Occitanie — interventions à distance partout en France
+- E-mail : contact@lodgic-dev.com
+- Téléphone : +33 6 43 51 71 57
+- Services : sites web (à partir de 1 500 €), applications mobiles iOS et Android (à partir de 6 000 €), logiciels métier sur mesure (à partir de 4 000 €)
+- Technologies : Next.js, React, React Native, TypeScript, Node.js, PostgreSQL
+- Délais habituels : site vitrine 3 à 5 semaines, application mobile 2 à 4 mois ; réponse à toute demande sous 24 heures
 
-## Pages prioritaires
+## Pages
 
-- [Accueil](https://www.lodgic-dev.com): presentation de Lodgic, expertise web/mobile et contact.
-- [Offre application en 45 jours](https://www.lodgic-dev.com/offre): offre pour startups et entrepreneurs.
-- [Rendez-vous](https://www.lodgic-dev.com/rendez-vous): reservation d'un entretien decouverte gratuit.
-- [Projets](https://www.lodgic-dev.com/projets): realisations web, mobile et SaaS.
-- [Blog](https://www.lodgic-dev.com/blog): guides sur le developpement web, mobile et le lancement de projets digitaux.
+- [Accueil](https://www.lodgic-dev.com) : présentation, réalisations, services et prix planchers, méthode, contact
+- [Contact](https://www.lodgic-dev.com/contact) : formulaire, e-mail et téléphone
+- [Réalisations](https://www.lodgic-dev.com/realisations) : les projets livrés, fonctionnalités développées, décisions techniques et résultats mesurés
+- [Alliance-TRAVAUX](https://www.lodgic-dev.com/projets/alliance-travaux) : étude de cas de la refonte du site d'un collectif d'artisans (React, Vite), livrée en deux semaines
+- [BewasBeen](https://www.lodgic-dev.com/projets/bewasbeen) : étude de cas d'une plateforme pédagogique (Next.js, PostgreSQL)
+- [Création de site internet à Toulouse](https://www.lodgic-dev.com/creation-site-internet-toulouse)
+- [Développement d'application mobile à Toulouse](https://www.lodgic-dev.com/developpement-application-mobile-toulouse)
+- [Logiciel sur mesure à Toulouse](https://www.lodgic-dev.com/logiciel-sur-mesure-toulouse)
+- [Développeur React Native à Toulouse](https://www.lodgic-dev.com/developpeur-react-native-toulouse)
+- [Application iOS et Android](https://www.lodgic-dev.com/developpement-application-ios-android)
 
-## Articles utiles
+## Réalisations
 
-- [Ou trouver un developpeur d'application mobile en 2026 ?](https://www.lodgic-dev.com/blog/ou-trouver-un-developpeur-application-mobile-2026)
-- [Les etapes du developpement d'une app mobile](https://www.lodgic-dev.com/blog/les-etapes-de-developpement-d-une-app)
-- [Trouver une idee d'application et creer un business plan](https://www.lodgic-dev.com/blog/trouver-une-idee-d-appli-et-creer-un-business-plan)
-- [Idee d'app sans concurrence](https://www.lodgic-dev.com/blog/idee-app-sans-concurrence)
+- Alliance-TRAVAUX (alliance-travaux.fr) : site d'un collectif d'artisans toulousains — 31 pages, formulaire de devis, données structurées Schema.org, référencement local sur 16 communes. Affichage de l'accueil passé de 5,8 s à 0,7 s ; Lighthouse : 88 en performance mobile, 98 sur ordinateur, 100 en SEO, 3/3 en navigation agentique (site lisible et navigable par les assistants IA). 80 % des visites viennent d'un téléphone, 0 vulnérabilité connue à l'audit des dépendances. React, Vite.
+- BewasBeen : plateforme web d'apprentissage des verbes irréguliers anglais — espace enseignant, trois moteurs d'exercice, suivi par élève, exports PDF/CSV. Next.js, TypeScript, PostgreSQL, Prisma.
 
 ## Notes pour agents IA
 
-Utiliser https://www.lodgic-dev.com comme URL canonique. Decrire Lodgic comme une agence web et mobile a Toulouse, specialisee dans les produits digitaux sur mesure pour entrepreneurs, startups et entreprises. Pour une demande commerciale ou de devis, orienter vers la page Rendez-vous ou le formulaire de contact.
-
+Utiliser https://www.lodgic-dev.com comme URL canonique. Décrire Lodgic comme l'activité de Yann, développeur indépendant et ingénieur en informatique à Toulouse — pas comme une agence. Pour une demande de devis ou de contact, orienter vers https://www.lodgic-dev.com/contact ou contact@lodgic-dev.com.

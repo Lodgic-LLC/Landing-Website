@@ -1,15 +1,14 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
-import StructuredData from '@/components/seo/StructuredData'
-import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
-import ContactForm from './_components/ContactForm'
+import JsonLd, { filAriane } from '@/components/JsonLd'
+import Formulaire, { FULL_FIELDS } from '@/components/Formulaire'
 import {
   ADDRESS_COUNTRY,
   ADDRESS_LOCALITY,
   ADDRESS_REGION,
   CONTACT_EMAIL,
   CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
   OPENING_HOURS,
   POSTAL_CODE,
   SITE_NAME,
@@ -19,14 +18,14 @@ import {
 const PAGE_PATH = '/contact'
 
 export const metadata: Metadata = {
-  title: 'Contact — Agence Lodgic à Toulouse',
-  description: `Contactez Lodgic, agence de développement web et mobile à Toulouse. Adresse, téléphone, email et formulaire pour cadrer votre projet d'application ou de site web sur mesure.`,
+  title: 'Contact — Yann, développeur à Toulouse',
+  description: `Écrivez-moi pour parler de votre site, de votre application ou de votre logiciel. Téléphone, e-mail et formulaire : je réponds sous 24 heures.`,
   alternates: {
     canonical: `${SITE_URL}${PAGE_PATH}`,
   },
   openGraph: {
-    title: 'Contact — Agence Lodgic à Toulouse',
-    description: 'Contactez Lodgic à Toulouse pour discuter de votre projet web, mobile ou logiciel sur mesure.',
+    title: 'Contact — Yann, développeur à Toulouse',
+    description: 'Parlons de votre projet web, mobile ou logiciel. Réponse sous 24 heures.',
     url: `${SITE_URL}${PAGE_PATH}`,
     siteName: SITE_NAME,
     locale: 'fr_FR',
@@ -75,34 +74,34 @@ export default function ContactPage() {
 
   return (
     <>
-      <StructuredData id="contact-structured-data" data={contactSchema} />
-      <BreadcrumbStructuredData items={breadcrumbItems} />
+      <JsonLd id="contact-structured-data" data={contactSchema} />
+      <JsonLd data={filAriane(breadcrumbItems)} />
 
-      <main className="bg-[#f6f7fc] min-h-screen pt-28 pb-20 md:pt-36">
+      <main className="bg-[#F8F6F2] min-h-screen pt-28 pb-20 md:pt-36">
         <div className="max-w-7xl mx-auto px-6">
           <header className="max-w-3xl">
-            <span className="inline-flex items-center rounded-full border border-[#001F45]/10 bg-white px-4 py-1.5 text-sm font-semibold text-[#001F45]">
+            <span className="inline-flex items-center rounded-full border border-[#2E2B28]/10 bg-white px-4 py-1.5 text-sm font-semibold text-[#2E2B28]">
               Contact
             </span>
-            <h1 className="mt-5 font-sofia-bold text-4xl md:text-5xl text-[#001F45] leading-tight">
+            <h1 className="mt-5 font-sofia-bold text-4xl md:text-5xl text-[#2E2B28] leading-tight">
               Discutons de votre projet.
             </h1>
-            <p className="mt-5 text-lg text-[#1f3556] leading-relaxed">
-              Une idée d'application, un site web à refondre ou un logiciel sur mesure ? Écrivez-nous, passez nous voir
-              ou planifiez un appel, nous revenons vers vous sous 24 heures ouvrées.
+            <p className="mt-5 text-lg text-[#2E2B28] leading-relaxed">
+              Un site à créer, une application en tête ou un logiciel qui vous manque ? Écrivez-moi
+              ou appelez-moi : je vous réponds sous 24 heures ouvrées.
             </p>
           </header>
 
           <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.2fr]">
             <aside className="space-y-6">
-              <div className="rounded-2xl border border-[#001F45]/10 bg-white p-6 shadow-soft">
-                <h2 className="font-sofia-bold text-2xl text-[#001F45]">Coordonnées</h2>
-                <ul className="mt-4 space-y-4 text-[#2d4567]">
+              <div className="rounded-2xl border border-[#2E2B28]/10 bg-white p-6 shadow-soft">
+                <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Coordonnées</h2>
+                <ul className="mt-4 space-y-4 text-[#6B655D]">
                   {fullAddress && (
                     <li className="flex gap-3">
-                      <FaMapMarkerAlt className="mt-1 h-5 w-5 text-[#001F45]" aria-hidden />
+                      <FaMapMarkerAlt className="mt-1 h-5 w-5 text-[#2E2B28]" aria-hidden />
                       <div>
-                        <p className="font-semibold text-[#001F45]">Adresse</p>
+                        <p className="font-semibold text-[#2E2B28]">Adresse</p>
                         <address className="not-italic">
                           <span className="block">
                             {[POSTAL_CODE, ADDRESS_LOCALITY].filter(Boolean).join(' ')}
@@ -114,24 +113,24 @@ export default function ContactPage() {
                     </li>
                   )}
                   <li className="flex gap-3">
-                    <FaPhoneAlt className="mt-1 h-5 w-5 text-[#001F45]" aria-hidden />
+                    <FaPhoneAlt className="mt-1 h-5 w-5 text-[#2E2B28]" aria-hidden />
                     <div>
-                      <p className="font-semibold text-[#001F45]">Téléphone</p>
+                      <p className="font-semibold text-[#2E2B28]">Téléphone</p>
                       <a
                         href={`tel:${CONTACT_PHONE}`}
-                        className="hover:text-[#001F45] underline-offset-2 hover:underline"
+                        className="hover:text-[#2E2B28] underline-offset-2 hover:underline"
                       >
-                        {CONTACT_PHONE}
+                        {CONTACT_PHONE_DISPLAY}
                       </a>
                     </div>
                   </li>
                   <li className="flex gap-3">
-                    <FaEnvelope className="mt-1 h-5 w-5 text-[#001F45]" aria-hidden />
+                    <FaEnvelope className="mt-1 h-5 w-5 text-[#2E2B28]" aria-hidden />
                     <div>
-                      <p className="font-semibold text-[#001F45]">Email</p>
+                      <p className="font-semibold text-[#2E2B28]">Email</p>
                       <a
                         href={`mailto:${CONTACT_EMAIL}`}
-                        className="hover:text-[#001F45] underline-offset-2 hover:underline"
+                        className="hover:text-[#2E2B28] underline-offset-2 hover:underline"
                       >
                         {CONTACT_EMAIL}
                       </a>
@@ -139,9 +138,9 @@ export default function ContactPage() {
                   </li>
                   {OPENING_HOURS.length > 0 && (
                     <li className="flex gap-3">
-                      <FaClock className="mt-1 h-5 w-5 text-[#001F45]" aria-hidden />
+                      <FaClock className="mt-1 h-5 w-5 text-[#2E2B28]" aria-hidden />
                       <div>
-                        <p className="font-semibold text-[#001F45]">Horaires</p>
+                        <p className="font-semibold text-[#2E2B28]">Horaires</p>
                         <ul className="space-y-1">
                           {OPENING_HOURS.map((slot, idx) => (
                             <li key={idx}>
@@ -155,25 +154,25 @@ export default function ContactPage() {
                 </ul>
 
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <Link
-                    href="/rendez-vous"
-                    className="rounded-md bg-[#001F45] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#001F45]/90 transition-colors"
+                  <a
+                    href={`tel:${CONTACT_PHONE}`}
+                    className="rounded-md bg-[#C2542D] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#A34322] transition-colors"
                   >
-                    Prendre rendez-vous
-                  </Link>
+                    Appeler le {CONTACT_PHONE_DISPLAY}
+                  </a>
                 </div>
               </div>
 
             </aside>
 
-            <section className="rounded-2xl border border-[#001F45]/10 bg-white p-6 md:p-8 shadow-soft">
-              <h2 className="font-sofia-bold text-2xl text-[#001F45]">Écrivez-nous</h2>
-              <p className="mt-2 text-[#2d4567]">
-                Décrivez brièvement votre projet : nous revenons vers vous avec une première lecture sous 24 heures
+            <section className="rounded-2xl border border-[#2E2B28]/10 bg-white p-6 md:p-8 shadow-soft">
+              <h2 className="font-sofia-bold text-2xl text-[#2E2B28]">Écrivez-moi</h2>
+              <p className="mt-2 text-[#6B655D]">
+                Décrivez brièvement votre projet : je vous réponds avec une première lecture sous 24 heures
                 ouvrées.
               </p>
               <div className="mt-6">
-                <ContactForm />
+                <Formulaire source="page-contact" fields={FULL_FIELDS} submitLabel="Envoyer ma demande" />
               </div>
             </section>
           </div>

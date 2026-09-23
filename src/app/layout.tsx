@@ -2,24 +2,27 @@ import type { Metadata } from 'next'
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import 'vanilla-cookieconsent/dist/cookieconsent.css'
-import Footer from '@/components/layout/Footer'
-import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
 
-import { WebVitals } from './web-vitals'
-import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
-import CookieConsentBanner from '@/components/consent/CookieConsentBanner'
-import ConsentScripts from '@/components/consent/ConsentScripts'
-import ConsentVercelAnalytics from '@/components/consent/ConsentVercelAnalytics'
-import StructuredData from '@/components/seo/StructuredData'
+import { WebVitals } from '@/components/WebVitals'
+import CookieConsentBanner from '@/components/CookieConsentBanner'
+import ConsentScripts from '@/components/ConsentScripts'
+import ConsentVercelAnalytics from '@/components/ConsentVercelAnalytics'
+import JsonLd from '@/components/JsonLd'
 import {
   ADDRESS_COUNTRY,
   ADDRESS_LOCALITY,
   ADDRESS_REGION,
   CONTACT_EMAIL,
   CONTACT_PHONE,
+  GOOGLE_BUSINESS_URL,
   GEO_LATITUDE,
   GEO_LONGITUDE,
   OPENING_HOURS,
+  OWNER_NAME,
+  OWNER_TITLE,
+  PERSON_PROFILES,
   POSTAL_CODE,
   PRICE_RANGE,
   SITE_DESCRIPTION,
@@ -54,8 +57,8 @@ const organizationNode: Record<string, unknown> = {
   name: SITE_NAME,
   legalName: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/icon_bgblanc.png`,
-  image: `${SITE_URL}/lodgic-banner.png`,
+  logo: `${SITE_URL}/web-app-manifest-512x512.png`,
+  image: `${SITE_URL}/opengraph-image`,
   description: SITE_DESCRIPTION,
   email: CONTACT_EMAIL,
   telephone: CONTACT_PHONE,
@@ -66,25 +69,32 @@ const organizationNode: Record<string, unknown> = {
     { '@type': 'AdministrativeArea', name: 'Occitanie' },
     { '@type': 'Country', name: 'France' },
   ],
-  sameAs: [...SOCIAL_PROFILES, ...(WIKIDATA_QID ? [`https://www.wikidata.org/entity/${WIKIDATA_QID}`] : [])],
+  founder: { '@id': `${SITE_URL}/#person` },
+  employee: { '@id': `${SITE_URL}/#person` },
+  numberOfEmployees: { '@type': 'QuantitativeValue', value: 1 },
+  sameAs: [
+    ...SOCIAL_PROFILES,
+    ...(GOOGLE_BUSINESS_URL ? [GOOGLE_BUSINESS_URL] : []),
+    ...(WIKIDATA_QID ? [`https://www.wikidata.org/entity/${WIKIDATA_QID}`] : []),
+  ],
   makesOffer: [
     {
       '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: 'Developpement application mobile sur mesure',
-        serviceType: 'Developpement application mobile',
-        areaServed: 'Toulouse, Occitanie, France',
-      },
+      itemOffered: { '@type': 'Service', name: 'Création de site internet sur mesure', serviceType: 'Développement web', areaServed: 'Toulouse, Occitanie, France' },
+      priceSpecification: { '@type': 'PriceSpecification', minPrice: 1500, priceCurrency: 'EUR' },
+      url: `${SITE_URL}/creation-site-internet-toulouse`,
     },
     {
       '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: 'Creation site web sur mesure',
-        serviceType: 'Developpement web',
-        areaServed: 'Toulouse, Occitanie, France',
-      },
+      itemOffered: { '@type': 'Service', name: "Développement d'application mobile iOS et Android", serviceType: 'Développement application mobile', areaServed: 'Toulouse, Occitanie, France' },
+      priceSpecification: { '@type': 'PriceSpecification', minPrice: 6000, priceCurrency: 'EUR' },
+      url: `${SITE_URL}/developpement-application-mobile-toulouse`,
+    },
+    {
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: 'Développement de logiciel métier sur mesure', serviceType: 'Développement logiciel', areaServed: 'Toulouse, Occitanie, France' },
+      priceSpecification: { '@type': 'PriceSpecification', minPrice: 4000, priceCurrency: 'EUR' },
+      url: `${SITE_URL}/logiciel-sur-mesure-toulouse`,
     },
   ],
 }
@@ -106,10 +116,25 @@ if (OPENING_HOURS.length > 0) {
   }))
 }
 
+const personNode = {
+  '@type': 'Person',
+  '@id': `${SITE_URL}/#person`,
+  name: OWNER_NAME,
+  jobTitle: OWNER_TITLE,
+  url: SITE_URL,
+  email: CONTACT_EMAIL,
+  telephone: CONTACT_PHONE,
+  worksFor: { '@id': `${SITE_URL}/#organization` },
+  address: postalAddress,
+  sameAs: PERSON_PROFILES,
+  knowsAbout: ['Next.js', 'React', 'React Native', 'TypeScript', 'Node.js', 'PostgreSQL'],
+}
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
     organizationNode,
+    personNode,
     {
       '@type': 'WebSite',
       '@id': `${SITE_URL}/#website`,
@@ -125,37 +150,30 @@ const structuredData = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Développeur Application Mobile Toulouse - Lodgic',
+    default: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     template: '%s | Lodgic',
   },
   keywords: [
-    'Développeur Application Mobile Toulouse',
-    'Développeurs Applications Mobile Toulouse',
-    'Agence développement mobile Toulouse',
-    'Création application mobile Toulouse',
-    'Développeur mobile Toulouse',
-    'Application mobile sur mesure Toulouse',
-    'Développement application Android Toulouse',
-    'Développement application iOS Toulouse',
+    'Développeur Toulouse',
+    'Développeur web Toulouse',
+    'Développeur freelance Toulouse',
+    'Création site internet Toulouse',
+    'Développeur application mobile Toulouse',
+    'Développement logiciel sur mesure Toulouse',
+    'Ingénieur informatique Toulouse',
     'Développeur React Native Toulouse',
-    'Agence web et mobile Toulouse',
-    'Freelance développeur mobile Toulouse',
+    'Développeur Next.js Toulouse',
+    'Site web sur mesure Toulouse',
+    'Application mobile sur mesure Toulouse',
+    'Logiciel métier sur mesure',
     'Lodgic',
-    'développement application mobile',
-    'création application mobile',
-    'application mobile sur mesure',
-    'développement application web',
-    'agence développement mobile',
-    'développeur application mobile',
-    'développement Android',
-    'développement iOS',
   ],
   description:
-    "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
-  authors: [{ name: 'Lodgic', url: SITE_URL }],
-  creator: 'Lodgic',
+    "Yann, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
+  authors: [{ name: 'Yann', url: SITE_URL }],
+  creator: 'Yann',
   publisher: 'Lodgic',
-  category: 'Développement Mobile',
+  category: 'Développement web et mobile',
   classification: 'Business',
   referrer: 'origin-when-cross-origin',
   robots: {
@@ -179,10 +197,9 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: 'Développeur Application Mobile Toulouse - Lodgic',
+    title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     description:
-      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
-    images: '/lodgic-banner.png',
+      "Yann, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
     type: 'website',
     locale: 'fr_FR',
     url: SITE_URL,
@@ -190,32 +207,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Développeur Application Mobile Toulouse - Lodgic',
+    title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     description:
-      "Besoin d'un Développeur d'Application Mobile à Toulouse ? Lodgic crée des applications mobiles sur mesure pour startups, entreprises et particuliers.",
-    images: '/lodgic-banner.png',
-    creator: '@lodgic',
-    site: '@lodgic',
-  },
-  other: {
-    'instagram:card': 'summary_large_image',
-    'instagram:title': 'Développeur Application Mobile Toulouse - Lodgic',
-    'instagram:description':
-      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
-    'instagram:image': '/lodgic-banner.png',
-    'whatsapp:card': 'summary_large_image',
-    'whatsapp:title': 'Développeur Application Mobile Toulouse - Lodgic',
-    'whatsapp:description':
-      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
-    'whatsapp:image': '/lodgic-banner.png',
-    'og:image': '/lodgic-banner.png',
-    'og:url': SITE_URL,
-    'og:site_name': SITE_NAME,
-    'og:locale': 'fr_FR',
-    'og:type': 'website',
-    'og:title': 'Développeur Application Mobile Toulouse - Lodgic',
-    'og:description':
-      "Lodgic, développeur d'application mobile à Toulouse, transforme votre idée en application performante (React Native, Expo).",
+      "Yann, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
   },
 }
 
@@ -225,9 +219,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className="" suppressHydrationWarning>
+    <html lang="fr" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <StructuredData id="site-structured-data" data={structuredData} />
+        <JsonLd id="site-structured-data" data={structuredData} />
         <link rel="alternate" type="text/markdown" href={`${SITE_URL}/llms.txt`} />
         <link rel="alternate" type="text/plain" href={`${SITE_URL}/llms-full.txt`} />
 
@@ -240,21 +234,11 @@ export default function RootLayout({
         <CookieConsentBanner />
         <ConsentScripts />
         <WebVitals />
-        <AnalyticsProvider
-          config={{
-            debug: process.env.NODE_ENV === 'development',
-            enableAutoTracking: true,
-            scrollThreshold: 25,
-            timeThreshold: 10,
-            exitIntentEnabled: true,
-          }}
-        >
           <div className="relative w-full">
             <Navbar />
             {children}
             <Footer />
           </div>
-        </AnalyticsProvider>
         <ConsentVercelAnalytics />
       </body>
     </html>

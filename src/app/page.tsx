@@ -1,46 +1,36 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import dynamic from 'next/dynamic'
-import Hero from '@/components/pages/home/Hero'
-import { TrackingSection } from '@/components/analytics/AnalyticsProvider'
-import { PageTracker } from '@/components/analytics/PageTracker'
-import StructuredData from '@/components/seo/StructuredData'
+import Hero from '@/app/_sections/Accueil'
+import JsonLd from '@/components/JsonLd'
 import { SITE_URL } from '@/lib/site'
 
-const About = dynamic(() => import('@/components/pages/home/About'))
-const Services = dynamic(() => import('@/components/pages/home/Services'))
-const SuccessStories = dynamic(() => import('@/components/pages/home/SuccessStories'))
-const FAQ = dynamic(() => import('@/components/pages/home/FAQ'))
-const AdvancedTracker = dynamic(() => import('@/components/analytics/AdvancedTracker').then((m) => m.AdvancedTracker))
+const About = dynamic(() => import('@/app/_sections/APropos'))
+const Services = dynamic(() => import('@/app/_sections/Services'))
+const Method = dynamic(() => import('@/app/_sections/Methode'))
+const SuccessStories = dynamic(() => import('@/app/_sections/Realisations'))
+const Contact = dynamic(() => import('@/app/_sections/Contact'))
 
 export const metadata: Metadata = {
-  title: 'Développeur Web et Mobile Toulouse',
+  title: 'Développeur web, mobile et logiciel à Toulouse',
   description:
-    "Besoin d'un Développeur Web et Mobile à Toulouse ? Lodgic crée des sites web et applications mobiles sur mesure pour startups, entreprises et particuliers.",
+    "Yann, ingénieur en informatique à Toulouse. Sites web, applications mobiles et logiciels sur mesure pour TPE, PME et porteurs de projet — du cadrage à la mise en ligne.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: 'Développeur Web et Mobile Toulouse - Lodgic',
+    title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     description:
-      'Lodgic, développeur web et mobile à Toulouse, transforme votre idée en site web ou application performante (React.js, Next.js, React Native). Expertise et accompagnement.',
+      "Ingénieur en informatique à Toulouse, je conçois et développe des sites web et applications mobiles sur mesure (React.js, Next.js, React Native), de l'architecture à la mise en production.",
     url: SITE_URL,
     siteName: 'Lodgic',
-    images: [
-      {
-        url: `${SITE_URL}/lodgic-banner.png`,
-        width: 1200,
-        height: 630,
-        alt: 'Développeur Web et Mobile à Toulouse Lodgic',
-      },
-    ],
     locale: 'fr_FR',
     type: 'website',
   },
   keywords: [
+    'Ingénieur informatique Toulouse',
     'Développeur Web et Mobile Toulouse',
-    'Agence développement web et mobile Toulouse',
+    'Développeur freelance Toulouse',
     'Création site web Toulouse',
     'Création application mobile Toulouse',
     'Développeur web Toulouse',
@@ -51,7 +41,7 @@ export const metadata: Metadata = {
     'Développement application iOS Toulouse',
     'Développeur React.js Toulouse',
     'Développeur React Native Toulouse',
-    'Agence web et mobile Toulouse',
+    'Logiciel sur mesure Toulouse',
     'Freelance développeur web Toulouse',
     'Freelance développeur mobile Toulouse',
     'React.js',
@@ -65,15 +55,14 @@ export const metadata: Metadata = {
     'développeur web',
     'développeur application',
     'développeur mobile',
-    'agence développement',
+    'développeur logiciel sur mesure',
     'Toulouse',
   ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Développeur Web et Mobile Toulouse - Lodgic',
+    title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     description:
-      "Besoin d'un Développeur Web et Mobile à Toulouse ? Lodgic crée des sites web et applications mobiles sur mesure (React.js, Next.js, React Native).",
-    images: [`${SITE_URL}/lodgic-banner.png`],
+      "Ingénieur en informatique à Toulouse : conception et développement d'applications web et mobiles sur mesure (React.js, Next.js, React Native).",
   },
 }
 
@@ -83,7 +72,7 @@ export default function Home() {
     '@type': 'WebPage',
     '@id': `${SITE_URL}/#webpage`,
     url: SITE_URL,
-    name: 'Developpeur Web et Mobile Toulouse - Lodgic',
+    name: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
     description: metadata.description,
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
@@ -92,49 +81,24 @@ export default function Home() {
 
   return (
     <>
-      <StructuredData id="home-structured-data" data={homeSchema} />
-      <PageTracker
-        pageName="Home"
-        pageCategory="landing_page"
-        additionalData={{
-          page_type: 'homepage',
-          business_type: 'web_and_mobile_development',
-          location: 'toulouse',
-        }}
-      />
-      <AdvancedTracker
-        pageName="Home"
-        enableExitIntent={true}
-        enableMouseTracking={true}
-        enableIdleTracking={true}
-        enablePerformanceTracking={true}
-        idleTimeout={45000}
-        mouseTrackingThreshold={300}
-      />
+      <JsonLd id="home-structured-data" data={homeSchema} />
       <main>
-        <TrackingSection sectionName="hero" trackOnView={true} trackTimeSpent={true}>
           <Hero />
-        </TrackingSection>
 
-        {/* 1) Qui sommes-nous */}
-        <TrackingSection sectionName="about" trackOnView={true} trackTimeSpent={true}>
-          <About />
-        </TrackingSection>
-
-        {/* 2) Nos services */}
-        <TrackingSection sectionName="services" trackOnView={true} trackTimeSpent={true}>
-          <Services />
-        </TrackingSection>
-
-        {/* 3) Nos réalisations */}
-        <TrackingSection sectionName="realisations" trackOnView={true} trackTimeSpent={true}>
+        {/* 1) Ce que j'ai livré — les preuves d'abord */}
           <SuccessStories />
-        </TrackingSection>
 
-        {/* 4) Une question ? / Contact */}
-        <TrackingSection sectionName="faq" trackOnView={true} trackTimeSpent={true}>
-          <FAQ />
-        </TrackingSection>
+        {/* 2) Ce que je fais */}
+          <Services />
+
+        {/* 3) Qui je suis et pourquoi un ingénieur */}
+          <About fond="blanc" />
+
+        {/* 4) Comment ça se passe */}
+          <Method />
+
+        {/* 5) Contact */}
+          <Contact fond="blanc" />
       </main>
     </>
   )

@@ -1,372 +1,117 @@
-import { Metadata } from "next";
-import { FaChevronRight } from "react-icons/fa";
-import BreadcrumbStructuredData from "@/components/seo/BreadcrumbStructuredData";
-import { SITE_URL } from "@/lib/site";
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import PageLegale, { type SectionLegale } from '@/components/PageLegale'
+import { CONTACT_EMAIL, SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: "Politique de Confidentialité",
+  title: 'Politique de confidentialité',
   description:
-    "Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.",
-  alternates: {
-    canonical: `${SITE_URL}/politique-confidentialite`,
-  },
-  openGraph: {
-    title: "Politique de Confidentialité - Lodgic",
-    description:
-      "Politique de Confidentialité pour Lodgic - Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.",
-    url: `${SITE_URL}/politique-confidentialite`,
-    siteName: "Lodgic",
-    images: [
-      {
-        url: `${SITE_URL}/lodgic-banner.png`,
-        width: 1200,
-        height: 630,
-        alt: "Lodgic - Politique de Confidentialité",
-      },
+    'Comment vos données personnelles sont collectées, utilisées et conservées sur lodgic-dev.com, et comment exercer vos droits.',
+  alternates: { canonical: `${SITE_URL}/politique-confidentialite` },
+  robots: { index: false, follow: true },
+}
+
+const lienEmail = (
+  <Link
+    href={`mailto:${CONTACT_EMAIL}`}
+    className="font-semibold text-[#B54A26] underline underline-offset-2 hover:text-[#A34322]"
+  >
+    {CONTACT_EMAIL}
+  </Link>
+)
+
+const sections: SectionLegale[] = [
+  {
+    titre: '1. Collecte des données personnelles',
+    paragraphes: ['Les données personnelles suivantes peuvent être collectées :'],
+    liste: [
+      'Nom et prénom',
+      'Adresse email',
+      'Numéro de téléphone',
+      "Informations relatives à votre entreprise",
+      'Données de connexion et de navigation sur le site',
     ],
-    locale: "fr_FR",
-    type: "website",
+    contenu: (
+      <>
+        Elles sont collectées lorsque vous remplissez le formulaire de contact, m&apos;écrivez
+        directement, ou naviguez sur le site (via les cookies, après votre accord).
+      </>
+    ),
   },
-  keywords: [
-    "politique de confidentialité",
-    "protection des données",
-    "RGPD",
-    "vie privée",
-    "données personnelles",
-    "Lodgic",
-    "confidentialité",
-    "droits des utilisateurs",
-    "cookies",
-  ],
-  twitter: {
-    card: "summary_large_image",
-    title: "Politique de Confidentialité - Lodgic",
-    description:
-      "Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.",
-    images: [`${SITE_URL}/lodgic-banner.png`],
+  {
+    titre: '2. Utilisation des données',
+    paragraphes: ['Les données collectées servent à :'],
+    liste: [
+      'Répondre à vos demandes de contact ou d’information',
+      'Établir un devis et assurer le suivi de votre projet',
+      'Améliorer le site et mesurer son audience',
+    ],
   },
-};
+  {
+    titre: '3. Base légale du traitement',
+    paragraphes: ['Le traitement de vos données repose sur :'],
+    liste: [
+      'Votre consentement, pour les cookies de mesure d’audience',
+      'L’exécution d’un contrat ou de mesures précontractuelles, pour un devis ou un projet',
+      'Mon intérêt légitime à répondre à vos demandes',
+      'Le respect de mes obligations légales et comptables',
+    ],
+  },
+  {
+    titre: '4. Destinataires des données',
+    paragraphes: [
+      "Vos données ne sont traitées que par moi-même. Elles peuvent transiter par mes prestataires techniques — hébergement, envoi des formulaires, mesure d'audience — qui agissent selon mes instructions.",
+      'Vos données ne sont ni vendues, ni louées, ni cédées à des tiers.',
+    ],
+  },
+  {
+    titre: '5. Durée de conservation',
+    paragraphes: [
+      "Les données sont conservées le temps nécessaire au traitement de votre demande, puis pendant la durée légale applicable — trois ans après le dernier contact pour une demande commerciale, dix ans pour les documents comptables.",
+    ],
+  },
+  {
+    titre: '6. Vos droits',
+    paragraphes: [
+      'Conformément au RGPD et à la loi Informatique et Libertés, vous disposez des droits suivants :',
+    ],
+    liste: [
+      'Droit d’accès à vos données',
+      'Droit de rectification',
+      'Droit à l’effacement (droit à l’oubli)',
+      'Droit à la limitation du traitement',
+      'Droit d’opposition',
+      'Droit à la portabilité de vos données',
+      'Droit de retirer votre consentement à tout moment',
+      'Droit d’introduire une réclamation auprès de la CNIL',
+    ],
+    contenu: <>Pour exercer ces droits, écrivez-moi à {lienEmail}.</>,
+  },
+  {
+    titre: '7. Cookies',
+    paragraphes: [
+      "Le site dépose des cookies de mesure d'audience uniquement après votre accord, demandé lors de votre première visite. Vous pouvez modifier ce choix à tout moment depuis le lien « Gérer les cookies » en bas de chaque page, ou depuis les réglages de votre navigateur.",
+      "Les cookies strictement nécessaires au fonctionnement du site ne requièrent pas de consentement.",
+    ],
+  },
+  {
+    titre: '8. Modifications',
+    paragraphes: [
+      'Cette politique peut être modifiée à tout moment. Les changements prennent effet dès leur publication sur cette page.',
+    ],
+  },
+  {
+    titre: '9. Contact',
+    contenu: <>Pour toute question relative à cette politique, écrivez-moi à {lienEmail}.</>,
+  },
+]
 
-export default function PolitiqueConfidentialite() {
-  const lastUpdated = new Date().toLocaleDateString("fr-FR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-
-  const breadcrumbItems = [
-    { name: "Accueil", url: SITE_URL },
-    { name: "Politique de confidentialité", url: `${SITE_URL}/politique-confidentialite` },
-  ];
-
+export default function Page() {
   return (
-    <section className="w-full bg-gradient-to-br from-[#f6f7fc] via-[#f0f4ff] to-[#e8f0ff] pt-24 md:pt-36 pb-16 md:pb-24 overflow-hidden relative">
-      <BreadcrumbStructuredData items={breadcrumbItems} />
-      {/* Décor de fond */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#dbe7ff] via-[#c8d9ff] to-transparent blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-tr from-[#eaf2ff] via-[#d4e6ff] to-transparent blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-r from-[#DBFF00]/20 to-[#001F45]/10 blur-2xl" />
-      </div>
-
-      <div className="container mx-auto px-4 max-w-4xl relative z-10">
-        <div className="mb-12 text-center">
-          <h1 className="font-bricolage-grotesque-bold text-[#001F45] text-3xl md:text-4xl lg:text-5xl mb-4">
-            Politique de Confidentialité
-          </h1>
-          <p className="font-inter text-[#162869] text-sm md:text-base mb-6 opacity-90">
-            Dernière mise à jour : {lastUpdated}
-          </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#DBFF00] to-[#DBFF00]/60 mx-auto rounded-full"></div>
-        </div>
-
-        <div className="bg-white/90 backdrop-blur-sm p-8 sm:p-10 md:p-12 rounded-xl shadow-xl border border-[#001F45]/10 hover:border-[#DBFF00]/50 transition-all duration-300 space-y-10 hover:shadow-2xl">
-          <section>
-            <h2 className="font-bricolage-grotesque-bold text-[#001F45] text-2xl mb-6 pb-2 border-b border-[#DBFF00]/30">
-              1. Collecte des données personnelles
-            </h2>
-            <p className="font-inter text-[#162869] leading-relaxed mb-4">
-              Lodgic peut collecter les données personnelles suivantes :
-            </p>
-            <ul className="space-y-2 mb-4">
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Nom et prénom
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Adresse email
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Numéro de téléphone
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Informations relatives à votre entreprise
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Données de connexion et de navigation sur le site
-                </span>
-              </li>
-            </ul>
-            <p className="text-[#374151] leading-relaxed mb-4">
-              Ces données sont collectées lorsque vous :
-            </p>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Remplissez un formulaire de contact
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Prenez rendez-vous via notre site
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Vous inscrivez à notre newsletter
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Naviguez sur notre site (via les cookies)
-                </span>
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
-              2. Utilisation des données
-            </h2>
-            <p className="text-[#374151] leading-relaxed mb-4">
-              Les données personnelles collectées sont utilisées pour :
-            </p>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Répondre à vos demandes de contact ou d'information
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Gérer vos rendez-vous
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Vous envoyer des communications marketing (avec votre
-                  consentement)
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Améliorer notre site et nos services
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Établir des statistiques de visite
-                </span>
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
-              3. Base légale du traitement
-            </h2>
-            <p className="text-[#374151] leading-relaxed mb-4">
-              Le traitement de vos données personnelles est fondé sur :
-            </p>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Votre consentement
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  L'exécution d'un contrat auquel vous êtes partie
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Notre intérêt légitime à développer et promouvoir nos
-                  activités
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Le respect de nos obligations légales
-                </span>
-              </li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
-              4. Destinataires des données
-            </h2>
-            <p className="text-[#374151] leading-relaxed mb-4">
-              Vos données personnelles sont destinées à notre équipe interne.
-              Elles peuvent également être partagées avec des sous-traitants
-              (hébergement, CRM, outils marketing) qui agissent selon nos
-              instructions et pour notre compte.
-            </p>
-            <p className="text-[#374151] leading-relaxed">
-              Nous ne vendons ni ne louons vos données à des tiers.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
-              5. Durée de conservation
-            </h2>
-            <p className="text-[#374151] leading-relaxed">
-              Vos données personnelles sont conservées pour la durée nécessaire
-              à la réalisation des finalités pour lesquelles elles ont été
-              collectées, augmentée des délais légaux de prescription.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
-              6. Vos droits
-            </h2>
-            <p className="text-[#374151] leading-relaxed mb-4">
-              Conformément à la réglementation applicable, vous disposez des
-              droits suivants :
-            </p>
-            <ul className="space-y-2 mb-4">
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Droit d'accès à vos données
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Droit de rectification
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Droit à l'effacement (droit à l'oubli)
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Droit à la limitation du traitement
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Droit à la portabilité
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Droit d'opposition
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Droit de retirer votre consentement à tout moment
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <FaChevronRight className="w-3 h-3 text-[#E67E22] mt-1.5 flex-shrink-0" />
-                <span className="text-[#374151] leading-relaxed">
-                  Droit d'introduire une réclamation auprès d'une autorité de
-                  contrôle
-                </span>
-              </li>
-            </ul>
-            <p className="text-[#374151] leading-relaxed">
-              Pour exercer ces droits, vous pouvez nous contacter à l'adresse
-              email :{" "}
-              <a
-                href="mailto:contact@lodgic-dev.com"
-                className="text-[#E67E22] hover:text-[#E67E22]/80 transition-colors duration-300"
-              >
-                contact@lodgic-dev.com
-              </a>
-              .
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
-              7. Cookies
-            </h2>
-            <p className="text-[#374151] leading-relaxed">
-              Notre site utilise des cookies pour améliorer votre expérience de
-              navigation. Vous pouvez configurer votre navigateur pour refuser
-              les cookies ou être alerté lorsque des cookies sont envoyés.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
-              8. Modifications
-            </h2>
-            <p className="text-[#374151] leading-relaxed">
-              Nous nous réservons le droit de modifier cette politique de
-              confidentialité à tout moment. Les modifications prendront effet
-              dès leur publication sur le site.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-[#111827] mb-6 pb-2 border-b border-gray-200">
-              9. Contact
-            </h2>
-            <p className="text-[#374151] leading-relaxed">
-              Pour toute question relative à cette politique de confidentialité,
-              vous pouvez nous contacter à l'adresse email :{" "}
-              <a
-                href="mailto:contact@lodgic-dev.com"
-                className="text-[#E67E22] hover:text-[#E67E22]/80 transition-colors duration-300"
-              >
-                contact@lodgic-dev.com
-              </a>
-              .
-            </p>
-          </section>
-        </div>
-      </div>
-    </section>
-  );
+    <PageLegale
+      titre="Politique de confidentialité"
+      miseAJour="7 septembre 2026"
+      sections={sections}
+    />
+  )
 }
