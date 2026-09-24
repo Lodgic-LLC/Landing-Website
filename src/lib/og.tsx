@@ -13,8 +13,8 @@ const police = (fichier: string) => readFile(join(process.cwd(), 'src/fonts', fi
  */
 export async function imagePartage({ titre, sousTitre }: { titre: string; sousTitre: string }) {
   const [gras, normal] = await Promise.all([
-    police('PlusJakartaSans-Bold.ttf'),
-    police('PlusJakartaSans-Regular.ttf'),
+    police('Manrope-OG.ttf'),
+    police('SourceSans3-OG.ttf'),
   ])
 
   return new ImageResponse(
@@ -27,13 +27,13 @@ export async function imagePartage({ titre, sousTitre }: { titre: string; sousTi
           flexDirection: 'column',
           justifyContent: 'space-between',
           padding: '60px 72px',
-          backgroundColor: '#F8F6F2',
-          color: '#2E2B28',
-          fontFamily: 'Plus Jakarta Sans',
+          backgroundColor: '#F4F6F7',
+          color: '#17232A',
+          fontFamily: 'Manrope',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-          <div style={{ width: 22, height: 22, borderRadius: 5, backgroundColor: '#C2542D' }} />
+          <div style={{ width: 22, height: 22, borderRadius: 5, backgroundColor: '#246B66' }} />
           <div style={{ fontSize: 40, fontWeight: 700 }}>Lodgic</div>
         </div>
 
@@ -49,7 +49,7 @@ export async function imagePartage({ titre, sousTitre }: { titre: string; sousTi
           >
             {titre}
           </div>
-          <div style={{ fontSize: 30, lineHeight: 1.35, color: '#6B655D', maxWidth: 980 }}>
+          <div style={{ fontFamily: 'Source Sans 3', fontSize: 30, lineHeight: 1.35, color: '#59666E', maxWidth: 980 }}>
             {sousTitre}
           </div>
         </div>
@@ -59,22 +59,22 @@ export async function imagePartage({ titre, sousTitre }: { titre: string; sousTi
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            borderTop: '2px solid #E6E1D8',
+            borderTop: '2px solid #DCE3E6',
             paddingTop: 26,
             fontSize: 24,
-            color: '#6B655D',
+            color: '#59666E',
           }}
         >
-          <div style={{ display: 'flex' }}>Yann · Ingénieur en informatique · Toulouse</div>
-          <div style={{ display: 'flex', color: '#C2542D', fontWeight: 700 }}>lodgic-dev.com</div>
+          <div style={{ display: 'flex' }}>Yann, ingénieur en informatique à Toulouse</div>
+          <div style={{ display: 'flex', color: '#246B66', fontWeight: 700 }}>lodgic-dev.com</div>
         </div>
       </div>
     ),
     {
       ...TAILLE_OG,
       fonts: [
-        { name: 'Plus Jakarta Sans', data: gras, weight: 700, style: 'normal' },
-        { name: 'Plus Jakarta Sans', data: normal, weight: 400, style: 'normal' },
+        { name: 'Manrope', data: gras, weight: 700, style: 'normal' },
+        { name: 'Source Sans 3', data: normal, weight: 400, style: 'normal' },
       ],
     },
   )

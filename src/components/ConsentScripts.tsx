@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { setTrackingConsent } from "@/lib/analytics";
 
 const GA_MEASUREMENT_ID = "G-LV93937W8D";
 const ADS_MEASUREMENT_ID = "AW-16908078298";
@@ -70,6 +71,7 @@ const ConsentScripts = () => {
 
       const analyticsAccepted = CookieConsent.acceptedCategory("analytics");
       const marketingAccepted = CookieConsent.acceptedCategory("marketing");
+      setTrackingConsent(analyticsAccepted, marketingAccepted);
 
       if (!analyticsAccepted && !marketingAccepted) {
         disableGtag();

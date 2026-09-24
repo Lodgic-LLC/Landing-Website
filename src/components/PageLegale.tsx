@@ -20,26 +20,26 @@ interface PageLegaleProps {
 /** Gabarit commun aux mentions légales et à la politique de confidentialité. */
 export default function PageLegale({ titre, miseAJour, sections }: PageLegaleProps) {
   return (
-    <main className="bg-[#F8F6F2] pt-32 pb-20 md:pt-36 md:pb-28">
+    <main className="bg-[#F4F6F7] pt-32 pb-20 md:pt-36 md:pb-28">
       <div className="mx-auto max-w-3xl px-6">
-        <h1 className="text-4xl md:text-5xl font-sofia-bold text-[#2E2B28] tracking-tight">
+        <h1 className="text-4xl md:text-5xl font-heading text-[#17232A] tracking-tight">
           {titre}
         </h1>
         {miseAJour && (
-          <p className="mt-3 text-sm text-[#6B655D] font-inter">
+          <p className="mt-3 text-sm text-[#59666E] font-body">
             Dernière mise à jour : {miseAJour}
           </p>
         )}
 
-        <div className="mt-10 space-y-10 rounded-xl border border-[#E6E1D8] bg-white p-8 md:p-10">
+        <div className="mt-10 space-y-10 rounded-xl border border-[#DCE3E6] bg-white p-8 md:p-10">
           {sections.map((section) => (
             <section key={section.titre}>
-              <h2 className="text-xl md:text-2xl font-sofia-bold text-[#2E2B28]">
+              <h2 className="text-xl md:text-2xl font-heading text-[#17232A]">
                 {section.titre}
               </h2>
 
               {section.paragraphes?.map((texte) => (
-                <p key={texte} className="mt-3 leading-relaxed text-[#6B655D] font-inter">
+                <p key={texte} className="mt-3 leading-relaxed text-[#59666E] font-body">
                   {texte}
                 </p>
               ))}
@@ -50,16 +50,16 @@ export default function PageLegale({ titre, miseAJour, sections }: PageLegalePro
                     <li key={item} className="flex items-start gap-2.5">
                       <span
                         aria-hidden
-                        className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#C2542D]"
+                        className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#246B66]"
                       />
-                      <span className="leading-relaxed text-[#6B655D] font-inter">{item}</span>
+                      <span className="leading-relaxed text-[#59666E] font-body">{item}</span>
                     </li>
                   ))}
                 </ul>
               )}
 
               {section.contenu && (
-                <div className="mt-3 leading-relaxed text-[#6B655D] font-inter">
+                <div className="mt-3 leading-relaxed text-[#59666E] font-body">
                   {section.contenu}
                 </div>
               )}

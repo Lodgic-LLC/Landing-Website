@@ -9,17 +9,19 @@ const About = dynamic(() => import('@/app/_sections/APropos'))
 const Services = dynamic(() => import('@/app/_sections/Services'))
 const Method = dynamic(() => import('@/app/_sections/Methode'))
 const SuccessStories = dynamic(() => import('@/app/_sections/Realisations'))
+const Budget = dynamic(() => import('@/app/_sections/Budget'))
+const Questions = dynamic(() => import('@/app/_sections/Questions'))
 const Contact = dynamic(() => import('@/app/_sections/Contact'))
 
 export const metadata: Metadata = {
-  title: 'Développeur web, mobile et logiciel à Toulouse',
+  title: 'Développeur d’applications web et mobiles à Toulouse',
   description:
-    "Yann, ingénieur en informatique à Toulouse. Sites web, applications mobiles et logiciels sur mesure pour TPE, PME et porteurs de projet — du cadrage à la mise en ligne.",
+    "Yann, développeur d’applications web et mobiles à Toulouse. Sites web, applications mobiles et outils métier conçus et développés en direct avec vous.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
+    title: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
     description:
       "Ingénieur en informatique à Toulouse, je conçois et développe des sites web et applications mobiles sur mesure (React.js, Next.js, React Native), de l'architecture à la mise en production.",
     url: SITE_URL,
@@ -60,7 +62,7 @@ export const metadata: Metadata = {
   ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
+    title: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
     description:
       "Ingénieur en informatique à Toulouse : conception et développement d'applications web et mobiles sur mesure (React.js, Next.js, React Native).",
   },
@@ -72,7 +74,7 @@ export default function Home() {
     '@type': 'WebPage',
     '@id': `${SITE_URL}/#webpage`,
     url: SITE_URL,
-    name: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
+    name: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
     description: metadata.description,
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
@@ -85,7 +87,7 @@ export default function Home() {
       <main>
           <Hero />
 
-        {/* 1) Ce que j'ai livré — les preuves d'abord */}
+        {/* 1) Ce que j'ai livré : les preuves d'abord */}
           <SuccessStories />
 
         {/* 2) Ce que je fais */}
@@ -96,6 +98,9 @@ export default function Home() {
 
         {/* 4) Comment ça se passe */}
           <Method />
+
+          <Budget />
+          <Questions />
 
         {/* 5) Contact */}
           <Contact fond="blanc" />

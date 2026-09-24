@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { trackConversion } from '@/lib/analytics'
 
 /** Adresse d'envoi Formsubmit, définie dans .env.local (voir .env.example). */
@@ -19,7 +20,7 @@ interface Field {
 /** Formulaire court de la page d'accueil : juste de quoi engager la conversation. */
 export const SHORT_FIELDS: Field[] = [
   { name: 'email', label: 'Votre email', type: 'email', required: true },
-  { name: 'message', label: 'Comment puis-je vous aider ?', type: 'textarea', required: true },
+  { name: 'message', label: 'Comment puis-je vous aider ?', type: 'textarea', required: true, placeholder: 'Pour qui ? Pour quel usage ? Avez-vous déjà un site ou une application ?' },
 ]
 
 /** Formulaire complet de la page contact. */
@@ -28,7 +29,7 @@ export const FULL_FIELDS: Field[] = [
   { name: 'email', label: 'Votre email', type: 'email', required: true },
   { name: 'phone', label: 'Téléphone', type: 'tel', placeholder: 'Facultatif' },
   { name: 'subject', label: 'Sujet', placeholder: 'Site web, application, logiciel…' },
-  { name: 'message', label: 'Votre projet en quelques lignes', type: 'textarea', required: true },
+  { name: 'message', label: 'Votre projet en quelques lignes', type: 'textarea', required: true, placeholder: 'Le besoin, les utilisateurs, ce qui existe déjà. Précisez votre échéance ou votre budget si vous les connaissez.' },
 ]
 
 interface ProjectFormProps {
@@ -46,21 +47,19 @@ export default function Formulaire({
   submitLabel = 'Envoyer',
 }: ProjectFormProps) {
   const [values, setValues] = useState<Record<string, string>>({})
-  const [consent, setConsent] = useState(false)
   const [honey, setHoney] = useState('')
-  const [errors, setErrors] = useState<Partial<Record<FieldName | 'consent', string>>>({})
+  const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({})
   const [status, setStatus] = useState<{ ok: boolean; message: string } | null>(null)
   const [sending, setSending] = useState(false)
 
   function validate() {
-    const found: Partial<Record<FieldName | 'consent', string>> = {}
+    const found: Partial<Record<FieldName, string>> = {}
     for (const field of fields) {
       const value = (values[field.name] ?? '').trim()
       if (field.required && !value) found[field.name] = 'Ce champ est requis'
       else if (field.name === 'email' && value && !isValidEmail(value))
         found[field.name] = "Cette adresse email n'est pas valide"
     }
-    if (!consent) found.consent = 'Cochez cette case pour que je puisse vous répondre'
     return found
   }
 
@@ -77,14 +76,13 @@ export default function Formulaire({
       const response = await fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...values, _honey: honey, _subject: `Nouveau message — ${source}` }),
+        body: JSON.stringify({ ...values, _honey: honey, _subject: `Nouveau message : ${source}` }),
       })
       if (!response.ok) throw new Error(`Réponse ${response.status}`)
 
       trackConversion(source)
-      setStatus({ ok: true, message: 'Message envoyé. Je vous réponds sous 24 heures.' })
+      setStatus({ ok: true, message: 'Message envoyé. Merci, je vous répondrai personnellement.' })
       setValues({})
-      setConsent(false)
       setHoney('')
     } catch {
       setStatus({
@@ -104,22 +102,24 @@ export default function Formulaire({
         const shared = {
           id,
           name: field.name,
+          required: field.required,
+          autoComplete: ({ email: 'email', name: 'name', phone: 'tel' } as Record<string, string>)[field.name],
           value: values[field.name] ?? '',
           placeholder: field.placeholder,
           'aria-invalid': Boolean(error),
           'aria-describedby': error ? `${id}-error` : undefined,
           onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
             setValues((prev) => ({ ...prev, [field.name]: e.target.value })),
-          className: `w-full rounded-lg border bg-white px-4 py-3 font-inter text-[#2E2B28] transition-colors placeholder:text-[#6B655D]/60 focus:outline-none focus:ring-2 focus:ring-[#C2542D]/30 ${
-            error ? 'border-[#C2542D]' : 'border-[#E6E1D8] focus:border-[#C2542D]'
+          className: `w-full rounded-lg border bg-white px-4 py-3 font-body text-[#17232A] transition-colors placeholder:text-[#59666E]/60 focus:outline-none focus:ring-2 focus:ring-[#246B66]/30 ${
+            error ? 'border-[#246B66]' : 'border-[#DCE3E6] focus:border-[#246B66]'
           }`,
         }
 
         return (
           <div key={field.name}>
-            <label htmlFor={id} className="mb-1.5 block text-sm font-inter font-medium text-[#2E2B28]">
+            <label htmlFor={id} className="mb-1.5 block text-base font-body font-medium text-[#17232A]">
               {field.label}
-              {field.required && <span className="text-[#B54A26]"> *</span>}
+              {field.required && <span className="text-[#246B66]"> *</span>}
             </label>
 
             {field.type === 'textarea' ? (
@@ -129,7 +129,7 @@ export default function Formulaire({
             )}
 
             {error && (
-              <p id={`${id}-error`} className="mt-1.5 text-sm text-[#B54A26] font-inter">
+              <p id={`${id}-error`} className="mt-1.5 text-sm text-[#246B66] font-body">
                 {error}
               </p>
             )}
@@ -137,31 +137,9 @@ export default function Formulaire({
         )
       })}
 
-      <div>
-        <label className="flex items-start gap-2.5 text-sm text-[#6B655D] font-inter">
-          <input
-            type="checkbox"
-            checked={consent}
-            onChange={(e) => {
-              setConsent(e.target.checked)
-              if (e.target.checked) setErrors((prev) => ({ ...prev, consent: undefined }))
-            }}
-            aria-invalid={Boolean(errors.consent)}
-            aria-describedby={errors.consent ? 'field-consent-error' : undefined}
-            className={`mt-0.5 h-4 w-4 shrink-0 rounded text-[#B54A26] focus:ring-[#C2542D]/30 ${
-              errors.consent ? 'border-[#C2542D] ring-1 ring-[#C2542D]' : 'border-[#E6E1D8]'
-            }`}
-          />
-          <span>
-            J&apos;accepte que mes informations soient utilisées pour répondre à ma demande.
-          </span>
-        </label>
-        {errors.consent && (
-          <p id="field-consent-error" className="mt-1.5 text-sm text-[#B54A26] font-inter">
-            {errors.consent}
-          </p>
-        )}
-      </div>
+      <p className="text-sm leading-relaxed text-[#59666E]">
+        Les champs marqués * sont nécessaires pour répondre à votre demande. Votre message est transmis par FormSubmit à Yann (Lodgic). Téléphone et sujet sont facultatifs lorsqu’ils sont proposés. Vos données sont traitées pour étudier votre projet et vous répondre ; elles ne servent pas à vous inscrire à une newsletter. Consultez la <Link href="/politique-confidentialite" className="text-link text-sm">politique de confidentialité</Link> pour connaître la durée de conservation et exercer vos droits.
+      </p>
 
       {/* Piège à robots : invisible pour un humain, rempli par les scripts de spam.
           Formsubmit ignore silencieusement tout envoi où ce champ est renseigné. */}
@@ -181,7 +159,7 @@ export default function Formulaire({
       <button
         type="submit"
         disabled={sending}
-        className="w-full rounded-lg bg-[#C2542D] px-6 py-3.5 font-inter font-semibold text-white transition-colors hover:bg-[#A34322] disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-lg bg-[#246B66] px-6 py-3.5 font-body font-semibold text-white transition-colors hover:bg-[#1C5753] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {sending ? 'Envoi en cours…' : submitLabel}
       </button>
@@ -189,8 +167,8 @@ export default function Formulaire({
       {status && (
         <p
           role="status"
-          className={`rounded-lg px-4 py-3 text-sm font-inter ${
-            status.ok ? 'bg-[#FBEFE9] text-[#A34322]' : 'bg-[#FDF2F2] text-[#B42318]'
+          className={`rounded-lg px-4 py-3 text-sm font-body ${
+            status.ok ? 'bg-[#EDF4F3] text-[#1C5753]' : 'bg-[#FDF2F2] text-[#B42318]'
           }`}
         >
           {status.message}

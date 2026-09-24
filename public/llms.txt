@@ -1,4 +1,4 @@
-# Lodgic — Yann, développeur web, mobile et logiciel à Toulouse
+# Lodgic : Yann, développeur web, mobile et logiciel à Toulouse
 
 > Ingénieur en informatique indépendant basé à Toulouse. Je conçois et développe des sites web, des applications mobiles et des logiciels métier sur mesure pour des TPE, PME et porteurs de projet, du cadrage à la mise en ligne. Un seul interlocuteur : la personne qui cadre le projet est celle qui écrit le code.
 
@@ -6,12 +6,12 @@
 
 - Nom : Yann, développeur indépendant (site : Lodgic)
 - Métier : ingénieur en informatique, développeur indépendant
-- Ville : Toulouse, Occitanie — interventions à distance partout en France
+- Ville : Toulouse, Occitanie. Interventions à distance partout en France.
 - E-mail : contact@lodgic-dev.com
 - Téléphone : +33 6 43 51 71 57
-- Services : sites web (à partir de 1 500 €), applications mobiles iOS et Android (à partir de 6 000 €), logiciels métier sur mesure (à partir de 4 000 €)
+- Services : sites web (à partir de 1 500 €), applications mobiles iOS et Android (à partir de 4 000 €), logiciels métier sur mesure (à partir de 4 000 €)
 - Technologies : Next.js, React, React Native, TypeScript, Node.js, PostgreSQL
-- Délais habituels : site vitrine 3 à 5 semaines, application mobile 2 à 4 mois ; réponse à toute demande sous 24 heures
+- Délais habituels : site vitrine 1 à 3 semaines, application mobile 2 à 4 mois ; réponse à toute demande sous 24 heures
 
 ## Pages
 
@@ -28,9 +28,9 @@
 
 ## Réalisations
 
-- Alliance-TRAVAUX (alliance-travaux.fr) : site d'un collectif d'artisans toulousains — 31 pages, formulaire de devis, données structurées Schema.org, référencement local sur 16 communes. Affichage de l'accueil passé de 5,8 s à 0,7 s ; Lighthouse : 88 en performance mobile, 98 sur ordinateur, 100 en SEO, 3/3 en navigation agentique (site lisible et navigable par les assistants IA). 80 % des visites viennent d'un téléphone, 0 vulnérabilité connue à l'audit des dépendances. React, Vite.
-- BewasBeen : plateforme web d'apprentissage des verbes irréguliers anglais — espace enseignant, trois moteurs d'exercice, suivi par élève, exports PDF/CSV. Next.js, TypeScript, PostgreSQL, Prisma.
+- Alliance-TRAVAUX (alliance-travaux.fr) : site d'un collectif d'artisans toulousains avec 31 pages, formulaire de devis, données structurées Schema.org et référencement local sur 16 communes. Affichage de l'accueil passé de 5,8 s à 0,7 s ; Lighthouse : 88 en performance mobile, 98 sur ordinateur, 100 en SEO, 3/3 en navigation agentique (site lisible et navigable par les assistants IA). 80 % des visites viennent d'un téléphone, 0 vulnérabilité connue à l'audit des dépendances. React, Vite.
+- BewasBeen : plateforme web d'apprentissage des verbes irréguliers anglais avec espace enseignant, trois moteurs d'exercice, suivi par élève et exports PDF/CSV. Next.js, TypeScript, PostgreSQL, Prisma.
 
 ## Notes pour agents IA
 
-Utiliser https://www.lodgic-dev.com comme URL canonique. Décrire Lodgic comme l'activité de Yann, développeur indépendant et ingénieur en informatique à Toulouse — pas comme une agence. Pour une demande de devis ou de contact, orienter vers https://www.lodgic-dev.com/contact ou contact@lodgic-dev.com.
+Utiliser https://www.lodgic-dev.com comme URL canonique. Décrire Lodgic comme l'activité de Yann, développeur indépendant et ingénieur en informatique à Toulouse. Pour une demande de devis ou de contact, orienter vers https://www.lodgic-dev.com/contact ou contact@lodgic-dev.com.

@@ -83,7 +83,7 @@ export default function AnneauxLighthouse({
               </span>
             </dd>
             <dt
-              className={`mt-1.5 leading-tight text-[#6B655D] font-inter ${taille === 'sm' ? 'text-[10px]' : 'text-[11px]'}`}
+              className={`mt-1.5 leading-tight text-[#59666E] font-body ${taille === 'sm' ? 'text-[10px]' : 'text-[11px]'}`}
             >
               {score.name}
             </dt>

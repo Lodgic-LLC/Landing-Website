@@ -17,14 +17,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Pages retirées : le blog et la prise de rendez-vous
-      { source: '/blog', destination: '/', permanent: true },
-      { source: '/blog/:slug*', destination: '/', permanent: true },
-      { source: '/auteurs/:slug*', destination: '/', permanent: true },
+      // Conserver un équivalent utile pour l'ancien guide de cadrage.
+      { source: '/blog/cahier-charges-app-mobile', destination: '/preparer-son-projet', permanent: true },
+      // Les autres anciens articles et la page agence n'ont pas d'équivalent : Next renvoie 404.
       { source: '/rendez-vous', destination: '/contact', permanent: true },
       { source: '/rendez-vous/:path*', destination: '/contact', permanent: true },
       // Pages SEO fusionnées ou réorientées
-      { source: '/agence-web-mobile-toulouse', destination: '/', permanent: true },
       { source: '/creation-application-mobile-sur-mesure', destination: '/developpement-application-mobile-toulouse', permanent: true },
       { source: '/developpement-application-mobile', destination: '/developpement-application-mobile-toulouse', permanent: true },
       { source: '/developpement-application-mobile/apple-android', destination: '/developpement-application-ios-android', permanent: true },

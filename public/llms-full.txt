@@ -1,4 +1,4 @@
-# Lodgic — Yann, développeur web, mobile et logiciel à Toulouse
+# Lodgic : Yann, développeur web, mobile et logiciel à Toulouse
 
 Ce fichier décrit le site https://www.lodgic-dev.com pour les agents et assistants IA.
 
@@ -17,8 +17,8 @@ Yann, ingénieur diplômé en informatique, développeur indépendant à Toulous
 
 ## Services et prix planchers
 
-- Sites web : site vitrine, prise de rendez-vous, espace client. À partir de 1 500 €. Livraison habituelle en 3 à 5 semaines.
-- Applications mobiles : iOS et Android à partir d'un seul code (React Native), publication sur les stores. À partir de 6 000 €. Livraison habituelle en 2 à 4 mois.
+- Sites web : site vitrine, prise de rendez-vous, espace client. À partir de 1 500 €. Livraison habituelle en 1 à 3 semaines.
+- Applications mobiles : iOS et Android à partir d'un seul code (React Native), publication sur les stores. À partir de 4 000 €. Livraison habituelle en 2 à 4 mois.
 - Logiciels métier : planning, suivi de dossiers, devis, tableaux de bord, connectés aux outils existants. À partir de 4 000 €.
 
 Les prix sont des planchers pour un projet simple ; le montant exact est fixé par un cadrage écrit avant tout développement.

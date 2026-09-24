@@ -1,6 +1,6 @@
 import { imagePartage, TAILLE_OG } from '@/lib/og'
 
-export const alt = 'Yann, développeur web, mobile et logiciel à Toulouse — Lodgic'
+export const alt = 'Yann, développeur d’applications web et mobiles à Toulouse | Lodgic'
 export const size = TAILLE_OG
 export const contentType = 'image/png'
 

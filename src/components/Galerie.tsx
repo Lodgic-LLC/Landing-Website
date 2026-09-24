@@ -24,28 +24,22 @@ export default function Galerie({ screens, url, priority = false }: ProjectGalle
 
   return (
     <figure>
-      <div className="overflow-hidden rounded-lg border border-[#E6E1D8]">
-        <div className="flex items-center gap-1.5 border-b border-[#E6E1D8] bg-[#F8F6F2] px-3 py-2">
-          <span className="h-2 w-2 rounded-full bg-[#2E2B28]/15" />
-          <span className="h-2 w-2 rounded-full bg-[#2E2B28]/15" />
-          <span className="h-2 w-2 rounded-full bg-[#2E2B28]/15" />
-          <div className="mx-2 flex-1 truncate rounded bg-white px-3 py-0.5 mono text-[9px] text-[#6B655D]">
-            {url}
-          </div>
-        </div>
-        <div className="relative aspect-[2940/1604] w-full bg-[#F8F6F2]">
+      <div className="overflow-hidden rounded-lg border border-[#DCE3E6]">
+        {url && <p className="border-b border-[#DCE3E6] bg-white px-4 py-2 text-sm text-[#59666E]">{url}</p>}
+        <div className="relative aspect-[2940/1604] w-full bg-[#F4F6F7]">
           <Image
             src={screen.src}
             alt={screen.alt}
             fill
             priority={priority}
-            sizes="(max-width: 1024px) 92vw, 45vw"
-            className="object-contain object-top"
+            sizes="(max-width: 1280px) 92vw, 1180px"
+            className="gallery-image object-contain object-top"
+            key={screen.src}
           />
         </div>
       </div>
 
-      <figcaption className="mt-2 text-xs text-[#6B655D] font-inter">{screen.caption}</figcaption>
+      <figcaption className="mt-2 text-sm text-[#59666E] font-body">{screen.caption}</figcaption>
 
       {screens.length > 1 && (
         <div className="mt-3 flex flex-wrap gap-2">
@@ -58,8 +52,8 @@ export default function Galerie({ screens, url, priority = false }: ProjectGalle
               aria-current={i === current}
               className={`relative h-12 w-20 shrink-0 overflow-hidden rounded border transition-colors ${
                 i === current
-                  ? 'border-[#C2542D] ring-1 ring-[#C2542D]'
-                  : 'border-[#E6E1D8] opacity-70 hover:opacity-100'
+                  ? 'border-[#246B66] ring-1 ring-[#246B66]'
+                  : 'border-[#DCE3E6] opacity-70 hover:opacity-100'
               }`}
             >
               <Image

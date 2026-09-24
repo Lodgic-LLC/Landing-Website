@@ -1,75 +1,46 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import PageLegale, { type SectionLegale } from '@/components/PageLegale'
 import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Mentions légales',
-  description: 'Mentions légales du site lodgic-dev.com : éditeur, hébergeur et propriété intellectuelle.',
+  description: 'Éditeur, coordonnées et hébergement du site lodgic-dev.com.',
   alternates: { canonical: `${SITE_URL}/mentions-legales` },
   robots: { index: false, follow: true },
 }
 
-/** Repère visuel pour une information encore à fournir. */
-const AComp = ({ children }: { children: string }) => (
-  <span className="rounded bg-[#FBEFE9] px-2 py-0.5 font-semibold text-[#A34322]">{children}</span>
-)
-
 const sections: SectionLegale[] = [
   {
     titre: 'Éditeur du site',
-    contenu: (
-      <>
-        Yann Rouquié, entrepreneur individuel exerçant sous le nom commercial Lodgic
-        <br />
-        Entreprise individuelle (régime de la micro-entreprise)
-        <br />
-        {/* TODO : remplacer par les 9 chiffres du SIREN avant la mise en ligne */}
-        SIREN : <AComp>à compléter</AComp>
-        <br />
-        Toulouse, Occitanie, France
-        <br />
-        Email : {CONTACT_EMAIL}
-        <br />
-        Téléphone : {CONTACT_PHONE_DISPLAY}
-        <br />
-        Directeur de la publication : Yann Rouquié
-      </>
-    ),
+    contenu: <>
+      Yann Rouquie, entrepreneur individuel (EI), exerçant sous le nom Lodgic.<br />
+      Adresse professionnelle : 2 impasse Pierre Maurand, 31400 Toulouse, France.<br />
+      SIREN et immatriculation au RCS de Toulouse : 934 616 053. SIRET : 934 616 053 00013.<br />
+      E-mail : <a href={`mailto:${CONTACT_EMAIL}`} className="text-link">{CONTACT_EMAIL}</a>.<br />
+      Téléphone : {CONTACT_PHONE_DISPLAY}.<br />
+      Directeur de la publication : Yann Rouquie.
+    </>,
   },
-  {
-    titre: 'TVA',
-    paragraphes: ['TVA non applicable, article 293 B du Code général des impôts.'],
-  },
+  { titre: 'TVA', paragraphes: ['TVA non applicable, article 293 B du Code général des impôts (franchise en base de TVA).'] },
   {
     titre: 'Hébergement',
-    contenu: (
-      <>
-        Le site est hébergé par Vercel Inc.
-        <br />
-        440 N Barranca Ave #4133, Covina, CA 91723, États-Unis
-      </>
-    ),
+    contenu: <>Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis.<br />Téléphone publié dans les mentions de Vercel pour les demandes relatives aux droits d’auteur : +1 559 288 7060.<br />Site de l’hébergeur : <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-link">vercel.com</a>.</>,
   },
   {
-    titre: 'Médiation de la consommation',
-    contenu: (
-      <>
-        Conformément à l&apos;article L.612-1 du Code de la consommation, tout client
-        particulier peut recourir gratuitement à un médiateur de la consommation en vue de la
-        résolution amiable d&apos;un litige.{' '}
-        {/* TODO : adhérer à un médiateur et indiquer ici son nom, son adresse et son site */}
-        <AComp>Médiateur à désigner</AComp>
-      </>
-    ),
+    titre: 'Données personnelles et cookies',
+    contenu: <>Le traitement des données recueillies sur le site est décrit dans la <Link href="/politique-confidentialite" className="text-link">politique de confidentialité</Link>. Les traceurs et la gestion de vos choix sont détaillés dans la <Link href="/cookies" className="text-link">politique de cookies</Link>.</>,
   },
   {
     titre: 'Propriété intellectuelle',
-    paragraphes: [
-      "L'ensemble des contenus présents sur ce site (textes, images, logos, éléments graphiques) est protégé par le droit d'auteur. Toute reproduction, représentation ou diffusion, même partielle, est interdite sans autorisation préalable.",
-    ],
+    paragraphes: ['Les textes et créations propres à Lodgic sont protégés par le droit de la propriété intellectuelle. Les marques, noms et captures des projets présentés restent la propriété de leurs titulaires. Toute réutilisation requiert l’autorisation du titulaire des droits concerné.'],
+  },
+  {
+    titre: 'Contact et litiges',
+    contenu: <>Pour toute question relative au site ou à une prestation, écrivez à <a href={`mailto:${CONTACT_EMAIL}`} className="text-link">{CONTACT_EMAIL}</a>. Les conditions de réalisation d’un projet sont précisées dans le devis et les <Link href="/conditions-generales-de-vente" className="text-link">conditions générales de vente</Link>, qui présentent aussi les démarches de réclamation et l’état de la désignation d’un médiateur.</>,
   },
 ]
 
 export default function Page() {
-  return <PageLegale titre="Mentions légales" sections={sections} />
+  return <PageLegale titre="Mentions légales" miseAJour="23 septembre 2026" sections={sections} />
 }

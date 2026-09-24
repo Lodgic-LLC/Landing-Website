@@ -1,150 +1,17 @@
-/**
- * Contenus de la page d'accueil.
- *
- * Pour modifier un texte du site, c'est ici : seul ce qui est entre
- * guillemets change, la mise en page reste dans les composants.
- */
-
-/** Ce sur quoi je m'engage, affiché sous l'accroche. */
-export const engagements = [
-  'Prix transparent avant de commencer',
-  'Conseils et optimisation de l’architecture',
-  'Présentation régulière de l’avancée des développements',
-  'Vous êtes propriétaire : le code et les accès vous appartiennent',
+/** Textes de l’accueil, indépendants de la mise en page. */
+export const services = [
+  { title: 'Sites web', href: '/creation-site-internet-toulouse', description: 'Présenter votre activité, vos prestations et vos réalisations. Je prévois les pages et les fonctions dont vous avez besoin, avec un accès clair au contact.', cta: 'Création et refonte de sites' },
+  { title: 'Applications mobiles', href: '/developpement-application-mobile-toulouse', description: 'Une application iPhone et Android pour vos clients ou vos équipes. Je conçois les écrans, développe les fonctions et prépare la publication sur les stores.', cta: 'Développement d’applications' },
+  { title: 'Outils métier', href: '/logiciel-sur-mesure-toulouse', description: 'Centraliser des dossiers, suivre une activité ou éviter les ressaisies. Je pars de votre manière de travailler pour définir l’outil.', cta: 'Logiciels sur mesure' },
 ]
-
-/**
- * Images du bandeau d'accueil : une grande, deux vignettes.
- */
-export const galerieAccueil = {
-  /** Libellé affiché au-dessus de la galerie. */
-  intitule: 'Dernier projet livré',
-  /** Page de l'étude de cas. */
-  href: '/projets/alliance-travaux',
-  principale: {
-    src: '/projets/alliance-travaux/at_accueil.jpg',
-    alt: "Page d'accueil du site Alliance-TRAVAUX",
-    titre: 'Alliance-TRAVAUX',
-    legende: 'Collectif d’artisans, Toulouse — refonte complète',
-  },
-  vignettes: [
-    {
-      src: '/projets/alliance-travaux/at_metiers.jpg',
-      alt: 'Grille des douze corps de métier du site Alliance-TRAVAUX',
-      legende: '12 pages métier',
-    },
-    {
-      src: '/projets/alliance-travaux/at_page_metier.jpg',
-      alt: 'Page métier maçonnerie du site Alliance-TRAVAUX',
-      legende: 'Page métier',
-    },
-  ],
-}
-
-export type NomIcone = 'web' | 'mobile' | 'logiciel'
-
-export const services: {
-  icone: NomIcone
-  title: string
-  href: string
-  /** Le délai habituel, affiché en étiquette. */
-  delai: string
-  /** Une phrase : à qui ça sert. */
-  description: string
-  /** Trois points courts. */
-  items: string[]
-  /** Texte du bouton, propre à la catégorie. */
-  cta: string
-}[] = [
-  {
-    icone: 'web',
-    title: 'Sites web',
-    href: '/creation-site-internet-toulouse',
-    delai: '3 à 5 semaines',
-    description: 'Pour être trouvé sur Google et transformer un visiteur en client.',
-    items: ['Site vitrine ou catalogue', 'Formulaire de contact ou de devis', 'Vous modifiez vos textes'],
-    cta: 'Créer mon site',
-  },
-  {
-    icone: 'mobile',
-    title: 'Applications mobiles',
-    href: '/developpement-application-mobile-toulouse',
-    delai: '2 à 4 mois',
-    description: 'Pour vos clients ou vos équipes, sur iPhone et Android.',
-    items: ['Publiée sur les stores', 'Notifications et paiement', 'Reprise de l’existant'],
-    cta: 'Lancer mon application',
-  },
-  {
-    icone: 'logiciel',
-    title: 'Logiciels métier',
-    href: '/logiciel-sur-mesure-toulouse',
-    delai: 'Selon le projet',
-    description: 'Pour remplacer les tableurs partagés et les ressaisies.',
-    items: ['Planning et suivi de dossiers', 'Connecté à vos outils', 'Du bureau comme du terrain'],
-    cta: 'Étudier mon besoin',
-  },
-]
-
-/** Deux phrases de présentation, affichées sous le titre. */
 export const presentation = [
-  'Cinq ans à développer des logiciels en production dans le spatial et l’aéronautique, des secteurs où rien ne se livre « à peu près ».',
-  'Je travaille seul : la personne qui cadre votre projet est celle qui écrit le code, et qui sera encore là dans six mois.',
+  'Je suis Yann, ingénieur informatique indépendant à Toulouse. Pendant cinq ans, j’ai travaillé sur des logiciels dans le spatial et l’aéronautique. J’en ai gardé une habitude : comprendre les contraintes avant de coder et vérifier le résultat avant de livrer.',
+  'Aujourd’hui, je réalise des sites web, des applications mobiles et des outils métier. Je mène les échanges, le développement et la mise en ligne. Vous savez qui répond à vos questions et qui travaille sur le code.',
+  'Je commence par définir avec vous ce qui doit fonctionner. Si un outil existant suffit, je vous le dis. Si nous développons, le devis précise le périmètre et les éléments remis à la livraison.',
 ]
-
-/** Quatre faits, affichés sur une ligne. */
-export const ficheIdentite = [
-  { label: 'Parcours', value: '5 ans en production, spatial et aéronautique' },
-  { label: 'Formation', value: 'Ingénieur diplômé en informatique' },
-  { label: 'Technologies', value: 'React · Next.js · React Native · Node.js' },
-  { label: 'Zone', value: 'Toulouse, et à distance partout en France' },
-]
-
-/** Ce que vous obtenez quel que soit le projet : une garantie par thème. */
-export const garanties = [
-  { theme: 'Fiabilité', text: 'Les parcours importants sont testés automatiquement avant chaque livraison.' },
-  { theme: 'Montée en charge', text: 'Base de données et hébergement dimensionnés pour grandir avec vous.' },
-  { theme: 'Sécurité', text: 'Droits vérifiés côté serveur, données personnelles traitées selon le RGPD.' },
-  { theme: 'Propriété', text: 'Le code, la documentation et tous les accès vous appartiennent.' },
-]
-
 export const etapes = [
-  {
-    n: '01',
-    title: 'Premier échange',
-    duration: '30 minutes',
-    text: "Vous expliquez ce que vous voulez obtenir. Je vous dis ce qui est réaliste.",
-  },
-  {
-    n: '02',
-    title: 'Cadrage écrit',
-    duration: '3 à 5 jours',
-    text: "Périmètre, choix techniques, planning et prix. Vous validez avant que je commence.",
-  },
-  {
-    n: '03',
-    title: 'Développement',
-    duration: 'Selon le projet',
-    text: "Vous testez chaque semaine sur un lien privé. Les ajustements se font au fil de l'eau.",
-  },
-  {
-    n: '04',
-    title: 'Mise en ligne',
-    duration: '1 semaine',
-    text: "Vous recevez les accès, la documentation et le code. Le projet vous appartient.",
-  },
-]
-
-export const reassurance = [
-  {
-    title: 'Un échange, pas un devis automatique',
-    text: "Vous repartez avec un avis honnête, même si la bonne réponse n'est pas de développer.",
-  },
-  {
-    title: 'Réponse sous 24 heures',
-    text: "C'est moi qui réponds, et moi qui développerai ensuite.",
-  },
-  {
-    title: 'Un cadrage avant de chiffrer',
-    text: 'Périmètre et budget posés à l’écrit avant la première ligne de code.',
-  },
+  { n: '01', title: 'Premier échange', text: 'Vous m’expliquez votre besoin et vos contraintes. Nous précisons ce que le projet doit permettre de faire.', livrable: 'Les usages prioritaires et les points à clarifier.' },
+  { n: '02', title: 'Proposition', text: 'Je vous remets un périmètre, un planning et un prix. Vous les validez avant le développement.', livrable: 'Un devis détaillé et les étapes de validation.' },
+  { n: '03', title: 'Développement', text: 'Nous validons les écrans prévus au cadrage, puis vous testez une version de travail au fil du développement.', livrable: 'Des écrans validés et une version à tester.' },
+  { n: '04', title: 'Livraison', text: 'Je mets le projet en ligne après validation des parcours convenus, sur les comptes ouverts à votre nom.', livrable: 'Le code, vos accès et la documentation prévue.' },
 ]

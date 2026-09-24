@@ -14,12 +14,12 @@ export default function CadreTelephone({
 }) {
   return (
     <figure className="mx-auto w-full shrink-0" style={{ maxWidth: largeur }}>
-      <div className="overflow-hidden rounded-[2rem] border-[6px] border-[#23211F] bg-[#23211F] shadow-[0_24px_48px_-24px_rgba(35,33,31,0.5)]">
+      <div className="overflow-hidden rounded-[2rem] border-[6px] border-[#17232A] bg-[#17232A] shadow-[0_24px_48px_-24px_rgba(35,33,31,0.5)]">
         <div className="relative aspect-[390/844] w-full overflow-hidden rounded-[1.6rem] bg-white">
           <Image src={src} alt={alt} fill sizes={`${largeur}px`} className="object-cover object-top" />
         </div>
       </div>
-      <figcaption className="mt-2 text-center text-xs text-[#6B655D] font-inter">{caption}</figcaption>
+      <figcaption className="mt-2 text-center text-xs text-[#59666E] font-body">{caption}</figcaption>
     </figure>
   )
 }

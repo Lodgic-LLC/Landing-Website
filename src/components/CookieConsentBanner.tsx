@@ -13,6 +13,7 @@ const CookieConsentBanner = () => {
       CookieConsent.run({
       revision: 1,
       autoClearCookies: true,
+      cookie: { expiresAfterDays: 182 },
       guiOptions: {
         consentModal: {
           layout: "cloud",
@@ -62,7 +63,7 @@ const CookieConsentBanner = () => {
               acceptAllBtn: "Tout accepter",
               acceptNecessaryBtn: "Tout refuser",
               showPreferencesBtn: "Personnaliser",
-              footer: '<a href="/politique-confidentialite">Politique de confidentialité</a>',
+              footer: '<a href="/cookies">Politique de cookies</a>',
             },
             preferencesModal: {
               title: "Préférences de cookies",
@@ -97,7 +98,7 @@ const CookieConsentBanner = () => {
                 {
                   title: "Plus d’informations",
                   description:
-                    "Vous pouvez modifier vos préférences à tout moment depuis le lien « Gérer les cookies » en bas de page. Le détail est dans la <a href=\"/politique-confidentialite\">politique de confidentialité</a>.",
+                    "Vous pouvez modifier vos préférences à tout moment depuis le lien « Gérer les cookies » en bas de page. Le détail est dans la <a href=\"/cookies\">politique de cookies</a>.",
                 },
               ],
             },

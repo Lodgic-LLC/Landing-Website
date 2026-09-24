@@ -6,7 +6,8 @@
 
 export type Projet = {
   name: string;
-  sector: string;
+  category: string;
+  context: string;
   /** Page du site à ouvrir depuis les cartes (étude de cas ou site externe) */
   href: string;
   /** Domaine affiché dans la barre du navigateur simulé */
@@ -52,7 +53,8 @@ export type Projet = {
 export const PROJETS: Projet[] = [
   {
     name: "Alliance-TRAVAUX",
-    sector: "Rénovation & travaux · Toulouse",
+    category: "Collectif d'artisans",
+    context: "Toulouse",
     href: "/projets/alliance-travaux",
     url: "alliance-travaux.fr",
     siteUrl: "https://alliance-travaux.fr",
@@ -60,7 +62,7 @@ export const PROJETS: Projet[] = [
     summary:
       "Refonte complète du site d'un collectif d'artisans toulousains, livrée en deux semaines.",
     duration: { value: "2 semaines", label: "de la commande à la mise en ligne" },
-    mention: "Optimisé pour la navigation agentique",
+    mention: "3 contrôles Lighthouse de navigation agentique réussis sur 3",
     mobileScreens: [
       { src: "/projets/alliance-travaux/at_mobile_accueil.jpg", alt: "Page d'accueil d'Alliance-TRAVAUX sur téléphone", caption: "Accueil" },
       { src: "/projets/alliance-travaux/at_mobile_metiers.jpg", alt: "Grille des corps de métier sur téléphone", caption: "Les métiers" },
@@ -97,7 +99,7 @@ export const PROJETS: Projet[] = [
       before: "5,8 s",
       after: "0,7 s",
       scores: [
-        { name: "Performance mobile", value: "88", couleur: "vert" },
+        { name: "Performance mobile", value: "88", couleur: "orange" },
         { name: "Performance ordinateur", value: "98" },
         { name: "Accessibilité", value: "96" },
         { name: "Bonnes pratiques", value: "100" },
@@ -115,24 +117,24 @@ export const PROJETS: Projet[] = [
     },
     features: [
       {
-        title: "Structure repensée pour la conversion",
-        text: "12 pages métier et 3 pages service générées depuis un même schéma. Chaque parcours mène au devis.",
+        title: "Un accès au devis depuis chaque métier",
+        text: "12 pages métier et 3 pages service générées depuis un même schéma. Le formulaire reste accessible dans chaque parcours.",
       },
       {
         title: "Formulaire de devis",
         text: "Accessible depuis chaque section, avec validation des champs et confirmation immédiate.",
       },
       {
-        title: "Référencement local repris de zéro",
+        title: "Une page par métier et par zone d'intervention",
         text: "Balisage Schema.org complet sur 16 communes de l'agglomération. Résultat : 100/100 au SEO technique.",
       },
       {
         title: "Pensé pour le téléphone d'abord",
-        text: "80 % des visites viennent d'un téléphone. Chaque page a été construite et mesurée sur mobile : 88/100 en performance, affichage sous la seconde en 4G, boutons d'appel et de devis accessibles au pouce.",
+        text: "80 % des visites viennent d'un téléphone. Chaque page a été construite et mesurée sur mobile : 88/100 en performance, boutons d'appel et de devis accessibles au pouce.",
       },
       {
-        title: "Lisible par les assistants IA",
-        text: "3/3 aux contrôles Lighthouse de navigation agentique : un assistant comme ChatGPT ou Gemini peut parcourir le site, comprendre chaque métier et chaque commune, et mener un visiteur jusqu'au formulaire de devis. Quand on demande un artisan à Toulouse à une IA, le site peut être lu et cité.",
+        title: "Navigation testée pour les assistants",
+        text: "3/3 aux contrôles Lighthouse de navigation agentique. Ce résultat vérifie que les pages et le formulaire sont parcourables par un agent ; il ne mesure pas leur présence dans ses réponses.",
       },
       {
         title: "Sécurité remise à niveau",
@@ -143,22 +145,22 @@ export const PROJETS: Projet[] = [
       {
         value: "0,7 s",
         title: "Temps d'affichage divisé par huit",
-        text: "À 5,8 s, un visiteur sur deux partait avant de voir la page. Elle s'affiche maintenant en moins d'une seconde.",
+        text: "La mesure de l'affichage de l'accueil est passée de 5,8 s avant la refonte à 0,7 s après livraison.",
       },
       {
         value: "3/3",
         title: "Navigation agentique",
-        text: "Les assistants IA lisent le site, le citent et peuvent guider un client jusqu'au formulaire de devis.",
+        text: "Les trois contrôles Lighthouse de navigation agentique sont validés ; le parcours jusqu'au devis est accessible.",
       },
       {
         value: "80 %",
-        title: "Mobile pensé pour convertir",
+        title: "Parcours mobile repris",
         text: "Huit visites sur dix viennent d'un téléphone : appel et devis restent à portée de pouce sur chaque page.",
       },
       {
         value: "100",
-        title: "Référencement optimisé",
-        text: "Une page par métier et 16 communes balisées : le collectif remonte sur les recherches « métier + commune ».",
+        title: "Score SEO technique",
+        text: "Une page par métier et 16 communes balisées ; le contrôle Lighthouse affiche 100/100 en SEO technique.",
       },
     ],
     stack: ["React", "Vite", "React Router", "Schema.org"],
@@ -192,13 +194,18 @@ export const PROJETS: Projet[] = [
   },
   {
     name: "BewasBeen",
-    sector: "EdTech · Apprentissage de l'anglais",
+    category: "Plateforme pédagogique",
+    context: "Apprentissage de l'anglais",
     href: "/projets/bewasbeen",
     url: "bewasbeen.com",
     siteUrl: "https://bewasbeen.com",
     external: false,
     summary:
       "Plateforme pédagogique : espace enseignant, classes et suivi individuel des élèves.",
+    etude: {
+      besoin: ["Proposer des exercices de verbes irréguliers aux classes", "Suivre les résultats de chaque élève", "Donner accès aux exercices sans compte individuel"],
+      prestation: ["Conception et développement de la plateforme", "Espace enseignant, classes et listes personnalisées", "Trois modes d’entraînement et exports des résultats"],
+    },
     metrics: [
       { value: "+200", label: "classes créées" },
       { value: "+2 000", label: "exercices réalisés" },
@@ -222,11 +229,15 @@ export const PROJETS: Projet[] = [
       {
         value: "0",
         title: "Compte élève requis",
-        text: "Un code court ou un QR code projeté au tableau suffit. Aucun identifiant créé : pas de friction en cours, pas de données de mineurs à gérer.",
+        text: "Un code court ou un QR code projeté au tableau suffit. Les élèves accèdent aux exercices sans créer de compte individuel.",
       },
     ],
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
     screens: [
+      { src: "/projets/bewasbeen/bwb_drag_and_drop_mode.jpg", alt: "Exercice de verbes en glisser-déposer", caption: "Entraînement en glisser-déposer" },
+      { src: "/projets/bewasbeen/bwb_typing_mode.jpg", alt: "Exercice de verbes au clavier", caption: "Entraînement au clavier" },
+      { src: "/projets/bewasbeen/bwb_audio_mode.jpg", alt: "Exercice audio", caption: "Entraînement audio" },
+      { src: "/projets/bewasbeen/bwb_create_verb_list.jpg", alt: "Création de listes de verbes", caption: "Listes personnalisées" },
       {
         src: "/projets/bewasbeen/bwb_professor_dashboard.jpg",
         alt: "Tableau de bord enseignant de BewasBeen",

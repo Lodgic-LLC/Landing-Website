@@ -43,7 +43,7 @@ export const PAGES_SERVICE: PageService[] = [
     slug: 'creation-site-internet-toulouse',
     name: 'Création de site internet à Toulouse',
     description:
-        'Développeur indépendant à Toulouse : je crée votre site internet sur mesure, rapide et trouvé sur Google, à partir de 1 500 €. Vous modifiez vos textes vous-même. Livraison en 3 à 5 semaines.',
+        'Développeur indépendant à Toulouse : je crée des sites internet sur mesure à partir de 1 500 €. Pages de service, formulaire de contact, textes modifiables et performances mesurées à la livraison.',
     keywords: [
         'création site internet Toulouse',
         'création site web Toulouse',
@@ -54,24 +54,24 @@ export const PAGES_SERVICE: PageService[] = [
         'prix site internet',
     ],
     hero: {
-      eyebrow: 'Site internet · Toulouse',
+      eyebrow: 'Site internet',
       title: 'Création de site internet à Toulouse',
-      highlight: 'un site qui vous apporte des clients, pas juste une adresse',
+      highlight: 'Un site que vos clients comprennent et que vous pouvez modifier.',
       description:
-        'Un site qui explique ce que vous faites, se charge vite sur un téléphone, remonte sur Google quand on cherche votre métier à Toulouse, et amène les visiteurs à vous écrire ou à vous appeler. C’est ce que je construis, sur mesure, **à partir de 1 500 €**.',
-      badges: ['À partir de 1 500 €', '3 à 5 semaines', 'Trouvé sur Google', 'Vous modifiez vos textes', 'Toulouse et à distance'],
+        'Je structure les pages autour de vos métiers et de vos clients. Je prévois un accès direct au contact ou au devis, puis je mesure le chargement sur téléphone à la livraison. **À partir de 1 500 €**.',
+      badges: ['À partir de 1 500 €', '1 à 3 semaines', 'Performances mesurées', 'Textes modifiables'],
     },
     expertise: {
       eyebrow: 'Ce que comprend un site',
-      heading: 'Un site sérieux, ce n’est pas **un modèle rempli en une soirée**.',
+      heading: 'Ce qui entre dans la création du site.',
       intro:
-        'Les sites à 300 € existent. Ils se ressemblent tous, ils sont lents, et Google ne les montre à personne. Voici ce que je fais différemment, et pourquoi ça change le nombre d’appels que vous recevez.',
+        'Le nombre de pages ne suffit pas à définir un projet. Je détaille ici la structure, les accès au contact, les mesures et ce que vous pourrez modifier vous-même.',
       cards: [
         {
           num: '01',
-          title: 'Pensé pour convertir',
+          title: 'Un parcours vers le contact',
           body:
-        'Votre visiteur doit comprendre en cinq secondes ce que vous faites, pour qui, et comment vous joindre. Je construis chaque page autour de cette question, pas autour d’un joli visuel.',
+        'La première page présente votre métier, vos clients et le moyen de vous joindre. Je définis ce parcours avant de travailler les détails visuels.',
           bullets: [
         'Message clair dès le premier écran',
         'Téléphone et formulaire toujours accessibles',
@@ -81,9 +81,9 @@ export const PAGES_SERVICE: PageService[] = [
         },
         {
           num: '02',
-          title: 'Trouvé sur Google à Toulouse',
+          title: 'Pages lisibles par les moteurs de recherche',
           body:
-        'Structure des pages, textes, vitesse, données que Google lit : je construis le site pour qu’il remonte sur « votre métier + Toulouse ». Et je vous explique quoi faire de votre fiche Google.',
+        'Je donne à chaque prestation importante une page identifiable, avec des titres précis et des données structurées lorsque c’est pertinent. Je vous explique aussi le rôle de votre fiche Google.',
           bullets: [
         'Une page par prestation importante',
         'Données structurées (Schema.org)',
@@ -95,7 +95,7 @@ export const PAGES_SERVICE: PageService[] = [
           num: '03',
           title: 'Rapide, surtout sur téléphone',
           body:
-        'Plus de la moitié de vos visiteurs viennent d’un téléphone, souvent en 4G. Un site qui met quatre secondes à s’afficher a déjà perdu. Je vérifie le temps de chargement à la livraison.',
+        'Je construis les pages pour les petits écrans et je contrôle leur chargement à la livraison. Le projet Alliance-TRAVAUX est passé de 5,8 s à 0,7 s sur la mesure publiée.',
           bullets: [
         'Images compressées automatiquement',
         'Pas de scripts inutiles',
@@ -107,7 +107,7 @@ export const PAGES_SERVICE: PageService[] = [
           num: '04',
           title: 'Vous gardez la main',
           body:
-        'Changer un prix, ajouter une photo, publier une actualité : vous le faites vous-même, sans me payer pour chaque virgule. Je vous forme en une heure à la livraison.',
+        'Changer un prix, ajouter une photo ou publier une actualité : je prévois ces modifications dès le départ. Je vous montre comment les faire à la livraison.',
           bullets: [
         'Édition des textes et des images',
         'Formation incluse',
@@ -119,7 +119,7 @@ export const PAGES_SERVICE: PageService[] = [
           num: '05',
           title: 'Formulaire de contact ou de devis',
           body:
-        'Un formulaire qui arrive dans votre boîte mail, avec les bonnes questions posées dès le départ, pour que vous rappeliez un prospect déjà qualifié.',
+        'Le formulaire recueille les informations utiles à votre premier échange et transmet la demande dans votre boîte mail.',
           bullets: [
         'Questions adaptées à votre métier',
         'Réception par e-mail immédiate',
@@ -131,17 +131,17 @@ export const PAGES_SERVICE: PageService[] = [
           num: '06',
           title: 'Refonte d’un site existant',
           body:
-        'Votre site date, il n’est pas lisible sur mobile, ou l’agence qui l’a fait n’existe plus ? Je le refais en gardant ce qui marche — et vos positions Google, grâce aux redirections.',
+        'Si le site existant doit être remplacé, je relève ses pages utiles et ses adresses avant la refonte. Je prépare des redirections pour éviter les erreurs lors du changement.',
           bullets: [
         'Audit de l’existant',
-        'Redirections pour ne rien perdre sur Google',
+        'Redirections des anciennes adresses',
         'Reprise du nom de domaine et des e-mails',
         'Migration des contenus utiles',
           ],
         },
       ],
       closing: [
-        'Un site vitrine démarre à **1 500 €** et se livre en **3 à 5 semaines**. Le prix dépend du nombre de pages et des fonctions (prise de rendez-vous, espace client, catalogue) : il est fixé par écrit après un premier échange, et il ne bouge pas ensuite.',
+        'Un site vitrine démarre à **1 500 €** et se livre en **1 à 3 semaines** pour un périmètre simple. Le prix dépend du nombre de pages et des fonctions (prise de rendez-vous, espace client, catalogue) : il est fixé par écrit après un premier échange.',
         'Le site d’**Alliance-TRAVAUX**, un collectif d’artisans toulousains, est un exemple de ce que je livre : 31 pages, formulaire de devis, référencement local sur 16 communes.',
       ],
       crossLinks: [
@@ -171,7 +171,7 @@ export const PAGES_SERVICE: PageService[] = [
       {
         question: 'Serai-je premier sur Google ?',
         answer:
-        'Personne ne peut le promettre honnêtement. Ce que je garantis : un site construit selon ce que Google attend (structure, vitesse, données structurées, une page par prestation), et des conseils pour votre fiche Google Business, qui pèse beaucoup pour une recherche locale.',
+        'Aucune place ne peut être garantie. Je travaille la structure des pages, leur vitesse et les données structurées quand elles sont utiles. Je vous indique aussi les informations à renseigner sur votre fiche Google Business.',
       },
       {
         question: 'Pourrai-je modifier le site moi-même ?',
@@ -184,7 +184,7 @@ export const PAGES_SERVICE: PageService[] = [
     slug: 'developpement-application-mobile-toulouse',
     name: 'Développement d\'application mobile à Toulouse',
     description:
-        'Développeur indépendant à Toulouse, ingénieur en informatique : je conçois et développe votre application iPhone et Android, de l\'idée à la publication sur les stores. À partir de 6 000 €, prix fixé par écrit avant de commencer.',
+        'Développeur indépendant à Toulouse, ingénieur en informatique : je conçois et développe votre application iPhone et Android, de l\'idée à la publication sur les stores. À partir de 4 000 €, prix fixé par écrit avant de commencer.',
     keywords: [
         'développement application mobile Toulouse',
         'développeur application mobile Toulouse',
@@ -194,24 +194,24 @@ export const PAGES_SERVICE: PageService[] = [
         'prix application mobile',
     ],
     hero: {
-      eyebrow: 'Application mobile · Toulouse',
+      eyebrow: 'Application mobile',
       title: 'Développement d\'application mobile à Toulouse',
-      highlight: 'de l\'idée à l\'application publiée',
+      highlight: 'Une application sur iPhone et Android, du cadrage à la publication.',
       description:
-        'Vous avez une idée d’application, ou un besoin terrain que vos équipes règlent aujourd’hui avec des messages et des photos. Je la conçois et je la développe pour **iPhone et Android**, puis je la publie sur les stores. Un seul interlocuteur, un prix fixé à l’avance.',
-      badges: ['iPhone et Android', 'À partir de 6 000 €', '2 à 4 mois', 'Publication sur les stores', 'Toulouse et à distance'],
+        'Je définis les parcours avec vous, développe l’application pour **iPhone et Android**, la teste sur appareil et prépare sa publication sur les stores. Le périmètre et le prix sont écrits avant le code.',
+      badges: ['iPhone et Android', 'À partir de 4 000 €', '2 à 4 mois', 'Publication sur les stores', 'Toulouse et à distance'],
     },
     expertise: {
       eyebrow: 'Ce que comprend le développement',
-      heading: 'Une application mobile, c’est **six chantiers**. Je les prends tous.',
+      heading: 'Du premier écran à la publication.',
       intro:
-        'Beaucoup de projets d’application s’arrêtent parce qu’on n’avait budgété que l’écran. Voici ce qu’il faut réellement pour qu’une app fonctionne, soit acceptée par les stores et reste utilisable dans deux ans.',
+        'Une application comprend l’interface, les données, les tests et les comptes de publication. Voici les étapes que je chiffre pendant le cadrage.',
       cards: [
         {
           num: '01',
           title: 'Cadrage et maquettes',
           body:
-        'On liste ce que l’application doit faire, par ordre d’importance. Je dessine les écrans principaux avant de coder : vous voyez le parcours et vous corrigez tant que c’est gratuit de le faire.',
+        'On liste ce que l’application doit faire, par ordre d’importance. Je dessine les écrans principaux avant de coder : vous validez le parcours avant le développement.',
           bullets: [
         'Périmètre écrit et validé ensemble',
         'Maquettes des écrans clés',
@@ -223,7 +223,7 @@ export const PAGES_SERVICE: PageService[] = [
           num: '02',
           title: 'Développement iPhone et Android',
           body:
-        'Je développe en React Native : un seul code pour les deux plateformes, donc un coût et un délai presque divisés par deux, sans application au rabais. Les deux versions évoluent en même temps.',
+        'Je développe en React Native pour partager une base de code entre iPhone et Android. Les différences propres à chaque plateforme sont traitées dans l’interface et les tests.',
           bullets: [
         'Un code, deux plateformes',
         'Interface adaptée à chaque système',
@@ -239,7 +239,7 @@ export const PAGES_SERVICE: PageService[] = [
           bullets: [
         'Comptes utilisateurs et droits d’accès',
         'Base de données PostgreSQL',
-        'Hébergement en Europe, conforme RGPD',
+        'Hébergement en Europe et droits d’accès définis',
         'Sauvegardes quotidiennes',
           ],
         },
@@ -271,7 +271,7 @@ export const PAGES_SERVICE: PageService[] = [
           num: '06',
           title: 'Reprise d’une application existante',
           body:
-        'Votre app existe déjà mais plus personne ne sait la maintenir ? Je l’audite, je vous dis ce qui est récupérable, et je la reprends ou je la refais — en vous disant lequel coûte le moins cher.',
+        'Votre app existe déjà mais plus personne ne sait la maintenir ? Je l’audite, je vous dis ce qui est récupérable et je chiffre la reprise ou la refonte. Vous pouvez comparer les deux options.',
           bullets: [
         'Audit du code et des dépendances',
         'Remise à niveau iOS et Android',
@@ -281,7 +281,7 @@ export const PAGES_SERVICE: PageService[] = [
         },
       ],
       closing: [
-        'Une application mobile simple démarre à **6 000 €** et se livre en **2 à 4 mois**. Le montant exact est fixé par écrit après le cadrage, avant la première ligne de code — il ne bouge pas en cours de route, sauf si vous changez le périmètre.',
+        'Une application mobile simple démarre à **4 000 €** et se livre en **2 à 4 mois**. Le montant exact est fixé par écrit après le cadrage, avant la première ligne de code. Il ne change ensuite que si vous modifiez le périmètre.',
         'Je suis basé à Toulouse : on peut se voir pour le cadrage, puis tout se passe en visio et sur un lien de test que vous ouvrez sur votre téléphone. Je travaille aussi entièrement à distance pour des clients ailleurs en France.',
       ],
       crossLinks: [
@@ -306,7 +306,7 @@ export const PAGES_SERVICE: PageService[] = [
       {
         question: 'Combien coûte une application mobile ?',
         answer:
-        'À partir de 6 000 € pour une application simple, iPhone et Android compris. Le prix dépend du nombre d’écrans, des fonctions (paiement, notifications, hors-ligne) et du serveur nécessaire. Il est fixé par écrit après le cadrage et ne change pas ensuite.',
+        'À partir de 4 000 € pour une application simple, iPhone et Android compris. Le prix dépend du nombre d’écrans, des fonctions (paiement, notifications, hors-ligne) et du serveur nécessaire. Il est fixé par écrit après le cadrage et ne change pas ensuite.',
       },
       {
         question: 'Combien de temps faut-il pour développer une application ?',
@@ -321,7 +321,7 @@ export const PAGES_SERVICE: PageService[] = [
       {
         question: 'À qui appartient l’application à la fin ?',
         answer:
-        'À vous. Les comptes développeur Apple et Google sont ouverts au nom de votre entreprise, le code vous est remis avec sa documentation, et un autre développeur peut le reprendre.',
+        'À vous. Les comptes App Store, Google Play, hébergement et autres services nécessaires sont ouverts à votre nom. Vous conservez leurs accès, vos données et le code livré avec sa documentation. Le devis détaille la cession des droits sur les créations propres au projet et les licences des composants tiers.',
       },
     ],
   },
@@ -329,7 +329,7 @@ export const PAGES_SERVICE: PageService[] = [
     slug: 'logiciel-sur-mesure-toulouse',
     name: 'Logiciel sur mesure à Toulouse',
     description:
-        'Développeur indépendant à Toulouse : je conçois le logiciel métier qui remplace vos tableurs et vos ressaisies — planning, suivi de dossiers, devis, tableau de bord. À partir de 4 000 €, connecté à vos outils actuels.',
+        'Développeur indépendant à Toulouse : je conçois le logiciel métier qui remplace vos tableurs et vos ressaisies, par exemple pour les plannings, le suivi de dossiers, les devis ou les tableaux de bord. À partir de 4 000 €, connecté à vos outils actuels.',
     keywords: [
         'logiciel sur mesure Toulouse',
         'développement logiciel sur mesure',
@@ -339,24 +339,24 @@ export const PAGES_SERVICE: PageService[] = [
         'développeur logiciel Toulouse',
     ],
     hero: {
-      eyebrow: 'Logiciel métier · Toulouse',
+      eyebrow: 'Logiciel métier',
       title: 'Logiciel sur mesure à Toulouse',
-      highlight: 'l’outil qui fait exactement ce que votre activité demande',
+      highlight: 'Un outil construit autour de vos dossiers et de vos équipes.',
       description:
-        'Vous gérez votre activité avec trois tableurs, des mails et une bonne mémoire. Ça marche, jusqu’au jour où ça ne marche plus. Je développe l’outil qui correspond à **votre façon de travailler** — pas un logiciel générique auquel il faudrait vous adapter.',
+        'Je pars de vos fichiers, de vos étapes de travail et des droits de chacun. Le logiciel regroupe les informations à un endroit et remplace les ressaisies définies au cadrage. **À partir de 4 000 €**.',
       badges: ['À partir de 4 000 €', 'Remplace les tableurs', 'Connecté à vos outils', 'Accessible partout', 'Toulouse et à distance'],
     },
     expertise: {
       eyebrow: 'Ce que comprend un logiciel métier',
-      heading: 'Du tableur partagé à **l’outil qui tient la route**.',
+      heading: 'Comment je construis un logiciel métier.',
       intro:
-        'Un logiciel sur mesure n’est pas réservé aux grandes entreprises. Une TPE de cinq personnes qui perd deux heures par jour en ressaisies rentabilise le sien en quelques mois. Voici comment je procède.',
+        'Je commence par regarder les tâches répétées, les documents utilisés et les cas particuliers. Le périmètre se décide à partir de ce travail, pas d’une liste de fonctions standard.',
       cards: [
         {
           num: '01',
           title: 'Comprendre votre façon de travailler',
           body:
-        'Je commence par observer comment vous faites aujourd’hui — les fichiers, les étapes, les cas particuliers. L’outil doit épouser votre process, pas l’inverse.',
+        'Je commence par observer votre manière de travailler : les fichiers, les étapes et les cas particuliers. L’outil doit correspondre à votre processus.',
           bullets: [
         'Observation de l’existant',
         'Liste des tâches répétitives',
@@ -397,7 +397,7 @@ export const PAGES_SERVICE: PageService[] = [
         'Rôles et droits d’accès',
         'Espace client séparé si besoin',
         'Historique de qui a modifié quoi',
-        'Données personnelles conformes au RGPD',
+        'Collecte et durée de conservation des données définies au cadrage',
           ],
         },
         {
@@ -414,9 +414,9 @@ export const PAGES_SERVICE: PageService[] = [
         },
         {
           num: '06',
-          title: 'Évoluer sans tout casser',
+          title: 'Faire évoluer le logiciel',
           body:
-        'Votre activité change, l’outil doit suivre. Je construis le logiciel pour qu’on puisse y ajouter une fonction dans un an sans toucher au reste — et vous en êtes propriétaire.',
+        'Votre activité change, l’outil doit suivre. Je documente la structure du logiciel pour préparer ses évolutions. Chaque ajout fait l’objet d’une analyse et d’un chiffrage.',
           bullets: [
         'Ajouts par étapes, chiffrés à chaque fois',
         'Code documenté, reprenable par un autre',
@@ -426,8 +426,8 @@ export const PAGES_SERVICE: PageService[] = [
         },
       ],
       closing: [
-        'Un logiciel métier démarre à **4 000 €** pour un outil simple — un suivi de dossiers avec quelques écrans, par exemple. Le prix exact est fixé par écrit après le cadrage. Je livre par étapes : vous utilisez une première version utile rapidement, et on complète ensuite.',
-        '**BewasBeen**, une plateforme pour enseignants avec gestion de classes, exercices et suivi par élève, montre ce type de construction : des rôles distincts, des données structurées, des exports — et un usage quotidien par des gens qui ne sont pas informaticiens.',
+        'Un logiciel métier démarre à **4 000 €** pour un outil simple, comme un suivi de dossiers avec quelques écrans. Le prix exact est fixé par écrit après le cadrage. Je livre par étapes : vous utilisez une première version utile rapidement, et on complète ensuite.',
+        '**BewasBeen**, une plateforme pour enseignants avec gestion de classes, exercices et suivi par élève, montre ce type de construction : des rôles distincts, des données structurées et des exports pour un usage quotidien par des personnes qui ne sont pas informaticiennes.',
       ],
       crossLinks: [
         {
@@ -446,12 +446,12 @@ export const PAGES_SERVICE: PageService[] = [
       {
         question: 'Un logiciel sur mesure, n’est-ce pas trop cher pour une petite entreprise ?',
         answer:
-        'Un outil simple démarre à 4 000 €. Si vous ou vos salariés perdez une heure par jour en ressaisies, en recherches dans des tableurs ou en erreurs à rattraper, faites le calcul sur un an : c’est souvent rentabilisé en quelques mois.',
+        'Un outil simple démarre à 4 000 €. Pour estimer l’intérêt du projet, je relève avec vous le temps passé en ressaisies et le coût de vos outils actuels.',
       },
       {
         question: 'Pourquoi ne pas prendre un logiciel du commerce ?',
         answer:
-        'Si un logiciel existant fait 90 % de ce qu’il vous faut, prenez-le — je vous le dirai au premier échange. Le sur mesure se justifie quand votre façon de travailler ne rentre dans aucune case, ou quand les abonnements cumulés coûtent plus cher qu’un outil à vous.',
+        'Si un logiciel existant couvre votre besoin, je vous le dirai au premier échange. Je propose du sur mesure quand vos processus exigent des fonctions ou des connexions que ces outils ne proposent pas.',
       },
       {
         question: 'Combien de temps faut-il ?',
@@ -479,18 +479,18 @@ export const PAGES_SERVICE: PageService[] = [
         'reprise application React Native',
     ],
     hero: {
-      eyebrow: 'React Native · Toulouse',
+      eyebrow: 'React Native',
       title: 'Développeur React Native à Toulouse',
-      highlight: 'une application, deux plateformes, un seul code',
+      highlight: 'Une base de code partagée entre iPhone et Android.',
       description:
-        'React Native permet de développer **une seule fois** pour iPhone et Android. C’est ce que j’utilise pour la plupart des applications que je livre — et je vous explique ici pourquoi, ce que ça vous fait gagner, et les rares cas où je vous le déconseillerais.',
-      badges: ['React Native · Expo', 'TypeScript', 'iPhone et Android', 'Correctifs sans passer par les stores', 'Reprise d’app existante'],
+        'React Native permet de partager la majeure partie du code entre **iPhone et Android**. Je l’utilise lorsque les besoins des deux plateformes sont proches ; je signale dès le cadrage les fonctions qui demandent du code natif.',
+      badges: ['React Native et Expo', 'TypeScript', 'iPhone et Android', 'Reprise d’app existante'],
     },
     expertise: {
       eyebrow: 'Pourquoi React Native',
-      heading: 'Ce que React Native change pour vous, **concrètement**.',
+      heading: 'Ce que permet la base de code partagée.',
       intro:
-        'Ce n’est pas un choix de développeur pour se faire plaisir : c’est ce qui divise le budget et le délai par presque deux, tout en gardant une application que vos utilisateurs ne distinguent pas d’une app classique.',
+        'Le partage du code réduit le travail à dupliquer entre iPhone et Android. Les économies réelles dépendent des fonctions natives et des différences d’interface du projet.',
       cards: [
         {
           num: '01',
@@ -508,9 +508,9 @@ export const PAGES_SERVICE: PageService[] = [
           num: '02',
           title: 'Correctifs en quelques minutes',
           body:
-        'Avec Expo, je peux corriger un texte ou un bug sans repasser par la validation d’Apple, qui prend parfois plusieurs jours. Vos utilisateurs ont la correction à la prochaine ouverture.',
+        'Expo permet de diffuser certains correctifs compatibles avec la version installée. Les changements natifs passent par une nouvelle publication, selon les règles des stores.',
           bullets: [
-        'Petits correctifs déployés sans attente',
+        'Mode de publication adapté au correctif',
         'Retour en arrière possible',
         'Versions store pour les gros changements',
         'Historique de chaque publication',
@@ -523,7 +523,7 @@ export const PAGES_SERVICE: PageService[] = [
         'Boutons, listes, transitions : React Native utilise les composants réels de chaque système. L’application se comporte comme une app iPhone sur iPhone et comme une app Android sur Android.',
           bullets: [
         'Composants natifs, pas une page web déguisée',
-        'Gestes et animations fluides',
+        'Gestes et animations adaptés à l’usage',
         'Règles de chaque plateforme respectées',
         'Fonctionne hors connexion',
           ],
@@ -556,7 +556,7 @@ export const PAGES_SERVICE: PageService[] = [
           num: '06',
           title: 'Reprise d’une app React Native',
           body:
-        'Vous avez déjà une application React Native développée par quelqu’un d’autre ? Je l’audite, je mets à jour ses dépendances et je reprends la maintenance — ou je vous dis honnêtement si elle est à refaire.',
+        'Vous avez déjà une application React Native développée par quelqu’un d’autre ? Je l’audite et vérifie si ses dépendances peuvent être mises à jour. Je vous indique ensuite si une reprise est possible ou si une refonte est nécessaire.',
           bullets: [
         'Audit du code et des versions',
         'Mise à jour Expo et React Native',
@@ -567,7 +567,7 @@ export const PAGES_SERVICE: PageService[] = [
       ],
       closing: [
         'Je développe en **React Native et TypeScript**, avec un serveur Node.js et PostgreSQL derrière quand l’application en a besoin. C’est la même stack que sur le web : je peux livrer une application et son espace d’administration avec une seule logique, et un seul interlocuteur.',
-        'Une application React Native démarre à **6 000 €** et se livre en **2 à 4 mois**. Le prix est fixé par écrit au cadrage.',
+        'Une application React Native démarre à **4 000 €** et se livre en **2 à 4 mois**. Le prix est fixé par écrit au cadrage.',
       ],
       crossLinks: [
         {
@@ -591,7 +591,7 @@ export const PAGES_SERVICE: PageService[] = [
       {
         question: 'React Native, c’est moins bien qu’une « vraie » application ?',
         answer:
-        'Non. React Native produit une application installée depuis les stores, qui utilise les composants réels du téléphone. Des applications utilisées par des millions de personnes sont construites ainsi. La différence se joue sur des cas très spécifiques — jeux 3D, traitement vidéo lourd — que je vous signale au cadrage.',
+        'React Native produit une application installée depuis les stores et utilise les composants du téléphone. Certains besoins, comme la 3D intensive ou un traitement vidéo lourd, demandent une étude spécifique au cadrage.',
       },
       {
         question: 'Peut-on publier sur l’App Store et Google Play avec React Native ?',
@@ -601,7 +601,7 @@ export const PAGES_SERVICE: PageService[] = [
       {
         question: 'Que se passe-t-il quand Apple ou Google change quelque chose ?',
         answer:
-        'Chaque année, les systèmes évoluent et une application doit suivre pour rester en ligne. Je prévois ces mises à jour dans le suivi, et je vous dis à l’avance ce qu’elles coûtent. Rien ne vous tombe dessus sans prévenir.',
+        'Le suivi comprend les mises à jour prévues au contrat. Je vérifie les évolutions des systèmes et des stores, puis je chiffre les adaptations nécessaires.',
       },
       {
         question: 'Un autre développeur pourra-t-il reprendre l’application ?',
@@ -624,36 +624,36 @@ export const PAGES_SERVICE: PageService[] = [
         'validation App Store',
     ],
     hero: {
-      eyebrow: 'App Store et Google Play · Toulouse',
+      eyebrow: 'App Store et Google Play',
       title: 'Développement d\'application iOS et Android',
-      highlight: 'et tout ce qu’il faut pour être publié',
+      highlight: 'Je prépare l’application et ses comptes de publication.',
       description:
-        'Développer l’application est une chose ; la faire accepter par Apple, la publier sur Google Play et la garder en ligne malgré les mises à jour des systèmes en est une autre. Voici ce que je prends en charge, **de bout en bout**.',
+        'Je prépare les comptes, les fiches des stores, les tests et la soumission. Après publication, les mises à jour iOS et Android sont à prévoir dans le suivi.',
       badges: ['App Store', 'Google Play', 'Validation Apple', 'Mises à jour iOS et Android', 'Toulouse et à distance'],
     },
     expertise: {
       eyebrow: 'Publier, et rester publié',
-      heading: 'Ce qui se passe entre « l’app est finie » et **« l’app est dans le store »**.',
+      heading: 'Les étapes de publication sur les stores.',
       intro:
-        'C’est l’étape que les devis oublient et qui fait perdre des semaines : comptes développeur, règles d’Apple, fiches, permissions, tests sur appareils. Je la connais et je la prends en charge.',
+        'La publication fait partie du périmètre : comptes développeur, fiches, permissions, tests sur appareils et réponses aux éventuelles demandes des stores.',
       cards: [
         {
           num: '01',
           title: 'Comptes développeur',
           body:
-        'Apple et Google exigent chacun un compte, avec des justificatifs d’entreprise et des frais. Je les crée à votre nom — l’application vous appartient, pas à moi — et je vous explique ce qu’il faut renouveler.',
+        'Apple et Google exigent chacun un compte et des frais. Je vous accompagne dans leur création à votre nom ou à celui de votre entreprise : vous restez titulaire des comptes et gardez les accès.',
           bullets: [
-        'Compte Apple Developer (99 $ par an)',
-        'Compte Google Play (25 $ une fois)',
-        'Ouverts au nom de votre entreprise',
-        'Vous gardez tous les accès',
+        'Compte Apple Developer à votre nom',
+        'Compte Google Play à votre nom',
+        'Frais réglés directement aux plateformes',
+        'Vous gardez les accès administrateur',
           ],
         },
         {
           num: '02',
           title: 'Les règles d’Apple et de Google',
           body:
-        'Apple refuse des applications tous les jours : bouton de suppression de compte manquant, permissions mal expliquées, paiement hors des règles. Je conçois l’application pour passer du premier coup.',
+        'Je vérifie les règles de publication dès la conception : permissions, suppression de compte et paiements, selon les fonctions prévues. Je traite les demandes des stores si elles arrivent.',
           bullets: [
         'Règles de l’App Store appliquées dès la conception',
         'Textes de permissions rédigés correctement',
@@ -689,7 +689,7 @@ export const PAGES_SERVICE: PageService[] = [
           num: '05',
           title: 'Fiche store et visibilité',
           body:
-        'Nom, captures d’écran, description, mots-clés : la fiche fait la moitié des téléchargements. Je la prépare avec vous, en pensant à ce que vos clients tapent réellement.',
+        'Je prépare avec vous le nom, les captures, la description et les mots-clés demandés par les stores.',
           bullets: [
         'Captures d’écran par appareil',
         'Description et mots-clés',
@@ -699,19 +699,19 @@ export const PAGES_SERVICE: PageService[] = [
         },
         {
           num: '06',
-          title: 'Rester en ligne dans deux ans',
+          title: 'Entretenir l’application',
           body:
-        'Chaque automne, iOS et Android changent. Une application jamais mise à jour finit par planter ou par être retirée. Je prévois ces mises à jour, et je vous dis à l’avance ce qu’elles coûtent.',
+        'iOS, Android et les exigences des stores évoluent. Le suivi sert à vérifier la compatibilité de l’application et à planifier les adaptations nécessaires.',
           bullets: [
         'Mises à jour annuelles iOS et Android',
         'Dépendances tenues à jour',
         'Alertes de plantage traitées',
-        'Forfait de suivi clair, sans surprise',
+        'Périmètre et coût du suivi définis par écrit',
           ],
         },
       ],
       closing: [
-        'Je développe en **React Native**, ce qui me permet de livrer les deux versions à partir d’un seul code — le détail est sur la page dédiée. Le résultat : une application sur les deux stores à partir de **6 000 €**, en **2 à 4 mois**, avec un prix fixé par écrit avant de commencer.',
+        'Je développe en **React Native**, ce qui me permet de livrer les deux versions à partir d’un seul code. La page dédiée explique ce choix. Une application sur les deux stores démarre à **4 000 €** et se livre en **2 à 4 mois**, avec un prix fixé par écrit avant de commencer.',
         'Basé à Toulouse, je travaille aussi bien sur place qu’à distance.',
       ],
       crossLinks: [
@@ -741,12 +741,12 @@ export const PAGES_SERVICE: PageService[] = [
       {
         question: 'Dois-je créer moi-même les comptes développeur ?',
         answer:
-        'Non, je m’en charge, mais ils sont ouverts au nom de votre entreprise et vous en gardez les accès. Comptez 99 $ par an chez Apple et 25 $ une fois chez Google, réglés directement par vous.',
+        'Je vous accompagne dans leur création. Ils sont ouverts à votre nom ou à celui de votre entreprise, et vous en gardez les accès. Les frais en vigueur sont réglés directement aux plateformes.',
       },
       {
         question: 'Que se passe-t-il si Apple refuse l’application ?',
         answer:
-        'Un refus indique précisément la règle concernée. Je corrige et je resoumets, sans coût supplémentaire pour vous quand le motif relève de mon travail. C’est rare quand les règles sont appliquées dès la conception.',
+        'Je lis le motif du refus, corrige ce qui relève de mon travail et soumets une nouvelle version. Les éventuelles demandes des stores sont suivies jusqu’à la publication.',
       },
       {
         question: 'Combien coûte le maintien d’une application chaque année ?',

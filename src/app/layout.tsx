@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import 'vanilla-cookieconsent/dist/cookieconsent.css'
 import Footer from '@/components/Footer'
@@ -22,29 +22,21 @@ import {
   OPENING_HOURS,
   OWNER_NAME,
   OWNER_TITLE,
-  PERSON_PROFILES,
   POSTAL_CODE,
   PRICE_RANGE,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
   SOCIAL_PROFILES,
+  STREET_ADDRESS,
   WIKIDATA_QID,
 } from '@/lib/site'
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  weight: ['400', '500', '600', '700'],
-})
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-plus-jakarta',
-  weight: ['400', '500', '600', '700', '800'],
-})
+const bodyFont = localFont({ src: '../fonts/SourceSans3.ttf', variable: '--font-source', display: 'swap' })
+const headingFont = localFont({ src: '../fonts/Manrope.ttf', variable: '--font-manrope', display: 'swap' })
 const postalAddress: Record<string, string> = {
   '@type': 'PostalAddress',
+  streetAddress: STREET_ADDRESS,
   addressLocality: ADDRESS_LOCALITY,
   addressRegion: ADDRESS_REGION,
   addressCountry: ADDRESS_COUNTRY,
@@ -55,7 +47,6 @@ const organizationNode: Record<string, unknown> = {
   '@type': ['Organization', 'ProfessionalService'],
   '@id': `${SITE_URL}/#organization`,
   name: SITE_NAME,
-  legalName: SITE_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/web-app-manifest-512x512.png`,
   image: `${SITE_URL}/opengraph-image`,
@@ -87,7 +78,7 @@ const organizationNode: Record<string, unknown> = {
     {
       '@type': 'Offer',
       itemOffered: { '@type': 'Service', name: "Développement d'application mobile iOS et Android", serviceType: 'Développement application mobile', areaServed: 'Toulouse, Occitanie, France' },
-      priceSpecification: { '@type': 'PriceSpecification', minPrice: 6000, priceCurrency: 'EUR' },
+      priceSpecification: { '@type': 'PriceSpecification', minPrice: 4000, priceCurrency: 'EUR' },
       url: `${SITE_URL}/developpement-application-mobile-toulouse`,
     },
     {
@@ -126,7 +117,6 @@ const personNode = {
   telephone: CONTACT_PHONE,
   worksFor: { '@id': `${SITE_URL}/#organization` },
   address: postalAddress,
-  sameAs: PERSON_PROFILES,
   knowsAbout: ['Next.js', 'React', 'React Native', 'TypeScript', 'Node.js', 'PostgreSQL'],
 }
 
@@ -150,7 +140,7 @@ const structuredData = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
+    default: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
     template: '%s | Lodgic',
   },
   keywords: [
@@ -197,7 +187,7 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
+    title: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
     description:
       "Yann, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
     type: 'website',
@@ -207,7 +197,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Développeur web, mobile et logiciel à Toulouse — Lodgic',
+    title: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
     description:
       "Yann, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
   },
@@ -229,7 +219,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${plusJakartaSans.variable} font-inter bg-gray-50 text-gray-800`}
+        className={`${bodyFont.variable} ${headingFont.variable} bg-white text-[#17232A]`}
       >
         <CookieConsentBanner />
         <ConsentScripts />
