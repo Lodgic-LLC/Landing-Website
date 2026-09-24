@@ -39,6 +39,11 @@ button, summary { cursor: pointer; }
 .text-link { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); font-weight: 600; text-decoration: underline; text-decoration-color: #b7ceca; text-underline-offset: 6px; transition: text-decoration-color .18s; }
 .text-link:hover { text-decoration-color: currentColor; }
 .hero-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+.hero-showcase { padding-bottom: clamp(80px, 10vw, 130px); }
+.hero-showcase-link { position: relative; display: block; }
+.hero-showcase-desktop { display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 9px; box-shadow: 0 18px 42px -30px rgb(23 35 42 / .35); }
+.hero-showcase-phone { position: absolute; top: 34%; right: 4%; display: block; width: 27%; overflow: hidden; border: 5px solid var(--ink); border-radius: 22px; background: white; box-shadow: 0 24px 38px -20px rgb(23 35 42 / .55); }
+.hero-showcase-caption { max-width: 66%; margin-top: 16px; line-height: 1.5; }
 .project-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: center; }
 .project-layout + .project-layout { grid-template-columns: .8fr 1.2fr; margin-top: 80px; }
 .project-visual { display: block; overflow: hidden; border-radius: 9px; background: var(--surface-alt); padding: 24px; }

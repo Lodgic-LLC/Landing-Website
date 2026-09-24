@@ -13,11 +13,15 @@ export default function Hero() {
           <Link href="/realisations" className="text-link text-base">Voir mes réalisations</Link>
         </div>
       </div>
-      <figure className="min-w-0">
-        <Link href="/projets/bewasbeen" className="block rounded-[10px] bg-[#F4F6F7] p-4 md:p-7" aria-label="Découvrir le projet BewasBeen">
-          <Image src="/projets/bewasbeen/bwb_professor_dashboard.jpg" alt="Espace enseignant de BewasBeen : classes et listes de verbes" width={1960} height={1069} priority sizes="(max-width: 767px) 90vw, 52vw" className="w-full rounded-md border border-[#DCE3E6] shadow-[0_12px_32px_-16px_rgba(23,35,42,.2)]" />
+
+      <figure className="hero-showcase min-w-0">
+        <Link href="/projets/alliance-travaux" className="hero-showcase-link" aria-label="Découvrir le projet Alliance-TRAVAUX">
+          <Image src="/projets/alliance-travaux/at_accueil.jpg" alt="Page d’accueil du site Alliance-TRAVAUX sur ordinateur" width={1960} height={1069} priority sizes="(max-width: 767px) 90vw, 52vw" className="hero-showcase-desktop" />
+          <span className="hero-showcase-phone" aria-hidden="true">
+            <Image src="/projets/alliance-travaux/at_mobile_accueil.jpg" alt="" width={780} height={1688} sizes="(max-width: 767px) 28vw, 160px" className="w-full" />
+          </span>
         </Link>
-        <figcaption className="mt-4 flex flex-wrap justify-between gap-1 text-sm text-[#59666E]"><span><strong className="font-semibold text-[#17232A]">BewasBeen</strong>, espace enseignant</span><span>Conception et développement Next.js</span></figcaption>
+        <figcaption className="hero-showcase-caption text-sm text-[#59666E]"><strong className="font-semibold text-[#17232A]">Alliance-TRAVAUX</strong>, site web pour un collectif d’artisans à Toulouse.</figcaption>
       </figure>
     </div>
   </section>

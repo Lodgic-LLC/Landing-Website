@@ -2,11 +2,11 @@ import Link from 'next/link'
 import JsonLd, { faq } from '@/components/JsonLd'
 
 const questions = [
-  { question: 'Mon projet est encore peu défini. Par où commencer ?', answer: 'Décrivez qui utilisera le site ou l’application, ce que ces personnes doivent pouvoir faire et ce qui existe déjà. Cela suffit pour commencer l’échange. Nous précisons ensuite les fonctions à développer en premier.' },
-  { question: 'Peut-on commencer par une version plus petite ?', answer: 'Oui. Nous pouvons isoler un premier usage et reporter les fonctions secondaires. Le devis décrit ce qui entre dans cette version et ce qui reste pour une étape suivante.' },
+  { question: 'Mon projet est encore peu défini. Par où commencer ?', answer: 'Décrivez qui utilisera le site ou l’application, ce que ces personnes doivent pouvoir faire et ce qui existe déjà. Cela suffit pour commencer l’échange. Je vous aide ensuite à choisir les fonctions à développer en premier.' },
+  { question: 'Peut-on commencer par une version plus petite ?', answer: 'Oui. Je peux isoler avec vous un premier usage et reporter les fonctions secondaires. Le devis décrit ce qui entre dans cette version et ce qui reste pour une étape suivante.' },
   { question: 'Puis-je faire reprendre un site ou une application existante ?', answer: 'Présentez-moi la version actuelle et les difficultés rencontrées. L’état du code, les accès disponibles et les dépendances permettent de déterminer ce qui peut être conservé. Le périmètre de la reprise se définit après cet examen.' },
-  { question: 'Qu’est-ce que je récupère à la livraison ?', answer: 'Le code, vos données et la documentation prévus au devis. Les comptes d’hébergement, de domaine et de publication sur les stores sont à votre nom quand le projet en a besoin ; vous en gardez les accès. Nous vérifions ensemble les parcours convenus et la passation.' },
-  { question: 'Comment se passe le suivi après la mise en ligne ?', answer: 'Nous définissons les besoins de maintenance : mises à jour, corrections et surveillance des services concernés. Les nouvelles fonctions sont chiffrées séparément. Le devis ou le contrat de suivi précise les interventions couvertes.' },
+  { question: 'Qu’est-ce que je récupère à la livraison ?', answer: 'Le code, vos données et la documentation prévus au devis. Les comptes d’hébergement, de domaine et de publication sur les stores sont à votre nom quand le projet en a besoin ; vous en gardez les accès. Je vérifie avec vous les parcours convenus et je vous remets les éléments prévus.' },
+  { question: 'Comment se passe le suivi après la mise en ligne ?', answer: 'Je définis avec vous les besoins de maintenance : mises à jour, corrections et surveillance des services concernés. Les nouvelles fonctions sont chiffrées séparément. Le devis ou le contrat de suivi précise les interventions couvertes.' },
   { question: 'Faut-il être à Toulouse ou connaître la technique ?', answer: 'Je travaille depuis Toulouse et également à distance. Vous apportez votre connaissance du métier ; je vous explique les choix techniques et leurs conséquences sur le budget, les délais et l’usage.' },
 ]
 

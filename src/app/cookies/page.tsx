@@ -35,7 +35,7 @@ const sections: SectionLegale[] = [
   },
   {
     titre: 'En savoir plus',
-    contenu: <>La <Link href="/politique-confidentialite" className="text-link">politique de confidentialité</Link> explique les données susceptibles d’être traitées, leurs destinataires et vos droits. Pour nous contacter, consultez les <Link href="/mentions-legales" className="text-link">mentions légales</Link>.</>,
+    contenu: <>La <Link href="/politique-confidentialite" className="text-link">politique de confidentialité</Link> explique les données susceptibles d’être traitées, leurs destinataires et vos droits. Pour me contacter, consultez les <Link href="/mentions-legales" className="text-link">mentions légales</Link>.</>,
   },
 ]
 

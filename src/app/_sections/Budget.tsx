@@ -2,9 +2,9 @@ import Link from 'next/link'
 import { PAGES_SERVICE } from '@/content/pages-service'
 
 const prestations = [
-  { slug: 'creation-site-internet-toulouse', title: 'Site vitrine', scope: 'Quelques pages pour présenter votre activité et recevoir des demandes.', delay: '1 à 3 semaines' },
-  { slug: 'developpement-application-mobile-toulouse', title: 'Application mobile', scope: 'Une première version simple pour iPhone et Android.', delay: '2 à 4 mois' },
-  { slug: 'logiciel-sur-mesure-toulouse', title: 'Outil métier', scope: 'Un premier périmètre pour suivre vos dossiers ou centraliser vos données.', delay: 'Planning défini sur mesure à chaque projet' },
+  { slug: 'creation-site-internet-toulouse', title: 'Site vitrine', scope: 'Un ensemble de pages cohérentes, pensé pour promouvoir votre activité et convertir les visites en demandes.', delay: '1 à 3 semaines' },
+  { slug: 'developpement-application-mobile-toulouse', title: 'Application mobile', scope: 'Une application sur mesure pour iPhone et Android, publiée sur le Google Play Store et l’App Store.', delay: '2 à 4 mois' },
+  { slug: 'logiciel-sur-mesure-toulouse', title: 'Outil métier', scope: 'Une solution interne qui centralise vos informations, réduit les ressaisies et fait gagner du temps à votre équipe.', delay: 'Planning défini sur mesure à chaque projet' },
 ]
 
 export default function Budget() {
@@ -13,7 +13,7 @@ export default function Budget() {
       <div className="container-site">
         <div className="grid gap-6 md:grid-cols-2 md:gap-20">
           <div><p className="eyebrow">Budget</p><h2 id="budget-title" className="title-section mt-4">Prix de départ et délais habituels.</h2></div>
-          <p className="self-end text-[#59666E]">Ces montants correspondent à un périmètre simple. Le nombre d’écrans, les connexions à vos outils et les données à reprendre déterminent le devis. Le planning tient aussi compte des contenus à fournir et des validations.</p>
+          <p className="self-end text-[#59666E]">Ces prix sont des points de départ. Le nombre de pages ou d’écrans, les connexions à vos outils et les données à reprendre déterminent le devis. Le planning tient aussi compte des contenus à fournir et des validations.</p>
         </div>
         <dl className="mt-10 border-t border-[#DCE3E6]">
           {prestations.map(item => {

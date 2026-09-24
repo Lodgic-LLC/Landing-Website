@@ -58,7 +58,7 @@ export const PAGES_SERVICE: PageService[] = [
       title: 'Création de site internet à Toulouse',
       highlight: 'Un site que vos clients comprennent et que vous pouvez modifier.',
       description:
-        'Je structure les pages autour de vos métiers et de vos clients. Je prévois un accès direct au contact ou au devis, puis je mesure le chargement sur téléphone à la livraison. **À partir de 1 500 €**.',
+        'Je conçois un ensemble de pages cohérentes pour présenter votre activité et transformer les visites en demandes. Je prévois un accès direct au contact ou au devis, puis je mesure le chargement sur téléphone à la livraison. **À partir de 1 500 €**.',
       badges: ['À partir de 1 500 €', '1 à 3 semaines', 'Performances mesurées', 'Textes modifiables'],
     },
     expertise: {
@@ -141,7 +141,7 @@ export const PAGES_SERVICE: PageService[] = [
         },
       ],
       closing: [
-        'Un site vitrine démarre à **1 500 €** et se livre en **1 à 3 semaines** pour un périmètre simple. Le prix dépend du nombre de pages et des fonctions (prise de rendez-vous, espace client, catalogue) : il est fixé par écrit après un premier échange.',
+        'Un site vitrine démarre à **1 500 €** et se livre en **1 à 3 semaines** pour le périmètre défini au devis. Le prix dépend du nombre de pages et des fonctions (prise de rendez-vous, espace client, catalogue) : il est fixé par écrit après un premier échange.',
         'Le site d’**Alliance-TRAVAUX**, un collectif d’artisans toulousains, est un exemple de ce que je livre : 31 pages, formulaire de devis, référencement local sur 16 communes.',
       ],
       crossLinks: [
@@ -161,12 +161,12 @@ export const PAGES_SERVICE: PageService[] = [
       {
         question: 'Combien coûte un site internet ?',
         answer:
-        'À partir de 1 500 € pour un site vitrine de quelques pages avec formulaire de contact. Un site avec prise de rendez-vous, espace client ou catalogue coûte plus ; je vous donne un prix ferme par écrit après un premier échange.',
+        'À partir de 1 500 € pour un ensemble de pages cohérentes, avec un parcours vers le contact. Une prise de rendez-vous, un espace client ou un catalogue modifient le périmètre ; je vous donne un prix ferme par écrit après un premier échange.',
       },
       {
         question: 'Combien de temps pour créer un site ?',
         answer:
-        'Entre 3 et 5 semaines pour un site vitrine, à partir du moment où j’ai vos textes et vos photos. Vous voyez le site avancer sur un lien privé et vous corrigez au fur et à mesure.',
+        'Entre 1 et 3 semaines pour un site vitrine, à partir du moment où j’ai vos textes et vos photos. Vous voyez le site avancer sur un lien privé et vous corrigez au fur et à mesure.',
       },
       {
         question: 'Serai-je premier sur Google ?',
@@ -198,8 +198,8 @@ export const PAGES_SERVICE: PageService[] = [
       title: 'Développement d\'application mobile à Toulouse',
       highlight: 'Une application sur iPhone et Android, du cadrage à la publication.',
       description:
-        'Je définis les parcours avec vous, développe l’application pour **iPhone et Android**, la teste sur appareil et prépare sa publication sur les stores. Le périmètre et le prix sont écrits avant le code.',
-      badges: ['iPhone et Android', 'À partir de 4 000 €', '2 à 4 mois', 'Publication sur les stores', 'Toulouse et à distance'],
+        'Je définis les parcours avec vous, développe l’application pour **iPhone et Android**, la teste sur appareil et la publie sur **le Google Play Store et l’App Store**. Le périmètre et le prix sont écrits avant le code.',
+      badges: ['iPhone et Android', 'À partir de 4 000 €', '2 à 4 mois', 'Google Play Store et App Store', 'Toulouse et à distance'],
     },
     expertise: {
       eyebrow: 'Ce que comprend le développement',
@@ -211,12 +211,12 @@ export const PAGES_SERVICE: PageService[] = [
           num: '01',
           title: 'Cadrage et maquettes',
           body:
-        'On liste ce que l’application doit faire, par ordre d’importance. Je dessine les écrans principaux avant de coder : vous validez le parcours avant le développement.',
+        'Je classe avec vous les fonctions par ordre d’importance. Je dessine les écrans principaux avant de coder : vous validez le parcours avant le développement.',
           bullets: [
         'Périmètre écrit et validé ensemble',
         'Maquettes des écrans clés',
         'Estimation ferme et planning',
-        'Ce qu’on garde pour une version 2',
+        'Fonctions prévues après le lancement',
           ],
         },
         {
@@ -281,8 +281,8 @@ export const PAGES_SERVICE: PageService[] = [
         },
       ],
       closing: [
-        'Une application mobile simple démarre à **4 000 €** et se livre en **2 à 4 mois**. Le montant exact est fixé par écrit après le cadrage, avant la première ligne de code. Il ne change ensuite que si vous modifiez le périmètre.',
-        'Je suis basé à Toulouse : on peut se voir pour le cadrage, puis tout se passe en visio et sur un lien de test que vous ouvrez sur votre téléphone. Je travaille aussi entièrement à distance pour des clients ailleurs en France.',
+        'Une application mobile démarre à **4 000 €** et se livre en **2 à 4 mois**, publication sur le Google Play Store et l’App Store comprise dans le périmètre prévu. Le montant exact est fixé par écrit après le cadrage, avant la première ligne de code. Il ne change ensuite que si vous modifiez le périmètre.',
+        'Je suis basé à Toulouse : je peux vous rencontrer pour le cadrage, puis poursuivre les échanges en visio et vous donner accès aux versions de test sur votre téléphone. Je travaille aussi entièrement à distance pour des clients ailleurs en France.',
       ],
       crossLinks: [
         {
@@ -306,7 +306,7 @@ export const PAGES_SERVICE: PageService[] = [
       {
         question: 'Combien coûte une application mobile ?',
         answer:
-        'À partir de 4 000 € pour une application simple, iPhone et Android compris. Le prix dépend du nombre d’écrans, des fonctions (paiement, notifications, hors-ligne) et du serveur nécessaire. Il est fixé par écrit après le cadrage et ne change pas ensuite.',
+        'À partir de 4 000 € pour une application iPhone et Android, avec publication sur le Google Play Store et l’App Store. Le prix dépend du nombre d’écrans, des fonctions (paiement, notifications, hors-ligne) et du serveur nécessaire. Il est fixé par écrit après le cadrage.',
       },
       {
         question: 'Combien de temps faut-il pour développer une application ?',
@@ -329,7 +329,7 @@ export const PAGES_SERVICE: PageService[] = [
     slug: 'logiciel-sur-mesure-toulouse',
     name: 'Logiciel sur mesure à Toulouse',
     description:
-        'Développeur indépendant à Toulouse : je conçois le logiciel métier qui remplace vos tableurs et vos ressaisies, par exemple pour les plannings, le suivi de dossiers, les devis ou les tableaux de bord. À partir de 4 000 €, connecté à vos outils actuels.',
+        'Développeur indépendant à Toulouse : je conçois des outils internes sur mesure pour centraliser vos informations, relier vos services et réduire les ressaisies au quotidien. À partir de 4 000 €.',
     keywords: [
         'logiciel sur mesure Toulouse',
         'développement logiciel sur mesure',
@@ -341,9 +341,9 @@ export const PAGES_SERVICE: PageService[] = [
     hero: {
       eyebrow: 'Logiciel métier',
       title: 'Logiciel sur mesure à Toulouse',
-      highlight: 'Un outil construit autour de vos dossiers et de vos équipes.',
+      highlight: 'Une solution interne construite autour du travail de votre équipe.',
       description:
-        'Je pars de vos fichiers, de vos étapes de travail et des droits de chacun. Le logiciel regroupe les informations à un endroit et remplace les ressaisies définies au cadrage. **À partir de 4 000 €**.',
+        'Je pars de vos fichiers et de votre manière de travailler pour centraliser les informations, relier les outils nécessaires et réduire les tâches répétitives. L’objectif est de faire gagner du temps à votre équipe au quotidien. **À partir de 4 000 €**.',
       badges: ['À partir de 4 000 €', 'Remplace les tableurs', 'Connecté à vos outils', 'Accessible partout', 'Toulouse et à distance'],
     },
     expertise: {
@@ -426,7 +426,7 @@ export const PAGES_SERVICE: PageService[] = [
         },
       ],
       closing: [
-        'Un logiciel métier démarre à **4 000 €** pour un outil simple, comme un suivi de dossiers avec quelques écrans. Le prix exact est fixé par écrit après le cadrage. Je livre par étapes : vous utilisez une première version utile rapidement, et on complète ensuite.',
+        'Un logiciel métier démarre à **4 000 €**. Le prix dépend des tâches à réunir, des données à reprendre et des connexions avec vos outils existants. Je fixe le périmètre et le planning par écrit, puis je livre par étapes pour que votre équipe puisse utiliser les fonctions prioritaires.',
         '**BewasBeen**, une plateforme pour enseignants avec gestion de classes, exercices et suivi par élève, montre ce type de construction : des rôles distincts, des données structurées et des exports pour un usage quotidien par des personnes qui ne sont pas informaticiennes.',
       ],
       crossLinks: [
@@ -446,7 +446,7 @@ export const PAGES_SERVICE: PageService[] = [
       {
         question: 'Un logiciel sur mesure, n’est-ce pas trop cher pour une petite entreprise ?',
         answer:
-        'Un outil simple démarre à 4 000 €. Pour estimer l’intérêt du projet, je relève avec vous le temps passé en ressaisies et le coût de vos outils actuels.',
+        'Un outil métier démarre à 4 000 €. Pour estimer l’intérêt du projet, je relève avec vous le temps passé en ressaisies et le coût de vos outils actuels.',
       },
       {
         question: 'Pourquoi ne pas prendre un logiciel du commerce ?',
@@ -456,7 +456,7 @@ export const PAGES_SERVICE: PageService[] = [
       {
         question: 'Combien de temps faut-il ?',
         answer:
-        'Quelques semaines pour une première version utile, selon le périmètre. Je livre par étapes pour que vous commenciez à vous en servir tôt, et le cadrage fixe le calendrier précis avant de démarrer.',
+        'Le planning est défini sur mesure après le cadrage. Il dépend des fonctions, des données à reprendre et des outils à connecter. Je livre par étapes pour que votre équipe puisse utiliser les fonctions prioritaires.',
       },
       {
         question: 'Que devient le logiciel si vous arrêtez ?',

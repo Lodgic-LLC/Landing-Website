@@ -234,15 +234,15 @@ export const PROJETS: Projet[] = [
     ],
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
     screens: [
-      { src: "/projets/bewasbeen/bwb_drag_and_drop_mode.jpg", alt: "Exercice de verbes en glisser-déposer", caption: "Entraînement en glisser-déposer" },
-      { src: "/projets/bewasbeen/bwb_typing_mode.jpg", alt: "Exercice de verbes au clavier", caption: "Entraînement au clavier" },
-      { src: "/projets/bewasbeen/bwb_audio_mode.jpg", alt: "Exercice audio", caption: "Entraînement audio" },
-      { src: "/projets/bewasbeen/bwb_create_verb_list.jpg", alt: "Création de listes de verbes", caption: "Listes personnalisées" },
       {
         src: "/projets/bewasbeen/bwb_professor_dashboard.jpg",
         alt: "Tableau de bord enseignant de BewasBeen",
         caption: "Tableau de bord enseignant",
       },
+      { src: "/projets/bewasbeen/bwb_drag_and_drop_mode.jpg", alt: "Exercice de verbes en glisser-déposer", caption: "Entraînement en glisser-déposer" },
+      { src: "/projets/bewasbeen/bwb_typing_mode.jpg", alt: "Exercice de verbes au clavier", caption: "Entraînement au clavier" },
+      { src: "/projets/bewasbeen/bwb_audio_mode.jpg", alt: "Exercice audio", caption: "Entraînement audio" },
+      { src: "/projets/bewasbeen/bwb_create_verb_list.jpg", alt: "Création de listes de verbes", caption: "Listes personnalisées" },
       {
         src: "/projets/bewasbeen/bwb_play_modes.jpg",
         alt: "Choix du mode d'exercice sur BewasBeen",
