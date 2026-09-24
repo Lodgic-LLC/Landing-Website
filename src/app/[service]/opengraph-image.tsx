@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import { imagePartage, TAILLE_OG } from '@/lib/og'
 import { PAGES_SERVICE, trouverPageService } from '@/content/pages-service'
 
-export const alt = 'Lodgic — développeur web, mobile et logiciel à Toulouse'
+export const alt = 'Lodgic : développeur web, mobile et logiciel à Toulouse'
 export const size = TAILLE_OG
 export const contentType = 'image/png'
 
@@ -19,6 +19,6 @@ export default async function Image({ params }: { params: Promise<{ service: str
   const promesse = page.hero.highlight
   return imagePartage({
     titre: page.name,
-    sousTitre: promesse.charAt(0).toUpperCase() + promesse.slice(1) + '.',
+    sousTitre: promesse.charAt(0).toUpperCase() + promesse.slice(1).replace(/[.]+$/, '') + '.',
   })
 }

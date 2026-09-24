@@ -1,0 +1,46 @@
+PRÉPARER MON PROJET : LODGIC
+Yann, ingénieur indépendant à Toulouse
+https://www.lodgic-dev.com
+
+Cette trame est un point de départ. Laissez vides les sujets encore ouverts.
+Ne joignez pas de mots de passe, de clés d’accès ou de données personnelles de vos utilisateurs.
+
+PROJET ET ACTIVITÉ
+Nom du projet :
+Votre activité :
+Lien du site ou de l’application actuelle, si disponible :
+
+USAGE
+Qui utilisera le projet ?
+Quelle tâche doit devenir possible ou plus simple ?
+Comment cette tâche est-elle réalisée aujourd’hui ?
+
+PREMIÈRE VERSION
+Fonctions indispensables :
+Fonctions qui peuvent attendre :
+Exemple de parcours à tester de bout en bout :
+
+EXISTANT
+Contenus et visuels disponibles :
+Code ou outil existant à reprendre :
+Données à importer et formats utilisés :
+Services ou logiciels à connecter :
+
+CONTRAINTES
+Date souhaitée et raison de cette échéance :
+Enveloppe envisagée, si définie :
+Appareils utilisés (ordinateur, téléphone, tablette) :
+Rôles des utilisateurs et accès nécessaires :
+Contraintes particulières :
+
+VALIDATION
+Comment vérifier que le projet remplit son rôle ?
+Qui testera et validera les étapes ?
+
+APRÈS LIVRAISON
+Qui modifiera les contenus et administrera le projet ?
+Besoins de formation, de documentation et de maintenance :
+
+QUESTIONS RESTANTES
+
+Pour en discuter : contact@lodgic-dev.com
