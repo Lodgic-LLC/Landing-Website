@@ -31,7 +31,7 @@ export const filAriane = (pages: { name: string; url: string }[]) => ({
   })),
 })
 
-/** Questions fréquentes, affichables directement dans les résultats Google. */
+/** Questions fréquentes décrivant le contenu visible de la page. */
 export const faq = (questions: { question: string; answer: string }[]) => ({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',

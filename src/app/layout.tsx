@@ -140,32 +140,17 @@ const structuredData = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
+    default: 'Développeur d’applications mobiles iOS/Android et web à Toulouse | Lodgic',
     template: '%s | Lodgic',
   },
-  keywords: [
-    'Développeur Toulouse',
-    'Développeur web Toulouse',
-    'Développeur freelance Toulouse',
-    'Création site internet Toulouse',
-    'Développeur application mobile Toulouse',
-    'Développement logiciel sur mesure Toulouse',
-    'Ingénieur informatique Toulouse',
-    'Développeur React Native Toulouse',
-    'Développeur Next.js Toulouse',
-    'Site web sur mesure Toulouse',
-    'Application mobile sur mesure Toulouse',
-    'Logiciel métier sur mesure',
-    'Lodgic',
-  ],
   description:
-    "Yann, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
+    SITE_DESCRIPTION,
   authors: [{ name: 'Yann', url: SITE_URL }],
   creator: 'Yann',
   publisher: 'Lodgic',
   category: 'Développement web et mobile',
   classification: 'Business',
-  referrer: 'origin-when-cross-origin',
+  referrer: 'strict-origin-when-cross-origin',
   robots: {
     index: true,
     follow: true,
@@ -179,17 +164,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon.svg?v=2', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png?v=2', sizes: '96x96', type: 'image/png' },
     ],
-    shortcut: '/favicon.ico',
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: '/favicon.ico?v=2',
+    apple: [{ url: '/apple-touch-icon.png?v=2', sizes: '180x180', type: 'image/png' }],
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
-    description:
-      "Yann, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
+    title: 'Développeur d’applications mobiles iOS/Android et web à Toulouse | Lodgic',
+    description: SITE_DESCRIPTION,
     type: 'website',
     locale: 'fr_FR',
     url: SITE_URL,
@@ -197,9 +181,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
-    description:
-      "Yann, ingénieur en informatique à Toulouse. Je conçois et développe sites web, applications mobiles et logiciels sur mesure pour les TPE, PME et porteurs de projet.",
+    title: 'Développeur d’applications mobiles iOS/Android et web à Toulouse | Lodgic',
+    description: SITE_DESCRIPTION,
   },
 }
 

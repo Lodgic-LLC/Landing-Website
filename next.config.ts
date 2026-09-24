@@ -1,5 +1,7 @@
 import type { NextConfig } from 'next'
 
+const isDevelopment = process.env.NODE_ENV === 'development'
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Racine explicite : le dossier parent contient un package-lock.json parasite
@@ -73,7 +75,7 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://*.vercel-insights.com https://*.googletagmanager.com https://*.google-analytics.com https://analytics.ahrefs.com",
+              `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ''} https://va.vercel-scripts.com https://*.vercel-insights.com https://www.googletagmanager.com https://analytics.ahrefs.com`,
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' data: https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",

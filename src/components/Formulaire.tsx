@@ -6,6 +6,14 @@ import { trackConversion } from '@/lib/analytics'
 
 /** Adresse d'envoi Formsubmit, définie dans .env.local (voir .env.example). */
 const ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? ''
+const formEndpointIsValid = (() => {
+  try {
+    const url = new URL(ENDPOINT)
+    return url.origin === 'https://formsubmit.co' && url.pathname.startsWith('/ajax/')
+  } catch {
+    return false
+  }
+})()
 
 type FieldName = 'name' | 'email' | 'phone' | 'subject' | 'message'
 
@@ -69,6 +77,14 @@ export default function Formulaire({
     const found = validate()
     setErrors(found)
     if (Object.keys(found).length > 0) return
+
+    if (!formEndpointIsValid) {
+      setStatus({
+        ok: false,
+        message: "Le formulaire n'est pas disponible pour le moment. Écrivez-moi directement à contact@lodgic-dev.com.",
+      })
+      return
+    }
 
     setSending(true)
     setStatus(null)

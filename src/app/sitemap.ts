@@ -1,28 +1,20 @@
-import { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/site";
-import { PAGES_SERVICE } from "@/content/pages-service";
+import type { MetadataRoute } from 'next'
+import { SITE_URL } from '@/lib/site'
+import { PAGES_SERVICE } from '@/content/pages-service'
 
-const BUILD_DATE = new Date();
-
-const route = (
-  path: string,
-  priority: number,
-  changeFrequency: "weekly" | "monthly" | "yearly" = "monthly",
-) => ({
+// Ne pas annoncer une date de modification sans date réelle propre à chaque page.
+const route = (path: string) => ({
   url: path ? `${SITE_URL}/${path}` : SITE_URL,
-  lastModified: BUILD_DATE,
-  changeFrequency,
-  priority,
-});
+})
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    route("", 1.0, "weekly"),
-    route("realisations", 0.9),
-    route("contact", 0.9),
-    route("preparer-son-projet", 0.7),
-    route("projets/alliance-travaux", 0.8),
-    route("projets/bewasbeen", 0.8),
-    ...PAGES_SERVICE.map((page) => route(page.slug, 0.85)),
-  ];
+    route(''),
+    route('realisations'),
+    route('contact'),
+    route('preparer-son-projet'),
+    route('projets/alliance-travaux'),
+    route('projets/bewasbeen'),
+    ...PAGES_SERVICE.map((page) => route(page.slug)),
+  ]
 }

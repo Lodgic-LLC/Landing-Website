@@ -1,4 +1,4 @@
-# Lodgic : Yann, développeur web, mobile et logiciel à Toulouse
+# Lodgic : Yann, développeur d’applications mobiles et web à Toulouse
 
 > Ingénieur en informatique indépendant basé à Toulouse. Je conçois et développe des sites web, des applications mobiles et des logiciels métier sur mesure pour des TPE, PME et porteurs de projet, du cadrage à la mise en ligne. Un seul interlocuteur : la personne qui cadre le projet est celle qui écrit le code.
 
@@ -11,7 +11,7 @@
 - Téléphone : +33 6 43 51 71 57
 - Services : sites web (à partir de 1 500 €), applications mobiles iOS et Android (à partir de 4 000 €), logiciels métier sur mesure (à partir de 4 000 €)
 - Technologies : Next.js, React, React Native, TypeScript, Node.js, PostgreSQL
-- Délais habituels : site vitrine 1 à 3 semaines, application mobile 2 à 4 mois ; réponse à toute demande sous 24 heures
+- Délais habituels : site vitrine 1 à 3 semaines, application mobile 2 à 4 mois
 
 ## Pages
 

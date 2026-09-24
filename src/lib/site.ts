@@ -2,7 +2,7 @@ export const SITE_URL = 'https://www.lodgic-dev.com'
 export const SITE_NAME = 'Lodgic'
 
 export const SITE_DESCRIPTION =
-  "Yann, ingénieur en informatique à Toulouse. Conception et développement de sites web, d'applications mobiles et de logiciels sur mesure pour les TPE, PME et porteurs de projet."
+  "Yann, développeur indépendant à Toulouse. Applications mobiles iOS et Android en React Native, sites web et outils métier en Next.js."
 export const OWNER_NAME = 'Yann'
 export const OWNER_TITLE = 'Ingénieur en informatique, développeur web, mobile et logiciel'
 

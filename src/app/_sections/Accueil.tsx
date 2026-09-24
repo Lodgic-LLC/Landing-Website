@@ -6,8 +6,8 @@ export default function Hero() {
     <div className="container-site hero-layout">
       <div>
         <p className="mb-5 text-base font-semibold text-[#246B66]">Yann, ingénieur indépendant</p>
-        <h1 id="hero-title" className="title-hero max-w-[18ch]">Développeur d’applications web et mobiles à Toulouse.</h1>
-        <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#59666E] md:text-xl">Je crée des sites web, des applications mobiles et des outils métier. Du cadrage à la mise en ligne, vous échangez directement avec moi.</p>
+        <h1 id="hero-title" className="title-hero max-w-[18ch]">Développeur d’applications mobiles et web à Toulouse.</h1>
+        <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#59666E] md:text-xl">Je développe des applications iOS et Android, ainsi que des sites web et des outils métier. Du premier contact à la mise en ligne, vous échangez directement avec moi.</p>
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-5">
           <Link href="/contact" className="btn-primary">Parlons de votre projet <span aria-hidden>↗</span></Link>
           <Link href="/realisations" className="text-link text-base">Voir mes réalisations</Link>

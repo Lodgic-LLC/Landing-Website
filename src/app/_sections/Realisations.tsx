@@ -14,7 +14,7 @@ export default function Realisations({ introduction = true }: { introduction?: b
           <h3 className="mt-3 text-3xl">Alliance-TRAVAUX</h3>
           <p className="mt-4 text-[#59666E]">Refonte du site d’un collectif d’artisans à Toulouse. J’ai repris les pages métier, les parcours vers le devis et le chargement des pages.</p>
           <p className="mt-6 text-sm text-[#59666E]">Affichage de la page d’accueil</p><p className="mt-1 text-3xl font-semibold text-[#246B66]">5,8 s <span className="mx-2 text-[#59666E]" aria-label="à">→</span> 0,7 s</p>
-          <dl className="metrics"><div><dt>Performance ordinateur</dt><dd>98/100</dd></div><div><dt>Accessibilité</dt><dd>96/100</dd></div></dl>
+          <dl className="metrics metrics-alliance"><div><dt>Performance ordinateur</dt><dd>98/100</dd></div><div><dt>Accessibilité</dt><dd>96/100</dd></div><div><dt>Navigation agentique</dt><dd>3/3</dd></div></dl>
           <Link href={alliance.href} className="text-link mt-6 text-base">Voir le projet et les mesures <span aria-hidden>→</span></Link>
         </div>
       </article>
