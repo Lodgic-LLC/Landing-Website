@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"><rect width="512" height="512" rx="112" fill="#C2542D"/><path d="M168 128h64v192h120v64H168z" fill="#FFFFFF"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Lodgic">
+  <rect width="512" height="512" rx="112" fill="#246B66"/>
+  <path d="M160 132h64v190h164v62H160z" fill="#FFFFFF"/>
+  <rect x="330" y="142" width="56" height="56" rx="8" fill="#B8E1DB"/>
+</svg>

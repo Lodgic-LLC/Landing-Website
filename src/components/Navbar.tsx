@@ -32,7 +32,7 @@ export default function Navbar() {
       </Link>
 
       <div className="hidden items-center gap-5 lg:flex xl:gap-6">
-        {links.map(link => <Link key={link.href} href={link.href} aria-current={pathname === link.href ? 'page' : undefined} className="whitespace-nowrap text-[15px] text-[#59666E] hover:text-[#246B66] aria-[current=page]:text-[#246B66]">{link.label}</Link>)}
+        {links.map(link => <Link key={link.href} href={link.href} aria-current={pathname === link.href ? 'page' : undefined} className="nav-link whitespace-nowrap text-[15px] text-[#59666E]">{link.label}</Link>)}
       </div>
 
       <div className="hidden shrink-0 items-center gap-4 lg:flex">

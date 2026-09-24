@@ -5,17 +5,15 @@ interface SeoMetadataInput {
   path: string
   title: string
   description: string
-  keywords: string[]
 }
 
 /** Métadonnées complètes d'une page d'atterrissage : canonique, Open Graph, Twitter. */
-export function buildSeoMetadata({ path, title, description, keywords }: SeoMetadataInput): Metadata {
+export function buildSeoMetadata({ path, title, description }: SeoMetadataInput): Metadata {
   const url = `${SITE_URL}${path}`
   const fullTitle = `${title} | ${SITE_NAME}`
   return {
     title,
     description,
-    keywords,
     alternates: { canonical: url },
     openGraph: {
       title: fullTitle,

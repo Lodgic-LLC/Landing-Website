@@ -20,7 +20,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${page.slug}`,
     title: page.name,
     description: page.description,
-    keywords: page.keywords,
   })
 }
 

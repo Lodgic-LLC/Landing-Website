@@ -14,57 +14,26 @@ const Questions = dynamic(() => import('@/app/_sections/Questions'))
 const Contact = dynamic(() => import('@/app/_sections/Contact'))
 
 export const metadata: Metadata = {
-  title: 'Développeur d’applications web et mobiles à Toulouse',
+  title: 'Développeur d’applications mobiles iOS/Android et web à Toulouse',
   description:
-    "Yann, développeur d’applications web et mobiles à Toulouse. Sites web, applications mobiles et outils métier conçus et développés en direct avec vous.",
+    "Yann, développeur indépendant à Toulouse. Applications mobiles iOS et Android en React Native, sites web et outils métier en Next.js. Échange direct, du cadrage à la mise en ligne.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
+    title: 'Développeur d’applications mobiles iOS/Android et web à Toulouse | Lodgic',
     description:
-      "Ingénieur en informatique à Toulouse, je conçois et développe des sites web et applications mobiles sur mesure (React.js, Next.js, React Native), de l'architecture à la mise en production.",
+      "Yann, développeur indépendant à Toulouse. Applications mobiles iOS et Android en React Native, sites web et outils métier en Next.js.",
     url: SITE_URL,
     siteName: 'Lodgic',
     locale: 'fr_FR',
     type: 'website',
   },
-  keywords: [
-    'Ingénieur informatique Toulouse',
-    'Développeur Web et Mobile Toulouse',
-    'Développeur freelance Toulouse',
-    'Création site web Toulouse',
-    'Création application mobile Toulouse',
-    'Développeur web Toulouse',
-    'Développeur mobile Toulouse',
-    'Site web sur mesure Toulouse',
-    'Application mobile sur mesure Toulouse',
-    'Développement application Android Toulouse',
-    'Développement application iOS Toulouse',
-    'Développeur React.js Toulouse',
-    'Développeur React Native Toulouse',
-    'Logiciel sur mesure Toulouse',
-    'Freelance développeur web Toulouse',
-    'Freelance développeur mobile Toulouse',
-    'React.js',
-    'Next.js',
-    'React Native',
-    'Expo',
-    'Prisma',
-    'NestJS',
-    'site web',
-    'application mobile',
-    'développeur web',
-    'développeur application',
-    'développeur mobile',
-    'développeur logiciel sur mesure',
-    'Toulouse',
-  ],
   twitter: {
     card: 'summary_large_image',
-    title: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
+    title: 'Développeur d’applications mobiles iOS/Android et web à Toulouse | Lodgic',
     description:
-      "Ingénieur en informatique à Toulouse : conception et développement d'applications web et mobiles sur mesure (React.js, Next.js, React Native).",
+      "Yann, développeur indépendant à Toulouse. Applications mobiles iOS et Android en React Native, sites web et outils métier en Next.js.",
   },
 }
 
@@ -74,7 +43,7 @@ export default function Home() {
     '@type': 'WebPage',
     '@id': `${SITE_URL}/#webpage`,
     url: SITE_URL,
-    name: 'Développeur d’applications web et mobiles à Toulouse | Lodgic',
+    name: 'Développeur d’applications mobiles iOS/Android et web à Toulouse | Lodgic',
     description: metadata.description,
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
