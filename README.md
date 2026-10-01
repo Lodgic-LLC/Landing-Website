@@ -37,3 +37,18 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 Site créé par [https://lodgic-dev.com](https://lodgic-dev.com)
+
+## Google Search Console
+
+Le site publie déjà les fichiers nécessaires à l'exploration :
+
+- `https://www.lodgic-dev.com/robots.txt`
+- `https://www.lodgic-dev.com/sitemap.xml`
+
+Pour valider la propriété avec la méthode **Balise HTML**, ajouter la variable
+d'environnement `GOOGLE_SITE_VERIFICATION` dans Vercel. Sa valeur doit être
+uniquement le jeton contenu dans l'attribut `content` fourni par Google (sans la
+balise `<meta>` complète), puis redéployer le site.
+
+Après le déploiement, valider la propriété dans Search Console et envoyer
+`https://www.lodgic-dev.com/sitemap.xml` depuis la section **Sitemaps**.

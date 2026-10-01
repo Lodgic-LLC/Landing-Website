@@ -20,6 +20,7 @@ import {
   GEO_LATITUDE,
   GEO_LONGITUDE,
   OPENING_HOURS,
+  GOOGLE_SITE_VERIFICATION,
   OWNER_NAME,
   OWNER_TITLE,
   POSTAL_CODE,
@@ -162,6 +163,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: GOOGLE_SITE_VERIFICATION
+    ? { google: GOOGLE_SITE_VERIFICATION }
+    : undefined,
   icons: {
     icon: [
       { url: '/favicon.svg?v=2', type: 'image/svg+xml' },

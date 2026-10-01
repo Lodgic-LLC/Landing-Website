@@ -1,6 +1,11 @@
 export const SITE_URL = 'https://www.lodgic-dev.com'
 export const SITE_NAME = 'Lodgic'
 
+// Jeton fourni par Google Search Console avec la méthode « Balise HTML ».
+// Il reste côté serveur et n'est exposé que dans la balise meta de vérification.
+export const GOOGLE_SITE_VERIFICATION =
+  process.env.GOOGLE_SITE_VERIFICATION?.trim() || undefined
+
 export const SITE_DESCRIPTION =
   "Yann, développeur indépendant à Toulouse. Applications mobiles iOS et Android en React Native, sites web et outils métier en Next.js."
 export const OWNER_NAME = 'Yann'
