@@ -19,6 +19,18 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Anciennes pages encore connues de Google : conserver leur valeur SEO
+      // uniquement lorsqu'une page actuelle répond à la même intention.
+      { source: '/agence-web-mobile-toulouse', destination: '/', permanent: true },
+      { source: '/auteurs/yann-rouquie', destination: '/#about', permanent: true },
+      { source: '/auteurs/equipe-lodgic', destination: '/#about', permanent: true },
+      { source: '/projets/driveapp', destination: '/realisations', permanent: true },
+      { source: '/projets/comptabilite', destination: '/realisations', permanent: true },
+      { source: '/projets/hiking', destination: '/realisations', permanent: true },
+      { source: '/blog/combien-coute-une-application-en-2026', destination: '/developpement-application-mobile-toulouse', permanent: true },
+      { source: '/blog/les-etapes-de-developpement-d-une-application-mobile', destination: '/developpement-application-mobile-toulouse', permanent: true },
+      { source: '/blog/ou-trouver-un-developpeur-application-mobile', destination: '/developpement-application-mobile-toulouse', permanent: true },
+      { source: '/blog/trouver-une-idee-d-appli-et-creer-un-business-plan', destination: '/preparer-son-projet', permanent: true },
       // Conserver un équivalent utile pour l'ancien guide de cadrage.
       { source: '/blog/cahier-charges-app-mobile', destination: '/preparer-son-projet', permanent: true },
       // Les autres anciens articles et la page agence n'ont pas d'équivalent : Next renvoie 404.
