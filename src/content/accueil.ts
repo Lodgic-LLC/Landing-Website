@@ -1,8 +1,8 @@
 /** Textes de l’accueil, indépendants de la mise en page. */
 export const services = [
-  { title: 'Sites web', href: '/creation-site-internet-toulouse', description: 'Des pages cohérentes pour présenter votre activité, montrer vos réalisations et transformer les visites en demandes. Je conçois le parcours jusqu’au contact.', cta: 'Création et refonte de sites' },
-  { title: 'Applications mobiles iOS et Android', href: '/developpement-application-mobile-toulouse', description: 'Je conçois et développe votre application avec React Native, puis je la publie sur le Google Play Store et l’App Store.', cta: 'Développement d’applications mobiles' },
-  { title: 'Outils métier', href: '/logiciel-sur-mesure-toulouse', description: 'Un outil interne pour centraliser les informations, relier les services utiles et réduire les tâches répétitives. Je le construis autour du travail de votre équipe.', cta: 'Logiciels sur mesure' },
+  { title: 'Sites web', href: '/creation-site-internet-toulouse', description: 'Pour Alliance-TRAVAUX, chaque métier a sa page et le devis reste accessible tout au long du parcours. Je pars de cette même question pour votre site : que doit trouver un visiteur, et que doit-il pouvoir faire ensuite ?', cta: 'Comment je crée un site' },
+  { title: 'Applications mobiles iOS et Android', href: '/developpement-application-mobile-toulouse', description: 'Je définis les écrans avec vous, développe en React Native et prépare les versions à tester sur iPhone et Android avant la publication.', cta: 'Comment je développe une app' },
+  { title: 'Outils métier', href: '/logiciel-sur-mesure-toulouse', description: 'Un fichier recopié trois fois, des informations dispersées, un suivi impossible à partager : je commence par comprendre ces tâches avant de dessiner l’outil.', cta: 'Comment je construis un outil métier' },
 ]
 export const etapes = [
   { n: '01', title: 'Premier échange', text: 'Vous m’expliquez votre besoin et vos contraintes. Je précise avec vous ce que le projet doit permettre de faire.', livrable: 'Les usages prioritaires et les points à clarifier.' },
