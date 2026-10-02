@@ -6,15 +6,15 @@ export default function Realisations({ introduction = true }: { introduction?: b
   const [alliance, bewasbeen] = PROJETS
   return <section id="realisations" className="section-space bg-white" aria-label="Projets livrés">
     <div className="container-site">
-      {introduction && <div className="mb-12 flex flex-wrap items-end justify-between gap-6"><div><p className="eyebrow">Travaux livrés</p><h2 className="title-section mt-4 max-w-xl">Ce que j’ai construit, et pourquoi.</h2></div><Link href="/realisations" className="text-link text-base">Toutes les réalisations <span aria-hidden>→</span></Link></div>}
+      {introduction && <div className="mb-12 flex flex-wrap items-end justify-between gap-6"><div><p className="eyebrow">Réalisations</p><h2 className="title-section mt-4 max-w-xl">Deux projets en ligne, expliqués en détail.</h2></div><Link href="/realisations" className="text-link text-base">Toutes les réalisations <span aria-hidden>→</span></Link></div>}
       <article className="project-layout">
         <Link href={alliance.href} className="project-visual" aria-label="Voir l’étude de cas Alliance-TRAVAUX"><Image src={alliance.screens[0].src} alt={alliance.screens[0].alt} width={1960} height={1069} sizes="(max-width: 767px) 90vw, 55vw" className="h-auto w-full" /></Link>
         <div>
           <p className="text-sm text-[#59666E]">Site web <span className="ml-4">Collectif d’artisans à Toulouse</span></p>
           <h3 className="mt-3 text-3xl">Alliance-TRAVAUX</h3>
-          <p className="mt-4 text-[#59666E]">Le site devait aider un visiteur à trouver le bon artisan et à demander un devis depuis son téléphone. J’ai repris les pages métier et raccourci le chemin vers le formulaire.</p>
-          <div className="case-decision"><p className="editorial-label">Le choix de conception</p><p className="text-base text-[#17232A]">Une page par métier, avec un accès au devis dans chaque parcours.</p></div>
-          <dl className="metrics metrics-alliance"><div><dt>Pages en ligne</dt><dd>31</dd></div><div><dt>Communes ciblées</dt><dd>16</dd></div><div><dt>Affichage de l’accueil après refonte</dt><dd>0,7 s</dd></div></dl>
+          <p className="mt-4 text-[#59666E]">Refonte du site d’un collectif d’artisans à Toulouse. J’ai repris les pages métier, les parcours vers le devis et le chargement des pages.</p>
+          <p className="mt-6 text-sm text-[#59666E]">Affichage de la page d’accueil</p><p className="mt-1 text-3xl font-semibold text-[#246B66]">5,8 s <span className="mx-2 text-[#59666E]" aria-label="à">→</span> 0,7 s</p>
+          <dl className="metrics metrics-alliance"><div><dt>Performance ordinateur</dt><dd>98/100</dd></div><div><dt>Accessibilité</dt><dd>96/100</dd></div><div><dt>Navigation agentique</dt><dd>3/3</dd></div></dl>
           <Link href={alliance.href} className="text-link mt-6 text-base">Voir le projet et les mesures <span aria-hidden>→</span></Link>
         </div>
       </article>
@@ -22,8 +22,7 @@ export default function Realisations({ introduction = true }: { introduction?: b
         <div>
           <p className="text-sm text-[#59666E]">Application web <span className="ml-4">Apprentissage de l’anglais</span></p>
           <h3 className="mt-3 text-3xl">BewasBeen</h3>
-          <p className="mt-4 text-[#59666E]">Les enseignants préparent les exercices et suivent les résultats. Les élèves, eux, doivent pouvoir commencer rapidement, même sans compte individuel.</p>
-          <div className="case-decision"><p className="editorial-label">Le choix de conception</p><p className="text-base text-[#17232A]">Un code de classe suffit pour accéder aux exercices.</p></div>
+          <p className="mt-4 text-[#59666E]">Une plateforme pour les enseignants d’anglais : création de classes, exercices et suivi des résultats. Les élèves accèdent aux exercices avec un code de classe.</p>
           <dl className="metrics"><div><dt>classes créées</dt><dd>+200</dd></div><div><dt>exercices réalisés</dt><dd>+2 000</dd></div><div><dt>modes d’entraînement</dt><dd>3</dd></div></dl>
           <Link href={bewasbeen.href} className="text-link mt-6 text-base">Découvrir la plateforme <span aria-hidden>→</span></Link>
         </div>
