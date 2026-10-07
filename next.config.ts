@@ -28,13 +28,11 @@ const nextConfig: NextConfig = {
       { source: '/projets/comptabilite', destination: '/realisations', permanent: true },
       { source: '/projets/hiking', destination: '/realisations', permanent: true },
       { source: '/projets', destination: '/realisations', permanent: true },
-      { source: '/blog/combien-coute-une-application-en-2026', destination: '/developpement-application-mobile-toulouse', permanent: true },
-      { source: '/blog/les-etapes-de-developpement-d-une-application-mobile', destination: '/developpement-application-mobile-toulouse', permanent: true },
-      { source: '/blog/ou-trouver-un-developpeur-application-mobile', destination: '/developpement-application-mobile-toulouse', permanent: true },
-      { source: '/blog/trouver-une-idee-d-appli-et-creer-un-business-plan', destination: '/preparer-son-projet', permanent: true },
+      { source: '/blog/les-etapes-de-developpement-d-une-application-mobile', destination: '/blog/les-etapes-de-developpement-d-une-app', permanent: true },
+      { source: '/blog/ou-trouver-un-developpeur-application-mobile', destination: '/blog/ou-trouver-un-developpeur-application-mobile-2026', permanent: true },
       // Conserver un équivalent utile pour l'ancien guide de cadrage.
       { source: '/blog/cahier-charges-app-mobile', destination: '/preparer-son-projet', permanent: true },
-      // Les autres anciens articles et la page agence n'ont pas d'équivalent : Next renvoie 404.
+      // Les anciens articles réintégrés répondent à nouveau sur leurs URL d'origine.
       { source: '/rendez-vous', destination: '/contact', permanent: true },
       { source: '/rendez-vous/:path*', destination: '/contact', permanent: true },
       // Pages SEO fusionnées ou réorientées

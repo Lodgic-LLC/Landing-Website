@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from '@/lib/site'
 import { trackClick } from '@/lib/analytics'
@@ -9,6 +9,7 @@ import { trackClick } from '@/lib/analytics'
 const links = [
   { label: 'Réalisations', href: '/realisations' },
   { label: 'Services', href: '/#services' },
+  { label: 'Conseils', href: '/blog' },
   { label: 'Méthode', href: '/#methode' },
   { label: 'Tarifs', href: '/#budget' },
   { label: 'À propos', href: '/#about' },
@@ -19,12 +20,18 @@ export default function Navbar() {
   const button = useRef<HTMLButtonElement>(null)
   const pathname = usePathname()
 
-  return <header className="sticky top-0 z-50 border-b border-[#DCE3E6] bg-white" onKeyDown={e => {
-    if (e.key === 'Escape') {
+  useEffect(() => {
+    if (!open) return
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
       setOpen(false)
       button.current?.focus()
     }
-  }}>
+    document.addEventListener('keydown', closeOnEscape)
+    return () => document.removeEventListener('keydown', closeOnEscape)
+  }, [open])
+
+  return <header className="sticky top-0 z-50 border-b border-[#DCE3E6] bg-white">
     <nav className="container-site flex h-20 items-center justify-between gap-5" aria-label="Navigation principale">
       <Link href="/" onClick={() => setOpen(false)} className="flex shrink-0 items-baseline gap-2.5" aria-label="Lodgic, accueil">
         <span className="font-heading text-2xl text-[#17232A]">Lodgic</span>

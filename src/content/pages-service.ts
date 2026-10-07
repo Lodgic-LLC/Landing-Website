@@ -44,7 +44,7 @@ export const PAGES_SERVICE: PageService[] = [
     name: 'Création de site internet à Toulouse',
     seoTitle: 'Création de site internet par un freelance à Toulouse',
     description:
-        'Yann Rouquie, ingénieur informatique freelance à Toulouse : je crée des sites internet sur mesure à partir de 1 500 €. Pages de service, formulaire, textes modifiables et performances mesurées.',
+        'Yann, ingénieur informatique freelance à Toulouse : je crée des sites internet sur mesure à partir de 1 500 €. Pages de service, formulaire, textes modifiables et performances mesurées.',
     hero: {
       eyebrow: 'Site internet',
       title: 'Création de site internet à Toulouse',
@@ -177,7 +177,7 @@ export const PAGES_SERVICE: PageService[] = [
     name: 'Développeur d’applications mobiles iOS et Android à Toulouse',
     seoTitle: 'Développeur d’applications mobiles freelance à Toulouse',
     description:
-        'Yann Rouquie, ingénieur informatique freelance à Toulouse : développement d’applications mobiles iOS et Android en React Native, tests sur appareil et publication sur les stores.',
+        'Yann, ingénieur informatique freelance à Toulouse : développement d’applications mobiles iOS et Android en React Native, tests sur appareil et publication sur les stores.',
     hero: {
       eyebrow: 'Application mobile',
       title: 'Développeur d’applications mobiles iOS et Android à Toulouse',
@@ -447,7 +447,7 @@ export const PAGES_SERVICE: PageService[] = [
     name: 'Développeur React Native à Toulouse',
     seoTitle: 'Développeur React Native freelance à Toulouse',
     description:
-        'Yann Rouquie, ingénieur informatique freelance à Toulouse, développe vos applications iPhone et Android avec React Native et Expo lorsque cette approche convient au projet.',
+        'Yann, ingénieur informatique freelance à Toulouse, développe vos applications iPhone et Android avec React Native et Expo lorsque cette approche convient au projet.',
     hero: {
       eyebrow: 'React Native',
       title: 'Développeur React Native à Toulouse',

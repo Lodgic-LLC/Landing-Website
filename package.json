@@ -11,14 +11,17 @@
     "check": "npm run lint && npm run typecheck"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^3.1.1",
     "@vercel/analytics": "^2.0.1",
-    "next": "^16.3.4",
+    "next": "^16.4.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-icons": "^5.7.0",
+    "remark-gfm": "^4.0.1",
     "vanilla-cookieconsent": "^3.1.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^20.19.43",
@@ -26,9 +29,14 @@
     "@types/react-dom": "^19.2.7",
     "critters": "^0.0.23",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.3.4",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.1"
+  },
+  "overrides": {
+    "postcss-selector-parser": "^7.1.6"
   }
 }

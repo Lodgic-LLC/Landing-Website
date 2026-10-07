@@ -8,8 +8,8 @@ export const GOOGLE_SITE_VERIFICATION =
   process.env.GOOGLE_SITE_VERIFICATION?.trim() || undefined
 
 export const SITE_DESCRIPTION =
-  "Yann Rouquie, ingénieur informatique freelance à Toulouse. Je développe des applications mobiles iOS et Android, des sites web et des logiciels sur mesure."
-export const OWNER_NAME = 'Yann Rouquie'
+  "Yann, ingénieur informatique freelance à Toulouse. Je développe des applications mobiles iOS et Android, des sites web et des logiciels sur mesure."
+export const OWNER_NAME = 'Yann'
 export const OWNER_TITLE = 'Ingénieur informatique freelance, développeur web et mobile'
 
 export const CONTACT_EMAIL = 'contact@lodgic-dev.com'

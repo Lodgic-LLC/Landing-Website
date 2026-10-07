@@ -72,6 +72,7 @@ export default function Footer() {
   const projets = [
     ...PROJETS.filter((p) => p.href.startsWith('/')).map((p) => ({ label: p.name, href: p.href })),
     { label: 'Toutes mes réalisations', href: '/realisations' },
+    { label: 'Conseils et articles', href: '/blog' },
     { label: 'À propos de Yann', href: '/#about' },
     { label: 'Méthode de travail', href: '/#methode' },
     { label: 'Budget et délais', href: '/#budget' },
@@ -91,7 +92,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-white/60 font-body">
-              Yann Rouquie, ingénieur informatique freelance à Toulouse. Sites web, applications mobiles et
+              Yann, ingénieur informatique freelance à Toulouse. Sites web, applications mobiles et
               logiciels sur mesure.
             </p>
             <div className="mt-4 space-y-1.5 text-sm font-body">

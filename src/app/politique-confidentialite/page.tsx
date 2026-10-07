@@ -15,7 +15,7 @@ const email = <a href={`mailto:${CONTACT_EMAIL}`} className="text-link">{CONTACT
 const sections: SectionLegale[] = [
   {
     titre: 'Responsable du traitement',
-    contenu: <>Yann Rouquie, entrepreneur individuel (Lodgic), 2 impasse Pierre Maurand, 31400 Toulouse. Contact : {email}. Les autres coordonnées figurent dans les <Link href="/mentions-legales" className="text-link">mentions légales</Link>.</>,
+    contenu: <>Yann, entrepreneur individuel exerçant sous le nom Lodgic, 2 impasse Pierre Maurand, 31400 Toulouse. Contact : {email}. Son identité complète et ses autres coordonnées figurent dans les <Link href="/mentions-legales" className="text-link">mentions légales</Link>.</>,
   },
   {
     titre: 'Demandes de contact et de devis',

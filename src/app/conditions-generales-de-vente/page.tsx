@@ -15,7 +15,7 @@ const email = <a href={`mailto:${CONTACT_EMAIL}`} className="text-link">{CONTACT
 const sections: SectionLegale[] = [
   {
     titre: 'Prestataire et prestations',
-    paragraphes: ['Yann Rouquie, entrepreneur individuel (Lodgic), réalise des prestations de conception, développement, mise en ligne et, lorsqu’elles sont prévues, maintenance de sites web, applications et logiciels. Ses coordonnées et son numéro d’entreprise figurent dans les mentions légales.'],
+    paragraphes: ['Lodgic, activité exercée par Yann en entreprise individuelle, réalise des prestations de conception, développement, mise en ligne et, lorsqu’elles sont prévues, maintenance de sites web, applications et logiciels. Son identité complète, ses coordonnées et son numéro d’entreprise figurent dans les mentions légales.'],
   },
   {
     titre: 'Proposition et formation du contrat',

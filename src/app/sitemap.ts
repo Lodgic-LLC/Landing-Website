@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/site'
 import { PAGES_SERVICE } from '@/content/pages-service'
+import { getAllArticles } from '@/lib/blog'
 
 // Ne pas annoncer une date de modification sans date réelle propre à chaque page.
 const route = (path: string) => ({
@@ -13,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route('realisations'),
     route('contact'),
     route('preparer-son-projet'),
+    route('blog'),
+    ...getAllArticles().map((article) => route(`blog/${article.slug}`)),
     route('projets/alliance-travaux'),
     route('projets/bewasbeen'),
     ...PAGES_SERVICE.map((page) => route(page.slug)),

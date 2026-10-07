@@ -6,7 +6,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY, SITE_URL } from '@
 
 export const metadata: Metadata = {
   title: 'Contacter Yann, ingénieur informatique freelance à Toulouse',
-  description: 'Décrivez votre projet de site web, application mobile ou logiciel métier. Yann Rouquie, ingénieur informatique freelance à Toulouse, vous répond directement.',
+  description: 'Décrivez votre projet de site web, application mobile ou logiciel métier. Yann, ingénieur informatique freelance à Toulouse, vous répond directement.',
   alternates: { canonical: SITE_URL + '/contact' },
 }
 export default function Page() {
