@@ -27,6 +27,7 @@ const nextConfig: NextConfig = {
       { source: '/projets/driveapp', destination: '/realisations', permanent: true },
       { source: '/projets/comptabilite', destination: '/realisations', permanent: true },
       { source: '/projets/hiking', destination: '/realisations', permanent: true },
+      { source: '/projets', destination: '/realisations', permanent: true },
       { source: '/blog/combien-coute-une-application-en-2026', destination: '/developpement-application-mobile-toulouse', permanent: true },
       { source: '/blog/les-etapes-de-developpement-d-une-application-mobile', destination: '/developpement-application-mobile-toulouse', permanent: true },
       { source: '/blog/ou-trouver-un-developpeur-application-mobile', destination: '/developpement-application-mobile-toulouse', permanent: true },
