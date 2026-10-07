@@ -19,6 +19,7 @@ import {
   GOOGLE_BUSINESS_URL,
   GEO_LATITUDE,
   GEO_LONGITUDE,
+  HOME_TITLE,
   OPENING_HOURS,
   GOOGLE_SITE_VERIFICATION,
   OWNER_NAME,
@@ -61,7 +62,6 @@ const organizationNode: Record<string, unknown> = {
     { '@type': 'AdministrativeArea', name: 'Occitanie' },
     { '@type': 'Country', name: 'France' },
   ],
-  founder: { '@id': `${SITE_URL}/#person` },
   employee: { '@id': `${SITE_URL}/#person` },
   numberOfEmployees: { '@type': 'QuantitativeValue', value: 1 },
   sameAs: [
@@ -141,13 +141,13 @@ const structuredData = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Développeur d’applications mobiles iOS/Android et web à Toulouse | Lodgic',
+    default: `${HOME_TITLE} | Lodgic`,
     template: '%s | Lodgic',
   },
   description:
     SITE_DESCRIPTION,
-  authors: [{ name: 'Yann', url: SITE_URL }],
-  creator: 'Yann',
+  authors: [{ name: OWNER_NAME, url: SITE_URL }],
+  creator: OWNER_NAME,
   publisher: 'Lodgic',
   category: 'Développement web et mobile',
   classification: 'Business',
@@ -176,7 +176,7 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: 'Développeur d’applications mobiles iOS/Android et web à Toulouse | Lodgic',
+    title: `${HOME_TITLE} | Lodgic`,
     description: SITE_DESCRIPTION,
     type: 'website',
     locale: 'fr_FR',
@@ -185,7 +185,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Développeur d’applications mobiles iOS/Android et web à Toulouse | Lodgic',
+    title: `${HOME_TITLE} | Lodgic`,
     description: SITE_DESCRIPTION,
   },
 }

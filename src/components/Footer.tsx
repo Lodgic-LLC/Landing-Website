@@ -91,7 +91,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-white/60 font-body">
-              Yann, ingénieur en informatique à Toulouse. Sites web, applications mobiles et
+              Yann Rouquie, ingénieur informatique freelance à Toulouse. Sites web, applications mobiles et
               logiciels sur mesure.
             </p>
             <div className="mt-4 space-y-1.5 text-sm font-body">

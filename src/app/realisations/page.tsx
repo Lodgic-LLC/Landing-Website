@@ -6,15 +6,16 @@ import { SITE_URL } from '@/lib/site'
 
 const PATH = '/realisations'
 const NAME = 'Réalisations'
+const SEO_TITLE = 'Réalisations web et mobile de Yann, ingénieur freelance'
 const DESCRIPTION =
-  "Les sites et applications que j'ai conçus et développés : fonctionnalités livrées, décisions techniques et résultats mesurés."
+  "Découvrez les sites et applications réalisés par Yann Rouquie, ingénieur informatique freelance à Toulouse : fonctionnalités livrées, choix techniques et résultats mesurés."
 
 export const metadata: Metadata = {
-  title: NAME,
+  title: SEO_TITLE,
   description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
-    title: `${NAME} | Lodgic`,
+    title: `${SEO_TITLE} | Lodgic`,
     description: DESCRIPTION,
     url: `${SITE_URL}${PATH}`,
     siteName: 'Lodgic',

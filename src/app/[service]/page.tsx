@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return buildSeoMetadata({
     path: `/${page.slug}`,
-    title: page.name,
+    title: page.seoTitle ?? page.name,
     description: page.description,
   })
 }

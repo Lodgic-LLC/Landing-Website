@@ -18,6 +18,7 @@ export interface PageService {
   /** Dernier segment de l'URL */
   slug: string
   name: string
+  seoTitle?: string
   description: string
   hero: {
     eyebrow: string
@@ -41,8 +42,9 @@ export const PAGES_SERVICE: PageService[] = [
   {
     slug: 'creation-site-internet-toulouse',
     name: 'Création de site internet à Toulouse',
+    seoTitle: 'Création de site internet par un freelance à Toulouse',
     description:
-        'Développeur indépendant à Toulouse : je crée des sites internet sur mesure à partir de 1 500 €. Pages de service, formulaire de contact, textes modifiables et performances mesurées à la livraison.',
+        'Yann Rouquie, ingénieur informatique freelance à Toulouse : je crée des sites internet sur mesure à partir de 1 500 €. Pages de service, formulaire, textes modifiables et performances mesurées.',
     hero: {
       eyebrow: 'Site internet',
       title: 'Création de site internet à Toulouse',
@@ -173,8 +175,9 @@ export const PAGES_SERVICE: PageService[] = [
   {
     slug: 'developpement-application-mobile-toulouse',
     name: 'Développeur d’applications mobiles iOS et Android à Toulouse',
+    seoTitle: 'Développeur d’applications mobiles freelance à Toulouse',
     description:
-        'Yann, développeur mobile indépendant à Toulouse. Application iOS et Android en React Native, tests sur appareil et publication sur l’App Store et Google Play.',
+        'Yann Rouquie, ingénieur informatique freelance à Toulouse : développement d’applications mobiles iOS et Android en React Native, tests sur appareil et publication sur les stores.',
     hero: {
       eyebrow: 'Application mobile',
       title: 'Développeur d’applications mobiles iOS et Android à Toulouse',
@@ -311,7 +314,7 @@ export const PAGES_SERVICE: PageService[] = [
     slug: 'logiciel-sur-mesure-toulouse',
     name: 'Logiciel sur mesure à Toulouse',
     description:
-        'Développeur indépendant à Toulouse : je conçois des outils internes sur mesure pour centraliser vos informations, relier vos services et réduire les ressaisies au quotidien. À partir de 4 000 €.',
+        'Ingénieur informatique freelance à Toulouse, je conçois des logiciels métier sur mesure pour centraliser vos informations et réduire les ressaisies. À partir de 4 000 €.',
     hero: {
       eyebrow: 'Logiciel métier',
       title: 'Logiciel sur mesure à Toulouse',
@@ -442,8 +445,9 @@ export const PAGES_SERVICE: PageService[] = [
   {
     slug: 'developpeur-react-native-toulouse',
     name: 'Développeur React Native à Toulouse',
+    seoTitle: 'Développeur React Native freelance à Toulouse',
     description:
-        'Ingénieur indépendant à Toulouse, spécialisé React Native et Expo : une application iPhone et Android à partir d\'un seul code. Je vous explique ce que ça vous fait gagner, et les cas où je vous le déconseille.',
+        'Yann Rouquie, ingénieur informatique freelance à Toulouse, développe vos applications iPhone et Android avec React Native et Expo lorsque cette approche convient au projet.',
     hero: {
       eyebrow: 'React Native',
       title: 'Développeur React Native à Toulouse',
@@ -580,7 +584,7 @@ export const PAGES_SERVICE: PageService[] = [
     slug: 'developpement-application-ios-android',
     name: 'Développement d\'application iOS et Android',
     description:
-        'Publier une application sur l\'App Store et Google Play : ce que ça implique, ce que je prends en charge, et ce que vous devrez garder à jour. Développeur indépendant à Toulouse, ingénieur en informatique.',
+        'Ingénieur informatique freelance à Toulouse, je développe et publie votre application iOS et Android sur l’App Store et Google Play, avec des comptes ouverts à votre nom.',
     hero: {
       eyebrow: 'App Store et Google Play',
       title: 'Développement d\'application iOS et Android',

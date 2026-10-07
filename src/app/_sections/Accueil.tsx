@@ -5,7 +5,7 @@ export default function Hero() {
   return <section className="bg-white pt-14 pb-16 md:pt-20 md:pb-24" aria-labelledby="hero-title">
     <div className="container-site hero-layout">
       <div>
-        <p className="mb-5 text-base font-semibold text-[#246B66]">Yann, ingénieur indépendant</p>
+        <p className="mb-5 text-base font-semibold text-[#246B66]">Yann Rouquie, ingénieur informatique freelance</p>
         <h1 id="hero-title" className="title-hero max-w-[18ch]">Développeur d’applications mobiles et web à Toulouse.</h1>
         <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#59666E] md:text-xl">Je développe des applications iOS et Android, ainsi que des sites web et des outils métier. Du premier contact à la mise en ligne, vous échangez directement avec moi.</p>
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-5">
