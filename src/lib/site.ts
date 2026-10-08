@@ -1,6 +1,6 @@
 export const SITE_URL = 'https://www.lodgic-dev.com'
 export const SITE_NAME = 'Lodgic'
-export const HOME_TITLE = 'Ingénieur informatique freelance et développeur mobile à Toulouse'
+export const HOME_TITLE = 'Développeur d’applications mobiles et web à Toulouse'
 
 // Jeton fourni par Google Search Console avec la méthode « Balise HTML ».
 // Il reste côté serveur et n'est exposé que dans la balise meta de vérification.
@@ -8,9 +8,9 @@ export const GOOGLE_SITE_VERIFICATION =
   process.env.GOOGLE_SITE_VERIFICATION?.trim() || undefined
 
 export const SITE_DESCRIPTION =
-  "Yann, ingénieur informatique freelance à Toulouse. Je développe des applications mobiles iOS et Android, des sites web et des logiciels sur mesure."
+  "Yann, développeur web et mobile à Toulouse. Je crée des applications iOS et Android, des sites web et des logiciels sur mesure."
 export const OWNER_NAME = 'Yann'
-export const OWNER_TITLE = 'Ingénieur informatique freelance, développeur web et mobile'
+export const OWNER_TITLE = 'Développeur web et mobile indépendant'
 
 export const CONTACT_EMAIL = 'contact@lodgic-dev.com'
 export const CONTACT_PHONE = '+33643517157'

@@ -44,7 +44,7 @@ export const PAGES_SERVICE: PageService[] = [
     name: 'Création de site internet à Toulouse',
     seoTitle: 'Création de site internet par un freelance à Toulouse',
     description:
-        'Yann, ingénieur informatique freelance à Toulouse : je crée des sites internet sur mesure à partir de 1 500 €. Pages de service, formulaire, textes modifiables et performances mesurées.',
+        'Je crée des sites internet sur mesure à Toulouse à partir de 1 500 €. Pages de service, formulaire, textes modifiables et performances mesurées.',
     hero: {
       eyebrow: 'Site internet',
       title: 'Création de site internet à Toulouse',
@@ -175,9 +175,9 @@ export const PAGES_SERVICE: PageService[] = [
   {
     slug: 'developpement-application-mobile-toulouse',
     name: 'Développeur d’applications mobiles iOS et Android à Toulouse',
-    seoTitle: 'Développeur d’applications mobiles freelance à Toulouse',
+    seoTitle: 'Développeur d’application mobile à Toulouse | iOS et Android',
     description:
-        'Yann, ingénieur informatique freelance à Toulouse : développement d’applications mobiles iOS et Android en React Native, tests sur appareil et publication sur les stores.',
+        'Création d’application mobile à Toulouse : je développe pour iOS et Android avec React Native, tests sur appareil et publication sur les stores.',
     hero: {
       eyebrow: 'Application mobile',
       title: 'Développeur d’applications mobiles iOS et Android à Toulouse',
@@ -267,9 +267,19 @@ export const PAGES_SERVICE: PageService[] = [
       ],
       closing: [
         'Une application mobile démarre à **4 000 €** et se livre en **2 à 4 mois**, publication sur le Google Play Store et l’App Store comprise dans le périmètre prévu. Le montant exact est fixé par écrit après le cadrage, avant la première ligne de code. Il ne change ensuite que si vous modifiez le périmètre.',
-        'Je suis basé à Toulouse : je peux vous rencontrer pour le cadrage, puis poursuivre les échanges en visio et vous donner accès aux versions de test sur votre téléphone. Je travaille aussi entièrement à distance pour des clients ailleurs en France.',
+        'Je suis basé à Toulouse : je peux vous rencontrer pour le cadrage, puis poursuivre les échanges en visio et vous donner accès aux versions de test sur votre téléphone. Je travaille aussi à distance partout en France.',
       ],
       crossLinks: [
+        {
+          title: 'Prix d’une application mobile',
+          href: '/prix-application-mobile',
+          description: 'Les questions qui déterminent le devis et les frais à prévoir après publication.',
+        },
+        {
+          title: 'Reprise d’une application mobile',
+          href: '/reprise-application-mobile',
+          description: 'Pour examiner une application publiée, un prototype ou un projet inachevé.',
+        },
         {
           title: 'Développeur React Native à Toulouse',
           href: '/developpeur-react-native-toulouse',
@@ -314,7 +324,7 @@ export const PAGES_SERVICE: PageService[] = [
     slug: 'logiciel-sur-mesure-toulouse',
     name: 'Logiciel sur mesure à Toulouse',
     description:
-        'Ingénieur informatique freelance à Toulouse, je conçois des logiciels métier sur mesure pour centraliser vos informations et réduire les ressaisies. À partir de 4 000 €.',
+        'Je conçois des logiciels métier sur mesure à Toulouse pour centraliser vos informations et réduire les ressaisies. À partir de 4 000 €.',
     hero: {
       eyebrow: 'Logiciel métier',
       title: 'Logiciel sur mesure à Toulouse',
@@ -447,7 +457,7 @@ export const PAGES_SERVICE: PageService[] = [
     name: 'Développeur React Native à Toulouse',
     seoTitle: 'Développeur React Native freelance à Toulouse',
     description:
-        'Yann, ingénieur informatique freelance à Toulouse, développe vos applications iPhone et Android avec React Native et Expo lorsque cette approche convient au projet.',
+        'Je développe vos applications iPhone et Android à Toulouse avec React Native et Expo lorsque cette approche convient au projet.',
     hero: {
       eyebrow: 'React Native',
       title: 'Développeur React Native à Toulouse',
@@ -584,7 +594,7 @@ export const PAGES_SERVICE: PageService[] = [
     slug: 'developpement-application-ios-android',
     name: 'Développement d\'application iOS et Android',
     description:
-        'Ingénieur informatique freelance à Toulouse, je développe et publie votre application iOS et Android sur l’App Store et Google Play, avec des comptes ouverts à votre nom.',
+        'Je développe et publie votre application iOS et Android sur l’App Store et Google Play, avec des comptes ouverts à votre nom.',
     hero: {
       eyebrow: 'App Store et Google Play',
       title: 'Développement d\'application iOS et Android',

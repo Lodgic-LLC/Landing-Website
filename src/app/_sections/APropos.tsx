@@ -6,7 +6,7 @@ export default function About({ fond = 'blanc' }: { fond?: 'blanc' | 'creme' }) 
       <div>
         <p className="eyebrow">À propos</p>
         <h2 id="about-title" className="title-section mt-4">Qui suis-je ?</h2>
-        <p className="mt-6 max-w-md text-xl leading-relaxed text-[#17232A]">Je suis Yann, ingénieur informatique freelance à Toulouse. Je travaille seul sur vos projets, de la conception à la mise en ligne.</p>
+        <p className="mt-6 max-w-md text-xl leading-relaxed text-[#17232A]">Je suis Yann, développeur web et mobile à Toulouse. Je travaille seul sur vos projets, de la conception à la mise en ligne.</p>
         <Link href="/realisations" className="text-link mt-8 text-base">Voir mes projets <span aria-hidden>→</span></Link>
       </div>
       <dl className="border-t border-[#DCE3E6]">

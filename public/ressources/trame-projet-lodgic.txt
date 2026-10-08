@@ -1,5 +1,5 @@
 PRÉPARER MON PROJET : LODGIC
-Yann, ingénieur indépendant à Toulouse
+Yann, développeur web et mobile indépendant à Toulouse
 https://www.lodgic-dev.com
 
 Cette trame est un point de départ. Laissez vides les sujets encore ouverts.

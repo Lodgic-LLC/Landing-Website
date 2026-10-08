@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import Hero from '@/app/_sections/Accueil'
 import ConseilsSection from '@/components/ConseilsSection'
 import JsonLd from '@/components/JsonLd'
+import ScrollReveal from '@/components/ScrollReveal'
 import { HOME_TITLE, SITE_URL } from '@/lib/site'
 
 const About = dynamic(() => import('@/app/_sections/APropos'))
@@ -17,14 +18,14 @@ const Contact = dynamic(() => import('@/app/_sections/Contact'))
 export const metadata: Metadata = {
   title: HOME_TITLE,
   description:
-    "Yann, ingénieur informatique freelance à Toulouse. Je développe vos applications mobiles iOS et Android, sites web et outils métier, du cadrage à la mise en ligne.",
+    "Yann, développeur web et mobile à Toulouse. Je crée vos applications iOS et Android, sites web et outils métier, du cadrage à la mise en ligne.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     title: `${HOME_TITLE} | Lodgic`,
     description:
-      "Yann, ingénieur informatique freelance à Toulouse. Applications mobiles iOS et Android, sites web et outils métier.",
+      "Yann, développeur web et mobile à Toulouse. Applications iOS et Android, sites web et outils métier.",
     url: SITE_URL,
     siteName: 'Lodgic',
     locale: 'fr_FR',
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${HOME_TITLE} | Lodgic`,
     description:
-      "Yann, ingénieur informatique freelance à Toulouse. Applications mobiles iOS et Android, sites web et outils métier.",
+      "Yann, développeur web et mobile à Toulouse. Applications iOS et Android, sites web et outils métier.",
   },
 }
 
@@ -54,6 +55,7 @@ export default function Home() {
   return (
     <>
       <JsonLd id="home-structured-data" data={homeSchema} />
+      <ScrollReveal />
       <main>
           <Hero />
 
@@ -63,15 +65,14 @@ export default function Home() {
         {/* 2) Ce que je fais */}
           <Services />
 
-          <ConseilsSection />
-
-        {/* 3) Qui je suis et pourquoi un ingénieur */}
+        {/* 3) Qui je suis */}
           <About fond="blanc" />
 
         {/* 4) Comment ça se passe */}
           <Method />
 
           <Budget />
+          <ConseilsSection />
           <Questions />
 
         {/* 5) Contact */}

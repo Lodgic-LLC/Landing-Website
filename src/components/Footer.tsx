@@ -68,6 +68,10 @@ export default function Footer() {
     label: NOM_COURT[page.slug] ?? page.name,
     href: `/${page.slug}`,
   }))
+  prestations.push(
+    { label: 'Prix d’une application mobile', href: '/prix-application-mobile' },
+    { label: 'Reprise d’application mobile', href: '/reprise-application-mobile' },
+  )
 
   const projets = [
     ...PROJETS.filter((p) => p.href.startsWith('/')).map((p) => ({ label: p.name, href: p.href })),
@@ -92,7 +96,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-white/60 font-body">
-              Yann, ingénieur informatique freelance à Toulouse. Sites web, applications mobiles et
+              Yann, développeur web et mobile à Toulouse. Sites web, applications mobiles et
               logiciels sur mesure.
             </p>
             <div className="mt-4 space-y-1.5 text-sm font-body">

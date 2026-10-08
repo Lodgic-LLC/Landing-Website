@@ -53,7 +53,7 @@ export default async function Page({ params }: Props) {
           <p className="eyebrow mt-9">{article.category}</p>
           <h1 className="title-hero mt-4">{article.title}</h1>
           <p className="mt-6 max-w-3xl text-xl leading-relaxed text-[#59666E]">{article.summary}</p>
-          <p className="mt-7 text-sm text-[#59666E]">Par <span className="font-semibold text-[#17232A]">Yann, ingénieur informatique freelance</span></p>
+          <p className="mt-7 text-sm text-[#59666E]">Par <span className="font-semibold text-[#17232A]">Yann, développeur web et mobile</span></p>
         </div>
       </header>
       <div className="container-site max-w-4xl py-12 md:py-20">

@@ -6,9 +6,9 @@ import { SITE_URL } from '@/lib/site'
 
 const PATH = '/realisations'
 const NAME = 'Réalisations'
-const SEO_TITLE = 'Réalisations web et mobile de Yann, ingénieur freelance'
+const SEO_TITLE = 'Réalisations web et mobile de Yann'
 const DESCRIPTION =
-  "Découvrez les sites et applications réalisés par Yann, ingénieur informatique freelance à Toulouse : fonctionnalités livrées, choix techniques et résultats mesurés."
+  "Découvrez les sites et applications réalisés par Yann, développeur web et mobile à Toulouse : fonctionnalités livrées, choix techniques et résultats mesurés."
 
 export const metadata: Metadata = {
   title: SEO_TITLE,

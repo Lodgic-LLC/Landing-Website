@@ -65,7 +65,7 @@ export async function imagePartage({ titre, sousTitre }: { titre: string; sousTi
             color: '#59666E',
           }}
         >
-          <div style={{ display: 'flex' }}>Yann, ingénieur en informatique à Toulouse</div>
+          <div style={{ display: 'flex' }}>Yann, développeur web et mobile à Toulouse</div>
           <div style={{ display: 'flex', color: '#246B66', fontWeight: 700 }}>lodgic-dev.com</div>
         </div>
       </div>

@@ -5,8 +5,8 @@ import Formulaire, { FULL_FIELDS } from '@/components/Formulaire'
 import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY, SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Contacter Yann, ingénieur informatique freelance à Toulouse',
-  description: 'Décrivez votre projet de site web, application mobile ou logiciel métier. Yann, ingénieur informatique freelance à Toulouse, vous répond directement.',
+  title: 'Contacter Yann, développeur web et mobile à Toulouse',
+  description: 'Décrivez votre projet de site web, application mobile ou logiciel métier. Yann, développeur web et mobile à Toulouse, vous répond directement.',
   alternates: { canonical: SITE_URL + '/contact' },
 }
 export default function Page() {

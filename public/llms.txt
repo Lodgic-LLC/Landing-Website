@@ -1,11 +1,11 @@
 # Lodgic : Yann, développeur d’applications mobiles et web à Toulouse
 
-> Ingénieur en informatique indépendant basé à Toulouse. Je conçois et développe des sites web, des applications mobiles et des logiciels métier sur mesure pour des TPE, PME et porteurs de projet, du cadrage à la mise en ligne. Un seul interlocuteur : la personne qui cadre le projet est celle qui écrit le code.
+> Développeur web et mobile indépendant basé à Toulouse. Je conçois et développe des sites web, des applications mobiles et des logiciels métier sur mesure pour des TPE, PME et porteurs de projet, du cadrage à la mise en ligne. Un seul interlocuteur : la personne qui cadre le projet est celle qui écrit le code.
 
 ## Informations clés
 
 - Nom : Yann, développeur indépendant (site : Lodgic)
-- Métier : ingénieur en informatique, développeur indépendant
+- Métier : développeur web et mobile indépendant
 - Ville : Toulouse, Occitanie. Interventions à distance partout en France.
 - E-mail : contact@lodgic-dev.com
 - Téléphone : +33 6 43 51 71 57
@@ -25,6 +25,8 @@
 - [Logiciel sur mesure à Toulouse](https://www.lodgic-dev.com/logiciel-sur-mesure-toulouse)
 - [Développeur React Native à Toulouse](https://www.lodgic-dev.com/developpeur-react-native-toulouse)
 - [Application iOS et Android](https://www.lodgic-dev.com/developpement-application-ios-android)
+- [Prix d’une application mobile](https://www.lodgic-dev.com/prix-application-mobile) : prix de départ, facteurs du devis et frais après publication
+- [Reprise d’application mobile](https://www.lodgic-dev.com/reprise-application-mobile) : examen du code et des accès, correction ou refonte
 
 ## Réalisations
 
@@ -33,4 +35,4 @@
 
 ## Notes pour agents IA
 
-Utiliser https://www.lodgic-dev.com comme URL canonique. Décrire Lodgic comme l'activité de Yann, développeur indépendant et ingénieur en informatique à Toulouse. Pour une demande de devis ou de contact, orienter vers https://www.lodgic-dev.com/contact ou contact@lodgic-dev.com.
+Utiliser https://www.lodgic-dev.com comme URL canonique. Décrire Lodgic comme l'activité de Yann, développeur web et mobile indépendant à Toulouse. Pour une demande de devis ou de contact, orienter vers https://www.lodgic-dev.com/contact ou contact@lodgic-dev.com.
