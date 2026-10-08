@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import JsonLd, { filAriane } from '@/components/JsonLd'
 import ScrollReveal from '@/components/ScrollReveal'
@@ -19,14 +20,26 @@ const themes = [
   { id: 'web', label: 'Web et développement', categories: ['Web'] },
 ] as const
 
-function ArticleRow({ article }: { article: Article }) {
-  return <article className="blog-index-item">
-    <div>
-      <p className="blog-index-category">{article.category}</p>
-      <h4><Link href={`/blog/${article.slug}`}>{article.title}</Link></h4>
-    </div>
-    <p className="blog-index-summary">{article.summary}</p>
-    <Link href={`/blog/${article.slug}`} className="blog-index-arrow" aria-label={`Lire : ${article.title}`}><span aria-hidden="true">↗</span></Link>
+function coverFor(article: Article) {
+  return article.imageUrl?.startsWith('/') ? article.imageUrl : '/images/rodeo-project-management-software-m9HQzdoK9u8-unsplash.jpg'
+}
+
+function DateArticle({ article }: { article: Article }) {
+  if (!article.date) return null
+  const date = new Date(`${article.date}T12:00:00`)
+  return <time dateTime={article.date}>{new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(date)}</time>
+}
+
+function ArticleCard({ article }: { article: Article }) {
+  const href = `/blog/${article.slug}`
+  return <article className="blog-card">
+    <Link href={href} className="blog-card-cover" aria-label={`Lire : ${article.title}`}>
+      <Image src={coverFor(article)} alt="" fill sizes="(max-width: 559px) 90vw, (max-width: 1023px) 44vw, 30vw" className="object-cover" />
+    </Link>
+    <div className="blog-card-meta"><span>{article.category}</span><DateArticle article={article} /></div>
+    <h4 className="blog-card-title"><Link href={href}>{article.title}</Link></h4>
+    <p className="blog-card-summary">{article.summary}</p>
+    <Link href={href} className="blog-card-link">Lire l’article <span aria-hidden="true">↗</span></Link>
   </article>
 }
 
@@ -49,11 +62,15 @@ export default function Page() {
     </header>
     {featured && <section className="blog-feature-section" aria-labelledby="blog-feature-title">
       <div className="container-site blog-feature" data-reveal>
-        <div className="blog-feature-label"><span className="eyebrow">À la une</span><span className="text-sm text-[#59666E]">{featured.category}</span></div>
-        <div>
+        <Link href={`/blog/${featured.slug}`} className="blog-feature-cover" aria-label={`Lire : ${featured.title}`}>
+          <Image src={coverFor(featured)} alt="" fill priority sizes="(max-width: 767px) 90vw, 55vw" className="object-cover" />
+        </Link>
+        <div className="blog-feature-content">
+          <p className="eyebrow">À la une</p>
+          <div className="blog-card-meta"><span>{featured.category}</span><DateArticle article={featured} /></div>
           <h2 id="blog-feature-title"><Link href={`/blog/${featured.slug}`}>{featured.title}</Link></h2>
           <p>{featured.summary}</p>
-          <Link href={`/blog/${featured.slug}`} className="text-link mt-6 text-base">Lire l’article <span aria-hidden="true">→</span></Link>
+          <Link href={`/blog/${featured.slug}`} className="text-link mt-7 text-base">Lire l’article <span aria-hidden="true">→</span></Link>
         </div>
       </div>
     </section>}
@@ -68,7 +85,7 @@ export default function Page() {
         </nav>
         {groups.filter((group) => group.articles.length).map((group) => <section key={group.id} id={group.id} className="blog-topic" aria-labelledby={`${group.id}-title`}>
           <div className="blog-topic-heading" data-reveal><h3 id={`${group.id}-title`}>{group.label}</h3><span>{group.articles.length} {group.articles.length === 1 ? 'article' : 'articles'}</span></div>
-          <div className="blog-index-list">{group.articles.map((article) => <ArticleRow key={article.slug} article={article} />)}</div>
+          <div className="blog-card-grid">{group.articles.map((article) => <ArticleCard key={article.slug} article={article} />)}</div>
         </section>)}
       </div>
     </section>
