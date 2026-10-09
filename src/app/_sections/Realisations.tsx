@@ -8,8 +8,8 @@ export default function Realisations({ introduction = true }: { introduction?: b
   return <section id="realisations" className="section-space bg-white" aria-label="Projets livrés">
     <div className="container-site">
       {introduction && <div className="mb-12 flex flex-wrap items-end justify-between gap-6"><div><p className="eyebrow">Réalisations</p><h2 className="title-section mt-4 max-w-xl">Deux projets en ligne, expliqués en détail.</h2></div><Link href="/realisations" className="text-link text-base">Toutes les réalisations <span aria-hidden>→</span></Link></div>}
-      <article className="project-layout" data-reveal>
-        <Link href={alliance.href} className="project-visual" aria-label="Voir l’étude de cas Alliance-TRAVAUX"><Image src={alliance.screens[0].src} alt={alliance.screens[0].alt} width={1960} height={1069} sizes="(max-width: 767px) 90vw, 55vw" className="h-auto w-full" /></Link>
+      <article className="project-layout">
+        <Link href={alliance.href} className="project-visual" data-reveal aria-label="Voir l’étude de cas Alliance-TRAVAUX"><Image src={alliance.screens[0].src} alt={alliance.screens[0].alt} width={1960} height={1069} sizes="(max-width: 767px) 90vw, 55vw" className="h-auto w-full" /></Link>
         <div>
           <p className="text-sm text-[#59666E]">Site web <span className="ml-4">Collectif d’artisans à Toulouse</span></p>
           <h3 className="mt-3 text-3xl">Alliance-TRAVAUX</h3>
@@ -20,7 +20,7 @@ export default function Realisations({ introduction = true }: { introduction?: b
         </div>
       </article>
       <AvisGoogle compact={introduction} />
-      <article className="project-layout" data-reveal>
+      <article className="project-layout">
         <div>
           <p className="text-sm text-[#59666E]">Application web <span className="ml-4">Apprentissage de l’anglais</span></p>
           <h3 className="mt-3 text-3xl">BewasBeen</h3>
@@ -28,7 +28,7 @@ export default function Realisations({ introduction = true }: { introduction?: b
           <dl className="metrics"><div><dt>classes créées</dt><dd>+200</dd></div><div><dt>exercices réalisés</dt><dd>+2 000</dd></div><div><dt>modes d’entraînement</dt><dd>3</dd></div></dl>
           <Link href={bewasbeen.href} className="text-link mt-6 text-base">Découvrir la plateforme <span aria-hidden>→</span></Link>
         </div>
-        <Link href={bewasbeen.href} className="project-visual" aria-label="Voir l’étude de cas BewasBeen"><Image src={bewasbeen.screens[0].src} alt={bewasbeen.screens[0].alt} width={1960} height={1069} sizes="(max-width: 767px) 90vw, 55vw" className="h-auto w-full" /></Link>
+        <Link href={bewasbeen.href} className="project-visual" data-reveal aria-label="Voir l’étude de cas BewasBeen"><Image src={bewasbeen.screens[0].src} alt={bewasbeen.screens[0].alt} width={1960} height={1069} sizes="(max-width: 767px) 90vw, 55vw" className="h-auto w-full" /></Link>
       </article>
     </div>
   </section>

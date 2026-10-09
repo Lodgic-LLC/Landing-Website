@@ -18,8 +18,8 @@ export default function ConseilsSection() {
         <Link href="/blog" className="text-link text-base">Tous les conseils <span aria-hidden="true">→</span></Link>
       </div>
       <div className="advice-articles">
-        {articles.map((article) => <article key={article.slug} className="advice-article" data-reveal>
-          {article.imageUrl && <Link href={`/blog/${article.slug}`} className="advice-cover" aria-label={`Lire : ${article.title}`}>
+        {articles.map((article) => <article key={article.slug} className="advice-article">
+          {article.imageUrl && <Link href={`/blog/${article.slug}`} className="advice-cover" data-reveal aria-label={`Lire : ${article.title}`}>
             <Image src={article.imageUrl} alt={article.imageAlt || ''} width={720} height={480} sizes="(max-width: 767px) 90vw, (max-width: 1023px) 45vw, 30vw" />
           </Link>}
           <div className="advice-meta"><span>{article.category}</span><time dateTime={article.date}>{dateFormatter.format(new Date(`${article.date}T12:00:00`))}</time></div>

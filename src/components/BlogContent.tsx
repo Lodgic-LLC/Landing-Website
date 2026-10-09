@@ -5,7 +5,7 @@ import * as runtime from 'react/jsx-runtime'
 import type { ReactNode } from 'react'
 
 function Callout({ title, type = 'info', children }: { title?: string; type?: string; children?: ReactNode }) {
-  return <aside className="my-8 rounded-lg border-l-4 border-[#246B66] bg-[#EDF4F3] px-5 py-4 text-[#34434A]" aria-label={title ?? type}>
+  return <aside className="article-note my-8 rounded-lg border-l-4 border-[#246B66] bg-[#EDF4F3] px-5 py-4 text-[#34434A]" aria-label={title ?? type}>
     {title && <p className="mb-2 font-semibold text-[#17232A]">{title}</p>}
     {children}
   </aside>
@@ -14,7 +14,7 @@ function Callout({ title, type = 'info', children }: { title?: string; type?: st
 // L'ancien formulaire de téléchargement n'existe plus : son appel à l'action
 // mène au contact, sans promettre l'envoi automatique d'une ressource.
 function CallToAction({ title, description }: { title?: string; description?: string }) {
-  return <aside className="my-10 rounded-lg border border-[#DCE3E6] bg-[#F4F6F7] p-6">
+  return <aside className="article-cta my-10 rounded-lg border border-[#DCE3E6] bg-[#F4F6F7] p-6">
     <p className="font-heading text-xl text-[#17232A]">{title ?? 'Une question sur votre projet ?'}</p>
     {description && <p className="mt-2 text-base text-[#59666E]">{description}</p>}
     <Link href="/contact" className="btn-primary mt-5">Parler de mon projet <span aria-hidden="true">↗</span></Link>

@@ -36,6 +36,13 @@ export default function Navbar() {
   const servicesContainer = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
   const onServicePage = [...services, ...applicationLinks].some(link => link.href === pathname)
+    || ['/developpeur-react-native-toulouse', '/developpement-application-ios-android'].includes(pathname)
+  const currentSection = (href: string) => {
+    if (pathname === href) return 'page' as const
+    if ((href === '/blog' && pathname.startsWith('/blog/'))
+      || (href === '/realisations' && pathname.startsWith('/projets/'))) return 'location' as const
+    return undefined
+  }
 
   useEffect(() => {
     if (!mobileOpen && !servicesOpen) return
@@ -60,7 +67,7 @@ export default function Navbar() {
     }
   }, [mobileOpen, servicesOpen])
 
-  return <header className="sticky top-0 z-50 border-b border-[#DCE3E6] bg-white">
+  return <header className="site-header sticky top-0 z-50 border-b border-[#DCE3E6] bg-white">
     <nav className="container-site flex h-20 items-center justify-between gap-5" aria-label="Navigation principale">
       <Link href="/" onClick={() => { setMobileOpen(false); setServicesOpen(false) }} className="brand-link flex shrink-0 items-baseline gap-2.5" aria-label="Lodgic, accueil">
         <span className="brand-name font-heading text-2xl text-[#17232A]">Lodgic</span>
@@ -74,10 +81,11 @@ export default function Navbar() {
             type="button"
             aria-expanded={servicesOpen}
             aria-controls="desktop-services-menu"
+            data-active={onServicePage}
             onClick={() => setServicesOpen(value => !value)}
             className={`nav-link gap-1 whitespace-nowrap text-[15px] ${onServicePage || servicesOpen ? 'text-[#246B66]' : 'text-[#59666E]'}`}
           >Services <span className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`}><Chevron /></span></button>
-          {servicesOpen && <div id="desktop-services-menu" className="absolute left-0 top-full z-50 w-72 rounded-b-md border border-[#DCE3E6] bg-white p-3 shadow-lg">
+          {servicesOpen && <div id="desktop-services-menu" className="nav-dropdown absolute left-0 top-full z-50 w-72 rounded-b-md border border-[#DCE3E6] bg-white p-3 shadow-lg">
             <p className="px-3 pb-1 text-xs font-semibold text-[#59666E]">Prestations</p>
             {services.map(link => <Link key={link.href} href={link.href} onClick={() => setServicesOpen(false)} aria-current={pathname === link.href ? 'page' : undefined} className="block rounded px-3 py-2 text-sm text-[#17232A] hover:bg-[#EDF4F3] focus-visible:bg-[#EDF4F3]">{link.label}</Link>)}
             <p className="mx-3 mt-3 border-t border-[#DCE3E6] pt-3 text-xs font-semibold text-[#59666E]">Pour votre application</p>
@@ -85,7 +93,7 @@ export default function Navbar() {
             <Link href="/#budget" onClick={() => setServicesOpen(false)} className="mt-2 block rounded bg-[#F4F6F7] px-3 py-2 text-sm font-semibold text-[#246B66] hover:bg-[#EDF4F3]">Tarifs et délais <span aria-hidden>→</span></Link>
           </div>}
         </div>
-        {mainLinks.map(link => <Link key={link.href} href={link.href} aria-current={pathname === link.href ? 'page' : undefined} className="nav-link whitespace-nowrap text-[15px] text-[#59666E]">{link.label}</Link>)}
+        {mainLinks.map(link => <Link key={link.href} href={link.href} aria-current={currentSection(link.href)} className="nav-link whitespace-nowrap text-[15px] text-[#59666E]">{link.label}</Link>)}
       </div>
 
       <div className="hidden shrink-0 items-center gap-4 lg:flex">
@@ -107,7 +115,7 @@ export default function Navbar() {
           <Link href="/#budget" onClick={() => setMobileOpen(false)} className="block py-2 text-base text-[#59666E]">Tarifs et délais</Link>
         </div>
       </details>
-      {mainLinks.map(link => <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="block border-t border-[#DCE3E6] py-3">{link.label}</Link>)}
+      {mainLinks.map(link => <Link key={link.href} href={link.href} aria-current={currentSection(link.href)} onClick={() => setMobileOpen(false)} className="block border-t border-[#DCE3E6] py-3">{link.label}</Link>)}
       <Link href="/contact" onClick={() => setMobileOpen(false)} className="btn-primary mt-4 w-full">Parler de mon projet</Link>
       <a href={`tel:${CONTACT_PHONE}`} onClick={() => { trackClick('telephone-navbar'); setMobileOpen(false) }} className="mt-4 block text-center text-base text-[#59666E]">{CONTACT_PHONE_DISPLAY}</a>
     </nav>}

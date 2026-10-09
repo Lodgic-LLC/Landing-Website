@@ -23,7 +23,7 @@ export default function Galerie({ screens, url, priority = false }: ProjectGalle
   const screen = screens[current]
 
   return (
-    <figure>
+    <figure className="project-gallery">
       <div className="overflow-hidden rounded-lg border border-[#DCE3E6]">
         {url && <p className="border-b border-[#DCE3E6] bg-white px-4 py-2 text-sm text-[#59666E]">{url}</p>}
         <div className="relative aspect-[2940/1604] w-full bg-[#F4F6F7]">

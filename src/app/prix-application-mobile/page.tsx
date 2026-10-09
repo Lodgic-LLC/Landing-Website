@@ -28,7 +28,7 @@ const questions = [
 ]
 
 export default function PrixApplicationMobile() {
-  return <main>
+  return <main className="practical-page pricing-page">
     <JsonLd data={filAriane([
       { name: 'Accueil', url: SITE_URL },
       { name: 'Prix d’une application mobile', url: `${SITE_URL}/prix-application-mobile` },

@@ -19,7 +19,7 @@ const sujets = [
 ]
 
 export default function PreparerSonProjet() {
-  return <main>
+  return <main className="practical-page preparation-page">
     <JsonLd data={filAriane([{ name: 'Accueil', url: SITE_URL }, { name: 'Préparer son projet', url: `${SITE_URL}/preparer-son-projet` }])} />
     <header className="section-space bg-[#F4F6F7]"><div className="container-site max-w-4xl"><p className="eyebrow">Guide pratique de Yann</p><h1 className="title-hero mt-4">Avant de développer, préciser le besoin.</h1><p className="mt-6 max-w-2xl text-xl text-[#59666E]">Quelques réponses écrites suffisent pour préparer le premier échange. Vous pouvez laisser les points encore ouverts : cette trame sert à poser les questions, pas à tout résoudre seul.</p><a href="/ressources/trame-projet-lodgic.txt" download className="text-link mt-7">Télécharger la trame à remplir <span className="text-sm font-normal">TXT</span><span aria-hidden>↓</span></a></div></header>
     <div className="container-site section-space max-w-4xl"><div className="space-y-12">{sujets.map(item => <section key={item.title} className="border-t border-[#DCE3E6] pt-7"><h2 className="text-2xl md:text-3xl">{item.title}</h2><p className="mt-4 text-[#59666E]">{item.text}</p><p className="mt-5 border-l-2 border-[#246B66] pl-5 text-base text-[#59666E]">{item.example}</p></section>)}</div>

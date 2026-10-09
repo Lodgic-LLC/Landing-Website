@@ -20,7 +20,7 @@ interface PageLegaleProps {
 /** Gabarit commun aux mentions légales et à la politique de confidentialité. */
 export default function PageLegale({ titre, miseAJour, sections }: PageLegaleProps) {
   return (
-    <main className="bg-[#F4F6F7] pt-32 pb-20 md:pt-36 md:pb-28">
+    <main className="legal-page bg-[#F4F6F7] pt-32 pb-20 md:pt-36 md:pb-28">
       <div className="mx-auto max-w-3xl px-6">
         <h1 className="text-4xl md:text-5xl font-heading text-[#17232A] tracking-tight">
           {titre}

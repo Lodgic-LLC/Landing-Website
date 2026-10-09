@@ -16,7 +16,7 @@ const cas = [
 ]
 
 export default function RepriseApplicationMobile() {
-  return <main>
+  return <main className="practical-page recovery-page">
     <JsonLd data={filAriane([
       { name: 'Accueil', url: SITE_URL },
       { name: 'Reprise d’application mobile', url: `${SITE_URL}/reprise-application-mobile` },

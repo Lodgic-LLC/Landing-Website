@@ -15,7 +15,7 @@ export default function Budget() {
           <div><p className="eyebrow">Budget</p><h2 id="budget-title" className="title-section mt-4">Prix de départ et délais habituels.</h2></div>
           <p className="self-end text-[#59666E]">Ces prix sont des points de départ. Le nombre de pages ou d’écrans, les connexions à vos outils et les données à reprendre déterminent le devis. Le planning tient aussi compte des contenus à fournir et des validations.</p>
         </div>
-        <dl className="mt-10 border-t border-[#DCE3E6]">
+        <dl className="budget-options mt-10 border-t border-[#DCE3E6]">
           {prestations.map(item => {
             const page = PAGES_SERVICE.find(page => page.slug === item.slug)!
             const price = page.hero.badges.find(badge => badge.includes('€'))

@@ -17,16 +17,16 @@ export default function PageSeo({ page }: { page: PageService }) {
     : page.slug === 'logiciel-sur-mesure-toulouse'
       ? { name: 'BewasBeen', href: '/projets/bewasbeen', src: '/projets/bewasbeen/bwb_professor_dashboard.jpg', text: 'Classes, exercices et suivi individuel réunis dans un espace enseignant.' }
       : null
-  return <main>
+  return <main className="service-page">
     <JsonLd data={filAriane([{name:'Accueil',url:SITE_URL},{name:page.name,url}])} />
     <JsonLd data={faq(faqs)} />
-    <section className="section-space bg-[#F4F6F7]">
+    <section className="service-hero section-space bg-[#F4F6F7]">
       <div className="container-site grid gap-10 lg:grid-cols-[1.2fr_.8fr] lg:gap-20 lg:items-center">
         <div><p className="eyebrow">{hero.eyebrow}</p><h1 className="title-hero mt-4 max-w-3xl">{hero.title}</h1><p className="mt-6 text-xl font-semibold">{hero.highlight}</p><p className="mt-4 max-w-2xl text-[#59666E]"><Texte>{hero.description}</Texte></p><Link href="/contact" className="btn-primary mt-7">Parlons de votre projet <span aria-hidden>↗</span></Link></div>
         <aside className="border-l-2 border-[#DCE3E6] pl-7"><p className="font-heading text-xl">Repères pour votre projet</p><ul className="mt-5 space-y-3 text-[#59666E]">{hero.badges.map(badge => <li key={badge}>{badge}</li>)}</ul></aside>
       </div>
     </section>
-    <section className="section-space">
+    <section className="service-detail section-space">
       <div className="container-site">
         <div className="grid gap-6 md:grid-cols-[1fr_1fr] md:gap-20"><div><p className="eyebrow">{expertise.eyebrow}</p><h2 className="title-section mt-4"><Texte>{expertise.heading}</Texte></h2></div><p className="self-end text-[#59666E]"><Texte>{expertise.intro}</Texte></p></div>
         <div className="mt-12 grid gap-x-16 gap-y-10 md:grid-cols-2">{expertise.cards.map(card => <article key={card.title} className="border-t border-[#DCE3E6] pt-6"><h3 className="text-2xl">{card.title}</h3><p className="mt-3 text-[#59666E]"><Texte>{card.body}</Texte></p><ul className="mt-4 list-disc space-y-1 pl-5 text-base text-[#59666E] marker:text-[#246B66]">{card.bullets.map(bullet => <li key={bullet}>{bullet}</li>)}</ul></article>)}</div>

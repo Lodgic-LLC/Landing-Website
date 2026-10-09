@@ -48,7 +48,7 @@ export default function Page() {
   const [featured, ...remaining] = articles
   const groups = themes.map((theme) => ({ ...theme, articles: remaining.filter((article) => (theme.categories as readonly string[]).includes(article.category)) }))
 
-  return <main>
+  return <main className="blog-page">
     <JsonLd data={filAriane([{ name: 'Accueil', url: SITE_URL }, { name: 'Conseils', url: `${SITE_URL}/blog` }])} />
     <ScrollReveal />
     <header className="blog-intro">
@@ -61,8 +61,8 @@ export default function Page() {
       </div>
     </header>
     {featured && <section className="blog-feature-section" aria-labelledby="blog-feature-title">
-      <div className="container-site blog-feature" data-reveal>
-        <Link href={`/blog/${featured.slug}`} className="blog-feature-cover" aria-label={`Lire : ${featured.title}`}>
+      <div className="container-site blog-feature">
+        <Link href={`/blog/${featured.slug}`} className="blog-feature-cover" data-reveal aria-label={`Lire : ${featured.title}`}>
           <Image src={coverFor(featured)} alt="" fill priority sizes="(max-width: 767px) 90vw, 55vw" className="object-cover" />
         </Link>
         <div className="blog-feature-content">
@@ -84,7 +84,7 @@ export default function Page() {
           {groups.filter((group) => group.articles.length).map((group) => <a key={group.id} href={`#${group.id}`}>{group.label} <span>{group.articles.length}</span></a>)}
         </nav>
         {groups.filter((group) => group.articles.length).map((group) => <section key={group.id} id={group.id} className="blog-topic" aria-labelledby={`${group.id}-title`}>
-          <div className="blog-topic-heading" data-reveal><h3 id={`${group.id}-title`}>{group.label}</h3><span>{group.articles.length} {group.articles.length === 1 ? 'article' : 'articles'}</span></div>
+          <div className="blog-topic-heading"><h3 id={`${group.id}-title`}>{group.label}</h3><span>{group.articles.length} {group.articles.length === 1 ? 'article' : 'articles'}</span></div>
           <div className="blog-card-grid">{group.articles.map((article) => <ArticleCard key={article.slug} article={article} />)}</div>
         </section>)}
       </div>

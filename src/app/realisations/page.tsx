@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <main>
+  return <main className="portfolio-page">
     <JsonLd data={filAriane([{name:'Accueil',url:SITE_URL},{name:NAME,url:SITE_URL+PATH}])} />
     <section className="bg-[#F4F6F7] py-16 md:py-20"><div className="container-site"><p className="eyebrow">Réalisations</p><h1 className="title-hero mt-4 max-w-3xl">Des projets livrés,<br />du travail à découvrir.</h1><p className="mt-6 max-w-2xl text-xl text-[#59666E]">Un site pour un collectif d’artisans et une plateforme pédagogique. Voici les interfaces, mon intervention et les résultats disponibles.</p></div></section>
     <Realisations introduction={false} />

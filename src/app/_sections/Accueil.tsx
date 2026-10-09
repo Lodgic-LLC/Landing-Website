@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Hero() {
-  return <section className="bg-white pt-14 pb-16 md:pt-20 md:pb-24" aria-labelledby="hero-title">
+  return <section className="home-hero" aria-labelledby="hero-title">
     <div className="container-site hero-layout">
-      <div>
+      <div className="hero-copy">
         <p className="mb-5 text-base font-semibold text-[#246B66]">Yann, développeur indépendant à Toulouse</p>
         <h1 id="hero-title" className="title-hero max-w-[18ch]">Développeur d’applications mobiles et web à Toulouse.</h1>
         <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#59666E] md:text-xl">Je développe des applications iOS et Android, ainsi que des sites web et des outils métier. Du premier contact à la mise en ligne, vous échangez directement avec moi.</p>

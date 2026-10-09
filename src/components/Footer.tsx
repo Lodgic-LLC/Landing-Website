@@ -84,7 +84,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="border-t border-[#46555D] bg-[#17232A] text-white">
+    <footer className="site-footer border-t border-[#46555D] bg-[#17232A] text-white">
       <div className="container-site py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr] md:gap-10">
           {/* Identité et contact */}
