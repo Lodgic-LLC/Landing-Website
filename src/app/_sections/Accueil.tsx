@@ -16,7 +16,7 @@ export default function Hero() {
 
       <figure className="hero-showcase min-w-0">
         <Link href="/projets/alliance-travaux" className="hero-showcase-link" aria-label="Découvrir le projet Alliance-TRAVAUX">
-          <Image src="/projets/alliance-travaux/at_accueil.jpg" alt="Page d’accueil du site Alliance-TRAVAUX sur ordinateur" width={1960} height={1069} priority sizes="(max-width: 767px) 90vw, 52vw" className="hero-showcase-desktop" />
+          <Image src="/projets/alliance-travaux/at_accueil.jpg" alt="Page d’accueil du site Alliance-TRAVAUX sur ordinateur" width={1960} height={1069} sizes="(max-width: 767px) 90vw, 52vw" className="hero-showcase-desktop" />
           <span className="hero-showcase-phone" aria-hidden="true">
             <Image src="/projets/alliance-travaux/at_mobile_accueil.jpg" alt="" width={780} height={1688} sizes="(max-width: 767px) 28vw, 160px" className="w-full" />
           </span>
