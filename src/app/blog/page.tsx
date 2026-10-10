@@ -46,7 +46,17 @@ function ArticleCard({ article }: { article: Article }) {
 export default function Page() {
   const articles = getAllArticles()
   const [featured, ...remaining] = articles
-  const groups = themes.map((theme) => ({ ...theme, articles: remaining.filter((article) => (theme.categories as readonly string[]).includes(article.category)) }))
+  const knownCategories = new Set<string>(themes.flatMap((theme) => theme.categories))
+  const unclassified = remaining.filter((article) => !knownCategories.has(article.category))
+  const groups = [
+    ...themes.map((theme) => ({
+      id: theme.id,
+      label: theme.label,
+      articles: remaining.filter((article) => (theme.categories as readonly string[]).includes(article.category)),
+    })),
+    ...(unclassified.length ? [{ id: 'autres', label: 'Autres articles', articles: unclassified }] : []),
+  ]
+  const visibleGroups = groups.filter((group) => group.articles.length > 0)
 
   return <main className="blog-page">
     <JsonLd data={filAriane([{ name: 'Accueil', url: SITE_URL }, { name: 'Conseils', url: `${SITE_URL}/blog` }])} />
@@ -81,9 +91,9 @@ export default function Page() {
           <p className="text-sm text-[#59666E]">{remaining.length} autres articles</p>
         </div>
         <nav className="blog-topic-nav" aria-label="Thèmes du blog">
-          {groups.filter((group) => group.articles.length).map((group) => <a key={group.id} href={`#${group.id}`}>{group.label} <span>{group.articles.length}</span></a>)}
+          {visibleGroups.map((group) => <a key={group.id} href={`#${group.id}`}>{group.label} <span>{group.articles.length}</span></a>)}
         </nav>
-        {groups.filter((group) => group.articles.length).map((group) => <section key={group.id} id={group.id} className="blog-topic" aria-labelledby={`${group.id}-title`}>
+        {visibleGroups.map((group) => <section key={group.id} id={group.id} className="blog-topic" aria-labelledby={`${group.id}-title`}>
           <div className="blog-topic-heading"><h3 id={`${group.id}-title`}>{group.label}</h3><span>{group.articles.length} {group.articles.length === 1 ? 'article' : 'articles'}</span></div>
           <div className="blog-card-grid">{group.articles.map((article) => <ArticleCard key={article.slug} article={article} />)}</div>
         </section>)}

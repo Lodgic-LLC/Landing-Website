@@ -1,6 +1,5 @@
-'use client'
-
 import Link from 'next/link'
+import CookiePreferencesButton from '@/components/CookiePreferencesButton'
 import { PAGES_SERVICE } from '@/content/pages-service'
 import { PROJETS } from '@/content/projets'
 import {
@@ -56,13 +55,6 @@ function Colonne({
 
 export default function Footer() {
   const annee = new Date().getFullYear()
-
-  /** Rouvre la fenêtre de préférences du bandeau cookies. */
-  async function ouvrirPreferencesCookies() {
-    const cc = await import('vanilla-cookieconsent')
-    const CookieConsent = cc.default ?? cc
-    CookieConsent.showPreferences()
-  }
 
   const prestations = PAGES_SERVICE.map((page) => ({
     label: NOM_COURT[page.slug] ?? page.name,
@@ -131,9 +123,7 @@ export default function Footer() {
             <Link href="/cookies" className="transition-colors hover:text-white">
               Politique de cookies
             </Link>
-            <button type="button" onClick={ouvrirPreferencesCookies} className="transition-colors hover:text-white">
-              Gérer les cookies
-            </button>
+            <CookiePreferencesButton />
             {GOOGLE_BUSINESS_URL && (
               <a
                 href={GOOGLE_BUSINESS_URL}

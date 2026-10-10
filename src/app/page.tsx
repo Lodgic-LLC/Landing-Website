@@ -56,7 +56,7 @@ export default function Home() {
     <>
       <JsonLd id="home-structured-data" data={homeSchema} />
       <ScrollReveal />
-      <main>
+      <main className="home-page">
           <Hero />
 
         {/* 1) Ce que j'ai livré : les preuves d'abord */}

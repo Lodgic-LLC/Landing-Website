@@ -357,98 +357,236 @@ main details:has(summary:focus-visible) { outline: 2px solid var(--accent); outl
   .hero-showcase-phone { border-width: 3px; border-radius: 13px; }
   .article-heading { gap: 32px; }
 }
-@media (max-width: 767px) {
-  .container-site { width: calc(100% - 40px); }
-  .section-space { padding-block: 64px; }
-  .hero-layout, .project-layout, .project-layout ~ .project-layout, .service-layout { grid-template-columns: 1fr; gap: 32px; }
-  .project-layout ~ .project-layout { margin-top: 64px; }
-  .project-layout ~ .project-layout .project-visual { order: -1; }
-  .project-visual { padding: 14px; }
-  .project-review { padding: 22px; }
-  .project-review-preview { grid-template-columns: 1fr; gap: 18px; padding-block: 24px; }
-  .project-review-preview-content { padding-left: 0; border-left: 0; }
-  .metrics { column-gap: 22px; }
-  .metrics dd { font-size: 25px; }
-  .metrics-alliance dd { font-size: 23px; }
-  .method-step, .method-after { grid-template-columns: 1fr; gap: 14px; }
-  .advice-intro { display: block; }
-  .advice-intro .text-link { margin-top: 24px; }
-  .advice-articles { grid-template-columns: 1fr; gap: 36px; }
-  .advice-article-link { margin-top: 0; }
-  .blog-intro-grid, .blog-feature { grid-template-columns: 1fr; gap: 28px; }
-  .blog-intro { padding-block: 60px; }
-  .blog-feature { padding-block: 36px 42px; }
-  .blog-feature-content .eyebrow { margin-bottom: 16px; }
-  .blog-feature h2 { max-width: 24ch; }
-  .blog-topic { margin-top: 52px; }
-  .blog-card-grid { gap: 34px 20px; }
-  .home-hero { padding-block: 44px 52px; }
-  .hero-layout { gap: 36px; }
-  .hero-copy .title-hero { max-width: 21ch; }
-  .hero-copy > p:not(:first-child) { font-size: 17px; }
-  .hero-showcase { padding: 24px 24px 74px; }
-  .hero-showcase-caption { font-size: 12px; }
+/* Mobile navigation remains independently scrollable when services are expanded. */
+@media (max-width: 1023px) {
   .site-header > nav:first-child { height: 68px; }
   .site-header .brand-name { font-size: 25px; }
-  #mobile-menu { max-height: calc(100dvh - 68px); }
-  .service-intro { display: block; }
-  .service-intro h2, .service-intro > p:last-child { max-width: 540px; }
-  .service-entries { grid-template-columns: 1fr; gap: 28px; margin-top: 34px; }
-  .service-entry h3 { min-height: 0; }
-  .service-entry { padding-top: 20px; }
-  .method-process { grid-template-columns: 1fr; gap: 34px; }
-  .method-intro { position: static; }
-  .method-after { grid-template-columns: 1fr; padding: 26px; gap: 16px; margin-top: 34px; }
-  .method-step { padding-left: 26px; }
-  .project-layout { gap: 26px; }
-  .project-layout h3 { font-size: 31px; }
-  .project-review-preview { grid-template-columns: 1fr; padding: 24px; gap: 18px; }
+  .site-header button[aria-controls="mobile-menu"] { min-height: 44px; min-width: 76px; }
+  #mobile-menu {
+    position: absolute; top: 100%; left: 0; width: 100%;
+    max-height: calc(100dvh - 68px); overscroll-behavior-y: contain;
+    padding: 8px 24px max(24px, env(safe-area-inset-bottom));
+    background: var(--surface); border-bottom: 1px solid var(--hairline);
+    box-shadow: 0 18px 28px -24px #20382e66;
+  }
+  #mobile-menu a:not(.btn-primary), #mobile-menu summary { min-height: 48px; }
+}
+@media (max-width: 767px) {
+  html { scroll-padding-top: 88px; }
+  body { font-size: 16px; line-height: 1.65; }
+  .container-site { width: calc(100% - 40px); }
+  .section-space { padding-block: 48px; }
+  .title-hero, .blog-page .title-hero, .service-hero h1,
+  .practical-page > header h1, .project-page > section:first-of-type h1 {
+    font-size: clamp(32px, 8.5vw, 40px); line-height: 1.12;
+  }
+  .title-section, .about-intro .title-section { font-size: 30px; line-height: 1.16; }
+  main h1, main h2, main h3 { overflow-wrap: break-word; }
+  .text-link { min-height: 44px; line-height: 1.45; }
+  .text-link span, .btn-primary span { flex-shrink: 0; }
+  .btn-primary { font-size: 16px; min-height: 50px; }
+  .home-hero { padding-block: 30px 40px; }
+  .hero-layout, .project-layout, .project-layout ~ .project-layout, .service-layout {
+    grid-template-columns: minmax(0,1fr); gap: 26px;
+  }
+  .hero-copy > p:first-child { font-size: 13px; margin-bottom: 16px; }
+  .hero-copy > p:not(:first-child) { font-size: 16px; margin-top: 20px; }
+  .hero-copy > div { margin-top: 24px; gap: 8px; align-items: stretch; flex-direction: column; }
+  .hero-copy > div > .text-link { align-self: center; }
+  .hero-showcase { padding: 18px; }
+  .hero-showcase-link { padding-right: 34px; padding-bottom: 48px; }
+  .hero-showcase-phone { top: 22%; right: 0; width: 26%; border-radius: 12px; }
+  .hero-showcase-caption { max-width: none; margin-top: 12px; font-size: 12px; }
+
+  .project-layout ~ .project-layout { margin-top: 44px; }
+  .project-layout ~ .project-layout .project-visual { order: -1; }
+  .project-visual { padding: 12px; }
+  .project-layout h3 { font-size: 30px; }
+  .metrics { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 22px; }
+  .metrics dt { font-size: 12px; line-height: 1.35; }
+  .metrics dd, .metrics-alliance dd, .project-page > section:first-of-type .metrics dd { font-size: 23px; }
+  .project-review { margin-top: 26px; padding: 20px; }
+  .project-review-heading { gap: 10px; }
+  .project-review-preview { grid-template-columns: 1fr; margin-top: 26px; padding: 20px; gap: 18px; }
+  .project-review-preview-content { padding: 18px 0 0; border-left: 0; border-top: 1px solid #c9d3c7; }
   .project-review-preview .project-review-text { font-size: 19px; }
-  .about-layout { grid-template-columns: 1fr; gap: 36px; }
-  .about-presentation { font-size: 19px; margin-top: 22px; }
-  .about-background { grid-template-columns: 1fr; gap: 26px; }
-  .about-experience { padding: 4px 0 8px; gap: 24px; }
-  .about-section .about-experience dt { font-size: 54px; }
+  .project-review-link { min-height: 44px; }
+
+  .service-intro { display: block; }
+  .service-intro > p:last-child { margin-top: 20px; }
+  .service-entries { grid-template-columns: 1fr; gap: 26px; margin-top: 28px; }
+  .service-entry { padding-top: 18px; }
+  .service-entry h3 { min-height: 0; font-size: 21px; }
+  .service-entry > p { font-size: 16px; }
+  .about-layout { grid-template-columns: 1fr; gap: 26px; }
+  .about-presentation { font-size: 17px; margin-top: 18px; }
+  .about-background { grid-template-columns: 1fr; gap: 22px; }
+  .about-experience { padding: 4px 0; gap: 22px; }
+  .about-section .about-experience dt { font-size: 48px; }
   .about-section .about-experience dd { font-size: 15px; }
-  .about-detail dt { margin-bottom: 10px; }
-  #budget { padding-top: 12px; }
-  .budget-options { grid-template-columns: 1fr; gap: 0; }
-  .budget-options > div { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; padding-block: 24px; }
-  .budget-options > div > dt { grid-column: 1 / -1; }
-  .budget-options dd:last-child { padding-top: 0; margin-top: 0; text-align: right; }
-  .budget-options dd:last-child > span:first-child { font-size: 25px; }
-  .contact-form-panel { padding: 24px; }
-  .contact-page, .service-hero, .practical-page > header, .portfolio-page > section:first-of-type, .project-page > section:first-of-type { padding-block: 42px; }
-  .service-hero aside { padding: 24px; }
+  .about-detail { padding-top: 18px; }
+  .about-detail dt { margin-bottom: 8px; }
+  .method-process { grid-template-columns: minmax(0,1fr); gap: 28px; }
+  .method-intro { position: static; }
+  .method-step { padding: 0 0 28px 22px; }
+  .method-after { grid-template-columns: minmax(0,1fr); padding: 22px; gap: 16px; margin-top: 28px; }
+  .method-after h3 { font-size: 26px; }
+  .method-after > div:last-child { font-size: 16px; }
+  #budget { padding-top: 8px; }
+  .budget-options { grid-template-columns: 1fr; gap: 0; margin-top: 28px; }
+  .budget-options > div { gap: 12px; padding-block: 22px; }
+  .budget-options dt a { font-size: 20px; }
+  .budget-options dd:last-child { padding-top: 4px; margin-top: 0; }
+  .budget-options dd:last-child > span:first-child { font-size: 26px; }
+
+  .advice-intro { display: block; }
+  .advice-intro .text-link { margin-top: 14px; }
+  .advice-articles { grid-template-columns: 1fr; gap: 32px; margin-top: 24px; }
+  .advice-cover { aspect-ratio: 2 / 1; }
+  .advice-meta { margin-top: 12px; }
+  .advice-article-title { font-size: 21px; margin-top: 8px; }
+  .advice-article-link { margin-top: 0; padding-top: 8px; }
+  main details { padding-inline: 0; }
+  main details summary { gap: 16px; font-size: 16px; }
+  .contact-section > .container-site, .contact-page > .container-site { gap: 28px; }
+  .contact-form-panel { padding: 22px 18px; }
+  .contact-form-panel form :is(input, textarea) { font-size: 16px; }
+  .contact-form-panel form button[type='submit'] { width: 100%; min-height: 50px; }
+  .contact-page, .service-hero, .practical-page > header,
+  .portfolio-page > section:first-of-type, .project-page > section:first-of-type { padding-block: 32px; }
+  .service-hero > .container-site { gap: 28px; }
+  .service-hero aside { padding: 22px; }
+  .service-hero aside > p { font-size: 25px; }
+  .service-detail > .container-site > div:nth-child(2) { gap: 26px; }
+  .practical-page > header p:not(.eyebrow) { font-size: 17px; }
   .preparation-page > div > div > section { grid-template-columns: 1fr; gap: 18px; }
   .preparation-page > div > div > section h2 { grid-row: auto; }
-  .project-gallery { padding: 14px; }
-  .project-gallery button { width: 80px; height: 48px; }
-  .blog-intro { padding-block: 38px; }
-  .blog-intro-grid, .blog-feature { grid-template-columns: 1fr; gap: 24px; }
+  .project-gallery { padding: 12px; }
+  .project-gallery button { width: 80px; height: 48px; flex-shrink: 0; }
+
+  .blog-intro { padding-block: 32px; }
+  .blog-intro-grid, .blog-feature { grid-template-columns: minmax(0,1fr); gap: 20px; }
+  .blog-intro-grid > p { font-size: 16px; padding-bottom: 0; }
+  .blog-feature { padding-block: 28px; }
   .blog-feature-cover { aspect-ratio: 2 / 1; }
-  .article-header { padding-block: 30px; }
-  .article-heading { grid-template-columns: 1fr; gap: 26px; }
+  .blog-feature-content .eyebrow { margin-bottom: 12px; }
+  .blog-feature h2 { max-width: none; font-size: 27px; }
+  .blog-index-heading { align-items: start; flex-direction: column; gap: 12px; }
+  .blog-topic-nav { gap: 8px; padding-block: 14px; margin-top: 20px; }
+  .blog-topic-nav a { display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 12px; background: var(--accent-soft); border-radius: 3px; }
+  .blog-topic { margin-top: 32px; scroll-margin-top: 88px; }
+  .blog-topic-heading { align-items: start; gap: 12px; }
+  .blog-topic-heading h3 { font-size: 26px; }
+  .blog-topic-heading span { padding-top: 6px; font-size: 12px; }
+  .blog-card-grid { gap: 30px 20px; margin-top: 22px; }
+  .blog-card-cover { aspect-ratio: 2 / 1; }
+  .blog-card-title { max-width: none; font-size: 20px; }
+  .blog-card-link { min-height: 44px; padding-top: 8px; }
+  .article-header { padding-block: 26px; }
+  .article-heading { grid-template-columns: minmax(0,1fr); gap: 22px; }
+  .article-heading h1 { font-size: 32px; line-height: 1.16; }
+  .article-heading p.text-xl { font-size: 17px; }
   .article-cover { aspect-ratio: 2 / 1; }
-  .article-reading { padding-block: 36px 48px; }
-  .article-reading .prose { font-size: 17px; line-height: 1.75; }
-  .article-reading .prose h2 { font-size: 29px; }
+  .article-reading { padding-block: 30px 40px; min-width: 0; }
+  .article-reading .prose { font-size: 17px; line-height: 1.75; overflow-wrap: anywhere; }
+  .article-reading .prose h2 { font-size: 27px; }
   .article-reading .prose h3 { font-size: 21px; }
+  .article-reading .prose :is(pre, table) { max-width: 100%; overflow-x: auto; }
   .article-note, .article-cta { padding: 20px; }
-  .site-footer > .container-site { padding-block: 40px 24px; }
-  .site-footer .font-heading.text-xl { font-size: 36px; }
+  .related-cover { aspect-ratio: 2 / 1; }
+  .site-footer > .container-site { padding-block: 36px 24px; }
+  .site-footer .font-heading.text-xl { font-size: 34px; }
+  .site-footer > .container-site > .grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 20px; }
+  .site-footer > .container-site > .grid > div:first-child { grid-column: 1 / -1; }
+  .site-footer ul { margin-top: 10px; }
+  .site-footer ul a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; line-height: 1.5; }
+  .site-footer ul > li { margin-top: 0; }
+  .site-footer > .container-site > div:last-child :is(a,button) { min-height: 44px; display: inline-flex; align-items: center; }
 }
 @media (max-width: 559px) {
-  .blog-card-grid { grid-template-columns: 1fr; gap: 34px; }
-  .blog-card-cover { aspect-ratio: 16 / 8; }
-  .budget-options > div { grid-template-columns: 1fr; }
-  .budget-options dd:last-child { text-align: left; }
-  .hero-showcase { padding-inline: 18px; padding-bottom: 66px; }
+  .blog-card-grid { grid-template-columns: minmax(0,1fr); }
   .article-reading .prose table { font-size: 14px; }
 }
-@media (max-width: 479px) {
-  .metrics-alliance { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
-  .project-review-heading { gap: 10px; }
+@media (max-width: 359px) {
+  .container-site { width: calc(100% - 32px); }
+  .metrics { gap: 8px; }
+  .metrics dd, .metrics-alliance dd { font-size: 21px; }
+  .site-footer > .container-site > .grid { grid-template-columns: 1fr; }
+}
+/* Home on phones: a short overview, with depth available through project pages
+   and an explicit disclosure. Desktop content and layout remain unchanged. */
+.mobile-disclosure, .mobile-disclosure-content { display: contents; }
+.mobile-disclosure-toggle, .home-mobile-contact { display: none; }
+@media (max-width: 767px) {
+  .home-page .section-space { padding-block: 36px; }
+  .home-page .title-section { font-size: 28px; max-width: 22ch; }
+  .home-page .home-hero { padding-block: 32px 28px; }
+  .home-page .hero-showcase { display: none; }
+  .home-page .hero-copy > div { margin-top: 20px; }
+  .home-page #realisations > .container-site > div:first-child { margin-bottom: 22px; gap: 12px; }
+  .home-page .project-layout { gap: 18px; }
+  .home-page .project-visual { padding: 8px; }
+  .home-page .project-layout h3 { font-size: 28px; margin-top: 8px; }
+  .home-page .project-layout .metrics,
+  .home-page .project-layout > div > p.mt-6,
+  .home-page .project-layout > div > p.text-3xl { display: none; }
+  .home-page .project-layout .text-link { margin-top: 12px; }
+  .home-page .project-layout ~ .project-layout { margin-top: 28px; }
+  .home-page .project-review-preview { background: transparent; padding: 18px 0; border-block: 1px solid var(--hairline); gap: 12px; }
+  .home-page .project-review-preview-intro :is(h3,p:not(.eyebrow)) { display: none; }
+  .home-page .project-review-preview-content { padding: 0; border: 0; }
+  .home-page .project-review-preview .project-review-text { font-size: 18px; }
+  .home-page .project-review-avatar { width: 36px; height: 36px; flex-basis: 36px; font-size: 17px; }
+  .home-page .service-intro > p:last-child,
+  .home-page .service-entry > p,
+  .home-page .service-entry > div { display: none; }
+  .home-page .service-entries { margin-top: 24px; gap: 0; }
+  .home-page .service-entry { padding-block: 18px 12px; border-top-width: 1px; }
+  .home-page .service-entry h3 { font-size: 20px; }
+  .home-page .service-entry .text-link { margin-top: 4px; font-size: 15px; }
+  .home-page .about-layout { gap: 22px; }
+  .home-page .about-intro > .text-link, .home-page .about-detail { display: none; }
+  .home-page .about-presentation { margin-top: 16px; }
+  .home-page .about-experience { padding: 18px 0 0; border-top: 1px solid #cfd6cb; }
+  .home-page .about-section .about-experience dt { font-size: 42px; }
+  .home-page .method-process { gap: 20px; }
+  .home-page .method-after { display: none; }
+  .home-page .mobile-disclosure { display: block; }
+  .home-page .mobile-disclosure-toggle {
+    display: flex; justify-content: space-between; align-items: center; gap: 20px;
+    width: 100%; min-height: 52px; padding-block: 12px;
+    border-block: 1px solid var(--hairline); text-align: left;
+    font-size: 16px; font-weight: 600; color: var(--accent);
+  }
+  .home-page .mobile-disclosure-toggle span { font-size: 24px; font-weight: 400; }
+  .home-page .mobile-disclosure-content { display: none; }
+  .home-page .mobile-disclosure[data-expanded="true"] > .mobile-disclosure-content { display: block; padding-top: 24px; }
+  .home-page #budget { padding-top: 8px; }
+  .home-page #budget > .container-site > .grid > p,
+  .home-page .budget-options > div > dd:first-of-type,
+  .home-page #budget > .container-site > div:last-child > p { display: none; }
+  .home-page .budget-options { margin-top: 24px; }
+  .home-page .budget-options > div { padding-block: 14px; gap: 4px; border-top-color: var(--hairline); }
+  .home-page .budget-options dt a { font-size: 18px; min-height: 36px; }
+  .home-page .budget-options dd:last-child { padding: 0; }
+  .home-page .budget-options dd:last-child > span:first-child { font-size: 25px; }
+  .home-page .budget-options dd:last-child > span:last-child { font-size: 14px; }
+  .home-page #budget > .container-site > div:last-child { margin-top: 16px; }
+  .home-page #budget > .container-site > div:last-child > div { gap: 4px; }
+  .home-page .advice-intro > div > p:last-child { display: none; }
+  .home-page .advice-articles { margin-top: 18px; }
+  .home-page .advice-article:not(:first-child), .home-page .advice-article-summary { display: none; }
+  .home-page .advice-article-title { font-size: 20px; }
+  .home-page .questions-section > .container-site { gap: 22px; }
+  .home-page .questions-section > .container-site > div:first-child > :is(p:not(.eyebrow),a),
+  .home-page .questions-section > .container-site > div:last-child > a { display: none; }
+  .home-page .faq-item { padding-block: 14px; }
+  .home-page .contact-section > .container-site { gap: 20px; }
+  .home-page .contact-section .contact-form-panel,
+  .home-page .contact-section > .container-site > div:first-child > p.mt-4,
+  .home-page .contact-section > .container-site > div:first-child > .text-link { display: none; }
+  .home-page .contact-section > .container-site > div:first-child > div { margin-top: 16px; }
+  .home-page .home-mobile-contact { display: flex; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

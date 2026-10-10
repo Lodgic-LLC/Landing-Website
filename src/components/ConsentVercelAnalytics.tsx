@@ -8,17 +8,21 @@ const ConsentVercelAnalytics = () => {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    let consentRun = 0;
 
     const updateConsent = async () => {
+      const run = ++consentRun;
       const cc = await import("vanilla-cookieconsent");
+      if (run !== consentRun) return;
       const CookieConsent = cc.default ?? cc;
       setEnabled(CookieConsent.acceptedCategory("analytics"));
     };
 
     window.addEventListener("cc:consent-change", updateConsent);
-  void updateConsent();
+    void updateConsent();
 
     return () => {
+      consentRun++;
       window.removeEventListener("cc:consent-change", updateConsent);
     };
   }, []);

@@ -20,6 +20,7 @@ export interface PageService {
   name: string
   seoTitle?: string
   description: string
+  project?: { name: string; href: string; src: string; text: string }
   hero: {
     eyebrow: string
     title: string
@@ -45,6 +46,7 @@ export const PAGES_SERVICE: PageService[] = [
     seoTitle: 'Création de site internet par un freelance à Toulouse',
     description:
         'Je crée des sites internet sur mesure à Toulouse à partir de 1 500 €. Pages de service, formulaire, textes modifiables et performances mesurées.',
+    project: { name: 'Alliance-TRAVAUX', href: '/projets/alliance-travaux', src: '/projets/alliance-travaux/at_accueil.jpg', text: '31 pages, un parcours vers le devis et un affichage mesuré à 0,7 s après la refonte.' },
     hero: {
       eyebrow: 'Site internet',
       title: 'Création de site internet à Toulouse',
@@ -325,6 +327,7 @@ export const PAGES_SERVICE: PageService[] = [
     name: 'Logiciel sur mesure à Toulouse',
     description:
         'Je conçois des logiciels métier sur mesure à Toulouse pour centraliser vos informations et réduire les ressaisies. À partir de 4 000 €.',
+    project: { name: 'BewasBeen', href: '/projets/bewasbeen', src: '/projets/bewasbeen/bwb_professor_dashboard.jpg', text: 'Classes, exercices et suivi individuel réunis dans un espace enseignant.' },
     hero: {
       eyebrow: 'Logiciel métier',
       title: 'Logiciel sur mesure à Toulouse',

@@ -26,14 +26,18 @@ function readArticle(filename: string): Article {
     if (field) fields.set(field[1], JSON.parse(field[2]) as string)
   }
   const content = source.slice(frontmatter[0].length)
-  const fallbackSlug = filename.replace(/\.mdx$/, '')
+  const required = (name: string) => {
+    const value = fields.get(name)?.trim()
+    if (!value) throw new Error(`Métadonnée ${name} manquante dans ${filename}`)
+    return value
+  }
 
   return {
-    slug: fields.get('slug') ?? fallbackSlug,
-    title: fields.get('title') ?? fallbackSlug,
-    date: fields.get('date') ?? '',
-    summary: fields.get('summary') ?? '',
-    category: fields.get('category') ?? 'Conseils',
+    slug: required('slug'),
+    title: required('title'),
+    date: required('date'),
+    summary: required('summary'),
+    category: required('category'),
     imageUrl: fields.get('imageUrl'),
     imageAlt: fields.get('imageAlt'),
     content,
@@ -41,10 +45,15 @@ function readArticle(filename: string): Article {
 }
 
 export function getAllArticles(): Article[] {
-  return fs.readdirSync(articlesDirectory)
+  const articles = fs.readdirSync(articlesDirectory)
     .filter((filename) => filename.endsWith('.mdx') && filename.toLowerCase() !== 'readme.mdx')
     .map(readArticle)
-    .sort((a, b) => b.date.localeCompare(a.date))
+  const slugs = new Set<string>()
+  for (const article of articles) {
+    if (slugs.has(article.slug)) throw new Error(`Slug d'article en double : ${article.slug}`)
+    slugs.add(article.slug)
+  }
+  return articles.sort((a, b) => b.date.localeCompare(a.date))
 }
 
 export function getArticle(slug: string): Article | undefined {
