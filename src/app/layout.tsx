@@ -1,9 +1,11 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import './mobile-app.css'
 import 'vanilla-cookieconsent/dist/cookieconsent.css'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
+import MobileNavigation from '@/components/MobileNavigation'
 
 import { WebVitals } from '@/components/WebVitals'
 import CookieConsentBanner from '@/components/CookieConsentBanner'
@@ -190,6 +192,13 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: '#faf9f6',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -213,6 +222,7 @@ export default function RootLayout({
         <WebVitals />
           <div className="relative w-full">
             <Navbar />
+            <MobileNavigation />
             {children}
             <Footer />
           </div>

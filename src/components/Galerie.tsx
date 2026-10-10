@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
 
 export interface Screen {
@@ -20,13 +20,25 @@ interface ProjectGalleryProps {
 /** Capture principale d'un projet, avec des vignettes pour changer de vue. */
 export default function Galerie({ screens, url, priority = false }: ProjectGalleryProps) {
   const [current, setCurrent] = useState(0)
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
   const screen = screens[current]
 
   return (
     <figure className="project-gallery">
       <div className="overflow-hidden rounded-lg border border-[#DCE3E6]">
         {url && <p className="border-b border-[#DCE3E6] bg-white px-4 py-2 text-sm text-[#59666E]">{url}</p>}
-        <div className="relative aspect-[2940/1604] w-full bg-[#F4F6F7]">
+        <div className="gallery-viewport relative aspect-[2940/1604] w-full bg-[#F4F6F7]" onTouchStart={event => {
+          touchStart.current = event.touches.length === 1 ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null
+        }} onTouchCancel={() => { touchStart.current = null }} onTouchEnd={event => {
+          const start = touchStart.current
+          touchStart.current = null
+          if (!start || !event.changedTouches[0]) return
+          const dx = event.changedTouches[0].clientX - start.x
+          const dy = event.changedTouches[0].clientY - start.y
+          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+            setCurrent(index => (index + (dx < 0 ? 1 : -1) + screens.length) % screens.length)
+          }
+        }}>
           <Image
             src={screen.src}
             alt={screen.alt}
@@ -39,10 +51,10 @@ export default function Galerie({ screens, url, priority = false }: ProjectGalle
         </div>
       </div>
 
-      <figcaption className="mt-2 text-sm text-[#59666E] font-body">{screen.caption}</figcaption>
+      <figcaption aria-live="polite" className="mt-2 text-sm text-[#59666E] font-body">{screen.caption}<span className="gallery-mobile-count">{current + 1} / {screens.length}</span></figcaption>
 
       {screens.length > 1 && (
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="gallery-thumbnails mt-3 flex flex-wrap gap-2">
           {screens.map((item, i) => (
             <button
               key={item.src}
