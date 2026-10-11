@@ -36,8 +36,8 @@ import {
   WIKIDATA_QID,
 } from '@/lib/site'
 
-const bodyFont = localFont({ src: '../fonts/SourceSans3.ttf', variable: '--font-source', display: 'swap' })
-const headingFont = localFont({ src: '../fonts/Manrope.ttf', variable: '--font-manrope', display: 'swap' })
+const bodyFont = localFont({ src: '../fonts/SourceSans3-latin.woff', variable: '--font-source', display: 'swap' })
+const headingFont = localFont({ src: '../fonts/Manrope-latin.woff', variable: '--font-manrope', display: 'swap' })
 const postalAddress: Record<string, string> = {
   '@type': 'PostalAddress',
   streetAddress: STREET_ADDRESS,

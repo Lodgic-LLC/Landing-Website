@@ -593,3 +593,10 @@ main details:has(summary:focus-visible) { outline: 2px solid var(--accent); outl
   .reveal-pending { opacity: 1; transform: none; }
   *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* Keep the consent dialog's fade and slide on the compositor. */
+html #cc-main .cc--anim .cm,
+html #cc-main .cc--anim.cm-wrapper::before {
+  transition: opacity var(--cc-modal-transition-duration) ease,
+    transform var(--cc-modal-transition-duration) ease;
+}
