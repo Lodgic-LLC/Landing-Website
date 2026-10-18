@@ -4,8 +4,8 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // Racine explicite : le dossier parent contient un package-lock.json parasite
-  // qui fausse sinon la détection automatique de Turbopack.
+  // Racine explicite pour que les fichiers voisins du projet ne changent pas
+  // la détection automatique de Turbopack.
   turbopack: { root: __dirname },
   poweredByHeader: false,
   images: {
