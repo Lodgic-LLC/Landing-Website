@@ -65,11 +65,9 @@ export default function Home() {
         {/* 2) Ce que je fais */}
           <Services />
 
-        {/* 3) Qui je suis */}
-          <About fond="blanc" />
-
-        {/* 4) Comment ça se passe */}
+        {/* La méthode rend les livrables concrets avant de présenter le développeur. */}
           <Method />
+          <About fond="blanc" />
 
           <Budget />
           <ConseilsSection />

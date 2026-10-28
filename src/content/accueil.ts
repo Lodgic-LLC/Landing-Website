@@ -10,3 +10,13 @@ export const etapes = [
   { title: 'Développement', text: 'Je vous présente les écrans prévus au cadrage, puis vous testez une version de travail au fil du développement.', livrable: 'Des écrans validés et une version à tester.' },
   { title: 'Livraison', text: 'Je mets le projet en ligne après validation des parcours convenus, sur les comptes ouverts à votre nom.', livrable: 'Le code, vos accès et la documentation prévue.' },
 ]
+
+/** Contenus existants de l’accueil, regroupés pour la nouvelle présentation. */
+export const accueil = {
+  introduction: 'Yann, développeur indépendant à Toulouse',
+  title: ['Développeur', 'd’applications mobiles', 'et web à Toulouse.'],
+  description: 'Je développe des applications iOS et Android, ainsi que des sites web et des outils métier. Du premier contact à la mise en ligne, vous échangez directement avec moi.',
+  contact: 'Parlons de votre projet',
+  projets: 'Voir mes réalisations',
+  cadre: ['Un devis détaillé et les étapes de validation.', 'Le code, vos accès et la documentation prévue.'],
+}
