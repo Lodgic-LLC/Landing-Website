@@ -13,7 +13,7 @@ export default function Hero() {
         <p className="hero-description">{accueil.description}</p>
         <div className="hero-actions">
           <Link href="/contact" className="btn-primary" data-track="contact" data-location="hero">{accueil.contact} <span aria-hidden="true">↗</span></Link>
-          <Link href="#realisations" className="text-link" data-track="case-study" data-location="hero">{accueil.projets} <span aria-hidden="true">↓</span></Link>
+          <Link href="#premiere-version" className="text-link" data-track="guide" data-location="hero">{accueil.projets} <span aria-hidden="true">↓</span></Link>
         </div>
         <ul className="hero-assurances">{accueil.cadre.map(item => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
       </div>

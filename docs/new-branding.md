@@ -38,3 +38,13 @@ Aucun nouveau service externe ni dépendance. Tarifs de départ existants conser
 Le build signale une vulnérabilité connue de la version Next.js installée. Après son rappel, la relance termine avec succès ; la mise à jour de sécurité reste à traiter. Les résultats commerciaux, Core Web Vitals terrain et l’attribution publicitaire ne sont pas validés par ces contrôles locaux.
 
 Les six articles MDX, la page de prix et le document d’audit Search Console déjà modifiés avant cette tâche restent hors du commit de refonte. Aucun push, fusion ou déploiement réalisé.
+
+## Deuxième direction visuelle et démonstration — 29 octobre
+
+Suite au retour sur les aplats : les cartes utilisent des dégradés superposés, lumières localisées, trames et bordures translucides. La palette conserve l’identité verte de Lodgic avec un fond encre et des accents menthe. Les prestations montrent trois interfaces pédagogiques HTML/CSS, sans téléchargement d’assets ForgeOne ni dépendance supplémentaire.
+
+La stratégie de démonstration observée sur l’accueil et les prestations de ForgeOne est adaptée au métier de développeur : le visiteur peut choisir site, application ou outil, voir un besoin transformé en parcours prioritaire, les fonctions reportées, un critère de validation et les livrables à cadrer. Le bouton de contact suit le scénario choisi. Les exemples sont indiqués comme illustratifs ; ce ne sont ni des projets vendus ni des résultats clients. La section remplace le résumé statique du cadre sur l’accueil ; le détail des engagements reste dans `/methode`.
+
+Le premier écran expose utilité, décisions et maîtrise du projet. Son lien secondaire mène à la démonstration ; les preuves réelles restent immédiatement accessibles dans le visuel. Les tarifs existants et les preuves clients sont conservés. Les changements de scénario utilisent le suivi soumis au consentement existant.
+
+Validation de cette itération : `npm run check`, `git diff --check`, build webpack ; contrôles visuels ordinateur et mobile, sélection des exemples application/outil et lien de contact, illustrations visibles à 320 px sans débordement, ancres de l’accueil résolues et aucune erreur console observée. L’alerte de sécurité Next.js déjà signalée demeure.

@@ -8,9 +8,9 @@ export const services = [
 export const etapes = methode.steps
 export const accueil = {
   introduction: 'Yann · Développeur web et mobile indépendant à Toulouse',
-  title: ['Votre projet numérique,', 'utile dès la', 'première version.'],
+  title: ['Un projet utile.', 'Des choix clairs.', 'Vous gardez la main.'],
   description: 'Un site pour présenter votre activité, une application pour vos utilisateurs, un outil pour votre équipe. Je vous aide à définir ce qui compte, puis je le développe avec vous, du cadrage à la mise en ligne.',
   contact: 'Faire le point sur mon projet',
-  projets: 'Voir ce que j’ai livré',
+  projets: 'Voir comment le projet se construit',
   cadre: ['Un interlocuteur, du premier échange au code livré.', 'Le périmètre et le prix définis avant de développer.'],
 }

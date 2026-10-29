@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import Hero from '@/app/_sections/Accueil'
 import DecisionResources from '@/components/DecisionResources'
 import Situations from '@/app/_sections/Situations'
-import Cadre from '@/app/_sections/Cadre'
+import ProjectWorkshop from '@/components/ProjectWorkshop'
 import JsonLd from '@/components/JsonLd'
 import ScrollReveal from '@/components/ScrollReveal'
 import { HOME_TITLE, SITE_URL } from '@/lib/site'
@@ -63,8 +63,8 @@ export default function Home() {
         <Situations />
         <SuccessStories />
         <Services />
+        <ProjectWorkshop />
         <Method />
-        <Cadre />
         <Budget />
         <About fond="blanc" />
         <DecisionResources />
