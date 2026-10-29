@@ -12,7 +12,7 @@ export default function Budget() {
     <section id="budget" className="section-space" aria-labelledby="budget-title">
       <div className="container-site">
         <div className="grid gap-6 md:grid-cols-2 md:gap-20">
-          <div><p className="eyebrow">Budget</p><h2 id="budget-title" className="title-section mt-4">Prix de départ et délais habituels.</h2></div>
+          <div><p className="eyebrow">Budget</p><h2 id="budget-title" className="title-section mt-4">Un budget lisible, avant de vous engager.</h2></div>
           <p className="self-end text-[#59666E]">Ces prix sont des points de départ. Le nombre de pages ou d’écrans, les connexions à vos outils et les données à reprendre déterminent le devis. Le planning tient aussi compte des contenus à fournir et des validations.</p>
         </div>
         <dl className="budget-options mt-10 border-t border-[#DCE3E6]">

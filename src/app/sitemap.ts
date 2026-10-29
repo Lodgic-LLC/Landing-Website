@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route(''),
     route('realisations'),
     route('contact'),
+    route('methode'),
     route('preparer-son-projet'),
     route('prix-application-mobile'),
     route('reprise-application-mobile'),

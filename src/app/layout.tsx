@@ -4,6 +4,7 @@ import './globals.css'
 import './mobile-app.css'
 import './branding.css'
 import 'vanilla-cookieconsent/dist/cookieconsent.css'
+import ConversionTracking from '@/components/ConversionTracking'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import MobileNavigation from '@/components/MobileNavigation'
@@ -221,6 +222,7 @@ export default function RootLayout({
         <CookieConsentBanner />
         <ConsentScripts />
         <WebVitals />
+        <ConversionTracking />
           <div className="relative w-full">
             <Navbar />
             <MobileNavigation />

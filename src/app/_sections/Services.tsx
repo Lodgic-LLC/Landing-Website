@@ -1,15 +1,21 @@
 import Link from 'next/link'
 import { FiMonitor, FiSmartphone, FiLayers } from 'react-icons/fi'
-
 import { services } from '@/content/accueil'
-
+import { PAGES_SERVICE } from '@/content/pages-service'
 const serviceIcons = [FiMonitor, FiSmartphone, FiLayers]
 
 export default function Services() {
-  return <section id="services" className="section-space bg-[#F4F6F7]" aria-labelledby="services-title">
-    <div className="container-site service-layout">
-      <div className="service-intro"><p className="eyebrow">Services</p><h2 id="services-title" className="title-section mt-4 max-w-sm">Sites web, applications mobiles et outils métier.</h2><p className="mt-5 max-w-sm text-[#59666E]">Le premier échange sert à préciser l’usage, les fonctions nécessaires et ce qui peut attendre.</p></div>
-      <div className="service-entries">{services.map((service, index) => { const Icon = serviceIcons[index] ?? FiLayers; return <article key={service.title} className="service-entry"><div className="service-symbol" aria-hidden="true"><Icon /><span>0{index + 1}</span></div><h3 className="text-2xl">{service.title}</h3><p className="mt-3 max-w-xl text-[#59666E]">{service.description}</p><Link href={service.href} className="text-link mt-4 text-base">{service.cta}<span aria-hidden>→</span></Link>{service.href === '/developpement-application-mobile-toulouse' && <div className="mt-5 flex flex-wrap gap-x-7 gap-y-3 border-t border-[#DCE3E6] pt-4"><Link href="/prix-application-mobile" className="text-link text-base">Quel budget prévoir ? <span aria-hidden>→</span></Link><Link href="/reprise-application-mobile" className="text-link text-base">Reprendre une application existante <span aria-hidden>→</span></Link></div>}</article> })}</div>
-    </div>
-  </section>
+  return <section id="services" className="section-space" aria-labelledby="services-title"><div className="container-site service-layout">
+    <div className="section-intro"><div><p className="eyebrow">Ce que je construis</p><h2 id="services-title" className="title-section mt-4">Trois formats. Un besoin concret à résoudre.</h2></div><p>Nous choisissons le format selon vos utilisateurs, vos contraintes et votre budget. Chaque proposition décrit sa première version.</p></div>
+    <div className="service-entries">{services.map((service,index) => {
+      const Icon = serviceIcons[index] ?? FiLayers
+      const price = PAGES_SERVICE.find(page => `/${page.slug}` === service.href)?.hero.badges.find(badge => badge.includes('€'))
+      return <article key={service.href} className="service-entry">
+        <div className="service-symbol" aria-hidden="true"><Icon /><span>0{index+1}</span></div>
+        <p className="service-format">{service.format}</p><h3>{service.title}</h3><p>{service.description}</p>
+        <p className="service-output">{service.outcome}</p><p className="service-price">{price}<span> · périmètre à définir</span></p>
+        <Link href={service.href} className="text-link" data-track="service" data-location="offres">{service.cta}<span aria-hidden="true">→</span></Link>
+      </article>
+    })}</div>
+  </div></section>
 }

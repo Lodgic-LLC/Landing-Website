@@ -90,7 +90,7 @@ export default function MobileNavigation() {
           <Link href="/prix-application-mobile" onClick={close}>Prix d’une application</Link>
           <Link href="/reprise-application-mobile" onClick={close}>Reprise d’une application</Link>
           <Link href="/#about" onClick={close}>À propos</Link>
-          <Link href="/#methode" onClick={close}>Méthode</Link>
+          <Link href="/methode" onClick={close}>Méthode</Link>
           <Link href="/#budget" onClick={close}>Tarifs et délais</Link>
           <Link href="/preparer-son-projet" onClick={close}>Préparer mon projet</Link>
         </div>

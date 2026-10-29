@@ -1,22 +1,16 @@
-/** Textes de l’accueil, indépendants de la mise en page. */
-export const services = [
-  { title: 'Sites web', href: '/creation-site-internet-toulouse', description: 'Des pages cohérentes pour présenter votre activité, montrer vos réalisations et transformer les visites en demandes. Je conçois le parcours jusqu’au contact.', cta: 'Création et refonte de sites' },
-  { title: 'Applications mobiles iOS et Android', href: '/developpement-application-mobile-toulouse', description: 'Je conçois et développe votre application avec React Native, puis je la publie sur le Google Play Store et l’App Store.', cta: 'Développement d’applications mobiles' },
-  { title: 'Outils métier', href: '/logiciel-sur-mesure-toulouse', description: 'Un outil interne pour centraliser les informations, relier les services utiles et réduire les tâches répétitives. Je le construis autour du travail de votre équipe.', cta: 'Logiciels sur mesure' },
-]
-export const etapes = [
-  { title: 'Premier échange', text: 'Vous m’expliquez votre besoin et vos contraintes. Je précise avec vous ce que le projet doit permettre de faire.', livrable: 'Les usages prioritaires et les points à clarifier.' },
-  { title: 'Proposition', text: 'Je vous remets un périmètre, un planning et un prix. Vous les validez avant le développement.', livrable: 'Un devis détaillé et les étapes de validation.' },
-  { title: 'Développement', text: 'Je vous présente les écrans prévus au cadrage, puis vous testez une version de travail au fil du développement.', livrable: 'Des écrans validés et une version à tester.' },
-  { title: 'Livraison', text: 'Je mets le projet en ligne après validation des parcours convenus, sur les comptes ouverts à votre nom.', livrable: 'Le code, vos accès et la documentation prévue.' },
-]
+import { methode } from '@/content/parcours'
 
-/** Contenus existants de l’accueil, regroupés pour la nouvelle présentation. */
+export const services = [
+  { title: 'Un site pour être compris et contacté', href: '/creation-site-internet-toulouse', description: 'Votre offre, vos preuves et un chemin clair vers la demande de devis. Création ou refonte, à partir de ce qui manque aujourd’hui.', cta: 'Construire mon site', format: 'Site web', outcome: 'Des pages métier, un parcours de contact, une passation.' },
+  { title: 'Une application pour un usage qui revient', href: '/developpement-application-mobile-toulouse', description: 'Une première version iOS et Android centrée sur le parcours utile à vos utilisateurs. Nous cadrons le produit avant de multiplier les fonctions.', cta: 'Définir mon application', format: 'Application mobile', outcome: 'Un périmètre, des écrans testés, une publication préparée.' },
+  { title: 'Un outil qui suit votre façon de travailler', href: '/logiciel-sur-mesure-toulouse', description: 'Réunir les informations, organiser les accès et relier les outils autour d’un processus précis de votre équipe.', cta: 'Simplifier mon activité', format: 'Logiciel métier', outcome: 'Un processus partagé, des rôles, des connexions cadrées.' },
+]
+export const etapes = methode.steps
 export const accueil = {
-  introduction: 'Yann, développeur indépendant à Toulouse',
-  title: ['Développeur', 'd’applications mobiles', 'et web à Toulouse.'],
-  description: 'Je développe des applications iOS et Android, ainsi que des sites web et des outils métier. Du premier contact à la mise en ligne, vous échangez directement avec moi.',
-  contact: 'Parlons de votre projet',
-  projets: 'Voir mes réalisations',
-  cadre: ['Un devis détaillé et les étapes de validation.', 'Le code, vos accès et la documentation prévue.'],
+  introduction: 'Yann · Développeur web et mobile indépendant à Toulouse',
+  title: ['Votre projet numérique,', 'utile dès la', 'première version.'],
+  description: 'Un site pour présenter votre activité, une application pour vos utilisateurs, un outil pour votre équipe. Je vous aide à définir ce qui compte, puis je le développe avec vous, du cadrage à la mise en ligne.',
+  contact: 'Faire le point sur mon projet',
+  projets: 'Voir ce que j’ai livré',
+  cadre: ['Un interlocuteur, du premier échange au code livré.', 'Le périmètre et le prix définis avant de développer.'],
 }
