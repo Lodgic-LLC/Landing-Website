@@ -600,3 +600,30 @@ html #cc-main .cc--anim.cm-wrapper::before {
   transition: opacity var(--cc-modal-transition-duration) ease,
     transform var(--cc-modal-transition-duration) ease;
 }
+
+/* Repères de décision, dans la présentation existante du site. */
+.hero-reassurance { margin-top: 22px; max-width: 48ch; font-size: 14px; color: var(--charcoal-muted); }
+.service-entry > .service-need { color: var(--accent); font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+.service-choice { border-top: 1px solid var(--hairline); margin-top: 18px; padding-top: 12px; font-size: 14px; }
+.service-choice summary { cursor: pointer; color: var(--accent); padding-block: 8px; }
+.service-choice p { margin-top: 12px; color: var(--charcoal-muted); line-height: 1.6; }
+.service-decision > .container-site { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.service-decision p { color: var(--charcoal-muted); font-size: 17px; }
+.service-decision h3 { font-size: 21px; margin-bottom: 12px; }
+.service-decision h3:not(:first-child) { margin-top: 28px; }
+.contact-next-steps { margin-top: 28px; }
+.contact-next-steps li { display: flex; gap: 16px; padding-block: 16px; border-bottom: 1px solid var(--hairline); }
+.contact-next-steps li > span { color: var(--accent); font-size: 12px; padding-top: 4px; }
+.contact-next-steps h3 { font-family: var(--font-source), sans-serif; font-size: 16px; font-weight: 600; }
+.contact-next-steps li p { margin-top: 7px; color: var(--charcoal-muted); font-size: 14px; line-height: 1.6; }
+.article-project-next { margin-top: 48px; padding-block: 24px; border-block: 1px solid var(--hairline); }
+.article-project-next p { margin-block: 16px; color: var(--charcoal-muted); }
+.article-project-next a { margin: 8px 24px 0 0; font-size: 16px; }
+@media (max-width: 767px) {
+  .home-page .service-entry > .service-need { display: block; }
+  .home-page .advice-article:not(:first-child) { display: block; }
+  .home-page .advice-article:not(:first-child) .advice-cover { display: none; }
+  .home-page .advice-article:not(:first-child) { padding-top: 20px; border-top: 1px solid var(--hairline); }
+  .service-decision > .container-site { grid-template-columns: minmax(0,1fr); gap: 28px; }
+  .hero-reassurance { font-size: 13px; }
+}

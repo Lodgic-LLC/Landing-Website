@@ -4,6 +4,7 @@ import Contact from '@/app/_sections/Contact'
 import JsonLd, { filAriane, faq } from '@/components/JsonLd'
 import type { PageService } from '@/content/pages-service'
 import { SITE_URL } from '@/lib/site'
+import { decisionsServices } from '@/content/choix-projet'
 
 function Texte({ children }: { children: string }) {
   return <>
@@ -109,15 +110,17 @@ function OtherServices({ links }: { links: PageService['expertise']['crossLinks'
 
 export default function PageSeo({ page }: { page: PageService }) {
   const url = SITE_URL + '/' + page.slug
+  const decision = decisionsServices[page.slug]
 
   return <main className="service-page">
     <JsonLd data={filAriane([{ name: 'Accueil', url: SITE_URL }, { name: page.name, url }])} />
     <JsonLd data={faq(page.faqs)} />
     <ServiceHero hero={page.hero} />
-    <ServiceExpertise expertise={page.expertise} />
+    {decision && <section className="service-decision section-space"><div className="container-site"><div><p className="eyebrow">Avant de choisir</p><h2 className="title-section mt-4">Partir de votre besoin.</h2><p className="mt-5">{decision.besoin}</p><p className="mt-4">{decision.alternative}</p></div><div><h3>La première version à cadrer</h3><p>{decision.premiereVersion}</p><h3>Ce qu’il faut aussi prévoir</h3><p>{decision.aPrevoir}</p><Link href="/preparer-son-projet" className="text-link mt-5">Préparer les informations utiles →</Link></div></div></section>}
     {page.project && <ProjectExample project={page.project} />}
+    <ServiceExpertise expertise={page.expertise} />
     <ServiceQuestions faqs={page.faqs} />
-    <Contact />
+    <Contact source={`service-${page.slug}`} />
     <OtherServices links={page.expertise.crossLinks} />
   </main>
 }

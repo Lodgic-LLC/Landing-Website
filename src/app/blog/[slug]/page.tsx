@@ -79,6 +79,7 @@ export default async function Page({ params }: Props) {
           <h2 id="article-faq-title" className="title-section">Questions fréquentes</h2>
           <div className="mt-7 border-t border-[#DCE3E6]">{questions.map(({ question, answer }) => <details key={question} className="border-b border-[#DCE3E6] py-5"><summary className="flex items-center justify-between gap-4 font-semibold"><span>{question}</span><span aria-hidden="true" className="text-2xl text-[#246B66]">+</span></summary><p className="mt-4 max-w-3xl text-base leading-relaxed text-[#59666E]">{answer}</p></details>)}</div>
         </section>}
+        <aside className="article-project-next"><h2 className="text-2xl">Passer de la lecture à votre projet.</h2><p>Décrivez l’usage à rendre possible, ce qui existe et vos contraintes. Ces éléments permettent de préparer le premier échange.</p><Link href="/preparer-son-projet" className="text-link">Préparer mon projet →</Link><Link href="/contact" className="text-link">En parler avec Yann →</Link></aside>
         <div className="mt-14 border-t border-[#DCE3E6] pt-8"><Link href="/blog" className="text-link text-base"><span aria-hidden="true">←</span> Tous les conseils</Link></div>
       </div>
     </article>
