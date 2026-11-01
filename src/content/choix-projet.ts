@@ -1,4 +1,10 @@
 /** Repères commerciaux : rester dans les prestations réellement proposées par Lodgic. */
+export const cadeauApplicationMobile = {
+  label: 'Cadeau inclus avec votre application',
+  title: 'Un site vitrine pour promouvoir votre application',
+  description: 'Il présente votre application, renvoie vers les stores et aide à la faire découvrir sur Google.',
+}
+
 export const accueilPromesse = {
   description: 'Un site pour recevoir des demandes, une application pour vos utilisateurs ou un outil pour simplifier le travail de votre équipe. Je vous aide à choisir les fonctions utiles, puis je les développe avec vous, du premier échange à la mise en ligne.',
   reassurance: 'Un interlocuteur direct. Un périmètre et un prix validés avant le développement.',

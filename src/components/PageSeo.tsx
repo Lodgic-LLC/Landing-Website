@@ -4,7 +4,7 @@ import Contact from '@/app/_sections/Contact'
 import JsonLd, { filAriane, faq } from '@/components/JsonLd'
 import type { PageService } from '@/content/pages-service'
 import { SITE_URL } from '@/lib/site'
-import { decisionsServices } from '@/content/choix-projet'
+import { cadeauApplicationMobile, decisionsServices } from '@/content/choix-projet'
 
 function Texte({ children }: { children: string }) {
   return <>
@@ -24,6 +24,11 @@ function ServiceHero({ hero }: { hero: PageService['hero'] }) {
         <h1 className="title-hero mt-4 max-w-3xl">{hero.title}</h1>
         <p className="mt-6 text-xl font-semibold">{hero.highlight}</p>
         <p className="mt-4 max-w-2xl text-[#59666E]"><Texte>{hero.description}</Texte></p>
+        {hero.gift && <div className="service-gift service-gift-hero">
+          <p className="service-gift-label">{cadeauApplicationMobile.label}</p>
+          <p className="service-gift-title">{cadeauApplicationMobile.title}</p>
+          <p className="service-gift-description">{cadeauApplicationMobile.description}</p>
+        </div>}
         <Link href="/contact" className="btn-primary mt-7">Parlons de votre projet <span aria-hidden>↗</span></Link>
       </div>
       <aside className="border-l-2 border-[#DCE3E6] pl-7">

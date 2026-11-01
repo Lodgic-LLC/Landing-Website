@@ -1,7 +1,7 @@
 /** Textes de l’accueil, indépendants de la mise en page. */
 export const services = [
   { title: 'Sites web', href: '/creation-site-internet-toulouse', description: "Des pages cohérentes pour présenter votre activité, montrer vos réalisations et transformer les visites en demandes. Cela comprend l'optimisation du référencement naturel (SEO), afin d’améliorer la visibilité et le positionnement de votre site sur Google.", cta: 'Création et refonte de sites' },
-  { title: 'Applications mobiles iOS et Android', href: '/developpement-application-mobile-toulouse', description: 'Je conçois et développe votre application avec React Native, puis je la publie sur le Google Play Store et l’App Store. En cadeau, je crée un site vitrine pour présenter et promouvoir votre application sur Google.', cta: 'Développement d’applications mobiles' },
+  { title: 'Applications mobiles iOS et Android', href: '/developpement-application-mobile-toulouse', description: 'Je conçois et développe votre application avec React Native, puis je la publie sur le Google Play Store et l’App Store.', cta: 'Développement d’applications mobiles' },
   { title: 'Outils métier', href: '/logiciel-sur-mesure-toulouse', description: 'Un outil interne pour centraliser les informations, relier les services utiles et réduire les tâches répétitives. Je le construis autour du travail de votre équipe.', cta: 'Logiciels sur mesure' },
 ]
 export const etapes = [
