@@ -185,8 +185,8 @@ export const PAGES_SERVICE: PageService[] = [
       title: 'Développeur d’applications mobiles iOS et Android à Toulouse',
       highlight: 'Une application pour les deux plateformes, du cadrage à la publication.',
       description:
-        'Je définis les parcours avec vous, développe l’application en **React Native**, la teste sur appareil et la publie sur **le Google Play Store et l’App Store**. Les comptes de publication restent à votre nom. Le périmètre et le prix sont écrits avant le code.',
-      badges: ['iPhone et Android', 'À partir de 4 000 €', '2 à 4 mois', 'Google Play Store et App Store', 'Toulouse et à distance'],
+        'Je définis les parcours avec vous, développe l’application en **React Native**, la teste sur appareil et la publie sur **le Google Play Store et l’App Store**. **Un site vitrine de présentation est offert** avec le développement pour promouvoir votre application sur Google. Les comptes de publication restent à votre nom. Le périmètre et le prix sont écrits avant le code.',
+      badges: ['iPhone et Android', 'Site vitrine offert', 'À partir de 4 000 €', '2 à 4 mois', 'Google Play Store et App Store', 'Toulouse et à distance'],
     },
     expertise: {
       eyebrow: 'Ce que comprend le développement',
@@ -269,6 +269,7 @@ export const PAGES_SERVICE: PageService[] = [
       ],
       closing: [
         'Une application mobile démarre à **4 000 €** et se livre en **2 à 4 mois**, publication sur le Google Play Store et l’App Store comprise dans le périmètre prévu. Le montant exact est fixé par écrit après le cadrage, avant la première ligne de code. Il ne change ensuite que si vous modifiez le périmètre.',
+        'Le **site vitrine de présentation offert** permet de décrire l’application et de proposer un lien vers ses pages sur les stores. Sa structure et ses contenus sont préparés pour le référencement naturel ; aucune position sur Google ne peut être garantie. Le nom de domaine, l’hébergement et les contenus à fournir sont précisés dans le devis.',
         'Je suis basé à Toulouse : je peux vous rencontrer pour le cadrage, puis poursuivre les échanges en visio et vous donner accès aux versions de test sur votre téléphone. Je travaille aussi à distance partout en France.',
       ],
       crossLinks: [

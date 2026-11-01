@@ -622,6 +622,7 @@ html #cc-main .cc--anim.cm-wrapper::before {
 @media (max-width: 767px) {
   .home-page .service-entry > .service-need { display: block; }
   .home-page .service-entry:first-child > p.mt-3 { display: block; font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
+  .home-page .service-entry:nth-child(2) > p.mt-3 { display: block; font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
   .home-page .advice-article:not(:first-child) { display: block; }
   .home-page .advice-article:not(:first-child) .advice-cover { display: none; }
   .home-page .advice-article:not(:first-child) { padding-top: 20px; border-top: 1px solid var(--hairline); }
