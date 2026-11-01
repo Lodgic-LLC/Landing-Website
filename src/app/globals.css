@@ -95,8 +95,9 @@ button, summary { cursor: pointer; }
 .service-entry h3 { min-height: 2.5em; font-size: 22px; }
 .service-entry > p { font-size: 17px; }
 .service-entry > .service-choice { margin-top: auto; }
-.service-more { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px 32px; margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--hairline); }
-.service-more > span { color: var(--charcoal-muted); font-size: 14px; }
+.service-entries > .service-entry:nth-of-type(3) { grid-column: 3; grid-row: 1; }
+.service-more { grid-column: 2; grid-row: 2; border-top: 1px solid var(--hairline); padding-top: 14px; }
+.service-more .text-link { font-size: 15px; }
 .method-process { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); column-gap: 90px; }
 .method-intro { align-self: start; position: sticky; top: 120px; }
 .method-steps { border-left: 1px solid #a8b8a9; margin-left: 6px; }
@@ -220,6 +221,7 @@ button, summary { cursor: pointer; }
 .budget-options dt a { color: var(--ink); font-family: var(--font-manrope),sans-serif; font-size: 21px; text-decoration: none; letter-spacing: -.035em; }
 .budget-options dd:last-child { margin-top: auto; padding-top: 10px; text-align: left; }
 .budget-options dd:last-child > span:first-child { font-family: var(--font-editorial); font-weight: 400; font-size: 29px; }
+.budget-detail-link { display: flex; width: fit-content; margin-top: 12px; }
 #conseils { border-top: 1px solid var(--hairline); }
 .advice-article-summary { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 .advice-article-link { font-size: 14px; }
@@ -573,7 +575,7 @@ main details:has(summary:focus-visible) { outline: 2px solid var(--accent); outl
   .home-page .budget-options dt a { font-size: 18px; min-height: 36px; }
   .home-page .budget-options dd:last-child { padding: 0; }
   .home-page .budget-options dd:last-child > span:first-child { font-size: 25px; }
-  .home-page .budget-options dd:last-child > span:last-child { font-size: 14px; }
+  .home-page .budget-options dd:last-child > span:last-of-type { font-size: 14px; }
   .home-page #budget > .container-site > div:last-child { margin-top: 16px; }
   .home-page #budget > .container-site > div:last-child > div { gap: 4px; }
   .home-page .advice-intro > div > p:last-child { display: none; }
@@ -630,7 +632,10 @@ html #cc-main .cc--anim.cm-wrapper::before {
 .article-project-next a { margin: 8px 24px 0 0; font-size: 16px; }
 @media (max-width: 767px) {
   .home-page .service-entry > .service-choice { margin-top: 18px; }
-  .home-page .service-more { align-items: flex-start; flex-direction: column; gap: 10px; margin-top: 18px; }
+  .home-page .service-entries > .service-entry:nth-of-type(3),
+  .home-page .service-more { grid-column: auto; grid-row: auto; }
+  .home-page .service-more { padding: 14px 18px 18px; }
+  .home-page .service-entry:nth-of-type(3) { border-top: 1px solid var(--hairline); }
   .home-page .service-entry > .service-need { display: block; }
   .home-page .service-entry:first-child > p.mt-3 { display: block; font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
   .home-page .service-entry:nth-child(2) > p.mt-3 { display: block; font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
