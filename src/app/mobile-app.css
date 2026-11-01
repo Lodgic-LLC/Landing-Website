@@ -79,12 +79,26 @@
   .home-page .service-entry + .service-entry { border-top: 1px solid var(--hairline); }
   .home-page .service-entry h3 { font-size: 18px; }
   .home-page .service-entry .text-link { text-decoration: none; justify-content: space-between; width: 100%; gap: 12px; font-size: 14px; }
+  .home-page .service-entry { padding-block: 16px 10px; }
+  .home-page .service-entry > .service-need { margin-bottom: 5px; line-height: 1.4; }
+  #services .service-entry > p.mt-3,
+  .home-page .service-entry > div.service-gift,
+  .home-page .service-entry > .service-choice { display: none; }
+  .home-page .service-entry .text-link { min-height: 44px; margin-top: 9px; border-top: 1px solid var(--hairline); padding-top: 6px; }
+  .home-page .service-entry .service-link-desktop { display: none; }
+  .home-page .service-entry .service-link-mobile { display: inline; }
+  .home-page .service-more { margin-top: 0; padding: 0 18px 10px; }
+  .home-page .service-more .text-link { display: flex; justify-content: space-between; gap: 12px; min-height: 44px; width: 100%; font-size: 14px; text-decoration: none; }
+  .home-page :is(.service-entry, .service-more, .budget-options) .link-arrow { width: 28px; height: 28px; border-radius: 50%; background: var(--accent-soft); }
   .home-page .about-section { margin-inline: 12px; border-radius: 22px; }
   .home-page .mobile-disclosure-toggle { padding: 14px 18px; background: #edf0e6; border: 0; border-radius: 14px; }
-  .home-page .budget-options { border: 1px solid var(--hairline); border-radius: 16px; padding-inline: 18px; background: #fffefa; }
-  .home-page .budget-options > div:first-child { border-top: 0; }
-  .home-page .budget-options dt a { font-size: 17px; }
-  .home-page .budget-options dd:last-child > span:first-child { font-size: 24px; }
+  .home-page .budget-options { gap: 10px; border: 0; padding: 0; background: transparent; }
+  .home-page .budget-options > div { gap: 2px; border: 1px solid var(--hairline); border-radius: 14px; padding: 12px 16px; background: #fffefa; }
+  .home-page .budget-options > div:first-child { border-top: 1px solid var(--hairline); }
+  .home-page .budget-options dt a { display: flex; justify-content: space-between; width: 100%; min-height: 40px; font-size: 17px; text-decoration: none; }
+  .home-page .budget-options dd:last-child > span:first-child { font-size: 21px; line-height: 1.2; }
+  .home-page .budget-options dd:last-child > span:last-of-type { display: block; margin-top: 2px; }
+  .home-page .budget-detail-link { justify-content: space-between; width: 100%; margin-top: 9px; border-top: 1px solid var(--hairline); padding-top: 7px; font-size: 14px; text-decoration: none; }
   .home-page .advice-cover, .blog-card-cover, .blog-feature-cover, .article-cover, .related-cover { border-radius: 14px; }
   .home-page .questions-section { background: #f0f2e9; }
   .home-page .faq-item[open] { background: transparent; }

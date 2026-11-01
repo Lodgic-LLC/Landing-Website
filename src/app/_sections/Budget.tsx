@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import LinkArrow from '@/components/LinkArrow'
 import { PAGES_SERVICE } from '@/content/pages-service'
 
 const prestations = [
@@ -20,15 +21,15 @@ export default function Budget() {
             const page = PAGES_SERVICE.find(page => page.slug === item.slug)!
             const price = page.hero.badges.find(badge => badge.includes('€'))
             return <div key={item.slug} className="grid gap-3 border-b border-[#DCE3E6] py-7 md:grid-cols-[1fr_1.4fr_1fr] md:gap-10">
-              <dt><Link href={`/${item.slug}`} className="text-link text-xl">{item.title}<span aria-hidden>↗</span></Link></dt>
+              <dt><Link href={`/${item.slug}`} className="text-link text-xl">{item.title}<LinkArrow direction="up-right" /></Link></dt>
               <dd className="text-base text-[#59666E]">{item.scope}</dd>
-              <dd className="md:text-right"><span className="block text-xl font-semibold">{price}</span><span className="text-base text-[#59666E]">{item.delay}</span>{item.slug === 'developpement-application-mobile-toulouse' && <Link href="/prix-application-mobile" className="budget-detail-link text-link text-base">Quel budget prévoir ? <span aria-hidden>→</span></Link>}</dd>
+              <dd className="md:text-right"><span className="block text-xl font-semibold">{price}</span><span className="text-base text-[#59666E]">{item.delay}</span>{item.slug === 'developpement-application-mobile-toulouse' && <Link href="/prix-application-mobile" className="budget-detail-link text-link text-base">Quel budget prévoir ? <LinkArrow /></Link>}</dd>
             </div>
           })}
         </dl>
         <div className="mt-8 grid gap-6 md:grid-cols-[1.4fr_1fr] md:gap-20">
           <p className="text-base text-[#59666E]"><strong className="font-semibold text-[#1D2930]">Vous gardez la main sur votre application.</strong> Les comptes nécessaires sont ouverts à votre nom : hébergement, nom de domaine, App Store et Google Play selon le projet. Vous en conservez les accès, le code livré et vos données. Le devis distingue les frais de ces services et le suivi après livraison.</p>
-          <div className="flex flex-col gap-3 md:items-end"><Link href="/contact" className="text-link">Discuter du périmètre de mon projet <span aria-hidden>→</span></Link></div>
+          <div className="flex flex-col gap-3 md:items-end"><Link href="/contact" className="text-link">Discuter du périmètre de mon projet <LinkArrow /></Link></div>
         </div>
       </div>
     </section>
