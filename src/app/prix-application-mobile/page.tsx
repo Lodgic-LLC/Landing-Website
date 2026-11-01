@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site'
 
 export const metadata = buildSeoMetadata({
   path: '/prix-application-mobile',
-  title: 'Prix d’une application mobile : comment estimer votre projet',
+  title: 'Prix d’une application mobile : budget et devis',
   description: 'Une application iPhone et Android démarre à 4 000 € chez Lodgic. Ce qui entre dans le devis, les coûts à prévoir après la publication et les questions pour chiffrer votre projet.',
 })
 
@@ -95,6 +95,7 @@ export default function PrixApplicationMobile() {
         <aside className="border-t border-[#DCE3E6] pt-5 text-base text-[#59666E]">
           <p>Pour approfondir le sujet, l’<Link href="/blog/combien-coute-une-application-en-2026" className="text-link">article sur le coût d’une application <span aria-hidden>→</span></Link> compare différents types de projets.</p>
           <p className="mt-5">La page <Link href="/developpement-application-mobile-toulouse" className="text-link">développement mobile à Toulouse <span aria-hidden>→</span></Link> détaille mon travail du cadrage à la publication.</p>
+          <p className="mt-5">Si vous préparez une plateforme de vente ou de services, l’<Link href="/blog/pourquoi-creer-une-application-mobile-pour-sa-marketplace" className="text-link">article sur les applications de marketplace <span aria-hidden>→</span></Link> aborde les fonctions à chiffrer.</p>
         </aside>
       </div>
     </section>
