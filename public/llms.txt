@@ -28,9 +28,6 @@
 - [Prix d’une application mobile](https://www.lodgic-dev.com/prix-application-mobile) : prix de départ, facteurs du devis et frais après publication
 - [Reprise d’application mobile](https://www.lodgic-dev.com/reprise-application-mobile) : examen du code et des accès, correction ou refonte
 
-- [Méthode](https://www.lodgic-dev.com/methode) : étapes, livrables, validations, accès et suivi
-- [Préparer son projet](https://www.lodgic-dev.com/preparer-son-projet) : guide d’orientation sans inscription et trame téléchargeable
-
 ## Réalisations
 
 - Alliance-TRAVAUX (alliance-travaux.fr) : site d'un collectif d'artisans toulousains avec 31 pages, formulaire de devis, données structurées Schema.org et référencement local sur 16 communes. Affichage de l'accueil passé de 5,8 s à 0,7 s ; Lighthouse : 88 en performance mobile, 98 sur ordinateur, 100 en SEO, 3/3 en navigation agentique (site lisible et navigable par les assistants IA). 80 % des visites viennent d'un téléphone, 0 vulnérabilité connue à l'audit des dépendances. React, Vite.

@@ -8,9 +8,9 @@ import { trackClick } from '@/lib/analytics'
 
 const mainLinks = [
   { label: 'Réalisations', href: '/realisations' },
-  { label: 'Méthode', href: '/methode' },
+  { label: 'Méthode', href: '/#methode' },
   { label: 'Conseils', href: '/blog' },
-  { label: 'Budget', href: '/#budget' },
+  { label: 'À propos', href: '/#about' },
 ]
 
 const services = [
@@ -98,7 +98,7 @@ export default function Navbar() {
 
       <div className="hidden shrink-0 items-center gap-4 lg:flex">
         <a href={`tel:${CONTACT_PHONE}`} onClick={() => trackClick('telephone-navbar')} className="whitespace-nowrap text-sm font-semibold text-[#17232A] hover:text-[#246B66]">{CONTACT_PHONE_DISPLAY}</a>
-        <Link href="/contact" className="btn-primary whitespace-nowrap text-sm" data-track="contact" data-location="navigation">Parlons du projet</Link>
+        <Link href="/contact" className="btn-primary whitespace-nowrap text-sm">Contact</Link>
       </div>
 
       <button ref={mobileButton} type="button" onClick={() => setMobileOpen(value => !value)} className="rounded-md border border-[#DCE3E6] px-4 py-2 text-base lg:hidden" aria-expanded={mobileOpen} aria-controls="mobile-menu">{mobileOpen ? 'Fermer' : 'Menu'}</button>

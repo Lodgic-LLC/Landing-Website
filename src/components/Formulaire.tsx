@@ -1,11 +1,8 @@
 'use client'
 
-import { useId, useRef, useState } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
-import { trackClick, trackConversion } from '@/lib/analytics'
-
-import { projectKinds, type ProjectKind } from '@/content/parcours'
-import { isFormSuccess } from '@/lib/form-response'
+import { trackConversion } from '@/lib/analytics'
 
 /** Adresse d'envoi Formsubmit, définie dans .env.local (voir .env.example). */
 const ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? ''
@@ -18,12 +15,12 @@ const formEndpointIsValid = (() => {
   }
 })()
 
-type FieldName = 'name' | 'email' | 'phone' | 'subject' | 'message' | 'project'
+type FieldName = 'name' | 'email' | 'phone' | 'subject' | 'message'
 
 interface Field {
   name: FieldName
   label: string
-  type?: 'text' | 'email' | 'tel' | 'textarea' | 'select'
+  type?: 'text' | 'email' | 'tel' | 'textarea'
   required?: boolean
   placeholder?: string
 }
@@ -36,10 +33,10 @@ export const SHORT_FIELDS: Field[] = [
 
 /** Formulaire complet de la page contact. */
 export const FULL_FIELDS: Field[] = [
-  { name: 'name', label: 'Votre nom', placeholder: 'Facultatif' },
+  { name: 'name', label: 'Votre nom', required: true },
   { name: 'email', label: 'Votre email', type: 'email', required: true },
   { name: 'phone', label: 'Téléphone', type: 'tel', placeholder: 'Facultatif' },
-  { name: 'project', label: 'Votre projet', type: 'select' },
+  { name: 'subject', label: 'Sujet', placeholder: 'Site web, application, logiciel…' },
   { name: 'message', label: 'Votre projet en quelques lignes', type: 'textarea', required: true, placeholder: 'Le besoin, les utilisateurs, ce qui existe déjà. Précisez votre échéance ou votre budget si vous les connaissez.' },
 ]
 
@@ -48,7 +45,6 @@ interface ProjectFormProps {
   source: string
   fields?: Field[]
   submitLabel?: string
-  initialProject?: ProjectKind
 }
 
 const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)
@@ -57,13 +53,8 @@ export default function Formulaire({
   source,
   fields = SHORT_FIELDS,
   submitLabel = 'Envoyer',
-  initialProject,
 }: ProjectFormProps) {
-  const formId = useId()
-  const formRef = useRef<HTMLFormElement>(null)
-  const started = useRef(false)
-  const inFlight = useRef(false)
-  const [values, setValues] = useState<Record<string, string>>(initialProject ? { project: initialProject } : {})
+  const [values, setValues] = useState<Record<string, string>>({})
   const [honey, setHoney] = useState('')
   const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({})
   const [status, setStatus] = useState<{ ok: boolean; message: string } | null>(null)
@@ -82,16 +73,10 @@ export default function Formulaire({
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (inFlight.current) return
 
     const found = validate()
     setErrors(found)
-    if (Object.keys(found).length > 0) {
-      const first = fields.find(field => found[field.name])
-      if (first) formRef.current?.querySelector<HTMLElement>(`[name="${first.name}"]`)?.focus()
-      trackClick('form-validation-error', { source, count: Object.keys(found).length })
-      return
-    }
+    if (Object.keys(found).length > 0) return
 
     if (!formEndpointIsValid) {
       setStatus({
@@ -101,7 +86,6 @@ export default function Formulaire({
       return
     }
 
-    inFlight.current = true
     setSending(true)
     setStatus(null)
     try {
@@ -112,28 +96,24 @@ export default function Formulaire({
       })
       if (!response.ok) throw new Error(`Réponse ${response.status}`)
 
-      const payload: unknown = await response.json()
-      if (!isFormSuccess(payload)) throw new Error('Envoi non confirmé')
       trackConversion(source)
-      setStatus({ ok: true, message: 'Votre message a été transmis. Je vais examiner votre besoin et vous répondre personnellement pour préciser la prochaine étape. Aucun travail ne démarre sans proposition acceptée.' })
+      setStatus({ ok: true, message: 'Message envoyé. Merci, je vous répondrai personnellement.' })
       setValues({})
       setHoney('')
-      started.current = false
     } catch {
       setStatus({
         ok: false,
         message: "L'envoi a échoué. Écrivez-moi directement à contact@lodgic-dev.com.",
       })
     } finally {
-      inFlight.current = false
       setSending(false)
     }
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="space-y-5" noValidate aria-busy={sending} onFocus={() => { if (!started.current) { started.current = true; trackClick('form-start', { source }) } }}>
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       {fields.map((field) => {
-        const id = `${formId}-${field.name}`
+        const id = `field-${field.name}`
         const error = errors[field.name]
         const shared = {
           id,
@@ -144,10 +124,10 @@ export default function Formulaire({
           placeholder: field.placeholder,
           'aria-invalid': Boolean(error),
           'aria-describedby': error ? `${id}-error` : undefined,
-          onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+          onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
             setValues((prev) => ({ ...prev, [field.name]: e.target.value })),
           className: `w-full rounded-lg border bg-white px-4 py-3 font-body text-[#17232A] transition-colors placeholder:text-[#59666E]/60 focus:outline-none focus:ring-2 focus:ring-[#246B66]/30 ${
-            error ? 'border-[#B42318]' : 'border-[#DCE3E6] focus:border-[#246B66]'
+            error ? 'border-[#246B66]' : 'border-[#DCE3E6] focus:border-[#246B66]'
           }`,
         }
 
@@ -158,14 +138,14 @@ export default function Formulaire({
               {field.required && <span className="text-[#246B66]"> *</span>}
             </label>
 
-            {field.type === 'select' ? <select {...shared}><option value="">À préciser ensemble</option>{projectKinds.map(kind => <option key={kind.value} value={kind.value}>{kind.label}</option>)}</select> : field.type === 'textarea' ? (
+            {field.type === 'textarea' ? (
               <textarea {...shared} rows={5} />
             ) : (
               <input {...shared} type={field.type ?? 'text'} />
             )}
 
             {error && (
-              <p id={`${id}-error`} className="mt-1.5 text-sm text-[#B42318] font-body">
+              <p id={`${id}-error`} className="mt-1.5 text-sm text-[#246B66] font-body">
                 {error}
               </p>
             )}
@@ -174,15 +154,15 @@ export default function Formulaire({
       })}
 
       <p className="text-sm leading-relaxed text-[#59666E]">
-        Les champs marqués * sont nécessaires pour répondre à votre demande. Votre message est transmis par FormSubmit à Yann (Lodgic). Le nom, le téléphone et le type de projet sont facultatifs lorsqu’ils sont proposés. Vos données sont traitées pour étudier votre projet et vous répondre ; elles ne servent pas à vous inscrire à une newsletter. Consultez la <Link href="/politique-confidentialite" className="text-link text-sm">politique de confidentialité</Link> pour connaître la durée de conservation et exercer vos droits.
+        Les champs marqués * sont nécessaires pour répondre à votre demande. Votre message est transmis par FormSubmit à Yann (Lodgic). Téléphone et sujet sont facultatifs lorsqu’ils sont proposés. Vos données sont traitées pour étudier votre projet et vous répondre ; elles ne servent pas à vous inscrire à une newsletter. Consultez la <Link href="/politique-confidentialite" className="text-link text-sm">politique de confidentialité</Link> pour connaître la durée de conservation et exercer vos droits.
       </p>
 
       {/* Piège à robots : invisible pour un humain, rempli par les scripts de spam.
           Formsubmit ignore silencieusement tout envoi où ce champ est renseigné. */}
       <div className="hidden" aria-hidden="true">
-        <label htmlFor={`${formId}-honey`}>Ne pas remplir</label>
+        <label htmlFor="field-honey">Ne pas remplir</label>
         <input
-          id={`${formId}-honey`}
+          id="field-honey"
           type="text"
           name="_honey"
           tabIndex={-1}

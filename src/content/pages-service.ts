@@ -50,7 +50,7 @@ export const PAGES_SERVICE: PageService[] = [
     hero: {
       eyebrow: 'Site internet',
       title: 'Création de site internet à Toulouse',
-      highlight: 'Votre activité mérite un site qui mène au contact.',
+      highlight: 'Un site que vos clients comprennent et que vous pouvez modifier.',
       description:
         'Je conçois un ensemble de pages cohérentes pour présenter votre activité et transformer les visites en demandes. Je prévois un accès direct au contact ou au devis, puis je mesure le chargement sur téléphone à la livraison. **À partir de 1 500 €**.',
       badges: ['À partir de 1 500 €', '1 à 3 semaines', 'Performances mesurées', 'Textes modifiables'],
@@ -183,7 +183,7 @@ export const PAGES_SERVICE: PageService[] = [
     hero: {
       eyebrow: 'Application mobile',
       title: 'Développeur d’applications mobiles iOS et Android à Toulouse',
-      highlight: 'Une première application centrée sur ce que vos utilisateurs viennent faire.',
+      highlight: 'Une application pour les deux plateformes, du cadrage à la publication.',
       description:
         'Je définis les parcours avec vous, développe l’application en **React Native**, la teste sur appareil et la publie sur **le Google Play Store et l’App Store**. Les comptes de publication restent à votre nom. Le périmètre et le prix sont écrits avant le code.',
       badges: ['iPhone et Android', 'À partir de 4 000 €', '2 à 4 mois', 'Google Play Store et App Store', 'Toulouse et à distance'],
@@ -331,7 +331,7 @@ export const PAGES_SERVICE: PageService[] = [
     hero: {
       eyebrow: 'Logiciel métier',
       title: 'Logiciel sur mesure à Toulouse',
-      highlight: 'Moins de ressaisies. Un outil autour de votre travail.',
+      highlight: 'Une solution interne construite autour du travail de votre équipe.',
       description:
         'Je pars de vos fichiers et de votre manière de travailler pour centraliser les informations, relier les outils nécessaires et réduire les tâches répétitives. L’objectif est de faire gagner du temps à votre équipe au quotidien. **À partir de 4 000 €**.',
       badges: ['À partir de 4 000 €', 'Remplace les tableurs', 'Connecté à vos outils', 'Accessible partout', 'Toulouse et à distance'],
@@ -464,7 +464,7 @@ export const PAGES_SERVICE: PageService[] = [
     hero: {
       eyebrow: 'React Native',
       title: 'Développeur React Native à Toulouse',
-      highlight: 'Faites avancer votre application React Native avec un développeur impliqué.',
+      highlight: 'Une base de code partagée entre iPhone et Android.',
       description:
         'React Native permet de partager la majeure partie du code entre **iPhone et Android**. Je l’utilise lorsque les besoins des deux plateformes sont proches ; je signale dès le cadrage les fonctions qui demandent du code natif.',
       badges: ['React Native et Expo', 'TypeScript', 'iPhone et Android', 'Reprise d’app existante'],
@@ -601,7 +601,7 @@ export const PAGES_SERVICE: PageService[] = [
     hero: {
       eyebrow: 'App Store et Google Play',
       title: 'Développement d\'application iOS et Android',
-      highlight: 'Du parcours testé à la publication sur iPhone et Android.',
+      highlight: 'Je prépare l’application et ses comptes de publication.',
       description:
         'Je prépare les comptes, les fiches des stores, les tests et la soumission. Après publication, les mises à jour iOS et Android sont à prévoir dans le suivi.',
       badges: ['App Store', 'Google Play', 'Validation Apple', 'Mises à jour iOS et Android', 'Toulouse et à distance'],

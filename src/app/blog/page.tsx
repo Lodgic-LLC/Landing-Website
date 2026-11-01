@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import JsonLd, { filAriane } from '@/components/JsonLd'
-import DecisionResources from '@/components/DecisionResources'
 import ScrollReveal from '@/components/ScrollReveal'
 import { getAllArticles, type Article } from '@/lib/blog'
 import { SITE_URL } from '@/lib/site'
@@ -66,12 +65,11 @@ export default function Page() {
       <div className="container-site blog-intro-grid">
         <div>
           <p className="eyebrow">Le blog</p>
-          <h1 className="title-hero mt-4">Les questions à trancher avant de développer.</h1>
+          <h1 className="title-hero mt-4">Des idées pour faire avancer votre projet.</h1>
         </div>
-        <p>Choisir le bon format, prévoir le budget, préparer une reprise : commencez par votre décision, puis approfondissez le sujet qui vous concerne.</p>
+        <p>Applications mobiles, sites web, financement et usages métier : retrouvez les articles de l’archive Lodgic, sans avoir besoin de connaître la technique.</p>
       </div>
     </header>
-    <DecisionResources />
     {featured && <section className="blog-feature-section" aria-labelledby="blog-feature-title">
       <div className="container-site blog-feature">
         <Link href={`/blog/${featured.slug}`} className="blog-feature-cover" data-reveal aria-label={`Lire : ${featured.title}`}>

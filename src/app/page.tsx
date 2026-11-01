@@ -2,9 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import Hero from '@/app/_sections/Accueil'
-import DecisionResources from '@/components/DecisionResources'
-import Situations from '@/app/_sections/Situations'
-import ProjectWorkshop from '@/components/ProjectWorkshop'
+import ConseilsSection from '@/components/ConseilsSection'
 import JsonLd from '@/components/JsonLd'
 import ScrollReveal from '@/components/ScrollReveal'
 import { HOME_TITLE, SITE_URL } from '@/lib/site'
@@ -20,7 +18,7 @@ const Contact = dynamic(() => import('@/app/_sections/Contact'))
 export const metadata: Metadata = {
   title: HOME_TITLE,
   description:
-    "Yann, développeur web et mobile à Toulouse. Un projet cadré, une première version utile et des livrables définis : sites web, applications et outils métier.",
+    "Yann, développeur web et mobile à Toulouse. Je crée vos applications iOS et Android, sites web et outils métier, du cadrage à la mise en ligne.",
   alternates: {
     canonical: SITE_URL,
   },
@@ -59,17 +57,26 @@ export default function Home() {
       <JsonLd id="home-structured-data" data={homeSchema} />
       <ScrollReveal />
       <main className="home-page">
-        <Hero />
-        <Situations />
-        <SuccessStories />
-        <Services />
-        <ProjectWorkshop />
-        <Method />
-        <Budget />
-        <About fond="blanc" />
-        <DecisionResources />
-        <Questions />
-        <Contact fond="blanc" />
+          <Hero />
+
+        {/* 1) Ce que j'ai livré : les preuves d'abord */}
+          <SuccessStories />
+
+        {/* 2) Ce que je fais */}
+          <Services />
+
+        {/* 3) Qui je suis */}
+          <About fond="blanc" />
+
+        {/* 4) Comment ça se passe */}
+          <Method />
+
+          <Budget />
+          <ConseilsSection />
+          <Questions />
+
+        {/* 5) Contact */}
+          <Contact fond="blanc" />
       </main>
     </>
   )

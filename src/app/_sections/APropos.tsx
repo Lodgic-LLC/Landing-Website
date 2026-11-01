@@ -5,8 +5,8 @@ export default function About({ fond = 'blanc' }: { fond?: 'blanc' | 'creme' }) 
     <div className="container-site about-layout">
       <div className="about-intro">
         <p className="eyebrow">À propos</p>
-        <h2 id="about-title" className="title-section mt-4">Votre interlocuteur écrit aussi le code.</h2>
-        <p className="about-presentation">Je suis Yann, développeur indépendant à Toulouse. Je cadre votre besoin, développe le produit et vous accompagne jusqu’à sa livraison. Vous savez à qui poser vos questions et avec qui prendre les décisions.</p>
+        <h2 id="about-title" className="title-section mt-4">Qui suis-je ?</h2>
+        <p className="about-presentation">Je suis Yann, développeur web et mobile à Toulouse. Je travaille seul sur vos projets, de la conception à la mise en ligne.</p>
         <Link href="/realisations" className="text-link mt-8 text-base">Voir mes projets <span aria-hidden>→</span></Link>
       </div>
       <dl className="about-background">

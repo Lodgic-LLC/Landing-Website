@@ -70,7 +70,7 @@ export default function Footer() {
     { label: 'Toutes mes réalisations', href: '/realisations' },
     { label: 'Conseils et articles', href: '/blog' },
     { label: 'À propos de Yann', href: '/#about' },
-    { label: 'Méthode de travail', href: '/methode' },
+    { label: 'Méthode de travail', href: '/#methode' },
     { label: 'Budget et délais', href: '/#budget' },
     { label: 'Préparer son projet', href: '/preparer-son-projet' },
   ]
