@@ -21,8 +21,12 @@ Le formulaire fonctionne avec FormSubmit. Renseigner NEXT_PUBLIC_FORM_ENDPOINT d
 - content/blog : articles MDX et leurs métadonnées.
 - src/components : composants de présentation et éléments interactifs réutilisés.
 - src/lib : lecture des articles, constantes du site, SEO et suivi des événements.
+- src/fonts : polices du site, versions pour les images de partage et licences ; voir son README pour la régénération.
 - src/app/globals.css : styles partagés et styles des sections.
-- public : images et autres fichiers statiques.
+- public/images : illustrations des articles ; public/projets : captures des réalisations.
+- public/ressources : document téléchargeable ; les autres fichiers de public comprennent les icônes, manifestes et vérifications des moteurs de recherche.
+- docs : analyses et décisions sur le contenu et le référencement.
+- .agents : consignes de travail destinées aux assistants de code.
 
 Les pages de prestation proviennent de src/content/pages-service.ts et sont rendues par src/app/[service]/page.tsx avec src/components/PageSeo.tsx. L’entrée d’une prestation fournit aussi ses métadonnées et son éventuel projet illustratif. Les articles sont lus par src/lib/blog.ts, puis affichés sur /blog et /blog/[slug]. Le sitemap reprend ces deux catalogues.
 
@@ -37,9 +41,10 @@ La bannière de cookies est gérée par CookieConsentBanner. ConsentScripts ne c
 ~~~bash
 npm run check
 npm run build
+npm audit
 ~~~
 
-npm run check exécute ESLint et la vérification TypeScript. Avant un déploiement, vérifier aussi les pages principales sur ordinateur et téléphone ainsi que le formulaire avec un destinataire FormSubmit activé.
+npm run check exécute ESLint et la vérification TypeScript ; npm audit contrôle les dépendances auprès du registre npm. Avant un déploiement, vérifier aussi les pages principales sur ordinateur et téléphone ainsi que le formulaire avec un destinataire FormSubmit activé.
 
 ## Google Search Console
 

@@ -37,6 +37,7 @@
     "typescript-eslint": "^8.71.1"
   },
   "overrides": {
+    "minimatch": "^11.0.1",
     "postcss-selector-parser": "^7.1.6"
   }
 }
