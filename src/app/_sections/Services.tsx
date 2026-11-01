@@ -17,8 +17,12 @@ export default function Services() {
         </div>}
         <details className="service-choice"><summary>Est-ce le bon format pour moi ?</summary><p>{besoinsServices[index].question}</p><p><strong>À cadrer ensemble :</strong> {besoinsServices[index].resultat}</p></details>
         <Link href={service.href} className="text-link mt-4 text-base">{service.cta}<span aria-hidden>→</span></Link>
-        {service.href === '/developpement-application-mobile-toulouse' && <div className="mt-5 flex flex-wrap gap-x-7 gap-y-3 border-t border-[#DCE3E6] pt-4"><Link href="/prix-application-mobile" className="text-link text-base">Quel budget prévoir ? <span aria-hidden>→</span></Link><Link href="/reprise-application-mobile" className="text-link text-base">Reprendre une application existante <span aria-hidden>→</span></Link></div>}
       </article>)}</div>
+      <nav className="service-more" aria-label="Pour approfondir votre projet d’application mobile">
+        <span>Pour votre application mobile</span>
+        <Link href="/prix-application-mobile" className="text-link text-base">Quel budget prévoir ? <span aria-hidden>→</span></Link>
+        <Link href="/reprise-application-mobile" className="text-link text-base">Reprendre une application existante <span aria-hidden>→</span></Link>
+      </nav>
     </div>
   </section>
 }

@@ -91,9 +91,12 @@ button, summary { cursor: pointer; }
 .service-intro h2 { max-width: 540px; }
 .service-intro > p:last-child { max-width: 390px; margin-bottom: 4px; }
 .service-entries { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 34px; margin-top: 48px; }
-.service-entry { border-top: 2px solid var(--accent); padding-top: 22px; }
+.service-entry { display: flex; flex-direction: column; border-top: 2px solid var(--accent); padding-top: 22px; }
 .service-entry h3 { min-height: 2.5em; font-size: 22px; }
 .service-entry > p { font-size: 17px; }
+.service-entry > .service-choice { margin-top: auto; }
+.service-more { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px 32px; margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--hairline); }
+.service-more > span { color: var(--charcoal-muted); font-size: 14px; }
 .method-process { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); column-gap: 90px; }
 .method-intro { align-self: start; position: sticky; top: 120px; }
 .method-steps { border-left: 1px solid #a8b8a9; margin-left: 6px; }
@@ -605,7 +608,7 @@ html #cc-main .cc--anim.cm-wrapper::before {
 .hero-reassurance { margin-top: 22px; max-width: 48ch; font-size: 14px; color: var(--charcoal-muted); }
 .service-entry > .service-need { color: var(--accent); font-size: 13px; font-weight: 600; margin-bottom: 12px; }
 .service-gift { margin-top: 22px; padding: 4px 0 4px 18px; border-left: 3px solid var(--accent); }
-.service-gift-label { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.service-gift-label { color: var(--accent); font-size: 13px; font-weight: 700; }
 .service-gift-title { margin-top: 7px; font-family: var(--font-editorial); font-size: 22px; line-height: 1.25; color: var(--accent); }
 .service-gift-description { margin-top: 8px; color: var(--charcoal-muted); font-size: 14px; line-height: 1.55; }
 .service-gift-hero { margin-top: 26px; max-width: 580px; }
@@ -626,6 +629,8 @@ html #cc-main .cc--anim.cm-wrapper::before {
 .article-project-next p { margin-block: 16px; color: var(--charcoal-muted); }
 .article-project-next a { margin: 8px 24px 0 0; font-size: 16px; }
 @media (max-width: 767px) {
+  .home-page .service-entry > .service-choice { margin-top: 18px; }
+  .home-page .service-more { align-items: flex-start; flex-direction: column; gap: 10px; margin-top: 18px; }
   .home-page .service-entry > .service-need { display: block; }
   .home-page .service-entry:first-child > p.mt-3 { display: block; font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
   .home-page .service-entry:nth-child(2) > p.mt-3 { display: block; font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
