@@ -33,14 +33,22 @@
   .mobile-tabbar a:active .mobile-tab-icon { transform: scale(.9); }
   body:has(input:focus, textarea:focus, select:focus) .mobile-tabbar { visibility: hidden; pointer-events: none; }
 
-  .mobile-menu-sheet[open] {
-    display: block; position: fixed; inset: auto 0 0; width: 100%; max-width: 600px; margin: 0 auto;
+  .mobile-menu-sheet {
+    position: fixed; inset: auto 0 0; width: 100%; max-width: 600px; margin: 0 auto;
     max-height: calc(100dvh - 32px - env(safe-area-inset-top)); overflow-y: auto; overscroll-behavior: contain;
     padding: 22px 24px max(24px, env(safe-area-inset-bottom)); background: #faf9f6; color: var(--ink);
     border: 1px solid #dde2d7; border-bottom: 0; border-radius: 24px 24px 0 0;
-    box-shadow: 0 -12px 70px #10251c22; animation: mobile-sheet-enter .24s ease-out;
+    box-shadow: 0 -12px 70px #10251c22;
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .2s ease, transform .2s ease, display .2s allow-discrete, overlay .2s allow-discrete;
   }
-  .mobile-menu-sheet::backdrop { background: #13291f66; backdrop-filter: blur(3px); }
+  .mobile-menu-sheet[open] { display: block; opacity: 1; transform: translateY(0); }
+  .mobile-menu-sheet::backdrop { background: #13291f66; backdrop-filter: blur(3px); opacity: 0; transition: opacity .2s ease, display .2s allow-discrete, overlay .2s allow-discrete; }
+  .mobile-menu-sheet[open]::backdrop { opacity: 1; }
+  @starting-style {
+    .mobile-menu-sheet[open] { opacity: 0; transform: translateY(24px); }
+    .mobile-menu-sheet[open]::backdrop { opacity: 0; }
+  }
   .mobile-sheet-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
   .mobile-sheet-heading h2 { font-size: 22px; }
   .mobile-sheet-heading button { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: #eeefe7; }
@@ -83,9 +91,9 @@
   .home-page .service-entry .text-link { text-decoration: none; justify-content: space-between; width: 100%; gap: 12px; font-size: 14px; }
   .home-page .service-entry { padding-block: 16px 10px; }
   .home-page .service-entry > .service-need { margin-bottom: 5px; line-height: 1.4; }
-  #services .service-entry > p.mt-3,
+  .home-page #services .service-entry > p.mt-3 { display: block; font-size: 16px; }
   .home-page .service-entry > div.service-gift,
-  .home-page .service-entry > .service-choice { display: none; }
+  .home-page .service-entry > .service-choice { display: block; }
   .home-page .service-entry .text-link { min-height: 44px; margin-top: 9px; border-top: 1px solid var(--hairline); padding-top: 6px; }
   .home-page .service-entry .service-link-desktop { display: none; }
   .home-page .service-entry .service-link-mobile { display: inline; }
@@ -137,14 +145,13 @@
   .blog-topic-nav a { flex-shrink: 0; white-space: nowrap; border-radius: 12px; scroll-snap-align: start; }
   .blog-feature, .blog-card { min-width: 0; }
   .service-hero aside, .article-note, .article-cta { border-radius: 16px; }
-  .gallery-viewport { touch-action: pan-y pinch-zoom; }
+  .gallery-viewport { touch-action: auto; }
   .project-gallery { border-radius: 16px; }
   .project-gallery > figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   .gallery-mobile-count { display: inline; white-space: nowrap; font-variant-numeric: tabular-nums; font-size: 12px; }
   .gallery-thumbnails { flex-wrap: nowrap; overflow-x: auto; padding: 5px; margin-inline: -5px; scroll-snap-type: x proximity; scrollbar-width: thin; }
   .gallery-thumbnails button { scroll-snap-align: center; }
   .site-footer > .container-site { padding-bottom: 30px; }
-  @keyframes mobile-sheet-enter { from { opacity: .6; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 }
 
 @media (max-width: 359px) {
@@ -153,6 +160,41 @@
   .mobile-menu-sheet[open] { padding-inline: 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .mobile-menu-sheet[open] { animation: none; }
+  .mobile-menu-sheet, .mobile-menu-sheet[open] { transform: none; transition: none; }
   .mobile-tab-icon, main :is(button, .btn-primary) { transition: none; }
+}
+
+/* Immediate feedback also serves keyboard and precise-pointer interactions. */
+:is(.btn-primary, .contact-submit, .mobile-app-menu, .mobile-sheet-heading button, .mobile-disclosure-toggle) {
+  transition: background-color .15s ease, transform .1s ease-out;
+}
+:is(.btn-primary, .contact-submit, .mobile-app-menu, .mobile-sheet-heading button, .mobile-disclosure-toggle):active:not(:disabled) { transform: scale(.98); }
+:is(.nav-link, .mobile-sheet-links a, .mobile-sheet-services a):active { background-color: var(--accent-soft); }
+.nav-dropdown { transform-origin: top left; }
+.nav-dropdown a { min-height: 44px; display: flex; align-items: center; }
+.hero-layout > *, .project-layout > *, .service-entry, .contact-field { min-width: 0; }
+.text-link, .btn-primary, .contact-details a { overflow-wrap: anywhere; }
+
+@media (max-width: 767px) {
+  .home-page .about-detail { display: block; }
+  .home-page .method-after { display: grid; }
+  .home-page #budget > .container-site > div:last-child > p { display: block; }
+  .home-page .hero-copy > p:not(:first-child), .home-page .project-layout > div > p:not(:first-child) { font-size: 1rem; }
+  .contact-form-privacy-mobile summary { min-height: 44px; }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .site-header, .mobile-app-header, .mobile-tabbar, .mobile-menu-sheet[open] { background: var(--surface); backdrop-filter: none; }
+  .mobile-menu-sheet::backdrop { backdrop-filter: none; background: rgb(19 41 31 / .65); }
+}
+@media (prefers-contrast: more) {
+  :root { --charcoal-muted: #34463d; --hairline: #58635d; }
+  .site-header, .mobile-app-header, .mobile-tabbar, .mobile-menu-sheet[open] { border-color: var(--ink); }
+  .contact-input { border-color: var(--ink); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary:active, .contact-submit:active, .mobile-app-menu:active,
+  .mobile-sheet-heading button:active, .mobile-disclosure-toggle:active,
+  .mobile-tabbar a:active .mobile-tab-icon, .text-link:hover span[aria-hidden],
+  .btn-primary:hover span[aria-hidden], .brand-link:hover .brand-name,
+  .blog-feature-cover:hover img, .blog-card-cover:hover img, .related-article:hover img { transform: none; }
 }

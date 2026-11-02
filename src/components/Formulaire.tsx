@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import Link from 'next/link'
 import { trackConversion } from '@/lib/analytics'
 import { CONTACT_EMAIL } from '@/lib/site'
@@ -65,6 +65,7 @@ export default function Formulaire({
   headingLevel = 'h3',
 }: ProjectFormProps) {
   const Heading = headingLevel
+  const formId = useId()
   const [values, setValues] = useState<Record<string, string>>({})
   const [honey, setHoney] = useState('')
   const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({})
@@ -82,12 +83,13 @@ export default function Formulaire({
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (sending) return
 
     const found = validate()
     setErrors(found)
     const firstInvalid = fields.find(field => found[field.name])
     if (firstInvalid) {
-      document.getElementById(`field-${firstInvalid.name}`)?.focus()
+      document.getElementById(`${formId}-${firstInvalid.name}`)?.focus()
       return
     }
 
@@ -130,10 +132,10 @@ export default function Formulaire({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="contact-form" noValidate>
+    <form onSubmit={handleSubmit} className="contact-form" aria-busy={sending} noValidate>
       <Heading className="contact-form-title">Parlons de votre projet.</Heading>
       {fields.map((field) => {
-        const id = `field-${field.name}`
+        const id = `${formId}-${field.name}`
         const error = errors[field.name]
         const shared = {
           id,
@@ -150,9 +152,7 @@ export default function Formulaire({
             setErrors(prev => prev[field.name] ? { ...prev, [field.name]: validateField(field, nextValue) } : prev)
           },
           onBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-            if (field.name === 'email' && e.target.value.trim()) {
-              setErrors(prev => ({ ...prev, email: validateField(field, e.target.value) }))
-            }
+            setErrors(prev => ({ ...prev, [field.name]: validateField(field, e.target.value) }))
           },
           className: 'contact-input',
         }
@@ -188,9 +188,9 @@ export default function Formulaire({
       {/* Piège à robots : invisible pour un humain, rempli par les scripts de spam.
           Formsubmit ignore silencieusement tout envoi où ce champ est renseigné. */}
       <div className="hidden" aria-hidden="true">
-        <label htmlFor="field-honey">Ne pas remplir</label>
+        <label htmlFor={`${formId}-honey`}>Ne pas remplir</label>
         <input
-          id="field-honey"
+          id={`${formId}-honey`}
           type="text"
           name="_honey"
           tabIndex={-1}

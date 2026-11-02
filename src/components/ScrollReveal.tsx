@@ -1,8 +1,10 @@
 'use client'
 
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function ScrollReveal() {
+  const pathname = usePathname()
   useEffect(() => {
     if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
@@ -23,8 +25,11 @@ export default function ScrollReveal() {
       observer.observe(element)
     })
 
-    return () => observer.disconnect()
-  }, [])
+    return () => {
+      observer.disconnect()
+      document.querySelectorAll('[data-reveal]').forEach(element => element.classList.remove('reveal-pending', 'reveal-visible'))
+    }
+  }, [pathname])
 
   return null
 }

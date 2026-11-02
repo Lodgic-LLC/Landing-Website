@@ -20,35 +20,44 @@ interface ProjectGalleryProps {
 /** Capture principale d'un projet, avec des vignettes pour changer de vue. */
 export default function Galerie({ screens, url, priority = false }: ProjectGalleryProps) {
   const [current, setCurrent] = useState(0)
-  const touchStart = useRef<{ x: number; y: number } | null>(null)
+  const viewport = useRef<HTMLDivElement>(null)
   const screen = screens[current]
+
+  function select(index: number) {
+    const element = viewport.current
+    if (!element) return
+    element.scrollTo({ left: index * element.clientWidth, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
+  }
 
   return (
     <figure className="project-gallery">
       <div className="overflow-hidden rounded-lg border border-[#DCE3E6]">
         {url && <p className="border-b border-[#DCE3E6] bg-white px-4 py-2 text-sm text-[#59666E]">{url}</p>}
-        <div className="gallery-viewport relative aspect-[2940/1604] w-full bg-[#F4F6F7]" onTouchStart={event => {
-          touchStart.current = event.touches.length === 1 ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null
-        }} onTouchCancel={() => { touchStart.current = null }} onTouchEnd={event => {
-          const start = touchStart.current
-          touchStart.current = null
-          if (!start || !event.changedTouches[0]) return
-          const dx = event.changedTouches[0].clientX - start.x
-          const dy = event.changedTouches[0].clientY - start.y
-          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
-            setCurrent(index => (index + (dx < 0 ? 1 : -1) + screens.length) % screens.length)
-          }
-        }}>
+        {/* A named scrollable region needs keyboard focus; thumbnails remain native buttons. */}
+        {/* eslint-disable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */}
+        <div ref={viewport} className="gallery-viewport w-full bg-[#F4F6F7]"
+          role="region" aria-label="Captures du projet" tabIndex={0}
+          onScroll={event => {
+            const element = event.currentTarget
+            setCurrent(Math.max(0, Math.min(screens.length - 1, Math.round(element.scrollLeft / element.clientWidth))))
+          }}
+          onKeyDown={event => {
+            if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return
+            event.preventDefault()
+            select(event.key === 'Home' ? 0 : event.key === 'End' ? screens.length - 1 : Math.max(0, Math.min(screens.length - 1, current + (event.key === 'ArrowRight' ? 1 : -1))))
+          }}>
+          {screens.map((item, index) => <div key={item.src} className="gallery-slide relative aspect-[2940/1604]">
           <Image
-            src={screen.src}
-            alt={screen.alt}
+            src={item.src}
+            alt={item.alt}
             fill
-            priority={priority}
+            priority={priority && index === 0}
             sizes="(max-width: 1280px) 92vw, 1180px"
-            className="gallery-image object-contain object-top"
-            key={screen.src}
+            className="object-contain object-top"
           />
+          </div>)}
         </div>
+        {/* eslint-enable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */}
       </div>
 
       <figcaption aria-live="polite" className="mt-2 text-sm text-[#59666E] font-body">{screen.caption}<span className="gallery-mobile-count">{current + 1} / {screens.length}</span></figcaption>
@@ -59,7 +68,7 @@ export default function Galerie({ screens, url, priority = false }: ProjectGalle
             <button
               key={item.src}
               type="button"
-              onClick={() => setCurrent(i)}
+              onClick={() => select(i)}
               aria-label={item.caption}
               aria-pressed={i === current}
               className={`relative h-12 w-20 shrink-0 overflow-hidden rounded border transition-colors ${
