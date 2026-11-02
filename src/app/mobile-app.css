@@ -105,9 +105,34 @@
   .home-page .questions-section { background: #f0f2e9; }
   .home-page .faq-item[open] { background: transparent; }
   .home-page .contact-section { border-radius: 24px 24px 0 0; }
-  .contact-form-panel { border-radius: 18px; }
-  .contact-form-panel form :is(input, textarea) { border-radius: 10px; min-height: 48px; scroll-margin-block: 100px; }
-  .contact-form-panel form button[type='submit'] { border-radius: 12px; }
+  .contact-page-layout { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .contact-page-intro, .contact-page .contact-form-panel, .contact-details { grid-column: 1; grid-row: auto; }
+  .contact-page .contact-next-steps-desktop { display: none; }
+  .contact-next-steps-mobile { display: block; margin-top: 0; border-block: 1px solid var(--hairline); }
+  .contact-next-steps-mobile summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 54px; padding-inline: 0; font-family: var(--font-editorial); font-size: 21px; line-height: 1.25; list-style: none; }
+  .contact-next-steps-mobile summary::-webkit-details-marker { display: none; }
+  .contact-next-steps-mobile summary span { flex: none; font-family: var(--font-source), sans-serif; font-size: 23px; color: var(--accent); transition: transform .2s; }
+  .contact-next-steps-mobile[open] summary span { transform: rotate(180deg); }
+  .contact-next-steps-mobile li { position: relative; padding: 14px 0 14px 20px; border-top: 1px solid var(--hairline); }
+  .contact-next-steps-mobile li::before { content: ''; position: absolute; top: 22px; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+  .contact-next-steps-mobile li h3 { font-family: var(--font-source), sans-serif; font-size: 15px; font-weight: 600; }
+  .contact-next-steps-mobile li p { margin-top: 4px; color: var(--charcoal-muted); font-size: 13px; line-height: 1.5; }
+  .contact-form-panel { padding: 25px 20px; border-radius: 18px; }
+  .contact-form { gap: 17px; }
+  .contact-page .contact-form-panel { padding: 20px 18px; }
+  .contact-page .contact-form { gap: 14px; }
+  .contact-page .contact-form-title { margin-bottom: 2px; font-size: 27px; }
+  .contact-page .contact-input { min-height: 48px; padding: 11px 14px; }
+  .contact-page .contact-field-label { margin-bottom: 5px; }
+  .contact-page .contact-field textarea { min-height: 120px; }
+  .contact-page .contact-form-privacy-desktop { display: none; }
+  .contact-page .contact-form-privacy-mobile { display: block; padding: 12px 0 0; border-top: 1px solid #d5ddd2; color: var(--charcoal-muted); font-size: 13px; line-height: 1.5; }
+  .contact-form-privacy-mobile summary { display: block; min-height: 0; padding: 0; font-size: 13px; line-height: 1.5; list-style: none; }
+  .contact-form-privacy-mobile summary::-webkit-details-marker { display: none; }
+  .contact-form-privacy-mobile summary span { display: inline; color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .contact-form-privacy-mobile p { margin-top: 10px; }
+  .contact-page .contact-details { margin-top: 0; padding-top: 18px; }
+  .contact-form :is(input, textarea) { scroll-margin-block: 100px; }
   .blog-topic-nav { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: thin; }
   .blog-topic-nav a { flex-shrink: 0; white-space: nowrap; border-radius: 12px; scroll-snap-align: start; }
   .blog-feature, .blog-card { min-width: 0; }
