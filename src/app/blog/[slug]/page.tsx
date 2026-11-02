@@ -64,7 +64,7 @@ export default async function Page({ params }: Props) {
       <header className="article-header border-b border-[#DCE3E6] bg-[#F4F6F7] py-14 md:py-20">
         <div className="container-site article-heading">
           <div>
-          <nav aria-label="Fil d’Ariane" className="flex flex-wrap items-center gap-2 text-sm text-[#59666E]"><Link href="/" className="hover:text-[#246B66]">Accueil</Link><span aria-hidden="true">/</span><Link href="/blog" className="hover:text-[#246B66]">Conseils</Link></nav>
+          <nav aria-label="Fil d’Ariane" className="article-breadcrumb flex flex-wrap items-center gap-2 text-sm text-[#59666E]"><Link href="/" className="hover:text-[#246B66]">Accueil</Link><span aria-hidden="true">/</span><Link href="/blog" className="hover:text-[#246B66]">Conseils</Link></nav>
           <p className="eyebrow mt-9">{article.category}</p>
           <h1 className="title-hero mt-4">{article.title}</h1>
           <p className="mt-6 max-w-3xl text-xl leading-relaxed text-[#59666E]">{article.summary}</p>

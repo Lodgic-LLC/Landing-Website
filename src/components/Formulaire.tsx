@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { trackConversion } from '@/lib/analytics'
+import { CONTACT_EMAIL } from '@/lib/site'
 
 /** Adresse d'envoi Formsubmit, définie dans .env.local (voir .env.example). */
 const ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? ''
@@ -49,6 +50,13 @@ interface ProjectFormProps {
 
 const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)
 
+function validateField(field: Field, rawValue: string) {
+  const value = rawValue.trim()
+  if (field.required && !value) return 'Ce champ est requis'
+  if (field.name === 'email' && value && !isValidEmail(value)) return 'Saisissez une adresse email complète, par exemple nom@domaine.fr'
+  return undefined
+}
+
 export default function Formulaire({
   source,
   fields = SHORT_FIELDS,
@@ -63,10 +71,8 @@ export default function Formulaire({
   function validate() {
     const found: Partial<Record<FieldName, string>> = {}
     for (const field of fields) {
-      const value = (values[field.name] ?? '').trim()
-      if (field.required && !value) found[field.name] = 'Ce champ est requis'
-      else if (field.name === 'email' && value && !isValidEmail(value))
-        found[field.name] = "Cette adresse email n'est pas valide"
+      const error = validateField(field, values[field.name] ?? '')
+      if (error) found[field.name] = error
     }
     return found
   }
@@ -76,12 +82,16 @@ export default function Formulaire({
 
     const found = validate()
     setErrors(found)
-    if (Object.keys(found).length > 0) return
+    const firstInvalid = fields.find(field => found[field.name])
+    if (firstInvalid) {
+      document.getElementById(`field-${firstInvalid.name}`)?.focus()
+      return
+    }
 
     if (!formEndpointIsValid) {
       setStatus({
         ok: false,
-        message: "Le formulaire n'est pas disponible pour le moment. Écrivez-moi directement à contact@lodgic-dev.com.",
+        message: "Le formulaire n'est pas disponible pour le moment. Écrivez-moi directement à ",
       })
       return
     }
@@ -103,7 +113,7 @@ export default function Formulaire({
     } catch {
       setStatus({
         ok: false,
-        message: "L'envoi a échoué. Écrivez-moi directement à contact@lodgic-dev.com.",
+        message: "L'envoi a échoué. Écrivez-moi directement à ",
       })
     } finally {
       setSending(false)
@@ -124,9 +134,17 @@ export default function Formulaire({
           placeholder: field.placeholder,
           'aria-invalid': Boolean(error),
           'aria-describedby': error ? `${id}-error` : undefined,
-          onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-            setValues((prev) => ({ ...prev, [field.name]: e.target.value })),
-          className: `w-full rounded-lg border bg-white px-4 py-3 font-body text-[#17232A] transition-colors placeholder:text-[#59666E]/60 focus:outline-none focus:ring-2 focus:ring-[#246B66]/30 ${
+          onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+            const nextValue = e.target.value
+            setValues(prev => ({ ...prev, [field.name]: nextValue }))
+            setErrors(prev => prev[field.name] ? { ...prev, [field.name]: validateField(field, nextValue) } : prev)
+          },
+          onBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+            if (field.name === 'email' && e.target.value.trim()) {
+              setErrors(prev => ({ ...prev, email: validateField(field, e.target.value) }))
+            }
+          },
+          className: `w-full rounded-lg border bg-white px-4 py-3 font-body text-[#17232A] transition-colors placeholder:text-[#59666E] ${
             error ? 'border-[#246B66]' : 'border-[#DCE3E6] focus:border-[#246B66]'
           }`,
         }
@@ -187,7 +205,7 @@ export default function Formulaire({
             status.ok ? 'bg-[#EDF4F3] text-[#1C5753]' : 'bg-[#FDF2F2] text-[#B42318]'
           }`}
         >
-          {status.message}
+          {status.message}{!status.ok && <><a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold underline underline-offset-2">{CONTACT_EMAIL}</a>.</>}
         </p>
       )}
     </form>

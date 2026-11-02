@@ -20,6 +20,9 @@ h1,h2,h3,h4 { font-family: var(--font-manrope), sans-serif; font-weight: 600; le
 button, a, input, textarea, summary { -webkit-tap-highlight-color: transparent; }
 button, summary { cursor: pointer; }
 :focus-visible { outline: 3px solid #246b66; outline-offset: 4px; }
+.skip-link { position: fixed; top: max(12px, env(safe-area-inset-top)); left: 16px; z-index: 100; transform: translateY(-150%); padding: 10px 16px; border-radius: 6px; background: var(--accent-deep); color: white; font-weight: 600; }
+.skip-link:focus-visible { transform: translateY(0); }
+#main-content:focus { outline: none; }
 ::selection { background: #cce6e1; color: #17232a; }
 @layer utilities {
   .font-body { font-family: var(--font-source), sans-serif; }
@@ -296,7 +299,7 @@ main details:has(summary:focus-visible) { outline: 2px solid var(--accent); outl
 .project-gallery > div:first-child { border-radius: 2px; }
 .project-gallery > figcaption { margin-top: 16px; }
 .project-gallery button { width: 100px; height: 60px; border-radius: 2px; }
-.project-gallery button[aria-current="true"] { outline: 2px solid var(--accent); outline-offset: 3px; }
+.project-gallery button[aria-pressed="true"] { outline: 2px solid var(--accent); outline-offset: 3px; }
 .project-gallery button:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 .project-page section:has(> .container-site > .project-gallery) { padding-block: 44px 40px; }
 .project-brief { padding-top: 28px; }
@@ -455,7 +458,8 @@ main details:has(summary:focus-visible) { outline: 2px solid var(--accent); outl
   .advice-article-title { font-size: 21px; margin-top: 8px; }
   .advice-article-link { margin-top: 0; padding-top: 8px; }
   main details { padding-inline: 0; }
-  main details summary { gap: 16px; font-size: 16px; }
+  main details summary { gap: 16px; min-height: 44px; align-items: center; font-size: 16px; }
+  .article-breadcrumb a { display: inline-flex; align-items: center; min-height: 44px; }
   .contact-section > .container-site, .contact-page > .container-site { gap: 28px; }
   .contact-form-panel { padding: 22px 18px; }
   .contact-form-panel form :is(input, textarea) { font-size: 16px; }

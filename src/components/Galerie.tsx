@@ -61,7 +61,7 @@ export default function Galerie({ screens, url, priority = false }: ProjectGalle
               type="button"
               onClick={() => setCurrent(i)}
               aria-label={item.caption}
-              aria-current={i === current}
+              aria-pressed={i === current}
               className={`relative h-12 w-20 shrink-0 overflow-hidden rounded border transition-colors ${
                 i === current
                   ? 'border-[#246B66] ring-1 ring-[#246B66]'

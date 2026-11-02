@@ -3,7 +3,7 @@ import { FaChevronRight, FaHome, FaEnvelope } from 'react-icons/fa'
 
 export default function NotFound() {
   return (
-    <section className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#F4F6F7] pt-24 md:pt-36">
+    <main className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#F4F6F7] pt-24 md:pt-36">
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <p className="font-heading text-8xl leading-none text-[#17232A] sm:text-9xl md:text-[10rem]">
           404
@@ -54,6 +54,6 @@ export default function NotFound() {
           </p>
         </div>
       </div>
-    </section>
+    </main>
   )
 }

@@ -13,7 +13,7 @@
     background: rgb(250 249 246 / .96); border-bottom: 1px solid #22352f0b;
     backdrop-filter: blur(18px);
   }
-  .mobile-app-brand { display: flex; align-items: baseline; gap: 12px; font-family: var(--font-manrope), sans-serif; font-weight: 600; font-size: 23px; letter-spacing: -.06em; }
+  .mobile-app-brand { display: flex; align-items: baseline; gap: 12px; min-height: 44px; font-family: var(--font-manrope), sans-serif; font-weight: 600; font-size: 23px; letter-spacing: -.06em; }
   .mobile-app-brand span { font-family: var(--font-source), sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0; color: var(--charcoal-muted); }
   .mobile-app-back { display: flex; align-items: center; min-height: 44px; gap: 12px; font-size: 17px; font-weight: 600; }
   .mobile-app-back svg { width: 20px; }
@@ -26,7 +26,7 @@
     min-height: var(--mobile-nav-height); background: rgb(250 249 246 / .97);
     border-top: 1px solid #d9dfd3; box-shadow: 0 -6px 24px #22352f06; backdrop-filter: blur(18px);
   }
-  .mobile-tabbar a { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 3px; min-height: 56px; font-size: 11px; line-height: 1.3; font-weight: 600; color: #687269; text-decoration: none; border-radius: 14px; }
+  .mobile-tabbar a { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 3px; min-height: 56px; font-size: 13px; line-height: 1.3; font-weight: 600; color: #687269; text-decoration: none; border-radius: 14px; }
   .mobile-tab-icon { display: grid; place-items: center; width: 52px; height: 31px; border-radius: 14px; transition: background .2s, color .2s, transform .2s; }
   .mobile-tabbar a[aria-current] { color: #214c3d; }
   .mobile-tabbar a[aria-current] .mobile-tab-icon { background: #e1e9dc; }
@@ -53,6 +53,8 @@
   .mobile-sheet-links a { display: flex; align-items: center; min-height: 46px; font-size: 14px; line-height: 1.45; }
   .mobile-menu-sheet .btn-primary { width: 100%; border-radius: 14px; }
   .mobile-sheet-phone { display: block; text-align: center; padding-top: 18px; min-height: 44px; color: var(--charcoal-muted); }
+  .site-footer > .container-site > .grid > div:first-child a { display: inline-flex; align-items: center; min-height: 44px; }
+  .contact-section a[href^="tel:"] { display: inline-flex; align-items: center; min-height: 44px; }
 
   main .btn-primary { border-radius: 14px; min-height: 52px; }
   main :is(button, .btn-primary):active { transform: scale(.98); }

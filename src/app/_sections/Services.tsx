@@ -18,7 +18,7 @@ export default function Services() {
           <p className="service-gift-description">{cadeauApplicationMobile.description}</p>
         </div>}
         <details className="service-choice"><summary>Est-ce le bon format pour moi ?</summary><p>{besoinsServices[index].question}</p><p><strong>À cadrer ensemble :</strong> {besoinsServices[index].resultat}</p></details>
-        <Link href={service.href} className="text-link mt-4 text-base"><span className="service-link-desktop">{service.cta}</span><span className="service-link-mobile">Voir le service</span><LinkArrow /></Link>
+        <Link href={service.href} aria-label={`Voir le service : ${service.title} — ${service.cta}`} className="text-link mt-4 text-base"><span className="service-link-desktop">{service.cta}</span><span className="service-link-mobile">Voir le service</span><LinkArrow /></Link>
       </article>
       {service.href === '/developpement-application-mobile-toulouse' && <nav className="service-more" aria-label="À propos de votre application mobile">
         <Link href="/reprise-application-mobile" className="text-link text-base">Reprendre une application existante <LinkArrow /></Link>

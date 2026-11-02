@@ -75,7 +75,9 @@ export default function Navbar() {
       </Link>
 
       <div className="hidden items-center gap-5 lg:flex xl:gap-6">
-        <div ref={servicesContainer} className="relative">
+        <div ref={servicesContainer} className="relative" onBlur={event => {
+          if (!event.currentTarget.contains(event.relatedTarget)) setServicesOpen(false)
+        }}>
           <button
             ref={servicesButton}
             type="button"

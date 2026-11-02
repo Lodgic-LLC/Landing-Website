@@ -217,13 +217,14 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${bodyFont.variable} ${headingFont.variable} bg-white text-[#17232A]`}
       >
+        <a href="#main-content" className="skip-link">Aller au contenu</a>
         <CookieConsentBanner />
         <ConsentScripts />
         <WebVitals />
           <div className="relative w-full">
             <Navbar />
             <MobileNavigation />
-            {children}
+            <div id="main-content" tabIndex={-1}>{children}</div>
             <Footer />
           </div>
         <ConsentVercelAnalytics />
