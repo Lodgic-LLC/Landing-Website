@@ -46,6 +46,7 @@ interface ProjectFormProps {
   source: string
   fields?: Field[]
   submitLabel?: string
+  headingLevel?: 'h2' | 'h3'
 }
 
 const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)
@@ -61,7 +62,9 @@ export default function Formulaire({
   source,
   fields = SHORT_FIELDS,
   submitLabel = 'Envoyer',
+  headingLevel = 'h3',
 }: ProjectFormProps) {
+  const Heading = headingLevel
   const [values, setValues] = useState<Record<string, string>>({})
   const [honey, setHoney] = useState('')
   const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({})
@@ -120,8 +123,15 @@ export default function Formulaire({
     }
   }
 
+  function privacyText() {
+    return <>
+      Les champs marqués * sont nécessaires pour répondre à votre demande. Votre message est transmis par FormSubmit à Yann (Lodgic). Téléphone et sujet sont facultatifs lorsqu’ils sont proposés. Vos données sont traitées pour étudier votre projet et vous répondre ; elles ne servent pas à vous inscrire à une newsletter. Consultez la <Link href="/politique-confidentialite" className="text-link text-sm">politique de confidentialité</Link> pour connaître la durée de conservation et exercer vos droits.
+    </>
+  }
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+    <form onSubmit={handleSubmit} className="contact-form" noValidate>
+      <Heading className="contact-form-title">Parlons de votre projet.</Heading>
       {fields.map((field) => {
         const id = `field-${field.name}`
         const error = errors[field.name]
@@ -144,16 +154,14 @@ export default function Formulaire({
               setErrors(prev => ({ ...prev, email: validateField(field, e.target.value) }))
             }
           },
-          className: `w-full rounded-lg border bg-white px-4 py-3 font-body text-[#17232A] transition-colors placeholder:text-[#59666E] ${
-            error ? 'border-[#246B66]' : 'border-[#DCE3E6] focus:border-[#246B66]'
-          }`,
+          className: 'contact-input',
         }
 
         return (
-          <div key={field.name}>
-            <label htmlFor={id} className="mb-1.5 block text-base font-body font-medium text-[#17232A]">
+          <div key={field.name} className={`contact-field ${field.type === 'textarea' ? 'contact-field-message' : ''}`}>
+            <label htmlFor={id} className="contact-field-label">
               {field.label}
-              {field.required && <span className="text-[#246B66]"> *</span>}
+              {field.required && <span className="contact-required"> *</span>}
             </label>
 
             {field.type === 'textarea' ? (
@@ -163,7 +171,7 @@ export default function Formulaire({
             )}
 
             {error && (
-              <p id={`${id}-error`} className="mt-1.5 text-sm text-[#246B66] font-body">
+              <p id={`${id}-error`} className="contact-field-error">
                 {error}
               </p>
             )}
@@ -171,9 +179,11 @@ export default function Formulaire({
         )
       })}
 
-      <p className="text-sm leading-relaxed text-[#59666E]">
-        Les champs marqués * sont nécessaires pour répondre à votre demande. Votre message est transmis par FormSubmit à Yann (Lodgic). Téléphone et sujet sont facultatifs lorsqu’ils sont proposés. Vos données sont traitées pour étudier votre projet et vous répondre ; elles ne servent pas à vous inscrire à une newsletter. Consultez la <Link href="/politique-confidentialite" className="text-link text-sm">politique de confidentialité</Link> pour connaître la durée de conservation et exercer vos droits.
-      </p>
+      <p className="contact-form-privacy contact-form-privacy-desktop">{privacyText()}</p>
+      <details className="contact-form-privacy-mobile">
+        <summary>Vos données servent à étudier votre projet et vous répondre. <span>En savoir plus</span></summary>
+        <p>{privacyText()}</p>
+      </details>
 
       {/* Piège à robots : invisible pour un humain, rempli par les scripts de spam.
           Formsubmit ignore silencieusement tout envoi où ce champ est renseigné. */}
@@ -193,9 +203,9 @@ export default function Formulaire({
       <button
         type="submit"
         disabled={sending}
-        className="w-full rounded-lg bg-[#246B66] px-6 py-3.5 font-body font-semibold text-white transition-colors hover:bg-[#1C5753] disabled:cursor-not-allowed disabled:opacity-60"
+        className="contact-submit"
       >
-        {sending ? 'Envoi en cours…' : submitLabel}
+        <span>{sending ? 'Envoi en cours…' : submitLabel}</span><span aria-hidden="true">↗</span>
       </button>
 
       {status && (
