@@ -1,3 +1,4 @@
+import LinkArrow from '@/components/LinkArrow'
 import Image from 'next/image'
 import Link from 'next/link'
 import { accueilPromesse } from '@/content/choix-projet'
@@ -10,7 +11,7 @@ export default function Hero() {
         <h1 id="hero-title" className="title-hero max-w-[18ch]">Développeur d’applications mobiles et web à Toulouse.</h1>
         <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#59666E] md:text-xl">{accueilPromesse.description}</p>
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-5">
-          <Link href="/contact" className="btn-primary">Parlons de votre projet <span aria-hidden>↗</span></Link>
+          <Link href="/contact" className="btn-primary">Parlons de votre projet <LinkArrow direction="up-right" /></Link>
           <Link href="/realisations" className="text-link text-base">Voir mes réalisations</Link>
         </div>
         <p className="hero-reassurance">{accueilPromesse.reassurance}</p>

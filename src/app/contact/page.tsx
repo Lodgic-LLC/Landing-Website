@@ -1,3 +1,4 @@
+import LinkArrow from '@/components/LinkArrow'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import JsonLd, { filAriane } from '@/components/JsonLd'
@@ -20,7 +21,7 @@ export default function Page() {
           <h1 className="title-hero mt-4">Décrivez-moi votre projet.</h1>
           <p className="mt-6 text-xl text-[#59666E]">Ce que vous souhaitez créer, pour qui et avec quelles contraintes : quelques lignes suffisent pour commencer.</p>
           <p className="mt-4 text-base text-[#59666E]">Je ferai le point avec vous sur les fonctions prioritaires, les contraintes et les informations nécessaires pour établir un devis.</p>
-          <Link href="/preparer-son-projet" className="text-link mt-5 text-base">Besoin d’aide pour décrire votre projet ? →</Link>
+          <Link href="/preparer-son-projet" className="text-link mt-5 text-base">Besoin d’aide pour décrire votre projet ? <LinkArrow /></Link>
         </div>
         <section className="contact-form-panel" aria-label="Formulaire de contact">
           <Formulaire source="page-contact" fields={FULL_FIELDS} submitLabel="Envoyer mon message" headingLevel="h2" />

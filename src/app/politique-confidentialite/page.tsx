@@ -28,7 +28,7 @@ const sections: SectionLegale[] = [
   {
     titre: 'Destinataires et prestataires',
     paragraphes: [
-      'J’accède aux demandes reçues. Vercel héberge le site ; l’envoi du formulaire passe par FormSubmit et la messagerie utilisée pour recevoir et répondre aux messages. Ces prestataires traitent les informations nécessaires à leurs services. Les données ne sont pas vendues.',
+      'J’accède aux demandes reçues. Vercel héberge le site ; l’envoi du formulaire passe par la messagerie professionnelle configurée chez Hostinger. Ces prestataires traitent les informations nécessaires à leurs services. Les données ne sont pas vendues.',
       'Les services de mesure d’audience et de publicité indiqués ci-dessous ne sont chargés que selon vos choix de cookies. Ils peuvent recevoir des données de navigation et des événements tels qu’une visite de page ou l’envoi du formulaire. Le contenu de votre message n’est pas envoyé dans ces événements par le code du site.',
     ],
   },
@@ -61,5 +61,5 @@ const sections: SectionLegale[] = [
 ]
 
 export default function Page() {
-  return <PageLegale titre="Politique de confidentialité" miseAJour="23 septembre 2026" sections={sections} />
+  return <PageLegale titre="Politique de confidentialité" miseAJour="3 novembre 2026" sections={sections} />
 }

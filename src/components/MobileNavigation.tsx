@@ -1,5 +1,6 @@
 'use client'
 
+import LinkArrow from '@/components/LinkArrow'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef } from 'react'
@@ -85,7 +86,7 @@ export default function MobileNavigation() {
       <div className="mobile-sheet-heading"><h2 id="mobile-menu-title">Explorer Lodgic</h2><button type="button" onClick={close} aria-label="Fermer le menu"><Icon name="close" /></button></div>
       <nav aria-label="Services et informations">
         <p className="eyebrow">Services</p>
-        <div className="mobile-sheet-services">{services.map(service => <Link key={service.href} href={service.href} onClick={close} aria-current={pathname === service.href ? 'page' : undefined}>{service.label}<span aria-hidden="true">↗</span></Link>)}</div>
+        <div className="mobile-sheet-services">{services.map(service => <Link key={service.href} href={service.href} onClick={close} aria-current={pathname === service.href ? 'page' : undefined}>{service.label}<LinkArrow direction="up-right" /></Link>)}</div>
         <div className="mobile-sheet-links">
           <Link href="/prix-application-mobile" onClick={close}>Prix d’une application</Link>
           <Link href="/reprise-application-mobile" onClick={close}>Reprise d’une application</Link>
@@ -94,7 +95,7 @@ export default function MobileNavigation() {
           <Link href="/#budget" onClick={close}>Tarifs et délais</Link>
           <Link href="/preparer-son-projet" onClick={close}>Préparer mon projet</Link>
         </div>
-        <Link href="/contact" onClick={close} className="btn-primary">Parler de mon projet <span aria-hidden="true">↗</span></Link>
+        <Link href="/contact" onClick={close} className="btn-primary">Parler de mon projet <LinkArrow direction="up-right" /></Link>
         <a href={`tel:${CONTACT_PHONE}`} className="mobile-sheet-phone" onClick={close}>{CONTACT_PHONE_DISPLAY}</a>
       </nav>
     </dialog>

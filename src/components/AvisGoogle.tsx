@@ -1,3 +1,4 @@
+import LinkArrow from '@/components/LinkArrow'
 import { FaStar } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
 import Link from 'next/link'
@@ -28,7 +29,7 @@ export default function AvisGoogle({ compact = false }: { compact?: boolean }) {
       <blockquote cite={GOOGLE_REVIEWS_URL} className="project-review-text text-base leading-relaxed text-[#1D2930]">
         « Très bonne expérience avec Yann qui a su s’adapter à ma demande pour une mise à jour en profondeur de mon site vitrine. »
       </blockquote>
-      <Link href="/realisations#avis-google" className="project-review-link">Lire l’avis complet <span aria-hidden="true">→</span></Link>
+      <Link href="/realisations#avis-google" className="project-review-link">Lire l’avis complet <LinkArrow direction="right" /></Link>
     </div>
   </aside>
 
@@ -51,6 +52,6 @@ export default function AvisGoogle({ compact = false }: { compact?: boolean }) {
       <p className="mt-3">J’ai particulièrement apprécié son excellente expertise technique et sa pugnacité à résoudre les petits problèmes rencontrés.</p>
       <p className="mt-3">Site livré dans un délai court, avec un bon niveau de disponibilité et de réactivité, le tout pour un tarif que je qualifierai de raisonnable.</p>
     </blockquote>
-    <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="project-review-link">Voir l’avis sur Google <span aria-hidden="true">↗</span></a>
+    <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="project-review-link">Voir l’avis sur Google <LinkArrow direction="up-right" /></a>
   </aside>
 }
