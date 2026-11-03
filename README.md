@@ -12,7 +12,7 @@ npm run dev
 
 Ouvrir http://localhost:3000. Si le port est occupé, Next.js peut en choisir un autre.
 
-Le formulaire fonctionne avec FormSubmit. Renseigner NEXT_PUBLIC_FORM_ENDPOINT dans .env.local avec l’adresse Ajax du destinataire activé, sous la forme https://formsubmit.co/ajax/IDENTIFIANT. Sans cette variable, le formulaire affiche un message d’indisponibilité et propose l’adresse e-mail de contact. GOOGLE_SITE_VERIFICATION est facultatif en local ; il sert à la vérification du domaine dans Google Search Console. Ces variables doivent également être définies dans l’environnement du déploiement lorsqu’elles sont utilisées.
+Le formulaire envoie les demandes via la boîte professionnelle Hostinger depuis la route serveur `/api/contact`. Dans `.env.local`, renseigner `SMTP_PASSWORD` avec le mot de passe de la boîte `contact@lodgic-dev.com` (ou un mot de passe d’application Hostinger) ; `SMTP_USER`, `SMTP_HOST` et `SMTP_PORT` sont indiqués dans `.env.example`. Pour Titan Email, utiliser `smtp.titan.email` comme serveur. Le mot de passe ne doit jamais être ajouté au dépôt ; définir les mêmes variables dans l’environnement du déploiement Vercel. `GOOGLE_SITE_VERIFICATION` est facultatif en local ; il sert à la vérification du domaine dans Google Search Console.
 
 ## Organisation
 
@@ -44,7 +44,7 @@ npm run build
 npm audit
 ~~~
 
-npm run check exécute ESLint et la vérification TypeScript ; npm audit contrôle les dépendances auprès du registre npm. Avant un déploiement, vérifier aussi les pages principales sur ordinateur et téléphone ainsi que le formulaire avec un destinataire FormSubmit activé.
+npm run check exécute ESLint et la vérification TypeScript ; npm audit contrôle les dépendances auprès du registre npm. Avant un déploiement, vérifier aussi les pages principales sur ordinateur et téléphone ainsi que la réception d’un message de test dans la boîte Hostinger.
 
 ## Google Search Console
 

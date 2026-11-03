@@ -6,17 +6,6 @@ import Link from 'next/link'
 import { trackConversion } from '@/lib/analytics'
 import { CONTACT_EMAIL } from '@/lib/site'
 
-/** Adresse d'envoi Formsubmit, définie dans .env.local (voir .env.example). */
-const ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? ''
-const formEndpointIsValid = (() => {
-  try {
-    const url = new URL(ENDPOINT)
-    return url.origin === 'https://formsubmit.co' && url.pathname.startsWith('/ajax/')
-  } catch {
-    return false
-  }
-})()
-
 type FieldName = 'name' | 'email' | 'phone' | 'subject' | 'message'
 
 interface Field {
@@ -72,6 +61,12 @@ export default function Formulaire({
   const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({})
   const [status, setStatus] = useState<{ ok: boolean; message: string } | null>(null)
   const [sending, setSending] = useState(false)
+  const emailFallback = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(values.subject?.trim() || 'Demande de contact Lodgic')}&body=${encodeURIComponent([
+    values.name?.trim() && `Nom : ${values.name.trim()}`,
+    values.email?.trim() && `Email : ${values.email.trim()}`,
+    values.phone?.trim() && `Téléphone : ${values.phone.trim()}`,
+    values.message?.trim() && `Message :\n${values.message.trim()}`,
+  ].filter(Boolean).join('\n\n'))}`
 
   function validate() {
     const found: Partial<Record<FieldName, string>> = {}
@@ -94,41 +89,50 @@ export default function Formulaire({
       return
     }
 
-    if (!formEndpointIsValid) {
-      setStatus({
-        ok: false,
-        message: "Le formulaire n'est pas disponible pour le moment. Écrivez-moi directement à ",
-      })
-      return
-    }
-
     setSending(true)
     setStatus(null)
+    const controller = new AbortController()
+    const timeout = window.setTimeout(() => controller.abort(), 30_000)
+    let refusalMessage: string | null = null
     try {
-      const response = await fetch(ENDPOINT, {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...values, _honey: honey, _subject: `Nouveau message : ${source}` }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...values, honey, source }),
+        signal: controller.signal,
       })
-      if (!response.ok) throw new Error(`Réponse ${response.status}`)
+      const result: unknown = await response.json()
+      if (!response.ok || !result || typeof result !== 'object' || !('success' in result) || result.success !== true) {
+        if (result && typeof result === 'object' && 'message' in result && typeof result.message === 'string') {
+          refusalMessage = result.message
+        }
+        throw new Error(`Envoi refusé par le service de contact (${response.status})`)
+      }
 
       trackConversion(source)
       setStatus({ ok: true, message: 'Message envoyé. Merci, je vous répondrai personnellement.' })
       setValues({})
       setHoney('')
-    } catch {
+    } catch (error) {
+      if (process.env.NODE_ENV === 'development') console.error('Échec du formulaire de contact', error)
+      const reason = controller.signal.aborted
+        ? "Le service de contact ne répond pas. L'envoi n'a pas pu être confirmé. "
+        : refusalMessage
+          ? `${refusalMessage} `
+          : "Impossible de joindre le service de contact. L'envoi n'a pas pu être confirmé. "
       setStatus({
         ok: false,
-        message: "L'envoi a échoué. Écrivez-moi directement à ",
+        message: `${reason}Écrivez-moi directement à `,
       })
     } finally {
+      window.clearTimeout(timeout)
       setSending(false)
     }
   }
 
   function privacyText() {
     return <>
-      Les champs marqués * sont nécessaires pour répondre à votre demande. Votre message est transmis par FormSubmit à Yann (Lodgic). Téléphone et sujet sont facultatifs lorsqu’ils sont proposés. Vos données sont traitées pour étudier votre projet et vous répondre ; elles ne servent pas à vous inscrire à une newsletter. Consultez la <Link href="/politique-confidentialite" className="text-link text-sm">politique de confidentialité</Link> pour connaître la durée de conservation et exercer vos droits.
+      Les champs marqués * sont nécessaires pour répondre à votre demande. Votre message est transmis à Yann (Lodgic) par sa messagerie professionnelle Hostinger. Téléphone et sujet sont facultatifs lorsqu’ils sont proposés. Vos données sont traitées pour étudier votre projet et vous répondre ; elles ne servent pas à vous inscrire à une newsletter. Consultez la <Link href="/politique-confidentialite" className="text-link text-sm">politique de confidentialité</Link> pour connaître la durée de conservation et exercer vos droits.
     </>
   }
 
@@ -216,7 +220,7 @@ export default function Formulaire({
             status.ok ? 'bg-[#EDF4F3] text-[#1C5753]' : 'bg-[#FDF2F2] text-[#B42318]'
           }`}
         >
-          {status.message}{!status.ok && <><a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold underline underline-offset-2">{CONTACT_EMAIL}</a>.</>}
+          {status.message}{!status.ok && <><a href={emailFallback} className="font-semibold underline underline-offset-2">{CONTACT_EMAIL}</a>.</>}
         </p>
       )}
     </form>
