@@ -1,5 +1,7 @@
+import LinkArrow from '@/components/LinkArrow'
 import Image from 'next/image'
 import Link from 'next/link'
+import MobileDisclosure from '@/components/MobileDisclosure'
 import Contact from '@/app/_sections/Contact'
 import JsonLd, { filAriane, faq } from '@/components/JsonLd'
 import type { PageService } from '@/content/pages-service'
@@ -29,7 +31,7 @@ function ServiceHero({ hero }: { hero: PageService['hero'] }) {
           <p className="service-gift-title">{cadeauApplicationMobile.title}</p>
           <p className="service-gift-description">{cadeauApplicationMobile.description}</p>
         </div>}
-        <Link href="/contact" className="btn-primary mt-7">Parlons de votre projet <span aria-hidden>↗</span></Link>
+        <Link href="/contact" className="btn-primary mt-7">Parlons de votre projet <LinkArrow direction="up-right" /></Link>
       </div>
       <aside className="border-l-2 border-[#DCE3E6] pl-7">
         <p className="font-heading text-xl">Repères pour votre projet</p>
@@ -54,10 +56,10 @@ function ServiceExpertise({ expertise }: { expertise: PageService['expertise'] }
       <div className="mt-12 grid gap-x-16 gap-y-10 md:grid-cols-2">
         {expertise.cards.map((card) => <article key={card.title} className="border-t border-[#DCE3E6] pt-6">
           <h3 className="text-2xl">{card.title}</h3>
-          <p className="mt-3 text-[#59666E]"><Texte>{card.body}</Texte></p>
+          <MobileDisclosure label="Voir le détail"><p className="mt-3 text-[#59666E]"><Texte>{card.body}</Texte></p>
           <ul className="mt-4 list-disc space-y-1 pl-5 text-base text-[#59666E] marker:text-[#246B66]">
             {card.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
-          </ul>
+          </ul></MobileDisclosure>
         </article>)}
       </div>
       <div className="mt-14 rounded-lg bg-[#F4F6F7] p-7 md:p-10">
@@ -80,7 +82,7 @@ function ProjectExample({ project }: { project: NonNullable<PageService['project
         <p className="eyebrow">Un exemple livré</p>
         <h2 className="title-section mt-3">{project.name}</h2>
         <p className="mt-4 text-[#59666E]">{project.text}</p>
-        <Link href={project.href} className="text-link mt-5">Lire l’étude de cas <span aria-hidden>→</span></Link>
+        <Link href={project.href} className="text-link mt-5">Lire l’étude de cas <LinkArrow direction="right" /></Link>
       </div>
     </div>
   </section>
@@ -121,7 +123,7 @@ export default function PageSeo({ page }: { page: PageService }) {
     <JsonLd data={filAriane([{ name: 'Accueil', url: SITE_URL }, { name: page.name, url }])} />
     <JsonLd data={faq(page.faqs)} />
     <ServiceHero hero={page.hero} />
-    {decision && <section className="service-decision section-space"><div className="container-site"><div><p className="eyebrow">Avant de choisir</p><h2 className="title-section mt-4">Partir de votre besoin.</h2><p className="mt-5">{decision.besoin}</p><p className="mt-4">{decision.alternative}</p></div><div><h3>La première version à cadrer</h3><p>{decision.premiereVersion}</p><h3>Ce qu’il faut aussi prévoir</h3><p>{decision.aPrevoir}</p><Link href="/preparer-son-projet" className="text-link mt-5">Préparer les informations utiles →</Link></div></div></section>}
+    {decision && <section className="service-decision section-space"><div className="container-site"><div><p className="eyebrow">Avant de choisir</p><h2 className="title-section mt-4">Partir de votre besoin.</h2><p className="mt-5">{decision.besoin}</p><MobileDisclosure label="Comparer les options"><p className="mt-4">{decision.alternative}</p></MobileDisclosure></div><div><h3>La première version à cadrer</h3><p>{decision.premiereVersion}</p><h3>Ce qu’il faut aussi prévoir</h3><p>{decision.aPrevoir}</p><Link href="/preparer-son-projet" className="text-link mt-5">Préparer les informations utiles <LinkArrow /></Link></div></div></section>}
     {page.project && <ProjectExample project={page.project} />}
     <ServiceExpertise expertise={page.expertise} />
     <ServiceQuestions faqs={page.faqs} />

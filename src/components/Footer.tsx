@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import MobileDisclosure from '@/components/MobileDisclosure'
 import CookiePreferencesButton from '@/components/CookiePreferencesButton'
 import { PAGES_SERVICE } from '@/content/pages-service'
 import { PROJETS } from '@/content/projets'
@@ -34,10 +35,10 @@ function Colonne({
 }) {
   return (
     <div>
-      <p className="text-base font-body font-semibold text-white">
+      <p className="footer-column-title text-base font-body font-semibold text-white">
         {titre}
       </p>
-      <ul className="mt-3 space-y-2">
+      <MobileDisclosure label={titre}><ul className="mt-3 space-y-2">
         {liens.map((lien) => (
           <li key={lien.href}>
             <Link
@@ -48,7 +49,7 @@ function Colonne({
             </Link>
           </li>
         ))}
-      </ul>
+      </ul></MobileDisclosure>
     </div>
   )
 }
@@ -91,7 +92,7 @@ export default function Footer() {
               Yann, développeur web et mobile à Toulouse. Sites web, applications mobiles et
               logiciels sur mesure.
             </p>
-            <div className="mt-4 space-y-1.5 text-sm font-body">
+            <div className="footer-contact mt-4 text-sm font-body">
               <Link href="/contact" className="block w-fit font-semibold text-white transition-colors hover:text-[#92C7BE]">Contact et devis</Link>
               <a href={`mailto:${CONTACT_EMAIL}`} className="block text-white/75 transition-colors hover:text-[#92C7BE]">
                 {CONTACT_EMAIL}

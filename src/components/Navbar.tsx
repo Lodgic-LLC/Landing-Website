@@ -1,5 +1,6 @@
 'use client'
 
+import LinkArrow from '@/components/LinkArrow'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
@@ -92,7 +93,7 @@ export default function Navbar() {
             {services.map(link => <Link key={link.href} href={link.href} onClick={() => setServicesOpen(false)} aria-current={pathname === link.href ? 'page' : undefined} className="block rounded px-3 py-2 text-sm text-[#17232A] hover:bg-[#EDF4F3] focus-visible:bg-[#EDF4F3]">{link.label}</Link>)}
             <p className="mx-3 mt-3 border-t border-[#DCE3E6] pt-3 text-xs font-semibold text-[#59666E]">Pour votre application</p>
             {applicationLinks.map(link => <Link key={link.href} href={link.href} onClick={() => setServicesOpen(false)} aria-current={pathname === link.href ? 'page' : undefined} className="block rounded px-3 py-2 text-sm text-[#17232A] hover:bg-[#EDF4F3] focus-visible:bg-[#EDF4F3]">{link.label}</Link>)}
-            <Link href="/#budget" onClick={() => setServicesOpen(false)} className="mt-2 block rounded bg-[#F4F6F7] px-3 py-2 text-sm font-semibold text-[#246B66] hover:bg-[#EDF4F3]">Tarifs et délais <span aria-hidden>→</span></Link>
+            <Link href="/#budget" onClick={() => setServicesOpen(false)} className="mt-2 block rounded bg-[#F4F6F7] px-3 py-2 text-sm font-semibold text-[#246B66] hover:bg-[#EDF4F3]">Tarifs et délais <LinkArrow direction="right" /></Link>
           </div>}
         </div>
         {mainLinks.map(link => <Link key={link.href} href={link.href} aria-current={currentSection(link.href)} className="nav-link whitespace-nowrap text-[15px] text-[#59666E]">{link.label}</Link>)}

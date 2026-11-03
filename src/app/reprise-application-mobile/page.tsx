@@ -1,4 +1,6 @@
+import LinkArrow from '@/components/LinkArrow'
 import Link from 'next/link'
+import MobileDisclosure from '@/components/MobileDisclosure'
 import JsonLd, { filAriane } from '@/components/JsonLd'
 import { buildSeoMetadata } from '@/lib/seo'
 import { SITE_URL } from '@/lib/site'
@@ -27,7 +29,7 @@ export default function RepriseApplicationMobile() {
         <p className="eyebrow">Application existante</p>
         <h1 className="title-hero mt-5 max-w-4xl">Reprendre une application mobile sans repartir de zéro par réflexe.</h1>
         <p className="mt-7 max-w-3xl text-xl text-[#59666E]">Votre application est en ligne, en développement ou encore au stade du prototype. Je commence par examiner l’existant pour savoir ce qui peut être conservé, corrigé ou reconstruit.</p>
-        <Link href="/contact" className="btn-primary mt-8">Décrire mon application <span aria-hidden>↗</span></Link>
+        <Link href="/contact" className="btn-primary mt-8">Décrire mon application <LinkArrow direction="up-right" /></Link>
       </div>
     </header>
 
@@ -35,7 +37,7 @@ export default function RepriseApplicationMobile() {
       <div className="container-site grid gap-10 lg:grid-cols-[minmax(0,.38fr)_minmax(0,.62fr)] lg:gap-20">
         <div><p className="eyebrow">Situations fréquentes</p><h2 id="reprise-situations" className="title-section mt-4">À quel stade en est votre projet ?</h2></div>
         <div className="border-t border-[#DCE3E6]">
-          {cas.map(item => <article key={item.title} className="border-b border-[#DCE3E6] py-8 first:pt-0 lg:first:pt-8"><h3 className="text-2xl">{item.title}</h3><p className="mt-4 text-[#59666E]">{item.text}</p></article>)}
+          {cas.map(item => <article key={item.title} className="border-b border-[#DCE3E6] py-8 first:pt-0 lg:first:pt-8"><h3 className="text-2xl">{item.title}</h3><MobileDisclosure label="Voir cette situation"><p className="mt-4 text-[#59666E]">{item.text}</p></MobileDisclosure></article>)}
         </div>
       </div>
     </section>
@@ -67,8 +69,8 @@ export default function RepriseApplicationMobile() {
         </div>
         <div className="mt-12 border-t border-[#DCE3E6] pt-7">
           <p className="max-w-3xl text-[#59666E]">Pour un premier échange, envoyez le lien de l’application ou du prototype, ce qui bloque, et les accès dont vous disposez. Évitez d’envoyer des mots de passe dans le formulaire : nous conviendrons d’un partage adapté si un examen technique est nécessaire.</p>
-          <Link href="/contact" className="btn-primary mt-7">Parler de la reprise <span aria-hidden>↗</span></Link>
-          <p className="mt-7 text-base text-[#59666E]">Vous partez de zéro ? <Link href="/developpement-application-mobile-toulouse" className="text-link">Voir la création d’application mobile <span aria-hidden>→</span></Link></p>
+          <Link href="/contact" className="btn-primary mt-7">Parler de la reprise <LinkArrow direction="up-right" /></Link>
+          <p className="mt-7 text-base text-[#59666E]">Vous partez de zéro ? <Link href="/developpement-application-mobile-toulouse" className="text-link">Voir la création d’application mobile <LinkArrow direction="right" /></Link></p>
         </div>
       </div>
     </section>

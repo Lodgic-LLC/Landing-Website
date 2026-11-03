@@ -1,3 +1,4 @@
+import LinkArrow from '@/components/LinkArrow'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -79,8 +80,8 @@ export default async function Page({ params }: Props) {
           <h2 id="article-faq-title" className="title-section">Questions fréquentes</h2>
           <div className="mt-7 border-t border-[#DCE3E6]">{questions.map(({ question, answer }) => <details key={question} className="border-b border-[#DCE3E6] py-5"><summary className="flex items-center justify-between gap-4 font-semibold"><span>{question}</span><span aria-hidden="true" className="text-2xl text-[#246B66]">+</span></summary><p className="mt-4 max-w-3xl text-base leading-relaxed text-[#59666E]">{answer}</p></details>)}</div>
         </section>}
-        <aside className="article-project-next"><h2 className="text-2xl">Passer de la lecture à votre projet.</h2><p>Décrivez l’usage à rendre possible, ce qui existe et vos contraintes. Ces éléments permettent de préparer le premier échange.</p><Link href="/preparer-son-projet" className="text-link">Préparer mon projet →</Link><Link href="/contact" className="text-link">En parler avec Yann →</Link></aside>
-        <div className="mt-14 border-t border-[#DCE3E6] pt-8"><Link href="/blog" className="text-link text-base"><span aria-hidden="true">←</span> Tous les conseils</Link></div>
+        <aside className="article-project-next"><h2 className="text-2xl">Passer de la lecture à votre projet.</h2><p>Décrivez l’usage à rendre possible, ce qui existe et vos contraintes. Ces éléments permettent de préparer le premier échange.</p><Link href="/preparer-son-projet" className="text-link">Préparer mon projet <LinkArrow /></Link><Link href="/contact" className="text-link">En parler avec Yann <LinkArrow /></Link></aside>
+        <div className="mt-14 border-t border-[#DCE3E6] pt-8"><Link href="/blog" className="text-link text-base"><LinkArrow direction="left" /> Tous les conseils</Link></div>
       </div>
     </article>
     <section className="section-space bg-[#F4F6F7]" aria-labelledby="related-title"><div className="container-site"><h2 id="related-title" className="title-section">À lire aussi</h2><div className="mt-8 grid gap-5 md:grid-cols-3">{related.map((item) => <Link key={item.slug} href={`/blog/${item.slug}`} className="related-article rounded-lg border border-[#DCE3E6] bg-white p-6 hover:border-[#246B66]"><span className="related-cover"><Image src={coverFor(item)} alt="" width={600} height={340} sizes="(max-width: 767px) 90vw, 30vw" /></span><span className="text-sm font-semibold text-[#246B66]">{item.category}</span><span className="mt-3 block font-heading text-xl leading-snug">{item.title}</span></Link>)}</div></div></section>

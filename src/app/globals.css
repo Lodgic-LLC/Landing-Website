@@ -42,10 +42,10 @@ button, summary { cursor: pointer; }
 .title-section { font-family: var(--font-editorial); font-weight: 400; font-size: clamp(31px,3.5vw,46px); letter-spacing: -.035em; line-height: 1.12; text-wrap: balance; }
 .text-link { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); font-weight: 600; text-decoration: underline; text-decoration-color: #b7ceca; text-underline-offset: 6px; transition: text-decoration-color .18s; }
 .text-link:hover { text-decoration-color: currentColor; }
-.text-link span[aria-hidden], .btn-primary span[aria-hidden] { display: inline-block; transition: transform .22s ease; }
+.text-link span[aria-hidden], .btn-primary span[aria-hidden] { transition: transform .22s ease; }
 .text-link:hover span[aria-hidden] { transform: translateX(4px); }
 .btn-primary:hover span[aria-hidden] { transform: translate(3px,-3px); }
-.text-link .link-arrow { display: inline-grid; flex: none; place-items: center; width: 18px; height: 18px; }
+.link-arrow { display: inline-grid; flex: none; place-items: center; width: 18px; height: 18px; }
 .link-arrow svg { display: block; width: 16px; height: 16px; }
 .service-link-mobile { display: none; }
 .nav-link { position: relative; display: inline-flex; align-items: center; min-height: 44px; transition: color .2s ease; }
@@ -585,17 +585,16 @@ main details:has(summary:focus-visible) { outline: 2px solid var(--accent); outl
   .home-page .about-experience { padding: 18px 0 0; border-top: 1px solid #cfd6cb; }
   .home-page .about-section .about-experience dt { font-size: 42px; }
   .home-page .method-process { gap: 20px; }
-  .home-page .method-after { display: none; }
-  .home-page .mobile-disclosure { display: block; }
-  .home-page .mobile-disclosure-toggle {
+  .mobile-disclosure { display: block; }
+  .mobile-disclosure-toggle {
     display: flex; justify-content: space-between; align-items: center; gap: 20px;
     width: 100%; min-height: 52px; padding-block: 12px;
     border-block: 1px solid var(--hairline); text-align: left;
     font-size: 16px; font-weight: 600; color: var(--accent);
   }
-  .home-page .mobile-disclosure-toggle span { font-size: 24px; font-weight: 400; }
-  .home-page .mobile-disclosure-content { display: none; }
-  .home-page .mobile-disclosure[data-expanded="true"] > .mobile-disclosure-content { display: block; padding-top: 24px; }
+  .mobile-disclosure-toggle span { font-size: 24px; font-weight: 400; }
+  .mobile-disclosure-content { display: none; }
+  .mobile-disclosure[data-expanded="true"] > .mobile-disclosure-content { display: block; padding-top: 24px; }
   .home-page #budget { padding-top: 8px; }
   .home-page #budget > .container-site > .grid > p,
   .home-page .budget-options > div > dd:first-of-type,
