@@ -1,4 +1,6 @@
+import LinkArrow from '@/components/LinkArrow'
 import Link from 'next/link'
+import MobileDisclosure from '@/components/MobileDisclosure'
 import JsonLd, { filAriane } from '@/components/JsonLd'
 import { buildSeoMetadata } from '@/lib/seo'
 import { SITE_URL } from '@/lib/site'
@@ -59,8 +61,8 @@ export default function PrixApplicationMobile() {
         <div className="border-t border-[#DCE3E6]">
           {questions.map((item) => <article key={item.title} className="border-b border-[#DCE3E6] py-8 first:pt-0 lg:first:pt-8">
             <h3 className="text-2xl">{item.title}</h3>
-            <p className="mt-4 text-[#59666E]">{item.text}</p>
-            <p className="mt-4 text-base font-semibold text-[#246B66]">{item.detail}</p>
+            <MobileDisclosure label="Comprendre ce qui fait varier le prix"><p className="mt-4 text-[#59666E]">{item.text}</p>
+            <p className="mt-4 text-base font-semibold text-[#246B66]">{item.detail}</p></MobileDisclosure>
           </article>)}
         </div>
       </div>
@@ -72,7 +74,7 @@ export default function PrixApplicationMobile() {
           <p className="eyebrow">La proposition</p>
           <h2 id="prix-proposition" className="title-section mt-4">Ce que vous devez pouvoir vérifier.</h2>
           <p className="mt-6 text-[#59666E]">Avant de développer, je remets un périmètre, un planning et un prix. Vous savez ce qui sera livré et ce qui reste pour une version suivante.</p>
-          <Link href="/preparer-son-projet" className="text-link mt-7">Préparer les informations utiles <span aria-hidden>→</span></Link>
+          <Link href="/preparer-son-projet" className="text-link mt-7">Préparer les informations utiles <LinkArrow direction="right" /></Link>
         </div>
         <ul className="space-y-0 border-t border-[#DCE3E6]">
           {[
@@ -90,12 +92,12 @@ export default function PrixApplicationMobile() {
         <div>
           <h2 id="prix-suite" className="title-section">Partir d’un besoin, puis chiffrer.</h2>
           <p className="mt-5 text-[#59666E]">Décrivez-moi l’utilisateur, l’action principale et ce qui existe déjà. Même si le projet n’est pas entièrement défini, cela suffit pour commencer le cadrage.</p>
-          <Link href="/contact" className="btn-primary mt-7">Parler de mon application <span aria-hidden>↗</span></Link>
+          <Link href="/contact" className="btn-primary mt-7">Parler de mon application <LinkArrow direction="up-right" /></Link>
         </div>
         <aside className="border-t border-[#DCE3E6] pt-5 text-base text-[#59666E]">
-          <p>Pour approfondir le sujet, l’<Link href="/blog/combien-coute-une-application-en-2026" className="text-link">article sur le coût d’une application <span aria-hidden>→</span></Link> compare différents types de projets.</p>
-          <p className="mt-5">La page <Link href="/developpement-application-mobile-toulouse" className="text-link">développement mobile à Toulouse <span aria-hidden>→</span></Link> détaille mon travail du cadrage à la publication.</p>
-          <p className="mt-5">Si vous préparez une plateforme de vente ou de services, l’<Link href="/blog/pourquoi-creer-une-application-mobile-pour-sa-marketplace" className="text-link">article sur les applications de marketplace <span aria-hidden>→</span></Link> aborde les fonctions à chiffrer.</p>
+          <p>Pour approfondir le sujet, l’<Link href="/blog/combien-coute-une-application-en-2026" className="text-link">article sur le coût d’une application <LinkArrow direction="right" /></Link> compare différents types de projets.</p>
+          <p className="mt-5">La page <Link href="/developpement-application-mobile-toulouse" className="text-link">développement mobile à Toulouse <LinkArrow direction="right" /></Link> détaille mon travail du cadrage à la publication.</p>
+          <p className="mt-5">Si vous préparez une plateforme de vente ou de services, l’<Link href="/blog/pourquoi-creer-une-application-mobile-pour-sa-marketplace" className="text-link">article sur les applications de marketplace <LinkArrow direction="right" /></Link> aborde les fonctions à chiffrer.</p>
         </aside>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import LinkArrow from '@/components/LinkArrow'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -39,7 +40,7 @@ function ArticleCard({ article }: { article: Article }) {
     <div className="blog-card-meta"><span>{article.category}</span><DateArticle article={article} /></div>
     <h4 className="blog-card-title"><Link href={href}>{article.title}</Link></h4>
     <p className="blog-card-summary">{article.summary}</p>
-    <Link href={href} className="blog-card-link">Lire l’article <span aria-hidden="true">↗</span></Link>
+    <Link href={href} className="blog-card-link">Lire l’article <LinkArrow direction="up-right" /></Link>
   </article>
 }
 
@@ -80,7 +81,7 @@ export default function Page() {
           <div className="blog-card-meta"><span>{featured.category}</span><DateArticle article={featured} /></div>
           <h2 id="blog-feature-title"><Link href={`/blog/${featured.slug}`}>{featured.title}</Link></h2>
           <p>{featured.summary}</p>
-          <Link href={`/blog/${featured.slug}`} className="text-link mt-7 text-base">Lire l’article <span aria-hidden="true">→</span></Link>
+          <Link href={`/blog/${featured.slug}`} className="text-link mt-7 text-base">Lire l’article <LinkArrow direction="right" /></Link>
         </div>
       </div>
     </section>}

@@ -1,3 +1,4 @@
+import LinkArrow from '@/components/LinkArrow'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getAllArticles } from '@/lib/blog'
@@ -20,7 +21,7 @@ export default function ConseilsSection() {
           <h2 id="conseils-title" className="title-section mt-4 max-w-2xl">Trois décisions avant de vous lancer.</h2>
           <p className="mt-5 max-w-2xl text-[#59666E]">Choisir le format, comprendre le budget et savoir comment le projet va se dérouler.</p>
         </div>
-        <Link href="/blog" className="text-link text-base">Tous les conseils <span aria-hidden="true">→</span></Link>
+        <Link href="/blog" className="text-link text-base">Tous les conseils <LinkArrow direction="right" /></Link>
       </div>
       <div className="advice-articles">
         {articles.map((article) => <article key={article.slug} className="advice-article">
@@ -30,7 +31,7 @@ export default function ConseilsSection() {
           <div className="advice-meta"><span>{article.intention}</span><time dateTime={article.date}>{dateFormatter.format(new Date(`${article.date}T12:00:00`))}</time></div>
           <h3 className="advice-article-title"><Link href={`/blog/${article.slug}`}>{article.title}</Link></h3>
           <p className="advice-article-summary">{article.summary}</p>
-          <Link href={`/blog/${article.slug}`} className="text-link advice-article-link text-base">Lire l’article <span aria-hidden="true">→</span></Link>
+          <Link href={`/blog/${article.slug}`} className="text-link advice-article-link text-base">Lire l’article <LinkArrow direction="right" /></Link>
         </article>)}
       </div>
     </div>

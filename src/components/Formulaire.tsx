@@ -1,5 +1,6 @@
 'use client'
 
+import LinkArrow from '@/components/LinkArrow'
 import { useId, useState } from 'react'
 import Link from 'next/link'
 import { trackConversion } from '@/lib/analytics'
@@ -205,7 +206,7 @@ export default function Formulaire({
         disabled={sending}
         className="contact-submit"
       >
-        <span>{sending ? 'Envoi en cours…' : submitLabel}</span><span aria-hidden="true">↗</span>
+        <span>{sending ? 'Envoi en cours…' : submitLabel}</span><LinkArrow direction="up-right" />
       </button>
 
       {status && (

@@ -1,3 +1,4 @@
+import LinkArrow from '@/components/LinkArrow'
 import Link from 'next/link'
 import { evaluate } from '@mdx-js/mdx'
 import remarkGfm from 'remark-gfm'
@@ -17,7 +18,7 @@ function CallToAction({ title, description }: { title?: string; description?: st
   return <aside className="article-cta my-10 rounded-lg border border-[#DCE3E6] bg-[#F4F6F7] p-6">
     <p className="font-heading text-xl text-[#17232A]">{title ?? 'Une question sur votre projet ?'}</p>
     {description && <p className="mt-2 text-base text-[#59666E]">{description}</p>}
-    <Link href="/contact" className="btn-primary mt-5">Parler de mon projet <span aria-hidden="true">↗</span></Link>
+    <Link href="/contact" className="btn-primary mt-5">Parler de mon projet <LinkArrow direction="up-right" /></Link>
   </aside>
 }
 
