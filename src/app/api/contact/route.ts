@@ -2,6 +2,29 @@ import nodemailer from 'nodemailer'
 import { CONTACT_EMAIL, SITE_URL } from '@/lib/site'
 
 export const runtime = 'nodejs'
+const MAX_BODY_BYTES = 12_000
+
+async function readLimitedBody(request: Request): Promise<string | null> {
+  if (!request.body) return ''
+
+  const reader = request.body.getReader()
+  const decoder = new TextDecoder('utf-8', { fatal: true })
+  let size = 0
+  let body = ''
+
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+    size += value.byteLength
+    if (size > MAX_BODY_BYTES) {
+      void reader.cancel().catch(() => undefined)
+      return null
+    }
+    body += decoder.decode(value, { stream: true })
+  }
+
+  return body + decoder.decode()
+}
 
 function readField(value: unknown, maxLength: number) {
   return typeof value === 'string' && value.length <= maxLength ? value.trim() : null
@@ -14,12 +37,14 @@ function failure(message: string, status: number) {
 export async function POST(request: Request) {
   const origin = request.headers.get('origin')
   if (origin && origin !== new URL(request.url).origin) return failure('Origine non autorisée.', 403)
-  if (!request.headers.get('content-type')?.startsWith('application/json')) return failure('Format de requête invalide.', 415)
+  if (!/^application\/json(?:\s*;|$)/i.test(request.headers.get('content-type') ?? '')) return failure('Format de requête invalide.', 415)
+  const contentLength = Number(request.headers.get('content-length'))
+  if (contentLength > MAX_BODY_BYTES) return failure('Message trop long.', 413)
 
   let data: Record<string, unknown>
   try {
-    const raw = await request.text()
-    if (raw.length > 12_000) return failure('Message trop long.', 413)
+    const raw = await readLimitedBody(request)
+    if (raw === null) return failure('Message trop long.', 413)
     const parsed: unknown = JSON.parse(raw)
     if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return failure('Formulaire invalide.', 400)
     data = parsed as Record<string, unknown>
