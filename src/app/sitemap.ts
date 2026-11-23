@@ -17,7 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route('prix-application-mobile'),
     route('reprise-application-mobile'),
     route('blog'),
-    ...getAllArticles().map((article) => route(`blog/${article.slug}`)),
+    ...getAllArticles().map(({ slug, dateModified }) => ({
+      ...route(`blog/${slug}`),
+      lastModified: dateModified,
+    })),
     route('projets/alliance-travaux'),
     route('projets/bewasbeen'),
     ...PAGES_SERVICE.map((page) => route(page.slug)),

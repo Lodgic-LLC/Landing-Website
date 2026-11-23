@@ -11,6 +11,7 @@ import { SITE_URL } from '@/lib/site'
 
 type Props = { params: Promise<{ slug: string }> }
 const fallbackImage = '/images/rodeo-project-management-software-m9HQzdoK9u8-unsplash.jpg'
+const dateFormat = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long', timeZone: 'UTC' })
 
 function coverFor(article: Article) {
   return article.imageUrl?.startsWith('/') ? article.imageUrl : fallbackImage
@@ -38,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
       locale: 'fr_FR',
       publishedTime: article.date,
+      modifiedTime: article.dateModified,
       images: [{ url: image, alt: article.imageAlt ?? article.title }],
     },
   }
@@ -60,7 +62,7 @@ export default async function Page({ params }: Props) {
 
   return <main className="article-page">
     <JsonLd data={filAriane([{ name: 'Accueil', url: SITE_URL }, { name: 'Conseils', url: `${SITE_URL}/blog` }, { name: article.title, url }])} />
-    <JsonLd data={{ '@context': 'https://schema.org', '@type': 'BlogPosting', headline: article.title, description: article.summary, image, datePublished: article.date, mainEntityOfPage: url, inLanguage: 'fr-FR', author: { '@id': `${SITE_URL}/#person` }, publisher: { '@id': `${SITE_URL}/#organization` } }} />
+    <JsonLd data={{ '@context': 'https://schema.org', '@type': 'BlogPosting', headline: article.title, description: article.summary, image, datePublished: article.date, dateModified: article.dateModified, mainEntityOfPage: url, inLanguage: 'fr-FR', author: { '@id': `${SITE_URL}/#person` }, publisher: { '@id': `${SITE_URL}/#organization` } }} />
     <article>
       <header className="article-header border-b border-[#DCE3E6] bg-[#F4F6F7] py-14 md:py-20">
         <div className="container-site article-heading">
@@ -69,7 +71,10 @@ export default async function Page({ params }: Props) {
           <p className="eyebrow mt-9">{article.category}</p>
           <h1 className="title-hero mt-4">{article.title}</h1>
           <p className="mt-6 max-w-3xl text-xl leading-relaxed text-[#59666E]">{article.summary}</p>
-          <p className="mt-7 text-sm text-[#59666E]">Par <span className="font-semibold text-[#17232A]">Yann, développeur web et mobile</span> · <time dateTime={article.date}>{new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(`${article.date}T12:00:00`))}</time></p>
+          <p className="mt-7 text-sm text-[#59666E]">
+            Par <span className="font-semibold text-[#17232A]">Yann, développeur web et mobile</span> · <time dateTime={article.date}>{dateFormat.format(new Date(article.date))}</time>
+            {article.dateModified && <> · Mis à jour le <time dateTime={article.dateModified}>{dateFormat.format(new Date(article.dateModified))}</time></>}
+          </p>
           </div>
           {article.imageUrl && <div className="article-cover"><Image src={coverFor(article)} alt="" fill priority sizes="(max-width: 767px) 90vw, 36vw" className="object-cover" /></div>}
         </div>

@@ -9,6 +9,7 @@ export interface Article {
   slug: string
   title: string
   date: string
+  dateModified?: string
   summary: string
   category: string
   imageUrl?: string
@@ -36,6 +37,7 @@ function readArticle(filename: string): Article {
     slug: required('slug'),
     title: required('title'),
     date: required('date'),
+    dateModified: fields.get('dateModified'),
     summary: required('summary'),
     category: required('category'),
     imageUrl: fields.get('imageUrl'),

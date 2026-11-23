@@ -119,6 +119,10 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: '/ressources/trame-projet-lodgic.txt',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+      },
     ]
   },
 }
